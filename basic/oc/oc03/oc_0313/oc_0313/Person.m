@@ -1,0 +1,20 @@
+//
+//  Person.m
+//  oc_0313
+//
+//  Created by sq y on 2017/7/15.
+//  Copyright © 2017年 mac. All rights reserved.
+//
+
+#import "Person.h"
+
+@implementation Person
+
+- (void)dealloc{
+    [_book release];
+    
+    NSLog(@"");
+    [super dealloc];
+}
+
+@end
