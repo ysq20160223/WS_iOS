@@ -9,27 +9,24 @@
 #import "ViewController.h"
 
 @interface ViewController () <UITableViewDataSource>
-
 {
     //    NSArray *_gdCites;
     //    NSArray *_fjCites;
     
     NSArray *_allCites;
-    
     NSArray *_allProvinces;
-    
     NSArray *_china;
 }
-
 @end
+
+
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    UITableView *tableview = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableview = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     tableview.dataSource = self;
     [self.view addSubview:tableview];
     
@@ -50,20 +47,30 @@
     
     // 3
     _china = @[
-               @{@"header" : @"福建", @"footer" : @"fj",
+               @{@"header" : @"福建",
+                 @"footer" : @"FJ",
                  @"cities" : @[@"福州", @"厦门", @"莆田", @"泉州", @"漳州", @"宁德", @"南平"]},
                
-               @{@"header" : @"广东", @"footer" : @"gd",
+               @{@"header" : @"广东",
+                 @"footer" : @"GD",
                  @"cities" : @[@"广州", @"深圳", @"惠州"]},
                
-               @{@"header" : @"浙江", @"footer" : @"zj",
+               @{@"header" : @"浙江",
+                 @"footer" : @"ZJ",
                  @"cities" : @[@"杭州", @"温州"]},
                
-               @{@"header" : @"江苏", @"footer" : @"js",
+               @{@"header" : @"江苏",
+                 @"footer" : @"JS",
                  @"cities" : @[@"南京", @"苏州", @"扬州"]}
                ];
     
     
+}
+
+// 1 - 几组
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    //    return _allCites.count;
+    return _china.count;
 }
 
 // 2 - 每组有几列
@@ -82,13 +89,8 @@
     return [_china[section][@"cities"] count];
 }
 
-// 1 - 几组
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return _allCites.count;
-    return _china.count;
-}
 
-//
+// 3 - 每行显示数据
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
@@ -111,21 +113,18 @@
 //    cell.textLabel.text = cities[indexPath.row];
     
     cell.textLabel.text = _china[indexPath.section][@"cities"][indexPath.row];
-    
     return cell;
-    
 }
+
 
 //
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 //    return _allProvinces[section];
-    
     return _china[section][@"header"];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 //    return @"footer";
-    
     return _china[section][@"footer"];
 }
 

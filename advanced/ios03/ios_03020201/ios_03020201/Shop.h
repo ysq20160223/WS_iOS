@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString *desc;
 
-// < # a  # >
+// < # name # >
 
 //
 + (id)shopWithName:(NSString *)name icon:(NSString *)icon desc:(NSString *)desc;

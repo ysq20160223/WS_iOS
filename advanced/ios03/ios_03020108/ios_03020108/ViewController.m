@@ -12,7 +12,7 @@
 
 @interface ViewController () <UITableViewDataSource>
 {
-    NSArray *province;
+    NSArray *_provinces;
 }
 @end
 
@@ -38,8 +38,7 @@
     
     Province *zj = [Province provinceWithHeader:@"浙江" footer:@"zj" cities:@[@"杭州", @"温州", @"宁波", @"绍兴", @"金华"]];
     
-    
-    province = @[fj, gd, zj];
+    _provinces = @[fj, gd, zj];
     
 }
 
@@ -47,38 +46,41 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
-    Province *p = province[indexPath.section];
-    cell.textLabel.text = p.cities[indexPath.row];
-    
+//    Province *p = _provinces[indexPath.section];
+//    cell.textLabel.text = p.cities[indexPath.row];
+
+    cell.textLabel.text = [_provinces[indexPath.section] cities][indexPath.row]; // 与上两行结果一致
     return cell;
 }
 
 // 2
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    Province *p = province[section];
-    return p.cities.count ;
+//    Province *p = _provinces[section];
+//    return p.cities.count;
+    
+    return [_provinces[section] cities].count;
 }
 
 // 1
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return province.count;
+    return _provinces.count;
 }
 
 //
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [province[section] header];
+    return [_provinces[section] header];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return [province[section] footer];
+    return [_provinces[section] footer];
 }
 
 
-//
+// 03-02-01-09 右侧索引条
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     NSMutableArray *titles = [NSMutableArray array];
     
-    for (Province *p in province) {
+    for (Province *p in _provinces) {
         [titles addObject:p.header];
     }
     

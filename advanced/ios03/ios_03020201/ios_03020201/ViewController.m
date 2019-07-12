@@ -8,13 +8,17 @@
 
 #import "ViewController.h"
 
+#import "../../../../PreHeader.h"
+
 #import "Shop.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 {
-    NSMutableArray *_shops;
+    NSMutableArray *_shopArray;
 }
 @end
+
+
 
 @implementation ViewController
 
@@ -22,7 +26,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _shops = [NSMutableArray array];
+    _tableView.frame = self.view.bounds;
+    
+    _shopArray = [NSMutableArray array];
     
     Shop *s1 = [[Shop alloc] init];
     s1.icon = @"001.png";
@@ -32,30 +38,35 @@
     Shop *s2 = [Shop shopWithName:@"母婴用品" icon:@"002.png" desc:@"洗护, 喂养"];
     Shop *s3 = [Shop shopWithName:@"孕婴服饰" icon:@"003.png" desc:@"防辐射"];
     
-    [_shops addObjectsFromArray:@[s1, s2, s3]];
+//    [_shopArray addObjectsFromArray:@[s1, s2, s3]];
     
-//    for (int i = 0; i < 18; i++) {
-//        NSString *name = [NSString stringWithFormat:@"name-%d", i];
-//        NSString *desc = [NSString stringWithFormat:@"desc-%@", name];
-//        NSString *icon = [NSString stringWithFormat:@"00%d.png", (i % 6) + 4];
-//        
-//        Shop *s = [Shop shopWithName:name icon:icon desc:desc];
-//        [_shops addObject:s];
-//    }
+    for (int i = 0; i < 18; i++) {
+        NSString *name = [NSString stringWithFormat:@"name-%d", i];
+        NSString *desc = [NSString stringWithFormat:@"desc-%@", name];
+        NSString *icon = [NSString stringWithFormat:@"00%d.png", (i % 9) + 1];
+        
+        Shop *s = [Shop shopWithName:name icon:icon desc:desc];
+        [_shopArray addObject:s];
+    }
     
 }
 
-// *
+#pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    NSLog(@"number of rows in section : %ld", _shops.count);
-    return _shops.count;
+    NSLog(@"count: %ld", _shopArray.count);
+    return _shopArray.count;
 }
 
-// *
+// 默认返回1
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld", indexPath.row);
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     
-    Shop *shop = _shops[indexPath.row];
+    Shop *shop = _shopArray[indexPath.row];
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", shop.name];
     
@@ -75,55 +86,53 @@
     return cell;
 }
 
+
+#pragma mark -- UITableViewDelegate
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 77;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"row = %ld", indexPath.row);
+    NSLog(@"row: %ld", indexPath.row);
     
-    Shop *s = _shops[indexPath.row];
-    
+    Shop *s = _shopArray[indexPath.row];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title" message:nil delegate:self cancelButtonTitle:@"cancel" otherButtonTitles:@"certain", nil];
     
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert textFieldAtIndex:0].text = s.name;
-    
     [alert show];
     
     alert.tag = indexPath.row; // 点击了哪一行
     
     //
 //    UIAlertController *alter = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert ];
-    
 //    [alter showViewController:self sender:nil];
     
 }
 
-//
+
+#pragma mark -- UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if(buttonIndex == 0) return;
+    if(buttonIndex == 0) {
+        return;
+    }
     
     NSString *text = [alertView textFieldAtIndex:0].text;
 //    NSLog(@"%@", text);
     
     //
-    Shop *s = _shops[alertView.tag];
+    Shop *s = _shopArray[alertView.tag];
     s.name = text;
     
 //    [_tableView reloadData]; // 重量级, 每一行都会刷新
     
+    // 03020205
     // 局部刷新
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:alertView.tag inSection:0];
     NSArray *paths = @[indexPath];
     [_tableView reloadRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationFade];
     
-}
-
-// 默认返回1
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
 }
 
 @end

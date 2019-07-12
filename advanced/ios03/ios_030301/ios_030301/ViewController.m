@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "../../../../PreHeader.h"
+
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
@@ -26,7 +28,7 @@
     [self.view addSubview:tableView];
 }
 
-// ----------- data source
+#pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 300;
 }
@@ -36,24 +38,33 @@
     
     static NSString *ID = @"cell";
     
-    // 1, 从缓存池中取出克循环利用的 cell
+    // 1, 从缓存池中取出可循环利用的 cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    
+    // 没有复用
+//    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     // 2, 如果缓存池中没有可循环利用的 cell
     if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"row : %ld", indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"row: %ld", indexPath.row];
     
-    NSLog(@"cell = %p, row = %ld", cell, indexPath.row);
+    NSLog(@"cell: %p, row: %ld", cell, indexPath.row);
     
     return cell;
 }
 
-// ----------- delegate
+
+#pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 300;
 }
 
 @end
+
+
+
+

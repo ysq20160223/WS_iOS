@@ -17,6 +17,6 @@
 @property (nonatomic, strong) NSArray *cities;
 
 //
-+ (id) provinceWithHeader:(NSString *)header footer:(NSString *)footer cities:(NSArray *)cities;
++ (id)provinceWithHeader:(NSString *)header footer:(NSString *)footer cities:(NSArray *)cities;
 
 @end

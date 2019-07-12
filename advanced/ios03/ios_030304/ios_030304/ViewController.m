@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "../../../../PreHeader.h"
+
 #import "Shop.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -17,11 +19,15 @@
 }
 @end
 
+
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+//    _tableView.frame = self.view.bounds;
     
     _shop = [NSMutableArray array];
     _deleteShop = [NSMutableArray array];
@@ -34,7 +40,6 @@
     for (NSDictionary *dict in array) {
 //        Shop *s = [[Shop alloc] initWithDict:dict]; // 1
         Shop *s = [Shop shopWithDict:dict]; // 2
-        
         [_shop addObject:s];
     }
     
@@ -42,13 +47,14 @@
     
 }
 
+#pragma mark - UITableViewDataSource
 // 1, 每一组的行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if(0 == _deleteShop.count) {
-        _titleLabel.text = @"Tb";
+        _titleLabel.text = @"Toolbar";
         _trash.enabled = NO;
     } else {
-        _titleLabel.text = [NSString stringWithFormat:@"Tb(%ld)", _deleteShop.count];
+        _titleLabel.text = [NSString stringWithFormat:@"Toolbar(%ld)", _deleteShop.count];
         _trash.enabled = YES;
     }
     
@@ -84,7 +90,7 @@
     return cell;
 }
 
-
+#pragma mark - UITableViewDelegate
 // 行高
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 77;

@@ -26,11 +26,11 @@ int main()
 
     int number;
     
-    printf("please input number = ");
+    printf("please input number: ");
     
     scanf("%d", &number);
     
-    printf("number = %d\n", number);
+    printf("number: %d\n", number);
     
     return 0;
 }

@@ -21,7 +21,7 @@ int main() {
     scanf("%d", &b);
     
     
-    printf("sum = %d\n", a + b);
+    printf("%d + %d = %d\n", a, b, a + b);
     
     return 0;
 }

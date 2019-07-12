@@ -28,10 +28,10 @@ int main()
     
     char c = 'c';
     
-    printf("&i = %p, &d = %p, &c = %p\n", &i, &d, &c);
+    printf("&i: %p, &d: %p, &c: %p\n", &i, &d, &c);
     
-    printf("sizeof(int) = %lu\n", sizeof(int));
-    printf("sizeof(d) = %lu\n", sizeof(d));
+    printf("sizeof(int): %lu\n", sizeof(int));
+    printf("sizeof(d): %lu\n", sizeof(d));
     
     return 0;
 }
