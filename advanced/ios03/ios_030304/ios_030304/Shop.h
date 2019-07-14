@@ -17,8 +17,8 @@
 @property (nonatomic, copy) NSString *desc;
 
 //
-- (id) initWithDict:(NSDictionary *)dict;
+- (id)initWithDict:(NSDictionary *)dict;
 
-+ (id) shopWithDict:(NSDictionary *)dict;
++ (id)shopWithDict:(NSDictionary *)dict;
 
 @end
