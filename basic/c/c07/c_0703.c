@@ -9,18 +9,15 @@
 /*
     01, 条件编译
     02, #if 最后必须加 #endif
- 
- 
- 
  */
 
 #include <stdio.h>
 
 #define I 3
 
-void fun_01()
-{
 
+int main() {
+    
 #ifdef I
     printf("def\n");
 #endif
@@ -44,12 +41,6 @@ void fun_01()
         printf("I = %d\n", I);
     }
 #endif
-    
-}
-
-int main() {
-    
-    fun_01();
     
     return 0;
 }

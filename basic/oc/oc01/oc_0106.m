@@ -7,7 +7,7 @@
 //
 
 /*
-    cc oc_0106.m oc_0106.c
+    cc oc_0106.m oc_0106.c -framework Foundation
  */
 
 #import <Foundation/Foundation.h>

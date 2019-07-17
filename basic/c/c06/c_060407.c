@@ -34,10 +34,6 @@ struct Student
     struct Data birthday; // 嵌套定义
 };
 
-//
-int getSum(int a, int b) {
-    return a + b;
-}
 
 int main()
 {
@@ -46,19 +42,19 @@ int main()
     
     struct Data birthday = {1990, 1, 1};
     studentP->birthday = birthday;
+    printf("no: %d, age: %d \n", student.no, student.age);
     
-    printf("01, no = %d, age = %d \n", student.no, student.age);
-    printf("02, no = %d, age = %d \n", (*studentP).no, (*studentP).age);
     
-    printf("03, no = %d, age = %d, birthday = %d-%d-%d \n", studentP->no, studentP->age,
+    student.no = 11; // 通过结构体变量修改
+    printf("no: %d, age: %d \n", (*studentP).no, (*studentP).age);
+    
+    
+    (*studentP).no = 111;
+    studentP->age = 211; // 
+    studentP->birthday.year = 2019;
+    printf("no: %d, age: %d, birthday: %d-%d-%d \n", studentP->no, studentP->age,
            studentP->birthday.year, studentP->birthday.month, studentP->birthday.day);
     
-    
-    // ----
-    int (*sum)(int, int) = getSum; // 指向函数的指针
-    int a = 1, b = 2;
-    printf("%d + %d = %d\n", a, b, sum(a, b));
-    printf("%d + %d = %d\n", a, b, (*sum)(a, b));
     
     return 0;
 }
