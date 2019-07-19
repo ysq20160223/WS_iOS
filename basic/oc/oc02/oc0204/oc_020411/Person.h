@@ -13,10 +13,10 @@
     NSString *_name;
 }
 
-- (void) setAge:(int)age;
-- (int) age;
+- (void)setAge:(int)age;
+- (int)age;
 
-- (void) setName:(NSString *)name;
+- (void)setName:(NSString *)name;
 - (NSString *)name;
 
 @end

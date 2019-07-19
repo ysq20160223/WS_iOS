@@ -1,13 +1,13 @@
 //
 //  oc_020205.m
-//  
+//
 //
 //  Created by sq y on 2017/7/8.
 //
 //
 
 /*
-    01, 方法与成员变量
+ 01, 方法与成员变量
  
  */
 
@@ -15,35 +15,31 @@
 #import "../../../../PreHeader.h"
 
 // 1, 声明
-@interface Person : NSObject
-{
-    @public
+@interface Person : NSObject {
+@public
     int age;
     double weight;
 }
-- (void) walk;
+- (void)walk;
 @end
 
 
 
 // 2, 实现
 @implementation Person
-- (void) walk
-{
+- (void)walk {
     NSLog(@"age: %d, weight: %.2f, call walk method", age, weight);
 }
 @end
 
 
 
-int main()
-{
+int main() {
     Person *person = [Person new];
     person->age = 21;
     person->weight = 55;
     
     [person walk];
-    
     return 0;
 }
 

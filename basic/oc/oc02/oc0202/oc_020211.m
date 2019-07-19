@@ -1,117 +1,110 @@
 //
 //  oc_020211.m
-//  
+//
 //
 //  Created by sq y on 2017/7/9.
 //
 //
 
 /*
-    01, 类的合理设计
- 
- 
+ 01, 类的合理设计
  */
 
 #import <Foundation/Foundation.h>
 
+#import "../../../../PreHeader.h"
 
-
-
-
-// ---
-@interface Dog : NSObject
-{
-    @public
+// *********************************************
+@interface Dog : NSObject {
+@public
     double weight;
 }
-- (void) eat;
-- (void) run;
+- (void)eat;
+- (void)run;
 @end
 
 
 @implementation Dog
-- (void) eat
-{
+- (void)eat {
     weight += 1;
     NSLog(@"eat - Dog weight = %.2f", weight);
 }
-- (void) run
-{
+- (void)run {
     weight -= 1;
     NSLog(@"run - Dog weight = %.2f", weight);
 }
 @end
 
 
-// ---
-typedef enum
-{
+// *********************************************
+typedef enum {
     SexMale, SexFemale
 } Sex;
 
-typedef struct
-{
+typedef struct {
     int year;
     int month;
     int day;
-} Data;
+} Date;
 
-// ---
-@interface Student : NSObject
-{
-    @public
+
+// *********************************************
+@interface Student : NSObject {
+@public
     Sex sex; // 性别
-    Data birthday;
+    Date birthdayDate;
     double weight;
     Dog *dog;
 }
-- (void) eat;
-- (void) run;
-- (void) feedDog;
-- (void) walkDog;
-- (void) toString;
+- (void)eat;
+- (void)run;
+- (void)feedDog;
+- (void)walkDog;
+- (void)toString;
 @end
 
 @implementation Student
-- (void) eat
-{
+- (void)eat {
     weight += 1;
     NSLog(@"eat - Student weight = %.2f", weight);
 }
-- (void) run
-{
+
+- (void)run {
     weight -= 1;
     NSLog(@"run - Student weight = %.2f", weight);
     
 }
-- (void) toString
-{
-    NSLog(@"Sex: %d, birthday: %d-%d-%d ,weight: %.2f", sex, birthday.year,
-          birthday.month, birthday.day, weight);
+
+- (void)toString {
+    NSLog(@"Sex: %d, birthdayDate: %d-%d-%d ,weight: %.2f", sex, birthdayDate.year,
+          birthdayDate.month, birthdayDate.day, weight);
 }
-- (void) feedDog
-{
+
+- (void)feedDog {
     [dog eat];
 }
--(void) walkDog
-{
+
+-(void)walkDog {
     [dog run];
 }
 @end
 
-int main()
-{
 
-    Student *student = [Student new];
-    student->sex = SexMale;
-    student->weight = 50;
+// *********************************************
+int main() {
     
-    Data data = {1990, 1, 1};
-    student->birthday = data;
+    Date date = {1990, 1, 1};
+    
     
     Dog *dog = [Dog new];
     dog->weight = 10;
-    student->dog = dog;
+    
+    
+    Student *student = [Student new];
+    student->weight = 50; // 成员变量
+    student->sex = SexMale;
+    student->birthdayDate = date; // 成员 结构体
+    student->dog = dog; // 成员 对象
     
     [student eat];
     [student run];
@@ -120,7 +113,6 @@ int main()
     
     [student feedDog];
     [student walkDog];
-    
     
     return 0;
 }

@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-//#define DEBUG // Edit Scheme -> run -> info -> Build Configuration
+
 
 #ifndef NSLogHeader_h
 #define NSLogHeader_h
+
+
+#pragma mark - note 在 oc 代码中需有宏定义 DEBUG
+//#define DEBUG // Edit Scheme -> run -> info -> Build Configuration
 
 
 // __PRETTY_FUNCTION__ // 完整方法名(包括返回值和参数类型)

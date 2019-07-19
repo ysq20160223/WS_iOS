@@ -15,7 +15,7 @@
 #import <Foundation/Foundation.h>
 #import "../../../../PreHeader.h"
 
-// ---
+// ********************************
 @interface Animal : NSObject
 - (void)eat;
 @end
@@ -28,7 +28,7 @@
 @end
 
 
-// ---
+// ********************************
 @interface Dog : Animal
 - (void)run;
 @end
@@ -50,17 +50,17 @@ void eat(Animal *animal) {
 }
 
 
-// ---
+// ********************************
 int main() {
     Animal *animal = [Dog new];
-    
     // [animal eat];
     eat(animal);
     
-//    [animal run]; // warning, java 中会报错
+    [animal run]; // warning, java 中会报错
     
-    Dog *dog = (Dog *)animal; // 强制转化
-    [dog run];
+    
+//    Dog *dog = (Dog *)animal; // 强制转化
+//    [dog run];
     
     
     return 0;

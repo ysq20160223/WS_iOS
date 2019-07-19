@@ -1,6 +1,6 @@
 //
 //  oc_020403.m
-//  
+//
 //
 //  Created by sq y on 2017/7/9.
 //
@@ -11,13 +11,14 @@
 
 #import "../../../../PreHeader.h"
 
-// ------------------------------------
+
 /*
-    用来表示二维平面中某个点
-        对象方法同时设置 X 和 Y
-        对象方法计算跟其它点的距离
-        类方法计算两个点之间的距离
+ 用来表示二维平面中某个点
+ 对象方法同时设置 X 和 Y
+ 对象方法计算跟其它点的距离
+ 类方法计算两个点之间的距离
  */
+
 @interface Point2D : NSObject {
     double _x;
     double _y;
@@ -27,7 +28,7 @@
 - (double)x;
 
 - (void)setY:(double)y;
-- (double) y;
+- (double)y;
 
 - (void)setX:(int)x andY:(int)y;
 
@@ -58,11 +59,11 @@
     [self setX:x]; // 建议
     [self setY:y];
     
-//    self->_x = x; // 不建议
-//    self->_y = y;
+    //    self->_x = x; // 不建议
+    //    self->_y = y;
     
-//    _x = x; // 不建议
-//    _y = y;
+    //    _x = x; // 不建议
+    //    _y = y;
 }
 
 // 计算和另一个点之间的距离
@@ -79,13 +80,13 @@
     double yDeltaPow = pow(yDelta, 2);
     
     return sqrt(xDeltaPow + yDeltaPow);
-//    return [a distanceWithOther:b]; // 类方法 调用 对象方法
+    //    return [a distanceWithOther:b]; // 类方法 调用 对象方法
 }
 @end
 
 
 
-// ------------------------------------
+// ***********************************
 @interface Circle : NSObject {
     double _radius;
     Point2D *_point2D;
@@ -133,14 +134,14 @@
 }
 
 // 两个圆是否有交集
-+ (BOOL)isInteractBetweenCircleA:(Circle *)circleA andCircleB:(Circle *)circleB {
-    return [circleA isInteractWithOther:circleB];
++ (BOOL)isInteractBetweenCircleA:(Circle *)cA andCircleB:(Circle *)cB {
+    return [cA isInteractWithOther:cB];
 }
 
 @end
 
 
-// ------------------------------------
+// ***********************************
 void fun_01() {
     Point2D *p1 = [Point2D new];
     [p1 setX:0 andY:0];
@@ -149,7 +150,7 @@ void fun_01() {
     [p2 setX:3 andY:4];
     
     NSLog(@"distanceWithOther: %f", [p1 distanceWithOther:p2]);
-
+    
     NSLog(@"distanceBetween: %f", [Point2D distanceBetweenPointA:p1 andPointB:p2]);
 }
 
@@ -173,14 +174,14 @@ void fun_02() {
     
     // c1 (5, 5) 1 -- c2 (8, 9) 1
     NSLog(@"isInteract : %d", [c1 isInteractWithOther:c2]);
-//    NSLog(@"isInteract : %d", [Circle isInteractBetweenCircleA:c1 andCircleB:c2]);
+    //    NSLog(@"isInteract : %d", [Circle isInteractBetweenCircleA:c1 andCircleB:c2]);
 }
 
 
-// ------------------------------------
+// ***********************************
 int main() {
     
-//    fun_01();
+    //    fun_01();
     
     fun_02();
     

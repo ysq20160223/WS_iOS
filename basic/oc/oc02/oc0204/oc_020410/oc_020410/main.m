@@ -9,18 +9,14 @@
 #import <Foundation/Foundation.h>
 
 #import "Student.h"
-
 #import "../../../../../../PreHeader.h"
 
 int main() {
     
-    NSLog(@"xcode oc");
-    
     Student *student = [Student new];
-    
     [student setAge:21];
     
-    NSLog(@"age = %d", [student age]);
+    NSLog(@"age: %d", [student age]);
     
     return 0;
 }

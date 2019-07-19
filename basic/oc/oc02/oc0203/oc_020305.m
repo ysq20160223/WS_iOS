@@ -17,8 +17,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Score : NSObject
-{
+#import "../../../../PreHeader.h"
+
+
+@interface Score : NSObject {
     int _cScore; // C 成绩
     int _ocScore; // OC 成绩
     int _totalScore; // 总分
@@ -40,36 +42,33 @@
 
 @implementation Score
 
-- (void)setCSore:(int)cScore
-{
+- (void)setCSore:(int)cScore {
     _cScore = cScore;
     
     _totalScore = _cScore + _ocScore;
     _averageScore = _totalScore / 2;
 }
-- (int)cScore
-{
+
+- (int)cScore {
     return _cScore;
 }
 
-- (void)setOcScore:(int)ocScore
-{
+- (void)setOcScore:(int)ocScore {
     _ocScore = ocScore;
     
     _totalScore = _cScore + _ocScore;
     _averageScore = _totalScore / 2;
 }
-- (int)ocScore
-{
+
+- (int)ocScore {
     return _ocScore;
 }
 
-- (int)totalScore
-{
+- (int)totalScore {
     return _totalScore;
 }
-- (int)averageScore
-{
+
+- (int)averageScore {
     return _averageScore;
 }
 
@@ -77,18 +76,12 @@
 
 
 
-int main()
-{
+int main() {
     Score *score = [Score new];
     [score setCSore:90];
-    [score setOcScore:96];
+    score.ocScore = 96; // 点语法 set
     
-    int totalScore = [score totalScore];
-    int averageScore = [score averageScore];
-    
-    NSLog(@"totalScore = %d, averageScore = %d", totalScore, averageScore);
-    
-    
+    NSLog(@"totalScore: %d, averageScore: %d", [score totalScore], score.averageScore); // 点语法 get
     return 0;
 }
 

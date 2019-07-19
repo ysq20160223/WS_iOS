@@ -1,13 +1,13 @@
 //
 //  oc_020314.m
-//  
+//
 //
 //  Created by sq y on 2017/7/9.
 //
 //
 
 /*
-    01, 继承
+ 01, 继承
  */
 
 #import <Foundation/Foundation.h>
