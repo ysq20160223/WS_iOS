@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Student : NSObject
+#import "Person.h"
+
+@interface Student : Person
 
 @property int no;
 

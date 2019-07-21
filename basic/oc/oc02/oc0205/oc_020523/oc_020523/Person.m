@@ -11,17 +11,17 @@
 @implementation Person
 
 + (void)method {
-    NSLog(@"class method");
+    NSLog(@"method");
 }
 
 // 类被加载的时候调用
-+ (void) load {
-    NSLog(@"Person load");
++ (void)load {
+    NSLog(@"load");
 }
 
 // 当第一次使用该类的时候调用
-+ (void) initialize {
-    NSLog(@"Person initialize");
++ (void)initialize {
+    NSLog(@"initialize");
 }
 
 
@@ -33,7 +33,7 @@
 
 // 类对象输出结果
 + (NSString *)description {
-    return [NSString stringWithFormat:@"Person ->"];
+    return [NSString stringWithFormat:@"Person"];
 }
 
 

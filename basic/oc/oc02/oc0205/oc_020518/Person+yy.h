@@ -8,8 +8,10 @@
 
 #import "Person.h"
 
-@interface Person (yy)
+@interface Person (yy) {
+//    int i; // instance variables may not be placed in categories
+}
 
-- (void) study;
+- (void)study;
 
 @end

@@ -8,8 +8,6 @@
 
 #import "Person+yy.h"
 
-#import "../../../../../PreHeader.h"
-
 @implementation Person (yy)
 
 - (void)study {
@@ -17,7 +15,7 @@
 }
 
 - (void)method {
-    NSLog(@"method Person+yy");
+    NSLog(@"Person+yy");
 }
 
 @end

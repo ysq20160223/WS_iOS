@@ -35,7 +35,6 @@ int main(int argc, const char * argv[]) {
     //
     id _id = [Person new];
     [_id setHeight:55];
-    
     NSLog(@"height: %d", [_id height]);
     
     

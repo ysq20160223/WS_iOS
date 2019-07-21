@@ -12,10 +12,10 @@
 
 @interface Person : NSObject
 
-- (void) method;
+- (void)method;
 
-- (void) methodWithArgs:(NSString *) args;
+- (void)methodWithArgs:(NSString *) args;
 
-+ (void) method;
++ (void)method;
 
 @end

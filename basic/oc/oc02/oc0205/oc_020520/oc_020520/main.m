@@ -14,12 +14,11 @@
 
 #import <Foundation/Foundation.h>
 
-
 #import "../../../../../../PreHeader.h"
 
 #import "NSString+Number.h"
 
-int main(int argc, const char * argv[]) {
+int main() {
     
     int count = [NSString numberCountOfString:@"a1b2c3d4e5f"];
     NSLog(@"count: %d", count);

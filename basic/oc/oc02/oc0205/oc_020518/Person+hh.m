@@ -8,8 +8,6 @@
 
 #import "Person+hh.h"
 
-#import "../../../../../PreHeader.h"
-
 @implementation Person (hh)
 
 - (void)method {

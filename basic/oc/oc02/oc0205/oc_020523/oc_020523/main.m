@@ -47,7 +47,6 @@ void fun_01() {
 
 // 020524
 void fun_02() {
-
     Person *p = [[Person alloc] init];
     Class c = [p class];
     [c method];
@@ -56,8 +55,7 @@ void fun_02() {
 
 //
 void fun_03() {
-    [[Student alloc] init]; // 会加载分类的 initialize 
-
+    [[Student alloc] init]; // 会加载分类的 initialize
 }
 
 
@@ -66,12 +64,7 @@ void fun_04() {
     Person *p = [[Person alloc] init];
     p.age = 21;
     p.name = @"yy";
-    
-    // 默认情况下输出对象时, 结果为 <类名: 内存地址>
-    NSLog(@"%@", p);
-    
-
-    
+    NSLog(@"%@", p); // 默认情况下输出对象时, 结果为 <类名: 内存地址>
 }
 
 
@@ -82,18 +75,17 @@ void fun_05() {
 }
 
 void fun_06() {
-
     NSLog(@"line: %d", __LINE__); // NSLog 输出 C 语言字符串的时候, 不能有中文
     
     printf("file: %s\n", __FILE__);
     
     NSLog(@"__func__: %s", __func__);
     NSLog(@"__FUNCTION__: %s", __FUNCTION__);
-    NSLog(@"__PRETTY_FUNCTION__: %s", __PRETTY_FUNCTION__);
     
+    NSLog(@"__PRETTY_FUNCTION__: %s", __PRETTY_FUNCTION__);
 }
 
-int main(int argc, const char * argv[]) {
+int main() {
     
 //    fun_01();
     

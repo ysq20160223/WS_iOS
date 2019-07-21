@@ -9,7 +9,6 @@
 /*
     01, 通过 alloc/new/copy 创建一个对象, 必须调用 release/autorelease
     02, 谁 retain 谁 release
-    03, 
  
  */
 
@@ -20,7 +19,7 @@
 #import "Person.h"
 #import "Book.h"
 
-int main(int argc, const char * argv[]) {
+int main() {
     
     Book *book = [[Book alloc] init];
     

@@ -11,7 +11,7 @@
 @implementation Student
 
 - (id)init {
-
+    NSLog(@"");
     if(self = [super init]) {
         _no = 21;
     }

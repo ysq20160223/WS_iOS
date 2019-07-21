@@ -8,7 +8,7 @@
 
 #import "Person.h"
 
-// @synthesize(合成, 综合) : 自动生成 set/set 的实现
+// @synthesize(合成, 综合) : 自动生成 set/get 的实现
 
 @implementation Person
 

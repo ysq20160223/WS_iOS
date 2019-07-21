@@ -11,8 +11,7 @@
 @implementation Person
 
 // 重写 -init
-- (id)init
-{
+- (id)init {
     /*
     // 01, 一定要调用 super 的 init 方法 : 初始化父类中的一些成员变量和属性
     self = [super init]; // 当前对象 self
@@ -23,6 +22,7 @@
     }
     */
     
+    NSLog(@"");
     if(self = [super init]) {
         _age = 3;
     }

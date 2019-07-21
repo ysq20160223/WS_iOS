@@ -10,7 +10,7 @@
 
 @implementation Work
 
-- (id) init {
+- (id)init {
     if(self = [super init]) {
         _name = @"user";
     }

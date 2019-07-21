@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Person : NSObject
-{
+#import "../../../../../PreHeader.h"
+
+@interface Person : NSObject {
     int _age;
 }
 

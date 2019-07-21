@@ -31,7 +31,7 @@
     
     for (int i = 0; i < self.length; i++) {
         unichar c = [self characterAtIndex:i];
-        if(c >= '0' && c <= '9') {
+        if('0' <= c && c <= '9') {
             count++;
         }
     }

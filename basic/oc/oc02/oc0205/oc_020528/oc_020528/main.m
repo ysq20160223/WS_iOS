@@ -28,40 +28,26 @@ void fun_01() {
     // 03, 根据方法地址调用对应的方法
     
      Person *p = [[Person alloc] init];
-    
     //    [p method]; // 直接调用
-    SEL sel = @selector(method);
     
+//    SEL sel = @selector(method);
     [p performSelector:@selector(method)]; // 间接调用
     [p performSelector:@selector(methodWithArgs:) withObject:(@"this is args")]; // 间接调用带参数方法
 }
 
 void fun_02() {
-    
     Person *p = [[Person alloc] init];
-
-    NSString *name = @"method";
-    SEL s = NSSelectorFromString(name);
-    
-    [p performSelector:s];
-    
+    [p performSelector:NSSelectorFromString(@"method")];
 }
 
-int sum(int a, int b) {
-    return a + b;
-}
 
 int main() {
     
     fun_01();
     
-    fun_02();
+//    fun_02();
     
-    [Person method];
-    
-    
-    int (*pSum)(int, int) = sum;
-    NSLog(@"%d\n", pSum(1, 2));
+//    [Person method];
     
     return 0;
 }

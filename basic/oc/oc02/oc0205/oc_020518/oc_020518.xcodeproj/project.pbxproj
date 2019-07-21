@@ -50,8 +50,8 @@
 		709ACC931F164E6200D8B517 = {
 			isa = PBXGroup;
 			children = (
-				709ACCAD1F16544900D8B517 /* Person+hh.m */,
 				709ACCAC1F16544900D8B517 /* Person+hh.h */,
+				709ACCAD1F16544900D8B517 /* Person+hh.m */,
 				709ACCA91F16502300D8B517 /* Person+yy.h */,
 				709ACCAA1F16502300D8B517 /* Person+yy.m */,
 				709ACCA61F164EE700D8B517 /* Person.h */,

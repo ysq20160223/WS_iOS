@@ -11,7 +11,7 @@
 @implementation Person
 
 - (void)method {
-    NSLog(@"method Person");
+    NSLog(@"Person");
 }
 
 @end

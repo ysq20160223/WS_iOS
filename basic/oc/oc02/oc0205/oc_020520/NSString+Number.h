@@ -10,8 +10,8 @@
 
 @interface NSString (Number)
 
-+ (int) numberCountOfString:(NSString *)s;
++ (int)numberCountOfString:(NSString *)s;
 
-- (int) numberCount;
+- (int)numberCount;
 
 @end
