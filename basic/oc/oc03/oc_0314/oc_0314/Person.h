@@ -23,8 +23,6 @@
     04, set 和 get 的名称
         getter = xxx
         setter = setXxx:
- 
- 
  */
 
 #import <Foundation/Foundation.h>

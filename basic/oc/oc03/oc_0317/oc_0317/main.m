@@ -33,18 +33,14 @@
 
 int main() {
     @autoreleasepool {
-        
-        Person *p = [[[Person alloc] init] autorelease];
-        
-        p.age = 21;
-        
+        Person *p = [[[Person alloc] initWithAge:21] autorelease];
         NSLog(@"age: %d", p.age);
-        
     }
     
     NSLog(@"main end");
     return 0;
 }
+
 
 
 

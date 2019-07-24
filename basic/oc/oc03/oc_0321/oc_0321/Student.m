@@ -10,6 +10,12 @@
 
 @implementation Student
 
++ (id)studentWithAge:(int)age andMoney:(int)money {
+    Student *student = [self personWithAge:age];
+    student.money = money;
+    return student;
+}
+
 - (void)dealloc {
     NSLog(@"money: %d", _money);
     [super dealloc];

@@ -11,11 +11,9 @@
 #import "../../../../../PreHeader.h"
 
 @interface Car : NSObject
-{
-    int _speed;
-}
 
-- (void)setSpeed:(int)speed;
-- (int)speed;
+@property NSInteger speed;
+
+- (id)initWithSpeed:(NSInteger)speed;
 
 @end

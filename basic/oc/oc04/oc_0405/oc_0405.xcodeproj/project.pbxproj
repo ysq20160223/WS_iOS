@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181801D81F1A5CCC00901ADC /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 181801D71F1A5CCC00901ADC /* Dog.m */; };
-		181801DB1F1A5DEA00901ADC /* BlockDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 181801DA1F1A5DEA00901ADC /* BlockDog.m */; };
+		181801DB1F1A5DEA00901ADC /* BlackDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 181801DA1F1A5DEA00901ADC /* BlackDog.m */; };
 		18B864FE1F1A4EB900633086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B864FD1F1A4EB900633086 /* main.m */; };
 		18B865081F1A518700633086 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B865071F1A518700633086 /* Person.m */; };
 /* End PBXBuildFile section */
@@ -28,15 +28,15 @@
 /* Begin PBXFileReference section */
 		181801D61F1A5CCC00901ADC /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		181801D71F1A5CCC00901ADC /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
-		181801D91F1A5DEA00901ADC /* BlockDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockDog.h; sourceTree = "<group>"; };
-		181801DA1F1A5DEA00901ADC /* BlockDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockDog.m; sourceTree = "<group>"; };
+		181801D91F1A5DEA00901ADC /* BlackDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackDog.h; sourceTree = "<group>"; };
+		181801DA1F1A5DEA00901ADC /* BlackDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackDog.m; sourceTree = "<group>"; };
 		18B864FA1F1A4EB900633086 /* oc_0405 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = oc_0405; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B864FD1F1A4EB900633086 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B865051F1A508700633086 /* MyProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProtocol.h; sourceTree = "<group>"; };
 		18B865061F1A518700633086 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		18B865071F1A518700633086 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		18B865091F1A54BC00633086 /* MyProtocol_01.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProtocol_01.h; sourceTree = "<group>"; };
-		18B8650A1F1A562900633086 /* MyProtocol_02.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProtocol_02.h; sourceTree = "<group>"; };
+		18B865091F1A54BC00633086 /* MyProtocol_A.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProtocol_A.h; sourceTree = "<group>"; };
+		18B8650A1F1A562900633086 /* MyProtocol_B.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProtocol_B.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,14 +71,14 @@
 			children = (
 				18B864FD1F1A4EB900633086 /* main.m */,
 				18B865051F1A508700633086 /* MyProtocol.h */,
-				18B865091F1A54BC00633086 /* MyProtocol_01.h */,
-				18B8650A1F1A562900633086 /* MyProtocol_02.h */,
+				18B865091F1A54BC00633086 /* MyProtocol_A.h */,
+				18B8650A1F1A562900633086 /* MyProtocol_B.h */,
 				18B865061F1A518700633086 /* Person.h */,
 				18B865071F1A518700633086 /* Person.m */,
 				181801D61F1A5CCC00901ADC /* Dog.h */,
 				181801D71F1A5CCC00901ADC /* Dog.m */,
-				181801D91F1A5DEA00901ADC /* BlockDog.h */,
-				181801DA1F1A5DEA00901ADC /* BlockDog.m */,
+				181801D91F1A5DEA00901ADC /* BlackDog.h */,
+				181801DA1F1A5DEA00901ADC /* BlackDog.m */,
 			);
 			path = oc_0405;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			files = (
 				181801D81F1A5CCC00901ADC /* Dog.m in Sources */,
 				18B865081F1A518700633086 /* Person.m in Sources */,
-				181801DB1F1A5DEA00901ADC /* BlockDog.m in Sources */,
+				181801DB1F1A5DEA00901ADC /* BlackDog.m in Sources */,
 				18B864FE1F1A4EB900633086 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

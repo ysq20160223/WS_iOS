@@ -14,7 +14,7 @@
 
 @interface Person : NSObject
 
-@property (nonatomic, assign) int age;
+@property (nonatomic, assign) int age; // automatic
 
 @property (nonatomic, strong) Dog *dog; // strong 为强指针
 

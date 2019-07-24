@@ -18,7 +18,6 @@ int main() {
     Person *person = [[Person alloc] init];
     
     Book *book = [[Book alloc] init];
-    
     [person setBook:book];
     
     

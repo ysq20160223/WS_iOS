@@ -14,4 +14,6 @@
 
 @property (nonatomic, assign) int money;
 
++ (id)studentWithAge:(int)age andMoney:(int)money;
+
 @end

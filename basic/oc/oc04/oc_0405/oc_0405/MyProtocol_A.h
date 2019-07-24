@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MyProtocol_01 <NSObject>
+@protocol MyProtocol_A <NSObject>
 
 // @required 要求实现, 不实现就会发出警告
 
 @required
-- (void)requiredMethod_01;
+- (void)requiredMethodA;
 
 @optional
-- (void)optionalMethod_01;
+- (void)optionalMethodA;
 
 
 @end

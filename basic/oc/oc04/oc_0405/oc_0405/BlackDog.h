@@ -1,13 +1,15 @@
 //
-//  BlockDog.m
+//  BlockDog.h
 //  oc_0405
 //
 //  Created by Apple on 2017/7/15.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "BlockDog.h"
+#import <Foundation/Foundation.h>
 
-@implementation BlockDog
+#import "Dog.h"
+
+@interface BlackDog : Dog
 
 @end

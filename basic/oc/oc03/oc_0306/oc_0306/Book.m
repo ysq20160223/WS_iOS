@@ -18,9 +18,9 @@
     return _price;
 }
 
--(void)dealloc {
+- (void)dealloc {
     
-    NSLog(@"Book dealloc");
+    NSLog(@"");
     
     [super dealloc];
 }

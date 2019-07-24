@@ -18,9 +18,8 @@
     return 5;
 }
 
-- (void)dealloc
-{
-    NSLog(@"BAgent dealloc");
+- (void)dealloc {
+    NSLog(@"");
 }
 
 @end

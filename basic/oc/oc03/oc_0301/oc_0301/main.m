@@ -43,9 +43,7 @@ int main() {
     
     Person *p = [[Person alloc] init];
     
-    NSUInteger c = [p retainCount];
-    
-    NSLog(@"c = %ld", c);
+    NSLog(@"c = %ld", [p retainCount]);
     
     [p release];
     
@@ -54,7 +52,8 @@ int main() {
     
     
     p = nil; // 指针 p 变成空指针
-    [p release]; // 调用了 p = nil; 之后, 不会报错
+//    [p release]; // 调用了 p = nil; 之后, 不会报错
+    p.age = 10;
     
     return 0;
 }

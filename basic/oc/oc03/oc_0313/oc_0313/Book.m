@@ -11,7 +11,7 @@
 @implementation Book
 
 - (void)dealloc{
-    NSLog(@"Book dealloc");
+    NSLog(@"");
     [super dealloc];
 }
 

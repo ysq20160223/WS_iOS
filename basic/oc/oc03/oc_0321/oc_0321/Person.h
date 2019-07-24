@@ -14,9 +14,9 @@
 
 @property (nonatomic, assign) int age;
 
-+ (id) person;
++ (id)person;
 
-+ (id) personWithAge:(int) age;
++ (id)personWithAge:(int) age;
 
 @end
 

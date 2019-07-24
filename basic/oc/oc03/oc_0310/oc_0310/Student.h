@@ -13,28 +13,32 @@
 #import "Car.h"
 #import "Dog.h"
 
-@interface Student : NSObject
-{
-    int _no;
+@interface Student : NSObject {
     NSString *_name;
     Car *_car;
     Dog *_dog;
 }
 
-//
-- (void) setNo:(int) no;
-- (int)no;
+@property int no;
+
+- (id)initWithNo:(int)no;
 
 //
-- (void) setName:(NSString *)name;
+- (void)setName:(NSString *)name;
 - (NSString *)name;
 
 //
-- (void) setCar:(Car *)car;
+- (void)setCar:(Car *)car;
 - (Car *)car;
 
 //
-- (void) setDog:(Dog *)dog;
+- (void)setDog:(Dog *)dog;
 - (Dog *)dog;
 
 @end
+
+
+
+
+
+

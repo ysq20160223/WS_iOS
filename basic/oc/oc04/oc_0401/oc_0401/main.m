@@ -53,42 +53,42 @@ void (^printLine)(int) = ^(int n) {
 typedef int (^TypedefBlock)(int, int);
 
 void fun_03() {
-    TypedefBlock sum = ^(int a, int b) {
+    TypedefBlock typeSum = ^(int a, int b) {
         return a + b;
     };
     
-    TypedefBlock minus = ^(int a, int b) {
+    TypedefBlock typeMinus = ^(int a, int b) {
         return a - b;
     };
     
-    NSLog(@"sum: %d, minus: %d", sum(1, 2), minus(1, 2));
+    NSLog(@"sum: %d, minus: %d", typeSum(1, 2), typeMinus(1, 2));
 }
 
 int additive(int a, int b) {
     return a + b;
 }
 
+
 //
 int main() {
     @autoreleasepool {
-        
-        
-//        int(*pAdditive)(int, int) = additive; // 指向函数的指针
-//        NSLog(@"%d + %d: %d", 1, 2, pAdditive(1, 2));
+        int(*pAdditive)(int, int) = additive; // 指向函数的指针
+        NSLog(@"%d + %d: %d", 1, 2, pAdditive(1, 2));
+        printLine(1);
         
         
         // 0401
-//        myBlock();
+        myBlock();
+        printLine(1);
         
         
         // 0402
-//        NSLog(@"sum: %d", sum(1, 2));
-//        printLine(3);
+        NSLog(@"sum: %d", sum(1, 2));
+        printLine(1);
         
         
         // 0403
         fun_03();
-        
     }
     return 0;
 }

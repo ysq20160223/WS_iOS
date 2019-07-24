@@ -10,12 +10,11 @@
 
 @implementation Student
 
-//
-- (void)setNo:(int)no {
-    _no = no;
-}
-- (int)no {
-    return _no;
+- (id)initWithNo:(int)no {
+    if (self = [super init]) {
+        _no = no;
+    }
+    return self;
 }
 
 //

@@ -11,8 +11,8 @@
 #import "../../../../../PreHeader.h"
 
 #import "MyProtocol.h"
-#import "MyProtocol_01.h"
-#import "MyProtocol_02.h"
+#import "MyProtocol_A.h"
+#import "MyProtocol_B.h"
 
 @implementation Person
 
@@ -22,7 +22,7 @@
 
 
 // ------
-- (void)requiredMethod_01 {
+- (void)requiredMethodA {
     NSLog(@"");
 }
 
@@ -31,7 +31,7 @@
 }
 
 //-----
-- (void)requiredMethod_02 {
+- (void)requiredMethodB {
     NSLog(@"");
 }
 

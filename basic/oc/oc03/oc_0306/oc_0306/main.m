@@ -9,7 +9,6 @@
 /*
     01, 通过 alloc/new/copy 创建一个对象, 必须调用 release/autorelease
     02, 谁 retain 谁 release
- 
  */
 
 #import <Foundation/Foundation.h>
@@ -26,9 +25,9 @@ int main() {
     Person *p1 = [[Person alloc] init];
     [p1 setBook:book];
     
-    
     [p1 release];
     p1 = nil;
+    
     [book release];
     book = nil;
     

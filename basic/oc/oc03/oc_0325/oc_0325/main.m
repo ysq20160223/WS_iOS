@@ -43,7 +43,6 @@ void fun_01() {
     // 弱指针 : 没有意义
     __weak Person *p2 = [[Person alloc] init];
     NSLog(@"p2: %p", p2); //
-    
 }
 
 //

@@ -10,11 +10,20 @@
 
 @implementation Person
 
-- (void)dealloc {
 
+- (id)initWithAge:(int)age {
+    if (self = [super init]) {
+        _age = age;
+    }
+    return self;
+}
+
+- (void)dealloc {
     NSLog(@"");
-    
     [super dealloc];
 }
 
 @end
+
+
+

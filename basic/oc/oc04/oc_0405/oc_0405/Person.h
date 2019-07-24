@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 
 #import "MyProtocol.h"
-#import "MyProtocol_01.h"
-#import "MyProtocol_02.h"
+#import "MyProtocol_A.h"
+#import "MyProtocol_B.h"
 
 //@protocol MyProtocol;
-//@protocol MyProtocol_01;
-//@protocol MyProtocol_02;
+//@protocol MyProtocol_A;
+//@protocol MyProtocol_B;
 
-// @interface Person : NSObject <MyProtocol, MyProtocol_01>
-@interface Person : NSObject <MyProtocol_02>
+// @interface Person : NSObject <MyProtocol, MyProtocol_A>
+@interface Person : NSObject <MyProtocol_B>
 
 @property (nonatomic, strong) id<MyProtocol> obj;
 

@@ -15,20 +15,17 @@
 #import "AAgent.h"
 #import "BAgent.h"
 
-int main(int argc, const char * argv[]) {
+int main() {
     @autoreleasepool {
         Person *p = [[Person alloc] init];
         
         //
-        AAgent *aAgent = [[AAgent alloc] init];
-        p.delegate = aAgent;
+        p.delegate = [[AAgent alloc] init];
         [p buyTicket];
         
         //
-        BAgent *bAgent = [[BAgent alloc] init];
-        p.delegate = bAgent;
+        p.delegate = [[BAgent alloc] init];
         [p buyTicket];
-        
     }
     return 0;
 }

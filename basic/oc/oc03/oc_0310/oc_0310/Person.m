@@ -10,6 +10,14 @@
 
 @implementation Person
 
+
+- (id)initWithAge:(NSInteger)age {
+    if (self = [super init]) {
+        _age = age;
+    }
+    return self;
+}
+
 - (void)setCar:(Car *)car {
     if(_car != car) {
         [_car release]; // 将旧车 release
@@ -22,19 +30,10 @@
 }
 
 
-- (void)setAge:(int)age {
-    _age = age;
-}
-- (int)age {
-    return _age;
-}
-
-
 - (void)dealloc {
-    
     [_car release];
     
-    NSLog(@"age: %d", _age);
+    NSLog(@"age: %ld", _age);
     [super dealloc];
 }
 

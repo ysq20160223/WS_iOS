@@ -14,4 +14,6 @@
 
 @property (nonatomic, assign) int age;
 
+- (id)initWithAge:(int)age;
+
 @end

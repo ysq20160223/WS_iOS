@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 #import "MyProtocol.h"
-#import "MyProtocol_01.h"
+#import "MyProtocol_A.h"
 
 // 0407
-@protocol MyProtocol_02 <MyProtocol, MyProtocol_01>
+@protocol MyProtocol_B <MyProtocol, MyProtocol_A>
 
-- (void)requiredMethod_02;
+- (void)requiredMethodB;
 
 @end
 

@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "../../../../../PreHeader.h"
 
-@interface Book : NSObject
-{
+@interface Book : NSObject {
     int _price;
 }
 
-- (void) setPrice:(int) price;
-- (int) price;
+- (void)setPrice:(int) price;
+- (int)price;
 
 @end

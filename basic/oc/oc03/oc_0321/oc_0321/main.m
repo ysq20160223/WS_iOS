@@ -45,7 +45,6 @@ void fun_01() {
 void fun_02() {
     @autoreleasepool {
         NSString *s = @"yy"; // Next Step
-        
         NSLog(@"s: %@, %@", s, [NSString stringWithFormat:@"age: %d", 21]);
     }
 }
@@ -53,9 +52,10 @@ void fun_02() {
 // 
 void fun_03() {
     @autoreleasepool {
-        Student *student = [Student personWithAge:21];
+//        Student *student = [Student personWithAge:21];
+//        student.money = 1;
         
-        student.money = 1;
+        Student *student = [Student studentWithAge:21 andMoney:1];
     }
 }
 

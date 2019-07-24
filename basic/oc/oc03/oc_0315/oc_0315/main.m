@@ -17,27 +17,27 @@ int main() {
     
     // --
     User *originalUser = [[User alloc] init];
-    originalUser.name = @"原创作者";
+    originalUser.name = @"yy";
     
     Status *originalStatus = [[Status alloc] init];
     originalStatus.text = @"这是原创";
     originalStatus.user = originalUser;
     
     //
-    User *uer = [[User alloc] init];
-    uer.name = @"转发的人";
+    User *user = [[User alloc] init];
+    user.name = @"转发的人";
     
     
     Status *status = [[Status alloc] init];
     status.retweenStatus = originalStatus;
     status.text = @"这是转发别人的";
-    status.user = uer;
+    status.user = user;
     
     //
     [originalUser release];
     [originalStatus release];
     
-    [uer release];
+    [user release];
     [status release];
     
     return 0;

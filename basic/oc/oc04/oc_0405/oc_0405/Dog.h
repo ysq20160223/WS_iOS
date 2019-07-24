@@ -12,4 +12,6 @@
 
 @interface Dog : NSObject <MyProtocol>
 
+
+
 @end

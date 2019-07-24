@@ -19,23 +19,17 @@
 /*
     内存管理代码规范
         只要调用了 alloc, 必须 release/autorelease
- 
  */
 
 void fun_01() {
-    Person *p = [[Person alloc] init];
-    p.age = 21;
+    Person *p = [[Person alloc] initWithAge:21];
     
     //
-    Car *c1 = [[Car alloc] init];
-    c1.speed = 170;
-    
+    Car *c1 = [[Car alloc] initWithSpeed:170];
     p.car = c1;
     
     //
-    Car *c2 = [[Car alloc] init];
-    c2.speed = 210;
-    
+    Car *c2 = [[Car alloc] initWithSpeed:210];
     p.car = c2;
     
     //
@@ -45,21 +39,15 @@ void fun_01() {
 }
 
 void fun_02() {
-    Student *student = [[Student alloc] init];
-    
-    [student setNo:21];
-    
-    //
+    Student *student = [[Student alloc] initWithNo:21];
     [student setName:@"yy"]; // @"" 不是通过 alloc 产生, 不用 release
     
     //
-    Car *car = [[Car alloc] init];
-    [car setSpeed:300];
-    [student setCar:car];
-    
-    //
+    Car *car = [[Car alloc] initWithSpeed:210];
     Dog *dog = [[Dog alloc] init];
-    [student setDog:dog];
+
+    student.car = car;
+    student.dog = dog;
     
     [dog release];
     [car release];

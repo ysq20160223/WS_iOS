@@ -12,12 +12,11 @@
 
 #import "Book.h"
 
-@interface Person : NSObject
-{
+@interface Person : NSObject {
     Book *_book;
 }
 
-- (void) setBook:(Book *)book;
+- (void)setBook:(Book *)book;
 - (Book *)book;
 
 @end

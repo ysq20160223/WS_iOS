@@ -10,12 +10,11 @@
 
 @implementation Car
 
-- (void)setSpeed:(int)speed {
-    _speed = speed;
-}
-
-- (int)speed {
-    return _speed;
+- (id)initWithSpeed:(NSInteger)speed {
+    if(self = [super init]) {
+        _speed = speed;
+    }
+    return self;
 }
 
 - (void)dealloc {

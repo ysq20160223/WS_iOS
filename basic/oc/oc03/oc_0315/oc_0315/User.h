@@ -21,6 +21,7 @@ typedef struct {
 } Date;
 
 
+
 @interface User : NSObject
 
 @property (nonatomic, retain, readwrite) NSString *name;

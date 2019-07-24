@@ -10,13 +10,12 @@
 
 #import "Person.h"
 
-int main(int argc, const char * argv[]) {
+int main() {
     
     Person *person = [[Person alloc] init];
+    person.rich = YES;
     
-    [person setRich:YES];
-    
-    NSLog(@"isRich = %d", [person isRich]);
+    NSLog(@"isRich: %d", person.isRich);
     
     [person release];
     

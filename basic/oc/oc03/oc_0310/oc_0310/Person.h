@@ -12,16 +12,15 @@
 
 #import "Car.h"
 
-@interface Person : NSObject
-{
+@interface Person : NSObject {
     Car *_car;
-    int _age;
 }
+
+@property NSInteger age;
+
+- (id)initWithAge:(NSInteger)age;
 
 - (void)setCar:(Car *)car;
 - (Car *)car;
-
-- (void) setAge:(int)age;
-- (int) age;
 
 @end

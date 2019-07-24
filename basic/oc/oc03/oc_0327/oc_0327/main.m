@@ -7,7 +7,7 @@
 //
 
 /*
-    01, 工程名 -> Build Phases -> Compile Sources -> 双击某个文件
+    01, 工程名 -> TARGETS -> Build Phases -> Compile Sources -> 双击某个文件
         添加 arc : -f-objc-arc
         取消 arc : -fno-objc-arc
  */
