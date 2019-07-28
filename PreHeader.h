@@ -10,8 +10,8 @@
 
 
 
-#ifndef NSLogHeader_h
-#define NSLogHeader_h
+#ifndef PreHeader_h
+#define PreHeader_h
 
 
 #pragma mark - note 在 oc 代码中需有宏定义 DEBUG
@@ -36,5 +36,5 @@
 //#endif
 
 
-#endif /* NSLogHeader_h */
+#endif /* PreHeader_h */
 

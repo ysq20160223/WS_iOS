@@ -26,10 +26,15 @@
     
 //    NSLog(@"viewDidLoad");
     
+    UIApplication *application = [UIApplication sharedApplication];
+    CGRect rect = application.statusBarFrame;
+    
     // 1, 创建按钮
     UIButton *btn = [[UIButton alloc] init]; // 1.1
-    NSLog(@"%p", btn);
-    btn.frame = CGRectMake(0, 0, 100, 100); // 1.2 位置和尺寸
+    btn.frame = CGRectMake(0, rect.size.height, 100, 100); // 1.2 位置和尺寸
+    CGPoint centerPoint = btn.center;
+    centerPoint.x = self.view.frame.size.width * 0.5;
+    btn.center = centerPoint;
     
     // 1.3 设置普通状态下的属性
     [btn setBackgroundImage:[UIImage imageNamed:@"oc.png"] forState:UIControlStateNormal]; // 1.3.1 设置背景图片
@@ -51,13 +56,12 @@
     // 020216
     // 3, 添加文本输入框
     UITextField *field = [[UITextField alloc] init];
-    field.frame = CGRectMake(100, 100, 100, 50);
+    field.frame = CGRectMake(100, 300, 100, 50);
     field.backgroundColor = [UIColor cyanColor];
-    
     
     CGFloat centerX = self.view.frame.size.width * 0.5;
     CGFloat centerY = self.view.frame.size.height * 0.5;
-//    field.center = CGPointMake(centerX, centerY); // 重新设置中心
+    field.center = CGPointMake(centerX, centerY); // 重新设置中心
     NSLog(@"centerX: %f, centerY: %f", centerX, centerY);
     
     // 设置字体

@@ -13,8 +13,8 @@
 @end
 
 
-@implementation ViewController
 
+@implementation ViewController
 
 - (void)btnClickWithBlock:(void (^)())block {
     [UIView beginAnimations:nil context:nil]; // 0, 动画 (头部, 开始动画)
@@ -29,7 +29,7 @@
 - (IBAction)direction:(id)sender {
 //    NSLog(@"up");
     
-    // oc 语法规定 : 不允许直接修改 某个对象中结构体属性的成员
+    // oc 不允许直接修改 某个对象中结构体属性的成员
     
     [self btnClickWithBlock:^{
         CGFloat delta = 100;

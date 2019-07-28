@@ -13,7 +13,6 @@
 // 声明两个属性用来保存2个文本输入框
 @property (nonatomic, weak)IBOutlet UITextField *uiTf1;
 @property (nonatomic, weak)IBOutlet UITextField *uiTf2;
-
 //
 @property (nonatomic, weak)IBOutlet UILabel *uiLbl;
 

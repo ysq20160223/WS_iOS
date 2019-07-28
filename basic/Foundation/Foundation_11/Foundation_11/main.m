@@ -19,13 +19,11 @@
 
 int main() {
     @autoreleasepool {
-        
-        NSMutableArray *array = [NSMutableArray arrayWithObjects:@"yy", @"jj", @"yy", nil]; // 初始化 - 添加元素
+        NSMutableArray *array = [NSMutableArray arrayWithObjects:@"yy", @"jj", @"hh", nil]; // 初始化 - 添加元素
         //    NSMutableArray *array = @[@"yy", @"jj"]; // error: 返回是 NSArray *
         
         [array addObject:[[Person alloc] init]];
-        
-        [array addObject:@"mm"];
+        [array addObject:@"xx"];
         
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"idx: %ld, obj: %@", idx, obj);
@@ -37,7 +35,7 @@ int main() {
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"idx: %ld, obj: %@", idx, obj);
         }];
-        
+    
     }
     return 0;
 }

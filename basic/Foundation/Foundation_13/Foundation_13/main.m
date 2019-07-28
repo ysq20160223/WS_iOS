@@ -20,7 +20,6 @@
 void fun_01() {
     //
     NSDictionary *dic = [NSDictionary dictionaryWithObject:@"yy" forKey:@"y"];
-    
     NSLog(@"%@", [dic objectForKey:@"y"]);
     
     //

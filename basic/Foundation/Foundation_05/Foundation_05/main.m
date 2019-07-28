@@ -44,29 +44,26 @@ void fun_01() {
 //    NSLog(@"%@", [NSString stringWithFormat:@"This is %@", @"s3 - class method"]); // 同上一句
     
     // 4
-//    NSLog(@"%@", [[NSString alloc] initWithUTF8String:"This is s4"]); // c字符串-oc字符串
+//    NSLog(@"%@", [[NSString alloc] initWithUTF8String:"This is s4"]); // c字符串 -> oc字符串
 //    NSLog(@"%@", [NSString stringWithUTF8String:"This is s4 - class method"]); // 同上一句
-//    printf("%s", [@"oc字符串-c字符串\n" UTF8String]); // oc字符串-c字符串
+//    printf("%s", [@"oc字符串 -> c字符串\n" UTF8String]); // oc字符串 -> c字符串
     
     // 5 - 读取本地文件
-//    NSString *file = @"/Users/Apple/Desktop/iOS/iOS_basic_advantage/basic/Foundation/Foundation_05/Foundation_05/main.m";
-//    NSLog(@"\n%@", [[NSString alloc] initWithContentsOfFile:file encoding:NSUTF8StringEncoding error:nil]);
+    NSString *fullPath = @"/Users/Apple/Desktop/iOS/WS_iOS/PreHeader.h";
+//    NSLog(@"\n%@", [[NSString alloc] initWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
+    NSLog(@"\n%@", [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
     
     // 6 -
-//    NSString *urlPath = [[NSString alloc] initWithFormat:@"file://%@", file]; // 将 file 封装成 URL
-    NSString *urlPath = @"https://www.baidu.com"; // 百度网页数据
-
-    NSURL *url = [[NSURL alloc] initWithString:urlPath];
-//    NSURL *url = [NSURL URLWithString:urlPath]; // 同上一句
-//    NSURL *url = [NSURL fileURLWithPath:file]; // 同上一句
+//    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"file://%@", fullPath]];
+//    NSURL *url = [NSURL fileURLWithPath:fullPath]; // 同上一句
+    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"]; // 同上一句
     
-    NSLog(@"\n%@",  [[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]);
-    
+    NSLog(@"\n%@",  [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]);
 }
 
 void fun_02() {
     // 输出到同级文件夹中, atomically : YES 成功才会创建文件
-    [[NSString stringWithFormat:@"%@", [NSDate date]] writeToFile:@"/Users/Apple/Desktop/iOS/iOS_basic_advantage/basic/Foundation/Foundation_05/Foundation_05/foundation_05.txt" atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    [[NSString stringWithFormat:@"%@", [NSDate date]] writeToFile:@"/Users/Apple/Desktop/iOS/WS_iOS/basic/Foundation/Foundation_05/Foundation_05/foundation_05.txt" atomically:YES encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"writeToFile end");
 }
 
@@ -90,9 +87,9 @@ int main() {
         
 //        fun_01();
         
-//        fun_02();
+        fun_02();
         
-        fun_03();
+//        fun_03();
         
     }
     return 0;

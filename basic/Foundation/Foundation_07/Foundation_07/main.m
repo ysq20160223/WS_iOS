@@ -49,7 +49,6 @@ void fun_01() {
     printNSArray(array2, @"array2");
     NSLog(@"---");
     printNSArray(array3, @"array3");
-    
 }
 
 void fun_02() {
@@ -88,11 +87,8 @@ void fun_02() {
 
 int main() {
     @autoreleasepool {
-        
 //        fun_01();
-        
         fun_02();
-        
     }
     return 0;
 }

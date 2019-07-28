@@ -24,8 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSBundle *bundle = [NSBundle mainBundle]; // 1, 获得所有的描述
-    NSString *path = [bundle pathForResource:@"descs" ofType:@"plist"]; // 2, 获得文件的全路径
+    // 1, 获得所有的描述
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"descs" ofType:@"plist"]; // 2, 获得文件的全路径
 //    NSLog(@"path:%@", path);
     
     _allDescArray = [NSArray arrayWithContentsOfFile:path]; // 3, 加载 path 对应的文件来创建数组

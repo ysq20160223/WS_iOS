@@ -16,10 +16,10 @@
 
 #import <Foundation/Foundation.h>
 
-int main(int argc, const char * argv[]) {
+#import "../../../../PreHeader.h"
+
+int main() {
     @autoreleasepool {
-        
-     
         NSNumber *numInt = [NSNumber numberWithInt:21]; // 基本类型转为对象
         NSNumber *numFloat = @55.5; // 等价于 [NSNumber numberWithFloat:55];
         
@@ -33,19 +33,14 @@ int main(int argc, const char * argv[]) {
         int age = [numInt intValue]; // 将对象转化为基本数据类型
         int height = [@"177" intValue]; //
         NSInteger width = [@"211" integerValue];
-        
         NSLog(@"age: %d, height: %d, width: %ld", age, height, width);
-        
-        
         
         //
         CGPoint p = CGPointMake(1, 1);
         NSValue *value = [NSValue valueWithPoint:p]; // 将结构体转化为对象
         [value pointValue]; // 将对象转化为结构体
-        
     }
     return 0;
-    
 }
 
 
