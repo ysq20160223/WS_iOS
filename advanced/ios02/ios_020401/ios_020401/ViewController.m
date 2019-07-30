@@ -35,7 +35,7 @@
     int screenW = self.view.frame.size.width;
     int screenH = self.view.frame.size.height;
     
-    _imageLayout.frame = CGRectMake(0, 0, screenW, screenH - _segmented.frame.size.height - 20);
+    _layout.frame = CGRectMake(0, 0, screenW, screenH - _segmented.frame.size.height - 20);
     
     
     CGRect frame = CGRectMake(10, screenH - _segmented.frame.size.height - 10, screenW - 20, _segmented.frame.size.height);
@@ -75,7 +75,7 @@
             [self addImg:imgName x:x y:y];
         } else {
             //        [self addImg:imgName x:x y:y];
-            UIView *child = _imageLayout.subviews[i];
+            UIView *child = _layout.subviews[i];
             
             CGRect rect = child.frame;
             rect.origin = CGPointMake(x, y);
@@ -89,7 +89,7 @@
     UIImageView *iv = [[UIImageView alloc] init];
     iv.image = [UIImage imageNamed:icon];
     iv.frame = CGRectMake(x, y, kImgWidth, kImgHeight);
-    [_imageLayout addSubview:iv];
+    [_layout addSubview:iv];
 }
 
 @end

@@ -25,11 +25,11 @@
 #define kRowDivider 10
 
 // 类扩展(class extension, 匿名分类)
-@interface ViewController ()
-{
+@interface ViewController () {
 
 }
 @end
+
 
 @implementation ViewController
 
