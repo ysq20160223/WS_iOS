@@ -21,7 +21,6 @@
 + (id)rowViewWithIcon:(NSString *)icon andName:(NSString *)name {
     RowView *view = [[NSBundle mainBundle] loadNibNamed:@"RowView" owner:nil options:nil][0];
     
-    
 //    // 1, 设置图标
 //    UIButton *iconBtn = (UIButton *)[view viewWithTag:1];
 //    [iconBtn setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
@@ -40,9 +39,9 @@
 }
 
 
-- (IBAction)iconBtnClick:(UIButton *)sender {
-}
-
-- (IBAction)deleteBtnClick:(UIButton *)sender {
-}
 @end
+
+
+
+
+

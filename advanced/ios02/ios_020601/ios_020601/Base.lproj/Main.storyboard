@@ -31,7 +31,7 @@
                                     <barButtonItem systemItem="flexibleSpace" id="Xtb-Xd-be4"/>
                                     <barButtonItem enabled="NO" systemItem="trash" id="dbp-YG-ixS">
                                         <connections>
-                                            <action selector="remove:" destination="BYZ-38-t0r" id="8ob-BO-53w"/>
+                                            <action selector="trash:" destination="BYZ-38-t0r" id="kVh-i2-fNf"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -41,7 +41,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="removeItem" destination="dbp-YG-ixS" id="51E-23-ElL"/>
+                        <outlet property="barBtnTrash" destination="dbp-YG-ixS" id="auF-tB-Knd"/>
                         <outlet property="toolBar" destination="gKT-F4-Bx5" id="TNi-LW-pss"/>
                     </connections>
                 </viewController>

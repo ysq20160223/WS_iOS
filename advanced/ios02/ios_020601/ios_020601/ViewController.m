@@ -26,7 +26,8 @@
 
 // 类扩展(class extension, 匿名分类)
 @interface ViewController () {
-
+    int _screenW;
+    int _screenH;
 }
 @end
 
@@ -36,21 +37,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    _screenW = self.view.frame.size.width;
 
-    _toolBar.frame = CGRectMake(0, 20, self.view.frame.size.width, _toolBar.frame.size.height);
+    _toolBar.frame = CGRectMake(0, kStatusBarH, _screenW, _toolBar.frame.size.height);
 }
 
 - (IBAction)add:(UIBarButtonItem *)sender {
 //    NSLog(@"add");
     UIView *lastView = [self.view.subviews lastObject];
+    NSLog(@"lastView: %@: ", lastView);
     
     CGFloat rowY = lastView.frame.origin.y + lastView.frame.size.height + kRowDivider;
 
     // 1, 创建行
-//    UIView *rowView = [self createRowView];
-    
     UIView *rowView;
-    
     if (self.view.subviews.count % 3 == 0) {
         rowView = [self createRowViewWithCode];
     } else if (self.view.subviews.count % 3 == 1){
@@ -58,26 +59,20 @@
     } else if (self.view.subviews.count % 3 == 2){
         rowView = [self createRowViewWithRowView];
     }
-    
+//    UIView *rowView = [self createRowViewWithCode];;
     
     [self.view addSubview:rowView]; // 2, 添加一行到控制器的view中
+    _barBtnTrash.enabled = YES; // 3, 右边删除图标 enable
     
-    _removeItem.enabled = YES; // 3, 右边删除图标 enable
-    
-    int screenW = self.view.frame.size.width;
+   
     // 4, 执行动画
-    rowView.frame = CGRectMake(screenW, rowY, screenW, kRowHeight);
-    rowView.alpha = 0.0;
+    rowView.frame = CGRectMake(_screenW, rowY, _screenW, kRowHeight);
+    rowView.alpha = 0;
     
-//    [UIView beginAnimations:nil context:nil];
-//    [UIView setAnimationDuration:0.5];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        rowView.frame = CGRectMake(0, rowY, screenW, kRowHeight);
+    [UIView animateWithDuration:1 animations:^{
+        rowView.frame = CGRectMake(0, rowY, _screenW, kRowHeight);
         rowView.alpha = 1;
     }]; // 官方推荐使用
-    
-//    [UIView commitAnimations];
 }
 
 
@@ -88,15 +83,12 @@
 - (UIView *)createRowViewWithRowView {
     
     int randomIndex = arc4random_uniform(9);
-    
     NSString *iconName = [NSString stringWithFormat:@"01%d.png", randomIndex];
     NSString *labelName = [NSString stringWithFormat:@"loadNibName: %d", randomIndex];
     
     RowView *rowView = [RowView rowViewWithIcon:iconName andName:labelName];
-    
     [rowView.iconBtn addTarget:self action:@selector(iconClick:) forControlEvents:UIControlEventTouchUpInside];
     [rowView.deleteBtn addTarget:self action:@selector(deleteClick:) forControlEvents:UIControlEventTouchUpInside];
-    
     return rowView;
 }
 
@@ -146,30 +138,22 @@
     UIView *rowView = [[UIView alloc] init];
     rowView.backgroundColor = [UIColor magentaColor];
     
-    
     // 2, 添加头像
     UIButton *iconBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    iconBtn.frame = CGRectMake(20, 0, kIconWidth, kRowHeight);
+    iconBtn.frame = CGRectMake(0, 0, kIconWidth, kRowHeight);
     
-    // 产生随机文件名
-//    int randomIndex = arc4random() % 9;
-    int randomIndex = arc4random_uniform(9); // 和上面一行等价
-    NSString *iconName = [NSString stringWithFormat:@"01%d.png", randomIndex];
-    
+    int randomIndex = arc4random_uniform(9); // arc4random() % 9
+    NSString *iconName = [NSString stringWithFormat:@"01%d.png", randomIndex]; // 产生随机文件名
     [iconBtn setImage:[UIImage imageNamed:iconName] forState:UIControlStateNormal];
-    
-    // 添加监听器
-    [iconBtn addTarget:self action:@selector(iconClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [iconBtn addTarget:self action:@selector(iconClick:) forControlEvents:UIControlEventTouchUpInside]; // 添加监听器
     iconBtn.tag = 1;
     [rowView addSubview:iconBtn];
     
     // 3, 添加名字 (标签)
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.frame = CGRectMake(0, 0, self.view.frame.size.width, kRowHeight);
+    nameLabel.frame = CGRectMake(0, 0, _screenW, kRowHeight);
     nameLabel.textAlignment = NSTextAlignmentCenter;
-    nameLabel.text = [NSString stringWithFormat:@"%d", randomIndex];
-    
+    nameLabel.text = [NSString stringWithFormat:@"code: %d", randomIndex];
     nameLabel.tag = 2;
     [rowView addSubview:nameLabel];
     
@@ -179,25 +163,26 @@
     deleteBtn.frame = CGRectMake(285, 0, kRowHeight, kRowHeight);
     [deleteBtn setTitle:@"delete" forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteClick:) forControlEvents:UIControlEventTouchUpInside];
-    
     [rowView addSubview:deleteBtn];
     
     return rowView;
 }
 
 // 每一行的 delete
--(void)deleteClick:(UIButton *)btn {
+- (void)deleteClick:(UIButton *)btn {
     NSLog(@"");
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:1 animations:^{
+        _barBtnTrash.enabled = NO;
+        
         CGRect rect = btn.superview.frame;
-        rect.origin.x = self.view.frame.size.width;
+        rect.origin.x = _screenW;
         btn.superview.frame = rect;
         btn.superview.alpha = 0;
     } completion:^(BOOL finished) {
         // 1, 即将删除的这行在数组中的位置
         long startIndex = [self.view.subviews indexOfObject:btn.superview];
         [btn.superview removeFromSuperview]; // 2, 删除当前行
-        _removeItem.enabled = self.view.subviews.count != 1; // 4, 是否仅剩 UIToolBar
+        _barBtnTrash.enabled = self.view.subviews.count != 1; // 4, 是否仅剩 UIToolBar
         
         [UIView animateWithDuration:0.35 animations:^{
             // 3, 遍历后面的子控件
@@ -209,7 +194,7 @@
                 child.frame = rect;
             }
         } completion:^(BOOL finished) {
-            _removeItem.enabled = self.view.subviews.count != 1; // 4, 是否仅剩 UIToolBar
+            _barBtnTrash.enabled = self.view.subviews.count != 1; // 4, 是否仅剩 UIToolBar
         }];
         
     }];
@@ -226,29 +211,21 @@
 }
 
 
-- (IBAction)remove:(UIBarButtonItem *)sender {
+- (IBAction)trash:(UIBarButtonItem *)sender {
     NSLog(@"");
-    UIView *last = [self.view.subviews lastObject];
-    if ([last isKindOfClass:UIToolbar.class]) {
-        NSLog(@"===========================");
-        return;
-    }
+    UIView *lastView = [self.view.subviews lastObject];
     
-//    if([lastisKindOfClass:[UIToolbar class]]) return; //
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        CGRect rect = last.frame;
-        rect.origin.x = self.view.frame.size.width;
-        last.frame = rect;
-        last.alpha = 0;
+    [UIView animateWithDuration:1 animations:^{
+        _barBtnTrash.enabled = NO;
+        
+        CGRect rect = lastView.frame;
+        rect.origin.x = _screenW;
+        lastView.frame = rect;
+        lastView.alpha = 0;
     } completion:^(BOOL finished) {
-        [last removeFromSuperview]; // 移除控件
-        _removeItem.enabled = self.view.subviews.count != 1; // 是否仅剩 UIToolBar
+        [lastView removeFromSuperview]; // 移除控件
+        _barBtnTrash.enabled = self.view.subviews.count != 1; // 是否仅剩 UIToolBar
     }];
-    
-//    if(self.view.subviews.count == 1) {
-//        _removeItem.enabled = NO;
-//    }
     
 }
 

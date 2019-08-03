@@ -25,6 +25,8 @@
 
 @end
 
+
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -57,12 +59,12 @@
     [self.view addSubview:slider];
 }
 
-- (void) btnClick:(UIButton *)btn {
+- (void)btnClick:(UIButton *)btn {
     NSLog(@"btn:%@", btn);
     
 }
 
-- (void) changeValue:(UISlider *)slider {
+- (void)changeValue:(UISlider *)slider {
     NSLog(@"changeValue:%f", slider.value);
 }
 

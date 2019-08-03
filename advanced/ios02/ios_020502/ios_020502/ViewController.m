@@ -25,6 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+//    _tom.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+    _tom.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"tom" ofType:@"plist"]; // 1, 获得全路径
     _dict = [NSDictionary dictionaryWithContentsOfFile:path]; // 2, 根据文件路径加载字典
     //    NSLog(@"_dict = %@", _dict);
@@ -37,11 +40,12 @@
     for (int i = 0; i < count; i++) {
         NSString *name = [NSString stringWithFormat:@"%@_%02d.jpg", fileName, i];
         
-//        UIImage *img = [UIImage imageNamed:name]; // 加载图片, 有缓存, 系统控制, 经常使用
+        // 方法一: 加载图片, 有缓存, 系统控制, 经常使用
+//        UIImage *img = [UIImage imageNamed:name];
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil]; // 无缓存
-//        NSLog(@"%d: %@", i, path);
-        UIImage *img = [[UIImage alloc] initWithContentsOfFile:path]; // 全路径, 无缓存
+        // 方法二: 全路径, 无缓存
+        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
+        UIImage *img = [[UIImage alloc] initWithContentsOfFile:path];
         
         [imgArray addObject:img];
     }
@@ -65,6 +69,8 @@
 }
 
 @end
+
+
 
 
 
