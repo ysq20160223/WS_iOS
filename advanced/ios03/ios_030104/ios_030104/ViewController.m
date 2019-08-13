@@ -9,8 +9,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UICollectionViewDelegate>
-{
+@interface ViewController () <UICollectionViewDelegate> {
     UIImageView *_imageView;
 }
 
@@ -44,10 +43,13 @@
 }
 
 
+#pragma mark - UICollectionViewDelegate start
 // 这个方法返回的控件就能进行伸缩操作
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return _imageView;
 }
+#pragma mark - UICollectionViewDelegate end
+
 
 @end
 

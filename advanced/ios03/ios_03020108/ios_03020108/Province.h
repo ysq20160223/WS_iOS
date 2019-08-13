@@ -11,9 +11,7 @@
 @interface Province : NSObject
 
 @property (nonatomic, copy) NSString *header;
-
 @property (nonatomic, copy) NSString *footer;
-
 @property (nonatomic, strong) NSArray *cities;
 
 //

@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
-{
+#import "../../../../PreHeader.h"
+
+@interface ViewController () {
     UIScrollView *_scrollView;
+    UIImageView *_imageView;
 }
 
 @end
@@ -26,30 +28,26 @@
     
     //
     UIScrollView *scrollView = [[UIScrollView alloc] init];
-    scrollView.frame = CGRectMake(0, 20, self.view.frame.size.width, 500); // 设置 ScrollView 的可见范围
-    scrollView.backgroundColor = [UIColor grayColor];
+    _scrollView = scrollView;
+    
+    scrollView.frame = CGRectMake(0, kStatusBarH, kViewControllerW, 500); // 设置 ScrollView 的可见范围
+    scrollView.backgroundColor = [UIColor magentaColor];
     [self.view addSubview:scrollView];
     
     //
-    UIImageView *iv = [[UIImageView alloc] init];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"t_005.jpg"]];
+    _imageView = imageView;
     
-    iv.image = [UIImage imageNamed:@"t_005.jpg"];
+    imageView.frame = CGRectMake(0, 0, imageView.image.size.width, imageView.image.size.height);
+    [scrollView addSubview:imageView];
     
-    CGFloat imgW = iv.image.size.width;
-    CGFloat imgH = iv.image.size.height;
-    
-    iv.frame = CGRectMake(0, 0, imgW, imgH);
-    
-    [scrollView addSubview:iv];
-    
-    scrollView.contentSize = iv.frame.size; // 设置 UIScrollView 的滚动范围
+    scrollView.contentSize = imageView.frame.size; // 设置 UIScrollView 的滚动范围
     
 //    scrollView.showsVerticalScrollIndicator = NO;
 //    scrollView.showsHorizontalScrollIndicator = NO;
-//    scrollView.bounces = NO;
-    
+//    scrollView.bounces = NO; //
     scrollView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20); // 距离上边缘20
-    _scrollView = scrollView;
+    
 }
 
 - (IBAction)move:(UIButton *)sender {
@@ -84,6 +82,9 @@
         _scrollView.contentOffset = point;
     }];
 }
+
+
+
 
 @end
 

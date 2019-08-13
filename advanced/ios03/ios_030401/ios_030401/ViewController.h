@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 //
-- (IBAction)trash:(UIBarButtonItem *)sender;
+- (IBAction)compose:(UIBarButtonItem *)sender;
 
 
 

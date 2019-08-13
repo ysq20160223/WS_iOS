@@ -8,13 +8,12 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UITableViewDataSource>
-{
+@interface ViewController () <UITableViewDataSource> {
     //    NSArray *_gdCites;
     //    NSArray *_fjCites;
     
-    NSArray *_allCites;
-    NSArray *_allProvinces;
+//    NSArray *_allCites;
+//    NSArray *_allProvinces;
     NSArray *_china;
 }
 @end
@@ -67,6 +66,8 @@
     
 }
 
+
+#pragma mark - UITableViewDataSource start
 // 1 - 几组
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     //    return _allCites.count;
@@ -117,7 +118,7 @@
 }
 
 
-//
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 //    return _allProvinces[section];
     return _china[section][@"header"];
@@ -127,6 +128,8 @@
 //    return @"footer";
     return _china[section][@"footer"];
 }
+#pragma mark UITableViewDataSource end
+
 
 @end
 

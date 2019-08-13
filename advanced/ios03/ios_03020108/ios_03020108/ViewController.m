@@ -10,11 +10,12 @@
 
 #import "Province.h"
 
-@interface ViewController () <UITableViewDataSource>
-{
+@interface ViewController () <UITableViewDataSource> {
     NSArray *_provinces;
 }
 @end
+
+
 
 @implementation ViewController
 
@@ -39,10 +40,10 @@
     Province *zj = [Province provinceWithHeader:@"浙江" footer:@"zj" cities:@[@"杭州", @"温州", @"宁波", @"绍兴", @"金华"]];
     
     _provinces = @[fj, gd, zj];
-    
 }
 
-//
+
+#pragma mark - UITableViewDataSource start
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
@@ -79,13 +80,13 @@
 // 03-02-01-09 右侧索引条
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     NSMutableArray *titles = [NSMutableArray array];
-    
     for (Province *p in _provinces) {
         [titles addObject:p.header];
     }
-    
     return titles;
 }
+#pragma mark UITableViewDataSource end
+
 
 @end
 

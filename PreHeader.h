@@ -42,6 +42,8 @@
 // ----------------------------------------------------------- UIApplication START
 
 #define kStatusBarH ([UIApplication sharedApplication].statusBarFrame.size.height)
+#define kViewControllerW (self.view.frame.size.width)
+#define kViewControllerH (self.view.frame.size.height)
 
 // ----------------------------------------------------------- UIApplication END
 

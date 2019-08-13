@@ -12,8 +12,7 @@
 
 #define kCount 8
 
-@interface ViewController () <UIScrollViewDelegate>
-{
+@interface ViewController () <UICollectionViewDelegate> {
     UIPageControl *_pageControl;
 }
 @end
@@ -34,48 +33,40 @@
     
     for (int i = 0; i < kCount; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
-        
-        // 1, 设置 frame
-        imageView.frame = CGRectMake(i * screenW, 0, screenW, screenH);
-        
-        // 2, 设置图片
-        NSString *imagName = [NSString stringWithFormat:@"0%d.jpg", i + 1];
-        imageView.image = [UIImage imageNamed:imagName];
-        
+        imageView.frame = CGRectMake(i * screenW, 0, screenW, screenH); // 1, 设置 frame
+        imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%02d.jpg", i + 1]]; // 2, 设置图片
         [_scrollView addSubview:imageView];
     }
     
     _scrollView.contentSize = CGSizeMake(kCount * screenW, 0); // 总的内容
     _scrollView.showsHorizontalScrollIndicator = NO;
-    
     _scrollView.pagingEnabled = YES; // 分页
     _scrollView.delegate = self; // 代理
     
+    
     // 添加 PageControl
     UIPageControl *pageControl = [[UIPageControl alloc] init];
+//    pageControl.backgroundColor = [UIColor cyanColor];
     pageControl.center = CGPointMake(screenW * 0.5, screenH - 50);
-    pageControl.bounds = CGRectMake(0, 0, 150, 150);
-    
+    pageControl.bounds = CGRectMake(0, 0, 300, 130);
     pageControl.numberOfPages = kCount;
-    
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor cyanColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor magentaColor];
     pageControl.enabled = NO; // 默认为 YES
-    
     _pageControl = pageControl;
     
     [self.view addSubview:pageControl];
 }
 
 
-
+#pragma mark - UICollectionViewDelegate start
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 //    NSLog(@"scrollViewDidScroll");
-    
-    int page = scrollView.contentOffset.x / scrollView.frame.size.width;
-    _pageControl.currentPage = page;
+
+    _pageControl.currentPage = scrollView.contentOffset.x / scrollView.frame.size.width;
     
 }
+#pragma mark UICollectionViewDelegate end
 
 @end
 

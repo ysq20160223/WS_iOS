@@ -22,9 +22,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
-                                    <barButtonItem systemItem="trash" id="Oyi-F3-XFE">
+                                    <barButtonItem systemItem="compose" id="Oyi-F3-XFE">
                                         <connections>
-                                            <action selector="trash:" destination="BYZ-38-t0r" id="aT7-lx-Aah"/>
+                                            <action selector="compose:" destination="BYZ-38-t0r" id="ZKq-L4-eBS"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="H0M-o3-rPp"/>

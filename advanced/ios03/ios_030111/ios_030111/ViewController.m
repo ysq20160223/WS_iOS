@@ -35,9 +35,14 @@
 // 第一响应者 : 呼出键盘的那个文本框控件
 // 退出键盘的原理 : 某个文本框控件不想当第一响应者
 - (IBAction)exitKeyboard:(id)sender {
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    
 //    [_nameField resignFirstResponder];
     
     [self.view endEditing:YES]; // view 内部
+    
+    [UIView commitAnimations];
 }
 
 
