@@ -6,16 +6,33 @@
 //
 //
 
-#import <Foundation/Foundation.h>
+
+/*
+ pch : 需要提前编译
+ 原理 : 被项目中的所有文件共有
+ 作用 :
+ 01, 存放一些公用的 宏定义
+ 02, 存放一些公用的头文件
+ 03, 自定义 Log (输出日志)
+ ... 表示在宏里面的可变参数
+ __VA_ARGS__ 表示函数里面的可变参数
+ 
+ 
+ */
 
 
 
-#ifndef PreHeader_h
-#define PreHeader_h
+#ifdef __OBJC__  // __OBJC__ 每个 oc 文件都会自动定义这个宏
+
+
+#ifndef _PrefixHeader_pch_
+#define _PrefixHeader_pch_
 
 
 #pragma mark - important note: 在 oc 代码中需有宏定义 DEBUG
 //#define DEBUG // Edit Scheme -> run -> info -> Build Configuration
+#pragma mark - 配置 PCH
+// TARGETS -> Build Settings -> 搜索"prefix"
 
 
 
@@ -47,5 +64,7 @@
 
 // ----------------------------------------------------------- UIApplication END
 
-#endif /* PreHeader_h */
+#endif /* _PrefixHeader_pch_ */
+
+#endif
 

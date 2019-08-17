@@ -35,6 +35,11 @@ ios 文档
 切换任务
 	按住 shift + cmd, 双击 h
 
+移动一行代码
+	option + command + [ : 上移
+	option + command + ] : 下移
+
+
  
 
 
