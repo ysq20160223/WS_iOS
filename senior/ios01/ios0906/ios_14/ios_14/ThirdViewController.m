@@ -14,33 +14,25 @@
 
 - (IBAction)backRoot:(id)sender;
 
-
 @end
+
+
+
 
 @implementation ThirdViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+// 090703
 // 返回
 - (IBAction)back:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)backRoot:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    // 返回到导航控制器的根控制器
+//    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    // 返回到指定的控制器
+    [self.navigationController popToViewController:self.navigationController.childViewControllers[0] animated:YES];
 }
 
 @end

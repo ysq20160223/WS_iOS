@@ -69,10 +69,6 @@
     _label.text = self.musicArray[component][row];
 }
 
-//- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
-//
-//}
-
 @end
 
 

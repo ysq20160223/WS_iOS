@@ -10,9 +10,9 @@
 
 @interface Provinces : NSObject
 
-@property (nonatomic, strong) NSArray * cities; 
-
+@property (nonatomic, strong) NSArray *cities;
 @property (nonatomic, strong) NSString *name;
+
 
 //
 + (instancetype)provincesWithDict:(NSDictionary *)dict;

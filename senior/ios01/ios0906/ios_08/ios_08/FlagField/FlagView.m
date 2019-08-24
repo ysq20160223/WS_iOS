@@ -11,24 +11,29 @@
 
 @interface FlagView ()
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UILabel *countryNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *countryIconView;
 
 @end
 
 
+
 @implementation FlagView
 
-+ (instancetype)flagView {
-    return [[NSBundle mainBundle] loadNibNamed:@"FlagView" owner:nil options:nil][0];
+
++ (instancetype)flagViewWithFlag:(Flag *)flag {
+    FlagView *flagView = [[NSBundle mainBundle] loadNibNamed:@"FlagView" owner:nil options:nil][0];
+    flagView.flag = flag;
+    return flagView;
 }
+
+
 
 - (void)setFlag:(Flag *)flag {
     _flag = flag;
     
-    _nameLabel.text = flag.name;
-    _iconView.image = flag.icon;
+    _countryNameLabel.text = flag.countryName;
+    _countryIconView.image = flag.countryIcon;
 }
 
 @end

@@ -14,9 +14,7 @@
 @interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *flagField;
-
 @property (weak, nonatomic) IBOutlet UITextField *birthField;
-
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
 
 @end
@@ -37,13 +35,16 @@
 
 // 是否允许用户输入
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    return YES;
+//    NSLog(@"string: %@", string);
+    return NO;
 }
 
 // 给文本框初始化 - (id 能调用任何对象的方法)
 - (void)textFieldDidBeginEditing:(id)textField {
+//    NSLog(@"");
     [textField initText];
 }
+
 
 @end
 

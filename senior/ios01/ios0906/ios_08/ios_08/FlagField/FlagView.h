@@ -12,11 +12,12 @@
 
 @interface FlagView : UIView
 
+
 @property (nonatomic, strong) Flag *flag;
 
 //
++ (instancetype)flagViewWithFlag:(Flag *)flag;
 
-+ (instancetype) flagView;
 
 
 @end

@@ -18,6 +18,7 @@
 		18AADA6C1F2DB60F00DCA97A /* flags.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AADA5C1F2DB60F00DCA97A /* flags.plist */; };
 		18AADA7D1F2DB97A00DCA97A /* Flag.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AADA7C1F2DB97A00DCA97A /* Flag.m */; };
 		18AADA841F2DBD7600DCA97A /* FlagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AADA831F2DBD7600DCA97A /* FlagView.m */; };
+		18EB2C67230EDE3700F267BB /* provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18EB2C66230EDE3700F267BB /* provinces.plist */; };
 		18EFA1AB1F2DD359005D0391 /* Brazil.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1A61F2DD359005D0391 /* Brazil.gif */; };
 		18EFA1AC1F2DD359005D0391 /* China.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1A71F2DD359005D0391 /* China.jpg */; };
 		18EFA1AD1F2DD359005D0391 /* Germany.gif in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1A81F2DD359005D0391 /* Germany.gif */; };
@@ -26,7 +27,6 @@
 		18EFA1B11F2DD490005D0391 /* FlagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1B01F2DD490005D0391 /* FlagView.xib */; };
 		18EFA1B81F2DEC9E005D0391 /* BirthField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1B71F2DEC9E005D0391 /* BirthField.m */; };
 		18EFA1BC1F2DF182005D0391 /* CityField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1BB1F2DF182005D0391 /* CityField.m */; };
-		18EFA1BE1F2DF567005D0391 /* provinces.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1BD1F2DF567005D0391 /* provinces.plist */; };
 		18EFA1C11F2DF7B2005D0391 /* Provinces.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1C01F2DF7B2005D0391 /* Provinces.m */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +49,7 @@
 		18AADA7C1F2DB97A00DCA97A /* Flag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flag.m; sourceTree = "<group>"; };
 		18AADA821F2DBD7600DCA97A /* FlagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagView.h; sourceTree = "<group>"; };
 		18AADA831F2DBD7600DCA97A /* FlagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagView.m; sourceTree = "<group>"; };
+		18EB2C66230EDE3700F267BB /* provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = provinces.plist; sourceTree = "<group>"; };
 		18EFA1A61F2DD359005D0391 /* Brazil.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Brazil.gif; sourceTree = "<group>"; };
 		18EFA1A71F2DD359005D0391 /* China.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = China.jpg; sourceTree = "<group>"; };
 		18EFA1A81F2DD359005D0391 /* Germany.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Germany.gif; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		18EFA1B71F2DEC9E005D0391 /* BirthField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthField.m; sourceTree = "<group>"; };
 		18EFA1BA1F2DF182005D0391 /* CityField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityField.h; sourceTree = "<group>"; };
 		18EFA1BB1F2DF182005D0391 /* CityField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityField.m; sourceTree = "<group>"; };
-		18EFA1BD1F2DF567005D0391 /* provinces.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = provinces.plist; path = ../../provinces.plist; sourceTree = "<group>"; };
 		18EFA1BF1F2DF7B2005D0391 /* Provinces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provinces.h; sourceTree = "<group>"; };
 		18EFA1C01F2DF7B2005D0391 /* Provinces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Provinces.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,7 +159,7 @@
 		18EFA1B91F2DF174005D0391 /* CityField */ = {
 			isa = PBXGroup;
 			children = (
-				18EFA1BD1F2DF567005D0391 /* provinces.plist */,
+				18EB2C66230EDE3700F267BB /* provinces.plist */,
 				18EFA1BA1F2DF182005D0391 /* CityField.h */,
 				18EFA1BB1F2DF182005D0391 /* CityField.m */,
 				18EFA1BF1F2DF7B2005D0391 /* Provinces.h */,
@@ -228,7 +228,7 @@
 			files = (
 				18AADA511F2DAF9600DCA97A /* LaunchScreen.storyboard in Resources */,
 				18AADA4E1F2DAF9600DCA97A /* Assets.xcassets in Resources */,
-				18EFA1BE1F2DF567005D0391 /* provinces.plist in Resources */,
+				18EB2C67230EDE3700F267BB /* provinces.plist in Resources */,
 				18EFA1B11F2DD490005D0391 /* FlagView.xib in Resources */,
 				18EFA1AD1F2DD359005D0391 /* Germany.gif in Resources */,
 				18EFA1AB1F2DD359005D0391 /* Brazil.gif in Resources */,
@@ -376,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ../../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_08/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-08";
@@ -387,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ../../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_08/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-08";

@@ -10,15 +10,14 @@
 
 #import "Provinces.h"
 
+
 @interface CityField () <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, assign) NSInteger selectedProvinceIndex; // 选中省份的下标
-
 @property (nonatomic, assign) BOOL isInit;
 
 //
 @property (nonatomic, strong) NSMutableArray *provinces;
-
 @property (nonatomic, weak) UIPickerView *pickerView;
 
 @end
@@ -37,22 +36,22 @@
     if (0 == component) {
         return self.provinces.count;
     } else {
-        Provinces *p = self.provinces[_selectedProvinceIndex];
+        Provinces *p = self.provinces[self.selectedProvinceIndex];
         return p.cities.count;
     }
 }
 
 // 省份
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSLog(@"row: %ld", row);
     if(0 == component) {
-        _selectedProvinceIndex = row;
+        self.selectedProvinceIndex = row;
         
         [pickerView reloadComponent:1]; // 刷新城市列
-        
         [pickerView selectRow:0 inComponent:1 animated:YES]; // 指定刷新列和行
     }
     
-    Provinces *p = self.provinces[_selectedProvinceIndex]; // 选中的省份
+    Provinces *p = self.provinces[self.selectedProvinceIndex]; // 选中的省份
     NSArray *cities = p.cities; // 获取选中的城市
     NSInteger cityINdex = [pickerView selectedRowInComponent:1];
     self.text = [NSString stringWithFormat:@"%@ - %@", p.name, cities[cityINdex]];
@@ -64,7 +63,7 @@
         Provinces *p = self.provinces[row];
         return p.name;
     } else {
-        Provinces *p = self.provinces[_selectedProvinceIndex];
+        Provinces *p = self.provinces[self.selectedProvinceIndex];
         return p.cities[row];
     }
 }
@@ -75,9 +74,7 @@
         _provinces = [NSMutableArray array];
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"provinces.plist" ofType:nil];
-        
         NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
-        
         for (NSDictionary *dict in dictArray) {
             id obj = [Provinces provincesWithDict:dict];
             [_provinces addObject:obj];
@@ -87,21 +84,20 @@
 }
 
 - (void)initText {
-    if(!_isInit) {
-        _isInit = YES;
-        [self pickerView:_pickerView didSelectRow:0 inComponent:0];
+    if(!self.isInit) {
+        self.isInit = YES;
+        [self pickerView:self.pickerView didSelectRow:0 inComponent:0];
     }
 }
 
 //
 - (void)setUp {
-    UIPickerView *pv = [[UIPickerView alloc] init];
-    pv.dataSource = self;
-    pv.delegate = self;
+    UIPickerView *pickerView = [[UIPickerView alloc] init];
+    pickerView.dataSource = self;
+    pickerView.delegate = self;
+    self.pickerView = pickerView;
     
-    _pickerView = pv;
-    
-    self.inputView = pv;
+    self.inputView = pickerView;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -116,15 +112,8 @@
     [self setUp];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 @end
+
 
 
 

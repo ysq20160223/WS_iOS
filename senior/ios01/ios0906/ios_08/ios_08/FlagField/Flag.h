@@ -11,12 +11,9 @@
 
 @interface Flag : NSObject
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *countryName;
+@property (nonatomic, strong) UIImage *countryIcon;
 
-//@property (nonatomic, strong) NSString *icon;
-@property (nonatomic, strong) UIImage *icon;
-
-//
-+ (instancetype) flagWithDict:(NSDictionary *)dict;
++ (instancetype)flagWithDictionary:(NSDictionary *)dict;
 
 @end

@@ -24,26 +24,31 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]; // 1
+    // 1
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor greenColor];
     
     // 2
-    ViewController *vc = [[ViewController alloc] init]; // 创建导航控制器的根控制器
-//    vc.view.backgroundColor = [UIColor cyanColor];
+    ViewController *viewController = [[ViewController alloc] init]; // 创建导航控制器的根控制器
+//    viewController.view.backgroundColor = [UIColor cyanColor];
     
     // 创建导航控制器 - 导航控制器也需要根控制器
     // 导航控制器的根控制器, 其实就是导航控制器的第一个子控制器
     // 导航控制器会把根控制器的 view 添加到存放子控制器的 view
     
-    // 
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    // ----- mothod first
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
+    // ----- mothod second
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
+    [navigationController pushViewController:viewController animated:YES];
     //
-    UINavigationController *nav = [[UINavigationController alloc] init];
-    [nav pushViewController:vc animated:YES];
     
-    self.window.rootViewController = nav;
+    self.window.rootViewController = navigationController;
+    NSLog(@"%@", navigationController.childViewControllers);
     
-    [self.window makeKeyAndVisible]; // 3
+    // 3
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

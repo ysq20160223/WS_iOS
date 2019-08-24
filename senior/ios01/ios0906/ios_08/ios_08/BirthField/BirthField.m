@@ -9,8 +9,13 @@
 #import "BirthField.h"
 
 @interface BirthField ()
+
 @property (nonatomic, weak) UIDatePicker *datePicker;
+
 @end
+
+
+
 
 @implementation BirthField
 
@@ -19,26 +24,21 @@
     [self valueChange:_datePicker];
 }
 
-- (void) setUp {
-    UIDatePicker *dp = [[UIDatePicker alloc] init];
+- (void)setUp {
+    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    datePicker.datePickerMode = UIDatePickerModeDate; // 日期模式
+    datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"]; // 地区
+    [datePicker addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
+    self.inputView = datePicker;
     
-    dp.datePickerMode = UIDatePickerModeDate; // 日期模式
-    
-    dp.locale = [NSLocale localeWithLocaleIdentifier:@"zh"]; // 地区
-    
-    [dp addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
-    
-    _datePicker = dp;
-    
-    self.inputView = dp;
-    
+    _datePicker = datePicker;
 }
 
-- (void) valueChange:(UIDatePicker *)dp {
+- (void)valueChange:(UIDatePicker *)datePicker {
 //    NSLog(@"value Change : %@", dp.date);
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     format.dateFormat = @"yyyy-MM-dd";
-    self.text = [format stringFromDate:dp.date];
+    self.text = [format stringFromDate:datePicker.date];
 }
 
 // 01
@@ -55,13 +55,7 @@
     [self setUp];
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+
 
 @end
 
