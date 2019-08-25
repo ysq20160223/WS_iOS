@@ -23,39 +23,41 @@
     
     self.navigationItem.title = @"SecondViewController";
     
-    //
+    // --------- right
     UIBarButtonItem *rightBarBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleDone target:self action:@selector(rightClick)];
     self.navigationItem.rightBarButtonItem = rightBarBtnItem;
     
     
+    // --------- left
     // 系统默认会把导航条上的图片渲染成蓝色
-    UIImage *img = [UIImage imageNamed:@"navigationbar_friendsearch@2x"];
+//    UIImage *img = [UIImage imageNamed:@"navigationbar_friendsearch@2x"];
 //    img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; // 不被渲染
-    UIBarButtonItem *leftBarBtnItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStyleDone target:self action:@selector(leftClick)];
+//    UIBarButtonItem *leftBarBtnItem = [[UIBarButtonItem alloc] initWithImage:img style:UIBarButtonItemStyleDone target:self action:@selector(leftClick)];
     
-    //
-//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [btn setBackgroundImage:[UIImage imageNamed:@"navigationbar_friendsearch@2x"] forState:UIControlStateNormal];
-//    [btn setBackgroundImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted@2x"] forState:UIControlStateHighlighted];
-//    btn.frame = CGRectMake(0, 0, 35, 35);
-//    [btn addTarget:self action:@selector(leftClick) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIBarButtonItem *leftBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    // 自定义
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setBackgroundImage:[UIImage imageNamed:@"navigationbar_friendsearch@2x"] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted@2x"] forState:UIControlStateHighlighted];
+    btn.frame = CGRectMake(0, 0, 35, 35);
+    [btn addTarget:self action:@selector(leftClick) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem = leftBarBtnItem;
-    
 }
 
+
 - (void)leftClick {
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
 - (void)rightClick {
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
-
 @end
+
+
+
 
 
 

@@ -7,7 +7,7 @@
 //
 
 /*
-    01, 一般以 view 开头的方法, 都是 view 的生命周期
+ 01, 一般以 view 开头的方法, 都是 view 的生命周期
  
  */
 
@@ -29,38 +29,38 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,13 +70,13 @@
 }
 
 
-//
+// 非 arc 模式下
 - (void)viewWillUnload {
-
+    NSLog(@"");
 }
 
 - (void)viewDidUnload {
-
+    NSLog(@"");
 }
 
 @end

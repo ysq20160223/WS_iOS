@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "../../../../PreHeader.h"
+#import "../../../../PrefixHeader.pch"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
     UITableView *_tableView;

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoginAnimView">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="108"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head.png" translatesAutoresizingMaskIntoConstraints="NO" id="bec-wP-bHT">
+                    <rect key="frame" x="45" y="9" width="211" height="108"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oval.png" translatesAutoresizingMaskIntoConstraints="NO" id="N0I-RT-odb" userLabel="left-hand">
+                    <rect key="frame" x="45" y="85" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oval.png" translatesAutoresizingMaskIntoConstraints="NO" id="gFd-SN-eu7" userLabel="right-hand">
+                    <rect key="frame" x="215" y="85" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mje-OD-IyN">
+                    <rect key="frame" x="30" y="0.0" width="240" height="108"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arm-right.png" translatesAutoresizingMaskIntoConstraints="NO" id="JX3-Ch-ewP">
+                            <rect key="frame" x="135" y="71" width="40" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arm-left.png" translatesAutoresizingMaskIntoConstraints="NO" id="MTu-Oh-omw">
+                            <rect key="frame" x="75" y="71" width="40" height="65"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.50372833620000002" blue="0.98190513690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentView" destination="mje-OD-IyN" id="DE3-EE-iQV"/>
+                <outlet property="leftArm" destination="MTu-Oh-omw" id="kj2-VL-AKI"/>
+                <outlet property="leftHand" destination="N0I-RT-odb" id="ltp-Y2-JwJ"/>
+                <outlet property="rightArm" destination="JX3-Ch-ewP" id="E5u-1n-3dx"/>
+                <outlet property="rightHand" destination="gFd-SN-eu7" id="cKa-tL-R8w"/>
+            </connections>
+            <point key="canvasLocation" x="23" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arm-left.png" width="40" height="65"/>
+        <image name="arm-right.png" width="40" height="65"/>
+        <image name="head.png" width="211" height="108"/>
+        <image name="oval.png" width="200" height="200"/>
+    </resources>
+</document>

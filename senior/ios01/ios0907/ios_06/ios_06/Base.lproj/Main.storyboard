@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K7a-yR-J8O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K7a-yR-J8O">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df4-Ah-zXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-977" y="11"/>
+            <point key="canvasLocation" x="-1062" y="9"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JPY-LX-xw4">
@@ -103,43 +103,14 @@
                     <navigationItem key="navigationItem" id="bM1-6q-eR2"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="headHeightCons" destination="Rdx-M8-nlP" id="z4j-bZ-und"/>
-                        <outlet property="headTopCons" destination="Kxn-jL-fOx" id="bEA-KS-sev"/>
+                        <outlet property="headHeightConstraint" destination="Kxn-jL-fOx" id="ry4-sY-ife"/>
+                        <outlet property="headTopConstraint" destination="Rdx-M8-nlP" id="1nh-Hv-F1W"/>
                         <outlet property="tableView" destination="xHW-BN-qZb" id="XxI-fe-oDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAC-c0-ito" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-284" y="10.344827586206897"/>
-        </scene>
-        <!--YY-->
-        <scene sceneID="WaU-YU-MUo">
-            <objects>
-                <tableViewController id="uZv-Mu-Ict" customClass="YYViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2eU-BO-TtD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lmm-K5-cyb">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lmm-K5-cyb" id="SDO-mH-S6r">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="uZv-Mu-Ict" id="Ke3-3X-nYD"/>
-                            <outlet property="delegate" destination="uZv-Mu-Ict" id="AAQ-sW-C6u"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="YY" id="OQs-1W-s3S"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2sb-LA-9L3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="463" y="10"/>
+            <point key="canvasLocation" x="-270" y="9"/>
         </scene>
     </scenes>
     <resources>
