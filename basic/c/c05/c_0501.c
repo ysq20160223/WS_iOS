@@ -29,8 +29,15 @@
 
 int main()
 {
-    float a = .017;
-    printf("float : %d\n", a);
+    
+    int b = 0b11;
+    int o = 011;
+    int hex = 0x11;
+    printf("b: %d, o: %o, hex: %x\n", b, o, hex);
+    
+    
+    float a = .01;
+    printf("float : %f\n", a);
     
     
     

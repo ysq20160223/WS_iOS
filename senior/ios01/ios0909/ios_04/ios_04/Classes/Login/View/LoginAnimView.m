@@ -25,6 +25,9 @@
 
 @end
 
+
+
+
 @implementation LoginAnimView
 
 + (instancetype)loginAnimView {
@@ -54,21 +57,21 @@
 - (void)startAnim:(BOOL)isClose {
     if(isClose) {
         // 清空形变
-        [UIView animateWithDuration:.2 animations:^{
+        [UIView animateWithDuration:.3 animations:^{
             // 移动手臂
             _leftArm.transform = CGAffineTransformIdentity;
             _rightArm.transform = CGAffineTransformIdentity;
             
             // 手
-            _leftHand.transform = CGAffineTransformMakeTranslation(-_leftArmOffsetX, -_armOffsetY + 5);
+            _leftHand.transform = CGAffineTransformMakeTranslation(-_leftArmOffsetX - 8, -_armOffsetY + 8);
             _leftHand.transform = CGAffineTransformScale(_leftHand.transform, 0.01, 0.01);
             
-            _rightHand.transform = CGAffineTransformMakeTranslation(-_rightArmOffsetX, -_armOffsetY + 5);
+            _rightHand.transform = CGAffineTransformMakeTranslation(-_rightArmOffsetX + 8, -_armOffsetY + 8);
             _rightHand.transform = CGAffineTransformScale(_rightHand.transform, 0.01, 0.01);
             
         }];
     } else {
-        [UIView animateWithDuration:.2 animations:^{
+        [UIView animateWithDuration:.3 animations:^{
             // 平移左边手臂
             _leftArm.transform = CGAffineTransformMakeTranslation(_leftArmOffsetX, _armOffsetY);
             

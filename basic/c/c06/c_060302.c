@@ -19,7 +19,7 @@ int main()
 {
     int i = 0;
     
-    changeValue(&i, 17);
+    changeValue(&i, 1);
     
     printf("i: %d\n", i);
 

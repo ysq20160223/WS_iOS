@@ -15,16 +15,17 @@
 int main()
 {
     int i = 1;
+    int j = 2;
     
     char c = 'c';
     
     float f = 1.7f;
-    
     double d = 2.1;
     
-    printf("int i = %d\nchar c = %c\n", i, c);
+    printf("int i = %d, int j = %i\n", i, j);
+    printf("char c = %c\n", c);
     printf("float f = %.2f\n", f);
-    printf("double d = %f\n", d);
+    printf("double d = %.4f\n", d);
     
     return 0;
 }

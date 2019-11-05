@@ -51,9 +51,14 @@ int main()
 //    fun_02();
     
     //
-    int i = 0x08060401;
+    int j = 0;
+    printf("&j: %p\n", &j);
     
-    char *cp = &i;
+    
+    int x = 0x08060401;
+    printf("&x: %p\n", &x);
+    
+    char *cp = &x;
     for (int i = 0; i < 4; i++) {
         printf("%p, %d\n", cp + i, *(cp + i));
     }

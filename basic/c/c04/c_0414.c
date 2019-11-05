@@ -18,9 +18,12 @@
 
 int main()
 {
-    int len = printf("中国\n");
+
+    printf("chinese = %d\n", printf("中国\n"));
     
-    printf("len = %d\n", len);
+    printf("letter = %d\n", printf("A\n"));
+    
+    printf("number = %d\n", printf("21\n"));
     
     return 0;
 }

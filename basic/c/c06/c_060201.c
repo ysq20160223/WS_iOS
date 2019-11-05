@@ -11,7 +11,7 @@
     01, 字符串 （以 0 结尾）
     02, ‘\0’ 的 ASCII 码是 0
  
-    03, strlen : 计算字符串的长度, 从某个地址开始, 直到遇到\0为止(string.h文件中)
+    03, strlen : 计算字符串的字节个数, 从某个地址开始, 直到遇到\0为止(string.h文件中)
         一个汉字三个字符
  
  */
@@ -48,9 +48,7 @@ void fun_03()
 
 void fun_04()
 {
-    int len = strlen("呵呵hh");
-    
-    printf("len = %d\n", len);
+    printf("strlen = %d\n", strlen("呵呵hh"));
 }
 
 int main()

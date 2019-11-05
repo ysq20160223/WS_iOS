@@ -34,8 +34,7 @@ void fun_01()
     printf("char c: %c\n", c);
     printf("short s: %d\n", s);
     printf("int i: %d\n", i);
-    printf("long l: %ld\n", l);
-    
+    printf("long l: %li\n", l);
     
     
     

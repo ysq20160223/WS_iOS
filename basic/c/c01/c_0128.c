@@ -22,16 +22,27 @@
 
 int main()
 {
-    int i = 1;
-    
-    double d = 2;
-    
     char c = 'c';
+    int i = 1;
+    long l = 2;
     
-    printf("&i: %p, &d: %p, &c: %p\n", &i, &d, &c);
+    float f = 3;
+    double d = 4;
     
-    printf("sizeof(int): %lu\n", sizeof(int));
-    printf("sizeof(d): %lu\n", sizeof(d));
+    
+    
+    printf("&c: %p\n", &c);
+    printf("&i: %p\n", &i);
+    printf("&l: %p\n", &l);
+    printf("&f: %p\n", &f);
+    printf("&d: %p\n", &d);
+    
+    
+    printf("sizeof(char): %lu\n", sizeof(c));
+    printf("sizeof(int): %lu\n", sizeof(i));
+    printf("sizeof(long): %lu\n", sizeof(l));
+    printf("sizeof(float): %lu\n", sizeof(f));
+    printf("sizeof(double): %lu\n", sizeof(d));
     
     return 0;
 }
