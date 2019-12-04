@@ -16,8 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
-
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 typedef enum {
     SexMale, SexFemale
@@ -43,7 +43,7 @@ typedef enum {
 
 @implementation Student
 - (void)study {
-    NSLog(@"age: %d is study", _age);
+    NSLog(@"age: %d is studying", _age);
 }
 
 //
@@ -66,6 +66,7 @@ typedef enum {
 @end
 
 
+
 int main() {
     
     Student *s = [Student new];
@@ -73,13 +74,17 @@ int main() {
     
     
     [s setAge:21];
-    NSLog(@"age = %d", [s age]);
+    NSLog(@"setAge %d", [s age]);
     
-    s.age = 30; // 点语法 set
-    NSLog(@"age: %d", s.age); // 点语法 get
+    // 点语法
+    s.age = 30; // set
+    NSLog(@".age: %d", s.age); // get
     
     return 0;
 }
+
+
+
 
 
 

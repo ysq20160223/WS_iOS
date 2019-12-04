@@ -55,6 +55,8 @@ int main()
     printf("no: %d, age: %d, birthday: %d-%d-%d \n", studentP->no, studentP->age,
            studentP->birthday.year, studentP->birthday.month, studentP->birthday.day);
     
+    struct Data *pData = &studentP->birthday;
+    printf("year: %d, month: %d, day: %d\n", pData->year, pData->month, pData->day);
     
     return 0;
 }

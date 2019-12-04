@@ -21,12 +21,12 @@
 
 #import "Person.h"
 
-#import "../../../../../../PreHeader.h"
+#import "../../../../../../PrefixHeader.pch"
 
 int main(int argc, const char * argv[]) {
     
     Person *person = [Person new];
-    person.age = 21;
+    person.age = 21; // 为不带下划线的 age 赋值
     [person setHeight:170];
     
     NSLog(@"age: %d, height: %d", person.age, [person height]);

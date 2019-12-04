@@ -6,12 +6,12 @@
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
-#import "Person+hh.h"
+#import "Person+jj.h"
 
-@implementation Person (hh)
+@implementation Person (jj)
 
 - (void)method {
-    NSLog(@"method Person+hh");
+    NSLog(@"method Person+jj");
 }
 
 @end

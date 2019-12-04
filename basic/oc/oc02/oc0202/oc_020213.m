@@ -18,7 +18,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 
 @interface Calculator : NSObject

@@ -8,6 +8,8 @@
 
 #import "Person.h"
 
+#import "../../../../../PrefixHeader.pch"
+
 @implementation Person
 
 - (void)setBook:(Book *)book {

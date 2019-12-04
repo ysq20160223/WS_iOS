@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E90EDD238D75C400CD4C05 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E90EDC238D75C400CD4C05 /* Student.m */; };
 		70DA308D1F14E3ED005A50EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DA308C1F14E3ED005A50EA /* main.m */; };
 		70DA30951F14E425005A50EA /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DA30941F14E425005A50EA /* Person.m */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18E90EDB238D75C400CD4C05 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		18E90EDC238D75C400CD4C05 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		70DA30891F14E3ED005A50EA /* oc_020503 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = oc_020503; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DA308C1F14E3ED005A50EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70DA30931F14E425005A50EA /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -44,6 +47,8 @@
 		70DA30801F14E3ED005A50EA = {
 			isa = PBXGroup;
 			children = (
+				18E90EDB238D75C400CD4C05 /* Student.h */,
+				18E90EDC238D75C400CD4C05 /* Student.m */,
 				70DA30931F14E425005A50EA /* Person.h */,
 				70DA30941F14E425005A50EA /* Person.m */,
 				70DA308B1F14E3ED005A50EA /* oc_020503 */,
@@ -126,6 +131,7 @@
 			files = (
 				70DA30951F14E425005A50EA /* Person.m in Sources */,
 				70DA308D1F14E3ED005A50EA /* main.m in Sources */,
+				18E90EDD238D75C400CD4C05 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +260,7 @@
 				70DA30921F14E3ED005A50EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

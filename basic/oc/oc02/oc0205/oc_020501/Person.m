@@ -8,7 +8,7 @@
 
 #import "Person.h"
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 @implementation Person
 

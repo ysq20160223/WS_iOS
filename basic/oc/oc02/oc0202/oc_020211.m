@@ -12,7 +12,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 // *********************************************
 @interface Dog : NSObject {
@@ -105,6 +106,9 @@ int main() {
     student->sex = SexMale;
     student->birthdayDate = date; // 成员 结构体
     student->dog = dog; // 成员 对象
+    
+    Date *pDate = &(student->birthdayDate);
+    pDate->year = 1991; // 指向结构体的指针用 -> 访问结构体定义的属性
     
     [student eat];
     [student run];

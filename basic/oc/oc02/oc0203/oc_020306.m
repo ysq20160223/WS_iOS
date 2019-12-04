@@ -13,12 +13,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "../../../../PreHeader.h"
+
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 
 @interface Person : NSObject
 
-//- (void)method;
+- (void)method;
 
 @end
 
@@ -30,11 +32,8 @@
 @end
 
 
-int main()
-{
+int main() {
     Person *person = [Person new];
-    
-    
     // 若 method 无声明 无实现 : 警告 instance method '-method' not found
     // 若 method 有声明 无实现 : 警告 method definition for 'method' not found
     // 若 method 无声明 有实现 : 没有警告没有报错, 正常运行

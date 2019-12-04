@@ -34,7 +34,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -42,18 +42,20 @@
 int main() {
     
     Person *p = [[Person alloc] init];
+    NSLog(@"p: %@", p);
     
-    NSLog(@"c = %ld", [p retainCount]);
+    NSLog(@"count: %ld", [p retainCount]);
     
     [p release];
     
+    // p 引用计数为0时, 为野指针
 //    p.age = 10; // 给被销毁的对象发送对象, error: message sent to deallocated instance 0x100202cd0
 //    [p release]; // 给被销毁的对象发送对象, error: message sent to deallocated instance 0x100202cd0
     
     
     p = nil; // 指针 p 变成空指针
-//    [p release]; // 调用了 p = nil; 之后, 不会报错
     p.age = 10;
+    [p release]; // 调用了 p = nil; 之后, 不会报错
     
     return 0;
 }

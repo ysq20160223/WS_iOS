@@ -22,7 +22,9 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "../../../../PreHeader.h"
+
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 // 1, 声明
 @interface Car : NSObject {
@@ -36,11 +38,11 @@
 
 
 void fun_01(Car *car) {
-    Car *innerCar = [Car new];
-    innerCar->wheels = 6;
-    innerCar->speed = 300;
+    Car *c = [Car new];
+    c->wheels = 6;
+    c->speed = 300;
     
-    car = innerCar; // 局部变量指针 car 指向内部定义的对象 innerCar
+    car = c; // 局部变量指针 car 指向内部定义的对象 c
     car->wheels = 8;
 }
 

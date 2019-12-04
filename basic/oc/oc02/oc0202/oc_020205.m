@@ -12,7 +12,9 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "../../../../PreHeader.h"
+
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 // 1, 声明
 @interface Person : NSObject {

@@ -13,10 +13,11 @@
 #import <Foundation/Foundation.h>
 
 #import "Person.h"
-#import "../../../../../../PreHeader.h"
+
+#import "../../../../../../PrefixHeader.pch"
+
 
 int main() {
-    
     Person *person = [Person new];
     [person setName:@"yy"];
     [person setAge:21];
@@ -25,6 +26,7 @@ int main() {
     person.name = @"jj";
     person.age = 1;
     NSLog(@"name: %@, age: %d", person.name, person.age);
+    
     
     return 0;
 }

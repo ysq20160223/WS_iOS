@@ -15,7 +15,7 @@
 }
 
 - (void)methodWithArgs:(NSString *)args {
-    NSLog(@"OBJECT %@ %@", NSStringFromSelector(_cmd), args);
+    NSLog(@"OBJECT %@, %@", NSStringFromSelector(_cmd), args);
 }
 
 + (void)method {

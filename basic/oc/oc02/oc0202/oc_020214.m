@@ -20,20 +20,21 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 // 1, 声明
 @interface Car : NSObject {
 @public
     int speed;
 }
-- (int)compareSpeedWithOther:(Car *)otherCar;
+- (int)compareSpeedWithOther:(Car *)car;
 @end
 
 // 2, 实现
 @implementation Car
-- (int)compareSpeedWithOther:(Car *)otherCar {
-    return speed - otherCar->speed;
+- (int)compareSpeedWithOther:(Car *)car {
+    return speed - car->speed;
 }
 @end
 

@@ -10,7 +10,7 @@
 		709ACCA01F164E6200D8B517 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACC9F1F164E6200D8B517 /* main.m */; };
 		709ACCA81F164EE700D8B517 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCA71F164EE700D8B517 /* Person.m */; };
 		709ACCAB1F16502300D8B517 /* Person+yy.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCAA1F16502300D8B517 /* Person+yy.m */; };
-		709ACCAE1F16544900D8B517 /* Person+hh.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCAD1F16544900D8B517 /* Person+hh.m */; };
+		709ACCAE1F16544900D8B517 /* Person+jj.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCAD1F16544900D8B517 /* Person+jj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,8 +32,8 @@
 		709ACCA71F164EE700D8B517 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		709ACCA91F16502300D8B517 /* Person+yy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+yy.h"; sourceTree = "<group>"; };
 		709ACCAA1F16502300D8B517 /* Person+yy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+yy.m"; sourceTree = "<group>"; };
-		709ACCAC1F16544900D8B517 /* Person+hh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+hh.h"; sourceTree = "<group>"; };
-		709ACCAD1F16544900D8B517 /* Person+hh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+hh.m"; sourceTree = "<group>"; };
+		709ACCAC1F16544900D8B517 /* Person+jj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+jj.h"; sourceTree = "<group>"; };
+		709ACCAD1F16544900D8B517 /* Person+jj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+jj.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,8 +50,8 @@
 		709ACC931F164E6200D8B517 = {
 			isa = PBXGroup;
 			children = (
-				709ACCAC1F16544900D8B517 /* Person+hh.h */,
-				709ACCAD1F16544900D8B517 /* Person+hh.m */,
+				709ACCAC1F16544900D8B517 /* Person+jj.h */,
+				709ACCAD1F16544900D8B517 /* Person+jj.m */,
 				709ACCA91F16502300D8B517 /* Person+yy.h */,
 				709ACCAA1F16502300D8B517 /* Person+yy.m */,
 				709ACCA61F164EE700D8B517 /* Person.h */,
@@ -135,7 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				709ACCAB1F16502300D8B517 /* Person+yy.m in Sources */,
-				709ACCAE1F16544900D8B517 /* Person+hh.m in Sources */,
+				709ACCAE1F16544900D8B517 /* Person+jj.m in Sources */,
 				709ACCA81F164EE700D8B517 /* Person.m in Sources */,
 				709ACCA01F164E6200D8B517 /* main.m in Sources */,
 			);

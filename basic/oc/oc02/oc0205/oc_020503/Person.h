@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface Person : NSObject {
+    @private
     int _age;
+    
+    @protected
+    NSString *_name;
 }
 
 @end

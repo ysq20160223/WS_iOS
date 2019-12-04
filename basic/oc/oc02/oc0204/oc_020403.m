@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <math.h>
 
-#import "../../../../PreHeader.h"
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 
 /*
@@ -18,7 +19,7 @@
  对象方法计算跟其它点的距离
  类方法计算两个点之间的距离
  */
-
+// *******************************************
 @interface Point2D : NSObject {
     double _x;
     double _y;
@@ -38,7 +39,7 @@
 
 @end
 
-
+// --
 @implementation Point2D
 
 - (void)setX:(double)x {
@@ -68,25 +69,30 @@
 
 // 计算和另一个点之间的距离
 - (double)distanceWithOther:(Point2D *)other {
-    return [Point2D distanceBetweenPointA:self andPointB:other]; // 对象方法 调用 类方法
+    // 方法一
+    double xDelta = self->_x - [other x];
+    double yDelta = self->_y - [other y];
+    return sqrt(pow(xDelta, 2) + pow(yDelta, 2));
+    
+    // 方法二
+    //    return [Point2D distanceBetweenPointA:self andPointB:other]; // 对象方法 调用 类方法
 }
 
 // 计算两个点之间的距离
 + (double)distanceBetweenPointA:(Point2D *)pointA andPointB:(Point2D *)pointB {
-    double xDelta = [pointA x] - [pointB x];
-    double xDeltaPow = pow(xDelta, 2); // 平分
+    // 方法一
+    return [pointA distanceWithOther:pointB]; // 类方法 调用 对象方法
     
-    double yDelta = [pointA y] - [pointB y];
-    double yDeltaPow = pow(yDelta, 2);
-    
-    return sqrt(xDeltaPow + yDeltaPow);
-    //    return [a distanceWithOther:b]; // 类方法 调用 对象方法
+    // 方法二
+    //    double xDelta = [pointA x] - [pointB x];
+    //    double yDelta = [pointA y] - [pointB y];
+    //    return sqrt(pow(xDelta, 2) + pow(yDelta, 2));
 }
 @end
 
 
 
-// ***********************************
+// *******************************************
 @interface Circle : NSObject {
     double _radius;
     Point2D *_point2D;
@@ -104,7 +110,7 @@
 
 @end
 
-
+// --
 @implementation Circle
 
 - (void)setRadius:(double)radius {
@@ -141,7 +147,7 @@
 @end
 
 
-// ***********************************
+// *******************************************
 void fun_01() {
     Point2D *p1 = [Point2D new];
     [p1 setX:0 andY:0];
@@ -149,9 +155,8 @@ void fun_01() {
     Point2D *p2 = [Point2D new];
     [p2 setX:3 andY:4];
     
-    NSLog(@"distanceWithOther: %f", [p1 distanceWithOther:p2]);
-    
-    NSLog(@"distanceBetween: %f", [Point2D distanceBetweenPointA:p1 andPointB:p2]);
+    NSLog(@"distanceWithOther: %f, distanceBetween: %f", [p1 distanceWithOther:p2],
+          [Point2D distanceBetweenPointA:p1 andPointB:p2]);
 }
 
 void fun_02() {
@@ -178,12 +183,11 @@ void fun_02() {
 }
 
 
-// ***********************************
+// *******************************************
 int main() {
     
-    //    fun_01();
-    
-    fun_02();
+    fun_01();
+//    fun_02();
     
     return 0;
 }

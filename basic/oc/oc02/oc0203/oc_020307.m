@@ -15,13 +15,17 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "../../../../PreHeader.h"
+
+
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
+
 
 @interface Person : NSObject
 
-+ (void)method;
++ (void)classMethod;
 
-- (void)method;
+//- (void)instanceMethod;
 
 @end
 
@@ -29,12 +33,12 @@
 
 @implementation Person
 
-+ (void)method {
++ (void)classMethod {
     NSLog(@"class method");
 }
 
-- (void)method {
-    NSLog(@"obj method");
+- (void)instanceMethod {
+    NSLog(@"instance method");
 }
 
 @end
@@ -43,11 +47,12 @@
 
 int main() {
     //
-    [Person method];
+    [Person classMethod];
     
     //
     Person *person = [Person new];
-    [person method];
+    [person instanceMethod];
+//    [person classMethod]; // 对象不能调用类方法
     
     return 0;
 }

@@ -32,7 +32,7 @@
 #import "Work.h"
 #import "Employee.h"
 
-#import "../../../../../../PreHeader.h"
+#import "../../../../../../PrefixHeader.pch"
 
 
 // 复写 init 方法, 进行初始化

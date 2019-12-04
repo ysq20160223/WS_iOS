@@ -9,9 +9,9 @@
 /*
     01, 指针和字符串
  
-    02, 常量区 : 常量字符串
-    03, 堆: 对象
-    04, 栈 : 局部变量
+    02, 常量区: 存放常量字符串
+    03, 堆: 存放对象
+    04, 栈: 存放局部变量
 
     05, 定义字符串的两种方式
         利用数组 : 字符串里面的字符是可以改变的 (变量)
@@ -33,8 +33,9 @@ void fun_01()
 {
     char name1[] = "it"; // 字符串变量
     char name2[] = "it";
+    char name3[] = {'I', 'T'};
     
-    printf("&name1 = %p, &name2 = %p\n", &name1, &name2);
+    printf("&name1: %p, &name2: %p, name2: %s, name3: %s\n", &name1, &name2, name2, name3);
     
     
     char *cp1 = "ok"; // 字符串常量, 不可更改
@@ -82,9 +83,9 @@ void fun_04()
 int main()
 {
     
-//     fun_01();
+     fun_01();
     
-     fun_02();
+//     fun_02();
     
     // fun_03();
     

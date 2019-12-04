@@ -20,9 +20,10 @@
         
  */
 
+
 #import <Foundation/Foundation.h>
 
-#import "../../../../../../PreHeader.h"
+#import "../../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Person+yy.h"

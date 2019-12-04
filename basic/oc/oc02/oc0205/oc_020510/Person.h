@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 @interface Person : NSObject
 

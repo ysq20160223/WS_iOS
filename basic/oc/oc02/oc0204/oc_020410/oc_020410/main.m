@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "Student.h"
-#import "../../../../../../PreHeader.h"
+
+
+#import "../../../../../../PrefixHeader.pch"
 
 int main() {
     

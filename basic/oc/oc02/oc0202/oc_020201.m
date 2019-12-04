@@ -15,7 +15,11 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
+
+
 
 // 1, 类的声明 (声明必须在调用之前, 实现可以放在末尾)
 @interface Car : NSObject

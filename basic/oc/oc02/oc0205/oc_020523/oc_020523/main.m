@@ -27,6 +27,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "../../../../../../PrefixHeader.pch"
+
 #import "Person.h"
 #import "Student.h"
 
@@ -87,7 +89,7 @@ void fun_06() {
 
 int main() {
     
-//    fun_01();
+    fun_01();
     
 //    fun_02();
     
@@ -97,7 +99,7 @@ int main() {
     
 //    fun_05();
     
-    fun_06();
+//    fun_06();
     
     return 0;
 }

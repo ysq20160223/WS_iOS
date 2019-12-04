@@ -11,9 +11,11 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "../../../../PreHeader.h"
 
-// ----------------------------------
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
+
+// *************************************
 @interface Animal : NSObject {
     int _age;
     int _weight;
@@ -50,7 +52,7 @@
 @end
 
 
-// ----------------------------------
+// *************************************
 @interface Dog : Animal
 
 @end
@@ -60,7 +62,7 @@
 @end
 
 
-// ----------------------------------
+// *************************************
 @interface Cat : Animal
 
 @end
@@ -70,7 +72,7 @@
 @end
 
 
-// ----------------------------------
+// *************************************
 int main()
 {
     Dog *dog = [Dog new];
@@ -80,6 +82,5 @@ int main()
     
     return 0;
 }
-
 
 

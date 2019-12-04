@@ -8,6 +8,8 @@
 
 #import "Book.h"
 
+#import "../../../../../PrefixHeader.pch"
+
 @implementation Book
 
 - (void)setPrice:(int)price {

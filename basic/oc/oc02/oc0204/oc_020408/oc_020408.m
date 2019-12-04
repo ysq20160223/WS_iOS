@@ -11,7 +11,8 @@
 #import "Point2D.h"
 #import "Circle.h"
 
-#import "../../../../../PreHeader.h"
+#define DEBUG
+#import "../../../../../PrefixHeader.pch"
 
 // cc oc_020408.m Point2D.m Circle.m -framework Foundation
 
@@ -24,10 +25,10 @@ void fun_01() {
     [p2 setX:3 andY:4];
     
     double distanceWithOther = [p1 distanceWithOther:p2];
-    NSLog(@"distanceWithOther: %f", distanceWithOther);
+    NSLog(@"distanceWithOther: %.2f", distanceWithOther);
     
     double distanceBetween = [Point2D distanceBetweenPointA:p1 andPointB:p2];
-    NSLog(@"distanceBetween: %f", distanceBetween);
+    NSLog(@"distanceBetween: %.3f", distanceBetween);
 }
 
 void fun_02() {

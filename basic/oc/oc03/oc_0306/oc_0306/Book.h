@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../../../../../PreHeader.h"
 
 @interface Book : NSObject {
     int _price;

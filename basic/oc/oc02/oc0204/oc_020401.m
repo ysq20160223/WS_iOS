@@ -11,7 +11,9 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "../../../../PreHeader.h"
+
+#define DEBUG
+#import "../../../../PrefixHeader.pch"
 
 void fun_01() {
     NSString *s = @"china";
