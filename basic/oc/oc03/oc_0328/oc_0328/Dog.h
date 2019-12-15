@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
-
 @class Person;
 
 @interface Dog : NSObject

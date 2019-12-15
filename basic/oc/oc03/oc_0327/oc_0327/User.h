@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
-
 typedef enum {
     SexMale, SexFemale
 } Sex;

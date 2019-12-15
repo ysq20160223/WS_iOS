@@ -19,15 +19,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "IDCard.h"
 
 int main() {
-    
     Person *p = [[Person alloc] init];
-    
     IDCard *c = [[IDCard alloc] init];
     
     p.card = c;

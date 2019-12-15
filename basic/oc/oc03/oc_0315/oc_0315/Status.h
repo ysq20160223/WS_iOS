@@ -8,22 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
-
 #import "User.h"
+
 
 @interface Status : NSObject
 
-@property (nonatomic, retain) NSString *text;
-
-@property (nonatomic, retain) NSString *icon;
+@property (nonatomic, retain) NSString *content;
 
 // 1970-01-01 00:00:00
 @property (nonatomic, assign) long time;
 
-@property (nonatomic, retain) User *user;
+@property (nonatomic, retain) User *user; // 当前微博的发表者
 
-@property (nonatomic, retain) Status *retweenStatus;
+@property (nonatomic, retain) Status *retweenStatus; // 转发别人的微博
 
 @property (nonatomic, assign) int commentsCount;
 

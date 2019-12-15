@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
 
 typedef enum {
     SexMale, SexFemale
@@ -24,16 +23,11 @@ typedef struct {
 
 @interface User : NSObject
 
-@property (nonatomic, retain, readwrite) NSString *name;
+@property (nonatomic, retain, readwrite) NSString *userName;
 
-@property (nonatomic, retain) NSString *account;
-@property (nonatomic, retain) NSString *password;
-
-@property (nonatomic, retain) NSString *icon;
+@property (nonatomic, retain) NSString *headPortrait; // 用户头像
 
 @property (nonatomic, assign) Sex sex;
-
-@property (nonatomic, retain) NSString *phone;
 
 @property (nonatomic, assign) Date date;
 

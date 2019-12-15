@@ -8,7 +8,6 @@
 
 #import "Person.h"
 
-#import "../../../../../PreHeader.h"
 
 @interface Student : Person
 

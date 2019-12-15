@@ -14,7 +14,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 #import "User.h"
 #import "Status.h"

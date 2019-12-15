@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
-
 #import "Book.h"
 
 @interface Person : NSObject

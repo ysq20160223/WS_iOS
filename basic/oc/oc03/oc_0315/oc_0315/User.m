@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
+#import "../../../../../PrefixHeader.pch"
+
 #import "User.h"
 
 @implementation User
@@ -13,13 +15,10 @@
 //
 - (void)dealloc {
     
-    NSLog(@"name: %@", _name);
+    NSLog(@"_userName: %@", _userName);
     
-    [_name dealloc];
-    [_account dealloc];
-    [_password dealloc];
-    [_icon dealloc];
-    [_phone dealloc];
+    [_userName release];
+    [_headPortrait release];
     
     [super dealloc];
 }

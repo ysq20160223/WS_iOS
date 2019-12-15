@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "../../../../../PrefixHeader.pch"
+
 #import "Person.h"
 
+
+
 int main() {
-    
     Person *person = [[Person alloc] init];
     person.rich = YES;
     
@@ -21,3 +24,6 @@ int main() {
     
     return 0;
 }
+
+
+

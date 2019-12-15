@@ -8,6 +8,9 @@
 
 #import "Person.h"
 
+#import "../../../../../PrefixHeader.pch"
+
+
 @implementation Person
 
 + (id)person {

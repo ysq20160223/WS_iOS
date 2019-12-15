@@ -7,17 +7,18 @@
 //
 
 #import "IDCard.h"
-
 #import "Person.h"
+
+#import "../../../../../PrefixHeader.pch"
+
 
 @implementation IDCard
 
 - (void)dealloc {
-
-//    [_person release];
-    
     NSLog(@"");
     [super dealloc];
 }
 
 @end
+
+

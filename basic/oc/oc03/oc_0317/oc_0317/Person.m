@@ -8,6 +8,8 @@
 
 #import "Person.h"
 
+#import "../../../../../PrefixHeader.pch"
+
 @implementation Person
 
 
@@ -24,6 +26,5 @@
 }
 
 @end
-
 
 

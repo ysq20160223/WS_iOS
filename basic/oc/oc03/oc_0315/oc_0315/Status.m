@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
+#import "../../../../../PrefixHeader.pch"
+
 #import "Status.h"
 
 @implementation Status
@@ -13,12 +15,11 @@
 
 - (void)dealloc {
 
-    NSLog(@"text: %@", _text);
+    NSLog(@"_content: %@", _content);
     
-    [_text dealloc];
-    [_icon dealloc];
-    [_user dealloc];
-    [_retweenStatus dealloc];
+    [_content release];
+    [_user release];
+    [_retweenStatus release];
     
     [super dealloc];
 }

@@ -9,8 +9,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
-
 @class Dog;
 
 @interface Person : NSObject

@@ -8,6 +8,9 @@
 
 #import "Student.h"
 
+#import "../../../../../PrefixHeader.pch"
+
+
 @implementation Student
 
 + (id)studentWithAge:(int)age andMoney:(int)money {

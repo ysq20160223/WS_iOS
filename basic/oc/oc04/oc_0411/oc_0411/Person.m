@@ -8,6 +8,8 @@
 
 #import "Person.h"
 
+#import "../../../../../PrefixHeader.pch"
+
 #import "TicketDelegate.h"
 
 @implementation Person

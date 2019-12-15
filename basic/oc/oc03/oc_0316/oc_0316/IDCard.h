@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
 
-@class Person;
+@class Person; // 
+
 
 @interface IDCard : NSObject
 
 @property (nonatomic, assign) Person *person; // 这里不能用 retain
 
 @end
+
+

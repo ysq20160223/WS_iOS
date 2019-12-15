@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
-
 #import "Car.h"
 #import "Dog.h"
 
@@ -22,6 +20,8 @@
 @property int no;
 
 - (id)initWithNo:(int)no;
+
+- (id)initWithNo:(int)no andName:(NSString *)name;
 
 //
 - (void)setName:(NSString *)name;

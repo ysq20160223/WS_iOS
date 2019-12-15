@@ -17,6 +17,13 @@
     return self;
 }
 
+- (id)initWithNo:(int)no andName:(NSString *)name {
+    if (self = [self initWithNo:no]) {
+        _name = name;
+    }
+    return self;
+}
+
 //
 - (void)setName:(NSString *)name {
     if(name != _name) {

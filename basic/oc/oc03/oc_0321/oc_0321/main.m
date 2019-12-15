@@ -21,7 +21,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Student.h"
@@ -61,11 +61,11 @@ void fun_03() {
 
 int main() {
     
-//    fun_01();
+    fun_01();
     
 //    fun_02();
     
-    fun_03();
+//    fun_03();
     
     return 0;
 }

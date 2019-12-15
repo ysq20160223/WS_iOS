@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
 
 @class IDCard;
 
@@ -18,3 +17,5 @@
 @property (nonatomic, retain) IDCard *card;
 
 @end
+
+

@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
-
 @interface Person : NSObject
 
 @property (nonatomic, assign) int age;
@@ -17,3 +15,5 @@
 - (id)initWithAge:(int)age;
 
 @end
+
+

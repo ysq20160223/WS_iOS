@@ -6,14 +6,14 @@
 //  Copyright © 2019年 Apple. All rights reserved.
 //
 
+#import "../../../../../PrefixHeader.pch"
+
 #import "NoObjcARC.h"
 
 @implementation NoObjcARC
 
 - (void)dealloc {
-
     NSLog(@"");
-    
     [super dealloc];
 }
 

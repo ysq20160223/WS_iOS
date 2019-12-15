@@ -25,12 +25,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 
 // 0401
 // 没有参数没有返回值
-void (^myBlock)() = ^{
+void (^myBlock)() = ^(){
     NSLog(@"this is block");
 };
 
@@ -43,7 +43,7 @@ int (^sum)(int, int) = ^(int a, int b){
 
 void (^printLine)(int) = ^(int n) {
     for(int i = 0; i < n; i++) {
-        NSLog(@"-----");
+        NSLog(@"----------------------------");
     }
 };
 
@@ -53,9 +53,7 @@ void (^printLine)(int) = ^(int n) {
 typedef int (^TypedefBlock)(int, int);
 
 void fun_03() {
-    TypedefBlock typeSum = ^(int a, int b) {
-        return a + b;
-    };
+    TypedefBlock typeSum = sum;
     
     TypedefBlock typeMinus = ^(int a, int b) {
         return a - b;
@@ -64,6 +62,8 @@ void fun_03() {
     NSLog(@"sum: %d, minus: %d", typeSum(1, 2), typeMinus(1, 2));
 }
 
+
+//
 int additive(int a, int b) {
     return a + b;
 }
@@ -72,6 +72,7 @@ int additive(int a, int b) {
 //
 int main() {
     @autoreleasepool {
+        //
         int(*pAdditive)(int, int) = additive; // 指向函数的指针
         NSLog(@"%d + %d: %d", 1, 2, pAdditive(1, 2));
         printLine(1);

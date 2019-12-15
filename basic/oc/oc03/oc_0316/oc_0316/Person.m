@@ -7,11 +7,12 @@
 //
 
 #import "Person.h"
-
 #import "IDCard.h"
 
-@implementation Person
+#import "../../../../../PrefixHeader.pch"
 
+
+@implementation Person
 
 - (void)dealloc {
 
@@ -22,3 +23,5 @@
 }
 
 @end
+
+

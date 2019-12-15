@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 #import "Book.h"
 #import "Person.h"
@@ -20,8 +20,10 @@ int main() {
     Book *book = [[Book alloc] init];
     [person setBook:book];
     
+    NSLog(@"retainCount: %ld", [book retainCount]); // 
     
     [book release];
+    
     [person release];
     
     return 0;

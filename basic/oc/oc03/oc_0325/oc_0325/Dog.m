@@ -8,6 +8,9 @@
 
 #import "Dog.h"
 
+#import "../../../../../PrefixHeader.pch"
+
+
 @implementation Dog
 
 - (id)initWithAge:(int)age {

@@ -8,29 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 #import "User.h"
 #import "Status.h"
 
 int main() {
     
-    // --
+    // ----- JJ 发表微博 今天天气不错
     User *originalUser = [[User alloc] init];
-    originalUser.name = @"yy";
+    originalUser.userName = @"JJ";
     
     Status *originalStatus = [[Status alloc] init];
-    originalStatus.text = @"这是原创";
+    originalStatus.content = @"今天天气不错";
     originalStatus.user = originalUser;
     
-    //
+    // ----- SB 转发 JJ微博 并附加 今天天气真的不错
     User *user = [[User alloc] init];
-    user.name = @"转发的人";
-    
+    user.userName = @"SB";
     
     Status *status = [[Status alloc] init];
     status.retweenStatus = originalStatus;
-    status.text = @"这是转发别人的";
+    status.content = @"今天天气真的不错";
     status.user = user;
     
     //

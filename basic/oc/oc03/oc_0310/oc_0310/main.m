@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PreHeader.h"
+#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Car.h"
 
 #import "Dog.h"
 #import "Student.h"
+
 
 /*
     内存管理代码规范
@@ -39,8 +40,11 @@ void fun_01() {
 }
 
 void fun_02() {
-    Student *student = [[Student alloc] initWithNo:21];
-    [student setName:@"yy"]; // @"" 不是通过 alloc 产生, 不用 release
+    //
+//    Student *student = [[Student alloc] initWithNo:21];
+//    [student setName:@"yy"]; // @"" 不是通过 alloc 产生, 不用 release
+    
+    Student *student = [[Student alloc] initWithNo:21 andName:@"jj"];
     
     //
     Car *car = [[Car alloc] initWithSpeed:210];
@@ -56,9 +60,9 @@ void fun_02() {
 
 int main() {
     
-//    fun_01();
+    fun_01();
     
-    fun_02();
+//    fun_02();
     
     return 0;
 }

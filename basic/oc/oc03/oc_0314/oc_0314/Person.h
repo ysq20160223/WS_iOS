@@ -29,9 +29,9 @@
 
 @interface Person : NSObject
 
-@property (nonatomic)int age;
+@property (nonatomic, assign) int age;
 
-@property (nonatomic, getter = isRich) BOOL rich;
+@property (nonatomic, getter = isRich, assign) BOOL rich;
 
 @end
 

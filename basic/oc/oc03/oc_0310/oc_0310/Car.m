@@ -26,7 +26,7 @@
         [self speed] : get
      */
     
-    NSLog(@"speed: %d", _speed);
+    NSLog(@"speed: %ld", _speed);
     [super dealloc];
 }
 
