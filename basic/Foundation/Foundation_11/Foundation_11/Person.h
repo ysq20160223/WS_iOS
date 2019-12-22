@@ -10,4 +10,8 @@
 
 @interface Person : NSObject
 
+@property (nonatomic, strong) NSString *name;
+
+- (instancetype)initWithName:(NSString *)name;
+
 @end

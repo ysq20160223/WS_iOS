@@ -1,5 +1,5 @@
 //
-//  NSLogHeader.h
+//  PrefixHeader.pch
 //  
 //
 //  Created by Apple on 2019/6/2.
@@ -56,7 +56,7 @@
 
 #define NSLog(FORMAT, ...) nil
 
-#endif
+#endif /* DEBUG */
 // *********************************************************** NSLog END
 
 
@@ -71,5 +71,7 @@
 
 #endif /* _PrefixHeader_pch_ */
 
-#endif
+#endif /* __OBJC__ */
+
+
 

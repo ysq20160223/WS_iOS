@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#import "../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -45,12 +45,29 @@ void fun_01() {
     NSArray *array3 = @[@"aa", @"bb", @"cc"]; // 常用 - 编译器新特性
     
     printNSArray(array1, @"array1");
-    NSLog(@"---");
+    NSLog(@"==========");
     printNSArray(array2, @"array2");
-    NSLog(@"---");
+    NSLog(@"**********");
     printNSArray(array3, @"array3");
 }
 
+
+
+
+// 个人理解 - 1
+typedef void (^EnumerateBlock)(id, NSUInteger, BOOL *);
+
+void enumArray(NSArray *array, EnumerateBlock block) {
+    [array enumerateObjectsUsingBlock:block];
+}
+
+// 个人理解 - 2
+void test(NSArray *array, void (^block)(id obj, NSUInteger idx, BOOL *stop)) {
+    [array enumerateObjectsUsingBlock:block];
+}
+
+
+//
 void fun_02() {
     NSArray *array = @[@"aaa", [[Person alloc] init], @"bbb"];
     
@@ -64,26 +81,35 @@ void fun_02() {
     }];
 
     
-    // ------- 对 enumerateObjectsUsingBlock 内部实现分析 -- start
+//    // ------- 对 enumerateObjectsUsingBlock 内部实现分析 -- start
     void (^block)(id, NSUInteger, BOOL *) = ^(id obj, NSUInteger idx, BOOL *stop){
-        if(idx == 1){
-            *stop = YES;
-        }
+//        if(idx == 2){
+//            *stop = YES;
+//        }
         NSLog(@"block, idx: %ld, obj: %@", idx, obj);
     };
+//
+//    for (int i = 0; i < array.count; i++) {
+//        BOOL isStop = NO;
+//        id obj = array[i];
+//        block(obj, i, &isStop);
+//        
+//        if (isStop) {
+//            break;
+//        }
+//    }
+//    // ------- 对 enumerateObjectsUsingBlock 内部实现分析 -- end
     
-    for (int i = 0; i < array.count; i++) {
-        BOOL isStop = NO;
-        id obj = array[i];
-        block(obj, i, &isStop);
-        
-        if (isStop) {
-            break;
-        }
-    }
-    // ------- 对 enumerateObjectsUsingBlock 内部实现分析 -- end
     
+    //
+    NSLog(@"----------------------------");
+    enumArray(array, block);
+    
+    //
+    NSLog(@"++++++++++++++++++++++++++++");
+    test(array, block);
 }
+
 
 int main() {
     @autoreleasepool {
@@ -92,7 +118,5 @@ int main() {
     }
     return 0;
 }
-
-
 
 

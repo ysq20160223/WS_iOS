@@ -13,7 +13,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#import "../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -22,7 +22,7 @@ int main() {
         NSMutableArray *array = [NSMutableArray arrayWithObjects:@"yy", @"jj", @"hh", nil]; // 初始化 - 添加元素
         //    NSMutableArray *array = @[@"yy", @"jj"]; // error: 返回是 NSArray *
         
-        [array addObject:[[Person alloc] init]];
+        [array addObject:[[Person alloc] initWithName:@"jj"]];
         [array addObject:@"xx"];
         
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

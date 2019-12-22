@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#import "../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -36,17 +36,16 @@ void fun_02() {
     [muSet enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
         NSLog(@"obj: %@", obj);
     }];
+    
 }
 
 int main() {
     @autoreleasepool {
-        
         fun_01();
         
-        NSLog(@"--------");
+        NSLog(@"----------------------------");
         
         fun_02();
-        
     }
     return 0;
 }

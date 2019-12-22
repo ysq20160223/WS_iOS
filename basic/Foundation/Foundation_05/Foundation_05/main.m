@@ -27,7 +27,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#import "../../../../PrefixHeader.pch"
 
 
 
@@ -49,7 +49,7 @@ void fun_01() {
 //    printf("%s", [@"oc字符串 -> c字符串\n" UTF8String]); // oc字符串 -> c字符串
     
     // 5 - 读取本地文件
-    NSString *fullPath = @"/Users/Apple/Desktop/iOS/WS_iOS/PreHeader.h";
+    NSString *fullPath = @"/Users/Apple/Desktop/iOS/WS_iOS/PrefixHeader.pch";
 //    NSLog(@"\n%@", [[NSString alloc] initWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
     NSLog(@"\n%@", [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
     
@@ -58,7 +58,7 @@ void fun_01() {
 //    NSURL *url = [NSURL fileURLWithPath:fullPath]; // 同上一句
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"]; // 同上一句
     
-    NSLog(@"\n%@",  [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]);
+//    NSLog(@"\n%@",  [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]);
 }
 
 void fun_02() {
@@ -85,9 +85,9 @@ void fun_03() {
 int main() {
     @autoreleasepool {
         
-//        fun_01();
+        fun_01();
         
-        fun_02();
+//        fun_02();
         
 //        fun_03();
         

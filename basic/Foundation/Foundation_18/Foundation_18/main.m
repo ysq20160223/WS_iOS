@@ -12,7 +12,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#import "../../../../PrefixHeader.pch"
 
 void fun_01() {
     NSDate *date = [NSDate date]; // 格林时间

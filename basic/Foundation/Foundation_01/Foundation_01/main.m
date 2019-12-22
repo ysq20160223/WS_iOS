@@ -19,7 +19,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PreHeader.h"
+#import "../../../../PrefixHeader.pch"
+
 
 // 0501
 void fun_01() {
