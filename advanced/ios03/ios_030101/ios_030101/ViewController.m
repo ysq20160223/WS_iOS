@@ -8,15 +8,12 @@
 
 #import "ViewController.h"
 
-#import "../../../../PreHeader.h"
-
 @interface ViewController () {
     UIScrollView *_scrollView;
     UIImageView *_imageView;
 }
 
 @end
-
 
 
 
@@ -30,7 +27,7 @@
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     _scrollView = scrollView;
     
-    scrollView.frame = CGRectMake(0, kStatusBarH, kViewControllerW, 500); // 设置 ScrollView 的可见范围
+    scrollView.frame = CGRectMake(0, kStatusBarH, self.view.frame.size.width, 500); // 设置 ScrollView 的可见范围
     scrollView.backgroundColor = [UIColor magentaColor];
     [self.view addSubview:scrollView];
     
@@ -75,16 +72,12 @@
 //                point.x = 0;
 //                point.y = 0;
                 
-                //
                 point = CGPointZero;
                 break;
         }
         _scrollView.contentOffset = point;
     }];
 }
-
-
-
 
 @end
 

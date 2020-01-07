@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // 1, 加载 xib
-   UIToolbar *keyboard = [[NSBundle mainBundle] loadNibNamed:@"Keyboard" owner:nil options:nil][0];
+   UIToolbar *keyboard = [[NSBundle mainBundle] loadNibNamed:@"keyboard" owner:nil options:nil][0];
     
     // 2
     _nameField.inputAccessoryView = keyboard; // 设置键盘上面的工具条
@@ -45,9 +45,6 @@
     [UIView commitAnimations];
 }
 
-
 @end
-
-
 
 

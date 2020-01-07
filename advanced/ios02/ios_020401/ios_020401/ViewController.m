@@ -14,12 +14,12 @@
 
 #import "ViewController.h"
 
-#import "../../../../PreHeader.h"
+#define kImgW 66
 
-#define kImgWidth 51
-#define kImgHeight 51
 
-@interface ViewController ()
+@interface ViewController () {
+    int _screenW, _screenH;
+}
 
 @end
 
@@ -31,65 +31,74 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    _screenW = self.view.frame.size.width;
+    _screenH = self.view.frame.size.height;
     
-    int screenW = self.view.frame.size.width;
-    int screenH = self.view.frame.size.height;
+    _segmented.frame = CGRectMake(0, _screenH - _segmented.frame.size.height, _screenW, _segmented.frame.size.height);
+//    NSLog(@"selectedSegmentIndex: %ld", _segmented.selectedSegmentIndex);
     
-    _layout.frame = CGRectMake(0, 0, screenW, screenH - _segmented.frame.size.height - 20);
-    
-    
-    CGRect frame = CGRectMake(10, screenH - _segmented.frame.size.height - 10, screenW - 20, _segmented.frame.size.height);
-    _segmented.frame = frame;
-    
-    [self adjustImagePositionWithColumns:3 add:YES];
+    [self adjustImagePositionWithColumns:_segmented.selectedSegmentIndex + 3 add:YES];
 }
 
 
 - (IBAction)indexChange:(UISegmentedControl *)sender {
-//    NSLog(@"selectedSegmentIndex: %ld", sender.selectedSegmentIndex);
+    NSLog(@"selectedSegmentIndex: %ld", sender.selectedSegmentIndex);
     
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    
-    [self adjustImagePositionWithColumns:(sender.selectedSegmentIndex + 3) add:NO];
-    
-    [UIView commitAnimations];
-    
+    [UIView animateWithDuration:1 animations:^{
+        [self adjustImagePositionWithColumns:(sender.selectedSegmentIndex + 3) add:NO];
+    }];
 }
 
-// 1, 去掉第二个参数
-// 2, 在表情最后面添加一个 + 按钮, 点击按钮在尾部添加一个表情(表情图片随机)
-- (void)adjustImagePositionWithColumns:(long)columns add:(BOOL)add{
-    CGFloat margin = (self.view.frame.size.width - columns * kImgWidth) / (columns + 1);
 
-    
+- (void)adjustImagePositionWithColumns:(long)columns add:(BOOL)add{
+    CGFloat margin = (_screenW - columns * kImgW) / (columns + 1); // 每个表情的间距
+
     for (int i = 0; i < 9; i++) {
         int col = i % columns; // i这个位置对应的列数
-        int row = i / columns; //
+        int row = i / columns;
         
-        CGFloat x = margin + col * (kImgWidth + margin);
-        CGFloat y = margin + row * (kImgWidth + margin);
+        CGFloat x = margin + col * (kImgW + margin);
+        CGFloat y = margin + row * (kImgW + margin);
         
         if(add) {
-            NSString *imgName = [NSString stringWithFormat:@"%d.png", i];
-            [self addImg:imgName x:x y:y];
+            NSString *imgName = [NSString stringWithFormat:@"%d.png", i % 9]; // 9张图片
+            [self addImg:imgName x:x y:y index:i];
         } else {
-            //        [self addImg:imgName x:x y:y];
-            UIView *child = _layout.subviews[i];
+            UIView *child = self.view.subviews[i + 1];
             
             CGRect rect = child.frame;
             rect.origin = CGPointMake(x, y);
             child.frame = rect;
         }
     }
+//    NSLog(@"subviews: %@", self.view.subviews);
 }
 
 
-- (void)addImg:(NSString *)icon x:(CGFloat)x y:(CGFloat)y {
-    UIImageView *iv = [[UIImageView alloc] init];
-    iv.image = [UIImage imageNamed:icon];
-    iv.frame = CGRectMake(x, y, kImgWidth, kImgHeight);
-    [_layout addSubview:iv];
+- (void)addImg:(NSString *)imgName x:(CGFloat)x y:(CGFloat)y index:(int)index {
+    //
+//    UIImageView *iv = [[UIImageView alloc] init];
+//    iv.image = [UIImage imageNamed:icon];
+//    iv.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:1];
+//    iv.frame = CGRectMake(x, y, kImgW, kImgW);
+//    [self.view addSubview:iv];
+    
+    //
+    UIButton *btn = [[UIButton alloc] init];
+    btn.adjustsImageWhenHighlighted = NO;
+    btn.tag = index;
+    [btn addTarget:self action:@selector(imgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:1];
+    btn.frame = CGRectMake(x, y, kImgW, kImgW);
+    [self.view addSubview:btn];
+}
+
+
+//
+- (void)imgBtnClick:(UIButton *)btn {
+    NSLog(@"index: %ld, %@", btn.tag, btn);
+    
 }
 
 @end

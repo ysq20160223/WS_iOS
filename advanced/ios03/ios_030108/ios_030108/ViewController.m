@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 
-#import "../../../../PreHeader.h"
-
 #define kCount 8
 
 @interface ViewController () <UICollectionViewDelegate> {

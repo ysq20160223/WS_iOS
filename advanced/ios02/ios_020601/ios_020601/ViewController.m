@@ -15,13 +15,10 @@
  */
 
 #import "ViewController.h"
-#import "../../../../PreHeader.h"
 
 #import "RowView.h"
 
-#define kRowHeight 77
-#define kIconWidth kRowHeight
-
+#define kRowH 77
 #define kRowDivider 10
 
 // 类扩展(class extension, 匿名分类)
@@ -46,7 +43,7 @@
 - (IBAction)add:(UIBarButtonItem *)sender {
 //    NSLog(@"add");
     UIView *lastView = [self.view.subviews lastObject];
-    NSLog(@"lastView: %@: ", lastView);
+//    NSLog(@"lastView: %@: ", lastView);
     
     CGFloat rowY = lastView.frame.origin.y + lastView.frame.size.height + kRowDivider;
 
@@ -59,18 +56,18 @@
     } else if (self.view.subviews.count % 3 == 2){
         rowView = [self createRowViewWithRowView];
     }
-//    UIView *rowView = [self createRowViewWithCode];;
+//    UIView *rowView = [self createRowViewWithCode];
     
     [self.view addSubview:rowView]; // 2, 添加一行到控制器的view中
     _barBtnTrash.enabled = YES; // 3, 右边删除图标 enable
     
    
     // 4, 执行动画
-    rowView.frame = CGRectMake(_screenW, rowY, _screenW, kRowHeight);
+    rowView.frame = CGRectMake(_screenW, rowY, _screenW, kRowH);
     rowView.alpha = 0;
     
     [UIView animateWithDuration:1 animations:^{
-        rowView.frame = CGRectMake(0, rowY, _screenW, kRowHeight);
+        rowView.frame = CGRectMake(0, rowY, _screenW, kRowH);
         rowView.alpha = 1;
     }]; // 官方推荐使用
 }
@@ -84,7 +81,7 @@
     
     int randomIndex = arc4random_uniform(9);
     NSString *iconName = [NSString stringWithFormat:@"01%d.png", randomIndex];
-    NSString *labelName = [NSString stringWithFormat:@"loadNibName: %d", randomIndex];
+    NSString *labelName = [NSString stringWithFormat:@"RowView: %d", randomIndex];
     
     RowView *rowView = [RowView rowViewWithIcon:iconName andName:labelName];
     [rowView.iconBtn addTarget:self action:@selector(iconClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -99,7 +96,7 @@
 // 从 xib 中加载一行 view
 - (UIView *)createRowViewWithXib {
     // 1, 创建 objects 下面所有的控件, 并且按顺序装到数组中返回
-    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"RowView" owner:self options:nil];
+    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"RowViewXib" owner:self options:nil];
     
     // 当 owner 为 self 时, 并且 xib 的 class 设置为所在 ViewController 时, xib 中的控件才可以连线到 ViewController 中
 //    NSArray *views = [[NSBundle mainBundle] loadNibNamed:@"RowView" owner:self options:nil];
@@ -134,13 +131,13 @@
 // 020606
 // *******************************
 - (UIView *)createRowViewWithCode {
-    // 1, 创建控件
+    // 创建控件
     UIView *rowView = [[UIView alloc] init];
     rowView.backgroundColor = [UIColor magentaColor];
     
-    // 2, 添加头像
+    // 1, 添加头像
     UIButton *iconBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    iconBtn.frame = CGRectMake(0, 0, kIconWidth, kRowHeight);
+    iconBtn.frame = CGRectMake(0, 0, kRowH, kRowH);
     
     int randomIndex = arc4random_uniform(9); // arc4random() % 9
     NSString *iconName = [NSString stringWithFormat:@"01%d.png", randomIndex]; // 产生随机文件名
@@ -149,18 +146,18 @@
     iconBtn.tag = 1;
     [rowView addSubview:iconBtn];
     
-    // 3, 添加名字 (标签)
+    // 2, 添加名字 (标签)
     UILabel *nameLabel = [[UILabel alloc] init];
-    nameLabel.frame = CGRectMake(0, 0, _screenW, kRowHeight);
+    nameLabel.frame = CGRectMake(0, 0, _screenW, kRowH);
     nameLabel.textAlignment = NSTextAlignmentCenter;
     nameLabel.text = [NSString stringWithFormat:@"code: %d", randomIndex];
     nameLabel.tag = 2;
     [rowView addSubview:nameLabel];
     
     // 020610
-    // 4, 每行的删除按钮
+    // 3, 每行的删除按钮
     UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    deleteBtn.frame = CGRectMake(285, 0, kRowHeight, kRowHeight);
+    deleteBtn.frame = CGRectMake(285, 0, kRowH, kRowH);
     [deleteBtn setTitle:@"delete" forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteClick:) forControlEvents:UIControlEventTouchUpInside];
     [rowView addSubview:deleteBtn];
@@ -189,7 +186,7 @@
             for (long i = startIndex; i < self.view.subviews.count; i++) {
                 UIView *child = self.view.subviews[i];
                 CGRect rect = child.frame;
-                rect.origin.y -= kRowHeight + kRowDivider;
+                rect.origin.y -= kRowH + kRowDivider;
                 
                 child.frame = rect;
             }
@@ -207,12 +204,12 @@
     UILabel *label = [icon.superview viewWithTag:2];
     UIButton *deleteBtn = [icon.superview viewWithTag:3];
     
-    NSLog(@"%@, %@, %@", iconInfo, label.text, deleteBtn);
+    NSLog(@"iconInfo: %@, label.text: %@, deleteBtn: %@", iconInfo, label.text, deleteBtn);
 }
 
 
 - (IBAction)trash:(UIBarButtonItem *)sender {
-    NSLog(@"");
+//    NSLog(@"");
     UIView *lastView = [self.view.subviews lastObject];
     
     [UIView animateWithDuration:1 animations:^{

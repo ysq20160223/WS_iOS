@@ -10,13 +10,13 @@
 
 @implementation RowView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (void)load {
+    NSLog(@"");
 }
-*/
+
++ (void)initialize {
+    NSLog(@"");
+}
 
 + (id)rowViewWithIcon:(NSString *)icon andName:(NSString *)name {
     RowView *view = [[NSBundle mainBundle] loadNibNamed:@"RowView" owner:nil options:nil][0];
@@ -32,8 +32,6 @@
     
     [view.iconBtn setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
     view.nameLabel.text = name;
-    
-    [view setBackgroundColor:[UIColor lightGrayColor]];
     
     return view;
 }

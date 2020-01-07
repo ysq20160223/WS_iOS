@@ -36,18 +36,16 @@
     // 1
     UIImageView *iv = [[UIImageView alloc] init];
     iv.image = [UIImage imageNamed:@"014.png"];
-    iv.frame = CGRectMake(0, 0, 155, 155);
+    iv.frame = CGRectMake(0, 20, 120, 120);
     [self.view addSubview:iv];
     
     // 2
     UIButton *btn = [[UIButton alloc] init];
-    [btn setBackgroundImage:[UIImage imageNamed:@"bg.png"] forState:UIControlStateNormal]; //
+    [btn setBackgroundImage:[UIImage imageNamed:@"bg.png"] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"016.png"] forState:UIControlStateNormal];
     [btn setTitle:@"btn" forState:UIControlStateNormal];
-    btn.frame = CGRectMake(0, 200, 155, 155);
-    
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-    
+    btn.frame = CGRectMake(0, 200, 120, 120);
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside]; //
     [self.view addSubview:btn];
     
     // 3 - UISlider

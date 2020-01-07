@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *tom;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 
 - (IBAction)btnClick:(UIButton *)sender;
 

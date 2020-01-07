@@ -6,7 +6,6 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-
 #import "ViewController.h"
 
 @interface ViewController () <UICollectionViewDelegate> {
@@ -30,9 +29,8 @@
     [self.view addSubview:scrollView];
     
     UIImage *image = [UIImage imageNamed:@"yy_002.jpg"];
-    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yy_002.jpg"]];
+    _imageView = [[UIImageView alloc] initWithImage:image];
     [scrollView addSubview:_imageView];
-    
     scrollView.contentSize = image.size;
     
     // 设置代理
@@ -52,9 +50,6 @@
 
 
 @end
-
-
-
 
 
 

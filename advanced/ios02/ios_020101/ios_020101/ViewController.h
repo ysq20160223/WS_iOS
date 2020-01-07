@@ -10,7 +10,9 @@
 
 @interface ViewController : UIViewController
 
+// interface builder
 - (IBAction)onClick:(UIButton *)btn;
 
 @end
+
 

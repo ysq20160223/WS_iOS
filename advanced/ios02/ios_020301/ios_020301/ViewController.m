@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 
-#import "../../../../PreHeader.h"
-
 
 @interface ViewController() {
     int _screenW;
@@ -37,39 +35,42 @@
 //    NSLog(@"path:%@", path);
 
     _descArray = [NSArray arrayWithContentsOfFile:path]; // 3, 加载 path 对应的文件来创建数组
-    _imageDesc.text = _descArray[0];
+    _lbDesc.text = _descArray[0];
     
     
     CGRect frame = _settingView.frame;
     frame.origin.y = self.view.frame.size.height;
     frame.size.width = self.view.frame.size.width;
     _settingView.frame = frame;
-}
-
-
-- (IBAction)sliderValueChange:(UISlider *)sender {
-//    NSLog(@"sliderValueChange : %f", sender.value);
     
-    NSString *imageNamed = [NSString stringWithFormat:@"img%.f.png", sender.value]; // .0f == .f (不保留小数)
-    _imageView.image = [UIImage imageNamed:imageNamed]; // 1, 设置中间的图片
-    _imageNo.text = [NSString stringWithFormat:@"%.0f/16", sender.value + 1]; // 2, 设置序号
-    _imageDesc.text = _descArray[(int)(sender.value)]; // 3, 设置描述
+    //
+//    _contentSlide.continuous = NO; // 滑动结束调用
 }
+
+
+- (IBAction)contentSliderValueChange:(UISlider *)sender {
+    NSLog(@"sliderValueChange : %f", sender.value); // sender.value = [0 ~ 15]
+    
+    _lbNo.text = [NSString stringWithFormat:@"%.f/16", sender.value + 1]; // 设置序号
+    // .0f == .f (不保留小数) ; %02 表示保持两位数格式
+    NSString *imageNamed = [NSString stringWithFormat:@"img%02.f.png", sender.value];
+    _imageView.image = [UIImage imageNamed:imageNamed]; // 设置中间的图片
+    _lbDesc.text = _descArray[(int)round(sender.value)]; // 设置描述
+}
+
 
 - (IBAction)setting {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    
-    CGPoint center = _settingView.center; // 1, 取出中点
-    if(_settingView.frame.origin.y == _screenH) {
-        center.y -= _screenH; // 2, 修改 y 值
-    } else {
-        center.y += _screenH; // 2, 修改 y 值
-    }
-    _settingView.center = center; // 3, 重新赋值
-    
-    [UIView commitAnimations];
+    [UIView animateWithDuration:0.5 animations:^{
+        CGPoint center = _settingView.center; // 1, 取出中点
+        if(_settingView.frame.origin.y >= _screenH) {
+            center.y = _screenH - _settingView.frame.size.height / 2; // 2, 修改 y 值
+        } else {
+            center.y = _screenH + _settingView.frame.size.height / 2; // 2, 修改 y 值
+        }
+        _settingView.center = center; // 3, 重新赋值
+    }];
 }
+
 
 - (IBAction)nightMode:(UISwitch *)sender {
     if(sender.on) {
@@ -79,7 +80,8 @@
     }
 }
 
-- (IBAction)imageSizeChange:(UISlider *)sender {
+
+- (IBAction)imageScaleSlideValueChange:(UISlider *)sender {
 //    CGRect frame = _imageView.frame; // 1
 
     // 这里用 frame 不大合适
@@ -89,8 +91,9 @@
 //    _imageView.frame = frame; // 3
     
     _imageView.transform = CGAffineTransformMakeScale(sender.value, sender.value);
-    
+//    _imageView.transform = CGAffineTransformScale(_imageView.transform, sender.value, sender.value);
 }
+
 
 @end
 

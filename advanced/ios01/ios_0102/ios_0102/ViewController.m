@@ -6,12 +6,18 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
+/**
+    
+ */
+
 #import "ViewController.h"
+
+#import "../../../../PrefixHeader.pch"
+
 
 @interface ViewController ()
 
 @end
-
 
 
 
@@ -27,7 +33,7 @@
     int i1 = [text1 intValue];
     int i2 = [text2 intValue];
     
-//    NSLog(@"text1 = %@, text2 = %@", text1, text2);
+    NSLog(@"text1 = %@, text2 = %@", text1, text2);
 //    NSLog(@"sum = %d", i1 + i2);
     
     self.uiLbl.text = [NSString stringWithFormat:@"%d", i1 + i2];
@@ -35,6 +41,5 @@
 }
 
 @end
-
 
 

@@ -25,6 +25,7 @@
 		18B5BBA122F53AA300BB9780 /* 016.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B5BB9822F53AA300BB9780 /* 016.png */; };
 		18B5BBA222F53AA300BB9780 /* 017.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B5BB9922F53AA300BB9780 /* 017.png */; };
 		18B5BBA322F53AA300BB9780 /* 018.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B5BB9A22F53AA300BB9780 /* 018.png */; };
+		18E122D523C4CF6C00F06689 /* RowViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E122D423C4CF6C00F06689 /* RowViewXib.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		18B5BB9822F53AA300BB9780 /* 016.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 016.png; sourceTree = "<group>"; };
 		18B5BB9922F53AA300BB9780 /* 017.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 017.png; sourceTree = "<group>"; };
 		18B5BB9A22F53AA300BB9780 /* 018.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 018.png; sourceTree = "<group>"; };
+		18E122D423C4CF6C00F06689 /* RowViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RowViewXib.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				18B5BB9122F53AA300BB9780 /* images */,
 				18B483041F22F9FB00B969E5 /* Supporting Files */,
 				18B483311F233F6200B969E5 /* RowView.xib */,
+				18E122D423C4CF6C00F06689 /* RowViewXib.xib */,
 				18B483351F235ADC00B969E5 /* RowView.h */,
 				18B483361F235ADC00B969E5 /* RowView.m */,
 			);
@@ -188,6 +191,7 @@
 				18B483141F22F9FB00B969E5 /* Assets.xcassets in Resources */,
 				18B4830F1F22F9FB00B969E5 /* Main.storyboard in Resources */,
 				18B5BB9D22F53AA300BB9780 /* 012.png in Resources */,
+				18E122D523C4CF6C00F06689 /* RowViewXib.xib in Resources */,
 				18B5BB9B22F53AA300BB9780 /* 010.png in Resources */,
 				18B5BBA222F53AA300BB9780 /* 017.png in Resources */,
 				18B5BBA322F53AA300BB9780 /* 018.png in Resources */,
@@ -330,6 +334,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EXECUTABLE_PREFIX = "";
+				GCC_PREFIX_HEADER = ../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_020601/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-020601";
@@ -341,6 +347,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EXECUTABLE_PREFIX = "";
+				GCC_PREFIX_HEADER = ../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_020601/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-020601";

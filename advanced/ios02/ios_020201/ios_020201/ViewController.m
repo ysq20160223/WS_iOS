@@ -16,29 +16,34 @@
 
 @implementation ViewController
 
-- (void)btnClickWithBlock:(void (^)())block {
-    [UIView beginAnimations:nil context:nil]; // 0, 动画 (头部, 开始动画)
-    [UIView setAnimationDuration:0.3]; // 设置执行动画时间
+- (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)())block {
+//    //
+//    [UIView beginAnimations:nil context:nil]; // 0, 动画 (头部, 开始动画)
+//    [UIView setAnimationDuration:0.3]; // 设置执行动画时间
+//    
+//    block();
+//    
+//    [UIView commitAnimations]; // 动画 (尾部 - 提交动画 - 执行动画)
     
-    block();
     
-    [UIView commitAnimations]; // 4, 动画 (尾部 - 提交动画 - 执行动画)
+    //
+    [UIView animateWithDuration:duration animations:^{
+        block();
+    }];
 }
 
 #pragma mark -- 上下左右位移
-- (IBAction)direction:(id)sender {
-//    NSLog(@"up");
-    
+- (IBAction)direction:(UIButton *)sender {
     // oc 不允许直接修改 某个对象中结构体属性的成员
     
-    [self btnClickWithBlock:^{
+    [self animateWithDuration:1 animations:^{
         CGFloat delta = 100;
         
         // 1, 先取出frame
 //        CGRect frame = _btnIcon.frame; // 结构体赋值 是 成员的赋值
         CGPoint center = _btnIcon.center; // 020212
         
-        switch ([sender tag]) {
+        switch (sender.tag) {
             case 1:
 //                frame.origin.x -= delta; // 2, 修改值
                 center.x -= delta;
@@ -66,10 +71,10 @@
 
 #pragma mark -- 左右旋转
 - (IBAction)transformRotate:(id)sender {
-    [self btnClickWithBlock:^{
-        switch ([sender tag]) {
+    [self animateWithDuration:1 animations:^{
+        switch ([sender tag]) { // id 不能使用点语法
             case 5:
-                _btnIcon.transform = CGAffineTransformRotate(_btnIcon.transform, -M_PI_4);
+                _btnIcon.transform = CGAffineTransformRotate(_btnIcon.transform, -M_PI_4); // Math
                 break;
                 
             case 6:
@@ -81,7 +86,7 @@
 
 #pragma mark -- 放大缩小
 - (IBAction)transformScale:(id)sender {
-    [self btnClickWithBlock:^{
+    [self animateWithDuration:1 animations:^{
         switch ([sender tag]) {
             case 7:
                 _btnIcon.transform = CGAffineTransformScale(_btnIcon.transform, 0.5, 0.5);
@@ -96,14 +101,11 @@
 
 #pragma mark -- 重置
 - (IBAction)iconIdentity:(id)sender {
-    [self btnClickWithBlock:^{
+    [self animateWithDuration:1 animations:^{
         _btnIcon.transform = CGAffineTransformIdentity; // 重置所有状态
     }];
 }
 
 @end
-
-
-
 
 

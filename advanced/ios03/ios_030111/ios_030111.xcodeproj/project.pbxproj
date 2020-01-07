@@ -14,7 +14,7 @@
 		180E42051F261ACC00656226 /* ios_030111.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 180E42031F261ACC00656226 /* ios_030111.xcdatamodeld */; };
 		180E42071F261ACC00656226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180E42061F261ACC00656226 /* Assets.xcassets */; };
 		180E420A1F261ACC00656226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180E42081F261ACC00656226 /* LaunchScreen.storyboard */; };
-		180E42121F2620BC00656226 /* Keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E42111F2620BC00656226 /* Keyboard.xib */; };
+		180E42121F2620BC00656226 /* keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E42111F2620BC00656226 /* keyboard.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		180E42061F261ACC00656226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180E42091F261ACC00656226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180E420B1F261ACC00656226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		180E42111F2620BC00656226 /* Keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Keyboard.xib; sourceTree = "<group>"; };
+		180E42111F2620BC00656226 /* keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = keyboard.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,7 @@
 				180E420B1F261ACC00656226 /* Info.plist */,
 				180E42031F261ACC00656226 /* ios_030111.xcdatamodeld */,
 				180E41F71F261ACB00656226 /* Supporting Files */,
-				180E42111F2620BC00656226 /* Keyboard.xib */,
+				180E42111F2620BC00656226 /* keyboard.xib */,
 			);
 			path = ios_030111;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			files = (
 				180E420A1F261ACC00656226 /* LaunchScreen.storyboard in Resources */,
 				180E42071F261ACC00656226 /* Assets.xcassets in Resources */,
-				180E42121F2620BC00656226 /* Keyboard.xib in Resources */,
+				180E42121F2620BC00656226 /* keyboard.xib in Resources */,
 				180E42021F261ACB00656226 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +317,7 @@
 				180E42101F261ACC00656226 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

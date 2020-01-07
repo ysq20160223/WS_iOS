@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *layout;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmented;
 
 - (IBAction)indexChange:(UISegmentedControl *)sender;
