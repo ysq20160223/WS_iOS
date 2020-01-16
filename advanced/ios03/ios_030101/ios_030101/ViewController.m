@@ -31,24 +31,32 @@
     scrollView.backgroundColor = [UIColor magentaColor];
     [self.view addSubview:scrollView];
     
-    //
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"t_005.jpg"]];
-    _imageView = imageView;
+    // --
+    // 通过这种方法创建的 UIImageView 无需指定 frame
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"t_005.jpg"]];
     
+    //
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.image = [UIImage imageNamed:@"t_005.jpg"];
     imageView.frame = CGRectMake(0, 0, imageView.image.size.width, imageView.image.size.height);
+    
+    
     [scrollView addSubview:imageView];
+    _imageView = imageView;
     
     scrollView.contentSize = imageView.frame.size; // 设置 UIScrollView 的滚动范围
     
+    // 0102
 //    scrollView.showsVerticalScrollIndicator = NO;
 //    scrollView.showsHorizontalScrollIndicator = NO;
 //    scrollView.bounces = NO; //
-    scrollView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20); // 距离上边缘20
+    scrollView.contentInset = UIEdgeInsetsMake(10, 30, 50, 70); // top, left, bottom, right
     
 }
 
 - (IBAction)move:(UIButton *)sender {
     [UIView animateWithDuration:0.5 animations:^{
+        // 0103
         CGPoint point = _scrollView.contentOffset;
         switch (sender.tag) {
             case 1: // left

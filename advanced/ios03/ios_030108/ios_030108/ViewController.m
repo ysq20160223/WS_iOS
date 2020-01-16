@@ -26,7 +26,7 @@
     CGFloat screenW = self.view.frame.size.width;
     CGFloat screenH = self.view.frame.size.height;
     
-    _scrollView.frame = CGRectMake(0, 0, screenW, screenH);
+    _scrollView.frame = self.view.bounds;
     _scrollView.backgroundColor = [UIColor lightGrayColor];
     
     for (int i = 0; i < kCount; i++) {
@@ -44,9 +44,9 @@
     
     // 添加 PageControl
     UIPageControl *pageControl = [[UIPageControl alloc] init];
-//    pageControl.backgroundColor = [UIColor cyanColor];
-    pageControl.center = CGPointMake(screenW * 0.5, screenH - 50);
-    pageControl.bounds = CGRectMake(0, 0, 300, 130);
+    pageControl.backgroundColor = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:0.3];
+    pageControl.center = CGPointMake(screenW * 0.5, screenH - 100);
+    pageControl.bounds = CGRectMake(0, 0, 300, 100);
     pageControl.numberOfPages = kCount;
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor magentaColor];
@@ -59,7 +59,7 @@
 
 #pragma mark - UICollectionViewDelegate start
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"scrollViewDidScroll");
+//    NSLog(@"%@", scrollView);
 
     _pageControl.currentPage = scrollView.contentOffset.x / scrollView.frame.size.width;
     

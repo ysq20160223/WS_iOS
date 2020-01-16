@@ -10,6 +10,14 @@
 
 @implementation Province
 
++ (void)load {
+    NSLog(@"");
+}
+
++ (void)initialize {
+    NSLog(@"");
+}
+
 + (id)provinceWithHeader:(NSString *)header footer:(NSString *)footer cities:(NSArray *)cities {
     Province *p = [[Province alloc] init];
     p.header = header;

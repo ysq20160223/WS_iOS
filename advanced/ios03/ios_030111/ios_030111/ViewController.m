@@ -25,8 +25,11 @@
     
     // 2
     _nameField.inputAccessoryView = keyboard; // 设置键盘上面的工具条
+    
 //    _telephoneField.inputAccessoryView = keyboard;
 //    _addressField.inputAccessoryView = keyboard;
+    
+//    [_nameField becomeFirstResponder]; // 
     
 }
 
@@ -35,14 +38,10 @@
 // 第一响应者 : 呼出键盘的那个文本框控件
 // 退出键盘的原理 : 某个文本框控件不想当第一响应者
 - (IBAction)exitKeyboard:(id)sender {
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:1];
-    
-//    [_nameField resignFirstResponder];
-    
-    [self.view endEditing:YES]; // view 内部
-    
-    [UIView commitAnimations];
+    [UIView animateWithDuration:1 animations:^{
+//        [_nameField resignFirstResponder];
+        [self.view endEditing:YES]; // view 内部
+    }];
 }
 
 @end

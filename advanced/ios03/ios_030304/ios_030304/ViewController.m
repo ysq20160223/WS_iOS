@@ -8,8 +8,6 @@
 
 #import "ViewController.h"
 
-#import "../../../../PrefixHeader.pch"
-
 #import "Shop.h"
 
 
@@ -31,21 +29,22 @@
     _shopArray = [NSMutableArray array];
     _checkedShopArray = [NSMutableArray array];
     
+    NSInteger screenW = self.view.frame.size.width;
+    NSInteger screenH = self.view.frame.size.height;
     
     // 修改 Toolbar
-    _toolbar.frame = CGRectMake(0, kStatusBarH, kViewControllerW, 64);
+    _toolbar.frame = CGRectMake(0, kStatusBarH, screenW, 44);
     
     // 修改 Label
-    _titleLabel.frame = CGRectMake(0, _toolbar.frame.origin.y + _toolbar.frame.size.height + kStatusBarH, kViewControllerW, 64);
+    _titleLabel.frame = CGRectMake(0, _toolbar.frame.origin.y + _toolbar.frame.size.height, screenW, 44);
     
     // 修改 TableView
-    _tableView.frame = CGRectMake(0, _titleLabel.frame.origin.y + _titleLabel.frame.size.height + kStatusBarH, kViewControllerW, kViewControllerH - _toolbar.frame.size.height - _titleLabel.frame.size.height - 2 * kStatusBarH);
-    _tableView.backgroundColor = [UIColor lightGrayColor];
+    _tableView.frame = CGRectMake(0, _titleLabel.frame.origin.y + _titleLabel.frame.size.height, screenW, screenH - kStatusBarH - _toolbar.frame.size.height - _titleLabel.frame.size.height);
+    _tableView.backgroundColor = [UIColor colorWithRed:1 green:.6 blue:0 alpha:.6];
     
     
     // 1
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"shops.plist" ofType:nil];
-    NSArray *array = [NSArray arrayWithContentsOfFile:path];
+    NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"shops.plist" ofType:nil]];
     
     // 2
     for (NSDictionary *dict in array) {
@@ -58,8 +57,6 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"section: %ld", section);
-    
     if (0 == _checkedShopArray.count) {
         _titleLabel.text = @"Toolbar";
         _trash.enabled = NO;
@@ -71,13 +68,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"cell: %ld", indexPath.row);
     
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (nil == cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
+    NSLog(@"cell: %ld, cell: %p, cell: %@", indexPath.row, cell, cell);
     
     Shop *shop = _shopArray[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ - %ld", shop.name, indexPath.row];

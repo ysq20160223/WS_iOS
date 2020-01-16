@@ -8,11 +8,8 @@
 
 #import "ViewController.h"
 
-#import "../../../../PrefixHeader.pch"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
-    UITableView *_tableView;
-    
     NSMutableArray *_mutableArray;
 }
 
@@ -30,7 +27,6 @@
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
-    _tableView = tableView;
     
     
     _mutableArray = [NSMutableArray array];
@@ -45,24 +41,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //    NSLog(@"cell for row at index path : %ld", indexPath.row);
     
     static NSString *ID = @"cell";
     
     // 1, 从缓存池中取出可循环利用的 cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
-    
     // 没有复用
     //    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     // 2, 如果缓存池中没有可循环利用的 cell
     if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
+    NSLog(@"cell: %@", cell); // 验证全部刷新 or 局部刷新
     cell.textLabel.text = _mutableArray[indexPath.row];
-    
-    NSLog(@"cell: %p, row: %ld", cell, indexPath.row);
     
     return cell;
 }
@@ -74,28 +67,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self textField:indexPath];
+    [self textField:indexPath tableView:tableView];
     
 //    [self defaultCancel];
 //    [self actionSheet];
 }
 
 
-- (void)actionSheet {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title" message:@"Message" preferredStyle:(UIAlertControllerStyleActionSheet)];
-    
-    UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:@"title" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"destructiveAction");
-    }];
-
-    
-    [alertController addAction:destructiveAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
-
 // **********************************************************
-- (void)textField:(NSIndexPath *)indexPath {
+- (void)textField:(NSIndexPath *)indexPath tableView:(UITableView *)tableView {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title" message:@"Message" preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -108,9 +88,9 @@
         
         [_mutableArray setObject:alertController.textFields[0].text atIndexedSubscript:indexPath.row];
         
-        
-        NSArray *array = @[[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
-        [_tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationFade];
+        //
+        NSArray *array = @[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+        [tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationFade];
     }];
     
     UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"Cancel" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
@@ -121,7 +101,6 @@
     [alertController addAction:cancleAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
 
 
 // **********************************************************
@@ -140,6 +119,20 @@
     
     [alertController addAction:defaultAction];
     [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+// **********************************************************
+- (void)actionSheet {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title" message:@"Message" preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:@"title" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"destructiveAction");
+    }];
+    
+    
+    [alertController addAction:destructiveAction];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 

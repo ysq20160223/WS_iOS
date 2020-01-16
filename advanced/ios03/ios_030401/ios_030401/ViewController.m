@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "../../../../PreHeader.h"
 
 #import "Person.h"
 
@@ -24,9 +23,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    NSInteger screenW = self.view.frame.size.width;
+    NSInteger screenH = self.view.frame.size.height;
+    
     _toolbar.frame = CGRectMake(0, kStatusBarH, self.view.frame.size.width, _toolbar.frame.size.height);
     
-    _tableView.frame =CGRectMake(0, _toolbar.frame.size.height + 2 * kStatusBarH, kViewControllerW, kViewControllerH - _toolbar.frame.size.height - kStatusBarH);
+    _tableView.frame =CGRectMake(0, _toolbar.frame.size.height + 2 * kStatusBarH, screenW, screenH - _toolbar.frame.size.height - kStatusBarH);
     
 
     _personArray = [NSMutableArray array];
@@ -68,6 +70,7 @@
 }
 
 
+// PROJECT -> xxx -> info -> Localizations 语言
 // 实现该方法默认实现 右滑显示删除
 // 点击删除按钮 - 默认是删除
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -87,7 +90,7 @@
 
 // 进入编辑模式
 - (IBAction)compose:(UIBarButtonItem *)sender {
-    [UIView animateWithDuration:5 animations:^{
+    [UIView animateWithDuration:2 animations:^{
 //        self.tableView.editing = !self.tableView.isEditing; // 进入编辑模式
         [self.tableView setEditing:!self.tableView.isEditing animated:YES];
     }];

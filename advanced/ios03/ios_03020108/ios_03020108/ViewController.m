@@ -30,14 +30,14 @@
     Province *fj = [[Province alloc] init];
     fj.header = @"福建";
     fj.footer = @"fj";
-    fj.cities = @[@"福州", @"厦门", @"莆田", @"泉州", @"漳州", @"宁德", @"南平", @"三明", @"龙岩"];
+    fj.cities = @[@"福州", @"厦门", @"莆田", @"泉州", @"漳州", @"宁德", @"三明", @"龙岩", @"南平"];
     
     Province *gd = [[Province alloc] init];
     gd.header = @"广东";
     gd.footer = @"gd";
-    gd.cities = @[@"广州", @"深圳", @"惠州", @"东莞", @"佛山", @"珠海", @"中山", @"梅州"];
+    gd.cities = @[@"广州", @"深圳", @"东莞", @"惠州", @"佛山", @"中山", @"潮汕"];
     
-    Province *zj = [Province provinceWithHeader:@"浙江" footer:@"zj" cities:@[@"杭州", @"温州", @"宁波", @"绍兴", @"金华"]];
+    Province *zj = [Province provinceWithHeader:@"浙江" footer:@"zj" cities:@[@"杭州", @"温州", @"宁波"]];
     
     _provinces = @[fj, gd, zj];
 }

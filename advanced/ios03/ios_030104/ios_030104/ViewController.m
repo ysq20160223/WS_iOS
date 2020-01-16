@@ -16,7 +16,6 @@
 
 
 
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -28,10 +27,9 @@
     scrollView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:scrollView];
     
-    UIImage *image = [UIImage imageNamed:@"yy_002.jpg"];
-    _imageView = [[UIImageView alloc] initWithImage:image];
+    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yy_002.jpg"]];
     [scrollView addSubview:_imageView];
-    scrollView.contentSize = image.size;
+    scrollView.contentSize = _imageView.image.size;
     
     // 设置代理
     scrollView.delegate = self;
@@ -44,6 +42,7 @@
 #pragma mark - UICollectionViewDelegate start
 // 这个方法返回的控件就能进行伸缩操作
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    NSLog(@"%@", scrollView);
     return _imageView;
 }
 #pragma mark - UICollectionViewDelegate end
