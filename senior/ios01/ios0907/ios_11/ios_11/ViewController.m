@@ -12,7 +12,6 @@
     03, NSKeyedArchiver归档(NSCoding)
     04, SQLite3
     05, Core Data
- 
  */
 
 #import "ViewController.h"
@@ -40,10 +39,11 @@
 }
 
 
+// --------------------- Plist
 - (IBAction)plistWtiter:(id)sender {
     // plist 存储本质, 生成一个 plist文件
     // (数组, 字典)
-    NSArray *array = @[@"123", @"456"];
+    NSArray *array = @[@"123", @456];
     
 //    NSString *homePath = NSHomeDirectory();
 //    NSLog(@"homePath : %@", homePath);
@@ -51,6 +51,7 @@
     
     NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     NSLog(@"cachesPath: %@", cachesPath);
+    self.plistLabel.text = cachesPath;
     
     NSString *filePath = [cachesPath stringByAppendingPathComponent:@"array.plist"];
     
@@ -66,11 +67,13 @@
     NSLog(@"array: %@", array);
 }
 
-// --------------------- Perferences : 进行键值对存储
 
+
+// --------------------- Perferences : 进行键值对存储
 - (IBAction)prefersWrite:(id)sender {
     NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     NSLog(@"cachesPath: %@", cachesPath);
+    self.prefersLabel.text = cachesPath;
     
     // path : ~/Library/Preferences/mac.ios-11.plist
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -87,8 +90,5 @@
 
 
 @end
-
-
-
 
 

@@ -24,9 +24,9 @@
     // 2, 加载 main.storyboard, 创建控制器
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; // nil == [NSBundle mainBundle]
     
-    UIViewController *viewController = [storyboard instantiateInitialViewController]; // 默认指向箭头所指的控制器
-//    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"cyan"];
-    self.window.rootViewController = viewController;
+    UIViewController *rootVC = [storyboard instantiateInitialViewController]; // 默认指向箭头所指的控制器
+//    UIViewController *rootVC = [storyboard instantiateViewControllerWithIdentifier:@"cyan"]; // show the identity inspector
+    self.window.rootViewController = rootVC;
     
     
     [self.window makeKeyAndVisible]; // 3, 显示窗口

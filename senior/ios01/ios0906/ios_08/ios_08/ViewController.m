@@ -41,8 +41,13 @@
 
 // 给文本框初始化 - (id 能调用任何对象的方法)
 - (void)textFieldDidBeginEditing:(id)textField {
-//    NSLog(@"");
+    NSLog(@"textField: %@", textField);
     [textField initText];
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    NSLog(@"");
 }
 
 

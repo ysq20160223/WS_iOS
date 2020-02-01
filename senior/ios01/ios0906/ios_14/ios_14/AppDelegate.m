@@ -30,22 +30,24 @@
     
     // 2
     ViewController *viewController = [[ViewController alloc] init]; // 创建导航控制器的根控制器
-//    viewController.view.backgroundColor = [UIColor cyanColor];
+    viewController.view.backgroundColor = [UIColor cyanColor];
     
     // 创建导航控制器 - 导航控制器也需要根控制器
     // 导航控制器的根控制器, 其实就是导航控制器的第一个子控制器
     // 导航控制器会把根控制器的 view 添加到存放子控制器的 view
     
+    //
     // ----- mothod first
 //    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     // ----- mothod second
     UINavigationController *navigationController = [[UINavigationController alloc] init];
+    navigationController.view.backgroundColor = [UIColor magentaColor];
     [navigationController pushViewController:viewController animated:YES];
     //
     
     self.window.rootViewController = navigationController;
-    NSLog(@"%@", navigationController.childViewControllers);
+    NSLog(@"%@", navigationController.childViewControllers); // 090702
     
     // 3
     [self.window makeKeyAndVisible];

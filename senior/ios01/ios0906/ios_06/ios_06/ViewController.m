@@ -60,7 +60,7 @@
 
 // 每列的高度
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
-    return 66;
+    return 77;
 }
 
 // 选中行列数

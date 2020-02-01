@@ -19,10 +19,11 @@
 //    flag.icon = [UIImage imageNamed:dict[@"icon"]];
 
     // 02
-    [flag setValuesForKeysWithDictionary:dic]; // KVC 原理
+    [flag setValuesForKeysWithDictionary:dic]; // KVC
     
-    // 03 - KVC具体实现原理 :
-//    [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    // 03 - KVC具体实现原理:
+//    [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+//        NSLog(@"%@: %@", key, obj);
 //        [flag setValue:obj forKey:key];
 //    }];
     

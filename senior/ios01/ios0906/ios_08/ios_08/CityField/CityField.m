@@ -13,7 +13,6 @@
 
 @interface CityField () <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (nonatomic, assign) NSInteger selectedProvinceIndex; // 选中省份的下标
 @property (nonatomic, assign) BOOL isInit;
 
 //
@@ -36,25 +35,23 @@
     if (0 == component) {
         return self.provinces.count;
     } else {
-        Provinces *p = self.provinces[self.selectedProvinceIndex];
+        Provinces *p = self.provinces[[pickerView selectedRowInComponent:0]];
         return p.cities.count;
     }
 }
 
 // 省份
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"row: %ld", row);
+    NSLog(@"component: %ld, row: %ld", component, row);
     if(0 == component) {
-        self.selectedProvinceIndex = row;
-        
         [pickerView reloadComponent:1]; // 刷新城市列
         [pickerView selectRow:0 inComponent:1 animated:YES]; // 指定刷新列和行
     }
     
-    Provinces *p = self.provinces[self.selectedProvinceIndex]; // 选中的省份
+    Provinces *p = self.provinces[row]; // 选中的省份
     NSArray *cities = p.cities; // 获取选中的城市
-    NSInteger cityINdex = [pickerView selectedRowInComponent:1];
-    self.text = [NSString stringWithFormat:@"%@ - %@", p.name, cities[cityINdex]];
+    NSInteger cityIndex = [pickerView selectedRowInComponent:1];
+    self.text = [NSString stringWithFormat:@"%@ - %@", p.name, cities[cityIndex]];
 }
 
 // 赋值
@@ -63,7 +60,7 @@
         Provinces *p = self.provinces[row];
         return p.name;
     } else {
-        Provinces *p = self.provinces[self.selectedProvinceIndex];
+        Provinces *p = self.provinces[[pickerView selectedRowInComponent:0]];
         return p.cities[row];
     }
 }

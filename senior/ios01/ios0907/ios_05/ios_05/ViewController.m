@@ -79,6 +79,16 @@
     NSLog(@"");
 }
 
+
+
+- (IBAction)left:(UIButton *)sender {
+    NSLog(@"left");
+}
+
+- (IBAction)right:(UIBarButtonItem *)sender {
+    NSLog(@"right");
+}
+
 @end
 
 

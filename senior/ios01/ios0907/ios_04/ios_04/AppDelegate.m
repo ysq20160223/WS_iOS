@@ -32,7 +32,8 @@
 //    viewController.navigationItem.title = @"Nav - ViewController";
 //    nav.navigationItem.title = @"Nav";
     
-    [self.window makeKeyAndVisible]; // 3
+    // 3
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

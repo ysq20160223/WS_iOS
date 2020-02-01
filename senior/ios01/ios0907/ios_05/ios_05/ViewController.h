@@ -11,5 +11,8 @@
 @interface ViewController : UIViewController
 
 
+- (IBAction)left:(UIButton *)sender;
+- (IBAction)right:(UIBarButtonItem *)sender;
+
 @end
 

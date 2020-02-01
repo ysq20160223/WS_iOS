@@ -23,23 +23,13 @@
 
 
 
-
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
     _app = [UIApplication sharedApplication];
-    _app.applicationIconBadgeNumber = 9; // 01, 应用程序图标的提示数字
-    
-    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
-    [_app registerUserNotificationSettings:setting];
-    
-    // 02, 联网
-//    _app.networkActivityIndicatorVisible = YES;
-    [_app setNetworkActivityIndicatorVisible:YES];
     
 }
 
@@ -47,6 +37,29 @@
 //- (BOOL)prefersStatusBarHidden {
 //    return YES;
 //}
+
+
+// 应用程序图标的提示数字
+- (IBAction)badge:(UIButton *)sender {
+    NSLog(@"");
+    _app.applicationIconBadgeNumber = 1;
+    
+}
+
+- (IBAction)notification:(UIButton *)sender {
+    NSLog(@"");
+    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+    [_app registerUserNotificationSettings:setting];
+}
+
+- (IBAction)networkVisible:(UIButton *)sender {
+    NSLog(@"visible: %d", _app.networkActivityIndicatorVisible);
+    if (_app.networkActivityIndicatorVisible) {
+        _app.networkActivityIndicatorVisible = NO;
+    } else {
+        _app.networkActivityIndicatorVisible = YES;
+    }
+}
 
 
 // 03, 状态栏
@@ -62,15 +75,12 @@
 // 04, 打开网页
 - (IBAction)openUrl:(UIButton *)sender {
     NSURL *url = [NSURL URLWithString:@"http:www.baidu.com"];
-//    NSURL *url = [NSURL URLWithString:@"tel://10086"];
+    //    NSURL *url = [NSURL URLWithString:@"tel://10086"];
     
     [_app openURL:url];
 }
 
 
 @end
-
-
-
 
 

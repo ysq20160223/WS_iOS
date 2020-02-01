@@ -54,6 +54,11 @@
     NSLog(@"");
 }
 
+- (IBAction)pop:(UIButton *)sender {
+    NSLog(@"");
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end
 
 

@@ -30,16 +30,17 @@
 
 - (void)createRect {
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(100, 300, 200, 200)];
+    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 300, 660)];
     self.window.backgroundColor = [UIColor blueColor];
     
     // 2
-    UIViewController *rootViewController = [[UIViewController alloc] init];
-    rootViewController.view.backgroundColor = [UIColor greenColor];
-    self.window.rootViewController = rootViewController;
+    UIViewController *rootVC = [[UIViewController alloc] init];
+    rootVC.view.backgroundColor = [UIColor magentaColor];
+    self.window.rootViewController = rootVC;
     
     // 3
     self.window.hidden = NO;
+    
 }
 
 - (void)createScreen {
@@ -48,33 +49,35 @@
     self.window.backgroundColor = [UIColor magentaColor];
     
     // 02, 创建 UIWindow 的 ViewController, 并赋值
-    UIViewController *rootViewController = [[UIViewController alloc] init];
-    rootViewController.view.backgroundColor = [UIColor cyanColor];
-    self.window.rootViewController = rootViewController; // 一旦设置窗口的根控制器, 就会将根控制器的 view 添加到窗口
+    UIViewController *rootVC = [[UIViewController alloc] init];
+    rootVC.view.backgroundColor = [UIColor cyanColor];
+    self.window.rootViewController = rootVC; // 一旦设置窗口的根控制器, 就会将根控制器的 view 添加到窗口
     
     // 03, 显示窗口
     [self.window makeKeyAndVisible]; // 可以显示窗口; 成为应用程序的主窗口
-    self.window.windowLevel = UIWindowLevelAlert; // Alert > StatusBar > Normal
+//    self.window.windowLevel = UIWindowLevelAlert; // Alert > StatusBar > Normal
 //    NSLog(@"normal: %f, status: %f, alert: %f", UIWindowLevelNormal, UIWindowLevelStatusBar, UIWindowLevelAlert);
     
     
     //
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
     btn.center = CGPointMake(100, 100);
-    [rootViewController.view addSubview:btn];
+    [rootVC.view addSubview:btn];
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 加载 Info.plist, 并且判断如果没有 main, 就不会创建窗口
     
-    [self createScreen]; // 方式一
-    //    [self createRect]; // 方式二
+//    [self createScreen]; // 方式一
+    [self createRect]; // 方式二
     
     
     // 090209 : 如果要弹出键盘, 必须要把文本框添加到某个控件
     UITextField *field = [[UITextField alloc] init];
-    [field becomeFirstResponder];
+    field.frame = CGRectMake(20, 300, 200, 300);
+    field.backgroundColor = [UIColor yellowColor];
+//    [field becomeFirstResponder];
     [self.window addSubview:field];
     
     NSLog(@"windows: %@", application.windows);

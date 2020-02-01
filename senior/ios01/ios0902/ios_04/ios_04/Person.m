@@ -18,6 +18,9 @@ static Person *_instance = nil;
     _instance = [[self alloc] init];
 }
 
++ (void)initialize {
+    NSLog(@"");
+}
 
 + (instancetype)sharePerson {
     return _instance;
@@ -37,3 +40,6 @@ static Person *_instance = nil;
 }
 
 @end
+
+
+

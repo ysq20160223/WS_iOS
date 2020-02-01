@@ -26,13 +26,14 @@
     /*
      ViewController 加载 xib: xib 中 File's owner 指定 class 和 Outlets 指定 View
      
+     // 视频版本
      01, 判断有没有指定 nibName, 如果指定了就会 加载指定的 xib
      02, 判断有没有跟控制器同名的xib, 但是后缀名不带 Controller 的 xib
      03, 如果没有指定, 就会判断有没有跟控制器类名同名的xib
      04, 如果没有任何 xib 描述控制器的 view, 就不会加载 xib
      
-     新版验证:
-     01, 判断有没有指定 nibName, 如果指定了就会加载指定的 xib
+     // 新版验证:
+     01, 同 视频版本01
      02, 如果没有指定, 则会判断有没有跟控制器类名同名的xib
      03, 判断有没有跟控制器同名的xib, 但是后缀名不带 Controller 的 xib
      04, 如果没有任何 xib 描述控制器的 view, 就不会加载 xib
@@ -41,7 +42,7 @@
     // 2
 //        MyViewController *viewController = [[MyViewController alloc] initWithNibName:@"View" bundle:nil]; // 加载指定的 xib
 //        MyViewController *viewController = [[MyViewController alloc] initWithNibName:nil bundle:nil]; // 同下
-    MyViewController *viewController = [[MyViewController alloc] init]; // 同上
+    MyViewController *viewController = [[MyViewController alloc] init]; // 底层会调用 initWithNibName
     self.window.rootViewController = viewController;
 //    viewController.view.backgroundColor = [UIColor cyanColor];
     

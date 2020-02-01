@@ -17,9 +17,11 @@
 @implementation AppDelegate
 
 /*
-    1, xib 必须要有 view 去描述控制器
-    2, 告诉 xib 中哪个 view 描述控制器 view, 必须连线
-    3, 让 xib 和控制器产生联系, 告诉 xib 是用来描述一个控制器
+    1, xib 必须要有 view 去描述控制器 (Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[UIViewController _loadViewFromNibNamed:bundle:] was unable to load a nib named "VC"')
+ 
+    2, 告诉 xib 中哪个 view 描述控制器 view, 必须连线 (Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: '-[UIViewController _loadViewFromNibNamed:bundle:] loaded the "VC" nib but the view outlet was not set.')
+ 
+    3, 让 xib 和控制器产生联系, 告诉 xib 是用来描述一个控制器 (File's Owner 必须指定 class 为 ViewController)
  
  */
 
@@ -28,10 +30,16 @@
     // 1
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    // 2 通过 storyboard 创建控制器
+//    UIViewController *sbRootVc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+//    sbRootVc.view.backgroundColor = [UIColor lightGrayColor];
+//    self.window.rootViewController = sbRootVc;
+    
+    
     // 2 通过 xib 创建控制器
-    UIViewController *viewController = [[UIViewController alloc] initWithNibName:@"VC" bundle:nil];
-    viewController.view.backgroundColor = [UIColor cyanColor];
-    self.window.rootViewController = viewController;
+    UIViewController *xibRootVc = [[UIViewController alloc] initWithNibName:@"VC" bundle:nil];
+//    xibRootVc.view.backgroundColor = [UIColor cyanColor];
+    self.window.rootViewController = xibRootVc;
     
     // 3
     [self.window makeKeyAndVisible];

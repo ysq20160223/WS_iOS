@@ -26,12 +26,14 @@
 // 当控制器的 view 第一次使用的时候就会调用
 // 自定义控制器的 view 就会调用这个方法
 - (void)loadView {
-    [super loadView];
     NSLog(@"");
+    // 方法1, 调用系统默认方法
+//    [super loadView];
     
-//    BgView *view = [[BgView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    view.backgroundColor = [UIColor cyanColor];
-//    self.view = view;
+    // 方法2, 调用自定义View
+    BgView *view = [[BgView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    view.backgroundColor = [UIColor cyanColor];
+    self.view = view;
 }
 
 

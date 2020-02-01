@@ -39,7 +39,9 @@
     
     [self setUpNavigation];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    // 090706
+    // ios7 之后, 苹果自动会给导航控制器里面的所有 UIScrollView 顶部都会添加额外的滚动区域64
+    self.automaticallyAdjustsScrollViewInsets = NO; // 
     
     self.tableView.contentInset = UIEdgeInsetsMake(kHeadViewH + kTabBarH, 0, 0, 0); // 调用一次 scrollViewDidScroll:
     //    NSLog(@"y: %f", self.tableView.contentOffset.y);
@@ -77,7 +79,7 @@
     self.headTopConstraint.constant = h;
     
     
-    //
+    // 设置透明度
     CGFloat alpha = delta / (kHeadViewH - kHeadViewMinH);
     if (alpha >= 1) {
         alpha = 0.99;
@@ -112,8 +114,10 @@
 }
 
 
+// 090707
 #pragma mark -
 - (void) setUpNavigation {
+    
     // UIBarMetricsDefault : 只有设置这种样式, 才能设置导航条背景图片
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; // 清空导航条的阴影的线

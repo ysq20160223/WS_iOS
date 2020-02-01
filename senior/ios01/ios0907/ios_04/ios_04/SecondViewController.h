@@ -10,4 +10,7 @@
 
 @interface SecondViewController : UIViewController
 
+
+- (IBAction)pop:(UIButton *)sender;
+
 @end

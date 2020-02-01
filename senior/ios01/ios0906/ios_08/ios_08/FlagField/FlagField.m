@@ -34,8 +34,7 @@
 
 
 #pragma mark - UIPickerViewDataSource
-
-// 列数
+// 列数 (必须实现)
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
 }
@@ -54,19 +53,18 @@
     return [FlagView flagViewWithFlag:self.flagArray[row]];
 }
 
-// 给文本赋值
+// 选中行 - 给文本赋值
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     self.text = [self.flagArray[row] countryName];
 }
 
-
-
 // 行高度
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
-    return 110;
+    return 99;
 }
 
 
+#pragma mark -
 // 从文件加载数据转模型
 - (NSMutableArray *)flagArray {
     if(nil == _flagArray) {
@@ -77,7 +75,7 @@
         
         for (NSDictionary *dict in dicArray) {
             id obj = [Flag flagWithDictionary:dict];
-            NSLog(@"obj: %@", obj);
+//            NSLog(@"obj: %@", obj);
             [_flagArray addObject:obj];
         }
         
@@ -95,15 +93,16 @@
     self.inputView = pickerView; // inputView
 }
 
+
 // 只要从 xib 或者 storyboard 加载就会调用这个方法, 只调用一次
 - (void)awakeFromNib {
-//    NSLog(@"");
+    NSLog(@"");
     [super awakeFromNib];
     [self setUp];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-//    NSLog(@"");
+    NSLog(@"");
     if(self = [super initWithFrame:frame]) {
         [self setUp];
     }
