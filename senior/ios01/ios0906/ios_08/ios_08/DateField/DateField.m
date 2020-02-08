@@ -1,14 +1,15 @@
 //
-//  BirthField.m
+//  DateField.m
 //  ios_08
 //
-//  Created by Apple on 2017/7/30.
-//  Copyright © 2017年 Apple. All rights reserved.
+//  Created by Apple on 04/02/2020.
+//  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import "BirthField.h"
+#import "DateField.h"
 
-@interface BirthField ()
+
+@interface DateField ()
 
 @property (nonatomic, weak) UIDatePicker *datePicker;
 
@@ -17,7 +18,7 @@
 
 
 
-@implementation BirthField
+@implementation DateField
 
 // 初始化默认选中
 - (void)initText {
@@ -35,7 +36,7 @@
 }
 
 - (void)valueChange:(UIDatePicker *)datePicker {
-//    NSLog(@"value Change : %@", dp.date);
+    //    NSLog(@"value Change : %@", dp.date);
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     format.dateFormat = @"yyyy-MM-dd";
     self.text = [format stringFromDate:datePicker.date];
@@ -56,10 +57,6 @@
 }
 
 
-
 @end
-
-
-
 
 

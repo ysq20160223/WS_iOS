@@ -10,8 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *plistLabel;
-@property (weak, nonatomic) IBOutlet UILabel *prefersLabel;
 
 
 @end

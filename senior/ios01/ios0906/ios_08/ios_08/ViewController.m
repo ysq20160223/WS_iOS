@@ -14,7 +14,7 @@
 @interface ViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *flagField;
-@property (weak, nonatomic) IBOutlet UITextField *birthField;
+@property (weak, nonatomic) IBOutlet UITextField *dateField;
 @property (weak, nonatomic) IBOutlet UITextField *cityField;
 
 @end
@@ -29,7 +29,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _flagField.delegate = self;
-    _birthField.delegate = self;
+    _dateField.delegate = self;
     _cityField.delegate = self;
 }
 

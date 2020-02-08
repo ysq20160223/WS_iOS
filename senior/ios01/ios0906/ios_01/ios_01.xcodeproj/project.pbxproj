@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		181956BA230822F400C8058C /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181956B9230822F400C8058C /* View.xib */; };
-		1866FC341F2CCF3C0017B3FA /* MyView_.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1866FC331F2CCF3C0017B3FA /* MyView_.xib */; };
+		1866FC341F2CCF3C0017B3FA /* MyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1866FC331F2CCF3C0017B3FA /* MyView.xib */; };
 		18A6931E1F2C966F00090380 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6931D1F2C966F00090380 /* main.m */; };
 		18A693211F2C966F00090380 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A693201F2C966F00090380 /* AppDelegate.m */; };
 		18A693241F2C966F00090380 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A693231F2C966F00090380 /* ViewController.m */; };
@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		181956B9230822F400C8058C /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
-		1866FC331F2CCF3C0017B3FA /* MyView_.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView_.xib; sourceTree = "<group>"; };
+		1866FC331F2CCF3C0017B3FA /* MyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyView.xib; sourceTree = "<group>"; };
 		18A693191F2C966F00090380 /* ios_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A6931D1F2C966F00090380 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A6931F1F2C966F00090380 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 				18A693431F2C9E4E00090380 /* MyViewController.h */,
 				18A693441F2C9E4E00090380 /* MyViewController.m */,
 				18A693461F2C9EE100090380 /* MyViewController.xib */,
-				1866FC331F2CCF3C0017B3FA /* MyView_.xib */,
+				1866FC331F2CCF3C0017B3FA /* MyView.xib */,
 				181956B9230822F400C8058C /* View.xib */,
 			);
 			path = ios_01;
@@ -157,7 +157,7 @@
 				18A6932F1F2C966F00090380 /* LaunchScreen.storyboard in Resources */,
 				18A693471F2C9EE100090380 /* MyViewController.xib in Resources */,
 				18A6932C1F2C966F00090380 /* Assets.xcassets in Resources */,
-				1866FC341F2CCF3C0017B3FA /* MyView_.xib in Resources */,
+				1866FC341F2CCF3C0017B3FA /* MyView.xib in Resources */,
 				181956BA230822F400C8058C /* View.xib in Resources */,
 				18A693271F2C966F00090380 /* Main.storyboard in Resources */,
 			);

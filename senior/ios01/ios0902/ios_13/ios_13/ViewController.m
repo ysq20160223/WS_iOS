@@ -23,17 +23,25 @@
     NSLog(@"view: %@, color: %@", self.view, self.view.backgroundColor);
 }
 
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    NSLog(@"");
+}
+
+
 // 当控制器的 view 第一次使用的时候就会调用
 // 自定义控制器的 view 就会调用这个方法
 - (void)loadView {
-    NSLog(@"");
     // 方法1, 调用系统默认方法
 //    [super loadView];
     
-    // 方法2, 调用自定义View
+//    // 方法2, 调用自定义View
     BgView *view = [[BgView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    view.backgroundColor = [UIColor cyanColor];
+    view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:.5];
     self.view = view;
+    
+    NSLog(@"");
 }
 
 

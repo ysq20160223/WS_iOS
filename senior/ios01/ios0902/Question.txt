@@ -1,0 +1,20 @@
+
+ios0902
+
+08
+	UIWindow
+
+
+11
+	UIStoryboard
+	instantiateInitialViewController
+	instantiateInitialViewControllerWithIdentifier:@“”
+
+
+12
+	xib
+	[[UIViewController alloc] initWithNibName:@“” bundle:]
+	1, Referencing Outlets
+	2, File’s Owner -> Class
+
+	

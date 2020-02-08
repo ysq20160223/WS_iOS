@@ -51,7 +51,6 @@
     
     NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     NSLog(@"cachesPath: %@", cachesPath);
-    self.plistLabel.text = cachesPath;
     
     NSString *filePath = [cachesPath stringByAppendingPathComponent:@"array.plist"];
     
@@ -71,10 +70,6 @@
 
 // --------------------- Perferences : 进行键值对存储
 - (IBAction)prefersWrite:(id)sender {
-    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-    NSLog(@"cachesPath: %@", cachesPath);
-    self.prefersLabel.text = cachesPath;
-    
     // path : ~/Library/Preferences/mac.ios-11.plist
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:@"112233" forKey:@"num"];

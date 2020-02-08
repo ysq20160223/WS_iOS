@@ -18,4 +18,8 @@
 
 @property (nonatomic, strong) NSMutableArray *contactArray; // 接收逆传
 
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+
 @end

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Contact.h"
+
 @interface EditViewController : UIViewController
+
+@property (nonatomic, strong) Contact *contact;
 
 @end

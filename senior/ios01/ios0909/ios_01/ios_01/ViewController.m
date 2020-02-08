@@ -21,12 +21,11 @@
 
 @implementation ViewController
 
-
 - (IBAction)write:(UIButton *)sender {
     // 存储自定义对象使用归档
     Person *person = [[Person alloc] init];
-    person.age = 21;
-    person.name = @"yy";
+    person.age = 01;
+    person.name = @"jj";
     
     NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
     NSLog(@"cachePath: %@", cachePath);
@@ -39,7 +38,7 @@
     // 调用自定义对象的 encodeWithCoder:
     // 如果一个自定义对象需要归档, 必须遵守 NSCoding 协议, 并且实现协议方法
     
-    [NSKeyedArchiver archiveRootObject:person toFile:filePath];
+    [NSKeyedArchiver archiveRootObject:person toFile:filePath]; // [ˈɑ:kaɪv]
 }
 
 
@@ -52,7 +51,5 @@
 
 
 @end
-
-
 
 

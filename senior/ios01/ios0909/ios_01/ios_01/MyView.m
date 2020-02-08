@@ -10,6 +10,7 @@
 
 @implementation MyView
 
+// 090902
 // 系统调用控件这个方法来解析 xib, storyboard
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
     if(self = [super initWithCoder:aDecoder]) {
@@ -18,6 +19,11 @@
     return self;
 }
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    NSLog(@"");
+    
+}
 
 @end
 

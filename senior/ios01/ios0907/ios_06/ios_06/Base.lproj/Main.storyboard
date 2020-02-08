@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K7a-yR-J8O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G2136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="K7a-yR-J8O">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -42,14 +42,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTP-dn-s37" userLabel="HeadView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTP-dn-s37" userLabel="HeadView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lol.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OEE-IF-hWa" userLabel="Down Image View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lol.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OEE-IF-hWa" userLabel="HeadImageView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-VX-OtC">
-                                        <rect key="frame" x="137.5" y="36" width="100" height="100"/>
+                                        <rect key="frame" x="137.5" y="136" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="0py-1H-Odn"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="0ti-D1-bM0"/>
@@ -64,29 +64,37 @@
                                     <constraint firstItem="OEE-IF-hWa" firstAttribute="leading" secondItem="LTP-dn-s37" secondAttribute="leading" id="BXc-bM-kmP"/>
                                     <constraint firstItem="OEE-IF-hWa" firstAttribute="top" secondItem="LTP-dn-s37" secondAttribute="top" id="CD3-f6-7L7"/>
                                     <constraint firstItem="vMa-VX-OtC" firstAttribute="centerX" secondItem="LTP-dn-s37" secondAttribute="centerX" id="FCy-je-eRh"/>
-                                    <constraint firstAttribute="height" constant="200" id="Rdx-M8-nlP"/>
+                                    <constraint firstAttribute="height" constant="300" id="Rdx-M8-nlP"/>
                                     <constraint firstAttribute="bottom" secondItem="vMa-VX-OtC" secondAttribute="bottom" constant="64" id="hje-7s-eQN"/>
                                     <constraint firstAttribute="bottom" secondItem="vMa-VX-OtC" secondAttribute="bottom" constant="64" id="imy-eB-fRK"/>
                                     <constraint firstAttribute="bottom" secondItem="OEE-IF-hWa" secondAttribute="bottom" id="z9c-on-yD4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XN4-Je-M2J" userLabel="OptionView">
-                                <rect key="frame" x="0.0" y="200" width="375" height="44"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XN4-Je-M2J" userLabel="TabView">
+                                <rect key="frame" x="0.0" y="300" width="375" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbR-Vj-BEO">
-                                        <rect key="frame" x="282" y="7" width="44" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbR-Vj-BEO">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="64"/>
+                                        <color key="backgroundColor" red="1" green="0.62880115680000004" blue="0.69601761809999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="WeiBo"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80B-9I-Ix3">
-                                        <rect key="frame" x="49" y="7" width="73" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80B-9I-Ix3">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
+                                        <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="MainPager"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="MOm-aZ-4rV"/>
+                                    <constraint firstItem="80B-9I-Ix3" firstAttribute="top" secondItem="XN4-Je-M2J" secondAttribute="top" id="6dj-rP-upV"/>
+                                    <constraint firstAttribute="bottom" secondItem="TbR-Vj-BEO" secondAttribute="bottom" id="95R-MP-tGh"/>
+                                    <constraint firstAttribute="height" constant="64" id="MOm-aZ-4rV"/>
+                                    <constraint firstItem="80B-9I-Ix3" firstAttribute="leading" secondItem="XN4-Je-M2J" secondAttribute="leading" id="Sdi-9a-fie"/>
+                                    <constraint firstItem="80B-9I-Ix3" firstAttribute="width" secondItem="TbR-Vj-BEO" secondAttribute="width" id="VFs-pN-chD"/>
+                                    <constraint firstItem="TbR-Vj-BEO" firstAttribute="top" secondItem="XN4-Je-M2J" secondAttribute="top" id="kqX-YF-AIi"/>
+                                    <constraint firstAttribute="bottom" secondItem="80B-9I-Ix3" secondAttribute="bottom" id="ri7-8R-kZg"/>
+                                    <constraint firstItem="TbR-Vj-BEO" firstAttribute="leading" secondItem="80B-9I-Ix3" secondAttribute="trailing" id="tg7-mA-eUb"/>
+                                    <constraint firstAttribute="trailing" secondItem="TbR-Vj-BEO" secondAttribute="trailing" id="usY-Cx-0QJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -104,13 +112,15 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="headHeightConstraint" destination="Kxn-jL-fOx" id="ry4-sY-ife"/>
-                        <outlet property="headTopConstraint" destination="Rdx-M8-nlP" id="1nh-Hv-F1W"/>
+                        <outlet property="headTopConstraint" destination="Rdx-M8-nlP" id="1gs-Ae-LdY"/>
+                        <outlet property="headView" destination="LTP-dn-s37" id="RGC-5O-aIw"/>
+                        <outlet property="tabView" destination="XN4-Je-M2J" id="Vi4-fb-ceq"/>
                         <outlet property="tableView" destination="xHW-BN-qZb" id="XxI-fe-oDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAC-c0-ito" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="9"/>
+            <point key="canvasLocation" x="-343" y="9"/>
         </scene>
     </scenes>
     <resources>

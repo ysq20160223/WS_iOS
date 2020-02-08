@@ -1,0 +1,24 @@
+
+ios0906
+
+01
+	*ViewController
+	[[*ViewController alloc] initWithNibName: bundle:]
+	[[*ViewController alloc] init]
+
+06
+	UIPickerView
+
+
+08
+	FlagField
+	DateField
+	CityField
+
+14
+	UINavigationController
+	[[[UINavigationController alloc] init] pushViewController: animated:]
+	[[UINavigationController alloc] initWithRootViewController:]
+
+
+	

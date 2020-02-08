@@ -35,6 +35,7 @@
 		181D0E851F34C1AD0051CC17 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		181D0E861F34C1AD0051CC17 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		181D0E871F34C1AD0051CC17 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		187E399B23EBF2FC0062C2CA /* AddViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewControllerDelegate.h; sourceTree = "<group>"; };
 		18BEE9FA1F34A0CF0037A3B5 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
 		18BEE9FB1F34A0CF0037A3B5 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		18BEEA041F34A0CF0037A3B5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -94,6 +95,14 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		187E399A23EBF2B80062C2CA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				187E399B23EBF2FC0062C2CA /* AddViewControllerDelegate.h */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		18BEE9F31F34A0CF0037A3B5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +118,7 @@
 		18BEE9F41F34A0CF0037A3B5 /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				187E399A23EBF2B80062C2CA /* Delegate */,
 				18BEE9F51F34A0CF0037A3B5 /* Controller */,
 			);
 			name = Add;

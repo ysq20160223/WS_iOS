@@ -51,7 +51,9 @@
     // 02, 创建 UIWindow 的 ViewController, 并赋值
     UIViewController *rootVC = [[UIViewController alloc] init];
     rootVC.view.backgroundColor = [UIColor cyanColor];
-    self.window.rootViewController = rootVC; // 一旦设置窗口的根控制器, 就会将根控制器的 view 添加到窗口
+    
+    // Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Application windows are expected to have a root view controller at the end of application launch
+    self.window.rootViewController = rootVC; // 一旦设置窗口的根控制器, 就会将根控制器的 view 添加到窗口 (带有旋转功能)
     
     // 03, 显示窗口
     [self.window makeKeyAndVisible]; // 可以显示窗口; 成为应用程序的主窗口
@@ -59,18 +61,18 @@
 //    NSLog(@"normal: %f, status: %f, alert: %f", UIWindowLevelNormal, UIWindowLevelStatusBar, UIWindowLevelAlert);
     
     
-    //
+    // 090208
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    btn.center = CGPointMake(100, 100);
-    [rootVC.view addSubview:btn];
+    btn.center = CGPointMake(66, 66);
+    [self.window addSubview:btn];
 }
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 加载 Info.plist, 并且判断如果没有 main, 就不会创建窗口
     
-//    [self createScreen]; // 方式一
-    [self createRect]; // 方式二
+    [self createScreen]; // 方式一
+//    [self createRect]; // 方式二
     
     
     // 090209 : 如果要弹出键盘, 必须要把文本框添加到某个控件

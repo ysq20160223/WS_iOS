@@ -17,6 +17,10 @@
 
 @implementation ViewController
 
+- (void)viewDidLoad {
+    self.navigationItem.title = @"ViewController";
+}
+
 - (void)onClick:(UIButton *)btn {
     NSLog(@"count: %ld", self.view.subviews.count);
     

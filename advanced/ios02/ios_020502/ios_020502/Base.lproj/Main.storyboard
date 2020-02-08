@@ -156,7 +156,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tom" destination="WG4-m0-gGY" id="GBH-gF-f1l"/>
+                        <outlet property="imgView" destination="WG4-m0-gGY" id="PIr-Ka-U6I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

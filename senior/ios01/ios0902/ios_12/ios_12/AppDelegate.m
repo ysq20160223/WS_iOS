@@ -30,11 +30,6 @@
     // 1
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    // 2 通过 storyboard 创建控制器
-//    UIViewController *sbRootVc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-//    sbRootVc.view.backgroundColor = [UIColor lightGrayColor];
-//    self.window.rootViewController = sbRootVc;
-    
     
     // 2 通过 xib 创建控制器
     UIViewController *xibRootVc = [[UIViewController alloc] initWithNibName:@"VC" bundle:nil];

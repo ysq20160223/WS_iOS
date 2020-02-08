@@ -11,16 +11,20 @@
 #import "UIImage+Image.h"
 
 
-#define kHeadViewH 200
-#define kHeadViewMinH 64
-#define kTabBarH 44
-
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource> {
+    NSInteger _navigationBarH;
+    
+    NSInteger _headViewH;
+    NSInteger _tabViewH;
+    NSInteger _headViewMinH;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headHeightConstraint; // 无视觉差调用
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *headTopConstraint; // 有视觉差调用
 
+@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet UIView *tabView;
 @property (nonatomic, weak) UILabel *label;
 
 @end
@@ -37,54 +41,59 @@
     self.tableView.delegate = self;
     self.tableView.frame = [UIScreen mainScreen].bounds;
     
+    _navigationBarH = self.navigationController.navigationBar.frame.size.height;
+    _headViewH = self.headView.frame.size.height;
+    _tabViewH = self.tabView.frame.size.height;
+    _headViewMinH = _navigationBarH + [[UIApplication sharedApplication] statusBarFrame].size.height;
+    NSLog(@"_headViewH: %ld, _navigationBarH: %ld, _headViewMinH: %ld", _headViewH, _navigationBarH, _headViewMinH);
+    
     [self setUpNavigation];
     
     // 090706
     // ios7 之后, 苹果自动会给导航控制器里面的所有 UIScrollView 顶部都会添加额外的滚动区域64
-    self.automaticallyAdjustsScrollViewInsets = NO; // 
+    self.automaticallyAdjustsScrollViewInsets = NO; //
+
     
-    self.tableView.contentInset = UIEdgeInsetsMake(kHeadViewH + kTabBarH, 0, 0, 0); // 调用一次 scrollViewDidScroll:
+    self.tableView.contentInset = UIEdgeInsetsMake(_headViewH + _tabViewH, 0, 0, 0); // 调用一次 scrollViewDidScroll:
     //    NSLog(@"y: %f", self.tableView.contentOffset.y);
 }
 
 
 #pragma mark - UIScrollViewDelegate
-// 滚动 tableView 的时候调用 - 计算下tableView滚动了多少
+// 滚动 tableView 的时候调用
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //    NSLog(@"scrollView: %@", scrollView);
+//    NSLog(@"scrollView: %@", scrollView);
     
     // 偏移量: 内容与可视范围的差值; 内容起始点的偏移量为0
-    CGFloat curOffsetY = scrollView.contentOffset.y; // 内容起始点的位置为0
-    //    NSLog(@"curOffsetY: %f", curOffsetY);
+    CGFloat curOffsetY = scrollView.contentOffset.y;
     
-    // 获取当前滚动偏移量 - 最开始的偏移量
-    CGFloat delta = curOffsetY - -(kHeadViewH + kTabBarH);
-//    NSLog(@"delta: %f", delta);
+    // 获取当前滚动偏移量
+    CGFloat scrollY = curOffsetY - -(_headViewH + _tabViewH);
     
     
     // 没有视觉差
-    //    if(delta > kHeadViewH - kHeadViewMinH) {
-    //        delta = kHeadViewH - kHeadViewMinH;
-    //    }
-    //    self.headHeightConstraint.constant = -delta;
+//    if(scrollY > _headViewH - _headViewMinH) {
+//        scrollY = _headViewH - _headViewMinH;
+//    }
+//    self.headHeightConstraint.constant = -scrollY;
+//    NSLog(@"curOffsetY: %f, delta: %f", curOffsetY, scrollY);
     
     // 实现视觉差
     // 修改 HeadView 中 ImageView current mode 为 aspect fill 可以防止图片被压缩
     // 修改 ImageView Drawing 中 Clip to Bounds 为选中状态
-    CGFloat h = kHeadViewH - delta;
-//    NSLog(@"h: %f", h);
-    if(h < kHeadViewMinH) {
-        h = kHeadViewMinH;
+    CGFloat deltaY = _headViewH - scrollY;
+    if(deltaY < _headViewMinH) {
+        deltaY = _headViewMinH;
     }
-    self.headTopConstraint.constant = h;
-    
+    self.headTopConstraint.constant = deltaY;
+    NSLog(@"curOffsetY: %f, scrollY: %f, deltaY: %f", curOffsetY, scrollY, deltaY);
     
     // 设置透明度
-    CGFloat alpha = delta / (kHeadViewH - kHeadViewMinH);
+    CGFloat alpha = scrollY / (_headViewH - _headViewMinH);
     if (alpha >= 1) {
         alpha = 0.99;
     }
-    UIImage *image = [UIImage imageWithColor:[UIColor colorWithRed:0 green:1 blue:1 alpha:alpha]];
+    UIImage *image = [UIImage imageWithColor:[UIColor colorWithRed:0 green:1 blue:1 alpha:alpha * 0.5]];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
     
     _label.textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:alpha];
@@ -120,7 +129,8 @@
     
     // UIBarMetricsDefault : 只有设置这种样式, 才能设置导航条背景图片
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; // 清空导航条的阴影的线
+//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; // 清空导航条的阴影的线
+    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
     
     // 标题透明
     UILabel *label = [[UILabel alloc] init];
@@ -134,7 +144,5 @@
 }
 
 @end
-
-
 
 

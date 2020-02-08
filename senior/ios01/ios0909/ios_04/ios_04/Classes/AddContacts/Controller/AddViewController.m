@@ -24,11 +24,15 @@
 
 @end
 
+
+
 @implementation AddViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSLog(@"%@", self.delegate);
     
     // 及时监听文本框输入
     [_nameField addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
@@ -46,11 +50,11 @@
 // 点击添加按钮
 - (IBAction)add:(UIButton *)sender {
     // 把添加的联系人信息(name, phone)传递给联系人控制器
-    Contact *c = [Contact contactWithName:_nameField.text phone:_phoneField.text];
+    Contact *contact = [Contact contactWithName:_nameField.text phone:_phoneField.text];
     
     // 通知联系人控制器接收数据
     if([_delegate respondsToSelector:@selector(addViewController:didAddContact:)]) {
-        [_delegate addViewController:self didAddContact:c];
+        [_delegate addViewController:self didAddContact:contact];
     }
     
 //    _contactVc.contact = c; // 给 _contactVc 赋值

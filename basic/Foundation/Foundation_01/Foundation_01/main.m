@@ -9,7 +9,7 @@
 /*
     01, NSRange(location, length)
         NSPoint/CGPoint
-        NSSIze/CGSize
+        NSSize/CGSize
         NSRect/CGRect
     
     02, Next Step - Foundation

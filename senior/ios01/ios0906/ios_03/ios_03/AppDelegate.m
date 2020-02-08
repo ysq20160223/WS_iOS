@@ -31,11 +31,11 @@
     
     // 02
     UIViewController *viewController = [[UIViewController alloc] init];
-//    MyViewController *viewController = [[MyViewController alloc] init];
+//    UIViewController *viewController = [[MyViewController alloc] init];
     
 //    viewController.view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:0.3];
 //    viewController.view.backgroundColor = [UIColor clearColor]; // 几乎透明, 不能穿透
-//    viewController.view.alpha = 0.01; // 当 alpha <= 0.01, 完全透明, 可以穿透
+    viewController.view.alpha = 0.01; // 当 alpha <= 0.01, 完全透明, 可以穿透
     self.window.rootViewController = viewController;
     
     

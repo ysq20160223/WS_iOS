@@ -42,8 +42,8 @@
     
     // ----- mothod second
     UINavigationController *navigationController = [[UINavigationController alloc] init];
-    navigationController.view.backgroundColor = [UIColor magentaColor];
     [navigationController pushViewController:viewController animated:YES];
+    navigationController.view.backgroundColor = [UIColor magentaColor];
     //
     
     self.window.rootViewController = navigationController;

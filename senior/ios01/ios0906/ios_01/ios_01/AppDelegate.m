@@ -42,7 +42,7 @@
     // 2
 //        MyViewController *viewController = [[MyViewController alloc] initWithNibName:@"View" bundle:nil]; // 加载指定的 xib
 //        MyViewController *viewController = [[MyViewController alloc] initWithNibName:nil bundle:nil]; // 同下
-    MyViewController *viewController = [[MyViewController alloc] init]; // 底层会调用 initWithNibName
+    UIViewController *viewController = [[MyViewController alloc] init]; // 底层会调用 initWithNibName
     self.window.rootViewController = viewController;
 //    viewController.view.backgroundColor = [UIColor cyanColor];
     
