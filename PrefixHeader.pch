@@ -39,17 +39,13 @@
 // *********************************************************** NSLog START
 #ifdef DEBUG
 
-// 不输出系统当前时间和线程
-// __PRETTY_FUNCTION__ : 完整方法名(包括返回值和参数类型)
-#define NSLog(FORMAT, ...) fprintf(stderr,"(%s:%d) %s# %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __FUNCTION__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+// fprintf 不输出系统当前时间和线程
+// [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String]: 输出文件名
+//#define NSLog(FORMAT, ...) fprintf(stderr,"(%s:%d) %s# %s\n", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __FUNCTION__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+//#define NSLog(FORMAT, ...) fprintf(stderr,"(%s:%d) %s# %s\n", __FILE__, __LINE__, __func__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s %d# %s\n", __func__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
-// [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],
-// __LINE__,
-// __FUNCTION__,
-// [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]
-
-
-// 输出系统当前时间和线程
+// NSLog 输出系统当前时间和线程
 //#define NSLog(fmt, ...) NSLog((@"(%s:%d) %s# " fmt), __FILE__, __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);
 
 #else

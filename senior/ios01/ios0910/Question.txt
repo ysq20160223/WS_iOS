@@ -1,0 +1,32 @@
+
+ios0910
+
+01
+	UITabBarController
+
+
+05
+	modal
+		presentViewController
+		dismissViewController
+
+	push
+		pushViewController
+		popViewController
+
+06
+	touchesBegan
+
+
+07	
+	hitTest: withEvent:
+	pointInside: withEvent:	
+
+
+13
+	UITapGestureRecognizer
+	UILongPressGestureRecognizer
+	UISwipeGestureRecognizer
+
+	
+	
