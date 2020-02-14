@@ -1,40 +1,22 @@
 //
 //  AppDelegate.m
-//  ios_0921
+//  ios_092202
 //
-//  Created by Apple on 2017/8/12.
+//  Created by Apple on 2017/8/15.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-/*
- 
- */
-
 #import "AppDelegate.h"
-
-#import "MyGuideService.h"
 
 @interface AppDelegate ()
 
 @end
-
-
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    // 1, 创建窗口
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    
-    // 2, 设置窗口的根控制器
-    self.window.rootViewController = [MyGuideService chooseRootViewController];
-    
-    // 3, 显示窗口
-    [self.window makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -76,7 +58,7 @@
     // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
     @synchronized (self) {
         if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"ios_0921"];
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"ios_092202"];
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.
@@ -114,5 +96,3 @@
 }
 
 @end
-
-
