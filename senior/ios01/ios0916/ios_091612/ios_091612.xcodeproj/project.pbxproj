@@ -1,0 +1,410 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18AC93BD1F3CD1D9003DC17F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC93BC1F3CD1D9003DC17F /* main.m */; };
+		18AC93C01F3CD1D9003DC17F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC93BF1F3CD1D9003DC17F /* AppDelegate.m */; };
+		18AC93C31F3CD1D9003DC17F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC93C21F3CD1D9003DC17F /* ViewController.m */; };
+		18AC93C61F3CD1D9003DC17F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AC93C41F3CD1D9003DC17F /* Main.storyboard */; };
+		18AC93C91F3CD1D9003DC17F /* ios_091612.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18AC93C71F3CD1D9003DC17F /* ios_091612.xcdatamodeld */; };
+		18AC93CB1F3CD1D9003DC17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AC93CA1F3CD1D9003DC17F /* Assets.xcassets */; };
+		18AC93CE1F3CD1D9003DC17F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AC93CC1F3CD1D9003DC17F /* LaunchScreen.storyboard */; };
+		18C44FAB1F3D527300734A33 /* LuckyAnimal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FA91F3D527300734A33 /* LuckyAnimal.png */; };
+		18C44FAC1F3D527300734A33 /* LuckyAnimal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FAA1F3D527300734A33 /* LuckyAnimal@2x.png */; };
+		18C44FAF1F3D527F00734A33 /* LuckyAnimalPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FAD1F3D527F00734A33 /* LuckyAnimalPressed.png */; };
+		18C44FB01F3D527F00734A33 /* LuckyAnimalPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FAE1F3D527F00734A33 /* LuckyAnimalPressed@2x.png */; };
+		18C44FB31F3D528900734A33 /* LuckyAstrology.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB11F3D528900734A33 /* LuckyAstrology.png */; };
+		18C44FB41F3D528900734A33 /* LuckyAstrology@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB21F3D528900734A33 /* LuckyAstrology@2x.png */; };
+		18C44FB71F3D529200734A33 /* LuckyAstrologyPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB51F3D529200734A33 /* LuckyAstrologyPressed.png */; };
+		18C44FB81F3D529200734A33 /* LuckyAstrologyPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB61F3D529200734A33 /* LuckyAstrologyPressed@2x.png */; };
+		18C44FBA1F3D52A000734A33 /* LuckyBaseBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB91F3D52A000734A33 /* LuckyBaseBackground@2x.png */; };
+		18C44FBC1F3D52A700734A33 /* LuckyCenterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FBB1F3D52A700734A33 /* LuckyCenterButton@2x.png */; };
+		18C44FBE1F3D52AF00734A33 /* LuckyCenterButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FBD1F3D52AF00734A33 /* LuckyCenterButtonPressed@2x.png */; };
+		18C44FC11F3D52B800734A33 /* LuckyRotateWheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FBF1F3D52B800734A33 /* LuckyRotateWheel.png */; };
+		18C44FC21F3D52B800734A33 /* LuckyRotateWheel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FC01F3D52B800734A33 /* LuckyRotateWheel@2x.png */; };
+		18C44FC51F3D52C000734A33 /* LuckyRototeSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FC31F3D52C000734A33 /* LuckyRototeSelected.png */; };
+		18C44FC61F3D52C000734A33 /* LuckyRototeSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FC41F3D52C000734A33 /* LuckyRototeSelected@2x.png */; };
+		18C44FC91F3D537300734A33 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C44FC81F3D537300734A33 /* WheelView.m */; };
+		18C44FCD1F3D53F100734A33 /* WheelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FCC1F3D53F100734A33 /* WheelView.xib */; };
+		18C44FD01F3D75F600734A33 /* WheelBotton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C44FCF1F3D75F600734A33 /* WheelBotton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18AC93B81F3CD1D9003DC17F /* ios_091612.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_091612.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18AC93BC1F3CD1D9003DC17F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18AC93BE1F3CD1D9003DC17F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18AC93BF1F3CD1D9003DC17F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18AC93C11F3CD1D9003DC17F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		18AC93C21F3CD1D9003DC17F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18AC93C51F3CD1D9003DC17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18AC93C81F3CD1D9003DC17F /* ios_091612.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_091612.xcdatamodel; sourceTree = "<group>"; };
+		18AC93CA1F3CD1D9003DC17F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18AC93CD1F3CD1D9003DC17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18AC93CF1F3CD1D9003DC17F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C44FA91F3D527300734A33 /* LuckyAnimal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAnimal.png; sourceTree = "<group>"; };
+		18C44FAA1F3D527300734A33 /* LuckyAnimal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyAnimal@2x.png"; sourceTree = "<group>"; };
+		18C44FAD1F3D527F00734A33 /* LuckyAnimalPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAnimalPressed.png; sourceTree = "<group>"; };
+		18C44FAE1F3D527F00734A33 /* LuckyAnimalPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyAnimalPressed@2x.png"; sourceTree = "<group>"; };
+		18C44FB11F3D528900734A33 /* LuckyAstrology.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAstrology.png; sourceTree = "<group>"; };
+		18C44FB21F3D528900734A33 /* LuckyAstrology@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyAstrology@2x.png"; sourceTree = "<group>"; };
+		18C44FB51F3D529200734A33 /* LuckyAstrologyPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAstrologyPressed.png; sourceTree = "<group>"; };
+		18C44FB61F3D529200734A33 /* LuckyAstrologyPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyAstrologyPressed@2x.png"; sourceTree = "<group>"; };
+		18C44FB91F3D52A000734A33 /* LuckyBaseBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyBaseBackground@2x.png"; sourceTree = "<group>"; };
+		18C44FBB1F3D52A700734A33 /* LuckyCenterButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyCenterButton@2x.png"; sourceTree = "<group>"; };
+		18C44FBD1F3D52AF00734A33 /* LuckyCenterButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyCenterButtonPressed@2x.png"; sourceTree = "<group>"; };
+		18C44FBF1F3D52B800734A33 /* LuckyRotateWheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyRotateWheel.png; sourceTree = "<group>"; };
+		18C44FC01F3D52B800734A33 /* LuckyRotateWheel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyRotateWheel@2x.png"; sourceTree = "<group>"; };
+		18C44FC31F3D52C000734A33 /* LuckyRototeSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyRototeSelected.png; sourceTree = "<group>"; };
+		18C44FC41F3D52C000734A33 /* LuckyRototeSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyRototeSelected@2x.png"; sourceTree = "<group>"; };
+		18C44FC71F3D537300734A33 /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
+		18C44FC81F3D537300734A33 /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
+		18C44FCC1F3D53F100734A33 /* WheelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WheelView.xib; sourceTree = "<group>"; };
+		18C44FCE1F3D75F600734A33 /* WheelBotton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelBotton.h; sourceTree = "<group>"; };
+		18C44FCF1F3D75F600734A33 /* WheelBotton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelBotton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18AC93B51F3CD1D9003DC17F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18AC93AF1F3CD1D9003DC17F = {
+			isa = PBXGroup;
+			children = (
+				18AC93BA1F3CD1D9003DC17F /* ios_091612 */,
+				18AC93B91F3CD1D9003DC17F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18AC93B91F3CD1D9003DC17F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18AC93B81F3CD1D9003DC17F /* ios_091612.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18AC93BA1F3CD1D9003DC17F /* ios_091612 */ = {
+			isa = PBXGroup;
+			children = (
+				18AC93BE1F3CD1D9003DC17F /* AppDelegate.h */,
+				18AC93BF1F3CD1D9003DC17F /* AppDelegate.m */,
+				18AC93C11F3CD1D9003DC17F /* ViewController.h */,
+				18AC93C21F3CD1D9003DC17F /* ViewController.m */,
+				18AC93C41F3CD1D9003DC17F /* Main.storyboard */,
+				18AC93CA1F3CD1D9003DC17F /* Assets.xcassets */,
+				18AC93CC1F3CD1D9003DC17F /* LaunchScreen.storyboard */,
+				18AC93CF1F3CD1D9003DC17F /* Info.plist */,
+				18AC93C71F3CD1D9003DC17F /* ios_091612.xcdatamodeld */,
+				18AC93BB1F3CD1D9003DC17F /* Supporting Files */,
+				18C44FC71F3D537300734A33 /* WheelView.h */,
+				18C44FC81F3D537300734A33 /* WheelView.m */,
+				18C44FCC1F3D53F100734A33 /* WheelView.xib */,
+				18C44FCE1F3D75F600734A33 /* WheelBotton.h */,
+				18C44FCF1F3D75F600734A33 /* WheelBotton.m */,
+			);
+			path = ios_091612;
+			sourceTree = "<group>";
+		};
+		18AC93BB1F3CD1D9003DC17F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18C44FA91F3D527300734A33 /* LuckyAnimal.png */,
+				18C44FAA1F3D527300734A33 /* LuckyAnimal@2x.png */,
+				18C44FAD1F3D527F00734A33 /* LuckyAnimalPressed.png */,
+				18C44FAE1F3D527F00734A33 /* LuckyAnimalPressed@2x.png */,
+				18C44FB11F3D528900734A33 /* LuckyAstrology.png */,
+				18C44FB21F3D528900734A33 /* LuckyAstrology@2x.png */,
+				18C44FB51F3D529200734A33 /* LuckyAstrologyPressed.png */,
+				18C44FB61F3D529200734A33 /* LuckyAstrologyPressed@2x.png */,
+				18C44FB91F3D52A000734A33 /* LuckyBaseBackground@2x.png */,
+				18C44FBB1F3D52A700734A33 /* LuckyCenterButton@2x.png */,
+				18C44FBD1F3D52AF00734A33 /* LuckyCenterButtonPressed@2x.png */,
+				18C44FBF1F3D52B800734A33 /* LuckyRotateWheel.png */,
+				18C44FC01F3D52B800734A33 /* LuckyRotateWheel@2x.png */,
+				18C44FC31F3D52C000734A33 /* LuckyRototeSelected.png */,
+				18C44FC41F3D52C000734A33 /* LuckyRototeSelected@2x.png */,
+				18AC93BC1F3CD1D9003DC17F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18AC93B71F3CD1D9003DC17F /* ios_091612 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18AC93D21F3CD1D9003DC17F /* Build configuration list for PBXNativeTarget "ios_091612" */;
+			buildPhases = (
+				18AC93B41F3CD1D9003DC17F /* Sources */,
+				18AC93B51F3CD1D9003DC17F /* Frameworks */,
+				18AC93B61F3CD1D9003DC17F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios_091612;
+			productName = ios_091612;
+			productReference = 18AC93B81F3CD1D9003DC17F /* ios_091612.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18AC93B01F3CD1D9003DC17F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					18AC93B71F3CD1D9003DC17F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 18AC93B31F3CD1D9003DC17F /* Build configuration list for PBXProject "ios_091612" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18AC93AF1F3CD1D9003DC17F;
+			productRefGroup = 18AC93B91F3CD1D9003DC17F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18AC93B71F3CD1D9003DC17F /* ios_091612 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18AC93B61F3CD1D9003DC17F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C44FC21F3D52B800734A33 /* LuckyRotateWheel@2x.png in Resources */,
+				18C44FB81F3D529200734A33 /* LuckyAstrologyPressed@2x.png in Resources */,
+				18C44FC51F3D52C000734A33 /* LuckyRototeSelected.png in Resources */,
+				18C44FAB1F3D527300734A33 /* LuckyAnimal.png in Resources */,
+				18C44FB31F3D528900734A33 /* LuckyAstrology.png in Resources */,
+				18C44FC61F3D52C000734A33 /* LuckyRototeSelected@2x.png in Resources */,
+				18C44FBE1F3D52AF00734A33 /* LuckyCenterButtonPressed@2x.png in Resources */,
+				18C44FB41F3D528900734A33 /* LuckyAstrology@2x.png in Resources */,
+				18C44FAF1F3D527F00734A33 /* LuckyAnimalPressed.png in Resources */,
+				18C44FC11F3D52B800734A33 /* LuckyRotateWheel.png in Resources */,
+				18C44FB71F3D529200734A33 /* LuckyAstrologyPressed.png in Resources */,
+				18AC93CE1F3CD1D9003DC17F /* LaunchScreen.storyboard in Resources */,
+				18C44FAC1F3D527300734A33 /* LuckyAnimal@2x.png in Resources */,
+				18AC93CB1F3CD1D9003DC17F /* Assets.xcassets in Resources */,
+				18C44FBC1F3D52A700734A33 /* LuckyCenterButton@2x.png in Resources */,
+				18C44FCD1F3D53F100734A33 /* WheelView.xib in Resources */,
+				18AC93C61F3CD1D9003DC17F /* Main.storyboard in Resources */,
+				18C44FBA1F3D52A000734A33 /* LuckyBaseBackground@2x.png in Resources */,
+				18C44FB01F3D527F00734A33 /* LuckyAnimalPressed@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18AC93B41F3CD1D9003DC17F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C44FC91F3D537300734A33 /* WheelView.m in Sources */,
+				18AC93C91F3CD1D9003DC17F /* ios_091612.xcdatamodeld in Sources */,
+				18AC93C31F3CD1D9003DC17F /* ViewController.m in Sources */,
+				18AC93C01F3CD1D9003DC17F /* AppDelegate.m in Sources */,
+				18AC93BD1F3CD1D9003DC17F /* main.m in Sources */,
+				18C44FD01F3D75F600734A33 /* WheelBotton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18AC93C41F3CD1D9003DC17F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18AC93C51F3CD1D9003DC17F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18AC93CC1F3CD1D9003DC17F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18AC93CD1F3CD1D9003DC17F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18AC93D01F3CD1D9003DC17F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18AC93D11F3CD1D9003DC17F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18AC93D31F3CD1D9003DC17F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ios_091612/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-091612";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18AC93D41F3CD1D9003DC17F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ios_091612/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-091612";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18AC93B31F3CD1D9003DC17F /* Build configuration list for PBXProject "ios_091612" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18AC93D01F3CD1D9003DC17F /* Debug */,
+				18AC93D11F3CD1D9003DC17F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18AC93D21F3CD1D9003DC17F /* Build configuration list for PBXNativeTarget "ios_091612" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18AC93D31F3CD1D9003DC17F /* Debug */,
+				18AC93D41F3CD1D9003DC17F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18AC93C71F3CD1D9003DC17F /* ios_091612.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18AC93C81F3CD1D9003DC17F /* ios_091612.xcdatamodel */,
+			);
+			currentVersion = 18AC93C81F3CD1D9003DC17F /* ios_091612.xcdatamodel */;
+			path = ios_091612.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 18AC93B01F3CD1D9003DC17F /* Project object */;
+}
