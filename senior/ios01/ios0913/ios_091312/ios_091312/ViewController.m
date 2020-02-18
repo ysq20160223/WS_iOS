@@ -16,7 +16,6 @@
 
 
 
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -27,7 +26,6 @@
     
     // 生成图片
     UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
-    
     [image drawAtPoint:CGPointZero]; // 绘制图片
     
     // 绘制文字

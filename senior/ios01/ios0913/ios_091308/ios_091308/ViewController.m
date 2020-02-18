@@ -22,11 +22,13 @@
 @implementation ViewController
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"");
     self.myView.image = [UIImage imageNamed:@"abx.png"];
     self.imageView.image = [UIImage imageNamed:@"abx.png"];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"");
     self.myView.image = [UIImage imageNamed:@"ab9.png"];
     self.imageView.image = [UIImage imageNamed:@"ab9.png"];
 }

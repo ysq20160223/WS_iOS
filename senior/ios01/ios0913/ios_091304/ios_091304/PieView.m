@@ -18,7 +18,7 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
-    NSArray *precentArray = @[@25, @25, @50];
+    NSArray *precentArray = @[@25, @35, @40];
     
     CGPoint center = CGPointMake(rect.size.width *.5, rect.size.height * .5);
     CGFloat radius = rect.size.width * .5 - 10;
@@ -45,17 +45,13 @@
 }
 
 -(UIColor *)randColor {
-    CGFloat r = arc4random_uniform(256) / 255.0;
-    CGFloat g = arc4random_uniform(256) / 255.0;
-    CGFloat b = arc4random_uniform(256) / 255.0;
+    CGFloat r = arc4random_uniform(255) / 255.0;
+    CGFloat g = arc4random_uniform(255) / 255.0;
+    CGFloat b = arc4random_uniform(255) / 255.0;
     
     return [UIColor colorWithRed:r green:g blue:b alpha:1];
 }
 
 @end
-
-
-
-
 
 

@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // 1, 加载图片
-    UIImage *image = [UIImage imageNamed:@"abx.png"];
+    UIImage *image = [UIImage imageNamed:@"doubi.jpg"];
     
     // 2, 生成一个跟图片相同大小的图片上下文
     UIGraphicsBeginImageContextWithOptions(image.size, NO, 0);
@@ -46,7 +46,6 @@
     self.imageView.image = newImage;
     
 }
-
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import "VCView.h"
 
+
 @implementation VCView
 
 static int _snowY;
@@ -17,20 +18,22 @@ static int _snowY;
     
 //    [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
     
+    // 每次屏幕刷新就会调用, 每秒刷新60次
     CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
     [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     
 }
 
 - (void)update {
-    NSLog(@"");
+    NSLog(@"_snowY: %d", _snowY);
     
-    _snowY += 5;
+    _snowY += 2;
     
     if (_snowY > self.bounds.size.height) {
         _snowY = 0;
     }
     
+    // 会调用 drawRect, 并不是立即调用, 仅仅设置了标志, 当下一次屏幕刷新的时候调用
     [self setNeedsDisplay];
 }
 

@@ -10,19 +10,20 @@
 
 #import "ProgressView.h"
 
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property (weak, nonatomic) IBOutlet ProgressView *progressView;
 
-// -----------------------------------
+
 - (IBAction)valueChanged:(id)sender;
 
 @end
 
 
-@implementation ViewController
 
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +34,7 @@
 
 - (IBAction)valueChanged:(UISlider *)sender {
 //    NSLog(@"%f", sender.value);
-    _textLabel.text = [NSString stringWithFormat:@"%.0f%%", sender.value * 100];
+    _textLabel.text = [NSString stringWithFormat:@"%.2f%%", sender.value * 100];
     
     self.progressView.progress = sender.value;
 }

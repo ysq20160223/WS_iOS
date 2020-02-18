@@ -28,23 +28,28 @@
     
     [image drawAsPatternInRect:rect]; // 平铺
     
+    
+    
+    // 快速绘制图形
+//    [[UIColor magentaColor] set];
+//    UIRectFill(CGRectMake(0, 0, 100, 100));
+    
 }
 
 
 - (void)drawText {
-    NSString *str = @"yy";
+    NSString *str = @"abcdefg";
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[NSFontAttributeName] = [UIFont systemFontOfSize:50];
+    dict[NSFontAttributeName] = [UIFont systemFontOfSize:150];
     dict[NSForegroundColorAttributeName] = [UIColor cyanColor];
-    dict[NSStrokeWidthAttributeName] = @2;
+    dict[NSStrokeWidthAttributeName] = @3;
     dict[NSStrokeColorAttributeName] = [UIColor blueColor];
     
     NSShadow  *shadow = [[NSShadow alloc] init];
-    shadow.shadowOffset = CGSizeMake(10, 10);
+    shadow.shadowOffset = CGSizeMake(30, 30);
     shadow.shadowColor = [UIColor greenColor];
-    shadow.shadowBlurRadius = 5;
-    
+    shadow.shadowBlurRadius = 3;
     dict[NSShadowAttributeName] = shadow;
     
     //    [str drawAtPoint:CGPointZero withAttributes:dict]; ／／ 不会自动换行

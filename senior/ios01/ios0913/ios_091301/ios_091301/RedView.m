@@ -19,7 +19,6 @@
 
 @implementation RedView
 
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -82,10 +81,16 @@
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(viewW / 8, viewH * 5 / 8, viewW / 4, viewH / 4) cornerRadius:20];
 //    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(viewW / 8, viewH * 5 / 8, viewW / 4, viewH / 4)];
 
-    [[UIColor cyanColor] set];
-    [path stroke];
-//    [path fill];
+    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0.5, 1, 1);
+    CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 1, 0, 1, 1);
+//    [[UIColor cyanColor] set];
     
+//    [path stroke];
+//    [path fill];
+
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextAddPath(ctx, path.CGPath);
+    CGContextDrawPath(ctx, kCGPathFillStroke);
 }
 
 - (void)drawRect {
@@ -107,7 +112,7 @@
 }
 
 
-// 绘制贝塞尔曲线
+// 091302 - 绘制贝塞尔曲线
 - (void)drawQuadCurve {
     // 1, 获取跟 view 相关的上下文
     CGContextRef ctx = UIGraphicsGetCurrentContext();
@@ -129,7 +134,7 @@
 }
 
 
-// 绘制坐标系
+// 091301 - 绘制坐标系
 - (void)drawLine {
     // 1, 取得一个跟 view 相关的上下文
     CGContextRef ctx = UIGraphicsGetCurrentContext();

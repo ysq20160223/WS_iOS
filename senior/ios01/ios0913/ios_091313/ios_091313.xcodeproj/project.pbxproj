@@ -14,7 +14,7 @@
 		180ACEB31F373C1D00A7513B /* ios_091313.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 180ACEB11F373C1D00A7513B /* ios_091313.xcdatamodeld */; };
 		180ACEB51F373C1D00A7513B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180ACEB41F373C1D00A7513B /* Assets.xcassets */; };
 		180ACEB81F373C1D00A7513B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180ACEB61F373C1D00A7513B /* LaunchScreen.storyboard */; };
-		183FA8A023F5512700685BDE /* abx.png in Resources */ = {isa = PBXBuildFile; fileRef = 183FA89F23F5512700685BDE /* abx.png */; };
+		18EC895023FBEC01004599B0 /* doubi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18EC894F23FBEC01004599B0 /* doubi.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		180ACEB41F373C1D00A7513B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180ACEB71F373C1D00A7513B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180ACEB91F373C1D00A7513B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		183FA89F23F5512700685BDE /* abx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = abx.png; sourceTree = "<group>"; };
+		18EC894F23FBEC01004599B0 /* doubi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = doubi.jpg; path = ../../../ios0917/ios_091711/ios_091711/doubi.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +62,7 @@
 		180ACEA41F373C1D00A7513B /* ios_091313 */ = {
 			isa = PBXGroup;
 			children = (
+				18EC894F23FBEC01004599B0 /* doubi.jpg */,
 				180ACEA81F373C1D00A7513B /* AppDelegate.h */,
 				180ACEA91F373C1D00A7513B /* AppDelegate.m */,
 				180ACEAB1F373C1D00A7513B /* ViewController.h */,
@@ -71,7 +72,6 @@
 				180ACEB61F373C1D00A7513B /* LaunchScreen.storyboard */,
 				180ACEB91F373C1D00A7513B /* Info.plist */,
 				180ACEB11F373C1D00A7513B /* ios_091313.xcdatamodeld */,
-				183FA89F23F5512700685BDE /* abx.png */,
 				180ACEA51F373C1D00A7513B /* Supporting Files */,
 			);
 			path = ios_091313;
@@ -125,6 +125,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -144,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180ACEB81F373C1D00A7513B /* LaunchScreen.storyboard in Resources */,
-				183FA8A023F5512700685BDE /* abx.png in Resources */,
+				18EC895023FBEC01004599B0 /* doubi.jpg in Resources */,
 				180ACEB51F373C1D00A7513B /* Assets.xcassets in Resources */,
 				180ACEB01F373C1D00A7513B /* Main.storyboard in Resources */,
 			);
