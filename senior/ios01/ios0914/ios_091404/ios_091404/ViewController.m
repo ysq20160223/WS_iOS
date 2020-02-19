@@ -16,7 +16,6 @@
 
 
 
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -34,7 +33,7 @@
 - (void)pan:(UIPanGestureRecognizer *)pan {
     // 获取当前手指所在的点
     CGPoint curP = [pan locationInView:self.imageView];
-    CGFloat rectWH = 30;
+    CGFloat rectWH = 35;
     CGFloat x = curP.x - rectWH * .5;
     CGFloat y = curP.y - rectWH * .5;
     
@@ -61,7 +60,6 @@
     self.imageView.image = newImage;
     
 }
-
 
 @end
 

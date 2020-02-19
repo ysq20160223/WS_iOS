@@ -16,7 +16,6 @@
 @property (nonatomic, strong) NSMutableArray *pathArray; // 路径集合
 
 @property (nonatomic, assign) CGFloat width; // 线的宽度
-
 @property (nonatomic, strong) UIColor *color; // 线的颜色
 
 @end
@@ -66,7 +65,6 @@
     self.width = 1; // 默认宽度
     self.color = [UIColor blackColor]; // 默认颜色
     [self addGestureRecognizer:pan];
-    
 }
 
 - (void)pan:(UIPanGestureRecognizer *)pan {
@@ -75,9 +73,8 @@
     CGPoint curP = [pan locationInView:self];
     
     if(pan.state == UIGestureRecognizerStateBegan) {
-        
         MyUIBezierPath *path = [[MyUIBezierPath alloc] init];
-        self.path = path;
+        self.path = [[MyUIBezierPath alloc] init];
         
         [path setLineWidth:self.width]; // 设置线的宽度
         path.color = self.color; // 设置线的颜色
@@ -85,7 +82,6 @@
         [self.pathArray addObject:path];
         [path moveToPoint:curP];
         [path setLineJoinStyle:kCGLineJoinRound];
-        
     } else if (pan.state == UIGestureRecognizerStateChanged) {
         [self.path addLineToPoint:curP];
         

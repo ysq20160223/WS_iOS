@@ -10,9 +10,9 @@
 
 @interface ViewController ()
 
-//手指开始点
+// 手指开始点
 @property(nonatomic,assign)CGPoint startP;
-//遮盖
+// 遮盖
 @property(nonatomic,weak) UIView *coverView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
@@ -39,24 +39,24 @@
 }
 
 
-- (IBAction)pan:(UIPanGestureRecognizer *)pan{
+- (IBAction)pan:(UIPanGestureRecognizer *)pan {
+    
     // 获取当前手指所在的点.
     CGPoint curP = [pan locationInView:self.view];
-    if(pan.state == UIGestureRecognizerStateBegan){
+    if (pan.state == UIGestureRecognizerStateBegan) {
         
         CGPoint startP = curP;
         self.startP = startP;
         
-    } else if(pan.state == UIGestureRecognizerStateChanged){
+    } else if (pan.state == UIGestureRecognizerStateChanged) {
         
         CGFloat offsetX = curP.x - self.startP.x;
         CGFloat offsetY = curP.y - self.startP.y;
-        // 确定遮盖的区域位置
-        CGRect rect = CGRectMake(self.startP.x, self.startP.y, offsetX, offsetY);
+  
         // 每次移动时,调用遮盖的Frame.
-        self.coverView.frame = rect;
+        self.coverView.frame = CGRectMake(self.startP.x, self.startP.y, offsetX, offsetY);
         
-    } else if(pan.state == UIGestureRecognizerStateEnded){
+    } else if (pan.state == UIGestureRecognizerStateEnded) {
         
         // 1.开启一个跟原始图片相同大小的图片上下文.
         UIGraphicsBeginImageContextWithOptions(self.imageV.bounds.size, NO, 0);

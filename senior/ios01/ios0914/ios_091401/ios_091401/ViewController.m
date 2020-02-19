@@ -18,6 +18,8 @@
 
 @end
 
+
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -27,7 +29,7 @@
     
 //    self.imageView.image = [self imageWithBorderWidth:5 borderColor:[UIColor cyanColor] image:[UIImage imageNamed:@"aLi.png"]];
     
-    self.imageView.image = [UIImage imageWithBorderWidth:5 borderColor:[UIColor magentaColor] image:[UIImage imageNamed:@"abx.png"]];
+    self.imageView.image = [UIImage imageWithBorderWidth:9 borderColor:[UIColor magentaColor] image:[UIImage imageNamed:@"doubi.jpg"]];
     
 }
 
@@ -69,7 +71,5 @@
 
 
 @end
-
-
 
 

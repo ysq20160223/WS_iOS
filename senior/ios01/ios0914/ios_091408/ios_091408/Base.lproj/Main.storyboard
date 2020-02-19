@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G2136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,36 +20,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-3k-TIZ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="KGM-dY-7CY"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Clear" style="plain" id="6FK-ED-fe3">
+                                    <barButtonItem title="Clear" id="6FK-ED-fe3">
                                         <connections>
                                             <action selector="clear:" destination="BYZ-38-t0r" id="y9q-Zp-3i1"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="g0U-8r-N6K"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="g0U-8r-N6K" userLabel="Flexible Space 01"/>
                                     <barButtonItem title="Undo" id="bcW-lz-0UO">
                                         <connections>
                                             <action selector="undo:" destination="BYZ-38-t0r" id="2wh-cQ-ltu"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="C0j-Nf-k0G"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="C0j-Nf-k0G" userLabel="Flexible Space 02"/>
                                     <barButtonItem title="Erase" id="o3Z-2c-RyR">
                                         <connections>
                                             <action selector="erase:" destination="BYZ-38-t0r" id="pQc-1A-pkv"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="COX-11-ult"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="COX-11-ult" userLabel="Flexible Space 03"/>
                                     <barButtonItem title="Photos" id="Clk-IJ-hr6">
                                         <connections>
                                             <action selector="photos:" destination="BYZ-38-t0r" id="LcJ-X6-gO5"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iBo-Da-Oj8"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iBo-Da-Oj8" userLabel="Flexible Space 04"/>
                                     <barButtonItem title="Save" id="Jr7-7n-kjG">
                                         <connections>
                                             <action selector="save:" destination="BYZ-38-t0r" id="g19-2K-YRk"/>
@@ -62,8 +60,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHY-W6-pcN" userLabel="ColorSlideCtrlView">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9z-tE-71G">
-                                        <rect key="frame" x="20" y="50" width="98.5" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X9z-tE-71G" userLabel="left">
+                                        <rect key="frame" x="20" y="46" width="98.5" height="34"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" red="0.15686274510000001" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,22 +70,22 @@
                                             <action selector="setColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8OD-78-Hdg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-LK-l2e">
-                                        <rect key="frame" x="138.5" y="50" width="98" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-LK-l2e" userLabel="center">
+                                        <rect key="frame" x="138.5" y="46" width="98" height="34"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="setColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hw3-xV-73I"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2D-Ev-Pk1">
-                                        <rect key="frame" x="256.5" y="50" width="98.5" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2D-Ev-Pk1" userLabel="right">
+                                        <rect key="frame" x="256.5" y="46" width="98.5" height="34"/>
                                         <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="setColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMG-qZ-MAV"/>
                                         </connections>
                                     </button>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="IsO-dk-LWE">
-                                        <rect key="frame" x="18" y="8" width="339" height="31"/>
+                                        <rect key="frame" x="18" y="4" width="339" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="YxA-3y-9Uo"/>
                                         </constraints>
@@ -118,8 +116,8 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shb-gu-JKb" userLabel="DrawView" customClass="DrawView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="503"/>
-                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="523"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -137,7 +135,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="centerColorBtn" destination="rNa-LK-l2e" id="L8E-j3-U1e"/>
                         <outlet property="drawView" destination="shb-gu-JKb" id="kAN-na-LZR"/>
+                        <outlet property="leftColorBtn" destination="X9z-tE-71G" id="p5a-Ao-8QT"/>
+                        <outlet property="rightColorBtn" destination="r2D-Ev-Pk1" id="RNh-3m-ZPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -16,6 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet DrawView *drawView;
 
+@property (weak, nonatomic) IBOutlet UIButton *leftColorBtn;
+@property (weak, nonatomic) IBOutlet UIButton *centerColorBtn;
+@property (weak, nonatomic) IBOutlet UIButton *rightColorBtn;
+
 @end
 
 
@@ -39,6 +43,7 @@
 
 // 选中图片
 - (IBAction)photos:(UIBarButtonItem *)sender {
+    NSLog(@"");
     UIImagePickerController *pickVC = [[UIImagePickerController alloc] init];
     
     pickVC.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; // 设置照片的来源
@@ -47,8 +52,9 @@
     [self presentViewController:pickVC animated:YES completion:nil];
 }
 
+#pragma mark - UIImagePickerControllerDelegate start
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
+    NSLog(@"info: %@", info);
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
     NSData *data = UIImagePNGRepresentation(image);
@@ -56,6 +62,7 @@
     
     [self dismissViewControllerAnimated:YES completion:nil]; //
 }
+#pragma mark - UIImagePickerControllerDelegate end
 
 // 保存
 - (IBAction)save:(UIBarButtonItem *)sender {
@@ -79,7 +86,8 @@
     // The app's Info.plist must contain an NSPhotoLibraryUsageDescription key with a string value explaining to the user how the app uses this data.
 }
 
-// 保存图片后系统回调
+// Adds a photo to the saved photos album.  The optional completionSelector should have the form:
+//  - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     NSLog(@"save success");
 }
@@ -91,19 +99,43 @@
 
 // 设置颜色
 - (IBAction)setColor:(UIButton *)sender {
+    //    NSLog(@"sender: %@", sender);
     [self.drawView setLineColor:sender.backgroundColor];
+    
+    if (sender == self.leftColorBtn) {
+        self.leftColorBtn.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
+        self.centerColorBtn.layer.borderColor = self.centerColorBtn.backgroundColor.CGColor;
+        self.rightColorBtn.layer.borderColor = self.rightColorBtn.backgroundColor.CGColor;
+    } else if (sender == self.centerColorBtn) {
+        self.leftColorBtn.layer.borderColor = self.leftColorBtn.backgroundColor.CGColor;
+        self.centerColorBtn.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
+        self.rightColorBtn.layer.borderColor = self.rightColorBtn.backgroundColor.CGColor;
+    } else if (sender == self.rightColorBtn) {
+        self.leftColorBtn.layer.borderColor = self.leftColorBtn.backgroundColor.CGColor;
+        self.centerColorBtn.layer.borderColor = self.centerColorBtn.backgroundColor.CGColor;
+        self.rightColorBtn.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
+    }
 }
 
+
+- (void)initColorBtn:(UIButton *)btn {
+    [btn.layer setCornerRadius:btn.frame.size.height * 0.5];
+    btn.layer.borderWidth = 2;
+    btn.layer.borderColor = btn.backgroundColor.CGColor;
+}
 
 //
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self initColorBtn:self.leftColorBtn];
+    [self initColorBtn:self.centerColorBtn];
+    [self initColorBtn:self.rightColorBtn];
+    
+    [self setColor:self.leftColorBtn];
 }
 
 @end
-
-
-
 
 
