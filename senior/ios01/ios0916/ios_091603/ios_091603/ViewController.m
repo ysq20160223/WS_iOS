@@ -32,7 +32,7 @@
     
     layer.position = CGPointMake(self.view.bounds.size.width * .5, self.view.bounds.size.height * .5);
     
-    layer.anchorPoint = CGPointMake(.5, .5);
+//    layer.anchorPoint = CGPointMake(.5, .5);
     
     [self.view.layer addSublayer:layer];
     

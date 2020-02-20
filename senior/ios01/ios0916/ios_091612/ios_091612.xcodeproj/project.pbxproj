@@ -14,10 +14,6 @@
 		18AC93C91F3CD1D9003DC17F /* ios_091612.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18AC93C71F3CD1D9003DC17F /* ios_091612.xcdatamodeld */; };
 		18AC93CB1F3CD1D9003DC17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AC93CA1F3CD1D9003DC17F /* Assets.xcassets */; };
 		18AC93CE1F3CD1D9003DC17F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AC93CC1F3CD1D9003DC17F /* LaunchScreen.storyboard */; };
-		18C44FAB1F3D527300734A33 /* LuckyAnimal.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FA91F3D527300734A33 /* LuckyAnimal.png */; };
-		18C44FAC1F3D527300734A33 /* LuckyAnimal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FAA1F3D527300734A33 /* LuckyAnimal@2x.png */; };
-		18C44FAF1F3D527F00734A33 /* LuckyAnimalPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FAD1F3D527F00734A33 /* LuckyAnimalPressed.png */; };
-		18C44FB01F3D527F00734A33 /* LuckyAnimalPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FAE1F3D527F00734A33 /* LuckyAnimalPressed@2x.png */; };
 		18C44FB31F3D528900734A33 /* LuckyAstrology.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB11F3D528900734A33 /* LuckyAstrology.png */; };
 		18C44FB41F3D528900734A33 /* LuckyAstrology@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB21F3D528900734A33 /* LuckyAstrology@2x.png */; };
 		18C44FB71F3D529200734A33 /* LuckyAstrologyPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C44FB51F3D529200734A33 /* LuckyAstrologyPressed.png */; };
@@ -46,10 +42,6 @@
 		18AC93CA1F3CD1D9003DC17F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18AC93CD1F3CD1D9003DC17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18AC93CF1F3CD1D9003DC17F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18C44FA91F3D527300734A33 /* LuckyAnimal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAnimal.png; sourceTree = "<group>"; };
-		18C44FAA1F3D527300734A33 /* LuckyAnimal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyAnimal@2x.png"; sourceTree = "<group>"; };
-		18C44FAD1F3D527F00734A33 /* LuckyAnimalPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAnimalPressed.png; sourceTree = "<group>"; };
-		18C44FAE1F3D527F00734A33 /* LuckyAnimalPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyAnimalPressed@2x.png"; sourceTree = "<group>"; };
 		18C44FB11F3D528900734A33 /* LuckyAstrology.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAstrology.png; sourceTree = "<group>"; };
 		18C44FB21F3D528900734A33 /* LuckyAstrology@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LuckyAstrology@2x.png"; sourceTree = "<group>"; };
 		18C44FB51F3D529200734A33 /* LuckyAstrologyPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LuckyAstrologyPressed.png; sourceTree = "<group>"; };
@@ -120,10 +112,6 @@
 		18AC93BB1F3CD1D9003DC17F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18C44FA91F3D527300734A33 /* LuckyAnimal.png */,
-				18C44FAA1F3D527300734A33 /* LuckyAnimal@2x.png */,
-				18C44FAD1F3D527F00734A33 /* LuckyAnimalPressed.png */,
-				18C44FAE1F3D527F00734A33 /* LuckyAnimalPressed@2x.png */,
 				18C44FB11F3D528900734A33 /* LuckyAstrology.png */,
 				18C44FB21F3D528900734A33 /* LuckyAstrology@2x.png */,
 				18C44FB51F3D529200734A33 /* LuckyAstrologyPressed.png */,
@@ -180,6 +168,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -201,22 +190,18 @@
 				18C44FC21F3D52B800734A33 /* LuckyRotateWheel@2x.png in Resources */,
 				18C44FB81F3D529200734A33 /* LuckyAstrologyPressed@2x.png in Resources */,
 				18C44FC51F3D52C000734A33 /* LuckyRototeSelected.png in Resources */,
-				18C44FAB1F3D527300734A33 /* LuckyAnimal.png in Resources */,
 				18C44FB31F3D528900734A33 /* LuckyAstrology.png in Resources */,
 				18C44FC61F3D52C000734A33 /* LuckyRototeSelected@2x.png in Resources */,
 				18C44FBE1F3D52AF00734A33 /* LuckyCenterButtonPressed@2x.png in Resources */,
 				18C44FB41F3D528900734A33 /* LuckyAstrology@2x.png in Resources */,
-				18C44FAF1F3D527F00734A33 /* LuckyAnimalPressed.png in Resources */,
 				18C44FC11F3D52B800734A33 /* LuckyRotateWheel.png in Resources */,
 				18C44FB71F3D529200734A33 /* LuckyAstrologyPressed.png in Resources */,
 				18AC93CE1F3CD1D9003DC17F /* LaunchScreen.storyboard in Resources */,
-				18C44FAC1F3D527300734A33 /* LuckyAnimal@2x.png in Resources */,
 				18AC93CB1F3CD1D9003DC17F /* Assets.xcassets in Resources */,
 				18C44FBC1F3D52A700734A33 /* LuckyCenterButton@2x.png in Resources */,
 				18C44FCD1F3D53F100734A33 /* WheelView.xib in Resources */,
 				18AC93C61F3CD1D9003DC17F /* Main.storyboard in Resources */,
 				18C44FBA1F3D52A000734A33 /* LuckyBaseBackground@2x.png in Resources */,
-				18C44FB01F3D527F00734A33 /* LuckyAnimalPressed@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ../../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_091612/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-091612";
@@ -363,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = ../../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_091612/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-091612";

@@ -26,7 +26,6 @@
 
 @property (nonatomic, weak) CALayer *layer;
 
-//
 @property (weak, nonatomic) IBOutlet UIView *myView;
 
 @end
@@ -39,37 +38,35 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    // UIView 当中的 center 就是 layer 当中的 position
     // 非根 Layout
     CALayer *layer = [CALayer layer];
-    layer.bounds = CGRectMake(0, 0, 100, 100);
-    layer.position = CGPointMake(100, 100);
+    layer.bounds = CGRectMake(0, 0, 50, 50);
+//    layer.position = CGPointMake(self.view.bounds.size.width * 0.5, self.view.bounds.size.height * 0.5);
     layer.backgroundColor = [UIColor blueColor].CGColor;
     
     self.layer = layer;
     
     [self.view.layer addSublayer:layer];
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     [CATransaction begin];
-    
-    [CATransaction setDisableActions:NO]; // 设置事务有没有动画
     [CATransaction setAnimationDuration:3]; // 设置事务动画的执行时长
+    [CATransaction setDisableActions:NO]; // 设置事务有没有动画
     
-    self.layer.bounds = CGRectMake(0, 0, arc4random_uniform(150), arc4random_uniform(150)); // 缩放比例
-    self.layer.position = CGPointMake(arc4random_uniform(150), arc4random_uniform(150));
+    
+    self.layer.bounds = CGRectMake(0, 0, arc4random_uniform(50) + 50, arc4random_uniform(50) + 50); // 缩放比例
+    self.layer.position = CGPointMake(arc4random_uniform(50) + self.view.bounds.size.width * 0.5, arc4random_uniform(50) + self.view.bounds.size.height * 0.5);
     self.layer.backgroundColor = [self randomColor].CGColor;
     
-    self.layer.cornerRadius = arc4random_uniform(35);
+    self.layer.cornerRadius = arc4random_uniform(25);
     
     [CATransaction commit];
     
     // UIView 根
 //    self.myView.layer.position = CGPointMake(300, 300);
-    
 }
 
 - (UIColor *)randomColor {

@@ -10,9 +10,11 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *heart;
+@property (weak, nonatomic) IBOutlet UIImageView *ivHeart;
 
 @end
+
+
 
 @implementation ViewController
 
@@ -28,19 +30,17 @@
     
     // 2, 设置属性
     anim.keyPath = @"transform.scale";
-    anim.toValue = @0;
+    anim.toValue = @0.5;
     
     anim.repeatCount = MAXFLOAT;
-    anim.duration = .45;
+    anim.duration = .5;
     anim.autoreverses = YES;
     
     // 3, 添加动画
-    [self.heart.layer addAnimation:anim forKey:nil];
+    [self.ivHeart.layer addAnimation:anim forKey:nil];
     
 }
 
 @end
-
-
 
 

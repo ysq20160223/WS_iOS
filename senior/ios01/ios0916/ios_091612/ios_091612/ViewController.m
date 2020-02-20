@@ -13,17 +13,16 @@
 
 @property (nonatomic, strong) WheelView *wheelView;
 
-
 @end
+
+
 
 @implementation ViewController
 
-//
 - (IBAction)stop:(UIButton *)sender {
     [self.wheelView stop];
 }
 
-//
 - (IBAction)start:(UIButton *)sender {
     [self.wheelView start];
 }
@@ -39,11 +38,8 @@
     [self.view addSubview:wheelView];
     
     self.wheelView = wheelView;
-    
 }
 
-
 @end
-
 
 

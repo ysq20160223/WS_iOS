@@ -14,13 +14,13 @@
 
 @end
 
+
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
     
 }
 
@@ -31,6 +31,7 @@
     // 2, 设置属性
     anim.keyPath = @"transform.scale";
     anim.toValue = @.5;
+    anim.duration = 3;
     
     // 动画完成时不要删除动画
     anim.removedOnCompletion = NO;
@@ -42,6 +43,5 @@
 }
 
 @end
-
 
 

@@ -23,11 +23,14 @@
 
 #import "MyView.h"
 
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet MyView *myView;
 
 @end
+
+
 
 @implementation ViewController
 
@@ -36,32 +39,44 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
-    
 }
 
 //
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    CABasicAnimation *animPosition = [CABasicAnimation animation];
-    animPosition.keyPath = @"position.y";
-    animPosition.toValue = @(500);
-    animPosition.removedOnCompletion = NO;
-    animPosition.fillMode = kCAFillModeForwards;
+//    [UIView animateWithDuration:5 animations:^{
+////        self.myView.transform = CGAffineTransformMakeTranslation(0, 200);
+////        self.myView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+//        NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
+//    }];
     
-    [self.myView.layer addAnimation:animPosition forKey:nil];
+    [UIView animateWithDuration:2 animations:^{
+        self.myView.transform = CGAffineTransformTranslate(self.myView.transform, 0, 100);
+        NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:2 animations:^{
+            self.myView.transform = CGAffineTransformScale(self.myView.transform, 0.8, 0.8);
+            NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
+        }];
+    }];
     
-    CABasicAnimation *animScale = [CABasicAnimation animation];
-    animScale.keyPath = @"transform.scale";
-    animScale.toValue = @.5;
-    animScale.removedOnCompletion = NO;
-    animScale.fillMode = kCAFillModeForwards;
-    
-    [self.myView.layer addAnimation:animScale forKey:nil];
-    
+    //
+//    CABasicAnimation *animPosition = [CABasicAnimation animation];
+//    animPosition.keyPath = @"position.y";
+//    animPosition.toValue = @(500);
+//    animPosition.removedOnCompletion = NO;
+//    animPosition.fillMode = kCAFillModeForwards;
+//    [self.myView.layer addAnimation:animPosition forKey:nil];
+//
+//    CABasicAnimation *animScale = [CABasicAnimation animation];
+//    animScale.keyPath = @"transform.scale";
+//    animScale.toValue = @.5;
+//    animScale.removedOnCompletion = NO;
+//    animScale.fillMode = kCAFillModeForwards;
+//    [self.myView.layer addAnimation:animScale forKey:nil];
+//
 //    NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
-    
 }
 
 @end
-
 
 

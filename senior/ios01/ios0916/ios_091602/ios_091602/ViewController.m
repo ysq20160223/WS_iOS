@@ -29,8 +29,6 @@
     [self.view.layer addSublayer:layer];
     
     layer.contents = (id)[UIImage imageNamed:@"a_li"].CGImage;
-    
-    
 }
 
 @end

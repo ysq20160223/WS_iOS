@@ -14,38 +14,29 @@
 
 @end
 
+
+
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self caBasicAnim];
+    [self caBasicAnim];
     
-    [self caAnimationGroup];
-    
+//    [self caAnimationGroup];
 }
 
 - (void)caAnimationGroup {
-    // ----- 缩放
+    // 缩放
     CABasicAnimation *scaleAnim = [CABasicAnimation animation];
-    // 设置属性
     scaleAnim.keyPath = @"transform.scale";
     scaleAnim.toValue = @.5;
     
-    // ----- 平移
+    // 平移
     CABasicAnimation *translationAnim = [CABasicAnimation animation];
-    // 设置属性
     translationAnim.keyPath = @"position.y";
     translationAnim.toValue = @(400);
     
     CAAnimationGroup *group = [CAAnimationGroup animation];
     group.animations = @[scaleAnim, translationAnim];
-    
     group.fillMode = kCAFillModeForwards;
     group.removedOnCompletion = NO;
     
@@ -53,28 +44,20 @@
 }
 
 - (void)caBasicAnim {
-    // ----- 缩放
+    // 缩放
     CABasicAnimation *scaleAnim = [CABasicAnimation animation];
-    
-    // 设置属性
     scaleAnim.keyPath = @"transform.scale";
     scaleAnim.toValue = @.5;
     scaleAnim.removedOnCompletion = NO;
     scaleAnim.fillMode = kCAFillModeForwards;
-    
-    //
     [self.myView.layer addAnimation:scaleAnim forKey:nil];
     
-    // ----- 平移
+    // 平移
     CABasicAnimation *translationAnim = [CABasicAnimation animation];
-    
-    // 设置属性
     translationAnim.keyPath = @"position.y";
     translationAnim.toValue = @(400);
     translationAnim.removedOnCompletion = NO;
     translationAnim.fillMode = kCAFillModeForwards;
-    
-    //
     [self.myView.layer addAnimation:translationAnim forKey:nil];
 }
 

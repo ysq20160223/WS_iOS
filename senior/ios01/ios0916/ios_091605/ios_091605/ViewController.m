@@ -38,7 +38,6 @@
 
 
 
-// 
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -53,8 +52,6 @@
     
     // 添加定时器
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(secondChange) userInfo:nil repeats:YES];
-    
-    
 }
 
 // 秒针变化
@@ -77,12 +74,12 @@
     CGFloat hourA = curHour * perHourA + curMinute * perMinuteHour;
     self.hourLayer.transform = CATransform3DMakeRotation(angle2Rad(hourA), 0, 0, 1); // 时针旋转
     
-    self.calendarLabel.text = [NSString stringWithFormat:@"%ld:%ld:%ld", curHour, curMinute, curSecond];
+    self.calendarLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", curHour, curMinute, curSecond];
 }
+
 
 // 添加秒针
 - (void)addSecond {
-    ///
     CALayer *layer = [CALayer layer];
     layer.backgroundColor = [UIColor redColor].CGColor;
     layer.bounds = CGRectMake(0, 0, 1, 71);
@@ -93,10 +90,8 @@
     [self.clockView.layer addSublayer:layer];
 }
 
-// ------------------
 // 添加分针
 - (void)addMinute {
-    ///
     CALayer *layer = [CALayer layer];
     layer.backgroundColor = [UIColor blackColor].CGColor;
     layer.bounds = CGRectMake(0, 0, 2, 51);
@@ -107,10 +102,8 @@
     [self.clockView.layer addSublayer:layer];
 }
 
-// ------------------
 // 添加时针
 - (void)addHour {
-    ///
     CALayer *layer = [CALayer layer];
     layer.backgroundColor = [UIColor blackColor].CGColor;
     layer.bounds = CGRectMake(0, 0, 3, 31);
@@ -120,7 +113,6 @@
     self.hourLayer = layer;
     [self.clockView.layer addSublayer:layer];
 }
-
 
 @end
 

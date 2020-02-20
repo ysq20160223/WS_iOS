@@ -29,8 +29,8 @@
     CABasicAnimation *anim = [CABasicAnimation animation];
     anim.keyPath = @"transform.rotation";
     anim.toValue = @(M_PI * 2);
-    anim.duration = 5;
-    anim.repeatCount = MAXFLOAT;
+    anim.duration = 3;
+//    anim.repeatCount = MAXFLOAT;
     
     [self.contentView.layer addAnimation:anim forKey:nil];
 }
@@ -44,24 +44,22 @@
     return _link;
 }
 
-//
+
 - (void)start {
     self.link.paused = NO;
 }
 
 - (void)update {
-    // 让转盘开始旋转
     self.contentView.transform = CGAffineTransformRotate(self.contentView.transform, M_PI / 200.0);
 }
 
-//
 - (void)stop {
     self.link.paused = YES;
 }
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     [self setUp];
 }
 
@@ -71,13 +69,17 @@
     UIImage *oriImage = [UIImage imageNamed:@"LuckyAstrology"];
     UIImage *oriSelImage = [UIImage imageNamed:@"LuckyAstrologyPressed"];
     
+//    NSLog(@"oriImage: %@, oriSelImage: %@", oriImage, oriSelImage);
+    
     // 获取当前屏幕与像素坐标的比例
     CGFloat scale = [UIScreen mainScreen].scale;
+    scale = 2; // note: 无 @3x 图片情况下暂时使用
     
     CGFloat clipW = oriImage.size.width / 12 * scale;
     CGFloat clipH = oriImage.size.height * scale;
     CGFloat clipX = 0;
     CGFloat clipY = 0;
+    NSLog(@"scale: %f, clipW: %f, clipH: %f", scale, clipW, clipH);
     
     // 添加按钮
     self.contentView.userInteractionEnabled = YES;
@@ -117,7 +119,8 @@
         // 设置选中图片
         [btn setBackgroundImage:[UIImage imageNamed:@"LuckyRototeSelected"] forState:UIControlStateSelected];
         
-        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside]; // 监听点击
+        // 监听点击
+        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.contentView addSubview:btn];
         
@@ -140,7 +143,6 @@
 // heelView *wheelView = [[WheelView alloc] init]; 调用
 - (instancetype)initWithFrame:(CGRect)frame {
 //    NSLog(@"%s", __func__);
-    
     if(self = [super initWithFrame:frame]) {
         self = [[NSBundle mainBundle] loadNibNamed:@"WheelView" owner:nil options:nil][0];
         [self setUp];
@@ -151,9 +153,9 @@
 //
 + (instancetype)wheelView {
 //    NSLog(@"%s", __func__);
-    
     return [[NSBundle mainBundle] loadNibNamed:@"WheelView" owner:nil options:nil][0];
 }
+
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
