@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MenuItem : NSObject
+@interface MenuBean : NSObject
 
 @property (strong, nonatomic) UIImage *image; // 图片
 

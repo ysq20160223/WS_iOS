@@ -22,7 +22,7 @@
 		18F114F21F3E9BE1008B76AD /* ios_091708.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F114F01F3E9BE1008B76AD /* ios_091708.xcdatamodeld */; };
 		18F114F41F3E9BE1008B76AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F114F31F3E9BE1008B76AD /* Assets.xcassets */; };
 		18F114F71F3E9BE1008B76AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F114F51F3E9BE1008B76AD /* LaunchScreen.storyboard */; };
-		18F115001F3E9C56008B76AD /* BageValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F114FF1F3E9C56008B76AD /* BageValue.m */; };
+		18F115001F3E9C56008B76AD /* BageValueButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F114FF1F3E9C56008B76AD /* BageValueButton.m */; };
 		18F115051F3EA1F7008B76AD /* Distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F115041F3EA1F7008B76AD /* Distance.m */; };
 /* End PBXBuildFile section */
 
@@ -46,8 +46,8 @@
 		18F114F31F3E9BE1008B76AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F114F61F3E9BE1008B76AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18F114F81F3E9BE1008B76AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18F114FE1F3E9C56008B76AD /* BageValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BageValue.h; sourceTree = "<group>"; };
-		18F114FF1F3E9C56008B76AD /* BageValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BageValue.m; sourceTree = "<group>"; };
+		18F114FE1F3E9C56008B76AD /* BageValueButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BageValueButton.h; sourceTree = "<group>"; };
+		18F114FF1F3E9C56008B76AD /* BageValueButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BageValueButton.m; sourceTree = "<group>"; };
 		18F115031F3EA1F7008B76AD /* Distance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Distance.h; sourceTree = "<group>"; };
 		18F115041F3EA1F7008B76AD /* Distance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Distance.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +92,8 @@
 				18F114F81F3E9BE1008B76AD /* Info.plist */,
 				18F114F01F3E9BE1008B76AD /* ios_091708.xcdatamodeld */,
 				18F114E41F3E9BE1008B76AD /* Supporting Files */,
-				18F114FE1F3E9C56008B76AD /* BageValue.h */,
-				18F114FF1F3E9C56008B76AD /* BageValue.m */,
+				18F114FE1F3E9C56008B76AD /* BageValueButton.h */,
+				18F114FF1F3E9C56008B76AD /* BageValueButton.m */,
 				18F115031F3EA1F7008B76AD /* Distance.h */,
 				18F115041F3EA1F7008B76AD /* Distance.m */,
 			);
@@ -156,6 +156,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -196,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F115051F3EA1F7008B76AD /* Distance.m in Sources */,
-				18F115001F3E9C56008B76AD /* BageValue.m in Sources */,
+				18F115001F3E9C56008B76AD /* BageValueButton.m in Sources */,
 				18F114EC1F3E9BE1008B76AD /* ViewController.m in Sources */,
 				18F114E91F3E9BE1008B76AD /* AppDelegate.m in Sources */,
 				18F114F21F3E9BE1008B76AD /* ios_091708.xcdatamodeld in Sources */,

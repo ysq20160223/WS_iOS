@@ -10,6 +10,6 @@
 
 @interface ComposeVC : UIViewController
 
-@property (nonatomic, strong) NSArray *itemArray;
+@property (nonatomic, strong) NSArray *menuBeanArray;
 
 @end

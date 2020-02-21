@@ -10,7 +10,7 @@
 
 @interface VCView : UIView
 
-- (void)start;
+- (void)play;
 
 - (void)reDraw;
 

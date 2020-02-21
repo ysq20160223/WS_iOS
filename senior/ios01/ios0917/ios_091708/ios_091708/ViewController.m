@@ -12,6 +12,8 @@
 
 @end
 
+
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -20,8 +22,6 @@
     
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
 }
-
-
 
 @end
 

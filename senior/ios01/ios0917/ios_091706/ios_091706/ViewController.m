@@ -21,21 +21,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    NSLog(@"%@", [self.view.layer class]);
+    NSLog(@"%@", [self.view.layer class]);
     
-    CAReplicatorLayer *repL = (CAReplicatorLayer *)self.view.layer;
-    repL.instanceCount = 2;
+    CAReplicatorLayer *repLayer = (CAReplicatorLayer *)self.view.layer;
+    repLayer.instanceCount = 2;
     
-    repL.instanceTransform = CATransform3DMakeRotation(M_PI, 1, 0, 0);
+    repLayer.instanceTransform = CATransform3DMakeRotation(M_PI, 1, 0, 0);
     
     //
-    repL.instanceRedOffset -= .1;
-    repL.instanceGreenOffset -= .1;
-    repL.instanceBlueOffset -= .1;
-    
-    repL.instanceAlphaOffset -= .1;
-    
-    
+    repLayer.instanceRedOffset -= .1;
+    repLayer.instanceGreenOffset -= .1;
+    repLayer.instanceBlueOffset -= .1;
+    repLayer.instanceAlphaOffset -= .1;
 }
 
 @end

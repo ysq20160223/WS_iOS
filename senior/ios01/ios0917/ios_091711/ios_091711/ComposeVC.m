@@ -7,12 +7,12 @@
 //
 
 #import "ComposeVC.h"
-#import "MenuItem.h"
-#import "ItemBtn.h"
+#import "MenuBean.h"
+#import "MenuBtn.h"
 
 @interface ComposeVC ()
 
-@property (nonatomic, strong) NSMutableArray *btnArray;
+@property (nonatomic, strong) NSMutableArray *menuBtnArray;
 
 @property (nonatomic, assign) int btnIndex;
 
@@ -24,11 +24,11 @@
 
 @implementation ComposeVC
 
-- (NSMutableArray *)btnArray {
-    if (_btnArray == nil) {
-        _btnArray = [NSMutableArray array];
+- (NSMutableArray *)menuBtnArray {
+    if (_menuBtnArray == nil) {
+        _menuBtnArray = [NSMutableArray array];
     }
-    return _btnArray;
+    return _menuBtnArray;
 }
 
 - (void)viewDidLoad {
@@ -38,23 +38,21 @@
     [self addBtn];
 
     self.timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(update) userInfo:nil repeats:YES];
-    
 }
 
 - (void)update {
-    if (self.btnIndex == self.btnArray.count) {
+    if (self.btnIndex == self.menuBtnArray.count) {
         [self.timer invalidate];
         return;
     }
     
-    UIButton *btn = self.btnArray[self.btnIndex];
+    UIButton *btn = self.menuBtnArray[self.btnIndex];
     
-    [UIView animateWithDuration:.5 delay:0 usingSpringWithDamping:.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
         btn.transform = CGAffineTransformIdentity;
     } completion:nil];
     
     self.btnIndex++;
-    
 }
 
 //- (void)viewDidAppear:(BOOL)animated {
@@ -76,8 +74,8 @@
     int curRow = 0;
     CGFloat oriY = 300;
     
-    for (int i = 0; i < self.itemArray.count; i++) {
-        ItemBtn *btn = [ItemBtn buttonWithType:UIButtonTypeCustom];
+    for (int i = 0; i < self.menuBeanArray.count; i++) {
+        MenuBtn *btn = [MenuBtn buttonWithType:UIButtonTypeCustom];
         
         curColumn = i % column;
         curRow = i / column;
@@ -88,7 +86,7 @@
         btn.frame = CGRectMake(x, y, btnWhH, btnWhH);
         [btn setBackgroundColor:[UIColor cyanColor]];
         
-        MenuItem *item = self.itemArray[i];
+        MenuBean *item = self.menuBeanArray[i];
         [btn setImage:item.image forState:UIControlStateNormal];
         [btn setTitle:item.title forState:UIControlStateNormal];
         
@@ -97,12 +95,11 @@
         //
         btn.transform = CGAffineTransformMakeTranslation(0, self.view.bounds.size.height);
         
-        [self.btnArray addObject:btn];
+        [self.menuBtnArray addObject:btn];
         
         // 监听点击
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
         [btn addTarget:self action:@selector(btnClickUp:) forControlEvents:UIControlEventTouchUpInside];
-        
     }
     
 }
@@ -120,12 +117,6 @@
         btn.alpha = 0;
         btn.transform = CGAffineTransformMakeScale(2, 2);
     }];
-}
-
-//
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

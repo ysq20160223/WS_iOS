@@ -10,11 +10,13 @@
 
 #import "ComposeVC.h"
 
-#import "MenuItem.h"
+#import "MenuBean.h"
 
 @interface ViewController ()
 
 @end
+
+
 
 @implementation ViewController
 
@@ -28,19 +30,17 @@
 - (IBAction)btnClick:(UIButton *)sender {
     ComposeVC *vc = [[ComposeVC alloc] init];
     
-    MenuItem *item1 = [MenuItem itemWithTitle:@"Review" image:[UIImage imageNamed:@"tabbar_compose_review"]];
-    MenuItem *item2 = [MenuItem itemWithTitle:@"More" image:[UIImage imageNamed:@"tabbar_compose_more"]];
-    MenuItem *item3 = [MenuItem itemWithTitle:@"Camera" image:[UIImage imageNamed:@"tabbar_compose_camera"]];
-    MenuItem *item4 = [MenuItem itemWithTitle:@"Photo" image:[UIImage imageNamed:@"tabbar_compose_photo"]];
-    MenuItem *item5 = [MenuItem itemWithTitle:@"Idea" image:[UIImage imageNamed:@"tabbar_compose_idea"]];
-    MenuItem *item6 = [MenuItem itemWithTitle:@"Lbs" image:[UIImage imageNamed:@"tabbar_compose_lbs"]];
+    MenuBean *reviewMenuBean = [MenuBean itemWithTitle:@"Review" image:[UIImage imageNamed:@"tabbar_compose_review"]];
+    MenuBean *moreMenuBean = [MenuBean itemWithTitle:@"More" image:[UIImage imageNamed:@"tabbar_compose_more"]];
+    MenuBean *cameraMenuBean = [MenuBean itemWithTitle:@"Camera" image:[UIImage imageNamed:@"tabbar_compose_camera"]];
+    MenuBean *photoMenuBean = [MenuBean itemWithTitle:@"Photo" image:[UIImage imageNamed:@"tabbar_compose_photo"]];
+    MenuBean *ideaMenuBean = [MenuBean itemWithTitle:@"Idea" image:[UIImage imageNamed:@"tabbar_compose_idea"]];
+    MenuBean *lbsMenuBean = [MenuBean itemWithTitle:@"Lbs" image:[UIImage imageNamed:@"tabbar_compose_lbs"]];
     
-    vc.itemArray = @[item1, item2, item3, item4, item5, item6];
+    vc.menuBeanArray = @[reviewMenuBean, moreMenuBean, cameraMenuBean, photoMenuBean, ideaMenuBean, lbsMenuBean];
     
     [self presentViewController:vc animated:YES completion:nil];
-    
 }
-
 
 @end
 

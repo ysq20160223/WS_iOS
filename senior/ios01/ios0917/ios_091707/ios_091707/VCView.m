@@ -14,6 +14,10 @@
 
 @property (strong, nonatomic) CALayer *dotLayer;
 
+//
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
+@property (weak, nonatomic) IBOutlet UIButton *reDrawBtn;
+
 @end
 
 
@@ -24,7 +28,7 @@
     return [CAReplicatorLayer class];
 }
 
-- (void)start {
+- (void)play {
     // 添加动画
     CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
     anim.keyPath = @"position";
@@ -37,7 +41,9 @@
     //
     CAReplicatorLayer *repL = (CAReplicatorLayer *)self.layer;
     repL.instanceCount = 3;
-    repL.instanceDelay = .25;
+    repL.instanceDelay = .55;
+    
+//    self.playBtn.enabled = NO;
 }
 
 - (void)reDraw {
@@ -46,6 +52,9 @@
     [self setNeedsDisplay];
     
     [self.dotLayer removeAllAnimations]; // 移除动画
+    
+    self.playBtn.enabled = NO;
+    self.reDrawBtn.enabled = NO;
 }
 
 //
@@ -62,30 +71,26 @@
     
     // 创建粒子
     CALayer *dotLayer = [CALayer layer];
-    dotLayer.frame = CGRectMake(-10, 0, 10, 10);
+    dotLayer.frame = CGRectMake(0, 0, 20, 20);
     dotLayer.backgroundColor = [UIColor cyanColor].CGColor;
     
     self.dotLayer = dotLayer;
     [self.layer addSublayer:dotLayer];
-
-    
 }
 
 - (void)pan:(UIPanGestureRecognizer *)pan {
-    
-    CGPoint curP = [pan locationInView:self];
+    CGPoint curPoint = [pan locationInView:self];
     
     if(pan.state == UIGestureRecognizerStateBegan) {
-        
-        [self.path moveToPoint:curP];
-        
+        [self.path moveToPoint:curPoint];
     } else if (pan.state == UIGestureRecognizerStateChanged) {
-        [self.path addLineToPoint:curP];
+        [self.path addLineToPoint:curPoint];
         
         [self setNeedsDisplay]; // 重绘
+    } else if (pan.state == UIGestureRecognizerStateEnded) {
+        self.playBtn.enabled = ~[self.path isEmpty];
+        self.reDrawBtn.enabled = ~[self.path isEmpty];
     }
-    
-    
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -94,7 +99,6 @@
     // Drawing code
     
     [self.path stroke];
-    
 }
 
 @end

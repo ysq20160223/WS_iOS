@@ -6,12 +6,12 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "BageValue.h"
+#import "BageValueButton.h"
 #import "Distance.h"
 
 #define maxDragDistance 250
 
-@interface BageValue ()
+@interface BageValueButton ()
 
 @property (weak, nonatomic) UIView *smallCircle;
 
@@ -21,7 +21,7 @@
 
 
 
-@implementation BageValue
+@implementation BageValueButton
 
 - (CAShapeLayer *)shape {
     if (_shape == nil) {
@@ -194,7 +194,6 @@
     // Drawing code
     
 }
-
 
 @end
 

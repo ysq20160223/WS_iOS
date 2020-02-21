@@ -15,18 +15,17 @@
 
 @end
 
+
+
 @implementation ViewController
-
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (IBAction)start:(UIButton *)sender {
-    [self.vcView start];
+- (IBAction)play:(UIButton *)sender {
+    [self.vcView play];
     
 }
 
@@ -35,9 +34,6 @@
     
 }
 
-
-
 @end
-
 
 

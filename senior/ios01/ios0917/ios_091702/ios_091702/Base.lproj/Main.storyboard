@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D30" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,21 +19,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="know_wrong.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FCs-kz-GHE">
-                                <rect key="frame" x="87" y="283" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="know_wrong.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="FCs-kz-GHE">
+                                <rect key="frame" x="87.5" y="283.5" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="h6f-H3-nK1"/>
+                                    <constraint firstAttribute="width" constant="200" id="q9X-8n-yxi"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="know_wrong.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bw2-wP-BS2">
-                                <rect key="frame" x="87" y="283" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="know_wrong.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="bw2-wP-BS2">
+                                <rect key="frame" x="87.5" y="283.5" width="200" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ERN-BM-VDL"/>
+                                    <constraint firstAttribute="width" constant="200" id="n8R-9d-PIY"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYO-EZ-mkD">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYO-EZ-mkD">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="5zu-ik-oI4"/>
+                                    <constraint firstAttribute="height" constant="200" id="dBI-O9-9mU"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mYO-EZ-mkD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9BC-Hs-Tgc"/>
+                            <constraint firstItem="bw2-wP-BS2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BHr-ev-0ae"/>
+                            <constraint firstItem="FCs-kz-GHE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VFs-jy-BFo"/>
+                            <constraint firstItem="bw2-wP-BS2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cTg-1s-JDn"/>
+                            <constraint firstItem="FCs-kz-GHE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pg1-V9-p0e"/>
+                            <constraint firstItem="mYO-EZ-mkD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xrl-fE-c0Q"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomImageView" destination="FCs-kz-GHE" id="Ynb-rE-gMZ"/>
@@ -45,9 +60,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="133"/>
         </scene>
     </scenes>
     <resources>
-        <image name="know_wrong.jpg" width="500" height="500"/>
+        <image name="know_wrong.jpg" width="90" height="90"/>
     </resources>
 </document>

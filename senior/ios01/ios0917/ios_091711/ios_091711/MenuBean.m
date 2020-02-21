@@ -6,12 +6,12 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MenuItem.h"
+#import "MenuBean.h"
 
-@implementation MenuItem
+@implementation MenuBean
 
 + (instancetype)itemWithTitle:(NSString *)title image:(UIImage *)image {
-    MenuItem *item = [[self alloc] init];
+    MenuBean *item = [[self alloc] init];
     item.title = title;
     item.image = image;
     return item;

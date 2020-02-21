@@ -16,5 +16,4 @@
     return sqrtf(offsetX * offsetX + offsetY * offsetY);
 }
 
-
 @end
