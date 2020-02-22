@@ -6,13 +6,9 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-/*
- 
- */
-
 #import "AppDelegate.h"
 
-#import "MyGuideService.h"
+#import "XGuideService.h"
 
 @interface AppDelegate ()
 
@@ -22,22 +18,23 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSLog(@"mainScreen: %@", NSStringFromCGRect([UIScreen mainScreen].bounds));
     
     // 1, 创建窗口
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     // 2, 设置窗口的根控制器
-    self.window.rootViewController = [MyGuideService chooseRootViewController];
+    self.window.rootViewController = [XGuideService chooseRootViewController];
     
     // 3, 显示窗口
     [self.window makeKeyAndVisible];
     
+    [NSThread sleepForTimeInterval:1];
+    
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

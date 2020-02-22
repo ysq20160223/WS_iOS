@@ -8,7 +8,7 @@
 
 #import "MyGroupBuyViewController.h"
 #import "MyTitleButton.h"
-#import "UIImage+Image.h"
+#import "UIImage+X.h"
 
 @interface MyGroupBuyViewController ()
 

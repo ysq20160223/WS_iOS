@@ -14,6 +14,14 @@
 
 @implementation MyDiscoverViewController
 
+
+- (instancetype)init {
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,6 +36,5 @@
 
 
 @end
-
 
 

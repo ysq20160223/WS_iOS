@@ -10,7 +10,7 @@
 
 #import "UIView+Frame.h"
 
-#import "MyTabBarController.h"
+#import "XTabBarController.h"
 
 
 @interface MyNewFeatureViewCell ()
@@ -43,7 +43,7 @@
 - (void)start {
     // 跳转到主界面
     // 修改窗口的根控制器
-    [UIApplication sharedApplication].keyWindow.rootViewController = [[MyTabBarController alloc] init];
+    [UIApplication sharedApplication].keyWindow.rootViewController = [[XTabBarController alloc] init];
     
 }
 

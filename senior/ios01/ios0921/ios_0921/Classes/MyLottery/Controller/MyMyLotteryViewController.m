@@ -8,7 +8,7 @@
 
 #import "MyMyLotteryViewController.h"
 
-#import "UIImage+Image.h"
+#import "UIImage+X.h"
 
 #import "MySettingViewController.h"
 

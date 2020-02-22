@@ -28,7 +28,6 @@
 //    UIViewController *rootVC = [storyboard instantiateViewControllerWithIdentifier:@"cyan"]; // show the identity inspector
     self.window.rootViewController = rootVC;
     
-    
     [self.window makeKeyAndVisible]; // 3, 显示窗口
     
     return YES;

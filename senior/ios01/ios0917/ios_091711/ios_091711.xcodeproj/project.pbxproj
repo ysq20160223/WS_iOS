@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18755E5723FFCF0B00A56C03 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18755E5423FFCF0B00A56C03 /* Default@2x.png */; };
+		18755E5823FFCF0B00A56C03 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18755E5523FFCF0B00A56C03 /* Default-568h@2x.png */; };
+		18755E5923FFCF0B00A56C03 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 18755E5623FFCF0B00A56C03 /* Default.png */; };
 		18A6DD1E1F3ECDC800952DEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6DD1D1F3ECDC800952DEF /* main.m */; };
 		18A6DD211F3ECDC800952DEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6DD201F3ECDC800952DEF /* AppDelegate.m */; };
 		18A6DD241F3ECDC800952DEF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6DD231F3ECDC800952DEF /* ViewController.m */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18755E5423FFCF0B00A56C03 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		18755E5523FFCF0B00A56C03 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		18755E5623FFCF0B00A56C03 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		18A6DD191F3ECDC800952DEF /* ios_091711.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_091711.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A6DD1D1F3ECDC800952DEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A6DD1F1F3ECDC800952DEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +60,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18755E5323FFCF0B00A56C03 /* LaunchImage */ = {
+			isa = PBXGroup;
+			children = (
+				18755E5423FFCF0B00A56C03 /* Default@2x.png */,
+				18755E5523FFCF0B00A56C03 /* Default-568h@2x.png */,
+				18755E5623FFCF0B00A56C03 /* Default.png */,
+			);
+			path = LaunchImage;
+			sourceTree = "<group>";
+		};
 		18A6DD101F3ECDC800952DEF = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +98,7 @@
 				18A6DD2D1F3ECDC800952DEF /* LaunchScreen.storyboard */,
 				18A6DD301F3ECDC800952DEF /* Info.plist */,
 				18A6DD281F3ECDC800952DEF /* ios_091711.xcdatamodeld */,
+				18755E5323FFCF0B00A56C03 /* LaunchImage */,
 				18A6DD1C1F3ECDC800952DEF /* Supporting Files */,
 				18A6DD581F3EEF7800952DEF /* ComposeVC.h */,
 				18A6DD591F3EEF7800952DEF /* ComposeVC.m */,
@@ -162,10 +179,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18755E5723FFCF0B00A56C03 /* Default@2x.png in Resources */,
 				18A6DD3B1F3EED5A00952DEF /* doubi.jpg in Resources */,
 				18A6DD5C1F3EEF7800952DEF /* ComposeVC.xib in Resources */,
+				18755E5923FFCF0B00A56C03 /* Default.png in Resources */,
 				18A6DD2F1F3ECDC800952DEF /* LaunchScreen.storyboard in Resources */,
 				18A6DD2C1F3ECDC800952DEF /* Assets.xcassets in Resources */,
+				18755E5823FFCF0B00A56C03 /* Default-568h@2x.png in Resources */,
 				18A6DD271F3ECDC800952DEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ios_091711/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-091711";
@@ -314,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ios_091711/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "mac.ios-091711";
