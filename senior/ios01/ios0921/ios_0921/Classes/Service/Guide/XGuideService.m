@@ -10,11 +10,11 @@
 
 #import "XSaveService.h"
 
-#import "MyNewFeatureViewController.h"
+#import "XNewFeatureViewController.h"
 
 #import "XTabBarController.h"
 
-#define MyVersionKey @"version"
+#define kVersionKey @"version"
 
 
 @implementation XGuideService
@@ -31,17 +31,18 @@ static XTabBarController *extracted() {
     // 3, 最新的版本号保存到 info.plist 文件
     // 获取当前版本号
     NSString *curVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
-    NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:MyVersionKey];
-    //    NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:MyVersionKey];
-    //    NSLog(@"curVersion = %@, oldVersion = %@", curVersion, oldVersion);
+    NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kVersionKey];
+//    NSLog(@"curVersion: %@, oldVersion = %@", curVersion, oldVersion);
+    
+    
+//    rootVc = [[XNewFeatureViewController alloc] init];
     
     if ([curVersion isEqualToString:oldVersion] == NO) {
-        
-        [XSaveService setObject:curVersion forKey:MyVersionKey];
+        [XSaveService setObject:curVersion forKey:kVersionKey];
         //        [[NSUserDefaults standardUserDefaults] setObject:curVersion forKey:MyVersionKey];
-        
+
         // 进入新特性界面
-        rootVc = [[MyNewFeatureViewController alloc] init];
+        rootVc = [[XNewFeatureViewController alloc] init];
     } else {
         rootVc = [extracted() init];
     }

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+/*
+    1, 如果 @property 在声明类的时候使用, 会自动生成属性 (前面带下划线), 分类不能添加属性
+    2, 如果 @property 在分类中使用, 不会生成成员属性, 只会生成 get, set 方法
+ */
 @interface UIView (Frame)
 
 @property (nonatomic, assign) CGFloat width;

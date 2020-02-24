@@ -12,6 +12,8 @@
 
 @end
 
+
+
 @implementation AppDelegate
 
 
@@ -22,10 +24,13 @@
     
     UITabBarController *tabBarVc = [[UITabBarController alloc] init];
     self.window.rootViewController = tabBarVc; // 2
+//    tabBarVc.tabBar.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0 alpha:1];
+//    tabBarVc.tabBar.tintColor = [UIColor magentaColor];
+    tabBarVc.tabBar.barTintColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:1];
     
     // 添加子控制器
     UIViewController *messageVc = [[UIViewController alloc] init];
-    [messageVc.view setBackgroundColor:[UIColor cyanColor]];
+    [messageVc.view setBackgroundColor:[UIColor grayColor]];
     messageVc.tabBarItem.title = @"Message";
     messageVc.tabBarItem.image = [UIImage imageNamed:@"tab_recent_nor@2x"]; // 自动渲染成蓝色
     messageVc.tabBarItem.badgeValue = @"9";
@@ -42,15 +47,15 @@
     
     //
     UIViewController *featuredVc = [[UIViewController alloc] init];
-    [featuredVc.view setBackgroundColor:[UIColor purpleColor]];
+    [featuredVc.view setBackgroundColor:[UIColor blueColor]];
     featuredVc.tabBarItem.title = @"Featured";
     featuredVc.tabBarItem.image = [UIImage imageNamed:@"tab_qworld_nor"];
     [tabBarVc addChildViewController:featuredVc];
     
     //
     UIViewController *settingVc = [[UIViewController alloc] init];
-    [settingVc.view setBackgroundColor:[UIColor whiteColor]];
-    settingVc.tabBarItem.title = @"Featured";
+    [settingVc.view setBackgroundColor:[UIColor orangeColor]];
+    settingVc.tabBarItem.title = @"Setting";
     settingVc.tabBarItem.image = [UIImage imageNamed:@"tab_me_nor"];
     [tabBarVc addChildViewController:settingVc];
     

@@ -13,6 +13,8 @@
 #import "XCover.h"
 #import "XPopMenu.h"
 
+//typedef <#returnType#>(^<#name#>)(<#arguments#>);
+
 @interface XLotteryHallViewController () <XPopMenuDelegate> {
     NSInteger _screenW;
     NSInteger _screenH;
@@ -30,6 +32,8 @@
     
     _screenW = [UIScreen mainScreen].bounds.size.width;
     _screenH = [UIScreen mainScreen].bounds.size.height;
+    
+//    self.view.backgroundColor = [UIColor colorWithDisplayP3Red:1 green:0 blue:1 alpha:1];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithOriginalImageNamed:@"CS50_activity_image"] style:0 target:self action:@selector(activity)];
     
@@ -53,27 +57,43 @@
 //    [popMenu hideInPoint:CGPointMake(24, 44)];
 //    [MyCover hide];
     
-    void (^popMenuHide)() = ^() {
+    
+//    <#returnType#>(^<#blockName#>)(<#parameterTypes#>) = ^(<#parameters#>) {
+//        <#statements#>
+//    };
+    void (^popMenuHide)() = ^{
         [XCover hide];
     };
     
     [popMenu hideInPoint:CGPointMake(44, kStatusBarH + self.navigationController.navigationBar.frame.size.height / 2) completion:popMenuHide];
+//    [popMenu hideInPoint:CGPointMake(44, kStatusBarH + self.navigationController.navigationBar.frame.size.height / 2) completion:^{
+//
+//    }];
 }
 
 
-#pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
+#pragma mark - Table view data source start
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 20;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier"];
+//    NSLog(@"cell: %@", cell);
+    if (nil == cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
+    }
+//    NSLog(@"cell: %@", cell);
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    cell.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];
+    
+    return cell;
+}
+#pragma mark - Table view data source end
 
 
 @end
-
 
 

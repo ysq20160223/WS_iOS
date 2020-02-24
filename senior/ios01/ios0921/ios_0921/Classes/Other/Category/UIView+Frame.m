@@ -10,7 +10,7 @@
 
 @implementation UIView (Frame)
 
-// --------------
+
 - (CGFloat)width {
     return self.bounds.size.width;
 }
@@ -21,7 +21,7 @@
     self.frame = frame;
 }
 
-// --------------
+
 - (CGFloat)height {
     return self.bounds.size.height;
 }
@@ -32,7 +32,7 @@
     self.frame = frame;
 }
 
-// --------------
+
 - (CGFloat)x {
     return self.frame.origin.x;
 }
@@ -43,7 +43,7 @@
     self.frame = frame;
 }
 
-// --------------
+
 - (CGFloat)y {
     return self.frame.origin.y;
 }

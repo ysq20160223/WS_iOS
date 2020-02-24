@@ -19,10 +19,11 @@
 
 
 
-@interface XTabBar : UIView
+@interface XTabBar : UIButton
+//@interface XTabBar : UITabBar
 
 @property (nonatomic, strong) NSArray *tabBarItems;
 
-@property (nonatomic, strong) id<XTabBarDelegate> delegate;
+@property (nonatomic, strong) id<XTabBarDelegate> xTabBarDelegate;
 
 @end

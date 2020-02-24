@@ -21,6 +21,13 @@
 
 @implementation XTabBar
 
+- (instancetype)init {
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
 - (void)setTabBarItems:(NSArray *)tabBarItems {
     _tabBarItems = tabBarItems;
     
@@ -53,8 +60,8 @@
     
     
     // 切换界面 - 通知 tabBarVc 切换界面
-    if ([_delegate respondsToSelector:@selector(tabBar:didClickBtn:)]) {
-        [_delegate tabBar:self didClickBtn:btn.tag];
+    if ([_xTabBarDelegate respondsToSelector:@selector(tabBar:didClickBtn:)]) {
+        [_xTabBarDelegate tabBar:self didClickBtn:btn.tag];
     }
 }
 
@@ -73,7 +80,7 @@
         x = w * i;
         btn.frame = CGRectMake(x, y, w, h);
     }
-
+    
 }
 
 // Only override drawRect: if you perform custom drawing.

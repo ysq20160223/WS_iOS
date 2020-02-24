@@ -6,21 +6,19 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
+
 #import "XTabBarController.h"
-
-
-#import "XLotteryHallViewController.h"
-#import "MyArenaViewController.h"
-#import "MyDiscoverViewController.h"
-
-#import "MyHistoryViewController.h"
-#import "MyMyLotteryViewController.h"
-
-//
 #import "XTabBar.h"
-
 #import "XNavigationController.h"
-#import "MyArenaNavController.h"
+
+#import "XLotteryHallViewController.h" //
+#import "XArenaNavController.h"
+#import "XArenaViewController.h"
+#import "XDiscoverViewController.h"
+#import "XHistoryViewController.h"
+#import "XMyLotteryViewController.h"
+
+
 
 @interface XTabBarController () <XTabBarDelegate>
 
@@ -32,12 +30,22 @@
 
 @implementation XTabBarController
 
+- (instancetype)init {
+    if (self == [super init]) {
+        if (@available(iOS 11.0, *)) {
+//            self.additionalSafeAreaInsets = UIEdgeInsetsMake(0, 0, -34, 0);
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    return self;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    NSLog(@"");
+    
     // 移除系统 UITabBar 上自带的按钮
     for(UIView *subview in self.tabBar.subviews) {
-//        NSLog(@"%@", subview);
         if ([subview isKindOfClass:[XTabBar class]] == NO) {
             [subview removeFromSuperview];
         }
@@ -47,7 +55,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    NSLog(@"");
+    NSLog(@"%@", NSStringFromCGRect(self.tabBar.frame));
+    
     [self setUpAllChildViewController]; // 添加所有的子控制器
     
     [self setUpTabBar];
@@ -68,13 +77,13 @@
     
     // 2, 添加自定义 TabBar
     XTabBar *xTabBar = [[XTabBar alloc] initWithFrame:self.tabBar.bounds];
-    xTabBar.backgroundColor = [UIColor cyanColor];
-    
     xTabBar.tabBarItems = self.tabBarItemArray;
 //    NSLog(@"count : %ld", self.items.count);
     
-    xTabBar.delegate = self; // 设置代理 (点击TabBarItem切换控制器)
+    xTabBar.xTabBarDelegate = self; // 设置代理 (点击TabBarItem切换控制器)
     
+    self.tabBar.barTintColor = [UIColor blackColor];
+    self.tabBar.translucent = NO;
     [self.tabBar addSubview:xTabBar];
 }
 
@@ -87,28 +96,26 @@
     
     
     // 2, Arena ( [əˈri:nə] 竞技场)
-    [self setUpChildViewController:[[MyArenaViewController alloc] init] normalImg:@"TabBar_Arena_new" selectedImg:@"TabBar_Arena_selected_new" title:@"Arena"];
+    [self setUpChildViewController:[[XArenaViewController alloc] init] normalImg:@"TabBar_Arena_new" selectedImg:@"TabBar_Arena_selected_new" title:@"Arena"];
 
     
     // 3, Discover (发现)
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MyDiscoverViewController" bundle:nil];
-    UIViewController *discover = [storyboard instantiateInitialViewController];
-    [self setUpChildViewController:discover normalImg:@"TabBar_Discovery_new" selectedImg:@"TabBar_Discovery_selected_new" title:@"Discover"];
+    [self setUpChildViewController:[XDiscoverViewController instance] normalImg:@"TabBar_Discovery_new" selectedImg:@"TabBar_Discovery_selected_new" title:@"Discover"];
     
     
     // 4, History (开奖信息)
-    [self setUpChildViewController:[[MyHistoryViewController alloc] init] normalImg:@"TabBar_History_new" selectedImg:@"TabBar_History_selected_new" title:@"History"];
+    [self setUpChildViewController:[[XHistoryViewController alloc] init] normalImg:@"TabBar_History_new" selectedImg:@"TabBar_History_selected_new" title:@"History"];
     
     
     // 5, MyLottery (我的)
-    [self setUpChildViewController:[[MyMyLotteryViewController alloc] init] normalImg:@"TabBar_MyLottery_new" selectedImg:@"TabBar_MyLottery_selected_new" title:@"MyLottery"];
+    [self setUpChildViewController:[[XMyLotteryViewController alloc] init] normalImg:@"TabBar_MyLottery_new" selectedImg:@"TabBar_MyLottery_selected_new" title:@"MyLottery"];
 }
 
 - (void)setUpChildViewController:(UIViewController *)vc normalImg:(NSString *)normalImg selectedImg:(NSString *)selectedImg title:(NSString *)title {
     UINavigationController *navVc = [[XNavigationController alloc] initWithRootViewController:vc];
     
-    if ([vc isKindOfClass:[MyArenaViewController class]]) {
-        navVc = [[MyArenaNavController alloc] initWithRootViewController:vc];
+    if ([vc isKindOfClass:[XArenaViewController class]]) {
+        navVc = [[XArenaNavController alloc] initWithRootViewController:vc];
     }
     
     // 图片尺寸是有规格, 不能太大, 如果太大就显示不出来
@@ -129,17 +136,6 @@
     }
     return _tabBarItemArray;
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
 

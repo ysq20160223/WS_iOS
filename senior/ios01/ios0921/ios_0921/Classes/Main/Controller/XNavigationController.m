@@ -51,26 +51,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   
     
+    
+//    NSLog(@"%@", NSStringFromCGRect(self.view.frame));
     // 清空滑动手势代理
     _popDelegate = self.interactivePopGestureRecognizer.delegate;
-    self.interactivePopGestureRecognizer.delegate = nil;
+//    self.interactivePopGestureRecognizer.delegate = nil;
     
     // 回到导航控制器的根控制器, 恢复滑动手势代理
-    // 监听导航控制器回到根控制器
-    self.delegate = self;
+    self.delegate = self; // 监听导航控制器回到根控制器
 }
 
 
 #pragma mark - UINavigationControllerDelegate start
 // 导航控制器显示一个控制器完成的时候就会调用
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-//    NSLog(@"%@", viewController);
+//    NSLog(@"viewController: %@, childViewController: %@", viewController, self.childViewControllers[0]);
     
-    // 是否会到根控制器
+    // 是否回到根控制器
     if (viewController == self.childViewControllers[0]) {
-//        NSLog(@"%@", viewController);
-        self.interactivePopGestureRecognizer.delegate = _popDelegate;
+        self.interactivePopGestureRecognizer.delegate = _popDelegate; //
     } else {
         self.interactivePopGestureRecognizer.delegate = nil;
     }
@@ -82,14 +83,12 @@
     [super pushViewController:viewController animated:animated];
     // 不是导航控制器的根控制器才需要设置返回按钮
     if (self.childViewControllers.count > 1) {
-        // 若覆盖了系统的返回按钮, 滑动返回功能就失效了
-        // 恢复滑动返回功能
-        
         // 设置左边的按钮
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithOriginalImageNamed:@"NavBack"] style:0 target:self action:@selector(back)];
     }
 }
 
+// 若覆盖了系统的返回按钮, 滑动返回功能就失效了
 // 点击返回按钮返回上一个控制器
 - (void)back {
     [self popViewControllerAnimated:YES];
