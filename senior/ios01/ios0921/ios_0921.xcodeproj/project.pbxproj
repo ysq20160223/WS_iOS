@@ -26,27 +26,28 @@
 		1817743523F6987600AD5A57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773FE23F6987600AD5A57 /* main.m */; };
 		1817743623F6987600AD5A57 /* XGuideService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740223F6987600AD5A57 /* XGuideService.m */; };
 		1817743723F6987600AD5A57 /* XSaveService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740523F6987600AD5A57 /* XSaveService.m */; };
-		1817743823F6987600AD5A57 /* MyAwardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740923F6987600AD5A57 /* MyAwardViewController.m */; };
-		1817743923F6987600AD5A57 /* MyBaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740B23F6987600AD5A57 /* MyBaseSettingViewController.m */; };
-		1817743A23F6987600AD5A57 /* MyPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740D23F6987600AD5A57 /* MyPushViewController.m */; };
-		1817743B23F6987600AD5A57 /* MyScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740F23F6987600AD5A57 /* MyScoreViewController.m */; };
-		1817743C23F6987600AD5A57 /* MySettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741123F6987600AD5A57 /* MySettingViewController.m */; };
-		1817743D23F6987600AD5A57 /* MyGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741423F6987600AD5A57 /* MyGroupItem.m */; };
-		1817743E23F6987600AD5A57 /* MySettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741623F6987600AD5A57 /* MySettingArrowItem.m */; };
-		1817743F23F6987600AD5A57 /* MySettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741823F6987600AD5A57 /* MySettingItem.m */; };
-		1817744023F6987600AD5A57 /* MySettingSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741A23F6987600AD5A57 /* MySettingSwitchItem.m */; };
-		1817744123F6987600AD5A57 /* MySettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741D23F6987600AD5A57 /* MySettingCell.m */; };
+		1817743823F6987600AD5A57 /* XAwardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740923F6987600AD5A57 /* XAwardViewController.m */; };
+		1817743923F6987600AD5A57 /* XBaseSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740B23F6987600AD5A57 /* XBaseSettingViewController.m */; };
+		1817743A23F6987600AD5A57 /* XPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740D23F6987600AD5A57 /* XPushViewController.m */; };
+		1817743B23F6987600AD5A57 /* XScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817740F23F6987600AD5A57 /* XScoreViewController.m */; };
+		1817743C23F6987600AD5A57 /* XSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741123F6987600AD5A57 /* XSettingViewController.m */; };
+		1817743D23F6987600AD5A57 /* XGroupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741423F6987600AD5A57 /* XGroupItem.m */; };
+		1817743E23F6987600AD5A57 /* XSettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741623F6987600AD5A57 /* XSettingArrowItem.m */; };
+		1817743F23F6987600AD5A57 /* XSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741823F6987600AD5A57 /* XSettingItem.m */; };
+		1817744023F6987600AD5A57 /* XSettingSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741A23F6987600AD5A57 /* XSettingSwitchItem.m */; };
+		1817744123F6987600AD5A57 /* XSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741D23F6987600AD5A57 /* XSettingCell.m */; };
 		1817744523F6994300AD5A57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1817744323F6994300AD5A57 /* LaunchScreen.storyboard */; };
+		18247D5024041964007733AB /* Default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18247D4F24041964007733AB /* Default@3x.png */; };
 		18755E4223FFC64E00A56C03 /* XTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E4023FFC64E00A56C03 /* XTitleButton.m */; };
 		18755E4923FFC68000A56C03 /* XPopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18755E4423FFC68000A56C03 /* XPopMenu.xib */; };
 		18755E4A23FFC68000A56C03 /* XCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E4723FFC68000A56C03 /* XCover.m */; };
 		18755E4B23FFC68000A56C03 /* XPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E4823FFC68000A56C03 /* XPopMenu.m */; };
 		18755E5223FFC6BB00A56C03 /* XTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E5023FFC6BB00A56C03 /* XTabBar.m */; };
-		18755E5E23FFE30700A56C03 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18755E5B23FFE30700A56C03 /* Default@2x.png */; };
-		18755E5F23FFE30700A56C03 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18755E5C23FFE30700A56C03 /* Default-568h@2x.png */; };
-		18755E6023FFE30700A56C03 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 18755E5D23FFE30700A56C03 /* Default.png */; };
 		18755E662400DB3D00A56C03 /* XTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E652400DB3D00A56C03 /* XTabBarButton.m */; };
 		18755E69240123B700A56C03 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E67240123B600A56C03 /* UIImage+X.m */; };
+		18AF3412240417E900A20A23 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AF340E240417E900A20A23 /* Default@2x.png */; };
+		18AF3413240417E900A20A23 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AF340F240417E900A20A23 /* Default-568h@2x.png */; };
+		18AF3414240417EA00A20A23 /* Default-812h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AF3410240417E900A20A23 /* Default-812h@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,27 +86,28 @@
 		1817740223F6987600AD5A57 /* XGuideService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGuideService.m; sourceTree = "<group>"; };
 		1817740423F6987600AD5A57 /* XSaveService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSaveService.h; sourceTree = "<group>"; };
 		1817740523F6987600AD5A57 /* XSaveService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSaveService.m; sourceTree = "<group>"; };
-		1817740823F6987600AD5A57 /* MyAwardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAwardViewController.h; sourceTree = "<group>"; };
-		1817740923F6987600AD5A57 /* MyAwardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAwardViewController.m; sourceTree = "<group>"; };
-		1817740A23F6987600AD5A57 /* MyBaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBaseSettingViewController.h; sourceTree = "<group>"; };
-		1817740B23F6987600AD5A57 /* MyBaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBaseSettingViewController.m; sourceTree = "<group>"; };
-		1817740C23F6987600AD5A57 /* MyPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPushViewController.h; sourceTree = "<group>"; };
-		1817740D23F6987600AD5A57 /* MyPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPushViewController.m; sourceTree = "<group>"; };
-		1817740E23F6987600AD5A57 /* MyScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScoreViewController.h; sourceTree = "<group>"; };
-		1817740F23F6987600AD5A57 /* MyScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScoreViewController.m; sourceTree = "<group>"; };
-		1817741023F6987600AD5A57 /* MySettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingViewController.h; sourceTree = "<group>"; };
-		1817741123F6987600AD5A57 /* MySettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingViewController.m; sourceTree = "<group>"; };
-		1817741323F6987600AD5A57 /* MyGroupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyGroupItem.h; sourceTree = "<group>"; };
-		1817741423F6987600AD5A57 /* MyGroupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyGroupItem.m; sourceTree = "<group>"; };
-		1817741523F6987600AD5A57 /* MySettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingArrowItem.h; sourceTree = "<group>"; };
-		1817741623F6987600AD5A57 /* MySettingArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingArrowItem.m; sourceTree = "<group>"; };
-		1817741723F6987600AD5A57 /* MySettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingItem.h; sourceTree = "<group>"; };
-		1817741823F6987600AD5A57 /* MySettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingItem.m; sourceTree = "<group>"; };
-		1817741923F6987600AD5A57 /* MySettingSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingSwitchItem.h; sourceTree = "<group>"; };
-		1817741A23F6987600AD5A57 /* MySettingSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingSwitchItem.m; sourceTree = "<group>"; };
-		1817741C23F6987600AD5A57 /* MySettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySettingCell.h; sourceTree = "<group>"; };
-		1817741D23F6987600AD5A57 /* MySettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySettingCell.m; sourceTree = "<group>"; };
+		1817740823F6987600AD5A57 /* XAwardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAwardViewController.h; sourceTree = "<group>"; };
+		1817740923F6987600AD5A57 /* XAwardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAwardViewController.m; sourceTree = "<group>"; };
+		1817740A23F6987600AD5A57 /* XBaseSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseSettingViewController.h; sourceTree = "<group>"; };
+		1817740B23F6987600AD5A57 /* XBaseSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseSettingViewController.m; sourceTree = "<group>"; };
+		1817740C23F6987600AD5A57 /* XPushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPushViewController.h; sourceTree = "<group>"; };
+		1817740D23F6987600AD5A57 /* XPushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPushViewController.m; sourceTree = "<group>"; };
+		1817740E23F6987600AD5A57 /* XScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XScoreViewController.h; sourceTree = "<group>"; };
+		1817740F23F6987600AD5A57 /* XScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XScoreViewController.m; sourceTree = "<group>"; };
+		1817741023F6987600AD5A57 /* XSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSettingViewController.h; sourceTree = "<group>"; };
+		1817741123F6987600AD5A57 /* XSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSettingViewController.m; sourceTree = "<group>"; };
+		1817741323F6987600AD5A57 /* XGroupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGroupItem.h; sourceTree = "<group>"; };
+		1817741423F6987600AD5A57 /* XGroupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGroupItem.m; sourceTree = "<group>"; };
+		1817741523F6987600AD5A57 /* XSettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSettingArrowItem.h; sourceTree = "<group>"; };
+		1817741623F6987600AD5A57 /* XSettingArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSettingArrowItem.m; sourceTree = "<group>"; };
+		1817741723F6987600AD5A57 /* XSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSettingItem.h; sourceTree = "<group>"; };
+		1817741823F6987600AD5A57 /* XSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSettingItem.m; sourceTree = "<group>"; };
+		1817741923F6987600AD5A57 /* XSettingSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSettingSwitchItem.h; sourceTree = "<group>"; };
+		1817741A23F6987600AD5A57 /* XSettingSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSettingSwitchItem.m; sourceTree = "<group>"; };
+		1817741C23F6987600AD5A57 /* XSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSettingCell.h; sourceTree = "<group>"; };
+		1817741D23F6987600AD5A57 /* XSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSettingCell.m; sourceTree = "<group>"; };
 		1817744423F6994300AD5A57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18247D4F24041964007733AB /* Default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@3x.png"; sourceTree = "<group>"; };
 		18755E4023FFC64E00A56C03 /* XTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTitleButton.m; sourceTree = "<group>"; };
 		18755E4123FFC64E00A56C03 /* XTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTitleButton.h; sourceTree = "<group>"; };
 		18755E4423FFC68000A56C03 /* XPopMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XPopMenu.xib; sourceTree = "<group>"; };
@@ -115,14 +117,14 @@
 		18755E4823FFC68000A56C03 /* XPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPopMenu.m; sourceTree = "<group>"; };
 		18755E4E23FFC6BB00A56C03 /* XTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTabBar.h; sourceTree = "<group>"; };
 		18755E5023FFC6BB00A56C03 /* XTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTabBar.m; sourceTree = "<group>"; };
-		18755E5B23FFE30700A56C03 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		18755E5C23FFE30700A56C03 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		18755E5D23FFE30700A56C03 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		18755E642400DB3D00A56C03 /* XTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTabBarButton.h; sourceTree = "<group>"; };
 		18755E652400DB3D00A56C03 /* XTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTabBarButton.m; sourceTree = "<group>"; };
 		18755E67240123B600A56C03 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
 		18755E68240123B700A56C03 /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+X.h"; sourceTree = "<group>"; };
 		18A6DD6F1F3F038D00952DEF /* ios_0921.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_0921.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18AF340E240417E900A20A23 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		18AF340F240417E900A20A23 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		18AF3410240417E900A20A23 /* Default-812h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-812h@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,16 +358,16 @@
 		1817740723F6987600AD5A57 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				1817740823F6987600AD5A57 /* MyAwardViewController.h */,
-				1817740923F6987600AD5A57 /* MyAwardViewController.m */,
-				1817740A23F6987600AD5A57 /* MyBaseSettingViewController.h */,
-				1817740B23F6987600AD5A57 /* MyBaseSettingViewController.m */,
-				1817740C23F6987600AD5A57 /* MyPushViewController.h */,
-				1817740D23F6987600AD5A57 /* MyPushViewController.m */,
-				1817740E23F6987600AD5A57 /* MyScoreViewController.h */,
-				1817740F23F6987600AD5A57 /* MyScoreViewController.m */,
-				1817741023F6987600AD5A57 /* MySettingViewController.h */,
-				1817741123F6987600AD5A57 /* MySettingViewController.m */,
+				1817740A23F6987600AD5A57 /* XBaseSettingViewController.h */,
+				1817740B23F6987600AD5A57 /* XBaseSettingViewController.m */,
+				1817741023F6987600AD5A57 /* XSettingViewController.h */,
+				1817741123F6987600AD5A57 /* XSettingViewController.m */,
+				1817740C23F6987600AD5A57 /* XPushViewController.h */,
+				1817740D23F6987600AD5A57 /* XPushViewController.m */,
+				1817740823F6987600AD5A57 /* XAwardViewController.h */,
+				1817740923F6987600AD5A57 /* XAwardViewController.m */,
+				1817740E23F6987600AD5A57 /* XScoreViewController.h */,
+				1817740F23F6987600AD5A57 /* XScoreViewController.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -373,14 +375,14 @@
 		1817741223F6987600AD5A57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1817741323F6987600AD5A57 /* MyGroupItem.h */,
-				1817741423F6987600AD5A57 /* MyGroupItem.m */,
-				1817741523F6987600AD5A57 /* MySettingArrowItem.h */,
-				1817741623F6987600AD5A57 /* MySettingArrowItem.m */,
-				1817741723F6987600AD5A57 /* MySettingItem.h */,
-				1817741823F6987600AD5A57 /* MySettingItem.m */,
-				1817741923F6987600AD5A57 /* MySettingSwitchItem.h */,
-				1817741A23F6987600AD5A57 /* MySettingSwitchItem.m */,
+				1817741323F6987600AD5A57 /* XGroupItem.h */,
+				1817741423F6987600AD5A57 /* XGroupItem.m */,
+				1817741723F6987600AD5A57 /* XSettingItem.h */,
+				1817741823F6987600AD5A57 /* XSettingItem.m */,
+				1817741523F6987600AD5A57 /* XSettingArrowItem.h */,
+				1817741623F6987600AD5A57 /* XSettingArrowItem.m */,
+				1817741923F6987600AD5A57 /* XSettingSwitchItem.h */,
+				1817741A23F6987600AD5A57 /* XSettingSwitchItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -388,8 +390,8 @@
 		1817741B23F6987600AD5A57 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1817741C23F6987600AD5A57 /* MySettingCell.h */,
-				1817741D23F6987600AD5A57 /* MySettingCell.m */,
+				1817741C23F6987600AD5A57 /* XSettingCell.h */,
+				1817741D23F6987600AD5A57 /* XSettingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -397,7 +399,7 @@
 		1817744223F6994300AD5A57 /* Base.lproj */ = {
 			isa = PBXGroup;
 			children = (
-				18755E5A23FFE30700A56C03 /* LaunchImage */,
+				18AF340D240417E900A20A23 /* LaunchImage */,
 				1817744323F6994300AD5A57 /* LaunchScreen.storyboard */,
 			);
 			name = Base.lproj;
@@ -437,16 +439,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		18755E5A23FFE30700A56C03 /* LaunchImage */ = {
-			isa = PBXGroup;
-			children = (
-				18755E5B23FFE30700A56C03 /* Default@2x.png */,
-				18755E5C23FFE30700A56C03 /* Default-568h@2x.png */,
-				18755E5D23FFE30700A56C03 /* Default.png */,
-			);
-			path = LaunchImage;
-			sourceTree = "<group>";
-		};
 		18A6DD661F3F038D00952DEF = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +473,17 @@
 			children = (
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18AF340D240417E900A20A23 /* LaunchImage */ = {
+			isa = PBXGroup;
+			children = (
+				18247D4F24041964007733AB /* Default@3x.png */,
+				18AF340E240417E900A20A23 /* Default@2x.png */,
+				18AF340F240417E900A20A23 /* Default-568h@2x.png */,
+				18AF3410240417E900A20A23 /* Default-812h@3x.png */,
+			);
+			path = LaunchImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,13 +546,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18755E5E23FFE30700A56C03 /* Default@2x.png in Resources */,
+				18AF3412240417E900A20A23 /* Default@2x.png in Resources */,
 				1817742123F6987600AD5A57 /* XDiscoverViewController.storyboard in Resources */,
 				1817744523F6994300AD5A57 /* LaunchScreen.storyboard in Resources */,
-				18755E6023FFE30700A56C03 /* Default.png in Resources */,
 				1817742F23F6987600AD5A57 /* XMyLotteryViewController.xib in Resources */,
+				18247D5024041964007733AB /* Default@3x.png in Resources */,
 				18755E4923FFC68000A56C03 /* XPopMenu.xib in Resources */,
-				18755E5F23FFE30700A56C03 /* Default-568h@2x.png in Resources */,
+				18AF3413240417E900A20A23 /* Default-568h@2x.png in Resources */,
+				18AF3414240417EA00A20A23 /* Default-812h@3x.png in Resources */,
 				181773B123F6961900AD5A57 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,15 +565,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1817744123F6987600AD5A57 /* MySettingCell.m in Sources */,
+				1817744123F6987600AD5A57 /* XSettingCell.m in Sources */,
 				1817743723F6987600AD5A57 /* XSaveService.m in Sources */,
 				1817742E23F6987600AD5A57 /* XMyLotteryViewController.m in Sources */,
-				1817743F23F6987600AD5A57 /* MySettingItem.m in Sources */,
+				1817743F23F6987600AD5A57 /* XSettingItem.m in Sources */,
 				18755E4B23FFC68000A56C03 /* XPopMenu.m in Sources */,
 				1817743223F6987600AD5A57 /* AppDelegate.m in Sources */,
 				1817743023F6987600AD5A57 /* XNewFeatureViewController.m in Sources */,
 				1817743623F6987600AD5A57 /* XGuideService.m in Sources */,
-				1817743923F6987600AD5A57 /* MyBaseSettingViewController.m in Sources */,
+				1817743923F6987600AD5A57 /* XBaseSettingViewController.m in Sources */,
 				18755E4A23FFC68000A56C03 /* XCover.m in Sources */,
 				1817742023F6987600AD5A57 /* XDiscoverViewController.m in Sources */,
 				1817742623F6987600AD5A57 /* XLotteryHallViewController.m in Sources */,
@@ -577,21 +581,21 @@
 				1817741F23F6987600AD5A57 /* XArenaViewController.m in Sources */,
 				1817742B23F6987600AD5A57 /* XTabBarController.m in Sources */,
 				1817742423F6987600AD5A57 /* XHistoryViewController.m in Sources */,
-				1817743C23F6987600AD5A57 /* MySettingViewController.m in Sources */,
-				1817743D23F6987600AD5A57 /* MyGroupItem.m in Sources */,
+				1817743C23F6987600AD5A57 /* XSettingViewController.m in Sources */,
+				1817743D23F6987600AD5A57 /* XGroupItem.m in Sources */,
 				18755E662400DB3D00A56C03 /* XTabBarButton.m in Sources */,
-				1817743823F6987600AD5A57 /* MyAwardViewController.m in Sources */,
+				1817743823F6987600AD5A57 /* XAwardViewController.m in Sources */,
 				1817741E23F6987600AD5A57 /* XArenaNavController.m in Sources */,
-				1817743E23F6987600AD5A57 /* MySettingArrowItem.m in Sources */,
-				1817744023F6987600AD5A57 /* MySettingSwitchItem.m in Sources */,
+				1817743E23F6987600AD5A57 /* XSettingArrowItem.m in Sources */,
+				1817744023F6987600AD5A57 /* XSettingSwitchItem.m in Sources */,
 				18755E5223FFC6BB00A56C03 /* XTabBar.m in Sources */,
-				1817743A23F6987600AD5A57 /* MyPushViewController.m in Sources */,
+				1817743A23F6987600AD5A57 /* XPushViewController.m in Sources */,
 				1817742A23F6987600AD5A57 /* XNavigationController.m in Sources */,
 				18755E69240123B700A56C03 /* UIImage+X.m in Sources */,
 				1817743123F6987600AD5A57 /* XNewFeatureViewCell.m in Sources */,
 				18755E4223FFC64E00A56C03 /* XTitleButton.m in Sources */,
 				1817743523F6987600AD5A57 /* main.m in Sources */,
-				1817743B23F6987600AD5A57 /* MyScoreViewController.m in Sources */,
+				1817743B23F6987600AD5A57 /* XScoreViewController.m in Sources */,
 				1817742223F6987600AD5A57 /* XGroupBuyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

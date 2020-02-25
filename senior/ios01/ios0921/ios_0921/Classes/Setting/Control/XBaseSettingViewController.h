@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyBaseSettingViewController : UITableViewController
+@interface XBaseSettingViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *groups; // 保存当前有多少组
 

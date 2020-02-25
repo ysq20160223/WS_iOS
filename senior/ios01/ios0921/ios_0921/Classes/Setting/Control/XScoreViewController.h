@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MyBaseSettingViewController.h"
+#import "XBaseSettingViewController.h"
 
-@interface MyScoreViewController : MyBaseSettingViewController
+@interface XScoreViewController : XBaseSettingViewController
 
 @end

@@ -42,9 +42,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="teF-fd-ofK" kind="push" id="aOV-OL-uXF"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -74,9 +71,6 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="tPR-mR-Z1e" kind="push" id="md0-qT-D5y"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -149,31 +143,12 @@
             </objects>
             <point key="canvasLocation" x="4" y="111.99400299850076"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="EvI-fd-ukt">
-            <objects>
-                <viewController id="tPR-mR-Z1e" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GcK-4o-njd"/>
-                        <viewControllerLayoutGuide type="bottom" id="pEh-0F-OuY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="M4f-6F-DdG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FeB-eu-Smc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1SM-0g-G0p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="998" y="539"/>
-        </scene>
         <!--Group Buy View Controller-->
         <scene sceneID="0dy-Zp-nGf">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="teF-fd-ofK" customClass="XGroupBuyViewController" sceneMemberID="viewController">
+                <tableViewController id="teF-fd-ofK" customClass="XGroupBuyViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iZ0-cd-BLt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

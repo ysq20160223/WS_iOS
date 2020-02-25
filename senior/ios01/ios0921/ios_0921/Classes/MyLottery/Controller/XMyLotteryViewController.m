@@ -10,7 +10,7 @@
 
 #import "UIImage+X.h"
 
-#import "MySettingViewController.h"
+#import "XSettingViewController.h"
 
 @interface XMyLotteryViewController ()
 
@@ -33,18 +33,25 @@
 - (void)setUpNavBar {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:@"MM" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [btn setImage:[UIImage imageWithOriginalImageNamed:@"FBMM_Barbutton"] forState:UIControlStateNormal];
     [btn sizeToFit];
+    [btn addTarget:self action:@selector(leftClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithOriginalImageNamed:@"Mylottery_config"] style:0 target:self action:@selector(setting)];
 }
 
+
+- (void)leftClick:(UIButton *)btn {
+//    NSLog(@"");
+    
+}
+
 // 点击设置按钮
 - (void)setting {
-//    NSLog(@"%s", __func__);
-    
-    MySettingViewController *settingVc = [[MySettingViewController alloc] init];
+    XSettingViewController *settingVc = [[XSettingViewController alloc] init];
     settingVc.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:settingVc animated:YES];

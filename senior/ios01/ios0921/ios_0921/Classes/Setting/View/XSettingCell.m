@@ -6,19 +6,21 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MySettingCell.h"
+#import "XSettingCell.h"
 
-#import "MySettingItem.h"
-#import "MySettingArrowItem.h"
-#import "MySettingSwitchItem.h"
+#import "XSettingItem.h"
+#import "XSettingArrowItem.h"
+#import "XSettingSwitchItem.h"
 
-@interface MySettingCell ()
+@interface XSettingCell ()
 
 @property (nonatomic, strong) UISwitch *switchView;
 
 @end
 
-@implementation MySettingCell
+
+
+@implementation XSettingCell
 
 - (UISwitch *)switchView {
     if(_switchView == nil) {
@@ -28,18 +30,16 @@
 }
 
 //
-- (void)setItem:(MySettingItem *)item {
+- (void)setItem:(XSettingItem *)item {
     _item = item;
     
-    //
     self.imageView.image = item.image;
     self.textLabel.text = item.title;
     self.detailTextLabel.text = item.subTitle;
     
-    //
-    if ([item isKindOfClass:[MySettingArrowItem class]]) {
+    if ([item isKindOfClass:[XSettingArrowItem class]]) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    } else if ([item isKindOfClass:[MySettingSwitchItem class]]) {
+    } else if ([item isKindOfClass:[XSettingSwitchItem class]]) {
         self.accessoryView = self.switchView;
     } else {
         self.accessoryView = nil;
@@ -47,14 +47,11 @@
     }
 }
 
-
-//
 + (instancetype)cellWithTableView:(UITableView *)tableView tableViewCellStyle:(UITableViewCellStyle)tableViewCellStyle {
     static NSString *ID = @"cellId";
     
-    MySettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    if (cell == nil) {
+    XSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (nil == cell) {
         cell = [[self alloc] initWithStyle:tableViewCellStyle reuseIdentifier:ID];
     }
     return cell;

@@ -31,11 +31,12 @@ static XTabBarController *extracted() {
     // 3, 最新的版本号保存到 info.plist 文件
     // 获取当前版本号
     NSString *curVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
-    NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kVersionKey];
+//    NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kVersionKey];
+    NSString *oldVersion = [XSaveService objectForKey:kVersionKey];
 //    NSLog(@"curVersion: %@, oldVersion = %@", curVersion, oldVersion);
     
     
-//    rootVc = [[XNewFeatureViewController alloc] init];
+//    rootVc = [[XNewFeatureViewController alloc] init]; //
     
     if ([curVersion isEqualToString:oldVersion] == NO) {
         [XSaveService setObject:curVersion forKey:kVersionKey];

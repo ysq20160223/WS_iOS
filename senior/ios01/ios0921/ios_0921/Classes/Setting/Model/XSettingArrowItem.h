@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MySettingItem.h"
+#import "XSettingItem.h"
 
-@interface MySettingArrowItem : MySettingItem
+@interface XSettingArrowItem : XSettingItem
 
 @property (nonatomic, assign) Class clazz; // 跳转控制器的类名
 

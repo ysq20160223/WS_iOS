@@ -7,6 +7,7 @@
 //
 
 #import "XDiscoverViewController.h"
+#import "XGroupBuyViewController.h"
 
 @interface XDiscoverViewController ()
 
@@ -32,15 +33,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-//    NSLog(@"");
+   
 }
 
+
+#pragma mark - UITableViewDataSource start
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    NSLog(@"indexPath: %@", indexPath);
+    
+    if (0 == indexPath.section) {
+        XGroupBuyViewController *groupBuyVc = [[XGroupBuyViewController alloc] init];
+        groupBuyVc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:groupBuyVc animated:YES];
+    }
+}
+#pragma mark - UITableViewDataSource end
 
 @end
 

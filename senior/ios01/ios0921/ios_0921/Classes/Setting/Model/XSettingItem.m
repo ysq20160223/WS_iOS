@@ -6,25 +6,27 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MySettingItem.h"
+#import "XSettingItem.h"
 
-@implementation MySettingItem
+@implementation XSettingItem
 
 + (instancetype)itemWithImage:(UIImage *)image title:(NSString *)title {
-    MySettingItem *item = [[self alloc] init];
+    XSettingItem *item = [[self alloc] init];
     item.image = image;
     item.title = title;
     return item;
 }
 
 + (instancetype)itemWithImage:(UIImage *)image title:(NSString *)title subTitle:(NSString *)subTitle {
-    MySettingItem *item = [[self alloc] init];
+    XSettingItem *item = [[self alloc] init];
     item.image = image;
     item.title = title;
     item.subTitle = subTitle;
     return item;
 }
 
-
+- (NSString *)description {
+    return [NSString stringWithFormat:@"title: %@, subTitle: %@", self.title, self.subTitle];
+}
 
 @end

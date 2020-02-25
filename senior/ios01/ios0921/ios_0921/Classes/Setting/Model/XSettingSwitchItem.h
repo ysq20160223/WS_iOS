@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MySettingItem.h"
+#import "XSettingItem.h"
 
-@interface MySettingSwitchItem : MySettingItem
+@interface XSettingSwitchItem : XSettingItem
 
 @property (nonatomic, assign) BOOL isOn;
 

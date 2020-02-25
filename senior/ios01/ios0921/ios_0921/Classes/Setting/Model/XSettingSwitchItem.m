@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MySettingSwitchItem.h"
+#import "XSettingSwitchItem.h"
 
-@implementation MySettingSwitchItem
+@implementation XSettingSwitchItem
 
 @end

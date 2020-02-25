@@ -12,8 +12,8 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                        <viewControllerLayoutGuide type="top" id="cgo-Sx-9FD"/>
+                        <viewControllerLayoutGuide type="bottom" id="FTX-QN-bGT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -23,12 +23,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Khi-Ng-gpU" secondAttribute="trailing" id="CZF-LQ-T5A"/>
-                            <constraint firstItem="Khi-Ng-gpU" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="JHp-ND-IAF"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Khi-Ng-gpU" secondAttribute="bottom" id="W36-65-bUn"/>
-                            <constraint firstItem="Khi-Ng-gpU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="plP-Xb-wPW"/>
+                            <constraint firstAttribute="bottom" secondItem="Khi-Ng-gpU" secondAttribute="bottom" id="1Ka-jQ-YgU"/>
+                            <constraint firstItem="Khi-Ng-gpU" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="6R4-t0-o4Z"/>
+                            <constraint firstItem="Khi-Ng-gpU" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Wft-2h-mO0"/>
+                            <constraint firstAttribute="trailing" secondItem="Khi-Ng-gpU" secondAttribute="trailing" id="lDU-0x-zd3"/>
                         </constraints>
                     </view>
                 </viewController>

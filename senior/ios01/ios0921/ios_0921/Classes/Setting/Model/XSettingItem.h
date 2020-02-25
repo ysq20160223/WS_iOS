@@ -15,17 +15,14 @@
 //    MySettingItemTypeSwitch
 //} MySettingItemType;
 
-@interface MySettingItem : NSObject
+@interface XSettingItem : NSObject
 
 @property (nonatomic, strong) UIImage *image;
-
 @property (nonatomic, strong) NSString *title;
-
 @property (nonatomic, strong) NSString *subTitle;
 
 @property (nonatomic, strong) void(^operationBlock)(NSIndexPath *indexPath);
 
-//@property (nonatomic, assign) MySettingItemType type; // 辅助视图
 
 + (instancetype)itemWithImage:(UIImage *)image title:(NSString *)title;
 

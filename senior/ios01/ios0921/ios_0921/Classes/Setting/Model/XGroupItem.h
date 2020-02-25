@@ -6,13 +6,9 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-//
-//
-// 
-
 #import <Foundation/Foundation.h>
 
-@interface MyGroupItem : NSObject
+@interface XGroupItem : NSObject
 
 @property (nonatomic, strong) NSString *headerTitle;
 @property (nonatomic, strong) NSString *footerTitle;

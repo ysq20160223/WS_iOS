@@ -16,8 +16,6 @@
 @interface XNewFeatureViewCell ()
 
 @property (nonatomic, weak) UIImageView *imageView;
-
-//
 @property (nonatomic, weak) UIButton *startButton;
 
 @end

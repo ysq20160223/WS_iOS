@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "MyBaseSettingViewController.h"
+#import "XBaseSettingViewController.h"
 
-@interface MySettingViewController : MyBaseSettingViewController
+@interface XSettingViewController : XBaseSettingViewController
 
 @end

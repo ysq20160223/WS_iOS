@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class MySettingItem;
+@class XSettingItem;
 
-@interface MySettingCell : UITableViewCell
+@interface XSettingCell : UITableViewCell
 
-@property (nonatomic, strong) MySettingItem *item;
+@property (nonatomic, strong) XSettingItem *item;
 
 //
 

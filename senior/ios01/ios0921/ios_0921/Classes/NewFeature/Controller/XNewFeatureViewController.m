@@ -12,9 +12,6 @@
 
 #import "UIView+Frame.h"
 
-#define screenW [UIScreen mainScreen].bounds.size.width
-#define screenH [UIScreen mainScreen].bounds.size.height
-
 @interface XNewFeatureViewController ()
 
 @property (nonatomic, assign) CGFloat lastOffsetX;
@@ -55,9 +52,9 @@ static NSString *ID = @"CollectionViewCell";
 - (void)setUpAllChildView {
     // 足球
     UIImageView *football = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guide1"]];
-    football.center = CGPointMake(screenW * .5, screenH * .5);
+    football.center = CGPointMake(kScreenW * .5, kScreenH * .4);
     [self.collectionView addSubview:football];
-//    football.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0 alpha:0.3];
+    //    football.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0 alpha:0.3];
     _footballIv = football;
     
     // 线
@@ -65,18 +62,18 @@ static NSString *ID = @"CollectionViewCell";
     line.x -= 139;
     line.y += 10;
     [self.collectionView addSubview:line];
-//    line.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:0.3];
+    //    line.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:0.3];
     _lineIv = line;
     
     // 大文字
     UIImageView *largeText = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guideLargeText1"]];
-    largeText.center = CGPointMake(screenW * .5, screenH * .75);
+    largeText.center = CGPointMake(kScreenW * .5, kScreenH * .75);
     [self.collectionView addSubview:largeText];
     _largeTextIv = largeText;
     
     // 小文字
     UIImageView *smallText = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"guideSmallText1"]];
-    smallText.center = CGPointMake(screenW * .5, screenH * .85);
+    smallText.center = CGPointMake(kScreenW * .5, kScreenH * .85);
     [self.collectionView addSubview:smallText];
     _smallTextIv = smallText;
 }
@@ -85,13 +82,25 @@ static NSString *ID = @"CollectionViewCell";
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     // 获取当前偏移量
     CGFloat offsetX = scrollView.contentOffset.x;
-    _lastOffsetX = offsetX; // 记录上一次
+    
+    NSInteger index = offsetX / kScreenW + 1;
+    //    NSLog(@"offsetX: %f, index: %ld", offsetX, index);
+    _footballIv.image = [UIImage imageNamed:[NSString stringWithFormat:@"guide%ld", index]];
+//    _footballIv.center = CGPointMake(kScreenW * (index - 1 + .5), kScreenH * .4);
+    
+    _largeTextIv.image = [UIImage imageNamed:[NSString stringWithFormat:@"guideLargeText%ld", index]];
+    _smallTextIv.image = [UIImage imageNamed:[NSString stringWithFormat:@"guideSmallText%ld", index]];
     
     CGFloat delta = offsetX - _lastOffsetX;
+    
+    _lastOffsetX = offsetX; // 记录上一次
+    
+    _footballIv.x += 2 * delta;
     _largeTextIv.x += 2 * delta;
     _smallTextIv.x += 2 * delta;
     
-    [UIView animateWithDuration:.1 animations:^{
+    [UIView animateWithDuration:.2 animations:^{
+        _footballIv.x -= delta;
         _largeTextIv.x -= delta;
         _smallTextIv.x -= delta;
     }];
@@ -118,12 +127,13 @@ static NSString *ID = @"CollectionViewCell";
     
     XNewFeatureViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     
-//    NSLog(@"row: %ld, cell: %@", indexPath.row, cell);
+    //    NSLog(@"row: %ld, cell: %@", indexPath.row, cell);
     
-//    cell.backgroundColor = [UIColor cyanColor];
+    //    cell.backgroundColor = [UIColor cyanColor];
     
     NSString *imageName = [NSString stringWithFormat:@"guide%ldBackground", indexPath.row + 1];
     cell.image = [UIImage imageNamed:imageName];
+    
     
     // 最后一个 cell
     [cell setIndexPath:indexPath count:4];
