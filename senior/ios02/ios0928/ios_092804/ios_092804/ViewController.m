@@ -6,10 +6,6 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-/*
-    
- */
-
 #import "ViewController.h"
 
 #import <pthread.h>
@@ -22,38 +18,36 @@
 
 @implementation ViewController
 
+//
 void *run(void *param) {
-    
-//    NSLog(@"%s - %@", __func__, [NSThread currentThread]);
-    
-    for (NSInteger i = 0; i < 2000; i++) {
+    for (NSInteger i = 0; i < 100000; i++) {
         NSLog(@"i: %zd, %@", i, [NSThread currentThread]);
     }
-    
     return NULL;
 }
 
+- (void)second {
+    for (int i = 0; i < 2; i++) {
+        pthread_t thread;
+        pthread_create(&thread, NULL, run, NULL); // 开启线程
+    }
+}
 
 - (IBAction)btnClick:(UIButton *)sender {
     
-    NSLog(@"%@", [NSThread currentThread]);
+//    [self first]; // 主线程打印
     
-    //
-    for (int i = 0; i < 2; i++) {
-        pthread_t thread;
-        
-        pthread_create(&thread, NULL, run, NULL); // 开启线程
+    [self second]; // 子线程打印
+}
+
+- (void)first {
+    for (int i = 0; i < 100000; i++) {
+        NSLog(@"i: %d, currentThread: %@", i, [NSThread currentThread]);
     }
-    
 }
 
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
+//
 
 @end
 

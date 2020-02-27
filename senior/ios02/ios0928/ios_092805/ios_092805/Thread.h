@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MyThread : NSThread
+@interface Thread : NSThread
 
 @end

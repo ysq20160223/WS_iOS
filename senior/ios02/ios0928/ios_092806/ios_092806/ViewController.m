@@ -21,24 +21,22 @@
     [thread start];
 }
 
-
 - (void)run {
-    NSLog(@"%s - %@", __func__, [NSThread currentThread]);
+    NSLog(@"%@", [NSThread currentThread]);
     
     // 阻塞状态
 //    [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:2.0]];
     
-//    [NSThread sleepForTimeInterval:3];
+    [NSThread sleepForTimeInterval:3];
     
     for (int i = 0; i < 100; i++) {
-        NSLog(@"i = %d", i);
+        NSLog(@"i: %d, %@", i, [NSThread currentThread]);
         if (50 == i) {
 //            [NSThread exit]; // 退出
 //            return;
             break;
         }
     }
-    
     NSLog(@"run end");
 }
 

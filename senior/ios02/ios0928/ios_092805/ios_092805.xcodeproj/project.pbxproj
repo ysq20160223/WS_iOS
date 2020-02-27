@@ -14,7 +14,7 @@
 		189B7E451F47EA5B00ADE533 /* ios_092805.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189B7E431F47EA5B00ADE533 /* ios_092805.xcdatamodeld */; };
 		189B7E471F47EA5B00ADE533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189B7E461F47EA5B00ADE533 /* Assets.xcassets */; };
 		189B7E4A1F47EA5B00ADE533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189B7E481F47EA5B00ADE533 /* LaunchScreen.storyboard */; };
-		189B7E531F47F28100ADE533 /* MyThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B7E521F47F28100ADE533 /* MyThread.m */; };
+		189B7E531F47F28100ADE533 /* Thread.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B7E521F47F28100ADE533 /* Thread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		189B7E461F47EA5B00ADE533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189B7E491F47EA5B00ADE533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		189B7E4B1F47EA5B00ADE533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		189B7E511F47F28100ADE533 /* MyThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyThread.h; sourceTree = "<group>"; };
-		189B7E521F47F28100ADE533 /* MyThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyThread.m; sourceTree = "<group>"; };
+		189B7E511F47F28100ADE533 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thread.h; sourceTree = "<group>"; };
+		189B7E521F47F28100ADE533 /* Thread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 				189B7E4B1F47EA5B00ADE533 /* Info.plist */,
 				189B7E431F47EA5B00ADE533 /* ios_092805.xcdatamodeld */,
 				189B7E371F47EA5B00ADE533 /* Supporting Files */,
-				189B7E511F47F28100ADE533 /* MyThread.h */,
-				189B7E521F47F28100ADE533 /* MyThread.m */,
+				189B7E511F47F28100ADE533 /* Thread.h */,
+				189B7E521F47F28100ADE533 /* Thread.m */,
 			);
 			path = ios_092805;
 			sourceTree = "<group>";
@@ -127,6 +127,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -161,7 +162,7 @@
 				189B7E3F1F47EA5B00ADE533 /* ViewController.m in Sources */,
 				189B7E451F47EA5B00ADE533 /* ios_092805.xcdatamodeld in Sources */,
 				189B7E3C1F47EA5B00ADE533 /* AppDelegate.m in Sources */,
-				189B7E531F47F28100ADE533 /* MyThread.m in Sources */,
+				189B7E531F47F28100ADE533 /* Thread.m in Sources */,
 				189B7E391F47EA5B00ADE533 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

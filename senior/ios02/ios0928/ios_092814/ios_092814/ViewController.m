@@ -8,10 +8,13 @@
 
 #import "ViewController.h"
 
+
+/*
+    对比 092807
+ */
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 
 @end
 
@@ -23,10 +26,14 @@
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
     dispatch_async(queue, ^{
-        NSLog(@"global queue : %@", [NSThread currentThread]);
+        NSLog(@"%@", [NSThread currentThread]);
         
         // 1
-        NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/img/bd_logo1.png"];
+        /*
+            App Transport Security Settings
+                Allow Arbitrary Loads
+         */
+        NSURL *url = [NSURL URLWithString:@"http://www.baidu.com/img/bd_logo1.png"];
         
         // 2
         NSData *data = [NSData dataWithContentsOfURL:url];
@@ -36,23 +43,34 @@
         
         // ---
         dispatch_sync(dispatch_get_main_queue(), ^{
-            NSLog(@"main queue : %@", [NSThread currentThread]);
-            
+            NSLog(@"%@", [NSThread currentThread]);
             self.imageView.image = image;
         });
     });
     
 }
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
-
 @end
 
+
+/*
+ - (IBAction)btnClick:(id)sender {
+     [NSThread detachNewThreadSelector:@selector(run:) toTarget:self withObject:@"https://www.baidu.com/img/bd_logo1.png"];
+ }
+
+ - (void)run:(NSString *)uri {
+     // 下载图片
+     // 1, url
+     NSURL *url = [NSURL URLWithString:uri];
+     
+     // 2, 下载图片
+     NSData *data = [NSData dataWithContentsOfURL:url];
+     
+     // 3, 二进制转化为图片
+     UIImage *image = [UIImage imageWithData:data];
+     
+     // 4, 在主线程中刷新 UI
+     [self.imageView performSelector:@selector(setImage:) onThread:[NSThread mainThread] withObject:image waitUntilDone:YES];
+ }
+ */
 

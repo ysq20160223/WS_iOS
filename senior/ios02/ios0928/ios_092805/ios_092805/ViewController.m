@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MyThread.h"
+#import "Thread.h"
 
 @interface ViewController ()
 
@@ -18,15 +18,13 @@
 @implementation ViewController
 
 - (IBAction)btnClick:(UIButton *)sender {
-    
 //    NSLog(@"%@", [NSThread currentThread]);
     
 //    [self createThreadMethod1];
     
-//    [self createThreadMethod2];
+    [self createThreadMethod2];
     
-    [self createThreadMethod3];
-    
+//    [self createThreadMethod3];
 }
 
 // 创建线程的方式3
@@ -41,10 +39,9 @@
 
 // 创建线程的方式1
 - (void)createThreadMethod1 {
-    for (int i = 0; i < 1; i++) {
-        MyThread *thread = [[MyThread alloc] initWithTarget:self selector:@selector(run:) object:nil];
-        [thread start];
-        thread.name = [NSString stringWithFormat:@"thread-%d", i];
+    for (int i = 0; i < 3; i++) {
+        Thread *thread = [[Thread alloc] initWithTarget:self selector:@selector(run:) object:nil];
+        thread.name = [NSString stringWithFormat:@"Thread-%d", i];
         
         if (i == 0) {
             [thread setThreadPriority:1];
@@ -53,6 +50,12 @@
         if (i == 1) {
             [thread setThreadPriority:0.1];
         }
+        
+        if (i == 2) {
+            [thread setThreadPriority:0.5];
+        }
+        
+        [thread start];
     }
 }
 
@@ -62,16 +65,7 @@
     for (int i = 0; i < 200; i++) {
         NSLog(@"%d, %@, %@", i, [NSThread currentThread], str);
     }
-    
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
 
 @end
 

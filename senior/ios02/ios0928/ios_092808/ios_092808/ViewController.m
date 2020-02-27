@@ -33,33 +33,32 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.totalTicker = 20;
+    self.totalTicker = 200;
     
-    self.thread0 = [[NSThread alloc] initWithTarget:self selector:@selector(run:) object:nil];
-    self.thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(run:) object:nil];
-    self.thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(run:) object:nil];
+    self.thread0 = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+    self.thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+    self.thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
     
-    self.thread0.name = @"thread0";
-    self.thread1.name = @"thread1";
-    self.thread2.name = @"thread2";
-    
+    self.thread0.name = @"thread --- 0";
+    self.thread1.name = @"thread ++++++ 1";
+    self.thread2.name = @"thread ********* 2";
 }
 
-- (void)run:(NSString *)str {
+- (void)run {
     while (1) {
         @synchronized (self) {
             [NSThread sleepForTimeInterval:.03];
             if (self.totalTicker > 0) {
-                NSLog(@"%@ - name:%@ - %d", [NSThread currentThread], str, self.totalTicker);
-                self.totalTicker = self.totalTicker - 1;
+                NSLog(@"%@,  totalTicker: %d", [NSThread currentThread], self.totalTicker);
+                self.totalTicker--;
             } else {
-                NSLog(@"%@ - name:%@", [NSThread currentThread], str);
+                NSLog(@"%@,  totalTicker: %d", [NSThread currentThread], self.totalTicker);
                 break;
             }
         }
     }
+    NSLog(@"run end, %@", [NSThread currentThread]);
 }
-
 
 @end
 

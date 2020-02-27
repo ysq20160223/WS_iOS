@@ -6,13 +6,13 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MyThread.h"
+#import "Thread.h"
 
 
-@implementation MyThread
+@implementation Thread
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog(@"name: %@", [Thread currentThread]);
 }
 
 @end
