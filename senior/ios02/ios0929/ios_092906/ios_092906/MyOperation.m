@@ -12,7 +12,7 @@
 
 - (void)main {
     for (int i = 0; i < 5; i++) {
-        NSLog(@"%d - %@", i, [NSThread currentThread]);
+        NSLog(@"%@, i: %d, %@", self.name, i, [NSThread currentThread]);
     }
 }
 

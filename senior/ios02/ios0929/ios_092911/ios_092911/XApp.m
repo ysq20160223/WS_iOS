@@ -6,12 +6,12 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MyApp.h"
+#import "XApp.h"
 
-@implementation MyApp
+@implementation XApp
 
 + (instancetype)appWithDict:(NSDictionary *)dict {
-    MyApp *app = [[MyApp alloc] init];
+    XApp *app = [[XApp alloc] init];
     
     [app setValuesForKeysWithDictionary:dict];
     

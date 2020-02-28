@@ -31,7 +31,7 @@
 		18AE18E71F499B1E00687B9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AE18E61F499B1E00687B9F /* Assets.xcassets */; };
 		18AE18EA1F499B1E00687B9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AE18E81F499B1E00687B9F /* LaunchScreen.storyboard */; };
 		18AE18F21F499BCB00687B9F /* apps.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18AE18F11F499BCB00687B9F /* apps.plist */; };
-		18AE18F51F499E4500687B9F /* MyApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AE18F41F499E4500687B9F /* MyApp.m */; };
+		18AE18F51F499E4500687B9F /* XApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AE18F41F499E4500687B9F /* XApp.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +80,8 @@
 		18AE18E91F499B1E00687B9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18AE18EB1F499B1E00687B9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18AE18F11F499BCB00687B9F /* apps.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = apps.plist; sourceTree = "<group>"; };
-		18AE18F31F499E4500687B9F /* MyApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApp.h; sourceTree = "<group>"; };
-		18AE18F41F499E4500687B9F /* MyApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApp.m; sourceTree = "<group>"; };
+		18AE18F31F499E4500687B9F /* XApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XApp.h; sourceTree = "<group>"; };
+		18AE18F41F499E4500687B9F /* XApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XApp.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +166,8 @@
 				18AE18F11F499BCB00687B9F /* apps.plist */,
 				18AE18E31F499B1E00687B9F /* ios_092911.xcdatamodeld */,
 				18AE18D71F499B1E00687B9F /* Supporting Files */,
-				18AE18F31F499E4500687B9F /* MyApp.h */,
-				18AE18F41F499E4500687B9F /* MyApp.m */,
+				18AE18F31F499E4500687B9F /* XApp.h */,
+				18AE18F41F499E4500687B9F /* XApp.m */,
 			);
 			path = ios_092911;
 			sourceTree = "<group>";
@@ -220,6 +220,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -252,7 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18AE18F51F499E4500687B9F /* MyApp.m in Sources */,
+				18AE18F51F499E4500687B9F /* XApp.m in Sources */,
 				1864F3BB1F4AFC83009AEF25 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1864F3BC1F4AFC83009AEF25 /* UIImageView+WebCache.m in Sources */,
 				1864F3BA1F4AFC83009AEF25 /* UIImage+WebP.m in Sources */,

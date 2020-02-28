@@ -24,10 +24,9 @@
     
     Tools *t1 = [[Tools alloc] init];
     Tools *t2 = [[Tools alloc] init];
-    
-    NSLog(@"t1:%@, t2:%@, t3:%@", [t1 copy] , [t2 mutableCopy], [Tools shareTools]);
+    NSLog(@"t1: %@, t2: %@", t1, t2);
+//    NSLog(@"t1:%@, t2:%@, t3:%@", [t1 copy] , [t1 mutableCopy], [Tools shareTools]);
 }
-
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MyApp : NSObject
+@interface XApp : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *icon;

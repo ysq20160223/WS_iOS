@@ -18,41 +18,21 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
+- (IBAction)myOperation {
+    [[[MyOperation alloc] init] start];
 }
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self invocation];
-    
-//    [self blockOperation];
-    
-    [self myOperation];
-    
-}
-
-//
-- (void)myOperation {
-    MyOperation *op = [[MyOperation alloc] init];
-    [op start];
-    
-}
-
-
-//
-- (void)blockOperation {
+- (IBAction)blockOperation {
     // 1， 封装操作 : 主线程中执行
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"%s - %@", __func__, [NSThread currentThread]);
+        NSLog(@"%@", [NSThread currentThread]);
     }];
     
     // 2, 追加操作 : 子线程中执行
     for (int i = 0; i < 3; i++) {
         [op addExecutionBlock:^{
-            NSLog(@"%d - %@", i, [NSThread currentThread]);
+            NSLog(@"i: %d; %@", i, [NSThread currentThread]);
         }];
     }
     
@@ -60,19 +40,16 @@
     [op start];
 }
 
-// ---
-- (void)invocation {
+
+//  [ˌɪnvəˈkeɪʃn] : 祈祷, 乞求
+- (IBAction)invocationOperation {
     NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(download) object:nil];
-    
-    [op start]; // 启动操作
+    [op start];
 }
 
 - (void)download {
-    NSLog(@"%s - %@", __func__, [NSThread currentThread]);
-    
-    
+    NSLog(@"%@", [NSThread currentThread]);
 }
-// ---
 
 @end
 

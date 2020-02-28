@@ -11,29 +11,27 @@
 @implementation MyOperation
 
 - (void)main {
-    // -
     for (int i = 0; i < 5; i++) {
-        NSLog(@"%d - %@", i, [NSThread currentThread]);
-        [NSThread sleepForTimeInterval:.5];
+        NSLog(@"i: %d, %@", i, [NSThread currentThread]);
+        [NSThread sleepForTimeInterval:1];
     }
     
     if (self.isCancelled) {
         return;
     }
     
-    // --
-    for (int i = 0; i < 5; i++) {
-        NSLog(@"%d -- %@", i, [NSThread currentThread]);
-        [NSThread sleepForTimeInterval:.5];
+    for (int j = 0; j < 5; j++) {
+        NSLog(@"j: %d, %@", j, [NSThread currentThread]);
+        [NSThread sleepForTimeInterval:1];
     }
     
     if (self.isCancelled) {
         return;
     }
-    // ---
-    for (int i = 0; i < 5; i++) {
-        NSLog(@"%d --- %@", i, [NSThread currentThread]);
-        [NSThread sleepForTimeInterval:.5];
+
+    for (int k = 0; k < 5; k++) {
+        NSLog(@"k: %d, %@", k, [NSThread currentThread]);
+        [NSThread sleepForTimeInterval:1];
     }
 }
 

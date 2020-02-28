@@ -1,8 +1,23 @@
 
 
+
+// ============================================================== 代码
+// ARC
+	TARGETS -> Build Settings -> 搜索 count (Objective-C Automatic Reference Counting)
+
 // 格式化代码
 1, cmd + a
 2, ctrl + i
+
+// 移动一行代码
+	option + command + [ : 上移
+	option + command + ] : 下移
+
+
+
+// ============================================================== Xcode
+// 系统默认字体
+SF Mono -> Regular
 
 
 // 自动补全代码
@@ -22,22 +37,19 @@ ios 文档
 // Xcode 源码
 	/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/Project Templates/Mac/Application/Command Line Tool.xctemplate
 
+
 // 注释模版
 	/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File Templates/Source/Cocoa Class.xctemplate/NSObjectObjective-C
 
 
-
-
-// ==============================================================
+// ============================================================== 模拟器相关
 返回桌面:
 	shift + cmd + h
 
 切换任务
 	按住 shift + cmd, 双击 h
 
-移动一行代码
-	option + command + [ : 上移
-	option + command + ] : 下移
+
 
 
  

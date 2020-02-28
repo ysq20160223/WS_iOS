@@ -18,25 +18,14 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
 - (IBAction)myOperation:(UIButton *)sender {
-    // 1, 创建队列
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    
-    // 2, 封装操作
-    MyOperation *op1 = [[MyOperation alloc] init];
-    MyOperation *op2 = [[MyOperation alloc] init];
-    
-    // 3, 添加操作到队列中
-    [queue addOperation:op1];
-    [queue addOperation:op2];
-    
+
+    for (int i = 0; i < 2; i++) {
+        MyOperation *op = [[MyOperation alloc] init];
+        op.name = [NSString stringWithFormat:@"operation: %d", i];
+        [queue addOperation: op];
+    }
 }
 
 - (IBAction)block:(UIButton *)sender {
@@ -47,7 +36,6 @@
     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"1 - %@", [NSThread currentThread]);
     }];
-    
     [op1 addExecutionBlock:^{
         NSLog(@"3 - %@", [NSThread currentThread]);
     }];
@@ -61,6 +49,7 @@
     [queue addOperation:op1];
     [queue addOperation:op2];
     
+//    [op1 start];
 }
 
 
@@ -84,14 +73,12 @@
 }
 
 - (void)download2 {
-    NSLog(@"%s - %@", __func__, [NSThread currentThread]);
-    
+    NSLog(@"%@", [NSThread currentThread]);
 }
 
 
 - (void)download1 {
-    NSLog(@"%s - %@", __func__, [NSThread currentThread]);
-    
+    NSLog(@"%@", [NSThread currentThread]);
 }
 
 @end

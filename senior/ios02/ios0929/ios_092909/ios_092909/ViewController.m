@@ -22,34 +22,32 @@
     
     // 2
     NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"1 - %@", [NSThread currentThread]);
+        NSLog(@"op1 - %@", [NSThread currentThread]);
     }];
     
     NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"2 - %@", [NSThread currentThread]);
+        NSLog(@"op2 - %@", [NSThread currentThread]);
     }];
     
     NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
         [NSThread sleepForTimeInterval:1];
-        
-        NSLog(@"3 - %@", [NSThread currentThread]);
+        NSLog(@"op3 - %@", [NSThread currentThread]);
     }];
     
     // 监听
-    op3.completionBlock = ^{
-        NSLog(@"op3 completion - %@", [NSThread currentThread]);
+    op1.completionBlock = ^{
+        NSLog(@"op1 completion, %@", [NSThread currentThread]);
     };
     
     // 依赖 - 注意死循环
     [op1 addDependency:op3];
-    [op1 addDependency:op2];
+    [op1 addDependency:op2]; // op1 在 op2 和 op3 之后执行
     
     // 3
     [queue addOperation:op1];
     [queue addOperation:op2];
     [queue addOperation:op3];
 }
-
 
 @end
 

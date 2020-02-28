@@ -18,26 +18,24 @@
 
 @implementation ViewController
 
-// -----
 - (IBAction)start:(UIButton *)sender {
     // 1
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-    
     queue.maxConcurrentOperationCount = 1;
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 10; i++) {
         // 2
         NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-            [NSThread sleepForTimeInterval:1.0];
-            
-            NSLog(@"%d - %@", i, [NSThread currentThread]);
+            for (int j = 0; j < 5; j++) {
+                [NSThread sleepForTimeInterval:1.0];
+                 NSLog(@"i: %d, j: %d, %@", i, j, [NSThread currentThread]);
+            }
         }];
         
         // 3
         [queue addOperation:op];
     }
     _queue = queue;
-    
 }
 
 - (IBAction)suspended:(UIButton *)sender {
@@ -48,9 +46,7 @@
     [self.queue cancelAllOperations];
 }
 
-// -----
 
-// -------
 - (IBAction)maxConcurrentOperationCount:(UIButton *)sender {
     // 1
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -61,25 +57,15 @@
     queue.maxConcurrentOperationCount = 3;
     
     // 2
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 21; i++) {
         NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-            NSLog(@"%d - %@", i, [NSThread currentThread]);
+            NSLog(@"i: %d, %@", i, [NSThread currentThread]);
         }];
         
         // 3
         [queue addOperation:op];
     }
 }
-// -------
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
-
 
 @end
 

@@ -8,21 +8,20 @@
 
 #import "ViewController.h"
 
-#import "MyApp.h"
+#import "XApp.h"
 
 #import "UIImageView+WebCache.h"
 
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController ()
 
+@property (nonatomic, strong) NSMutableArray *xAppArray;
 
-@property (nonatomic, strong) NSArray *apps;
+@property (nonatomic, strong) NSMutableDictionary *imageCacheDict;
 
-@property (nonatomic, strong) NSMutableDictionary *images;
+@property (nonatomic, strong) NSOperationQueue *operationQueue;
 
-@property (nonatomic, strong) NSOperationQueue *queue;
-
-@property (strong, nonatomic) NSMutableDictionary *operations; // 已经下载的 URL
+@property (strong, nonatomic) NSMutableDictionary *imageDownloadingOperationDict;
 
 @end
 
@@ -30,145 +29,141 @@
 
 @implementation ViewController
 
-- (void)didReceiveMemoryWarning {
-    NSLog(@"");
-}
-
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"app";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
-    MyApp *app = self.apps[indexPath.row];
+    XApp *app = self.xAppArray[indexPath.row];
     
-    cell.textLabel.text = app.name;
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld - %@", indexPath.row, app.name];
     cell.detailTextLabel.text = app.download;
     
+    
     // 使用框架
-//    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:app.icon] placeholderImage:[UIImage imageNamed:@"default"]];
-
+    //    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:app.icon] placeholderImage:[UIImage imageNamed:@"default"]];
+    
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:app.icon] placeholderImage:[UIImage imageNamed:@"default"] options:kNilOptions progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-//        NSLog(@"progress:%.2f", 1.0 * receivedSize / expectedSize);
+//        NSLog(@"row: %ld, progress: %.2f", indexPath.row, 1.0 * receivedSize / expectedSize);
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//        NSLog(@"width:%f, height:%f",image.size.width, image.size.height);
-//        NSLog(@"completed");
+//        NSLog(@"row: %ld, width: %f, height: %f", indexPath.row, image.size.width, image.size.height);
     }];
     
-    
-    // /Users/Apple/Desktop/ios_senior/ios02/ios0929/ios_092911/ios_092911/SDWebImage/FLAnimatedImage/FLAnimatedImageView+WebCache.m:9:9: In file included from /Users/Apple/Desktop/ios_senior/ios02/ios0929/ios_092911/ios_092911/SDWebImage/FLAnimatedImage/FLAnimatedImageView+WebCache.m:9:
-    
-//    UIImage *imgCache = [self.images objectForKey:app.icon];
-//    if (imgCache) {
-//        // 1, 读取内存缓存数据
-//        cell.imageView.image = imgCache;
-//    } else {
-//        // 缓存路径
-//        NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-////        NSLog(@"domain caches:%@", caches);
-//        
-//        NSString *fileName = [app.icon lastPathComponent];
-//        
-//        NSString *fullPath = [caches stringByAppendingPathComponent:fileName]; // 拼接全路径
-//        
-//        // 2, 读取沙盒数据
-//        NSData *domainData = [NSData dataWithContentsOfFile:fullPath];
-//        domainData = nil; // 忽略沙盒缓存
-//        
-//        if (domainData) {
-//            UIImage *img = [UIImage imageWithData:domainData]; // 3
-//            cell.imageView.image = img;
-//            [self.images setObject:img forKey:app.icon]; // 保存到内存缓存
-//        }
-//        
-//        // 3, 网络下载
-//        cell.imageView.image = [UIImage imageNamed:@"default"]; // 显示默认图片
-//        
-//        // 是否正在下载
-//        NSBlockOperation *op = self.operations[app.icon];
-//        if (op == nil) {
-//            NSBlockOperation *download = [NSBlockOperation blockOperationWithBlock:^{
-//                NSURL *url = [NSURL URLWithString:app.icon]; // 1
-//                NSData *data = [NSData dataWithContentsOfURL:url]; // 2
-//                if (data == nil) {
-//                    [self.operations removeObjectForKey:app.icon];
-//                    return;
-//                }
-//                UIImage *img = [UIImage imageWithData:data]; // 3
-//                // [NSThread sleepForTimeInterval:3.0]; // 这里延时会报错
-//                [self.images setObject:img forKey:app.icon]; // 保存到内存缓存
-//                [data writeToFile:fullPath atomically:YES]; // 保存到沙盒
-//                
-//                [NSThread sleepForTimeInterval:3.0]; //
-//                
-//                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//                    cell.imageView.image = img;
-////                    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-//                }];
-//                
-//                [self.operations removeObjectForKey:app.icon];
-//            }];
-//            
-//            [self.queue addOperation:download];
-//            self.operations[app.icon] = download; // 存储已经下载过的 URL
-//            
-//            NSLog(@"row : %ld", indexPath.row);
-//        }
-//        
-//        
-//    }
+    //
+    //    [self tableView:tableView showImage:cell indexPath:indexPath];
     
     return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.apps.count;
+- (void)tableView:(UITableView *)tableView showImage:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath{
+    XApp *app = self.xAppArray[indexPath.row];
+    
+    // 1, 读取内存缓存数据
+    UIImage *cacheImage = [self.imageCacheDict objectForKey:app.icon];
+    if (cacheImage) {
+        NSLog(@"row: %ld, name: %@, image from cache", indexPath.row, app.name);
+        cell.imageView.image = cacheImage;
+    } else {
+        // 2, 读取沙盒数据
+        NSArray *cacheArray = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+        NSString *cachePath = [cacheArray lastObject];
+        NSString *imageCachePath = [cachePath stringByAppendingPathComponent:[app.icon lastPathComponent]]; // 拼接全路径
+        
+        NSData *domainData = [NSData dataWithContentsOfFile:imageCachePath];
+        domainData = nil; // 忽略沙盒缓存
+        
+        if (domainData) {
+            //            NSLog(@"row: %ld, imageCachePath: %@, name: %@, domain ---", indexPath.row, imageCachePath, app.name);
+            NSLog(@"---row: %ld, name: %@, domain", indexPath.row, app.name);
+            UIImage *domainImage = [UIImage imageWithData:domainData]; // 3
+            cell.imageView.image = domainImage;
+            [self.imageCacheDict setObject:domainImage forKey:app.icon]; // 保存到内存缓存
+        } else {
+            // 3, 网络下载
+            cell.imageView.image = [UIImage imageNamed:@"default"]; // 显示默认图片
+            
+            // 是否正在下载 或 已经下载完成
+            NSBlockOperation *operation = self.imageDownloadingOperationDict[app.icon];
+            if (nil == operation) {
+                NSBlockOperation *downloadOperation = [NSBlockOperation blockOperationWithBlock:^{
+                    [NSThread sleepForTimeInterval:3.0];
+                    
+                    NSURL *url = [NSURL URLWithString:app.icon]; // 1
+                    NSData *data = [NSData dataWithContentsOfURL:url]; // 2
+                    if (nil == data) {
+                        NSLog(@"row: %ld, download exception", indexPath.row);
+                        [self.imageDownloadingOperationDict removeObjectForKey:app.icon]; // 下载出错, 移除
+                        return;
+                    }
+                    UIImage *downloadedImage = [UIImage imageWithData:data]; // 3
+                    
+                    [self.imageCacheDict setObject:downloadedImage forKey:app.icon]; // 保存到内存缓存
+                    [data writeToFile:imageCachePath atomically:YES]; // 保存到沙盒
+                    
+                    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                        NSLog(@"------row: %ld, name: %@, download", indexPath.row, app.name);
+                        
+                        //                        cell.imageView.image = downloadedImage; // 会造成图片显示错乱
+                        [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone]; // 避免图片显示错乱
+                    }];
+                    
+                    [self.imageDownloadingOperationDict removeObjectForKey:app.icon];
+                }];
+                
+                [self.operationQueue addOperation:downloadOperation];
+                self.imageDownloadingOperationDict[app.icon] = downloadOperation; // 存储正在下载的 URL
+            }
+        }
+    }
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.xAppArray.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 // 延时加载
-
-- (NSArray *)apps {
-    if (_apps == nil) {
-        NSArray *arrTemp = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"apps.plist" ofType:nil]];
-        
-        //
-        NSMutableArray *appArrayTemp = [NSMutableArray arrayWithCapacity:arrTemp.count];
-        
-        for (NSDictionary *dict in arrTemp) {
-            [appArrayTemp addObject:[MyApp appWithDict:dict]];
+- (NSArray *)xAppArray {
+    if (nil == _xAppArray) {
+        NSArray *appPlistArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"apps.plist" ofType:nil]];
+        _xAppArray = [NSMutableArray arrayWithCapacity:appPlistArray.count];
+        for (NSDictionary *dict in appPlistArray) {
+            [_xAppArray addObject:[XApp appWithDict:dict]];
         }
-        _apps = appArrayTemp;
-        
-        //        NSLog(@"_apps:%@", appArrayTemp);
     }
-    return _apps;
-}
-- (NSMutableDictionary *)images {
-    if (_images == nil) {
-        _images = [NSMutableDictionary dictionary];
-    }
-    return _images;
+    return _xAppArray;
 }
 
-- (NSOperationQueue *)queue {
-    if (_queue == nil) {
-        _queue = [[NSOperationQueue alloc] init];
-        _queue.maxConcurrentOperationCount = 5;
+- (NSMutableDictionary *)imageCacheDict {
+    if (nil == _imageCacheDict) {
+        _imageCacheDict = [NSMutableDictionary dictionary];
     }
-    return _queue;
+    return _imageCacheDict;
 }
 
-- (NSMutableDictionary *)operations {
-    if (_operations == nil) {
-        _operations = [NSMutableDictionary dictionary];
+- (NSOperationQueue *)operationQueue {
+    if (nil == _operationQueue) {
+        _operationQueue = [[NSOperationQueue alloc] init];
+        _operationQueue.maxConcurrentOperationCount = 5;
     }
-    return _operations;
+    return _operationQueue;
+}
+
+- (NSMutableDictionary *)imageDownloadingOperationDict {
+    if (_imageDownloadingOperationDict == nil) {
+        _imageDownloadingOperationDict = [NSMutableDictionary dictionary];
+    }
+    return _imageDownloadingOperationDict;
+}
+
+
+//
+- (void)didReceiveMemoryWarning {
+    NSLog(@"");
 }
 
 @end

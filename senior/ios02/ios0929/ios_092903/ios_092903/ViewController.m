@@ -33,16 +33,16 @@
     [t2 release];
 
 //    NSLog(@"t1 retainCount=%zd --- t2 retainCount=%zd", [t1 retainCount], [t2 retainCount]);
-    NSLog(@"%@, %@, %@", t1, t2, [Tools shareTools]);
+    NSLog(@"t1: %@; t2: %@; %@", t1, t2, [Tools shareTools]);
     
     //
-    FileTool *fileTool1 = [[FileTool alloc] init];
-    FileTool *fileTool2 = [FileTool new];
-    NSLog(@"%@, %@, %@", fileTool1, fileTool2, [FileTool shareFileTool]);
+//    FileTool *fileTool1 = [[FileTool alloc] init];
+//    FileTool *fileTool2 = [FileTool new];
+//    NSLog(@"%@, %@, %@", fileTool1, fileTool2, [FileTool shareFileTool]);
     
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (IBAction)arcOrMrc:(id)sender {
     
 #if __has_feature(objc_arc)
     NSLog(@"ARC");
@@ -51,7 +51,6 @@
 #endif
     
 }
-
 
 @end
 

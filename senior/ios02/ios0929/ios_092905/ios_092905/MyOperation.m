@@ -14,8 +14,7 @@
 // 1, 封装, 信息隐蔽
 // 2, 复用性
 - (void)main {
-    NSLog(@"%s - %@", __func__, [NSThread currentThread]);
-    
+    NSLog(@"%@", [NSThread currentThread]);
 }
 
 @end
