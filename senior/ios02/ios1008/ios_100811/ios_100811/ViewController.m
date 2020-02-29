@@ -18,7 +18,7 @@
 
 @interface ViewController () <NSURLConnectionDataDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextView *tip;
+@property (strong, nonatomic) NSString *localUrl;
 
 @end
 
@@ -26,18 +26,14 @@
 
 @implementation ViewController
 
-
-- (IBAction)get:(UIButton *)sender {
-//    [self sync];
-    
-    [self async];
-    
-//    [self delegate];
-    
+-(void)viewDidLoad {
+    _localUrl = @"http://192.168.1.157:8080/Web/login?loginName=get&pwd=021&sleep=2000";
 }
 
-- (void)delegate {
-    NSURL *url = [NSURL URLWithString:@"http:192.168.1.117:8080/Web/login?loginName=get&password=021"];
+
+// 100816
+- (IBAction)delegate {
+    NSURL *url = [NSURL URLWithString:self.localUrl];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -50,50 +46,52 @@
     // 3
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
     [conn start];
-    
 }
 
-// 代理方法
+#pragma mark - NSURLConnectionDataDelegate start
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"didReceiveResponse");
+    NSLog(@"connection: %@; response: %@", connection, response);
 }
 
 // 可能被调用多次
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    NSLog(@"didReceiveData");
-    
-    self.tip.text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"connection: %@; data: %@", connection, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"connection: %@", connection);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError");
+    NSLog(@"connection: %@; error: %@", connection, error);
 }
+#pragma mark - NSURLConnectionDataDelegate end
 
-// 异步
-- (void)async {
-    NSURL *url = [NSURL URLWithString:@"http:192.168.1.117:8080/Web/login?loginName=get&password=021"];
+
+// 100816 异步
+- (IBAction)async {
+    NSURL *url = [NSURL URLWithString:self.localUrl];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
+    // [NSOperationQueue mainQueue]  [[NSOperationQueue alloc] init]
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         if (connectionError) {
-            self.tip.text = @"Error";
+            NSLog(@"%@", connectionError);
         } else {
             NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
-            NSString *str = [NSString stringWithFormat:@"statusCode:%zd, allHeaderFields:%@, data:%@", res.statusCode, res.allHeaderFields, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
-            self.tip.text = str;
+            NSLog(@"%@; response: %@; data: %@; encoding data: %@", [NSThread currentThread], response, data, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         }
     }];
 }
 
-// 同步
-- (void)sync {
+
+// 100816 同步
+- (IBAction)sync {
+    NSLog(@"");
+    
     // 1, 确定请求路径
-    NSURL *url = [NSURL URLWithString:@"http:192.168.1.117:8080/Web/login?loginName=get&password=021"];
+    NSURL *url = [NSURL URLWithString:self.localUrl];
     
     // 2, 创建请求对象
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -102,18 +100,9 @@
     NSURLResponse *response;
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
     
-    NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-    NSLog(@"response:%@", response);
+    NSLog(@"data: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    NSLog(@"response: %@", response);
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
-}
-
 
 @end
 

@@ -8,16 +8,18 @@
 
 
 /*
+ // 100803
  1, RunLoop 与线程
  每条线程都有唯一的一个与之对应的 RunLoop 对象
  主线程的 RunLoop 已经自动创建, 子线程的 RunLoop 需要主动创建
  RunLoop 在第一次获取时创建, 在线程结束时销毁
  
+ // 100804
  2, CFRunLoopModeRef
  代表 RunLoop 的运行模式
  一个 RunLoop 包含若干个 Mode, 每个 Mode 又包含若干个 Source/Timer/Oberver
  每次 RunLoop 启动时, 只能指定其中的一个 Mode ,这个 Mode 被称为 current mode
- 如果需要切换 mode , 只能退出 Loop ,在重新指定一个 mode 进入
+ 如果需要切换 mode , 只能退出 Loop ,再重新指定一个 mode 进入
  
  3, CFRunLoopModeRef
  kCFRunLoopDefaultMode
@@ -89,12 +91,13 @@
     
     [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(runObserver) userInfo:nil repeats:YES];
     
-    CFRelease(observer); // 
+    CFRelease(observer);
 }
 
 - (void)runObserver {
-    NSLog(@"%s", __func__);
+    NSLog(@"");
 }
+
 
 //
 - (IBAction)gcdTimer:(UIButton *)sender {
@@ -109,16 +112,17 @@
     dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 2.0 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
     
     dispatch_source_set_event_handler(timer, ^{
-        NSLog(@"%s", __func__);
+        NSLog(@"");
     });
     
     // 4,
     dispatch_resume(timer);
 }
 
+
 //
 - (IBAction)nstimer:(UIButton *)sender {
-    NSLog(@"%s", __func__);
+    NSLog(@"");
     
     //    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(timer) userInfo:nil repeats:YES];
     
@@ -132,39 +136,36 @@
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode]; // 拖动 TextView 时, 定时器不工作
     
     //    [[NSRunLoop currentRunLoop] addTimer:timer forMode:UITrackingRunLoopMode]; //
-    
     //    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     
-    NSLog(@"%s --- %@", __func__, [NSRunLoop currentRunLoop]);
+    NSLog(@"%@", [NSRunLoop currentRunLoop]);
 }
 
 - (void)timer {
-    NSLog(@"%s - %@", __func__, [NSRunLoop currentRunLoop].currentMode);
+    NSLog(@"%@", [NSRunLoop currentRunLoop].currentMode);
 }
 
-//
+
+// 100803
 - (IBAction)threadRun:(UIButton *)sender {
     NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
-    
     [thread start];
 }
 
 - (void)run {
-    NSLog(@"%s - currentRunLoop:%@", __func__, [NSRunLoop currentRunLoop]);
-    
+    NSLog(@"%@, currentRunLoop: %@", [NSThread currentThread], [NSRunLoop currentRunLoop]);
 }
 
-//
+
+ // 100803
 - (IBAction)runLoop:(UIButton *)sender {
     // 1, 获得当前线程对应的 RunLoop
     NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
-    //    NSLog(@"currentRunLoop : %@", currentRunLoop);
     
     // 2, 获得住线程对应的 RunLoop
     NSRunLoop *mainRunLoop = [NSRunLoop mainRunLoop];
-    NSLog(@"%s - currentRunLoop : %p, mainRunLoop : %p", __func__, currentRunLoop, mainRunLoop);
+    NSLog(@"currentRunLoop: %p, mainRunLoop: %p", currentRunLoop, mainRunLoop);
     
-    //
     //    CFRunLoopRef curLoop = CFRunLoopGetCurrent(); // 获得当前线程对应的 RunLoop
     //    CFRunLoopRef mainRunLoop = CFRunLoopGetMain(); // 获得主线程对应的 RunLoop
 }

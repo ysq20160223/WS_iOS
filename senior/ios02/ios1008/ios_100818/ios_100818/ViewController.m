@@ -14,9 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *loginNameField;
 
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
-
-@property (weak, nonatomic) IBOutlet UILabel *tip;
+@property (weak, nonatomic) IBOutlet UITextField *pwdField;
 
 @end
 
@@ -25,19 +23,30 @@
 @implementation ViewController
 
 - (IBAction)login:(UIButton *)sender {
+//    NSLog(@"");
+    
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    
     // 0
     if (self.loginNameField.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:self.loginNameField.placeholder maskType:SVProgressHUDMaskTypeBlack];
+//        [SVProgressHUD showErrorWithStatus:self.loginNameField.placeholder maskType:SVProgressHUDMaskTypeBlack];
+        
+        [SVProgressHUD showErrorWithStatus:self.loginNameField.placeholder];
+        [SVProgressHUD dismissWithDelay:5 completion:^{
+//            NSLog(@"");
+        }];
         return;
     }
     
-    if (self.passwordField.text.length == 0) {
-        [SVProgressHUD showErrorWithStatus:self.passwordField.placeholder maskType:SVProgressHUDMaskTypeBlack];
+    if (self.pwdField.text.length == 0) {
+        NSLog(@"placeholder pwd: %@", self.pwdField.placeholder);
+        
+        [SVProgressHUD showErrorWithStatus:self.pwdField.placeholder];
         return;
     }
     
     // 1
-    NSURL *url = [NSURL URLWithString:@"http:192.168.1.117:8080/Web/login"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.1.157:8080/Web/login"];
     
     // 2
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -45,7 +54,7 @@
     // 2.1
     request.HTTPMethod = @"POST";
     
-    NSString *params = [NSString stringWithFormat:@"loginName=%@&password=%@", self.loginNameField.text, self.passwordField.text];
+    NSString *params = [NSString stringWithFormat:@"loginName=%@&pwd=%@", self.loginNameField.text, self.pwdField.text];
     
     // 2.2
     request.HTTPBody = [params dataUsingEncoding:NSUTF8StringEncoding];
@@ -53,25 +62,12 @@
     // 3
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         if (connectionError) {
-            self.tip.text = @"Error";
+            NSLog(@"connectionError: %@", connectionError);
         } else {
-            NSHTTPURLResponse *res = (NSHTTPURLResponse *)response;
-            NSString *str = [NSString stringWithFormat:@"statusCode:%zd,\r\nallHeaderFields:%@,\r\ndata:%@", res.statusCode, res.allHeaderFields, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
-            self.tip.text = str;
+            NSLog(@"response: %@", response);
         }
     }];
-    
-    
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
-}
-
 
 @end
 

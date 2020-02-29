@@ -11,20 +11,17 @@
 @implementation MyOperation
 
 - (void)start {
-    NSLog(@"%s - before", __func__);
+    NSLog(@"");
     [super start];
-    NSLog(@"%s - end", __func__);
+    NSLog(@"");
 }
 
 - (void)main {
-    NSLog(@"%s - before", __func__);
+    NSLog(@"");
     [super main];
-    NSLog(@"%s - end", __func__);
+    NSLog(@"");
 }
 
-
 @end
-
-
 
 
