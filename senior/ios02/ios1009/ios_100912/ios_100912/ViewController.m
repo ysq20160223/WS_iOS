@@ -14,17 +14,17 @@
 
 @end
 
+
+
 @implementation ViewController
 
 - (IBAction)unzipFile:(UIButton *)sender {
     [Main unzipFileAtPath:@"/Users/Apple/Desktop/zipFile.zip" toDestination:@"/Users/Apple/Desktop/unzipFile"];
-    
 }
 
 
 - (IBAction)zipDir:(UIButton *)sender {
     [Main createZipFileAtPath:@"/Users/Apple/Desktop/zipDir.zip" withContentsOfDirectory:@"/Users/Apple/Desktop/demo"];
-    
 }
 
 
@@ -34,19 +34,8 @@
                        @"/Users/Apple/Desktop/qin_s_moon/Temp/t_004.jpg",
                        @"/Users/Apple/Desktop/qin_s_moon/Temp/t_006.jpg"];
     [Main createZipFileAtPath:@"/Users/Apple/Desktop/zipFile.zip" withFilesAtPaths:array];
-    
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    
 }
 
 @end
-
 
 

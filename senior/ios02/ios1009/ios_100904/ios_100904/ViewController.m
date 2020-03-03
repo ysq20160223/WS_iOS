@@ -8,17 +8,21 @@
 
 #import "ViewController.h"
 
-#import "UIImageView+WebCache.h"
+#import <AVKit/AVKit.h>
 
 #import <MediaPlayer/MediaPlayer.h>
 
-#import "MyVideo.h"
+#import "BaseBean.h"
+#import "Video.h"
 
 #import "MJExtension.h"
 
+#import "UIImageView+WebCache.h"
+
 @interface ViewController ()
 
-@property (nonatomic, strong) NSArray *videos;
+@property (nonatomic, strong) NSString *baseUrl;
+@property (nonatomic, strong) NSArray *videoArray;
 
 @end
 
@@ -30,43 +34,52 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [MyVideo setupReplacedKeyFromPropertyName:^NSDictionary *{
+    _baseUrl = @"http://192.168.1.157:8080/Web/";
+    
+    // MJExtension 框架替换key
+    [Video setupReplacedKeyFromPropertyName:^NSDictionary *{
         return @{@"ID" : @"id"};
     }];
+    //
     
-    // 1
-    NSURL *url = [NSURL URLWithString:@"http://120.25.226.186:32812/video?type=JSON"];
+    // 1 mediaVideoList mediaAudioList
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@media/video/mediaVideoList", _baseUrl]];
     
     // 2
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    // 3
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-//        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        //        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         
         // 4
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//        NSLog(@"dict:%@", dict);
+        //        NSLog(@"dict: %@", dict);
+        //
+        NSArray *array = dict[@"video"]; // video audio
+        NSLog(@"array: %@", array);
         
-        [dict writeToFile:@"/Users/Apple/Desktop/video.plist" atomically:YES];
+        // 存储数据
+        //        [dict writeToFile:@"/Users/Apple/Desktop/mediaAudioList.plist" atomically:YES];
         
-        NSArray *array = dict[@"videos"];
         
-        // dictionary 转 model
+        // 使用自带 dictionary 转 model
 //        NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:array.count];
 //        for (NSDictionary *dic in array) {
-//            [mutableArray addObject:[MyVideo videoWithDict:dic]];
+//            [mutableArray addObject:[Video videoWithDict:dic]];
 //        }
-//        self.videos = mutableArray;
-//        NSLog(@"videos:%@", self.videos);
+//        self.videoArray = mutableArray;
+        
         
         // 使用框架 dictionary 转 model
-        self.videos = [MyVideo objectArrayWithKeyValuesArray:array];
+        self.videoArray = [Video objectArrayWithKeyValuesArray:array];
         
         // 5
-        [self.tableView reloadData];
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.tableView reloadData];
+        }];
     }];
+    
+    // 3
+    [dataTask resume];
     
 }
 
@@ -74,61 +87,44 @@
 
 // data source
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    NSLog(@"%s", __func__);
-    
-    static NSString *ID = @"video";
+    static NSString *ID = @"audio";
     
     // 1
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (nil == cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }
     
     // 2
-//    NSDictionary *videoDict = self.videos[indexPath.row];
-//    cell.textLabel.text = videoDict[@"name"];
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", videoDict[@"length"]];
-//    
-//    NSString *baseUrl = @"http://120.25.226.186:32812/";
-//    NSURL *imageUrl = [NSURL URLWithString:[baseUrl stringByAppendingPathComponent:videoDict[@"image"]]];
-    
-    MyVideo *video = self.videos[indexPath.row];
+    Video *video = self.videoArray[indexPath.row];
+    NSLog(@"row: %ld, video: %@", indexPath.row, video);
     cell.textLabel.text = video.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"length:%zd, -04- id:%zd", video.length, video.ID];
+    cell.detailTextLabel.text = video.author;
     
-    NSString *baseUrl = @"http://120.25.226.186:32812/";
-    NSURL *imageUrl = [NSURL URLWithString:[baseUrl stringByAppendingPathComponent:video.image]];
     
+    NSURL *imageUrl = [NSURL URLWithString:[_baseUrl stringByAppendingPathComponent:video.albumPic]];
+    //    NSLog(@"imageUrl: %@", imageUrl);
     [cell.imageView sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"default"]];
     
     // 3
     return cell;
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.videos.count;
+    return self.videoArray.count;
 }
 
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // 1
-//    NSDictionary *videoDict = self.videos[indexPath.row];
-//    
-//    NSString *baseUrl = @"http://120.25.226.186:32812/";
-//    
-//    NSURL *mp4Url = [NSURL URLWithString:[baseUrl stringByAppendingPathComponent:videoDict[@"url"]]];
+    Video *video = self.videoArray[indexPath.row];
     
+    NSURL *mp4Url = [NSURL URLWithString:[_baseUrl stringByAppendingPathComponent:video.url]];
+    AVPlayerViewController *vc = [[AVPlayerViewController alloc] init];
+    vc.player = [AVPlayer playerWithURL:mp4Url];
+    [vc.player play];
     
-    MyVideo *video = self.videos[indexPath.row];
-    
-    NSString *baseUrl = @"http://120.25.226.186:32812/";
-    
-    NSURL *mp4Url = [NSURL URLWithString:[baseUrl stringByAppendingPathComponent:video.url]];
-    
-    MPMoviePlayerViewController *vc = [[MPMoviePlayerViewController alloc] initWithContentURL:mp4Url];
     [self presentViewController:vc animated:YES completion:nil];
-    
 }
-
 
 @end
 

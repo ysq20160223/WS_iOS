@@ -45,7 +45,7 @@
         return;
     }
     
-    // 1
+    // 1 http://192.168.1.157:8080/Web/login?loginName=哈哈yy&pwd=123
     NSURL *url = [NSURL URLWithString:@"http://192.168.1.157:8080/Web/login"];
     
     // 2
@@ -54,19 +54,21 @@
     // 2.1
     request.HTTPMethod = @"POST";
     
-    NSString *params = [NSString stringWithFormat:@"loginName=%@&pwd=%@", self.loginNameField.text, self.pwdField.text];
+    NSString *params = [NSString stringWithFormat:@"loginName=%@&pwd=哈哈%@", self.loginNameField.text, self.pwdField.text];
     
     // 2.2
     request.HTTPBody = [params dataUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"body: %@", [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
     
     // 3
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-        if (connectionError) {
-            NSLog(@"connectionError: %@", connectionError);
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error: %@", error);
         } else {
-            NSLog(@"response: %@", response);
+            NSLog(@"response: %@; data: %@", response, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
         }
     }];
+    [dataTask resume];
 }
 
 @end

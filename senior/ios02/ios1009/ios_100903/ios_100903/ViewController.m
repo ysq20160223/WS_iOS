@@ -18,14 +18,15 @@
 
 - (IBAction)get:(UIButton *)sender {
     // 1
-    NSURL *url = [NSURL URLWithString:@"http:192.168.1.117:8080/Web/login?loginName=get&password=021"];
+    NSURL *url = [NSURL URLWithString:@"http://192.168.1.157:8080/Web/login?loginName=get&pwd=021&sleep=1000"];
     
-    // 2
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    // 3
-    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
-//        NSLog(@"data:%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+//            NSLog(@"%@;\r\n response: %@;\r\n data: %@;\r\n encoding data: %@", [NSThread currentThread], response, data, [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        }
         
         // 把 json 转化为 oc 对象
         // 第二个参数 : 可选配置参数
@@ -34,21 +35,20 @@
         // NSJSONReadingAllowFragments : 如果最外层不是字典或数组那么就必须用这个
         // kNilOptions : 默认
         
-        // json         oc
-        // {}           @{}
-        // []           @[]
-        // ""           @""
-        // true/false   NSNumber
-        // null         NSNull == nil
-        NSLog(@"data isValid : %d", [NSJSONSerialization isValidJSONObject:data]);
+        //      json         oc
+        //      {}           @{}
+        //      []           @[]
+        //      ""           @""
+        //      true/false   NSNumber
+        //      null         NSNull == nil
+        NSLog(@"isValidJSONObject: %d", [NSJSONSerialization isValidJSONObject:data]);
         
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        NSLog(@"dict:%@", dict);
+        NSLog(@"dict: %@", dict);
         
         [self oc2JSON:dict];
-        
     }];
-    
+    [dataTask resume];
 }
 
 // oc 模型转 json 字符串
@@ -59,19 +59,11 @@
     // 4, NSNumber 不能是 NaN 或者 无穷大
     
     BOOL isValid = [NSJSONSerialization isValidJSONObject:dict];
-    NSLog(@"oc2JSON isValid : %d", isValid);
+    NSLog(@"oc2JSON isValid: %d", isValid);
     
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:nil];
     NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
 
 @end
 

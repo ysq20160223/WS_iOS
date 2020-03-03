@@ -27,7 +27,9 @@
 @implementation ViewController
 
 -(void)viewDidLoad {
-    _localUrl = @"http://192.168.1.157:8080/Web/login?loginName=get&pwd=021&sleep=2000";
+    _localUrl = @"http://192.168.1.157:8080/Web/login?loginName=呵呵YY&pwd=021&sleep=200";
+    _localUrl = [_localUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"_localUrl: %@", _localUrl);
 }
 
 

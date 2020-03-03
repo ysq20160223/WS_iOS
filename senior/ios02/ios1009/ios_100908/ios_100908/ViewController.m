@@ -13,75 +13,67 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 //
-@property (strong, nonatomic) NSMutableData *fileData;
+@property (strong, nonatomic) NSMutableData *fileMutableData;
 @property (assign, nonatomic) NSInteger currentLength;
 @property (assign, nonatomic) NSInteger totalLength;
 
-@property (weak, nonatomic) IBOutlet UILabel *progress;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 
 @end
 
+
+
 @implementation ViewController
 
-- (IBAction)downloadMp4:(UIButton *)sender {
+- (IBAction)download:(UIButton *)sender {
     // 1
-    NSURL *url = [NSURL URLWithString:@"http://120.25.226.186:32812/resources/videos/minion_01.mp4"];
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/img/bd_logo1.png"];
     
     // 2
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     // 3
     [NSURLConnection connectionWithRequest:request delegate:self];
-    
 }
 
 // 1
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"receive response");
-    
-    self.fileData = [NSMutableData data];
+    self.fileMutableData = [NSMutableData data];
     self.totalLength = response.expectedContentLength; // 总长度
     
-    NSLog(@"total length : %zd", self.totalLength);
+    NSLog(@"total length: %zd", self.totalLength);
 }
 
 // 2
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-//    NSLog(@"receive data");
-    
-    [self.fileData appendData:data];
-    self.currentLength = self.fileData.length;
+    [self.fileMutableData appendData:data];
+    self.currentLength = self.fileMutableData.length;
     
     NSString *progress = [NSString stringWithFormat:@"%.2f%%", self.currentLength * 100.0 / self.totalLength];
-    self.progress.text = progress;
+    self.progressLabel.text = progress;
 }
 
 // 3
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"finish loading");
-    
     // 1
-    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-    NSLog(@"caches : %@", caches);
+    NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSLog(@"cachePath: %@", cachePath);
     
     // 2
-    NSString *fullPath = [caches stringByAppendingPathComponent:@"01.mp4"];
+    NSString *fullPath = [cachePath stringByAppendingPathComponent:@"download"];
     
     // 3
-    [self.fileData writeToFile:fullPath atomically:YES];
+    [self.fileMutableData writeToFile:fullPath atomically:YES];
     
 //    self.imageView.image = [UIImage imageWithData:self.fileData];
 }
 
 // 4
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"fail with error");
-    
-    
+    NSLog(@"");
 }
 
 
-// --
 - (IBAction)nsurlConnection:(UIButton *)sender {
     // 1
     NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/img/bd_logo1.png"];
@@ -96,7 +88,7 @@
         }
     }];
 }
-// --
+
 - (IBAction)nsdata:(UIButton *)sender {
     // 1
     NSURL *url = [NSURL URLWithString:@"https://www.baidu.com/img/bd_logo1.png"];
@@ -106,23 +98,12 @@
     
     // 3
     self.imageView.image = [UIImage imageWithData:data];
-    
 }
 
 - (IBAction)clear:(UIButton *)sender {
     self.imageView.image = [UIImage imageNamed:@"default_bd"];
 }
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
-
 @end
-
 
 
