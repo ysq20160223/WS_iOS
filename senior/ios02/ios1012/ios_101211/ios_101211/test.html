@@ -1,0 +1,52 @@
+
+
+<html>
+    <!-- 网页的描述信息 -->
+    <head>
+        <meta charset="UTF8">
+        <title>123</title>
+
+        <script>
+            function show()
+            {
+                alert(document.title);
+            }
+        
+            function repost()
+            {
+<!--                    加载百度-->
+<!--                location.href = "https://www.baidu.com/";-->
+
+
+<!--                    调用 call-->
+<!--                    location.href = "h5calloc://call";-->
+
+<!--                    调用一个参数-->
+<!--                    location.href = "h5calloc://callWithNumber_?10086";-->
+
+<!--                    调用两个参数-->
+                    location.href = "h5calloc://callWithNumber_andContents_?10086&hehe";
+            }
+        
+            function sum()
+            {
+                return 21;
+            }
+        
+        </script>
+    </head>
+    
+    <!-- 网页的具体内容-->
+    <body>
+        
+<!--    h5调用h5方法    -->
+<!--        <button style="background:#0088ff; height:50px; width:200px;" onclick="show();">Click</button>-->
+
+<!--    h5调用oc方法    -->
+        <button style="background:#0088ff; height:50px; width:350px; color:#ffffff; size=55" onclick="repost();">Click</button>
+        
+    </body>
+    
+</html>
+
+
