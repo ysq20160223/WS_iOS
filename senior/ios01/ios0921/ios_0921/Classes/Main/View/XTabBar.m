@@ -80,7 +80,6 @@
         x = w * i;
         btn.frame = CGRectMake(x, y, w, h);
     }
-    
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -92,6 +91,5 @@
 }
 
 @end
-
 
 

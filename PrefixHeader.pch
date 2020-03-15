@@ -21,12 +21,12 @@
  */
 
 
-
-#ifdef __OBJC__  // __OBJC__ 每个 oc 文件都会自动定义这个宏
-
-
 #ifndef _PrefixHeader_pch_
 #define _PrefixHeader_pch_
+
+
+#pragma mark ------------------------ ifdef __OBJC__  START
+#ifdef __OBJC__  // __OBJC__ 每个 oc 文件都会自动定义这个宏
 
 
 #pragma mark - important note: 在 oc 代码中需有宏定义 DEBUG
@@ -35,8 +35,7 @@
 // TARGETS -> Build Settings -> 搜索"prefix"
 
 
-
-// *********************************************************** NSLog START
+#pragma mark - NSLog START
 #ifdef DEBUG
 
 // fprintf 不输出系统当前时间和线程
@@ -55,19 +54,26 @@
 #define NSLog(FORMAT, ...) nil
 
 #endif /* DEBUG */
-// *********************************************************** NSLog END
+#pragma mark - NSLog END
 
 
 
-// ----------------------------------------------------------- UIApplication START
-
+#pragma mark - UIApplication START
 #define kStatusBarH ([UIApplication sharedApplication].statusBarFrame.size.height)
 #define kScreenW [UIScreen mainScreen].bounds.size.width
 #define kScreenH [UIScreen mainScreen].bounds.size.height
+#pragma mark - UIApplication END
 
-// ----------------------------------------------------------- UIApplication END
 
-#endif /* _PrefixHeader_pch_ */
+
+#pragma mark - UIColor START
+#define XColor(r, g, b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1]
+#define XRandomColor(r, g, b) XColor(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255))
+#pragma mark - UIColor END
+
+#endif
+#pragma mark ------------------------ ifdef __OBJC__  END
+
 
 #endif /* __OBJC__ */
 
