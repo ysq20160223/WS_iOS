@@ -54,6 +54,10 @@
 #define NSLog(FORMAT, ...) nil
 
 #endif /* DEBUG */
+
+
+#define XLog NSLog(@"");
+
 #pragma mark - NSLog END
 
 
