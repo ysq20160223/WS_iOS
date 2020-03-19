@@ -111,20 +111,14 @@
 		188F3E74241DF9CE0095059C /* mine-sun-icon-click@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D0D241DF9CE0095059C /* mine-sun-icon-click@3x.png */; };
 		188F3E75241DF9CE0095059C /* MainTagSubIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D0E241DF9CE0095059C /* MainTagSubIcon@2x.png */; };
 		188F3E76241DF9CE0095059C /* navigationButtonReturn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D0F241DF9CE0095059C /* navigationButtonReturn@2x.png */; };
-		188F3E77241DF9CE0095059C /* friendsRecommentIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D10241DF9CE0095059C /* friendsRecommentIcon@3x.png */; };
 		188F3E78241DF9CE0095059C /* nav_coin_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D11241DF9CE0095059C /* nav_coin_icon.png */; };
 		188F3E79241DF9CE0095059C /* mine-setting-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D12241DF9CE0095059C /* mine-setting-icon.png */; };
-		188F3E7A241DF9CE0095059C /* friendsRecommentIcon-click@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D13241DF9CE0095059C /* friendsRecommentIcon-click@3x.png */; };
-		188F3E7B241DF9CE0095059C /* friendsRecommentIcon-click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D14241DF9CE0095059C /* friendsRecommentIcon-click@2x.png */; };
-		188F3E7C241DF9CE0095059C /* friendsRecommentIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D15241DF9CE0095059C /* friendsRecommentIcon@2x.png */; };
 		188F3E7D241DF9CE0095059C /* navigationButtonReturn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D16241DF9CE0095059C /* navigationButtonReturn@3x.png */; };
 		188F3E7E241DF9CE0095059C /* MainTagSubIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D17241DF9CE0095059C /* MainTagSubIcon@3x.png */; };
 		188F3E7F241DF9CE0095059C /* mine-sun-icon-click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D18241DF9CE0095059C /* mine-sun-icon-click@2x.png */; };
 		188F3E80241DF9CE0095059C /* mine-moon-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D19241DF9CE0095059C /* mine-moon-icon@3x.png */; };
-		188F3E81241DF9CE0095059C /* friendsRecommentIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D1A241DF9CE0095059C /* friendsRecommentIcon.png */; };
 		188F3E82241DF9CE0095059C /* mine-setting-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D1B241DF9CE0095059C /* mine-setting-icon@3x.png */; };
 		188F3E83241DF9CE0095059C /* nav_coin_icon_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D1C241DF9CE0095059C /* nav_coin_icon_click.png */; };
-		188F3E84241DF9CE0095059C /* friendsRecommentIcon-click.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D1D241DF9CE0095059C /* friendsRecommentIcon-click.png */; };
 		188F3E85241DF9CE0095059C /* mine-setting-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D1E241DF9CE0095059C /* mine-setting-icon@2x.png */; };
 		188F3E86241DF9CE0095059C /* mine-sun-icon-click.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D1F241DF9CE0095059C /* mine-sun-icon-click.png */; };
 		188F3E87241DF9CE0095059C /* mine-moon-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3D20241DF9CE0095059C /* mine-moon-icon@2x.png */; };
@@ -356,6 +350,8 @@
 		188F3F75241DF9CF0095059C /* friendsTrend_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E16241DF9CE0095059C /* friendsTrend_login@2x.png */; };
 		188F3F76241DF9CF0095059C /* header_cry_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E17241DF9CE0095059C /* header_cry_icon@2x.png */; };
 		188F3F79241E2F650095059C /* XTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3F78241E2F650095059C /* XTabBarController.m */; };
+		18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */; };
+		18946A542423B85600CD14DD /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A532423B85600CD14DD /* RecommendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -471,20 +467,14 @@
 		188F3D0D241DF9CE0095059C /* mine-sun-icon-click@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-sun-icon-click@3x.png"; sourceTree = "<group>"; };
 		188F3D0E241DF9CE0095059C /* MainTagSubIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainTagSubIcon@2x.png"; sourceTree = "<group>"; };
 		188F3D0F241DF9CE0095059C /* navigationButtonReturn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationButtonReturn@2x.png"; sourceTree = "<group>"; };
-		188F3D10241DF9CE0095059C /* friendsRecommentIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsRecommentIcon@3x.png"; sourceTree = "<group>"; };
 		188F3D11241DF9CE0095059C /* nav_coin_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_coin_icon.png; sourceTree = "<group>"; };
 		188F3D12241DF9CE0095059C /* mine-setting-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-setting-icon.png"; sourceTree = "<group>"; };
-		188F3D13241DF9CE0095059C /* friendsRecommentIcon-click@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsRecommentIcon-click@3x.png"; sourceTree = "<group>"; };
-		188F3D14241DF9CE0095059C /* friendsRecommentIcon-click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsRecommentIcon-click@2x.png"; sourceTree = "<group>"; };
-		188F3D15241DF9CE0095059C /* friendsRecommentIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsRecommentIcon@2x.png"; sourceTree = "<group>"; };
 		188F3D16241DF9CE0095059C /* navigationButtonReturn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationButtonReturn@3x.png"; sourceTree = "<group>"; };
 		188F3D17241DF9CE0095059C /* MainTagSubIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainTagSubIcon@3x.png"; sourceTree = "<group>"; };
 		188F3D18241DF9CE0095059C /* mine-sun-icon-click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-sun-icon-click@2x.png"; sourceTree = "<group>"; };
 		188F3D19241DF9CE0095059C /* mine-moon-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-moon-icon@3x.png"; sourceTree = "<group>"; };
-		188F3D1A241DF9CE0095059C /* friendsRecommentIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendsRecommentIcon.png; sourceTree = "<group>"; };
 		188F3D1B241DF9CE0095059C /* mine-setting-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-setting-icon@3x.png"; sourceTree = "<group>"; };
 		188F3D1C241DF9CE0095059C /* nav_coin_icon_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_coin_icon_click.png; sourceTree = "<group>"; };
-		188F3D1D241DF9CE0095059C /* friendsRecommentIcon-click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsRecommentIcon-click.png"; sourceTree = "<group>"; };
 		188F3D1E241DF9CE0095059C /* mine-setting-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-setting-icon@2x.png"; sourceTree = "<group>"; };
 		188F3D1F241DF9CE0095059C /* mine-sun-icon-click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-sun-icon-click.png"; sourceTree = "<group>"; };
 		188F3D20241DF9CE0095059C /* mine-moon-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine-moon-icon@2x.png"; sourceTree = "<group>"; };
@@ -717,6 +707,10 @@
 		188F3E17241DF9CE0095059C /* header_cry_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_cry_icon@2x.png"; sourceTree = "<group>"; };
 		188F3F77241E2F650095059C /* XTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTabBarController.h; sourceTree = "<group>"; };
 		188F3F78241E2F650095059C /* XTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTabBarController.m; sourceTree = "<group>"; };
+		18946A4F2423A7A800CD14DD /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+X.h"; sourceTree = "<group>"; };
+		18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+X.m"; sourceTree = "<group>"; };
+		18946A522423B85600CD14DD /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		18946A532423B85600CD14DD /* RecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -753,6 +747,8 @@
 			children = (
 				18645E422421172A00BF4D48 /* EssenceViewController.h */,
 				18645E432421172A00BF4D48 /* EssenceViewController.m */,
+				18946A522423B85600CD14DD /* RecommendViewController.h */,
+				18946A532423B85600CD14DD /* RecommendViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -846,8 +842,10 @@
 		188F3CA8241DF2EB0095059C /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				188F3CA9241DF2EB0095059C /* UIImage+X.m */,
 				188F3CAA241DF2EB0095059C /* UIImage+X.h */,
+				188F3CA9241DF2EB0095059C /* UIImage+X.m */,
+				18946A4F2423A7A800CD14DD /* UIBarButtonItem+X.h */,
+				18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */,
 			);
 			name = Category;
 			path = BaiSiBuDeJie/Class/Category;
@@ -963,51 +961,45 @@
 		188F3CF3241DF9CE0095059C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				188F3CF4241DF9CE0095059C /* MainTitle@2x.png */,
-				188F3CF5241DF9CE0095059C /* nav_coin_icon_click@2x.png */,
-				188F3CF6241DF9CE0095059C /* mine-sun-icon@3x.png */,
-				188F3CF7241DF9CE0095059C /* MainTagSubIconClick@2x.png */,
-				188F3CF8241DF9CE0095059C /* nav_coin_icon@3x.png */,
-				188F3CF9241DF9CE0095059C /* nav_coin_icon@2x.png */,
-				188F3CFA241DF9CE0095059C /* MainTagSubIconClick.png */,
-				188F3CFB241DF9CE0095059C /* MainTagSubIconClick@3x.png */,
-				188F3CFC241DF9CE0095059C /* mine-sun-icon@2x.png */,
-				188F3CFD241DF9CE0095059C /* nav_coin_icon_click@3x.png */,
-				188F3CFE241DF9CE0095059C /* MainTitle@3x.png */,
-				188F3CFF241DF9CE0095059C /* MainTagSubIcon.png */,
-				188F3D00241DF9CE0095059C /* mine-moon-icon-click.png */,
-				188F3D01241DF9CE0095059C /* mine-sun-icon.png */,
-				188F3D02241DF9CE0095059C /* navigationButtonReturnClick@3x.png */,
-				188F3D03241DF9CE0095059C /* mine-moon-icon.png */,
-				188F3D04241DF9CE0095059C /* mine-moon-icon-click@2x.png */,
-				188F3D05241DF9CE0095059C /* navigationbarBackgroundWhite.png */,
-				188F3D06241DF9CE0095059C /* navigationButtonReturn.png */,
-				188F3D07241DF9CE0095059C /* mine-setting-icon-click.png */,
-				188F3D08241DF9CE0095059C /* mine-setting-icon-click@3x.png */,
-				188F3D09241DF9CE0095059C /* mine-setting-icon-click@2x.png */,
 				188F3D0A241DF9CE0095059C /* MainTitle.png */,
+				188F3CF4241DF9CE0095059C /* MainTitle@2x.png */,
+				188F3CFE241DF9CE0095059C /* MainTitle@3x.png */,
+				188F3D11241DF9CE0095059C /* nav_coin_icon.png */,
+				188F3CF9241DF9CE0095059C /* nav_coin_icon@2x.png */,
+				188F3CF8241DF9CE0095059C /* nav_coin_icon@3x.png */,
+				188F3D1C241DF9CE0095059C /* nav_coin_icon_click.png */,
+				188F3CF5241DF9CE0095059C /* nav_coin_icon_click@2x.png */,
+				188F3CFD241DF9CE0095059C /* nav_coin_icon_click@3x.png */,
+				188F3D01241DF9CE0095059C /* mine-sun-icon.png */,
+				188F3CFC241DF9CE0095059C /* mine-sun-icon@2x.png */,
+				188F3CF6241DF9CE0095059C /* mine-sun-icon@3x.png */,
+				188F3D1F241DF9CE0095059C /* mine-sun-icon-click.png */,
+				188F3D18241DF9CE0095059C /* mine-sun-icon-click@2x.png */,
+				188F3D0D241DF9CE0095059C /* mine-sun-icon-click@3x.png */,
+				188F3CFF241DF9CE0095059C /* MainTagSubIcon.png */,
+				188F3D0E241DF9CE0095059C /* MainTagSubIcon@2x.png */,
+				188F3D17241DF9CE0095059C /* MainTagSubIcon@3x.png */,
+				188F3CFA241DF9CE0095059C /* MainTagSubIconClick.png */,
+				188F3CF7241DF9CE0095059C /* MainTagSubIconClick@2x.png */,
+				188F3CFB241DF9CE0095059C /* MainTagSubIconClick@3x.png */,
+				188F3D03241DF9CE0095059C /* mine-moon-icon.png */,
+				188F3D20241DF9CE0095059C /* mine-moon-icon@2x.png */,
+				188F3D19241DF9CE0095059C /* mine-moon-icon@3x.png */,
+				188F3D00241DF9CE0095059C /* mine-moon-icon-click.png */,
+				188F3D04241DF9CE0095059C /* mine-moon-icon-click@2x.png */,
+				188F3D12241DF9CE0095059C /* mine-setting-icon.png */,
+				188F3D1E241DF9CE0095059C /* mine-setting-icon@2x.png */,
+				188F3D1B241DF9CE0095059C /* mine-setting-icon@3x.png */,
+				188F3D07241DF9CE0095059C /* mine-setting-icon-click.png */,
+				188F3D09241DF9CE0095059C /* mine-setting-icon-click@2x.png */,
+				188F3D08241DF9CE0095059C /* mine-setting-icon-click@3x.png */,
+				188F3D06241DF9CE0095059C /* navigationButtonReturn.png */,
+				188F3D0F241DF9CE0095059C /* navigationButtonReturn@2x.png */,
+				188F3D16241DF9CE0095059C /* navigationButtonReturn@3x.png */,
 				188F3D0B241DF9CE0095059C /* navigationButtonReturnClick.png */,
 				188F3D0C241DF9CE0095059C /* navigationButtonReturnClick@2x.png */,
-				188F3D0D241DF9CE0095059C /* mine-sun-icon-click@3x.png */,
-				188F3D0E241DF9CE0095059C /* MainTagSubIcon@2x.png */,
-				188F3D0F241DF9CE0095059C /* navigationButtonReturn@2x.png */,
-				188F3D10241DF9CE0095059C /* friendsRecommentIcon@3x.png */,
-				188F3D11241DF9CE0095059C /* nav_coin_icon.png */,
-				188F3D12241DF9CE0095059C /* mine-setting-icon.png */,
-				188F3D13241DF9CE0095059C /* friendsRecommentIcon-click@3x.png */,
-				188F3D14241DF9CE0095059C /* friendsRecommentIcon-click@2x.png */,
-				188F3D15241DF9CE0095059C /* friendsRecommentIcon@2x.png */,
-				188F3D16241DF9CE0095059C /* navigationButtonReturn@3x.png */,
-				188F3D17241DF9CE0095059C /* MainTagSubIcon@3x.png */,
-				188F3D18241DF9CE0095059C /* mine-sun-icon-click@2x.png */,
-				188F3D19241DF9CE0095059C /* mine-moon-icon@3x.png */,
-				188F3D1A241DF9CE0095059C /* friendsRecommentIcon.png */,
-				188F3D1B241DF9CE0095059C /* mine-setting-icon@3x.png */,
-				188F3D1C241DF9CE0095059C /* nav_coin_icon_click.png */,
-				188F3D1D241DF9CE0095059C /* friendsRecommentIcon-click.png */,
-				188F3D1E241DF9CE0095059C /* mine-setting-icon@2x.png */,
-				188F3D1F241DF9CE0095059C /* mine-sun-icon-click.png */,
-				188F3D20241DF9CE0095059C /* mine-moon-icon@2x.png */,
+				188F3D02241DF9CE0095059C /* navigationButtonReturnClick@3x.png */,
+				188F3D05241DF9CE0095059C /* navigationbarBackgroundWhite.png */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -1404,7 +1396,6 @@
 				188F3F42241DF9CF0095059C /* mine_icon_nearby@2x.png in Resources */,
 				188F3F08241DF9CE0095059C /* mainCellCommentClick@2x.png in Resources */,
 				188F3EA4241DF9CE0095059C /* tabBar_publish_click_icon.png in Resources */,
-				188F3E7A241DF9CE0095059C /* friendsRecommentIcon-click@3x.png in Resources */,
 				188F3E66241DF9CE0095059C /* MainTagSubIcon.png in Resources */,
 				188F3F50241DF9CF0095059C /* mine_icon_nearby.png in Resources */,
 				188F3F4D241DF9CF0095059C /* mine_msg_icon.png in Resources */,
@@ -1559,7 +1550,6 @@
 				188F3E48241DF9CE0095059C /* comment_bar_at_icon_click@3x.png in Resources */,
 				188F3E21241DF9CE0095059C /* post-#N.png in Resources */,
 				188F3F10241DF9CF0095059C /* video-play@2x.png in Resources */,
-				188F3E81241DF9CE0095059C /* friendsRecommentIcon.png in Resources */,
 				188F3F13241DF9CF0095059C /* playButtonPlay@3x.png in Resources */,
 				188F3E63241DF9CE0095059C /* mine-sun-icon@2x.png in Resources */,
 				188F3E5F241DF9CE0095059C /* nav_coin_icon@3x.png in Resources */,
@@ -1574,14 +1564,12 @@
 				188F3E61241DF9CE0095059C /* MainTagSubIconClick.png in Resources */,
 				188F3EB1241DF9CE0095059C /* login_sina_icon.png in Resources */,
 				188F3F53241DF9CF0095059C /* mine-icon-search.png in Resources */,
-				188F3E7B241DF9CE0095059C /* friendsRecommentIcon-click@2x.png in Resources */,
 				188F3F36241DF9CF0095059C /* playButton@3x.png in Resources */,
 				188F3F40241DF9CF0095059C /* setup-head-default.png in Resources */,
 				188F3E37241DF9CE0095059C /* comment_nav_item_share_icon.png in Resources */,
 				188F3EB4241DF9CE0095059C /* login_tecent_icon@2x.png in Resources */,
 				188F3F4B241DF9CF0095059C /* mine-icon-manhua@2x.png in Resources */,
 				188F3F30241DF9CF0095059C /* playButton@2x.png in Resources */,
-				188F3E84241DF9CE0095059C /* friendsRecommentIcon-click.png in Resources */,
 				188F3E39241DF9CE0095059C /* commentLikeButton@2x.png in Resources */,
 				188F3EB2241DF9CE0095059C /* login_register_right_line.png in Resources */,
 				188F3ED7241DF9CE0095059C /* pushguidemid@2x.png in Resources */,
@@ -1651,7 +1639,6 @@
 				188F3E6A241DF9CE0095059C /* mine-moon-icon.png in Resources */,
 				188F3E3D241DF9CE0095059C /* comment-bar-keyboard@2x.png in Resources */,
 				188F3F6F241DF9CF0095059C /* FollowBtnClickBg.png in Resources */,
-				188F3E77241DF9CE0095059C /* friendsRecommentIcon@3x.png in Resources */,
 				188F3E32241DF9CE0095059C /* comment_nav_item_share_icon_click.png in Resources */,
 				188F3EA5241DF9CE0095059C /* tabBar_essence_icon@3x.png in Resources */,
 				188F3EBC241DF9CE0095059C /* login_QQ_icon_click@3x.png in Resources */,
@@ -1682,7 +1669,6 @@
 				188F3E93241DF9CE0095059C /* tabBar_essence_click_icon@3x.png in Resources */,
 				188F3F6D241DF9CF0095059C /* friendsTrend_login_click.png in Resources */,
 				188F3EC2241DF9CE0095059C /* login_QQ_icon@2x.png in Resources */,
-				188F3E7C241DF9CE0095059C /* friendsRecommentIcon@2x.png in Resources */,
 				188F3F6A241DF9CF0095059C /* play-voice-icon-2.png in Resources */,
 				188F3E26241DF9CE0095059C /* post-@N@3x.png in Resources */,
 				188F3F57241DF9CF0095059C /* mine-icon-feedback.png in Resources */,
@@ -1704,6 +1690,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
+				18946A542423B85600CD14DD /* RecommendViewController.m in Sources */,
+				18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */,
 				18645E30241FC83B00BF4D48 /* XUITabBar.m in Sources */,
 				188F3CA5241DE5DB0095059C /* AppDelegate.m in Sources */,
 				188F3F79241E2F650095059C /* XTabBarController.m in Sources */,

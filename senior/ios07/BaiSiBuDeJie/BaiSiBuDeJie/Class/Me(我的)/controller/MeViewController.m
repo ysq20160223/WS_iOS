@@ -7,6 +7,7 @@
 //
 
 #import "MeViewController.h"
+#import "UIBarButtonItem+X.h"
 
 @interface MeViewController ()
 
@@ -24,21 +25,10 @@
     self.view.backgroundColor = XColor(0xff, 0x88, 0x00);
     self.navigationItem.title = @"me";
     
-    // Setting
-    UIButton *navItemRightSettingBtn = [[UIButton alloc] init];
-    [navItemRightSettingBtn setImage:[UIImage imageNamed:@"mine-setting-icon"] forState:UIControlStateNormal];
-    [navItemRightSettingBtn setImage:[UIImage imageNamed:@"mine-setting-icon-click"] forState:UIControlStateHighlighted];
-    [navItemRightSettingBtn sizeToFit];
-    [navItemRightSettingBtn addTarget:self action:@selector(navItemRightSettingBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // moon
-    UIButton *navItemRightMoonBtn = [[UIButton alloc] init];
-    [navItemRightMoonBtn setImage:[UIImage imageNamed:@"mine-moon-icon"] forState:UIControlStateNormal];
-    [navItemRightMoonBtn setImage:[UIImage imageNamed:@"mine-moon-icon-click"] forState:UIControlStateHighlighted];
-    [navItemRightMoonBtn sizeToFit];
-    [navItemRightMoonBtn addTarget:self action:@selector(navItemRightMoonBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithCustomView:navItemRightSettingBtn], [[UIBarButtonItem alloc] initWithCustomView:navItemRightMoonBtn]];
+    self.navigationItem.rightBarButtonItems = @[
+        [UIBarButtonItem itemWithImage:@"mine-setting-icon" highlightImage:@"mine-setting-icon-click" tartget:self action:@selector(navItemRightSettingBtnClick:)],
+        [UIBarButtonItem itemWithImage:@"mine-moon-icon" highlightImage:@"mine-moon-icon-click" tartget:self action:@selector(navItemRightMoonBtnClick:)]
+    ];
 }
 
 - (void)navItemRightSettingBtnClick:(UIButton *)btn {

@@ -7,6 +7,8 @@
 //
 
 #import "EssenceViewController.h"
+#import "UIBarButtonItem+X.h"
+#import "RecommendViewController.h"
 
 @interface EssenceViewController ()
 
@@ -26,18 +28,17 @@
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
     
-    UIButton *navItemLeftBtnView = [[UIButton alloc] init];
-    [navItemLeftBtnView setImage:[UIImage imageNamed:@"MainTagSubIcon"] forState:UIControlStateNormal];
-    [navItemLeftBtnView setImage:[UIImage imageNamed:@"MainTagSubIconClick"] forState:UIControlStateHighlighted];
-    [navItemLeftBtnView sizeToFit];
-    [navItemLeftBtnView addTarget:self action:@selector(navItemLeftBtnViewClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:navItemLeftBtnView];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highlightImage:@"MainTagSubIconClick" tartget:self action:@selector(navItemLeftBtnViewClick:)];
     
 }
 
 - (void)navItemLeftBtnViewClick:(UIButton *)btn {
-    NSLog(@"btn: %@", btn);
+//    NSLog(@"btn: %@", btn);
+    
+    RecommendViewController *viewController = [[RecommendViewController alloc] init];
+    viewController.hidesBottomBarWhenPushed = true;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
     
 }
 
