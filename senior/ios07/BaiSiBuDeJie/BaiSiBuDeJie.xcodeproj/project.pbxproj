@@ -352,6 +352,7 @@
 		188F3F79241E2F650095059C /* XTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3F78241E2F650095059C /* XTabBarController.m */; };
 		18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */; };
 		18946A542423B85600CD14DD /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A532423B85600CD14DD /* RecommendViewController.m */; };
+		18946A5724250E3500CD14DD /* XNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A5624250E3500CD14DD /* XNavController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -711,6 +712,8 @@
 		18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+X.m"; sourceTree = "<group>"; };
 		18946A522423B85600CD14DD /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		18946A532423B85600CD14DD /* RecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		18946A5524250E3500CD14DD /* XNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNavController.h; sourceTree = "<group>"; };
+		18946A5624250E3500CD14DD /* XNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNavController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -729,6 +732,8 @@
 			children = (
 				188F3F77241E2F650095059C /* XTabBarController.h */,
 				188F3F78241E2F650095059C /* XTabBarController.m */,
+				18946A5524250E3500CD14DD /* XNavController.h */,
+				18946A5624250E3500CD14DD /* XNavController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1692,6 +1697,7 @@
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
 				18946A542423B85600CD14DD /* RecommendViewController.m in Sources */,
 				18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */,
+				18946A5724250E3500CD14DD /* XNavController.m in Sources */,
 				18645E30241FC83B00BF4D48 /* XUITabBar.m in Sources */,
 				188F3CA5241DE5DB0095059C /* AppDelegate.m in Sources */,
 				188F3F79241E2F650095059C /* XTabBarController.m in Sources */,

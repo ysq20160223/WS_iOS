@@ -36,7 +36,6 @@
 //    NSLog(@"btn: %@", btn);
     
     RecommendViewController *viewController = [[RecommendViewController alloc] init];
-    viewController.hidesBottomBarWhenPushed = true;
     
     [self.navigationController pushViewController:viewController animated:YES];
     

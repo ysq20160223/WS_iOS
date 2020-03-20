@@ -19,9 +19,12 @@
 @implementation XUITabBar
 
 - (void)setupTabBarItem {
-    //    self.tabBar.barTintColor = [UIColor magentaColor]; // 包括全面屏底部安全区域
-    //        self.tabBar.tintColor = [UIColor cyanColor];
-    //        self.tabBar.unselectedItemTintColor = [UIColor orangeColor];
+    
+    // 包括全面屏底部安全区域(当 UITabBar 设置过 backgroundImage 后无效)
+//    self.barTintColor = [UIColor magentaColor];
+    
+//    self.tintColor = [UIColor cyanColor];
+//    self.unselectedItemTintColor = [UIColor orangeColor];
     self.tintColor = XColor(81, 81, 81);
     self.unselectedItemTintColor = XColor(139, 132, 129);
     
@@ -39,12 +42,12 @@
 // 布局子控件
 - (void)layoutSubviews {
     [super layoutSubviews];
-//    XLog
+    //    XLog
     
     CGFloat btnW = self.frame.size.width / 3;
     CGFloat btnH = self.frame.size.height;
     int btnIndex = 0;
-//    NSLog(@"w: %f; h: %f", self.frame.size.width, self.frame.size.height);
+    //    NSLog(@"w: %f; h: %f", self.frame.size.width, self.frame.size.height);
     
     // NSClassFromString(@"UITabBarButton") == [UITabBarButton class]
     for (UIView *subView in self.subviews) {
@@ -74,7 +77,7 @@
 #pragma mark init
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-//        self.backgroundImage = [UIImage imageNamed:@"tabbar-light"];
+                self.backgroundImage = [UIImage imageNamed:@"tabbar-light"];
     }
     return self;
 }
@@ -113,3 +116,5 @@
  */
 
 @end
+
+
