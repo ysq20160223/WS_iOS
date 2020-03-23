@@ -1,8 +1,8 @@
 //
-//  MeNavController.h
+//  LoginRegisterTextField.h
 //  BaiSiBuDeJie
 //
-//  Created by Apple on 2020/3/17.
+//  Created by Apple on 2020/3/23.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MeViewController : UITableViewController
+@interface LoginRegisterTextField : UITextField
 
 @end
 

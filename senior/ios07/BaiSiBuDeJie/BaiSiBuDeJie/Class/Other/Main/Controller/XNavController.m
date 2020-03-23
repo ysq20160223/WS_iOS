@@ -34,13 +34,13 @@
         UIButton *backBtn = [[UIButton alloc] init];
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
-        [backBtn setTitle:@"Back" forState:UIControlStateNormal];
-        [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [backBtn setTitleColor:XColor(237, 77, 61) forState:UIControlStateHighlighted];
+//        [backBtn setTitle:@"Back" forState:UIControlStateNormal];
+//        [backBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [backBtn setTitleColor:XColor(237, 77, 61) forState:UIControlStateHighlighted];
         [backBtn sizeToFit];
         
         
-        backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
+//        backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
         [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
@@ -59,6 +59,11 @@
 #pragma mark -
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return self.childViewControllers.count > 1;
+}
+
+#pragma mark -
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDarkContent;
 }
 
 @end

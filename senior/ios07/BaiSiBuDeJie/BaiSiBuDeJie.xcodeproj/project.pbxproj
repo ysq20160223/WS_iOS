@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18645E30241FC83B00BF4D48 /* XUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E2F241FC83B00BF4D48 /* XUITabBar.m */; };
+		183CFDCE24275FCE00DF5978 /* HorizontalBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CFDCD24275FCE00DF5978 /* HorizontalBtn.m */; };
+		18446FB62429052500CEC10A /* LoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18446FB52429052500CEC10A /* LoginRegisterTextField.m */; };
 		18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E432421172A00BF4D48 /* EssenceViewController.m */; };
 		18645E4D242117AD00BF4D48 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E4C242117AD00BF4D48 /* MeViewController.m */; };
 		188F3C82241BDE860095059C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F3C81241BDE860095059C /* Assets.xcassets */; };
@@ -349,15 +350,21 @@
 		188F3F74241DF9CF0095059C /* friendsTrend_login_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E15241DF9CE0095059C /* friendsTrend_login_click@2x.png */; };
 		188F3F75241DF9CF0095059C /* friendsTrend_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E16241DF9CE0095059C /* friendsTrend_login@2x.png */; };
 		188F3F76241DF9CF0095059C /* header_cry_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E17241DF9CE0095059C /* header_cry_icon@2x.png */; };
-		188F3F79241E2F650095059C /* XTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3F78241E2F650095059C /* XTabBarController.m */; };
 		18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */; };
 		18946A542423B85600CD14DD /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A532423B85600CD14DD /* RecommendViewController.m */; };
-		18946A5724250E3500CD14DD /* XNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A5624250E3500CD14DD /* XNavController.m */; };
+		18984F4F24273D3400D49217 /* XNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F4824273D3400D49217 /* XNavController.m */; };
+		18984F5024273D3400D49217 /* XTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F4B24273D3400D49217 /* XTabBarController.m */; };
+		18984F5124273D3400D49217 /* XUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F4E24273D3400D49217 /* XUITabBar.m */; };
+		18984F5424273DA900D49217 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F5224273DA800D49217 /* UIView+X.m */; };
+		18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F5724273F4D00D49217 /* LoginRegisterController.m */; };
+		18984F5B24273F4D00D49217 /* LoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18984F5824273F4D00D49217 /* LoginRegisterController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18645E2E241FC83B00BF4D48 /* XUITabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XUITabBar.h; sourceTree = "<group>"; };
-		18645E2F241FC83B00BF4D48 /* XUITabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XUITabBar.m; sourceTree = "<group>"; };
+		183CFDCC24275FCE00DF5978 /* HorizontalBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalBtn.h; sourceTree = "<group>"; };
+		183CFDCD24275FCE00DF5978 /* HorizontalBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalBtn.m; sourceTree = "<group>"; };
+		18446FB42429052500CEC10A /* LoginRegisterTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRegisterTextField.h; sourceTree = "<group>"; };
+		18446FB52429052500CEC10A /* LoginRegisterTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterTextField.m; sourceTree = "<group>"; };
 		18645E422421172A00BF4D48 /* EssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssenceViewController.h; sourceTree = "<group>"; };
 		18645E432421172A00BF4D48 /* EssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EssenceViewController.m; sourceTree = "<group>"; };
 		18645E4B242117AD00BF4D48 /* MeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -706,14 +713,21 @@
 		188F3E15241DF9CE0095059C /* friendsTrend_login_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsTrend_login_click@2x.png"; sourceTree = "<group>"; };
 		188F3E16241DF9CE0095059C /* friendsTrend_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsTrend_login@2x.png"; sourceTree = "<group>"; };
 		188F3E17241DF9CE0095059C /* header_cry_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_cry_icon@2x.png"; sourceTree = "<group>"; };
-		188F3F77241E2F650095059C /* XTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTabBarController.h; sourceTree = "<group>"; };
-		188F3F78241E2F650095059C /* XTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTabBarController.m; sourceTree = "<group>"; };
 		18946A4F2423A7A800CD14DD /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+X.h"; sourceTree = "<group>"; };
 		18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+X.m"; sourceTree = "<group>"; };
 		18946A522423B85600CD14DD /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		18946A532423B85600CD14DD /* RecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
-		18946A5524250E3500CD14DD /* XNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNavController.h; sourceTree = "<group>"; };
-		18946A5624250E3500CD14DD /* XNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNavController.m; sourceTree = "<group>"; };
+		18984F4824273D3400D49217 /* XNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavController.m; sourceTree = "<group>"; };
+		18984F4924273D3400D49217 /* XTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTabBarController.h; sourceTree = "<group>"; };
+		18984F4A24273D3400D49217 /* XNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavController.h; sourceTree = "<group>"; };
+		18984F4B24273D3400D49217 /* XTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTabBarController.m; sourceTree = "<group>"; };
+		18984F4D24273D3400D49217 /* XUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUITabBar.h; sourceTree = "<group>"; };
+		18984F4E24273D3400D49217 /* XUITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUITabBar.m; sourceTree = "<group>"; };
+		18984F5224273DA800D49217 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
+		18984F5324273DA900D49217 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
+		18984F5724273F4D00D49217 /* LoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterController.m; sourceTree = "<group>"; };
+		18984F5824273F4D00D49217 /* LoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginRegisterController.xib; sourceTree = "<group>"; };
+		18984F5924273F4D00D49217 /* LoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRegisterController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -727,22 +741,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18645E2C241FC7E300BF4D48 /* Controller */ = {
+		183CFDCB24275F9200DF5978 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				188F3F77241E2F650095059C /* XTabBarController.h */,
-				188F3F78241E2F650095059C /* XTabBarController.m */,
-				18946A5524250E3500CD14DD /* XNavController.h */,
-				18946A5624250E3500CD14DD /* XNavController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		18645E2D241FC7E300BF4D48 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				18645E2E241FC83B00BF4D48 /* XUITabBar.h */,
-				18645E2F241FC83B00BF4D48 /* XUITabBar.m */,
+				183CFDCC24275FCE00DF5978 /* HorizontalBtn.h */,
+				183CFDCD24275FCE00DF5978 /* HorizontalBtn.m */,
+				18446FB42429052500CEC10A /* LoginRegisterTextField.h */,
+				18446FB52429052500CEC10A /* LoginRegisterTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -802,7 +807,6 @@
 				188F3C9C241DE4DF0095059C /* Essence(精华) */,
 				188F3C9B241DE4DF0095059C /* Me(我的) */,
 				188F3C9D241DE4DF0095059C /* Other */,
-				188F3CA0241DE4DF0095059C /* Main */,
 				188F3CA8241DF2EB0095059C /* Category */,
 			);
 			path = Class;
@@ -827,6 +831,8 @@
 		188F3C9D241DE4DF0095059C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				18984F5524273F4D00D49217 /* RegisterLogin */,
+				18984F4624273D3400D49217 /* Main */,
 				188F3CA1241DE5DB0095059C /* AppDelegate.h */,
 				188F3CA2241DE5DB0095059C /* AppDelegate.m */,
 				188F3CA4241DE5DB0095059C /* SceneDelegate.h */,
@@ -835,18 +841,11 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		188F3CA0241DE4DF0095059C /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				18645E2C241FC7E300BF4D48 /* Controller */,
-				18645E2D241FC7E300BF4D48 /* View */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		188F3CA8241DF2EB0095059C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				18984F5324273DA900D49217 /* UIView+X.h */,
+				18984F5224273DA800D49217 /* UIView+X.m */,
 				188F3CAA241DF2EB0095059C /* UIImage+X.h */,
 				188F3CA9241DF2EB0095059C /* UIImage+X.m */,
 				18946A4F2423A7A800CD14DD /* UIBarButtonItem+X.h */,
@@ -1040,33 +1039,34 @@
 			isa = PBXGroup;
 			children = (
 				188F3D43241DF9CE0095059C /* login_tecent_icon.png */,
+				188F3D4F241DF9CE0095059C /* login_tecent_icon@2x.png */,
+				188F3D4A241DF9CE0095059C /* login_tecent_icon@3x.png */,
+				188F3D46241DF9CE0095059C /* login_tecent_icon_click.png */,
+				188F3D5B241DF9CE0095059C /* login_tecent_icon_click@2x.png */,
+				188F3D58241DF9CE0095059C /* login_tecent_icon_click@3x.png */,
 				188F3D44241DF9CE0095059C /* login_rgister_textfield_bg@2x.png */,
 				188F3D45241DF9CE0095059C /* login_register_background@3x.png */,
-				188F3D46241DF9CE0095059C /* login_tecent_icon_click.png */,
 				188F3D47241DF9CE0095059C /* login_register_background@2x.png */,
 				188F3D48241DF9CE0095059C /* loginBtnBgClick@2x.png */,
 				188F3D49241DF9CE0095059C /* login_rgister_textfield_bg@3x.png */,
-				188F3D4A241DF9CE0095059C /* login_tecent_icon@3x.png */,
 				188F3D4B241DF9CE0095059C /* loginBtnBgClick.png */,
-				188F3D4C241DF9CE0095059C /* login_sina_icon.png */,
 				188F3D4D241DF9CE0095059C /* login_register_right_line.png */,
 				188F3D4E241DF9CE0095059C /* login_register_button_click.png */,
-				188F3D4F241DF9CE0095059C /* login_tecent_icon@2x.png */,
-				188F3D50241DF9CE0095059C /* login_QQ_icon.png */,
-				188F3D51241DF9CE0095059C /* login_close_icon.png */,
-				188F3D52241DF9CE0095059C /* login_register_right_line@3x.png */,
-				188F3D53241DF9CE0095059C /* login_QQ_icon_click.png */,
-				188F3D54241DF9CE0095059C /* login_sina_icon_click@3x.png */,
-				188F3D55241DF9CE0095059C /* login_register_button.png */,
-				188F3D56241DF9CE0095059C /* login_QQ_icon@3x.png */,
-				188F3D57241DF9CE0095059C /* login_QQ_icon_click@3x.png */,
-				188F3D58241DF9CE0095059C /* login_tecent_icon_click@3x.png */,
+				188F3D4C241DF9CE0095059C /* login_sina_icon.png */,
 				188F3D59241DF9CE0095059C /* login_sina_icon@2x.png */,
 				188F3D5A241DF9CE0095059C /* login_sina_icon@3x.png */,
-				188F3D5B241DF9CE0095059C /* login_tecent_icon_click@2x.png */,
-				188F3D5C241DF9CE0095059C /* login_QQ_icon_click@2x.png */,
-				188F3D5D241DF9CE0095059C /* login_QQ_icon@2x.png */,
+				188F3D69241DF9CE0095059C /* login_sina_icon_click.png */,
 				188F3D5E241DF9CE0095059C /* login_sina_icon_click@2x.png */,
+				188F3D54241DF9CE0095059C /* login_sina_icon_click@3x.png */,
+				188F3D50241DF9CE0095059C /* login_QQ_icon.png */,
+				188F3D5D241DF9CE0095059C /* login_QQ_icon@2x.png */,
+				188F3D56241DF9CE0095059C /* login_QQ_icon@3x.png */,
+				188F3D53241DF9CE0095059C /* login_QQ_icon_click.png */,
+				188F3D5C241DF9CE0095059C /* login_QQ_icon_click@2x.png */,
+				188F3D57241DF9CE0095059C /* login_QQ_icon_click@3x.png */,
+				188F3D51241DF9CE0095059C /* login_close_icon.png */,
+				188F3D52241DF9CE0095059C /* login_register_right_line@3x.png */,
+				188F3D55241DF9CE0095059C /* login_register_button.png */,
 				188F3D5F241DF9CE0095059C /* login_register_right_line@2x.png */,
 				188F3D60241DF9CE0095059C /* login_register_background.png */,
 				188F3D61241DF9CE0095059C /* loginBtnBg.png */,
@@ -1077,7 +1077,6 @@
 				188F3D66241DF9CE0095059C /* login_register_left_line@2x.png */,
 				188F3D67241DF9CE0095059C /* login_rgister_textfield_bg.png */,
 				188F3D68241DF9CE0095059C /* loginBtnBg@2x.png */,
-				188F3D69241DF9CE0095059C /* login_sina_icon_click.png */,
 			);
 			path = LoginRegister;
 			sourceTree = "<group>";
@@ -1290,6 +1289,54 @@
 				188F3E17241DF9CE0095059C /* header_cry_icon@2x.png */,
 			);
 			path = FriendTrends;
+			sourceTree = "<group>";
+		};
+		18984F4624273D3400D49217 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18984F4724273D3400D49217 /* Controller */,
+				18984F4C24273D3400D49217 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		18984F4724273D3400D49217 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18984F4824273D3400D49217 /* XNavController.m */,
+				18984F4924273D3400D49217 /* XTabBarController.h */,
+				18984F4A24273D3400D49217 /* XNavController.h */,
+				18984F4B24273D3400D49217 /* XTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18984F4C24273D3400D49217 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18984F4D24273D3400D49217 /* XUITabBar.h */,
+				18984F4E24273D3400D49217 /* XUITabBar.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18984F5524273F4D00D49217 /* RegisterLogin */ = {
+			isa = PBXGroup;
+			children = (
+				183CFDCB24275F9200DF5978 /* View */,
+				18984F5624273F4D00D49217 /* Controller */,
+			);
+			path = RegisterLogin;
+			sourceTree = "<group>";
+		};
+		18984F5624273F4D00D49217 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18984F5924273F4D00D49217 /* LoginRegisterController.h */,
+				18984F5724273F4D00D49217 /* LoginRegisterController.m */,
+				18984F5824273F4D00D49217 /* LoginRegisterController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1523,6 +1570,7 @@
 				188F3E4E241DF9CE0095059C /* comment-bar-record-click.png in Resources */,
 				188F3E1B241DF9CE0095059C /* chose_tag_close_icon@2x.png in Resources */,
 				188F3EB9241DF9CE0095059C /* login_sina_icon_click@3x.png in Resources */,
+				18984F5B24273F4D00D49217 /* LoginRegisterController.xib in Resources */,
 				188F3EBB241DF9CE0095059C /* login_QQ_icon@3x.png in Resources */,
 				188F3F75241DF9CF0095059C /* friendsTrend_login@2x.png in Resources */,
 				188F3EFD241DF9CE0095059C /* mainCellDingClick.png in Resources */,
@@ -1694,17 +1742,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183CFDCE24275FCE00DF5978 /* HorizontalBtn.m in Sources */,
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
 				18946A542423B85600CD14DD /* RecommendViewController.m in Sources */,
+				18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */,
 				18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */,
-				18946A5724250E3500CD14DD /* XNavController.m in Sources */,
-				18645E30241FC83B00BF4D48 /* XUITabBar.m in Sources */,
+				18984F4F24273D3400D49217 /* XNavController.m in Sources */,
 				188F3CA5241DE5DB0095059C /* AppDelegate.m in Sources */,
-				188F3F79241E2F650095059C /* XTabBarController.m in Sources */,
 				188F3CA6241DE5DB0095059C /* SceneDelegate.m in Sources */,
+				18446FB62429052500CEC10A /* LoginRegisterTextField.m in Sources */,
 				188F3CAB241DF2EB0095059C /* UIImage+X.m in Sources */,
 				188F3C88241BDE860095059C /* main.m in Sources */,
+				18984F5024273D3400D49217 /* XTabBarController.m in Sources */,
 				18645E4D242117AD00BF4D48 /* MeViewController.m in Sources */,
+				18984F5124273D3400D49217 /* XUITabBar.m in Sources */,
+				18984F5424273DA900D49217 /* UIView+X.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
