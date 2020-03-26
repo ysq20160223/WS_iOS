@@ -65,8 +65,15 @@
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input Telephone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xdw-Pj-BAk" userLabel="UserName" customClass="LoginRegisterTextField">
                             <rect key="frame" x="86.5" y="16" width="242" height="46"/>
                             <color key="tintColor" red="0.7421253324" green="0.097665049140000001" blue="0.50981658699999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="reY-Uw-3dg" userLabel="pwd" customClass="LoginRegisterTextField">
+                            <rect key="frame" x="86.5" y="70" width="242" height="34"/>
+                            <color key="tintColor" red="0.7421253324" green="0.097665049140000001" blue="0.50981658699999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2J-5G-tmf" userLabel="Login">
                             <rect key="frame" x="74.5" y="128" width="266" height="40"/>
@@ -91,12 +98,6 @@
                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Input Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="reY-Uw-3dg" userLabel="pwd" customClass="LoginRegisterTextField">
-                            <rect key="frame" x="86.5" y="70" width="242" height="34"/>
-                            <color key="tintColor" red="0.7421253324" green="0.097665049140000001" blue="0.50981658699999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                        </textField>
                     </subviews>
                     <constraints>
                         <constraint firstItem="pfn-J2-WRA" firstAttribute="top" secondItem="X2J-5G-tmf" secondAttribute="bottom" constant="30" id="81G-Tg-b2P"/>
@@ -151,7 +152,7 @@
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="10"/>
                                 </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskerToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskerToBounds" value="NO"/>
                             </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>

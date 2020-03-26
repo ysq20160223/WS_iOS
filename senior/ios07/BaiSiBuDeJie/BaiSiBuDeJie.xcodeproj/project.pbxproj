@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		183CFDCE24275FCE00DF5978 /* HorizontalBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CFDCD24275FCE00DF5978 /* HorizontalBtn.m */; };
+		1842B376242CEE9000652A62 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B375242CEE9000652A62 /* UITextField+X.m */; };
 		18446FB62429052500CEC10A /* LoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18446FB52429052500CEC10A /* LoginRegisterTextField.m */; };
 		18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E432421172A00BF4D48 /* EssenceViewController.m */; };
 		18645E4D242117AD00BF4D48 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E4C242117AD00BF4D48 /* MeViewController.m */; };
@@ -363,6 +364,8 @@
 /* Begin PBXFileReference section */
 		183CFDCC24275FCE00DF5978 /* HorizontalBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalBtn.h; sourceTree = "<group>"; };
 		183CFDCD24275FCE00DF5978 /* HorizontalBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalBtn.m; sourceTree = "<group>"; };
+		1842B374242CEE9000652A62 /* UITextField+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+X.h"; sourceTree = "<group>"; };
+		1842B375242CEE9000652A62 /* UITextField+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+X.m"; sourceTree = "<group>"; };
 		18446FB42429052500CEC10A /* LoginRegisterTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRegisterTextField.h; sourceTree = "<group>"; };
 		18446FB52429052500CEC10A /* LoginRegisterTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterTextField.m; sourceTree = "<group>"; };
 		18645E422421172A00BF4D48 /* EssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssenceViewController.h; sourceTree = "<group>"; };
@@ -850,6 +853,8 @@
 				188F3CA9241DF2EB0095059C /* UIImage+X.m */,
 				18946A4F2423A7A800CD14DD /* UIBarButtonItem+X.h */,
 				18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */,
+				1842B374242CEE9000652A62 /* UITextField+X.h */,
+				1842B375242CEE9000652A62 /* UITextField+X.m */,
 			);
 			name = Category;
 			path = BaiSiBuDeJie/Class/Category;
@@ -1746,6 +1751,7 @@
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
 				18946A542423B85600CD14DD /* RecommendViewController.m in Sources */,
 				18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */,
+				1842B376242CEE9000652A62 /* UITextField+X.m in Sources */,
 				18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */,
 				18984F4F24273D3400D49217 /* XNavController.m in Sources */,
 				188F3CA5241DE5DB0095059C /* AppDelegate.m in Sources */,
