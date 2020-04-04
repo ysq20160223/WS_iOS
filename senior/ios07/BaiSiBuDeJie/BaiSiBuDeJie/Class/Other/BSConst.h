@@ -1,16 +1,16 @@
 //
-//  HorizontalBtn.h
+//  BSConst.h
 //  BaiSiBuDeJie
 //
-//  Created by Apple on 2020/3/22.
+//  Created by Apple on 2020/3/28.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HorizontalBtn : UIButton
+@interface BSConst : NSObject
 
 @end
 

@@ -6,10 +6,10 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import "HorizontalBtn.h"
+#import "VerticalBtn.h"
 #import "UIView+X.h"
 
-@implementation HorizontalBtn
+@implementation VerticalBtn
 
 - (void)awakeFromNib {
     [super awakeFromNib];
