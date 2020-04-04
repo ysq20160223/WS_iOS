@@ -6,8 +6,11 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import "BSConst.h"
+#import <UIKit/UIKit.h>
 
-@implementation BSConst
+CGFloat const BSMarginLeft = 16;
+CGFloat const BSMargin = 10;
 
-@end
+
+// URL
+NSString *const meFooterUrl = @"http://api.budejie.com/api/api_open.php";

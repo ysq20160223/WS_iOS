@@ -10,6 +10,10 @@
 #import "UIBarButtonItem+X.h"
 
 #import "LoginRegisterController.h"
+#import "MeTableViewCell.h"
+#import "UIView+X.h"
+#import "MeFooterView.h"
+#import "SVProgressHUD.h"
 
 @interface MeViewController ()
 
@@ -25,10 +29,55 @@
     
     [self setupNaviationBar];
     
+    [self setupTableView];
+    
+//    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    
+//    [SVProgressHUD show];
+//    [SVProgressHUD dismissWithDelay:1 completion:^{
+//        XLog
+//    }];
+    
+    MeFooterView *footView = [[MeFooterView alloc] init];
+    self.tableView.tableFooterView = footView;
+    
+    
+//    NSLog(@"%@", NSHomeDirectory());
+    
+    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+//    NSLog(@"%@", cachePath);
+    
+    NSString *aaaPath = [cachePath stringByAppendingPathComponent:@"aaa"];
+    
+    NSFileManager *mgr = [NSFileManager defaultManager];
+//    NSDictionary *dict = [mgr attributesOfItemAtPath:aaaPath error:nil];
+//    NSLog(@"%@", dict);
+    
+//    [mgr contentsOfDirectoryAtPath:aaaPath error:nil];
+    NSArray *subpaths = [mgr subpathsAtPath:aaaPath];
+    NSLog(@"%@", subpaths);
+    
+    int sumSize = 0;
+    
+    for (int i = 0; i < subpaths.count; i++) {
+        NSString *subPath = subpaths[i];
+        NSString *fullSubPath = [aaaPath stringByAppendingPathComponent:subPath];
+        NSDictionary *attr = [mgr attributesOfItemAtPath:fullSubPath error:nil];
+        sumSize += attr.fileSize;
+        NSLog(@"i: %d; fullSubPath: %@; fileSize: %lld", i, fullSubPath, attr.fileSize);
+    }
+    NSLog(@"sumSize: %d", sumSize); // 35428
 }
 
 - (instancetype)init {
     return [super initWithStyle:UITableViewStyleGrouped];
+}
+
+- (void)setupTableView {
+    self.tableView.sectionHeaderHeight = 0;
+    self.tableView.sectionFooterHeight = 10;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
 }
 
 - (void)setupNaviationBar {
@@ -60,7 +109,7 @@
 
 #pragma mark - UITableViewDataSource start
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -70,9 +119,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *ID = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    MeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[MeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
 //    cell.backgroundColor = [UIColor clearColor];
     
@@ -87,12 +136,24 @@
             cell.imageView.image = nil;
             break;
             
+        case 2:
+            cell.textLabel.text = @"Clear Cache";
+            cell.imageView.image = nil;
+            break;
+            
         default:
             break;
     }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (3 == indexPath.section) {
+        return 100;
+    } else {
+        return 44;
+    }
 }
 
 #pragma mark - UITableViewDataSource end

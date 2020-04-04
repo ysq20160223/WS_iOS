@@ -6,12 +6,14 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@interface MeFooterSquareModel : NSObject
 
-@interface MeFooterSquareModel : UIView
+@property (nonatomic, strong) NSString *icon;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *url;
 
 @end
 
-NS_ASSUME_NONNULL_END
+

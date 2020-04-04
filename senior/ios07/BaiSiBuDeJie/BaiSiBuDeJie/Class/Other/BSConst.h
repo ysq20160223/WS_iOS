@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+UIKIT_EXTERN CGFloat const BSMarginLeft;
+UIKIT_EXTERN CGFloat const BSMargin;
 
-@interface BSConst : NSObject
 
-@end
+// URL
+UIKIT_EXTERN NSString *const meFooterUrl;
 
-NS_ASSUME_NONNULL_END

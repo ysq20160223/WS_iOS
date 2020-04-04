@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "MeFooterSquareModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MeFooterSquareBtn : UIButton
+
+@property (nonatomic, strong) MeFooterSquareModel *squareModel;
 
 @end
 

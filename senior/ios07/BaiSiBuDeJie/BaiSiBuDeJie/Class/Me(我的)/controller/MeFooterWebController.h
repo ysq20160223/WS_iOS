@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+#import <WebKit/WebKit.h>
 
 @interface MeFooterWebController : UIViewController
 
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
+
+@property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *name;
+
 @end
 
-NS_ASSUME_NONNULL_END
