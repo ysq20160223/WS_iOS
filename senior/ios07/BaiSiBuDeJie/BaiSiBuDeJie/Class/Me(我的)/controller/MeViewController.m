@@ -13,15 +13,20 @@
 #import "MeTableViewCell.h"
 #import "UIView+X.h"
 #import "MeFooterView.h"
-#import "SVProgressHUD.h"
+
+#import "MeClearCacheCell.h"
 
 @interface MeViewController ()
+
 
 @end
 
 
 
 @implementation MeViewController
+
+static NSString *const BSClearCellId = @"BSClearCellId";
+static NSString *const BSSettingCellId = @"BSSettingCellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,42 +36,11 @@
     
     [self setupTableView];
     
-//    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-    
-//    [SVProgressHUD show];
-//    [SVProgressHUD dismissWithDelay:1 completion:^{
-//        XLog
-//    }];
-    
     MeFooterView *footView = [[MeFooterView alloc] init];
     self.tableView.tableFooterView = footView;
-    
-    
-//    NSLog(@"%@", NSHomeDirectory());
-    
-    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
-//    NSLog(@"%@", cachePath);
-    
-    NSString *aaaPath = [cachePath stringByAppendingPathComponent:@"aaa"];
-    
-    NSFileManager *mgr = [NSFileManager defaultManager];
-//    NSDictionary *dict = [mgr attributesOfItemAtPath:aaaPath error:nil];
-//    NSLog(@"%@", dict);
-    
-//    [mgr contentsOfDirectoryAtPath:aaaPath error:nil];
-    NSArray *subpaths = [mgr subpathsAtPath:aaaPath];
-    NSLog(@"%@", subpaths);
-    
-    int sumSize = 0;
-    
-    for (int i = 0; i < subpaths.count; i++) {
-        NSString *subPath = subpaths[i];
-        NSString *fullSubPath = [aaaPath stringByAppendingPathComponent:subPath];
-        NSDictionary *attr = [mgr attributesOfItemAtPath:fullSubPath error:nil];
-        sumSize += attr.fileSize;
-        NSLog(@"i: %d; fullSubPath: %@; fileSize: %lld", i, fullSubPath, attr.fileSize);
-    }
-    NSLog(@"sumSize: %d", sumSize); // 35428
+
+    [self.tableView registerClass:[MeClearCacheCell class] forCellReuseIdentifier:BSClearCellId];
+    [self.tableView registerClass:[MeTableViewCell class] forCellReuseIdentifier:BSSettingCellId];
 }
 
 - (instancetype)init {
@@ -82,8 +56,8 @@
 
 - (void)setupNaviationBar {
     XLog
-//    self.view.backgroundColor = XColor(0xff, 0x88, 0x00);
-//    self.view.backgroundColor = XColor(0xff, 0xff, 0xff);
+    //    self.view.backgroundColor = XColor(0xff, 0x88, 0x00);
+    //    self.view.backgroundColor = XColor(0xff, 0xff, 0xff);
     self.navigationItem.title = @"me";
     
     // 设置颜色
@@ -117,35 +91,26 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *ID = @"cell";
-    
-    MeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (nil == cell) {
-        cell = [[MeTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
+    if (2 == indexPath.section) {
+        return [tableView dequeueReusableCellWithIdentifier:BSClearCellId];
+    } else {
+        MeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BSSettingCellId];
 //    cell.backgroundColor = [UIColor clearColor];
-    
-    switch (indexPath.section) {
-        case 0:
-            cell.textLabel.text = @"Login";
-            cell.imageView.image = [UIImage imageNamed:@"setup-head-default"];
-            break;
-            
-        case 1:
-            cell.textLabel.text = @"Version Check";
-            cell.imageView.image = nil;
-            break;
-            
-        case 2:
-            cell.textLabel.text = @"Clear Cache";
-            cell.imageView.image = nil;
-            break;
-            
-        default:
-            break;
+        
+        switch (indexPath.section) {
+            case 0:
+                cell.textLabel.text = @"Login";
+                cell.imageView.image = [UIImage imageNamed:@"setup-head-default"];
+                break;
+                
+            case 1:
+                cell.textLabel.text = @"Version Check";
+                cell.imageView.image = nil;
+                break;
+        }
+        
+        return cell;
     }
-    
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -165,9 +130,13 @@
     switch (indexPath.section) {
         case 0:
             [self presentViewController:[[LoginRegisterController alloc] init] animated:YES completion:^{
-//                XLog
+                //                XLog
                 
             }];
+            break;
+            
+        case 1:
+            
             break;
             
         default:

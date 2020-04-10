@@ -9,10 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define BSMainColor XColor(212, 47, 70)
+
+#define kTitleViewH 44
+
 UIKIT_EXTERN CGFloat const BSMarginLeft;
 UIKIT_EXTERN CGFloat const BSMargin;
 
 
 // URL
 UIKIT_EXTERN NSString *const meFooterUrl;
+
 

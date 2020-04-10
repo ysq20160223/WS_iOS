@@ -18,9 +18,10 @@
 
 #import "MJExtension.h"
 #import "MeFooterSquareBtn.h"
-#import "SVProgressHUD.h"
 
 #import "MeFooterWebController.h"
+
+#import "MBProgressHUD.h"
 
 @implementation MeFooterView
 
@@ -28,22 +29,34 @@
     if (self = [super initWithFrame:frame]) {
 //        self.backgroundColor = [UIColor magentaColor];
         
+        
+        __weak typeof(self) weakSelf = self;
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+        [hud showAnimated:YES];
+        
         NSMutableDictionary *paraDict = [NSMutableDictionary dictionary];
         paraDict[@"a"] = @"square";
         paraDict[@"c"] = @"topic";
         
-        [[AFHTTPSessionManager manager] GET:meFooterUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//            NSLog(@"responseObject: %@", responseObject);
-            
-            NSArray *squareArray = [MeFooterSquareModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
-            [self createSquare:squareArray];
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            NSLog(@"error: %@", error);
-        }];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[AFHTTPSessionManager manager] GET:meFooterUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+                
+            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [hud hideAnimated:YES];
+                NSArray *squareArray = [MeFooterSquareModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
+                [weakSelf createSquare:squareArray];
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [hud hideAnimated:YES];
+                NSLog(@"error: %@", error);
+            }];
+        });
     }
     return self;
+}
+
+- (void)dealloc {
+    XLog
 }
 
 - (void)createSquare:(NSArray *)array {
@@ -87,7 +100,6 @@
 
 - (void)btnClick:(MeFooterSquareBtn *)btn {
     NSLog(@"%@", btn.squareModel);
-//    [SVProgressHUD show];
     
     MeFooterSquareModel *model = btn.squareModel;
     NSString *url = model.url;

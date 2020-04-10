@@ -399,11 +399,14 @@
 		18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F5724273F4D00D49217 /* LoginRegisterController.m */; };
 		18984F5B24273F4D00D49217 /* LoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18984F5824273F4D00D49217 /* LoginRegisterController.xib */; };
 		18F4E3A62430E07300865FA4 /* MeFooterSquareBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4E3A52430E07300865FA4 /* MeFooterSquareBtn.m */; };
-		18F4E3C22430F5A300865FA4 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4E3B82430F5A300865FA4 /* SVRadialGradientLayer.m */; };
-		18F4E3C32430F5A300865FA4 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4E3BB2430F5A300865FA4 /* SVProgressAnimatedView.m */; };
-		18F4E3C42430F5A300865FA4 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4E3BE2430F5A300865FA4 /* SVProgressHUD.m */; };
-		18F4E3C52430F5A300865FA4 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4E3BF2430F5A300865FA4 /* SVIndefiniteAnimatedView.m */; };
-		18F4E3C62430F5A300865FA4 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18F4E3C02430F5A300865FA4 /* SVProgressHUD.bundle */; };
+		18F785592438D98300F17665 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785582438D98300F17665 /* NSString+X.m */; };
+		18F785962439877100F17665 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785952439877100F17665 /* MBProgressHUD.m */; };
+		18F785992439FF3B00F17665 /* MeClearCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785982439FF3B00F17665 /* MeClearCacheCell.m */; };
+		18FD21D7243E07BA0026ECA6 /* AllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21D6243E07BA0026ECA6 /* AllViewController.m */; };
+		18FD21DA243E07D50026ECA6 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21D9243E07D50026ECA6 /* VideoViewController.m */; };
+		18FD21DD243E07EA0026ECA6 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21DC243E07EA0026ECA6 /* AudioViewController.m */; };
+		18FD21E0243E08000026ECA6 /* PicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21DF243E08000026ECA6 /* PicViewController.m */; };
+		18FD21E3243E08110026ECA6 /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21E2243E08110026ECA6 /* WordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -858,16 +861,22 @@
 		18984F5924273F4D00D49217 /* LoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRegisterController.h; sourceTree = "<group>"; };
 		18F4E3A42430E07300865FA4 /* MeFooterSquareBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeFooterSquareBtn.h; sourceTree = "<group>"; };
 		18F4E3A52430E07300865FA4 /* MeFooterSquareBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeFooterSquareBtn.m; sourceTree = "<group>"; };
-		18F4E3B82430F5A300865FA4 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		18F4E3B92430F5A300865FA4 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		18F4E3BA2430F5A300865FA4 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		18F4E3BB2430F5A300865FA4 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		18F4E3BC2430F5A300865FA4 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		18F4E3BD2430F5A300865FA4 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		18F4E3BE2430F5A300865FA4 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		18F4E3BF2430F5A300865FA4 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		18F4E3C02430F5A300865FA4 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		18F4E3C12430F5A300865FA4 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		18F785572438D98300F17665 /* NSString+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
+		18F785582438D98300F17665 /* NSString+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
+		18F785942439877000F17665 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		18F785952439877100F17665 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		18F785972439FF3B00F17665 /* MeClearCacheCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeClearCacheCell.h; sourceTree = "<group>"; };
+		18F785982439FF3B00F17665 /* MeClearCacheCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeClearCacheCell.m; sourceTree = "<group>"; };
+		18FD21D5243E07BA0026ECA6 /* AllViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllViewController.h; sourceTree = "<group>"; };
+		18FD21D6243E07BA0026ECA6 /* AllViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllViewController.m; sourceTree = "<group>"; };
+		18FD21D8243E07D50026ECA6 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		18FD21D9243E07D50026ECA6 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		18FD21DB243E07EA0026ECA6 /* AudioViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
+		18FD21DC243E07EA0026ECA6 /* AudioViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
+		18FD21DE243E08000026ECA6 /* PicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PicViewController.h; sourceTree = "<group>"; };
+		18FD21DF243E08000026ECA6 /* PicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicViewController.m; sourceTree = "<group>"; };
+		18FD21E1243E08110026ECA6 /* WordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
+		18FD21E2243E08110026ECA6 /* WordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -910,6 +919,8 @@
 				1842B37F2430466F00652A62 /* MeFooterView.m */,
 				18F4E3A42430E07300865FA4 /* MeFooterSquareBtn.h */,
 				18F4E3A52430E07300865FA4 /* MeFooterSquareBtn.m */,
+				18F785972439FF3B00F17665 /* MeClearCacheCell.h */,
+				18F785982439FF3B00F17665 /* MeClearCacheCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -917,7 +928,8 @@
 		1842B3812430470E00652A62 /* ThirdFrame */ = {
 			isa = PBXGroup;
 			children = (
-				18F4E3B72430F5A300865FA4 /* SVProgressHUD */,
+				18F785942439877000F17665 /* MBProgressHUD.h */,
+				18F785952439877100F17665 /* MBProgressHUD.m */,
 				185C4B2824305A3D007C5787 /* MJExtension */,
 				1842B3BE2430509800652A62 /* SDWebImage */,
 				1842B3822430471A00652A62 /* AFNetworking */,
@@ -1030,6 +1042,16 @@
 				18645E432421172A00BF4D48 /* EssenceViewController.m */,
 				18946A522423B85600CD14DD /* RecommendViewController.h */,
 				18946A532423B85600CD14DD /* RecommendViewController.m */,
+				18FD21D5243E07BA0026ECA6 /* AllViewController.h */,
+				18FD21D6243E07BA0026ECA6 /* AllViewController.m */,
+				18FD21D8243E07D50026ECA6 /* VideoViewController.h */,
+				18FD21D9243E07D50026ECA6 /* VideoViewController.m */,
+				18FD21DB243E07EA0026ECA6 /* AudioViewController.h */,
+				18FD21DC243E07EA0026ECA6 /* AudioViewController.m */,
+				18FD21DE243E08000026ECA6 /* PicViewController.h */,
+				18FD21DF243E08000026ECA6 /* PicViewController.m */,
+				18FD21E1243E08110026ECA6 /* WordViewController.h */,
+				18FD21E2243E08110026ECA6 /* WordViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1132,6 +1154,8 @@
 				18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */,
 				1842B374242CEE9000652A62 /* UITextField+X.h */,
 				1842B375242CEE9000652A62 /* UITextField+X.m */,
+				18F785572438D98300F17665 /* NSString+X.h */,
+				18F785582438D98300F17665 /* NSString+X.m */,
 			);
 			name = Category;
 			path = BaiSiBuDeJie/Class/Category;
@@ -1585,9 +1609,9 @@
 		18984F4724273D3400D49217 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18984F4A24273D3400D49217 /* XNavController.h */,
 				18984F4824273D3400D49217 /* XNavController.m */,
 				18984F4924273D3400D49217 /* XTabBarController.h */,
-				18984F4A24273D3400D49217 /* XNavController.h */,
 				18984F4B24273D3400D49217 /* XTabBarController.m */,
 			);
 			path = Controller;
@@ -1619,23 +1643,6 @@
 				18984F5824273F4D00D49217 /* LoginRegisterController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		18F4E3B72430F5A300865FA4 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				18F4E3B82430F5A300865FA4 /* SVRadialGradientLayer.m */,
-				18F4E3B92430F5A300865FA4 /* SVIndefiniteAnimatedView.h */,
-				18F4E3BA2430F5A300865FA4 /* SVProgressHUD.h */,
-				18F4E3BB2430F5A300865FA4 /* SVProgressAnimatedView.m */,
-				18F4E3BC2430F5A300865FA4 /* SVProgressHUD-Prefix.pch */,
-				18F4E3BD2430F5A300865FA4 /* SVRadialGradientLayer.h */,
-				18F4E3BE2430F5A300865FA4 /* SVProgressHUD.m */,
-				18F4E3BF2430F5A300865FA4 /* SVIndefiniteAnimatedView.m */,
-				18F4E3C02430F5A300865FA4 /* SVProgressHUD.bundle */,
-				18F4E3C12430F5A300865FA4 /* SVProgressAnimatedView.h */,
-			);
-			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1832,7 +1839,6 @@
 				188F3E75241DF9CE0095059C /* MainTagSubIcon@2x.png in Resources */,
 				188F3F5C241DF9CF0095059C /* play-voice-stop@2x.png in Resources */,
 				188F3ED1241DF9CE0095059C /* pushguidetop@3x.png in Resources */,
-				18F4E3C62430F5A300865FA4 /* SVProgressHUD.bundle in Resources */,
 				188F3EF6241DF9CE0095059C /* see-big-picture-background.png in Resources */,
 				188F3F49241DF9CF0095059C /* mine-my-post@2x.png in Resources */,
 				188F3F6C241DF9CF0095059C /* play-voice-icon-1.png in Resources */,
@@ -2045,11 +2051,12 @@
 			files = (
 				185C4B3F24305A3D007C5787 /* MJPropertyType.m in Sources */,
 				1842B3E32430509800652A62 /* SDWebImageDecoder.m in Sources */,
-				18F4E3C52430F5A300865FA4 /* SVIndefiniteAnimatedView.m in Sources */,
 				185C4B4124305A3D007C5787 /* MJProperty.m in Sources */,
 				185C4B4924305A3D007C5787 /* MJFoundation.m in Sources */,
 				1842B3802430466F00652A62 /* MeFooterView.m in Sources */,
+				18FD21DD243E07EA0026ECA6 /* AudioViewController.m in Sources */,
 				1842B39A24304B4000652A62 /* MeFooterSquareModel.m in Sources */,
+				18F785962439877100F17665 /* MBProgressHUD.m in Sources */,
 				183CFDCE24275FCE00DF5978 /* VerticalBtn.m in Sources */,
 				185C4B4524305A3D007C5787 /* NSObject+MJClass.m in Sources */,
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
@@ -2058,14 +2065,13 @@
 				185C4B4324305A3D007C5787 /* MJExtensionConst.m in Sources */,
 				183BB6352433926700F6026D /* MeFooterWebController.m in Sources */,
 				1842B3EA2430509800652A62 /* SDImageCache.m in Sources */,
+				18FD21E3243E08110026ECA6 /* WordViewController.m in Sources */,
 				1842B3E72430509800652A62 /* UIImage+MultiFormat.m in Sources */,
 				1842B376242CEE9000652A62 /* UITextField+X.m in Sources */,
 				18F4E3A62430E07300865FA4 /* MeFooterSquareBtn.m in Sources */,
 				1842B3962430471A00652A62 /* AFSecurityPolicy.m in Sources */,
-				18F4E3C42430F5A300865FA4 /* SVProgressHUD.m in Sources */,
 				18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */,
 				1842B3E42430509800652A62 /* UIImageView+HighlightedWebCache.m in Sources */,
-				18F4E3C22430F5A300865FA4 /* SVRadialGradientLayer.m in Sources */,
 				18984F4F24273D3400D49217 /* XNavController.m in Sources */,
 				188F3CA5241DE5DB0095059C /* AppDelegate.m in Sources */,
 				1842B3EC2430509800652A62 /* NSData+ImageContentType.m in Sources */,
@@ -2084,15 +2090,19 @@
 				185C4B4624305A3D007C5787 /* NSString+MJExtension.m in Sources */,
 				188F3CAB241DF2EB0095059C /* UIImage+X.m in Sources */,
 				1842B3E12430509800652A62 /* MKAnnotationView+WebCache.m in Sources */,
+				18F785992439FF3B00F17665 /* MeClearCacheCell.m in Sources */,
 				188F3C88241BDE860095059C /* main.m in Sources */,
 				1842B3932430471A00652A62 /* AFURLSessionManager.m in Sources */,
+				18F785592438D98300F17665 /* NSString+X.m in Sources */,
 				1842B3912430471A00652A62 /* AFURLResponseSerialization.m in Sources */,
 				1842B3ED2430509800652A62 /* UIImageView+WebCache.m in Sources */,
 				185C4B4424305A3D007C5787 /* NSObject+MJProperty.m in Sources */,
+				18FD21E0243E08000026ECA6 /* PicViewController.m in Sources */,
+				18FD21DA243E07D50026ECA6 /* VideoViewController.m in Sources */,
 				18984F5024273D3400D49217 /* XTabBarController.m in Sources */,
 				1842B3EE2430509800652A62 /* UIView+WebCacheOperation.m in Sources */,
+				18FD21D7243E07BA0026ECA6 /* AllViewController.m in Sources */,
 				18645E4D242117AD00BF4D48 /* MeViewController.m in Sources */,
-				18F4E3C32430F5A300865FA4 /* SVProgressAnimatedView.m in Sources */,
 				1842B3EB2430509800652A62 /* SDWebImageDownloaderOperation.m in Sources */,
 				1842B3E02430509800652A62 /* UIImage+WebP.m in Sources */,
 				18984F5124273D3400D49217 /* XUITabBar.m in Sources */,
