@@ -13,5 +13,5 @@ CGFloat const BSMargin = 10;
 
 
 // URL
-NSString *const meFooterUrl = @"http://api.budejie.com/api/api_open.php";
+NSString *const commonUrl = @"http://api.budejie.com/api/api_open.php";
 

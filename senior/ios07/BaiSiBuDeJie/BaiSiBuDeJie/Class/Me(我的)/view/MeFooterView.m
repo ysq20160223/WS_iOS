@@ -29,31 +29,38 @@
     if (self = [super initWithFrame:frame]) {
 //        self.backgroundColor = [UIColor magentaColor];
         
-        
         __weak typeof(self) weakSelf = self;
         
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
-        [hud showAnimated:YES];
-        
-        NSMutableDictionary *paraDict = [NSMutableDictionary dictionary];
-        paraDict[@"a"] = @"square";
-        paraDict[@"c"] = @"topic";
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [[AFHTTPSessionManager manager] GET:meFooterUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.superview animated:YES];
+            hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
+            hud.backgroundView.color = [UIColor colorWithWhite:0.5f alpha:0.3f];
+            [hud showAnimated:YES];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                NSMutableDictionary *paraDict = [NSMutableDictionary dictionary];
+                paraDict[@"a"] = @"square";
+                paraDict[@"c"] = @"topic";
                 
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                [hud hideAnimated:YES];
-                NSArray *squareArray = [MeFooterSquareModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
-                [weakSelf createSquare:squareArray];
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                [hud hideAnimated:YES];
-                NSLog(@"error: %@", error);
-            }];
+                [[AFHTTPSessionManager manager] GET:commonUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+                    
+                } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    [hud hideAnimated:YES];
+                    
+                    NSArray *squareArray = [MeFooterSquareModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];
+                    [weakSelf createSquare:squareArray];
+                    
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    [hud hideAnimated:YES];
+                    
+                    NSLog(@"error: %@", error);
+                }];
+            });
         });
     }
     return self;
 }
+
 
 - (void)dealloc {
     XLog

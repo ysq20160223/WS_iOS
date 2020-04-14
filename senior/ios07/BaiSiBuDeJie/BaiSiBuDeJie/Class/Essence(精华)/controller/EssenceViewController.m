@@ -20,9 +20,6 @@
 #import "WordViewController.h"
 
 
-//#define kTitleViewH 44
-
-
 @interface EssenceViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIView *titleView;
@@ -41,7 +38,7 @@
     // Do any additional setup after loading the view.
     
     XLog
-    self.view.backgroundColor = XColor(0x00, 0x88, 0xff);
+    self.view.backgroundColor = BSCommonBgColor;
     
     [self setupChildViewController];
     
@@ -50,12 +47,9 @@
     [self setupNav];
     
     [self setupTitleView];
+    
+    
 }
-
-- (void)viewDidLayoutSubviews {
-    //    XLog
-}
-
 
 #pragma mark -
 - (void)setupChildViewController {
@@ -98,7 +92,7 @@
     
     childVc.view.xX = self.scrollView.contentOffset.x;
     childVc.view.xHeight = self.scrollView.xHeight;
-//    childVc.view.frame = self.scrollView.bounds;
+    //    childVc.view.frame = self.scrollView.bounds;
     [self.scrollView addSubview:childVc.view];
     
     XLog
@@ -106,14 +100,14 @@
 
 #pragma mark - UIScrollViewDelegate start
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-//    XLog
+    //    XLog
     NSInteger index = scrollView.contentOffset.x / self.view.xWidth;
     [self titleBtnClick:self.titleView.subviews[index]];
     [self addChildVcView];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-//    XLog
+    //    XLog
     [self addChildVcView];
 }
 #pragma mark - UIScrollViewDelegate end
@@ -124,7 +118,7 @@
     int y = kStatusBarH + self.navigationController.navigationBar.xHeight;
     //    NSLog(@"y: %d", y);
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.view.xWidth, kTitleViewH)];
-    titleView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.5];
+    titleView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.9];
     [self.view addSubview:titleView];
     self.titleView = titleView;
     
