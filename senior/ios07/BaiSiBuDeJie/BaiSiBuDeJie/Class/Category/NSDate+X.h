@@ -1,8 +1,8 @@
 //
-//  NSString+X.h
+//  NSDate+X.h
 //  BaiSiBuDeJie
 //
-//  Created by Apple on 2020/4/4.
+//  Created by Apple on 2020/4/17.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
@@ -10,9 +10,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (X)
+@interface NSDate (X)
 
-- (unsigned long long)xFileSize;
+- (BOOL)isThisYear;
+
+- (BOOL)isToday;
+
+- (BOOL)isYesterday;
 
 @end
 

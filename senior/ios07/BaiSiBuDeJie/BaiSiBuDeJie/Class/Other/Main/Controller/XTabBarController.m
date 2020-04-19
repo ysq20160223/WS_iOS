@@ -47,8 +47,8 @@
 - (void)addChildViewController:(UIViewController *)viewController andTabBarItemTitle:(NSString *)tabBarItemTitle andImageName:(NSString *)imageName andSelectedImageName:(NSString *)selectedImageName{
     
     viewController.tabBarItem.title = tabBarItemTitle;
-    viewController.tabBarItem.image = [UIImage imageWithOriginalImageNamed:imageName];
-    viewController.tabBarItem.selectedImage = [UIImage imageWithOriginalImageNamed:selectedImageName];
+    viewController.tabBarItem.image = [UIImage xImageWithOriginalImageNamed:imageName];
+    viewController.tabBarItem.selectedImage = [UIImage xImageWithOriginalImageNamed:selectedImageName];
     
     [self addChildViewController:viewController];
 }

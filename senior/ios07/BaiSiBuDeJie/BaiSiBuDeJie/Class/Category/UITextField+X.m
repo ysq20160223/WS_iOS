@@ -11,7 +11,7 @@
 
 @implementation UITextField (X)
 
-- (void)setPlacehoderColor:(UIColor *)placehoderColor {
+- (void)setXPlacehoderColor:(UIColor *)placehoderColor {
     // 提前设置占位文字; 目的: 提前创建placeholderLabel
     NSString *beforePlaceholder = self.placeholder;
     self.placeholder = @" ";
@@ -25,7 +25,7 @@
     [self setValue:placehoderColor forKeyPath:@"placeholderLabel.textColor"];
 }
 
-- (UIColor *)placehoderColor {
+- (UIColor *)xPlacehoderColor {
     return [self valueForKeyPath:@"placeholderLabel.textColor"];
 }
 

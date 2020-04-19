@@ -10,7 +10,7 @@
 
 @implementation NSString (X)
 
-- (unsigned long long)fileSize {
+- (unsigned long long)xFileSize {
     unsigned long long size = 0;
     
     NSFileManager *fileMgr = [NSFileManager defaultManager];

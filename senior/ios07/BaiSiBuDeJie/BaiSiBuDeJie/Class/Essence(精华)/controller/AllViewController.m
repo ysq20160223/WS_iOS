@@ -20,6 +20,8 @@
 
 #import "TopicModel.h"
 #import "TopicCell.h"
+#import "CmtModel.h"
+#import "UserModel.h"
 
 @interface AllViewController ()
 
@@ -48,7 +50,7 @@ static NSString *const TopicCellId = @"TopicCellId";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.tableView.contentInset = UIEdgeInsetsMake(kTitleViewH + self.navigationController.navigationBar.xHeight, 0,
-                                                self.tabBarController.tabBar.xHeight + kStatusBarH, 0);
+        self.tabBarController.tabBar.xHeight + kStatusBarH, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TopicCell class]) bundle:nil] forCellReuseIdentifier:TopicCellId];
     
@@ -66,10 +68,11 @@ static NSString *const TopicCellId = @"TopicCellId";
 
 - (void)requestNetData {
     __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSMutableDictionary *paraDict = [NSMutableDictionary dictionary];
         paraDict[@"a"] = @"list";
         paraDict[@"c"] = @"data";
+        paraDict[@"type"] = @"1"; // 
         
         [self.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
         
@@ -79,6 +82,22 @@ static NSString *const TopicCellId = @"TopicCellId";
         
             [self.topicArray removeAllObjects];
             [self.topicArray addObjectsFromArray:[TopicModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]]];
+            
+            for (NSInteger i = 0; i < self.topicArray.count; i++) {
+                if (self.topicArray[i].top_cmt.count) {
+                    NSLog(@"i: %ld; %@", i, self.topicArray[i].top_cmt);
+                } else {
+                    UserModel *userModel = [[UserModel alloc] init];
+                    userModel.username = [NSString stringWithFormat:@"username i: %ld", i];
+                    
+                    CmtModel *cmtModel = [[CmtModel alloc] init];
+                    cmtModel.user = userModel;
+                    cmtModel.content = [NSString stringWithFormat:@"content: %ld", i];
+                    
+                    self.topicArray[i].top_cmt = [NSArray arrayWithObject:cmtModel];
+                }
+            }
+            
             [weakSelf.tableView reloadData];
             
             [self.tableView.mj_header endRefreshing];
@@ -92,10 +111,11 @@ static NSString *const TopicCellId = @"TopicCellId";
 
 - (void)requestMoreNetData {
     __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSMutableDictionary *paraDict = [NSMutableDictionary dictionary];
         paraDict[@"a"] = @"list";
         paraDict[@"c"] = @"data";
+        paraDict[@"type"] = @"1";
         
         [self.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
         
@@ -133,7 +153,7 @@ static NSString *const TopicCellId = @"TopicCellId";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150;
+    return 300;
 }
 
 #pragma mark -

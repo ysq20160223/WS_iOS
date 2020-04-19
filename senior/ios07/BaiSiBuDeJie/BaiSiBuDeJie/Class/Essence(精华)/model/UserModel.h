@@ -1,8 +1,8 @@
 //
-//  NSString+X.h
+//  UserModel.h
 //  BaiSiBuDeJie
 //
-//  Created by Apple on 2020/4/4.
+//  Created by Apple on 2020/4/19.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSString (X)
+@interface UserModel : NSObject
 
-- (unsigned long long)xFileSize;
+@property (nonatomic, strong) NSString *username;
 
 @end
 

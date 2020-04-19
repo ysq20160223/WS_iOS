@@ -17,8 +17,10 @@
 UIKIT_EXTERN CGFloat const BSMarginLeft;
 UIKIT_EXTERN CGFloat const BSMargin;
 
-
 // URL
 UIKIT_EXTERN NSString *const commonUrl;
 
+@interface BSConst : NSObject
+
+@end
 

@@ -66,8 +66,8 @@ static NSString *const BSSettingCellId = @"BSSettingCellId";
     
     
     self.navigationItem.rightBarButtonItems = @[
-        [UIBarButtonItem itemWithImage:@"mine-setting-icon" highlightImage:@"mine-setting-icon-click" tartget:self action:@selector(navItemRightSettingBtnClick:)],
-        [UIBarButtonItem itemWithImage:@"mine-moon-icon" highlightImage:@"mine-moon-icon-click" tartget:self action:@selector(navItemRightMoonBtnClick:)]
+        [UIBarButtonItem xItemWithImage:@"mine-setting-icon" highlightImage:@"mine-setting-icon-click" tartget:self action:@selector(navItemRightSettingBtnClick:)],
+        [UIBarButtonItem xItemWithImage:@"mine-moon-icon" highlightImage:@"mine-moon-icon-click" tartget:self action:@selector(navItemRightMoonBtnClick:)]
     ];
 }
 

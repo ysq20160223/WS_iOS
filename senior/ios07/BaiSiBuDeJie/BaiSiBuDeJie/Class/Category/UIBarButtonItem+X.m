@@ -11,7 +11,7 @@
 
 @implementation UIBarButtonItem (X)
 
-+ (instancetype)itemWithImage:(NSString *)image highlightImage:(NSString *)highlightImage tartget:(id)target action:(SEL)action {
++ (instancetype)xItemWithImage:(NSString *)image highlightImage:(NSString *)highlightImage tartget:(id)target action:(SEL)action {
     UIButton *btn = [[UIButton alloc] init];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:highlightImage] forState:UIControlStateHighlighted];

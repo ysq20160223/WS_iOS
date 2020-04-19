@@ -11,7 +11,7 @@
 @implementation UIImage (X)
 
 
-+ (instancetype)imageWithOriginalImageNamed:(NSString *)imageName {
++ (instancetype)xImageWithOriginalImageNamed:(NSString *)imageName {
     return [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 

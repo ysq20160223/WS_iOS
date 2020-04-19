@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (X)
 
-@property (nonatomic, strong)UIColor *placehoderColor;
+@property (nonatomic, strong)UIColor *xPlacehoderColor;
 
 @end
 

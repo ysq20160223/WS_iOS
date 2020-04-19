@@ -28,7 +28,7 @@
     
     // method third - runtime
 //    [self setValue:[UIColor grayColor] forKeyPath:@"placeholderLabel.textColor"];
-    self.placehoderColor = [UIColor grayColor];
+    self.xPlacehoderColor = [UIColor grayColor];
     
     // addTarget
     [self addTarget:self action:@selector(editingDidBegin)  forControlEvents:UIControlEventEditingDidBegin];
@@ -94,13 +94,13 @@
 #pragma mark - target begin
 - (void)editingDidBegin {
 //    XLog
-    self.placehoderColor = [UIColor whiteColor];
+    self.xPlacehoderColor = [UIColor whiteColor];
 //    [self setValue:[UIColor whiteColor] forKeyPath:@"placeholderLabel.textColor"];
 }
 
 - (void)editingDidEnd {
 //    XLog
-    self.placehoderColor = [UIColor grayColor];
+    self.xPlacehoderColor = [UIColor grayColor];
 //    [self setValue:[UIColor grayColor] forKeyPath:@"placeholderLabel.textColor"];
 }
 #pragma mark - target end

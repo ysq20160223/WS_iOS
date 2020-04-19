@@ -8,7 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class CmtModel;
+
 NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(NSInteger, TopicType) {
+    TopicTypeAll = 1,
+    TopicTypeVideo = 41,
+    TopicTypeAudio = 31,
+    TopicTypePic = 10,
+    TopicTypeWord = 29
+};
 
 @interface TopicModel : NSObject
 
@@ -21,6 +31,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger cai;
 @property (nonatomic, assign) NSInteger repost;
 @property (nonatomic, assign) NSInteger comment;
+
+@property (nonatomic, strong) NSArray<CmtModel *> *top_cmt; // 最热评论
+
+// 1: ALL
+// 10: PIC
+// 29: WORD
+// 31: AUDIO
+// 41: VIDEO
+@property (nonatomic, assign) TopicType type;
 
 @end
 

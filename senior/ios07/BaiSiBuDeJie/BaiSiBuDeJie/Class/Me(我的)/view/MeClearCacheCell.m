@@ -33,7 +33,7 @@
             
             NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
             //                NSLog(@"%@", cachePath);
-            unsigned long long size = [cachePath stringByAppendingPathComponent:@"com.hackemist.SDWebImageCache.default"].fileSize;
+            unsigned long long size = [cachePath stringByAppendingPathComponent:@"com.hackemist.SDWebImageCache.default"].xFileSize;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 //                    NSLog(@"%@", [NSThread currentThread]);

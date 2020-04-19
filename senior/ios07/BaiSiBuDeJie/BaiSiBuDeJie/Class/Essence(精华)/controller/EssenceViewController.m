@@ -179,7 +179,7 @@
     //    self.navigationItem.title = @"essence";
     
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"MainTitle"]];
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithImage:@"MainTagSubIcon" highlightImage:@"MainTagSubIconClick" tartget:self action:@selector(navItemLeftBtnViewClick:)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem xItemWithImage:@"MainTagSubIcon" highlightImage:@"MainTagSubIconClick" tartget:self action:@selector(navItemLeftBtnViewClick:)];
 }
 
 - (void)navItemLeftBtnViewClick:(UIButton *)btn {
