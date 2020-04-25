@@ -37,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    XLog
+//    XLog
     self.view.backgroundColor = BSCommonBgColor;
     
     [self setupChildViewController];
@@ -95,7 +95,7 @@
     //    childVc.view.frame = self.scrollView.bounds;
     [self.scrollView addSubview:childVc.view];
     
-    XLog
+//    XLog
 }
 
 #pragma mark - UIScrollViewDelegate start

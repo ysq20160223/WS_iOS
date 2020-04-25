@@ -12,9 +12,16 @@
 #import "CmtModel.h"
 #import "UserModel.h"
 
+#import "TopicPicView.h"
+#import "TopicAudioView.h"
+#import "TopicVideoView.h"
+
+#import "UIView+X.h"
+
 #import "UIImageView+WebCache.h"
 
 @interface TopicCell()
+@property (weak, nonatomic) IBOutlet UIView *vRootContent;
 
 @property (weak, nonatomic) IBOutlet UIImageView *ivUserProfile;
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
@@ -27,7 +34,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnComment;
 
 @property (weak, nonatomic) IBOutlet UIView *vTopCmt;
+@property (weak, nonatomic) IBOutlet UILabel *lblTopCmtUser;
 @property (weak, nonatomic) IBOutlet UILabel *lblTopCmt;
+
+@property (strong, nonatomic) TopicPicView *topicPicView;
+@property (strong, nonatomic) TopicAudioView *topicAudioView;
+@property (strong, nonatomic) TopicVideoView *topicVideoView;
 
 @end
 
@@ -37,12 +49,12 @@
 
 - (void)setTopicModel:(TopicModel *)topicModel {
     _topicModel = topicModel;
-//    NSLog(@"%ld", topicModel.type);
+//    NSLog(@"%@", topicModel);
     
     [self.ivUserProfile sd_setImageWithURL:[NSURL URLWithString:topicModel.profile_image]];
     self.lblName.text = topicModel.name;
     self.lblTime.text = topicModel.created_at;
-    self.lblContent.text = topicModel.text;
+    self.lblContent.text = [NSString stringWithFormat:@"%@ - %ld", topicModel.text, topicModel.type];
     
     //
     [self.btnDing setTitle:[NSString stringWithFormat:@"%ld", topicModel.ding] forState:UIControlStateNormal];
@@ -63,19 +75,34 @@
     // 中间内容
     switch (topicModel.type) {
         case TopicTypeVideo:
-            
+            self.topicVideoView.hidden = NO;
+            self.topicAudioView.hidden = YES;
+            self.topicPicView.hidden = YES;
+            self.topicVideoView.frame = topicModel.contentRect;
+            self.topicVideoView.topicModel = topicModel;
             break;
             
         case TopicTypeAudio:
-            
+            self.topicAudioView.topicModel = topicModel;
+            self.topicAudioView.frame = topicModel.contentRect;
+            self.topicVideoView.hidden = YES;
+            self.topicAudioView.hidden = NO;
+            self.topicPicView.hidden = YES;
             break;
             
         case TopicTypePic:
+            self.topicPicView.topicModel = topicModel;
+            self.topicPicView.frame = topicModel.contentRect;
             
+            self.topicVideoView.hidden = YES;
+            self.topicAudioView.hidden = YES;
+            self.topicPicView.hidden = NO;
             break;
             
         case TopicTypeWord:
-            
+            self.topicVideoView.hidden = YES;
+            self.topicAudioView.hidden = YES;
+            self.topicPicView.hidden = YES;
             break;
             
         default:
@@ -99,17 +126,10 @@
     self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mainCellBackground"]];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    
-    // Configure the view for the selected state
-}
-
-
 #pragma mark - Click
 - (IBAction)clickBtnMore:(UIButton *)sender {
     //    XLog
-    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Title" message:@"message" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     [ac addAction:[UIAlertAction actionWithTitle:@"Collection" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"Collection");
@@ -123,6 +143,33 @@
     
     [self.window.rootViewController presentViewController:ac animated:YES completion:nil];
 }
+
+
+#pragma mark - lazy load start
+- (TopicPicView *)topicPicView {
+    if (!_topicPicView) {
+        _topicPicView = [TopicPicView xViewFromXib];
+        [self.vRootContent addSubview:_topicPicView];
+    }
+    return _topicPicView;
+}
+
+- (TopicVideoView *)topicVideoView {
+    if (!_topicVideoView) {
+        _topicVideoView = [TopicVideoView xViewFromXib];
+        [self.vRootContent addSubview:_topicVideoView];
+    }
+    return _topicVideoView;
+}
+
+- (TopicAudioView *)topicAudioView {
+    if (!_topicAudioView) {
+        _topicAudioView = [TopicAudioView xViewFromXib];
+        [self.vRootContent addSubview:_topicAudioView];
+    }
+    return _topicAudioView;
+}
+#pragma mark - lazy load end
 
 @end
 

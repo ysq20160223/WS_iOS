@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TopicViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WordViewController : UITableViewController
+@interface WordViewController : TopicViewController
 
 @end
 

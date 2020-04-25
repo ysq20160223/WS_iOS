@@ -10,6 +10,9 @@
 
 @implementation CmtModel
 
-
+#pragma mark -
+- (NSString *)description {
+    return [NSString stringWithFormat:@"CmtModel[content: %@; user: %@]", self.content, self.user];
+}
 
 @end

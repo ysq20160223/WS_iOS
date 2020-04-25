@@ -28,7 +28,7 @@
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    NSLog(@"%@", viewController.class);
+//    NSLog(@"%@", viewController.class);
     
     if (self.childViewControllers.count > 0) {
         UIButton *backBtn = [[UIButton alloc] init];

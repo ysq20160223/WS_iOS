@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class CmtModel;
 
@@ -21,6 +22,8 @@ typedef NS_ENUM(NSInteger, TopicType) {
 };
 
 @interface TopicModel : NSObject
+
+@property (nonatomic, assign) NSInteger ID;
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *profile_image;
@@ -40,6 +43,25 @@ typedef NS_ENUM(NSInteger, TopicType) {
 // 31: AUDIO
 // 41: VIDEO
 @property (nonatomic, assign) TopicType type;
+
+@property (nonatomic, assign) NSInteger width;
+@property (nonatomic, assign) NSInteger height;
+
+// pic
+@property (nonatomic, assign) NSInteger is_gif;
+@property (nonatomic, strong) NSString *smallImg;
+@property (nonatomic, strong) NSString *middleImg;
+@property (nonatomic, strong) NSString *largeImg;
+
+// video
+@property (nonatomic, assign) NSInteger playcount;
+@property (nonatomic, assign) NSInteger videotime;
+
+
+// additional
+@property (nonatomic, assign) CGFloat cellHeight;
+@property (nonatomic, assign) CGRect contentRect;
+@property (nonatomic, assign) NSInteger isBigPic;
 
 @end
 

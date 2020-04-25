@@ -10,7 +10,9 @@
 
 #import "NSCalendar+X.h"
 #import "NSDate+X.h"
-//#import "CmtModel.h"
+#import "BSConst.h"
+#import "CmtModel.h"
+#import "UserModel.h"
 
 //#import "MJExtension.h"
 
@@ -64,43 +66,60 @@ static NSCalendar *calendar_;
     return _created_at;
 }
 
-#pragma mark - MJExtension Start
-//+ (NSDictionary *)mj_objectClassInArray {
-//    return @{@"top_cmt" : [CmtModel class]};
-//}
-
-
-// 拓展
-//+ (NSDictionary *)mj_replacedKeyFromPropertyName {
-//    return @{@"desc" : @"description",
-//             @"ID" : @"id",
+- (CGFloat)cellHeight {
+    if (_cellHeight) {
+        return _cellHeight;
+    }
+    
+    // 1, name, created_at
+    _cellHeight = BSMargin + 22 + 22 + BSMargin;
+    
+    // 2,
+    CGFloat textMaxW = [UIScreen mainScreen].bounds.size.width - 2 * BSMargin;
+    CGSize textMaxSize = CGSizeMake(textMaxW, MAXFLOAT);
+//    CGSize textSize = [self.text sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:textMaxSize];
+    CGSize textSize = [self.text boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:15]} context:nil].size;
+    _cellHeight += textSize.height + BSMargin;
+//    NSLog(@"%f", textSize.height);
+    
+    // 3,
+    if (self.type != TopicTypeWord) {
+        CGFloat imgH = textMaxW * self.height / self.width * 1;
+        if (self.type == TopicTypePic && !self.is_gif && imgH > kScreenH * 0.7) {
+            NSLog(@"%@; imgH: %f, kScreenH: %f", self, imgH, kScreenH);
+            imgH = kScreenH * 0.5;
+            self.isBigPic = YES;
+        }
+        
+        if (self.type == TopicTypeVideo) {
+            imgH = kScreenH * 0.5;
+        }
+        
+        self.contentRect = CGRectMake(BSMargin, _cellHeight, textMaxW, imgH);
+        _cellHeight += imgH + BSMargin;
+        
+//        NSLog(@"%@; frame: %@", self, NSStringFromCGRect(self.contentRect));
+    }
 //
-//             @"name" : @[@"name1", @"name2"],
-//             @"other" : @"a.b[0].c",
-//    };
-//}
+    // 4,
+    if (self.top_cmt.count) {
+        _cellHeight += 30; // User
+        
+        NSString *topCmtContent = [NSString stringWithFormat:@"%@: %@", self.top_cmt[0].user.username, self.top_cmt[0].content];
+        CGSize topCmtContentSize = [topCmtContent boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size;
+        _cellHeight += topCmtContentSize.height + BSMargin;
+    }
+    
+    //
+    _cellHeight += 1 + 36 + BSMargin;
+    return _cellHeight;
+}
 
 
-// 下划线转驼峰
-//+ (id)mj_replacedKeyFromPropertyName121:(NSString *)propertyName {
-//    NSMutableString *key = [NSMutableString string];
-//
-//    for (NSInteger i = 0; i < propertyName.length; i++) {
-//        unichar c = [propertyName characterAtIndex:i];
-//        if (c >= 'A' && c <= 'Z') {
-//            [key appendString:@"_"];
-//            [key appendFormat:@"%c", c + 32];
-//        } else {
-//            [key appendFormat:@"%c", c];
-//        }
-//    }
-//    return key;
-//}
-
-//+ (id)mj_replacedKeyFromPropertyName121:(NSString *)propertyName {
-//    return [propertyName mj_underlineFromCamel];
-//}
-#pragma mark - MJExtension End
+#pragma mark -
+- (NSString *)description {
+    return [NSString stringWithFormat:@"TopicModel[ID: %ld; name: %@; profile_image: %@; text: %@; created_at: %@; ding: %ld; cai: %ld; repost: %ld; comment: %ld; top_cmt: %@; TopicType: %ld; width: %ld; height: %ld; is_gif: %ld, smallImg: %@; middleImg: %@; largeImg: %@; cellHeight: %f; contentRect: %@]", self.ID, self.name, self.profile_image, self.text, self.created_at, self.ding, self.cai, self.repost, self.comment, self.top_cmt, self.type, self.width, self.height, self.is_gif, self.smallImg, self.middleImg, self.largeImg, self.cellHeight, NSStringFromCGRect(self.contentRect)];
+}
 
 @end
 

@@ -39,10 +39,18 @@
 		1842B3EE2430509800652A62 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B3DA2430509800652A62 /* UIView+WebCacheOperation.m */; };
 		1842B3EF2430509800652A62 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B3DE2430509800652A62 /* UIButton+WebCache.m */; };
 		18446FB62429052500CEC10A /* LoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18446FB52429052500CEC10A /* LoginRegisterTextField.m */; };
+		184A07E924547E9E00D83EE9 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A07E824547E9E00D83EE9 /* TopicViewController.m */; };
 		184D37012444BB8500628B41 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D36FF2444BB8500628B41 /* TopicCell.m */; };
 		184D37022444BB8500628B41 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D37002444BB8500628B41 /* TopicCell.xib */; };
 		1850E8A5244C1163003D5392 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850E8A4244C1163003D5392 /* UserModel.m */; };
 		1850E8A8244C1176003D5392 /* CmtModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850E8A7244C1176003D5392 /* CmtModel.m */; };
+		1853AF4F244F3C4D00E6C335 /* TopicPicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853AF4E244F3C4D00E6C335 /* TopicPicView.xib */; };
+		1853AF55244F3D6A00E6C335 /* TopicPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853AF52244F3D6A00E6C335 /* TopicPicView.m */; };
+		1853AF56244F3D6A00E6C335 /* TopicPicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853AF54244F3D6A00E6C335 /* TopicPicView.xib */; };
+		1853AF5A244F3F5000E6C335 /* TopicAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853AF58244F3F5000E6C335 /* TopicAudioView.m */; };
+		1853AF5B244F3F5000E6C335 /* TopicAudioView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853AF59244F3F5000E6C335 /* TopicAudioView.xib */; };
+		1853AF5F244F3F5900E6C335 /* TopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853AF5D244F3F5900E6C335 /* TopicVideoView.xib */; };
+		1853AF60244F3F5900E6C335 /* TopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853AF5E244F3F5900E6C335 /* TopicVideoView.m */; };
 		185C4B3F24305A3D007C5787 /* MJPropertyType.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C4B2C24305A3D007C5787 /* MJPropertyType.m */; };
 		185C4B4024305A3D007C5787 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C4B2F24305A3D007C5787 /* NSObject+MJKeyValue.m */; };
 		185C4B4124305A3D007C5787 /* MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 185C4B3024305A3D007C5787 /* MJProperty.m */; };
@@ -505,6 +513,8 @@
 		1842B3DF2430509800652A62 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		18446FB42429052500CEC10A /* LoginRegisterTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRegisterTextField.h; sourceTree = "<group>"; };
 		18446FB52429052500CEC10A /* LoginRegisterTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterTextField.m; sourceTree = "<group>"; };
+		184A07E724547E9E00D83EE9 /* TopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
+		184A07E824547E9E00D83EE9 /* TopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 		184D36FE2444BB8500628B41 /* TopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
 		184D36FF2444BB8500628B41 /* TopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 		184D37002444BB8500628B41 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
@@ -512,6 +522,16 @@
 		1850E8A4244C1163003D5392 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		1850E8A6244C1176003D5392 /* CmtModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmtModel.h; sourceTree = "<group>"; };
 		1850E8A7244C1176003D5392 /* CmtModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CmtModel.m; sourceTree = "<group>"; };
+		1853AF4E244F3C4D00E6C335 /* TopicPicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TopicPicView.xib; path = "BaiSiBuDeJie/Class/Essence(精华)/view/TopicPicView.xib"; sourceTree = "<group>"; };
+		1853AF52244F3D6A00E6C335 /* TopicPicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicPicView.m; sourceTree = "<group>"; };
+		1853AF53244F3D6A00E6C335 /* TopicPicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicPicView.h; sourceTree = "<group>"; };
+		1853AF54244F3D6A00E6C335 /* TopicPicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicPicView.xib; sourceTree = "<group>"; };
+		1853AF57244F3F5000E6C335 /* TopicAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicAudioView.h; sourceTree = "<group>"; };
+		1853AF58244F3F5000E6C335 /* TopicAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicAudioView.m; sourceTree = "<group>"; };
+		1853AF59244F3F5000E6C335 /* TopicAudioView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicAudioView.xib; sourceTree = "<group>"; };
+		1853AF5C244F3F5900E6C335 /* TopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicVideoView.h; sourceTree = "<group>"; };
+		1853AF5D244F3F5900E6C335 /* TopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicVideoView.xib; sourceTree = "<group>"; };
+		1853AF5E244F3F5900E6C335 /* TopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicVideoView.m; sourceTree = "<group>"; };
 		185C4B2924305A3D007C5787 /* MJPropertyKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPropertyKey.h; sourceTree = "<group>"; };
 		185C4B2A24305A3D007C5787 /* NSObject+MJClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJClass.h"; sourceTree = "<group>"; };
 		185C4B2B24305A3D007C5787 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
@@ -1132,6 +1152,8 @@
 				18645E432421172A00BF4D48 /* EssenceViewController.m */,
 				18946A522423B85600CD14DD /* RecommendViewController.h */,
 				18946A532423B85600CD14DD /* RecommendViewController.m */,
+				184A07E724547E9E00D83EE9 /* TopicViewController.h */,
+				184A07E824547E9E00D83EE9 /* TopicViewController.m */,
 				18FD21D5243E07BA0026ECA6 /* AllViewController.h */,
 				18FD21D6243E07BA0026ECA6 /* AllViewController.m */,
 				18FD21D8243E07D50026ECA6 /* VideoViewController.h */,
@@ -1271,6 +1293,7 @@
 		188F3C69241BDE850095059C = {
 			isa = PBXGroup;
 			children = (
+				1853AF4E244F3C4D00E6C335 /* TopicPicView.xib */,
 				188F3C74241BDE850095059C /* BaiSiBuDeJie */,
 				188F3C73241BDE850095059C /* Products */,
 				183BB6372433977B00F6026D /* Frameworks */,
@@ -1861,6 +1884,15 @@
 				184D36FE2444BB8500628B41 /* TopicCell.h */,
 				184D36FF2444BB8500628B41 /* TopicCell.m */,
 				184D37002444BB8500628B41 /* TopicCell.xib */,
+				1853AF53244F3D6A00E6C335 /* TopicPicView.h */,
+				1853AF52244F3D6A00E6C335 /* TopicPicView.m */,
+				1853AF54244F3D6A00E6C335 /* TopicPicView.xib */,
+				1853AF5C244F3F5900E6C335 /* TopicVideoView.h */,
+				1853AF5E244F3F5900E6C335 /* TopicVideoView.m */,
+				1853AF5D244F3F5900E6C335 /* TopicVideoView.xib */,
+				1853AF57244F3F5000E6C335 /* TopicAudioView.h */,
+				1853AF58244F3F5000E6C335 /* TopicAudioView.m */,
+				1853AF59244F3F5000E6C335 /* TopicAudioView.xib */,
 			);
 			name = view;
 			path = "BaiSiBuDeJie/Class/Essence(精华)/view";
@@ -1982,6 +2014,7 @@
 				188F3F1A241DF9CF0095059C /* Profile_AddV_authen@3x.png in Resources */,
 				188F3E1C241DF9CE0095059C /* post-#.png in Resources */,
 				188F3F26241DF9CF0095059C /* see-big-picture@3x.png in Resources */,
+				1853AF4F244F3C4D00E6C335 /* TopicPicView.xib in Resources */,
 				188F3EB3241DF9CE0095059C /* login_register_button_click.png in Resources */,
 				188F3E8C241DF9CE0095059C /* tabBar_me_click_icon.png in Resources */,
 				188F3EE0241DF9CE0095059C /* publish-text.png in Resources */,
@@ -2025,6 +2058,7 @@
 				188F3F2D241DF9CF0095059C /* playButtonPause@3x.png in Resources */,
 				188F3EA2241DF9CE0095059C /* tabBar_essence_icon@2x.png in Resources */,
 				188F3E35241DF9CE0095059C /* comment-bar-record.png in Resources */,
+				1853AF5B244F3F5000E6C335 /* TopicAudioView.xib in Resources */,
 				188F3EB7241DF9CE0095059C /* login_register_right_line@3x.png in Resources */,
 				188F3F68241DF9CF0095059C /* play.png in Resources */,
 				188F3E58241DF9CE0095059C /* comment_bar_at_icon_click.png in Resources */,
@@ -2038,6 +2072,7 @@
 				188F3F25241DF9CF0095059C /* Profile_AddV_authen@2x.png in Resources */,
 				188F3F01241DF9CE0095059C /* post_placeholderImage@3x.png in Resources */,
 				188F3ECB241DF9CE0095059C /* login_register_left_line@2x.png in Resources */,
+				1853AF5F244F3F5900E6C335 /* TopicVideoView.xib in Resources */,
 				188F3F76241DF9CF0095059C /* header_cry_icon@2x.png in Resources */,
 				188F3EC5241DF9CE0095059C /* login_register_background.png in Resources */,
 				188F3E24241DF9CE0095059C /* tag_add_icon@2x.png in Resources */,
@@ -2205,6 +2240,7 @@
 				188F3E5A241DF9CE0095059C /* Profile_manIcon.png in Resources */,
 				188F3EE7241DF9CE0095059C /* app_slogan@2x.png in Resources */,
 				187F16AA2441F51900145C9D /* MJRefresh.bundle in Resources */,
+				1853AF56244F3D6A00E6C335 /* TopicPicView.xib in Resources */,
 				188F3F20241DF9CF0095059C /* mainCellCommentClick.png in Resources */,
 				188F3EF9241DF9CE0095059C /* post_placeholderImage@2x.png in Resources */,
 				188F3EF8241DF9CE0095059C /* mainCellDingClick@2x.png in Resources */,
@@ -2295,6 +2331,7 @@
 				18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */,
 				185C4B4324305A3D007C5787 /* MJExtensionConst.m in Sources */,
 				187F16B42441F51900145C9D /* MJRefreshNormalHeader.m in Sources */,
+				1853AF5A244F3F5000E6C335 /* TopicAudioView.m in Sources */,
 				183BB6352433926700F6026D /* MeFooterWebController.m in Sources */,
 				1842B3EA2430509800652A62 /* SDImageCache.m in Sources */,
 				187F16AB2441F51900145C9D /* UIScrollView+MJExtension.m in Sources */,
@@ -2315,7 +2352,9 @@
 				187F16BB2441F51900145C9D /* MJRefreshComponent.m in Sources */,
 				1842B3E22430509800652A62 /* SDWebImageManager.m in Sources */,
 				1842B3EF2430509800652A62 /* UIButton+WebCache.m in Sources */,
+				1853AF55244F3D6A00E6C335 /* TopicPicView.m in Sources */,
 				1842B3E62430509800652A62 /* UIImage+GIF.m in Sources */,
+				184A07E924547E9E00D83EE9 /* TopicViewController.m in Sources */,
 				1842B37A242F962D00652A62 /* MeTableViewCell.m in Sources */,
 				187F16BE2442062900145C9D /* XRefreshHeader.m in Sources */,
 				187F16BA2441F51900145C9D /* MJRefreshAutoFooter.m in Sources */,
@@ -2354,6 +2393,7 @@
 				187F16AE2441F51900145C9D /* MJRefreshBackGifFooter.m in Sources */,
 				18984F5124273D3400D49217 /* XUITabBar.m in Sources */,
 				1842B3942430471A00652A62 /* AFURLRequestSerialization.m in Sources */,
+				1853AF60244F3F5900E6C335 /* TopicVideoView.m in Sources */,
 				185C4B4224305A3D007C5787 /* NSObject+MJCoding.m in Sources */,
 				187F16B72441F51900145C9D /* MJRefreshFooter.m in Sources */,
 				187F16B82441F51900145C9D /* MJRefreshHeader.m in Sources */,

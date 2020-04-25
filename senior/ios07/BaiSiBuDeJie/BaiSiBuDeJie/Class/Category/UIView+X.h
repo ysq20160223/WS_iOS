@@ -23,7 +23,7 @@
 
 @property (nonatomic, assign) CGSize xSize;
 
-+ (instancetype)viewFromXib;
++ (instancetype)xViewFromXib;
 
 - (BOOL)intersectWithView:(UIView *)view;
 

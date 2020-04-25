@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="TopicVideoView">
+            <rect key="frame" x="0.0" y="0.0" width="285" height="199"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zQs-dk-wun" userLabel="ivPic">
+                    <rect key="frame" x="0.0" y="0.0" width="285" height="199"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tp3-X5-VZC" userLabel="btnVideoPlay">
+                    <rect key="frame" x="107" y="64" width="71" height="71"/>
+                    <state key="normal" image="video-play.png"/>
+                    <connections>
+                        <action selector="btnVideoPlayClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Png-ep-etd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPd-lS-cf5">
+                    <rect key="frame" x="233" y="171" width="42" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zQs-dk-wun" secondAttribute="bottom" id="03l-hc-kh4"/>
+                <constraint firstAttribute="trailing" secondItem="iPd-lS-cf5" secondAttribute="trailing" constant="10" id="8gH-jX-o9O"/>
+                <constraint firstItem="tp3-X5-VZC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="C1u-Ex-dVt"/>
+                <constraint firstAttribute="trailing" secondItem="zQs-dk-wun" secondAttribute="trailing" id="Tzg-js-RXO"/>
+                <constraint firstItem="tp3-X5-VZC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZsP-xc-Njk"/>
+                <constraint firstItem="tp3-X5-VZC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="j7S-Lb-sj2"/>
+                <constraint firstAttribute="bottom" secondItem="iPd-lS-cf5" secondAttribute="bottom" constant="10" id="jPg-Bp-NUl"/>
+                <constraint firstItem="tp3-X5-VZC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uf5-lU-zCC"/>
+                <constraint firstItem="zQs-dk-wun" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wIw-lg-HDa"/>
+                <constraint firstItem="zQs-dk-wun" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="wxb-Jn-hoK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="ivPic" destination="zQs-dk-wun" id="Ouz-lj-ANk"/>
+                <outlet property="lblDuration" destination="iPd-lS-cf5" id="rWy-9l-YIo"/>
+            </connections>
+            <point key="canvasLocation" x="163.04347826086959" y="125.55803571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="video-play.png" width="71" height="71"/>
+    </resources>
+</document>
