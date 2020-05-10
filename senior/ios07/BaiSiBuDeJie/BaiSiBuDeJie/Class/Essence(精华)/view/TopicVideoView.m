@@ -6,6 +6,8 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
+#import <AVKit/AVKit.h>
+
 #import "TopicVideoView.h"
 
 #import "UIImageView+WebCache.h"
@@ -28,9 +30,12 @@
     [super awakeFromNib];
     
     self.autoresizingMask = UIViewAutoresizingNone;
+    
 }
 
 - (void)setTopicModel:(TopicModel *)topicModel {
+    _topicModel = topicModel;
+    
     self.lblDuration.text = [NSString stringWithFormat:@"%02ld:%02ld", topicModel.videotime / 60, topicModel.videotime % 60];
     
     switch ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus) {
@@ -54,7 +59,14 @@
 }
 
 - (IBAction)btnVideoPlayClick:(UIButton *)sender {
-    XLog
+//    NSLog(@"videouri: %@", self.topicModel.videouri);
+    AVPlayerViewController *avPlayerVc = [[AVPlayerViewController alloc] init];
+    avPlayerVc.player = [AVPlayer playerWithURL:[NSURL URLWithString:self.topicModel.videouri]];
+    [avPlayerVc.player play];
+    
+    [[UIApplication sharedApplication].windows[0].rootViewController presentViewController:avPlayerVc animated:nil completion:^{
+        
+    }];
 }
 
 @end

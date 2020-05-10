@@ -1,8 +1,8 @@
 //
-//  RecommendViewController.h
+//  CommentController.h
 //  BaiSiBuDeJie
 //
-//  Created by Apple on 2020/3/19.
+//  Created by Apple on 2020/5/10.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RecommendViewController : UITableViewController
+@interface CommentController : UIViewController
 
 @end
 

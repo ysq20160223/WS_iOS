@@ -41,6 +41,38 @@
     return image;
 }
 
+//
+- (instancetype)xCircleImage {
+    // 1
+    UIGraphicsBeginImageContext(self.size);
+    
+    // 2
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
+    // 3
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    CGContextAddEllipseInRect(ctx, rect);
+    
+    // 4
+    CGContextClip(ctx);
+    
+    // 5
+    [self drawInRect:rect];
+    
+    // 6
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 7
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+//
++ (instancetype)xCircleImageNamed:(NSString *)name {
+    return [[self imageNamed:name] xCircleImage];
+}
+
 @end
 
 

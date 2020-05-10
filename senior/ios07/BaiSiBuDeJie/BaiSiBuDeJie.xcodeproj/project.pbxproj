@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18134E16246065180029F96F /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18134E15246065180029F96F /* RecommendModel.m */; };
+		18134E1A2460676E0029F96F /* RecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18134E182460676E0029F96F /* RecommendCell.m */; };
+		18134E1B2460676E0029F96F /* RecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18134E192460676E0029F96F /* RecommendCell.xib */; };
 		183BB6352433926700F6026D /* MeFooterWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183BB6332433926700F6026D /* MeFooterWebController.m */; };
 		183BB6362433926700F6026D /* MeFooterWebController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183BB6342433926700F6026D /* MeFooterWebController.xib */; };
 		183BB6392433977B00F6026D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183BB6382433977B00F6026D /* WebKit.framework */; };
 		183CFDCE24275FCE00DF5978 /* VerticalBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CFDCD24275FCE00DF5978 /* VerticalBtn.m */; };
+		1841C5FC2455CD38004988F8 /* SeePigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841C5FB2455CD38004988F8 /* SeePigViewController.m */; };
 		1842B376242CEE9000652A62 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B375242CEE9000652A62 /* UITextField+X.m */; };
 		1842B37A242F962D00652A62 /* MeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B379242F962D00652A62 /* MeTableViewCell.m */; };
 		1842B37D242FA19400652A62 /* BSConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B37C242FA19400652A62 /* BSConst.m */; };
@@ -39,12 +43,14 @@
 		1842B3EE2430509800652A62 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B3DA2430509800652A62 /* UIView+WebCacheOperation.m */; };
 		1842B3EF2430509800652A62 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B3DE2430509800652A62 /* UIButton+WebCache.m */; };
 		18446FB62429052500CEC10A /* LoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18446FB52429052500CEC10A /* LoginRegisterTextField.m */; };
+		1845699B2467EAFA0043B4A0 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184569992467EAFA0043B4A0 /* CommentController.m */; };
+		1845699C2467EAFA0043B4A0 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1845699A2467EAFA0043B4A0 /* CommentController.xib */; };
 		184A07E924547E9E00D83EE9 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A07E824547E9E00D83EE9 /* TopicViewController.m */; };
+		184A4E6124571D41002DA23C /* SeePigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184A4E6024571D41002DA23C /* SeePigViewController.xib */; };
 		184D37012444BB8500628B41 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D36FF2444BB8500628B41 /* TopicCell.m */; };
 		184D37022444BB8500628B41 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D37002444BB8500628B41 /* TopicCell.xib */; };
 		1850E8A5244C1163003D5392 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850E8A4244C1163003D5392 /* UserModel.m */; };
 		1850E8A8244C1176003D5392 /* CmtModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850E8A7244C1176003D5392 /* CmtModel.m */; };
-		1853AF4F244F3C4D00E6C335 /* TopicPicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853AF4E244F3C4D00E6C335 /* TopicPicView.xib */; };
 		1853AF55244F3D6A00E6C335 /* TopicPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853AF52244F3D6A00E6C335 /* TopicPicView.m */; };
 		1853AF56244F3D6A00E6C335 /* TopicPicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1853AF54244F3D6A00E6C335 /* TopicPicView.xib */; };
 		1853AF5A244F3F5000E6C335 /* TopicAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853AF58244F3F5000E6C335 /* TopicAudioView.m */; };
@@ -65,6 +71,7 @@
 		18645E4D242117AD00BF4D48 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E4C242117AD00BF4D48 /* MeViewController.m */; };
 		187273392449FA9C00F6626C /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 187273382449FA9C00F6626C /* NSDate+X.m */; };
 		1872733C2449FB8400F6626C /* NSCalendar+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1872733B2449FB8400F6626C /* NSCalendar+X.m */; };
+		1877E8CC246448B500C46AC1 /* UIImageView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877E8CB246448B500C46AC1 /* UIImageView+X.m */; };
 		187F16752440C43A00145C9D /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F16742440C43A00145C9D /* TopicModel.m */; };
 		187F16A72441F51900145C9D /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F16772441F51900145C9D /* UIScrollView+MJRefresh.m */; };
 		187F16A82441F51900145C9D /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F16782441F51900145C9D /* MJRefreshConst.m */; };
@@ -448,12 +455,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18134E14246065180029F96F /* RecommendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
+		18134E15246065180029F96F /* RecommendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
+		18134E172460676E0029F96F /* RecommendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendCell.h; sourceTree = "<group>"; };
+		18134E182460676E0029F96F /* RecommendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendCell.m; sourceTree = "<group>"; };
+		18134E192460676E0029F96F /* RecommendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCell.xib; sourceTree = "<group>"; };
 		183BB6322433926700F6026D /* MeFooterWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeFooterWebController.h; sourceTree = "<group>"; };
 		183BB6332433926700F6026D /* MeFooterWebController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeFooterWebController.m; sourceTree = "<group>"; };
 		183BB6342433926700F6026D /* MeFooterWebController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeFooterWebController.xib; sourceTree = "<group>"; };
 		183BB6382433977B00F6026D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		183CFDCC24275FCE00DF5978 /* VerticalBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalBtn.h; sourceTree = "<group>"; };
 		183CFDCD24275FCE00DF5978 /* VerticalBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalBtn.m; sourceTree = "<group>"; };
+		1841C5FA2455CD38004988F8 /* SeePigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeePigViewController.h; sourceTree = "<group>"; };
+		1841C5FB2455CD38004988F8 /* SeePigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeePigViewController.m; sourceTree = "<group>"; };
 		1842B374242CEE9000652A62 /* UITextField+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+X.h"; sourceTree = "<group>"; };
 		1842B375242CEE9000652A62 /* UITextField+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+X.m"; sourceTree = "<group>"; };
 		1842B378242F962D00652A62 /* MeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeTableViewCell.h; sourceTree = "<group>"; };
@@ -513,8 +527,12 @@
 		1842B3DF2430509800652A62 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		18446FB42429052500CEC10A /* LoginRegisterTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRegisterTextField.h; sourceTree = "<group>"; };
 		18446FB52429052500CEC10A /* LoginRegisterTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterTextField.m; sourceTree = "<group>"; };
+		184569982467EAFA0043B4A0 /* CommentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
+		184569992467EAFA0043B4A0 /* CommentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
+		1845699A2467EAFA0043B4A0 /* CommentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
 		184A07E724547E9E00D83EE9 /* TopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
 		184A07E824547E9E00D83EE9 /* TopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
+		184A4E6024571D41002DA23C /* SeePigViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeePigViewController.xib; sourceTree = "<group>"; };
 		184D36FE2444BB8500628B41 /* TopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
 		184D36FF2444BB8500628B41 /* TopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 		184D37002444BB8500628B41 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
@@ -522,7 +540,6 @@
 		1850E8A4244C1163003D5392 /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		1850E8A6244C1176003D5392 /* CmtModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmtModel.h; sourceTree = "<group>"; };
 		1850E8A7244C1176003D5392 /* CmtModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CmtModel.m; sourceTree = "<group>"; };
-		1853AF4E244F3C4D00E6C335 /* TopicPicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TopicPicView.xib; path = "BaiSiBuDeJie/Class/Essence(精华)/view/TopicPicView.xib"; sourceTree = "<group>"; };
 		1853AF52244F3D6A00E6C335 /* TopicPicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicPicView.m; sourceTree = "<group>"; };
 		1853AF53244F3D6A00E6C335 /* TopicPicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicPicView.h; sourceTree = "<group>"; };
 		1853AF54244F3D6A00E6C335 /* TopicPicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicPicView.xib; sourceTree = "<group>"; };
@@ -561,6 +578,8 @@
 		187273382449FA9C00F6626C /* NSDate+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+X.m"; sourceTree = "<group>"; };
 		1872733A2449FB8400F6626C /* NSCalendar+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+X.h"; sourceTree = "<group>"; };
 		1872733B2449FB8400F6626C /* NSCalendar+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+X.m"; sourceTree = "<group>"; };
+		1877E8CA246448B500C46AC1 /* UIImageView+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+X.h"; sourceTree = "<group>"; };
+		1877E8CB246448B500C46AC1 /* UIImageView+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+X.m"; sourceTree = "<group>"; };
 		187F16732440C43A00145C9D /* TopicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		187F16742440C43A00145C9D /* TopicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		187F16772441F51900145C9D /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
@@ -1164,6 +1183,9 @@
 				18FD21DF243E08000026ECA6 /* PicViewController.m */,
 				18FD21E1243E08110026ECA6 /* WordViewController.h */,
 				18FD21E2243E08110026ECA6 /* WordViewController.m */,
+				1841C5FA2455CD38004988F8 /* SeePigViewController.h */,
+				1841C5FB2455CD38004988F8 /* SeePigViewController.m */,
+				184A4E6024571D41002DA23C /* SeePigViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1180,6 +1202,40 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		1877E8CD24645B2E00C46AC1 /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				1877E8CE24645B2E00C46AC1 /* controller */,
+				1877E8CF24645B2E00C46AC1 /* model */,
+				1877E8D024645B2E00C46AC1 /* view */,
+			);
+			path = comment;
+			sourceTree = "<group>";
+		};
+		1877E8CE24645B2E00C46AC1 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				184569982467EAFA0043B4A0 /* CommentController.h */,
+				184569992467EAFA0043B4A0 /* CommentController.m */,
+				1845699A2467EAFA0043B4A0 /* CommentController.xib */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		1877E8CF24645B2E00C46AC1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		1877E8D024645B2E00C46AC1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		187F16722440C41C00145C9D /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1189,6 +1245,8 @@
 				1850E8A4244C1163003D5392 /* UserModel.m */,
 				1850E8A6244C1176003D5392 /* CmtModel.h */,
 				1850E8A7244C1176003D5392 /* CmtModel.m */,
+				18134E14246065180029F96F /* RecommendModel.h */,
+				18134E15246065180029F96F /* RecommendModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -1293,7 +1351,6 @@
 		188F3C69241BDE850095059C = {
 			isa = PBXGroup;
 			children = (
-				1853AF4E244F3C4D00E6C335 /* TopicPicView.xib */,
 				188F3C74241BDE850095059C /* BaiSiBuDeJie */,
 				188F3C73241BDE850095059C /* Products */,
 				183BB6372433977B00F6026D /* Frameworks */,
@@ -1346,6 +1403,7 @@
 		188F3C9C241DE4DF0095059C /* Essence(精华) */ = {
 			isa = PBXGroup;
 			children = (
+				1877E8CD24645B2E00C46AC1 /* comment */,
 				187F16722440C41C00145C9D /* model */,
 				18645E322421147E00BF4D48 /* controller */,
 				18D50D4C2443625F00E40203 /* view */,
@@ -1385,6 +1443,8 @@
 				187273382449FA9C00F6626C /* NSDate+X.m */,
 				1872733A2449FB8400F6626C /* NSCalendar+X.h */,
 				1872733B2449FB8400F6626C /* NSCalendar+X.m */,
+				1877E8CA246448B500C46AC1 /* UIImageView+X.h */,
+				1877E8CB246448B500C46AC1 /* UIImageView+X.m */,
 			);
 			name = Category;
 			path = BaiSiBuDeJie/Class/Category;
@@ -1893,6 +1953,9 @@
 				1853AF57244F3F5000E6C335 /* TopicAudioView.h */,
 				1853AF58244F3F5000E6C335 /* TopicAudioView.m */,
 				1853AF59244F3F5000E6C335 /* TopicAudioView.xib */,
+				18134E172460676E0029F96F /* RecommendCell.h */,
+				18134E182460676E0029F96F /* RecommendCell.m */,
+				18134E192460676E0029F96F /* RecommendCell.xib */,
 			);
 			name = view;
 			path = "BaiSiBuDeJie/Class/Essence(精华)/view";
@@ -2014,7 +2077,6 @@
 				188F3F1A241DF9CF0095059C /* Profile_AddV_authen@3x.png in Resources */,
 				188F3E1C241DF9CE0095059C /* post-#.png in Resources */,
 				188F3F26241DF9CF0095059C /* see-big-picture@3x.png in Resources */,
-				1853AF4F244F3C4D00E6C335 /* TopicPicView.xib in Resources */,
 				188F3EB3241DF9CE0095059C /* login_register_button_click.png in Resources */,
 				188F3E8C241DF9CE0095059C /* tabBar_me_click_icon.png in Resources */,
 				188F3EE0241DF9CE0095059C /* publish-text.png in Resources */,
@@ -2032,6 +2094,8 @@
 				188F3E44241DF9CE0095059C /* comment_bar_at_icon_click@2x.png in Resources */,
 				188F3F52241DF9CF0095059C /* mine-setting-iconN@3x.png in Resources */,
 				188F3E52241DF9CE0095059C /* comment-bar-voice-click@2x.png in Resources */,
+				18134E1B2460676E0029F96F /* RecommendCell.xib in Resources */,
+				184A4E6124571D41002DA23C /* SeePigViewController.xib in Resources */,
 				188F3F2B241DF9CF0095059C /* mainCellComment@2x.png in Resources */,
 				188F3EEB241DF9CE0095059C /* shareButtonCancelClick.png in Resources */,
 				188F3EB0241DF9CE0095059C /* loginBtnBgClick.png in Resources */,
@@ -2284,6 +2348,7 @@
 				188F3F5B241DF9CF0095059C /* play@2x.png in Resources */,
 				188F3F4E241DF9CF0095059C /* mine-icon-preview.png in Resources */,
 				188F3E73241DF9CE0095059C /* navigationButtonReturnClick@2x.png in Resources */,
+				1845699C2467EAFA0043B4A0 /* CommentController.xib in Resources */,
 				188F3EE4241DF9CE0095059C /* publish-picture@2x.png in Resources */,
 				188F3E93241DF9CE0095059C /* tabBar_essence_click_icon@3x.png in Resources */,
 				188F3F6D241DF9CF0095059C /* friendsTrend_login_click.png in Resources */,
@@ -2311,6 +2376,7 @@
 				185C4B3F24305A3D007C5787 /* MJPropertyType.m in Sources */,
 				187F16B12441F51900145C9D /* MJRefreshAutoStateFooter.m in Sources */,
 				1842B3E32430509800652A62 /* SDWebImageDecoder.m in Sources */,
+				1841C5FC2455CD38004988F8 /* SeePigViewController.m in Sources */,
 				187F16A92441F51900145C9D /* MJRefreshConfig.m in Sources */,
 				185C4B4124305A3D007C5787 /* MJProperty.m in Sources */,
 				185C4B4924305A3D007C5787 /* MJFoundation.m in Sources */,
@@ -2327,6 +2393,7 @@
 				187F16AF2441F51900145C9D /* MJRefreshBackStateFooter.m in Sources */,
 				185C4B4524305A3D007C5787 /* NSObject+MJClass.m in Sources */,
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
+				1845699B2467EAFA0043B4A0 /* CommentController.m in Sources */,
 				18946A542423B85600CD14DD /* RecommendViewController.m in Sources */,
 				18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */,
 				185C4B4324305A3D007C5787 /* MJExtensionConst.m in Sources */,
@@ -2352,6 +2419,7 @@
 				187F16BB2441F51900145C9D /* MJRefreshComponent.m in Sources */,
 				1842B3E22430509800652A62 /* SDWebImageManager.m in Sources */,
 				1842B3EF2430509800652A62 /* UIButton+WebCache.m in Sources */,
+				18134E1A2460676E0029F96F /* RecommendCell.m in Sources */,
 				1853AF55244F3D6A00E6C335 /* TopicPicView.m in Sources */,
 				1842B3E62430509800652A62 /* UIImage+GIF.m in Sources */,
 				184A07E924547E9E00D83EE9 /* TopicViewController.m in Sources */,
@@ -2375,6 +2443,7 @@
 				188F3C88241BDE860095059C /* main.m in Sources */,
 				1842B3932430471A00652A62 /* AFURLSessionManager.m in Sources */,
 				1850E8A5244C1163003D5392 /* UserModel.m in Sources */,
+				1877E8CC246448B500C46AC1 /* UIImageView+X.m in Sources */,
 				187F16A72441F51900145C9D /* UIScrollView+MJRefresh.m in Sources */,
 				187F16AD2441F51900145C9D /* UIView+MJExtension.m in Sources */,
 				18F785592438D98300F17665 /* NSString+X.m in Sources */,
@@ -2393,6 +2462,7 @@
 				187F16AE2441F51900145C9D /* MJRefreshBackGifFooter.m in Sources */,
 				18984F5124273D3400D49217 /* XUITabBar.m in Sources */,
 				1842B3942430471A00652A62 /* AFURLRequestSerialization.m in Sources */,
+				18134E16246065180029F96F /* RecommendModel.m in Sources */,
 				1853AF60244F3F5900E6C335 /* TopicVideoView.m in Sources */,
 				185C4B4224305A3D007C5787 /* NSObject+MJCoding.m in Sources */,
 				187F16B72441F51900145C9D /* MJRefreshFooter.m in Sources */,

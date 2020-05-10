@@ -13,6 +13,8 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 
+#import "SeePigViewController.h"
+
 @interface TopicPicView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *ivPic;
@@ -29,15 +31,40 @@
     [super awakeFromNib];
     
     self.autoresizingMask = UIViewAutoresizingNone;
+    
+    self.ivPic.userInteractionEnabled = YES;
+//    [self.ivPic addGestureRecognizer:[[UIGestureRecognizer alloc] initWithTarget:self action:@selector(ivPicClick:)]];
+//
+    self.ivPic.userInteractionEnabled = YES;
+    [self.ivPic addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ivPicClick)]];
+}
+
+- (void)ivPicClick {
+//    NSLog(@"%@", self.topicModel);
+    SeePigViewController *seePigVc = [[SeePigViewController alloc] init];
+    seePigVc.topicModel = self.topicModel;
+
+    // present
+    [[UIApplication sharedApplication].windows[0].rootViewController presentViewController:seePigVc animated:YES completion:nil];
+    
+    // push
+//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+//    UINavigationController *navController = tabBarController.selectedViewController;
+//    [navController pushViewController:seePigVc animated:YES];
 }
 
 - (void)setTopicModel:(TopicModel *)topicModel {
+    _topicModel = topicModel;
+    
     self.ivPic.hidden = YES;
     self.ivGif.hidden = !topicModel.is_gif;
     self.btnSeeBig.hidden = !topicModel.isBigPic;
     
     if (topicModel.isBigPic) {
         self.ivPic.contentMode = UIViewContentModeTop;
+//        self.ivPic.contentMode = UIViewContentModeScaleToFill; // 填充wh
+//        self.ivPic.contentMode = UIViewContentModeScaleAspectFit; // 按wh比例完全显示
+//        self.ivPic.contentMode = UIViewContentModeCenter; // 
     } else {
         self.ivPic.contentMode = UIViewContentModeScaleToFill;
     }

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
+#import <AVKit/AVKit.h>
+
 #import "TopicAudioView.h"
 
 #import "UIImageView+WebCache.h"
@@ -30,6 +32,7 @@
 }
 
 - (void)setTopicModel:(TopicModel *)topicModel {
+    _topicModel = topicModel;
     
     switch ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus) {
         case AFNetworkReachabilityStatusReachableViaWWAN:
@@ -53,7 +56,15 @@
 
 
 - (IBAction)btnAudioPlay:(UIButton *)sender {
-    XLog
+    NSLog(@"voiceuri: %@", self.topicModel.voiceuri);
+    
+    AVPlayerViewController *avPlayerVc = [[AVPlayerViewController alloc] init];
+    avPlayerVc.player = [AVPlayer playerWithURL:[NSURL URLWithString:self.topicModel.voiceuri]];
+    [avPlayerVc.player play];
+    
+    [[UIApplication sharedApplication].windows[0].rootViewController presentViewController:avPlayerVc animated:nil completion:^{
+        
+    }];
 }
 
 @end

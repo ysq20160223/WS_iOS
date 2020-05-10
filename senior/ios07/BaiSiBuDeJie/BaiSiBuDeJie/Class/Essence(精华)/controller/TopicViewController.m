@@ -23,6 +23,8 @@
 #import "CmtModel.h"
 #import "UserModel.h"
 
+#import "CommentController.h"
+
 @interface TopicViewController ()
 
 //
@@ -77,6 +79,7 @@ static NSString *const TopicCellId = @"TopicCellId";
         paraDict[@"a"] = @"list";
         paraDict[@"c"] = @"data";
         paraDict[@"type"] = @(self.topicType); //
+//        NSLog(@"type: %ld", self.topicType);
         
         [weakSelf.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
         
@@ -150,6 +153,13 @@ static NSString *const TopicCellId = @"TopicCellId";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    NSLog(@"row: %ld", indexPath.row)
     return self.topicArray[indexPath.row].cellHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@", indexPath);
+    
+    CommentController *commentVc = [[CommentController alloc] init];
+    [self.navigationController pushViewController:commentVc animated:YES];
 }
 
 #pragma mark -

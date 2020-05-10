@@ -55,7 +55,7 @@ static NSString *const BSSettingCellId = @"BSSettingCellId";
 }
 
 - (void)setupNaviationBar {
-    XLog
+//    XLog
     //    self.view.backgroundColor = XColor(0xff, 0x88, 0x00);
     //    self.view.backgroundColor = XColor(0xff, 0xff, 0xff);
     self.navigationItem.title = @"me";

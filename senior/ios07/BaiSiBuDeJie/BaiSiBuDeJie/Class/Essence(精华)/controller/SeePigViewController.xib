@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SeePigViewController">
+            <connections>
+                <outlet property="btnSavePic" destination="CLg-fC-hdQ" id="Hgg-HE-wpn"/>
+                <outlet property="scrollView" destination="bbf-0r-Y33" id="bu7-SI-F3R"/>
+                <outlet property="view" destination="iN0-l3-epB" id="J7h-0U-hmm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbf-0r-Y33">
+                    <rect key="frame" x="0.0" y="282" width="414" height="271"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <viewLayoutGuide key="contentLayoutGuide" id="i3W-Kr-6Ek"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="JWj-Oq-4JX"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKv-Sv-96G" userLabel="btnBack">
+                    <rect key="frame" x="20" y="60" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="show_image_back_icon.png"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="7SN-gc-Cib"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLg-fC-hdQ" userLabel="btnSave">
+                    <rect key="frame" x="334" y="762" width="60" height="34"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="FwW-OQ-83m"/>
+                    </constraints>
+                    <state key="normal" title="Save"/>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="clickBtnSavePic:" destination="-1" eventType="touchUpInside" id="PAw-z1-M4N"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CLg-fC-hdQ" secondAttribute="trailing" constant="20" id="1hj-L3-ofO"/>
+                <constraint firstAttribute="bottom" secondItem="CLg-fC-hdQ" secondAttribute="bottom" constant="100" id="xEl-gg-UVR"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="show_image_back_icon.png" width="35" height="35"/>
+    </resources>
+</document>

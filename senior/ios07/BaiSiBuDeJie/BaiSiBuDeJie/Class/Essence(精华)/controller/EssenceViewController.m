@@ -184,7 +184,6 @@
 
 - (void)navItemLeftBtnViewClick:(UIButton *)btn {
     //    NSLog(@"btn: %@", btn);
-    
     RecommendViewController *viewController = [[RecommendViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }

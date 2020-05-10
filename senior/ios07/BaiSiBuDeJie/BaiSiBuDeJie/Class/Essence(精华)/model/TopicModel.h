@@ -56,6 +56,10 @@ typedef NS_ENUM(NSInteger, TopicType) {
 // video
 @property (nonatomic, assign) NSInteger playcount;
 @property (nonatomic, assign) NSInteger videotime;
+@property (nonatomic, strong) NSString *videouri;
+
+// audio
+@property (nonatomic, strong) NSString *voiceuri;
 
 
 // additional

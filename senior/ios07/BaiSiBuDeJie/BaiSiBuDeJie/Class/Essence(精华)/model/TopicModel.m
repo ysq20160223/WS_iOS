@@ -86,7 +86,7 @@ static NSCalendar *calendar_;
     if (self.type != TopicTypeWord) {
         CGFloat imgH = textMaxW * self.height / self.width * 1;
         if (self.type == TopicTypePic && !self.is_gif && imgH > kScreenH * 0.7) {
-            NSLog(@"%@; imgH: %f, kScreenH: %f", self, imgH, kScreenH);
+//            NSLog(@"%@; imgH: %f, kScreenH: %f", self, imgH, kScreenH);
             imgH = kScreenH * 0.5;
             self.isBigPic = YES;
         }
@@ -118,7 +118,7 @@ static NSCalendar *calendar_;
 
 #pragma mark -
 - (NSString *)description {
-    return [NSString stringWithFormat:@"TopicModel[ID: %ld; name: %@; profile_image: %@; text: %@; created_at: %@; ding: %ld; cai: %ld; repost: %ld; comment: %ld; top_cmt: %@; TopicType: %ld; width: %ld; height: %ld; is_gif: %ld, smallImg: %@; middleImg: %@; largeImg: %@; cellHeight: %f; contentRect: %@]", self.ID, self.name, self.profile_image, self.text, self.created_at, self.ding, self.cai, self.repost, self.comment, self.top_cmt, self.type, self.width, self.height, self.is_gif, self.smallImg, self.middleImg, self.largeImg, self.cellHeight, NSStringFromCGRect(self.contentRect)];
+    return [NSString stringWithFormat:@"TopicModel[ID: %ld; name: %@; profile_image: %@; text: %@; created_at: %@; ding: %ld; cai: %ld; repost: %ld; comment: %ld; top_cmt: %@; TopicType: %ld; width: %ld; height: %ld; is_gif: %ld, smallImg: %@; middleImg: %@; largeImg: %@; cellHeight: %f; contentRect: %@; videouri: %@; voiceuri: %@]", self.ID, self.name, self.profile_image, self.text, self.created_at, self.ding, self.cai, self.repost, self.comment, self.top_cmt, self.type, self.width, self.height, self.is_gif, self.smallImg, self.middleImg, self.largeImg, self.cellHeight, NSStringFromCGRect(self.contentRect), self.videouri, self.voiceuri];
 }
 
 @end

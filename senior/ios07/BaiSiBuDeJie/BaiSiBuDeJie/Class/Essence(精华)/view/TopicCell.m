@@ -17,6 +17,8 @@
 #import "TopicVideoView.h"
 
 #import "UIView+X.h"
+//#import "UIImage+X.h"
+#import "UIImageView+X.h"
 
 #import "UIImageView+WebCache.h"
 
@@ -51,10 +53,13 @@
     _topicModel = topicModel;
 //    NSLog(@"%@", topicModel);
     
-    [self.ivUserProfile sd_setImageWithURL:[NSURL URLWithString:topicModel.profile_image]];
+//    [self.ivUserProfile sd_setImageWithURL:[NSURL URLWithString:topicModel.profile_image] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        self.ivUserProfile.image = [image xCircleImage];
+//    }];
+    [self.ivUserProfile xCircle:topicModel.profile_image placeholder:@"defaultUserIcon"];
     self.lblName.text = topicModel.name;
     self.lblTime.text = topicModel.created_at;
-    self.lblContent.text = [NSString stringWithFormat:@"%@ - %ld", topicModel.text, topicModel.type];
+    self.lblContent.text = [NSString stringWithFormat:@"%@", topicModel.text];
     
     //
     [self.btnDing setTitle:[NSString stringWithFormat:@"%ld", topicModel.ding] forState:UIControlStateNormal];
@@ -93,6 +98,10 @@
         case TopicTypePic:
             self.topicPicView.topicModel = topicModel;
             self.topicPicView.frame = topicModel.contentRect;
+//            NSLog(@"%@ - %@", topicModel.name, NSStringFromCGRect(topicModel.contentRect));
+//            CGRect rect = topicModel.contentRect;
+//            rect.size.height = topicModel.height;
+//            self.topicPicView.frame = rect;
             
             self.topicVideoView.hidden = YES;
             self.topicAudioView.hidden = YES;
