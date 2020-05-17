@@ -104,8 +104,12 @@ static NSCalendar *calendar_;
     // 4,
     if (self.top_cmt.count) {
         _cellHeight += 30; // User
+        if (self.top_cmt[0].voiceuri.length) {
+            self.top_cmt[0].content = @"[Voice Comment]";
+        }
         
         NSString *topCmtContent = [NSString stringWithFormat:@"%@: %@", self.top_cmt[0].user.username, self.top_cmt[0].content];
+        
         CGSize topCmtContentSize = [topCmtContent boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size;
         _cellHeight += topCmtContentSize.height + BSMargin;
     }

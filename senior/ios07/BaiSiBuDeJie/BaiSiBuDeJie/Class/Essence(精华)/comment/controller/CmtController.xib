@@ -6,9 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CmtController">
             <connections>
                 <outlet property="cmtViewBottomConstraints" destination="Sci-j5-5Va" id="HbP-yS-YEu"/>
+                <outlet property="tableView" destination="kpT-be-mdx" id="ory-qh-yfH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

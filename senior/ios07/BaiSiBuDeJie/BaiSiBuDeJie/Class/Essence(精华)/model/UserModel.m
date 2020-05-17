@@ -11,7 +11,7 @@
 @implementation UserModel
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"UserModel[username: %@]", self.username];
+    return [NSString stringWithFormat:@"UserModel[username: %@; profile_image: %@; sex: %@; total_cmt_like_count: %ld]", self.username, self.profile_image, self.sex, self.total_cmt_like_count];
 }
 
 @end

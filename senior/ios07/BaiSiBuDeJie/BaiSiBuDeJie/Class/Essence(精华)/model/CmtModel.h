@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) UserModel *user;
+@property (nonatomic, strong) NSString *like_count;
+@property (nonatomic, strong) NSString *voicetime;
+@property (nonatomic, strong) NSString *voiceuri;
+@property (nonatomic, assign) NSInteger ID;
+
+
+// add
+@property (nonatomic, assign) NSInteger index;
 
 @end
 

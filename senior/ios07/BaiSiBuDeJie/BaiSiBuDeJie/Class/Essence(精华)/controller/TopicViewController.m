@@ -23,9 +23,9 @@
 #import "CmtModel.h"
 #import "UserModel.h"
 
-#import "CommentController.h"
+#import "CmtController.h"
 
-@interface TopicViewController ()
+@interface TopicViewController () 
 
 //
 @property (nonatomic, strong) NSMutableArray<TopicModel *> *topicArray;
@@ -55,6 +55,7 @@ static NSString *const TopicCellId = @"TopicCellId";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.contentInset = UIEdgeInsetsMake(kTitleViewH + self.navigationController.navigationBar.xHeight, 0,
                                                    self.tabBarController.tabBar.xHeight + kStatusBarH, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
@@ -90,12 +91,18 @@ static NSString *const TopicCellId = @"TopicCellId";
             [weakSelf.topicArray removeAllObjects];
             [weakSelf.topicArray addObjectsFromArray:[TopicModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]]];
             
-            for (NSInteger i = 0; i < weakSelf.topicArray.count; i++) {
-//                NSLog(@"i: %ld; %ld", i, weakSelf.topicArray[i].top_cmt.count);
-                if (weakSelf.topicArray[i].top_cmt.count) {
-                    NSLog(@"i: %ld; %@", i, weakSelf.topicArray[i].top_cmt);
-                }
-            }
+            // 有最热评论的情况
+//            for (NSInteger i = 0; i < weakSelf.topicArray.count; i++) {
+////                NSLog(@"i: %ld; %ld", i, weakSelf.topicArray[i].top_cmt.count);
+//
+//                if (weakSelf.topicArray[i].top_cmt.count) {
+//                    CmtModel *cmtModel = weakSelf.topicArray[i].top_cmt[0];
+//                    cmtModel.user.username = @"ABCDEFGHIJKLMN1234567890poiuytrewqasdfghjklmnbvcxz";
+//                    cmtModel.content = @"";
+//                    cmtModel.voiceuri = @"voiceuri";
+//                    NSLog(@"i: %ld; %@", i, weakSelf.topicArray[i].top_cmt);
+//                }
+//            }
             
             [weakSelf.tableView reloadData];
             
@@ -156,9 +163,10 @@ static NSString *const TopicCellId = @"TopicCellId";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", indexPath);
+//    NSLog(@"%@", indexPath);
     
-    CommentController *commentVc = [[CommentController alloc] init];
+    CmtController *commentVc = [[CmtController alloc] init];
+    commentVc.topicModel = self.topicArray[indexPath.row];
     [self.navigationController pushViewController:commentVc animated:YES];
 }
 

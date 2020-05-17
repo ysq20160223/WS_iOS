@@ -127,7 +127,6 @@
     [super setFrame:frame];
 }
 
-
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code

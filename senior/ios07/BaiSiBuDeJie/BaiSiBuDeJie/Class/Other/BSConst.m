@@ -26,6 +26,12 @@ NSString *const commonUrl = @"http://api.budejie.com/api/api_open.php";
 @implementation BSConst
 
 + (void)load {
+    [NSObject mj_setupReplacedKeyFromPropertyName:^NSDictionary *{
+        return @{
+            @"ID" : @"id"
+        };
+    }];
+    
     [TopicModel mj_setupObjectClassInArray:^NSDictionary *{
         return @{
             @"top_cmt" : [CmtModel class],

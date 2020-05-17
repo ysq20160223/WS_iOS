@@ -33,16 +33,20 @@
 
 - (void)setTopicModel:(TopicModel *)topicModel {
     _topicModel = topicModel;
+//    NSLog(@"%@", topicModel);
     
     switch ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus) {
         case AFNetworkReachabilityStatusReachableViaWWAN:
         case AFNetworkReachabilityStatusUnknown:
         case AFNetworkReachabilityStatusReachableViaWiFi: {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                NSLog(@"%@", topicModel.largeImg);
                 [self.ivPic sd_setImageWithURL:[NSURL URLWithString:topicModel.largeImg] placeholderImage:nil options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                    //        NSLog(@"%ld; %ld", receivedSize, expectedSize);
+//                    NSLog(@"%ld; %ld", receivedSize, expectedSize);
                 } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                    //        NSLog(@"");
+                    if (error) {
+                        NSLog(@"%@", error);
+                    }
                 }];
             });
         }

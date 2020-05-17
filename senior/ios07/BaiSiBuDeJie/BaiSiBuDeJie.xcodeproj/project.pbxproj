@@ -43,10 +43,11 @@
 		1842B3EE2430509800652A62 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B3DA2430509800652A62 /* UIView+WebCacheOperation.m */; };
 		1842B3EF2430509800652A62 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B3DE2430509800652A62 /* UIButton+WebCache.m */; };
 		18446FB62429052500CEC10A /* LoginRegisterTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 18446FB52429052500CEC10A /* LoginRegisterTextField.m */; };
-		1845699B2467EAFA0043B4A0 /* CommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184569992467EAFA0043B4A0 /* CommentController.m */; };
-		1845699C2467EAFA0043B4A0 /* CommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1845699A2467EAFA0043B4A0 /* CommentController.xib */; };
+		1845699B2467EAFA0043B4A0 /* CmtController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184569992467EAFA0043B4A0 /* CmtController.m */; };
+		1845699C2467EAFA0043B4A0 /* CmtController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1845699A2467EAFA0043B4A0 /* CmtController.xib */; };
 		184A07E924547E9E00D83EE9 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A07E824547E9E00D83EE9 /* TopicViewController.m */; };
 		184A4E6124571D41002DA23C /* SeePigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184A4E6024571D41002DA23C /* SeePigViewController.xib */; };
+		184A612A246C477900D32991 /* CmtTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6129246C477900D32991 /* CmtTableViewHeaderFooterView.m */; };
 		184D37012444BB8500628B41 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D36FF2444BB8500628B41 /* TopicCell.m */; };
 		184D37022444BB8500628B41 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D37002444BB8500628B41 /* TopicCell.xib */; };
 		1850E8A5244C1163003D5392 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850E8A4244C1163003D5392 /* UserModel.m */; };
@@ -447,6 +448,8 @@
 		18F785592438D98300F17665 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785582438D98300F17665 /* NSString+X.m */; };
 		18F785962439877100F17665 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785952439877100F17665 /* MBProgressHUD.m */; };
 		18F785992439FF3B00F17665 /* MeClearCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785982439FF3B00F17665 /* MeClearCacheCell.m */; };
+		18FB0C9E246FDD3500E85C88 /* CmtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FB0C9C246FDD3500E85C88 /* CmtCell.m */; };
+		18FB0C9F246FDD3500E85C88 /* CmtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FB0C9D246FDD3500E85C88 /* CmtCell.xib */; };
 		18FD21D7243E07BA0026ECA6 /* AllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21D6243E07BA0026ECA6 /* AllViewController.m */; };
 		18FD21DA243E07D50026ECA6 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21D9243E07D50026ECA6 /* VideoViewController.m */; };
 		18FD21DD243E07EA0026ECA6 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FD21DC243E07EA0026ECA6 /* AudioViewController.m */; };
@@ -527,12 +530,14 @@
 		1842B3DF2430509800652A62 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		18446FB42429052500CEC10A /* LoginRegisterTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginRegisterTextField.h; sourceTree = "<group>"; };
 		18446FB52429052500CEC10A /* LoginRegisterTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterTextField.m; sourceTree = "<group>"; };
-		184569982467EAFA0043B4A0 /* CommentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentController.h; sourceTree = "<group>"; };
-		184569992467EAFA0043B4A0 /* CommentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentController.m; sourceTree = "<group>"; };
-		1845699A2467EAFA0043B4A0 /* CommentController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentController.xib; sourceTree = "<group>"; };
+		184569982467EAFA0043B4A0 /* CmtController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmtController.h; sourceTree = "<group>"; };
+		184569992467EAFA0043B4A0 /* CmtController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CmtController.m; sourceTree = "<group>"; };
+		1845699A2467EAFA0043B4A0 /* CmtController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CmtController.xib; sourceTree = "<group>"; };
 		184A07E724547E9E00D83EE9 /* TopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
 		184A07E824547E9E00D83EE9 /* TopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 		184A4E6024571D41002DA23C /* SeePigViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeePigViewController.xib; sourceTree = "<group>"; };
+		184A6128246C477900D32991 /* CmtTableViewHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmtTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		184A6129246C477900D32991 /* CmtTableViewHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CmtTableViewHeaderFooterView.m; sourceTree = "<group>"; };
 		184D36FE2444BB8500628B41 /* TopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
 		184D36FF2444BB8500628B41 /* TopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 		184D37002444BB8500628B41 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
@@ -995,6 +1000,9 @@
 		18F785952439877100F17665 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		18F785972439FF3B00F17665 /* MeClearCacheCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeClearCacheCell.h; sourceTree = "<group>"; };
 		18F785982439FF3B00F17665 /* MeClearCacheCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeClearCacheCell.m; sourceTree = "<group>"; };
+		18FB0C9B246FDD3500E85C88 /* CmtCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmtCell.h; sourceTree = "<group>"; };
+		18FB0C9C246FDD3500E85C88 /* CmtCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CmtCell.m; sourceTree = "<group>"; };
+		18FB0C9D246FDD3500E85C88 /* CmtCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CmtCell.xib; sourceTree = "<group>"; };
 		18FD21D5243E07BA0026ECA6 /* AllViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllViewController.h; sourceTree = "<group>"; };
 		18FD21D6243E07BA0026ECA6 /* AllViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllViewController.m; sourceTree = "<group>"; };
 		18FD21D8243E07D50026ECA6 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
@@ -1215,9 +1223,9 @@
 		1877E8CE24645B2E00C46AC1 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				184569982467EAFA0043B4A0 /* CommentController.h */,
-				184569992467EAFA0043B4A0 /* CommentController.m */,
-				1845699A2467EAFA0043B4A0 /* CommentController.xib */,
+				184569982467EAFA0043B4A0 /* CmtController.h */,
+				184569992467EAFA0043B4A0 /* CmtController.m */,
+				1845699A2467EAFA0043B4A0 /* CmtController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1232,6 +1240,11 @@
 		1877E8D024645B2E00C46AC1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				184A6128246C477900D32991 /* CmtTableViewHeaderFooterView.h */,
+				184A6129246C477900D32991 /* CmtTableViewHeaderFooterView.m */,
+				18FB0C9B246FDD3500E85C88 /* CmtCell.h */,
+				18FB0C9C246FDD3500E85C88 /* CmtCell.m */,
+				18FB0C9D246FDD3500E85C88 /* CmtCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -2138,6 +2151,7 @@
 				188F3ECB241DF9CE0095059C /* login_register_left_line@2x.png in Resources */,
 				1853AF5F244F3F5900E6C335 /* TopicVideoView.xib in Resources */,
 				188F3F76241DF9CF0095059C /* header_cry_icon@2x.png in Resources */,
+				18FB0C9F246FDD3500E85C88 /* CmtCell.xib in Resources */,
 				188F3EC5241DF9CE0095059C /* login_register_background.png in Resources */,
 				188F3E24241DF9CE0095059C /* tag_add_icon@2x.png in Resources */,
 				188F3F11241DF9CF0095059C /* video-play@3x.png in Resources */,
@@ -2348,7 +2362,7 @@
 				188F3F5B241DF9CF0095059C /* play@2x.png in Resources */,
 				188F3F4E241DF9CF0095059C /* mine-icon-preview.png in Resources */,
 				188F3E73241DF9CE0095059C /* navigationButtonReturnClick@2x.png in Resources */,
-				1845699C2467EAFA0043B4A0 /* CommentController.xib in Resources */,
+				1845699C2467EAFA0043B4A0 /* CmtController.xib in Resources */,
 				188F3EE4241DF9CE0095059C /* publish-picture@2x.png in Resources */,
 				188F3E93241DF9CE0095059C /* tabBar_essence_click_icon@3x.png in Resources */,
 				188F3F6D241DF9CF0095059C /* friendsTrend_login_click.png in Resources */,
@@ -2393,7 +2407,7 @@
 				187F16AF2441F51900145C9D /* MJRefreshBackStateFooter.m in Sources */,
 				185C4B4524305A3D007C5787 /* NSObject+MJClass.m in Sources */,
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
-				1845699B2467EAFA0043B4A0 /* CommentController.m in Sources */,
+				1845699B2467EAFA0043B4A0 /* CmtController.m in Sources */,
 				18946A542423B85600CD14DD /* RecommendViewController.m in Sources */,
 				18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */,
 				185C4B4324305A3D007C5787 /* MJExtensionConst.m in Sources */,
@@ -2436,6 +2450,7 @@
 				185C4B4624305A3D007C5787 /* NSString+MJExtension.m in Sources */,
 				1872733C2449FB8400F6626C /* NSCalendar+X.m in Sources */,
 				187F16A82441F51900145C9D /* MJRefreshConst.m in Sources */,
+				184A612A246C477900D32991 /* CmtTableViewHeaderFooterView.m in Sources */,
 				188F3CAB241DF2EB0095059C /* UIImage+X.m in Sources */,
 				1842B3E12430509800652A62 /* MKAnnotationView+WebCache.m in Sources */,
 				18F785992439FF3B00F17665 /* MeClearCacheCell.m in Sources */,
@@ -2469,6 +2484,7 @@
 				187F16B82441F51900145C9D /* MJRefreshHeader.m in Sources */,
 				1842B37D242FA19400652A62 /* BSConst.m in Sources */,
 				187F16B02441F51900145C9D /* MJRefreshBackNormalFooter.m in Sources */,
+				18FB0C9E246FDD3500E85C88 /* CmtCell.m in Sources */,
 				1842B3952430471A00652A62 /* AFNetworkReachabilityManager.m in Sources */,
 				18984F5424273DA900D49217 /* UIView+X.m in Sources */,
 				18D50D4B2442ADEC00E40203 /* XRefreshFooter.m in Sources */,

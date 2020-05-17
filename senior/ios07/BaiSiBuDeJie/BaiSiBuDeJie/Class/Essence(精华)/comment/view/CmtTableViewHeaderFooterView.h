@@ -1,8 +1,8 @@
 //
-//  CommentController.h
+//  CmtTableViewHeaderFooterView.h
 //  BaiSiBuDeJie
 //
-//  Created by Apple on 2020/5/10.
+//  Created by Apple on 2020/5/13.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CommentController : UIViewController
+@interface CmtTableViewHeaderFooterView : UITableViewHeaderFooterView
 
 @end
 
