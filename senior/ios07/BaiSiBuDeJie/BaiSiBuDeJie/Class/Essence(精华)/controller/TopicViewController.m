@@ -63,6 +63,13 @@ static NSString *const TopicCellId = @"TopicCellId";
     
     [self setupRefresh];
     
+    [self setupNotification];
+}
+
+- (void)setupNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarBtnDidRepeatClick) name:TabBarBtnDidRepeatClickNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(titleBtnRepeatClick) name:TitleBtnDidRepeatClickNotification object:nil];
 }
 
 - (void)setupRefresh {
@@ -168,6 +175,28 @@ static NSString *const TopicCellId = @"TopicCellId";
     CmtController *commentVc = [[CmtController alloc] init];
     commentVc.topicModel = self.topicArray[indexPath.row];
     [self.navigationController pushViewController:commentVc animated:YES];
+}
+
+#pragma mark - Listen start
+- (void)tabBarBtnDidRepeatClick {
+    if (!self.view.window) {
+        return;
+    }
+    if (![self.view intersectWithView:[UIApplication sharedApplication].keyWindow]) {
+        return;
+    }
+    NSLog(@"topicType: %ld; %@", [self topicType], self.class);
+    [self.tableView.mj_header beginRefreshing];
+}
+
+- (void)titleBtnRepeatClick {
+    [self tabBarBtnDidRepeatClick];
+}
+#pragma mark - Listen end
+
+#pragma mark -
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -

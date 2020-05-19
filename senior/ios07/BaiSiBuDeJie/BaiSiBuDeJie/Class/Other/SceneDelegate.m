@@ -1,14 +1,41 @@
 #import "SceneDelegate.h"
 
 #import "XTabBarController.h"
+#import "BSConst.h"
 
-@interface SceneDelegate ()
+
+@interface SceneDelegate () <UITabBarControllerDelegate>
+
+@property (nonatomic, strong) UIWindow *statusWindow;
+
+@property (nonatomic, assign) NSInteger lastSelectedIndex;
 
 @end
 
 
 
 @implementation SceneDelegate
+
+#pragma mark - UITabBarControllerDelegate start
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+//    NSLog(@"%@; %@", tabBarController, viewController);
+    if (tabBarController.selectedIndex == self.lastSelectedIndex) {
+        // 发出通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:TabBarBtnDidRepeatClickNotification object:nil];
+        
+        //
+        self.lastSelectedIndex = -1;
+        return;
+    }
+    self.lastSelectedIndex = tabBarController.selectedIndex;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.lastSelectedIndex = -1;
+    });
+}
+
+#pragma mark - UITabBarControllerDelegate end
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -26,15 +53,33 @@
     
     
     // 2
-    self.window.rootViewController = [[XTabBarController alloc] init];
+    XTabBarController *rootVc = [[XTabBarController alloc] init];
+    rootVc.delegate = self;
+    self.window.rootViewController = rootVc;
     
     
     // 3
     [self.window makeKeyAndVisible];
     
+//    //
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        self.statusWindow = [[UIWindow alloc] init];
+//        self.statusWindow.frame = [UIApplication sharedApplication].statusBarFrame;
+//        self.statusWindow.backgroundColor = [UIColor cyanColor];
+//        self.statusWindow.windowLevel = UIWindowLevelAlert;
+//        self.statusWindow.hidden = NO;
+//        [self.statusWindow addGestureRecognizer:[[UIGestureRecognizer alloc] initWithTarget:self action:@selector(statusWindowClick:)]];
+//    });
+    
+    self.lastSelectedIndex = -1;
+    
     [NSThread sleepForTimeInterval:1];
 }
 
+//- (void)statusWindowClick:(UIWindow *)statusWindow {
+//    XLog
+//    
+//}
 
 - (void)sceneDidDisconnect:(UIScene *)scene {
     // Called as the scene is being released by the system.

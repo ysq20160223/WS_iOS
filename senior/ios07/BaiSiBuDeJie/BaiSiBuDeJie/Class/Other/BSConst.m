@@ -23,6 +23,12 @@ CGFloat const BSMargin = 10;
 // URL
 NSString *const commonUrl = @"http://api.budejie.com/api/api_open.php";
 
+//
+NSString *const TabBarBtnDidRepeatClickNotification = @"TabBarBtnDidRepeatClickNotification";
+
+//
+NSString *const TitleBtnDidRepeatClickNotification = @"TitleBtnDidRepeatClickNotification";
+
 @implementation BSConst
 
 + (void)load {

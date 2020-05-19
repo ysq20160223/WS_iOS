@@ -158,6 +158,12 @@
 
 - (void)titleBtnClick:(UIButton *)btn {
     //    NSLog(@"%@", [btn titleForState:UIControlStateNormal]);
+    if (btn == self.selectedTitleBtn) {
+        // 发出通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:TitleBtnDidRepeatClickNotification object:nil];
+    }
+  
+    //
     self.selectedTitleBtn.selected = NO;
     btn.selected = YES;
     self.selectedTitleBtn = btn;
@@ -172,6 +178,7 @@
     CGPoint point = self.scrollView.contentOffset;
     point.x = self.view.xWidth * btn.tag;
     [self.scrollView setContentOffset:point animated:YES];
+    
 }
 
 #pragma mark -

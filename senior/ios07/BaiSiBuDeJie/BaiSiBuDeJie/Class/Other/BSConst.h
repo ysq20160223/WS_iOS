@@ -20,6 +20,12 @@ UIKIT_EXTERN CGFloat const BSMargin;
 // URL
 UIKIT_EXTERN NSString *const commonUrl;
 
+//
+UIKIT_EXTERN NSString *const TabBarBtnDidRepeatClickNotification;
+
+//
+UIKIT_EXTERN NSString *const TitleBtnDidRepeatClickNotification;
+
 @interface BSConst : NSObject
 
 @end
