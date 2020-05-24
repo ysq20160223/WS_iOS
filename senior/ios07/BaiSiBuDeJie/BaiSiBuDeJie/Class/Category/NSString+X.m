@@ -32,4 +32,16 @@
     return size;
 }
 
+- (NSString *)formatMediaTime:(NSTimeInterval)time {
+    NSInteger minute = time / 60;
+    NSInteger second = (int)round(time) % 60;
+    return [NSString stringWithFormat:@"%02ld:%02ld", minute, second];
+}
+
++ (NSString *)formatMediaTime:(NSTimeInterval)time {
+    NSInteger minute = time / 60;
+    NSInteger second = (int)round(time) % 60;
+    return [NSString stringWithFormat:@"%02ld:%02ld", minute, second];
+}
+
 @end
