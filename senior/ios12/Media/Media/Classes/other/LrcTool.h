@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "LrcLineModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LrcTool : NSObject
 
-+ (NSArray *)lrcToolWithLrcName:(NSString *)lrcName;
++ (NSArray<LrcLineModel *> *)lrcToolWithLrcName:(NSString *)lrcName;
 
 @end
 

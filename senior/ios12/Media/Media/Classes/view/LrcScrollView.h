@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class LrcLabel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LrcScrollView : UIScrollView
 
 @property (nonatomic, copy) NSString *lrcName;
+
+@property (nonatomic, assign) NSTimeInterval lrcCurTime;
+
+@property (nonatomic, strong) LrcLabel *lrcLabel;
 
 @end
 

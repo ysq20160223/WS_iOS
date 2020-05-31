@@ -7,6 +7,7 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "AudioVc.h"
 
@@ -22,9 +23,10 @@
 #import "MusicTool.h"
 #import "AudioModel.h"
 #import "LrcScrollView.h"
+#import "LrcLabel.h"
 
 
-@interface AudioVc () <UIScrollViewDelegate>
+@interface AudioVc () <UIScrollViewDelegate, AVAudioPlayerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *ivAlbum;
 
@@ -33,7 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnCenterIcon;
 
 @property (weak, nonatomic) IBOutlet UISlider *slideAudio;
-@property (weak, nonatomic) IBOutlet UILabel *lblLrc;
+@property (weak, nonatomic) IBOutlet LrcLabel *lblLrc;
 
 //
 @property (weak, nonatomic) IBOutlet UILabel *lblCurTime;
@@ -45,7 +47,9 @@
 // **
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 @property (strong, nonatomic) NSTimer *progressTimer;
+@property (strong, nonatomic) CADisplayLink *lrcCADisplayLink;
 
+@property (strong, nonatomic) CABasicAnimation *rotationAnim;
 
 @end
 
@@ -63,7 +67,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    XLog
+    //    XLog
     // 添加毛玻璃
     [self setupBlur];
     
@@ -75,10 +79,14 @@
     
     // 设置歌词 ScrollView
     self.svLrc.contentSize = CGSizeMake(self.view.bounds.size.width * 2, 0);
+    
+    // 接收通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sceneDidBecomeActive) name:@"sceneDidBecomeActive" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sceneDidEnterBackground) name:@"sceneDidEnterBackground" object:nil];
 }
 
 - (void)startPlayMusic {
-//    NSLog(@"%@", [MusicTool musics]);
+    //    NSLog(@"%@", [MusicTool musics]);
     
     // 1
     AudioModel *audioModel = [MusicTool playingMusic];
@@ -88,38 +96,45 @@
     self.lblSongName.text = audioModel.name;
     self.lblSinger.text = audioModel.singer;
     
-
+    
     self.ivAlbum.image = [UIImage imageNamed:audioModel.icon];
     [self.btnCenterIcon setImage:[UIImage imageNamed:audioModel.icon] forState:UIControlStateNormal];
     [self.btnCenterIcon setImage:[UIImage imageNamed:audioModel.icon] forState:UIControlStateHighlighted];
     self.svLrc.lrcName = [MusicTool playingMusic].lrcname;
+    self.svLrc.lrcLabel = self.lblLrc;
     
     // 3
     self.audioPlayer = [MusicTool playMusicWithFileName:audioModel.filename];
+    self.audioPlayer.delegate = self;
     [self updateProgressInfo];
-    [self playAudio];
     [self addCenterIconRotate];
+    [self playAudio];
     
     // 4
     [self removeProgressTimer];
     [self setupProgressTimer];
+    [self removeLrcCADisplayLink];
+    [self addLrcCADisplayLink];
     
 }
 
-// 添加图片圆角
+
+#pragma mark - 添加图片圆角
 - (void)setupCenterIconRadius {
-//    NSLog(@"%@", NSStringFromCGRect(self.btnCenterIcon.bounds));
+    //    NSLog(@"%@", NSStringFromCGRect(self.btnCenterIcon.bounds));
     self.btnCenterIcon.layer.cornerRadius = self.btnCenterIcon.bounds.size.width * 0.5;
     self.btnCenterIcon.layer.masksToBounds = YES;
     self.btnCenterIcon.layer.borderColor = XColorAlpha(36, 36, 36, 0.9).CGColor;
     self.btnCenterIcon.layer.borderWidth = 8;
 }
 
-// 添加毛玻璃
+
+#pragma mark - 添加毛玻璃
 - (void)setupBlur {
     // 1
     UIToolbar *toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleBlack;
+    toolBar.translucent = YES;
     [self.ivAlbum addSubview:toolBar];
     
     // 2
@@ -128,6 +143,7 @@
         make.edges.equalTo(self.ivAlbum);
     }];
 }
+
 
 #pragma mark - UIScrollViewDelegate START
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -153,11 +169,9 @@
     XLog
 }
 
-
 // slide start
 - (IBAction)audioSlideProgress:(UISlider *)sender {
-//    NSLog(@"value: %.2f", sender.value)
-    
+    //    NSLog(@"value: %.2f", sender.value)
 }
 
 - (IBAction)audioSlideTapGestureRecognizer:(UITapGestureRecognizer *)sender {
@@ -175,7 +189,7 @@
 }
 
 - (IBAction)audioSlideTouchDown:(UISlider *)sender {
-    [self.audioPlayer pause];
+    [self pauseAudio];
     [self removeProgressTimer];
 }
 
@@ -188,7 +202,8 @@
 // slide end
 
 - (IBAction)clickBtnPrevious:(UIButton *)sender {
-//    XLog
+    //    XLog
+    [self.btnCenterIcon.layer pauseAnimate];
     [self playMusic:[MusicTool previousMusic]];
 }
 
@@ -202,7 +217,8 @@
 }
 
 - (IBAction)clickBtnNext:(UIButton *)sender {
-//    XLog
+    //    XLog
+    [self.btnCenterIcon.layer pauseAnimate];
     [self playMusic:[MusicTool nextMusic]];
 }
 
@@ -218,8 +234,6 @@
     [self startPlayMusic];
 }
 
-#pragma mark - click Listener END
-
 
 #pragma mark - play controller
 - (void)playAudio {
@@ -227,7 +241,12 @@
     [self.btnPlayOrPause setImage:[UIImage imageNamed:@"player_btn_pause_normal"] forState:UIControlStateNormal];
     [self.btnPlayOrPause setImage:[UIImage imageNamed:@"player_btn_pause_highlight"] forState:UIControlStateHighlighted];
     
+//    [self.btnCenterIcon.imageView setContentMode:UIViewContentModeCenter];
+    
+//    XLog
     [self.btnCenterIcon.layer resumeAnimate];
+    
+    [self setupLockInfo];
 }
 
 - (void)pauseAudio {
@@ -235,29 +254,19 @@
     [self.btnPlayOrPause setImage:[UIImage imageNamed:@"player_btn_play_normal"] forState:UIControlStateNormal];
     [self.btnPlayOrPause setImage:[UIImage imageNamed:@"player_btn_play_highlight"] forState:UIControlStateHighlighted];
     
+//    XLog
     [self.btnCenterIcon.layer pauseAnimate];
 }
 
 
-#pragma mark -
-// 添加旋转动画
+#pragma mark - 添加旋转动画
 - (void)addCenterIconRotate {
-    CABasicAnimation *rotateAnim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    rotateAnim.fromValue = @(0);
-    rotateAnim.toValue = @(M_PI * 2);
-    rotateAnim.repeatCount = NSUIntegerMax;
-    rotateAnim.duration = 35;
-    [self.btnCenterIcon.layer addAnimation:rotateAnim forKey:nil];
+//    XLog
+    [self.btnCenterIcon.layer addAnimation:self.rotationAnim forKey:nil];
 }
 
-// 添加定时器
-- (void)setupProgressTimer {
-    [self updateProgressInfo];
-    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgressInfo) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:self.progressTimer forMode:NSRunLoopCommonModes];
-}
 
-// 更新播放时间
+#pragma mark - 更新播放时间
 - (void)updateProgressInfo {
     //
     self.lblCurTime.text = [NSString formatMediaTime:self.audioPlayer.currentTime];
@@ -267,21 +276,127 @@
     self.slideAudio.value = self.audioPlayer.currentTime / self.audioPlayer.duration;
 }
 
-// 移除定时器
+
+#pragma mark - 播放定时器
+- (void)setupProgressTimer {
+    [self updateProgressInfo];
+    self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateProgressInfo) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:self.progressTimer forMode:NSRunLoopCommonModes];
+}
+
+
+#pragma mark - 移除播放定时器
 - (void)removeProgressTimer {
     [self.progressTimer invalidate];
     self.progressTimer = nil;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - update LRC
+- (void)updateLrcInfo {
+    self.svLrc.lrcCurTime = self.audioPlayer.currentTime;
 }
-*/
+
+
+#pragma mark - 歌词定时器
+- (void)addLrcCADisplayLink {
+    self.lrcCADisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateLrcInfo)];
+    [self.lrcCADisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+
+#pragma mark - 移除歌词定时器
+- (void)removeLrcCADisplayLink {
+    [self.lrcCADisplayLink invalidate];
+    self.lrcCADisplayLink = nil;
+}
+
+
+#pragma mark - 设置锁屏信息
+- (void)setupLockInfo {
+    // 0, 获取当前播放音乐
+    AudioModel *audioModel = [MusicTool playingMusic];
+    
+    // 1, 获取锁屏中心
+    MPNowPlayingInfoCenter *playingInfoCenter = [MPNowPlayingInfoCenter defaultCenter];
+    
+    // 2, 设置锁屏参数
+    NSMutableDictionary *playingDict = [NSMutableDictionary dictionary];
+    [playingDict setObject:audioModel.name forKey:MPMediaItemPropertyAlbumTitle];
+    [playingDict setObject:audioModel.singer forKey:MPMediaItemPropertyArtist];
+    [playingDict setObject:@(self.audioPlayer.duration) forKey:MPMediaItemPropertyPlaybackDuration];
+    [playingDict setObject:@(self.audioPlayer.currentTime) forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
+    
+    //    [playingDict setObject:[[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:audioModel.icon]] forKey:MPMediaItemPropertyArtwork];
+    [playingDict setObject:[[MPMediaItemArtwork alloc] initWithBoundsSize:CGSizeMake(200, 200) requestHandler:^UIImage * _Nonnull(CGSize size) {
+        return [UIImage imageNamed:audioModel.icon];
+    }] forKey:MPMediaItemPropertyArtwork];
+    
+    playingInfoCenter.nowPlayingInfo = playingDict;
+    
+    // 3, 开启远程交互
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    NSLog(@"event: %@", event); 
+    switch (event.subtype) {
+        case UIEventSubtypeRemoteControlPlay:
+        case UIEventSubtypeRemoteControlPause:
+            [self clickBtnPlayPause:nil];
+            break;
+            
+        case UIEventSubtypeRemoteControlNextTrack:
+            [self clickBtnNext:nil];
+            break;
+            
+        case UIEventSubtypeRemoteControlPreviousTrack:
+            [self clickBtnPrevious:nil];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+#pragma mark - AVAudioPlayerDelegate
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    NSLog(@"flag: %d", flag);
+    if (flag) {
+        [self clickBtnNext:nil];
+    }
+}
+
+
+#pragma mark - Lifecycle
+- (void)sceneDidEnterBackground {
+    [self setupLockInfo];
+}
+
+- (void)sceneDidBecomeActive {
+    
+}
+
+
+#pragma mark - Lazy load
+- (CABasicAnimation *)rotationAnim {
+    if (!_rotationAnim) {
+        CABasicAnimation *rotateAnim = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        rotateAnim.fromValue = @(0);
+        rotateAnim.toValue = @(M_PI * 2);
+        rotateAnim.repeatCount = NSUIntegerMax;
+        rotateAnim.duration = 35;
+        rotateAnim.removedOnCompletion = NO;
+        _rotationAnim = rotateAnim;
+    }
+    return _rotationAnim;
+}
+
+#pragma mark -
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end
 

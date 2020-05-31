@@ -8,6 +8,10 @@
 
 #import "LrcTableViewCell.h"
 
+#import "LrcLabel.h"
+
+#import "Masonry.h"
+
 @implementation LrcTableViewCell
 
 
@@ -22,25 +26,24 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.textLabel.textColor = [UIColor whiteColor];
+        //
+        LrcLabel *lrcLabel = [[LrcLabel alloc] init];
+        [self.contentView addSubview:lrcLabel];
+        self.lrcLabel = lrcLabel;
+        
+        [lrcLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.contentView);
+        }];
+        
         self.backgroundColor = [UIColor clearColor];
-        self.textLabel.textAlignment = NSTextAlignmentCenter;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.lrcLabel.textColor = [UIColor whiteColor];
+        self.lrcLabel.textAlignment = NSTextAlignmentCenter;
+        self.lrcLabel.font = [UIFont systemFontOfSize:12];
     }
     return self;
 }
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 @end
+
+

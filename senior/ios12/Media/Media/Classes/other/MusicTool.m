@@ -32,7 +32,7 @@ static NSMutableDictionary *_players;
     }
     
     if (!_playingMusic && _musics && _musics.count > 0) {
-        _playingMusic = _musics[1];
+        _playingMusic = _musics[0];
     }
     
     _soudIDs = [NSMutableDictionary dictionary];

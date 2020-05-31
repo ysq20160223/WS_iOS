@@ -11,6 +11,7 @@
 #import "LrcTableViewCell.h"
 #import "LrcTool.h"
 #import "LrcLineModel.h"
+#import "LrcLabel.h"
 
 #import "Masonry.h"
 
@@ -19,6 +20,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) NSArray *lrcArray;
+
+@property (nonatomic, assign) NSInteger curLrcLineIndex;
 
 @end
 
@@ -87,9 +90,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LrcTableViewCell *cell = [LrcTableViewCell lrcCell:tableView];
     
+    if (self.curLrcLineIndex == indexPath.row) {
+        cell.lrcLabel.font = [UIFont systemFontOfSize:21];
+    } else {
+        cell.lrcLabel.font = [UIFont systemFontOfSize:12];
+        cell.lrcLabel.curProgress = 0;
+    }
+    
     LrcLineModel *lrcLineModel = self.lrcArray[indexPath.row];
-//    cell.textLabel.text = [NSString stringWithFormat:@"row: %ld", indexPath.row];
-    cell.textLabel.text = lrcLineModel.text;
+    //    cell.textLabel.text = [NSString stringWithFormat:@"row: %ld", indexPath.row];
+    cell.lrcLabel.text = lrcLineModel.text;
     
     return cell;
 }
@@ -102,15 +112,84 @@
 
 #pragma mark -
 - (void)setLrcName:(NSString *)lrcName {
-    _lrcName = [_lrcName copy];
+    [self.tableView setContentOffset:CGPointMake(0, -self.tableView.bounds.size.height * 0.5) animated:NO];
+    
+    self.curLrcLineIndex = 0;
+    
+    _lrcName = [lrcName copy];
     
     // parse
     self.lrcArray = [LrcTool lrcToolWithLrcName:lrcName];
 //    NSLog(@"%@", self.lrcArray);
+    LrcLineModel *firstLrcLineModel = self.lrcArray[0];
+    self.lrcLabel.text = firstLrcLineModel.text;
     
     //
     [self.tableView reloadData];
 }
 
+#pragma mark -
+- (void)setLrcCurTime:(NSTimeInterval)lrcCurTime {
+    _lrcCurTime = lrcCurTime;
+    
+    //
+    NSInteger count = self.lrcArray.count;
+    for (NSInteger i = 0; i < count; i++) {
+        // 当前
+        LrcLineModel *curLrcLineModel = self.lrcArray[i];
+        
+        // 下一句歌词
+        NSInteger nextIndex = i + 1;
+        LrcLineModel *nextLrcLineModel = nil;
+        if (nextIndex < self.lrcArray.count) {
+            nextLrcLineModel = self.lrcArray[nextIndex];
+        }
+        
+        //
+        if (self.curLrcLineIndex != i && lrcCurTime >= curLrcLineModel.time && lrcCurTime < nextLrcLineModel.time) {
+            // 1,
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+            NSIndexPath *previousIndexPath = [NSIndexPath indexPathForRow:self.curLrcLineIndex inSection:0];
+            
+            // 2, 记录当前刷新的某行
+            self.curLrcLineIndex = i;
+            
+            // 3, 刷新当前这句歌词, 并且刷新上一句歌词
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath, previousIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            // 4, 将当前的歌词滚动到中间
+            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            
+            // 5, 设置主界面的文字
+            self.lrcLabel.text = curLrcLineModel.text;
+        }
+        if (self.curLrcLineIndex == i) { // 当前这句歌词
+            // 1, 取出当前歌词的时间
+//            LrcLineModel *curLrcLineModel = self.lrcArray[self.curLrcLineIndex];
+//
+//            // 2, 取出下一句歌词
+//            NSInteger nextIndex = self.curLrcLineIndex + 1;
+//            LrcLineModel *nextLrcLineModel = nil;
+//            if (nextIndex < self.lrcArray.count) {
+//                nextLrcLineModel = self.lrcArray[nextIndex];
+//            }
+            
+            // 3
+            CGFloat value = (lrcCurTime - curLrcLineModel.time) / (nextLrcLineModel.time - curLrcLineModel.time);
+            
+            // 4
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.curLrcLineIndex inSection:0];
+            LrcTableViewCell *lrcTableViewCell = [self.tableView cellForRowAtIndexPath:indexPath];
+            lrcTableViewCell.lrcLabel.curProgress = value;
+            
+            // 5
+            self.lrcLabel.curProgress = value;
+//            NSLog(@"value: %f", value);
+        }
+    }
+}
+
 
 @end
+
+
