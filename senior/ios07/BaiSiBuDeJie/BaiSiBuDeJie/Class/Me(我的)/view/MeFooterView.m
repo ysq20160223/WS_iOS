@@ -23,6 +23,15 @@
 
 #import "MBProgressHUD.h"
 
+
+@interface MeFooterView()
+
+@property (nonatomic, strong) AFHTTPSessionManager *aFHTTPSessionManager;
+
+@end
+
+
+
 @implementation MeFooterView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -42,9 +51,12 @@
                 paraDict[@"a"] = @"square";
                 paraDict[@"c"] = @"topic";
                 
-                [[AFHTTPSessionManager manager] GET:commonUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+                [self.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
+                
+                [self.aFHTTPSessionManager GET:commonUrl parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
                     
                 } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    
                     [hud hideAnimated:YES];
                     
                     NSArray *squareArray = [MeFooterSquareModel mj_objectArrayWithKeyValuesArray:responseObject[@"square_list"]];

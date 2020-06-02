@@ -91,8 +91,10 @@ static NSString *const TopicCellId = @"TopicCellId";
         
         [weakSelf.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
         
-        [weakSelf.aFHTTPSessionManager GET:commonUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        [weakSelf.aFHTTPSessionManager GET:commonUrl parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+ 
 //            NSLog(@"%@", responseObject);
             
             [weakSelf.topicArray removeAllObjects];
@@ -132,7 +134,9 @@ static NSString *const TopicCellId = @"TopicCellId";
         
         [self.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
         
-        [self.aFHTTPSessionManager GET:commonUrl parameters:paraDict headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.aFHTTPSessionManager GET:commonUrl parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //            NSLog(@"%@", responseObject);
             
             NSArray<TopicModel *> *tempArray = [TopicModel mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];

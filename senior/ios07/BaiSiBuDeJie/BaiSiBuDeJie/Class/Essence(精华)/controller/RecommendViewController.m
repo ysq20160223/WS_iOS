@@ -58,8 +58,11 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        XLog
-        [weakSelf.afHttpSessionManager GET:commonUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        [weakSelf.afHttpSessionManager GET:commonUrl parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       
                 [weakSelf.mbProgressHUD hideAnimated:YES];
         //        NSLog(@"%@", responseObject);
                 

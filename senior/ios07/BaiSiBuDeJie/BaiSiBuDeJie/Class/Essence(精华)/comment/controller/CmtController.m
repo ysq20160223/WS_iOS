@@ -113,8 +113,10 @@
         paraDict[@"hot"] = @1;
         
         [weakSelf.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
-        [weakSelf.aFHTTPSessionManager GET:commonUrl parameters:paraDict headers:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        [weakSelf.aFHTTPSessionManager GET:commonUrl parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+     
 //            NSLog(@"%@", responseObject);
             
             [weakSelf.lastestTopicModelArray removeAllObjects];
@@ -150,7 +152,9 @@
         }
 
         [self.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
-        [self.aFHTTPSessionManager GET:commonUrl parameters:paraDict headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [weakSelf.aFHTTPSessionManager GET:commonUrl parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //            NSLog(@"%@", responseObject);
             
             if ([responseObject isKindOfClass:[NSDictionary class]]) {
