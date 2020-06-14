@@ -40,13 +40,13 @@
         
         __weak typeof(self) weakSelf = self;
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.superview animated:YES];
             hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
             hud.backgroundView.color = [UIColor colorWithWhite:0.5f alpha:0.3f];
             [hud showAnimated:YES];
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 NSMutableDictionary *paraDict = [NSMutableDictionary dictionary];
                 paraDict[@"a"] = @"square";
                 paraDict[@"c"] = @"topic";
@@ -54,7 +54,7 @@
                 [self.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
                 
                 [self.aFHTTPSessionManager GET:commonUrl parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
-                    
+//                    NSLog(@"%@", downloadProgress);
                 } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                     
                     [hud hideAnimated:YES];
@@ -133,6 +133,15 @@
     } else if ([url hasPrefix:@"mod"]) {
         
     }
+}
+
+
+#pragma mark - lazy load
+- (AFHTTPSessionManager *)aFHTTPSessionManager {
+    if (nil == _aFHTTPSessionManager) {
+        _aFHTTPSessionManager = [AFHTTPSessionManager manager];
+    }
+    return _aFHTTPSessionManager;
 }
 
 @end

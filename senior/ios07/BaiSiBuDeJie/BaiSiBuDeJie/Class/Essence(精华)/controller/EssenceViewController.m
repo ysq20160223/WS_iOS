@@ -107,7 +107,7 @@
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    //    XLog
+        XLog
     [self addChildVcView];
 }
 #pragma mark - UIScrollViewDelegate end

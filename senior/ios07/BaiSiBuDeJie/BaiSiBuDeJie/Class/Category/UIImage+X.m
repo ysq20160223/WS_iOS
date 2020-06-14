@@ -73,6 +73,18 @@
     return [[self imageNamed:name] xCircleImage];
 }
 
+
+// 拉伸图片
++ (instancetype)xResizeImage:(NSString *)imageName {
+    return [[UIImage imageNamed:imageName] xResizeImage];
+}
+
+- (instancetype)xResizeImage {
+    CGFloat w = self.size.width * 0.5;
+    CGFloat h = self.size.height * 0.5;
+    return [self stretchableImageWithLeftCapWidth:w topCapHeight:h];
+}
+
 @end
 
 

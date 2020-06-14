@@ -22,4 +22,9 @@
 //
 + (instancetype)xCircleImageNamed:(NSString *)name;
 
+
+// 拉伸图片
++ (instancetype)xResizeImage:(NSString *)imageName;
+- (instancetype)xResizeImage;
+
 @end

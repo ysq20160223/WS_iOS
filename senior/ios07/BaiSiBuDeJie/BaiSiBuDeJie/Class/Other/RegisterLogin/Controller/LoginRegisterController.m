@@ -46,11 +46,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // 裁切圆角
 //    self.loginRegisterBtn.layer.cornerRadius = 5;
+//    [self.loginRegisterBtn setValue:@20 forKeyPath:@"layer.cornerRadius"];
+
 //    self.loginRegisterBtn.layer.masksToBounds = YES;
-    
-//    [self.loginRegisterBtn setValue:@10 forKey:@"layer.cornerRadius"];
-//    [self.loginRegisterBtn setValue:@YES forKey:@"layer.masksToBounds"];
+//    [self.loginRegisterBtn setValue:@YES forKeyPath:@"layer.masksToBounds"];
     
 }
 

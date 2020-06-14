@@ -29,11 +29,11 @@
         
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             //                NSLog(@"%@", [NSThread currentThread]);
-            [NSThread sleepForTimeInterval:7];
+            [NSThread sleepForTimeInterval:3];
             
             NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
-            //                NSLog(@"%@", cachePath);
-            unsigned long long size = [cachePath stringByAppendingPathComponent:@"com.hackemist.SDWebImageCache.default"].xFileSize;
+//            NSLog(@"%@", cachePath);
+            unsigned long long size = [cachePath stringByAppendingPathComponent:@"default/com.hackemist.SDWebImageCache.default"].xFileSize;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 //                    NSLog(@"%@", [NSThread currentThread]);

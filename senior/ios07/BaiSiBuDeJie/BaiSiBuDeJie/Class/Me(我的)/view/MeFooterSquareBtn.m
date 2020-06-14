@@ -54,7 +54,7 @@
     
     [self sd_setImageWithURL:[NSURL URLWithString:squareModel.icon] forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:@"mine-icon-recentHot"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         if (error) {
-            NSLog(@"error: %@", error);
+//            NSLog(@"error: %@", error);
         }
     }];
     

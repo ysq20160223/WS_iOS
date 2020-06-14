@@ -26,6 +26,7 @@
 		184A07E924547E9E00D83EE9 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A07E824547E9E00D83EE9 /* TopicViewController.m */; };
 		184A4E6124571D41002DA23C /* SeePigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184A4E6024571D41002DA23C /* SeePigViewController.xib */; };
 		184A612A246C477900D32991 /* CmtTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A6129246C477900D32991 /* CmtTableViewHeaderFooterView.m */; };
+		184C61A3248B7C3900B61B1A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 184C61A2248B7C3900B61B1A /* Podfile */; };
 		184D37012444BB8500628B41 /* TopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 184D36FF2444BB8500628B41 /* TopicCell.m */; };
 		184D37022444BB8500628B41 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184D37002444BB8500628B41 /* TopicCell.xib */; };
 		1850E8A5244C1163003D5392 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850E8A4244C1163003D5392 /* UserModel.m */; };
@@ -390,7 +391,6 @@
 		18984F5424273DA900D49217 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F5224273DA800D49217 /* UIView+X.m */; };
 		18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F5724273F4D00D49217 /* LoginRegisterController.m */; };
 		18984F5B24273F4D00D49217 /* LoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18984F5824273F4D00D49217 /* LoginRegisterController.xib */; };
-		18BFDE8A2486A04800201F23 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 18BFDE892486A04800201F23 /* Podfile */; };
 		18D50D4B2442ADEC00E40203 /* XRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D50D4A2442ADEC00E40203 /* XRefreshFooter.m */; };
 		18F4E3A62430E07300865FA4 /* MeFooterSquareBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4E3A52430E07300865FA4 /* MeFooterSquareBtn.m */; };
 		18F785592438D98300F17665 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785582438D98300F17665 /* NSString+X.m */; };
@@ -440,6 +440,7 @@
 		184A4E6024571D41002DA23C /* SeePigViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeePigViewController.xib; sourceTree = "<group>"; };
 		184A6128246C477900D32991 /* CmtTableViewHeaderFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmtTableViewHeaderFooterView.h; sourceTree = "<group>"; };
 		184A6129246C477900D32991 /* CmtTableViewHeaderFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CmtTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		184C61A2248B7C3900B61B1A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		184D36FE2444BB8500628B41 /* TopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicCell.h; sourceTree = "<group>"; };
 		184D36FF2444BB8500628B41 /* TopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicCell.m; sourceTree = "<group>"; };
 		184D37002444BB8500628B41 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
@@ -829,7 +830,6 @@
 		18984F5724273F4D00D49217 /* LoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterController.m; sourceTree = "<group>"; };
 		18984F5824273F4D00D49217 /* LoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginRegisterController.xib; sourceTree = "<group>"; };
 		18984F5924273F4D00D49217 /* LoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRegisterController.h; sourceTree = "<group>"; };
-		18BFDE892486A04800201F23 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		18D50D492442ADEC00E40203 /* XRefreshFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRefreshFooter.h; sourceTree = "<group>"; };
 		18D50D4A2442ADEC00E40203 /* XRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRefreshFooter.m; sourceTree = "<group>"; };
 		18F4E3A42430E07300865FA4 /* MeFooterSquareBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeFooterSquareBtn.h; sourceTree = "<group>"; };
@@ -1014,7 +1014,7 @@
 		188F3C69241BDE850095059C = {
 			isa = PBXGroup;
 			children = (
-				18BFDE892486A04800201F23 /* Podfile */,
+				184C61A2248B7C3900B61B1A /* Podfile */,
 				188F3C74241BDE850095059C /* BaiSiBuDeJie */,
 				188F3C73241BDE850095059C /* Products */,
 				183BB6372433977B00F6026D /* Frameworks */,
@@ -1763,7 +1763,6 @@
 				188F3E60241DF9CE0095059C /* nav_coin_icon@2x.png in Resources */,
 				188F3ED3241DF9CE0095059C /* pushguidemid@3x.png in Resources */,
 				188F3EBD241DF9CE0095059C /* login_tecent_icon_click@3x.png in Resources */,
-				18BFDE8A2486A04800201F23 /* Podfile in Resources */,
 				188F3E82241DF9CE0095059C /* mine-setting-icon@3x.png in Resources */,
 				188F3EC1241DF9CE0095059C /* login_QQ_icon_click@2x.png in Resources */,
 				188F3EE6241DF9CE0095059C /* publish-review.png in Resources */,
@@ -1951,6 +1950,7 @@
 				188F3F43241DF9CF0095059C /* mine-icon-more@2x.png in Resources */,
 				188F3EE5241DF9CE0095059C /* shareButtonCancel.png in Resources */,
 				188F3E28241DF9CE0095059C /* chose_tag_close_icon.png in Resources */,
+				184C61A3248B7C3900B61B1A /* Podfile in Resources */,
 				188F3E80241DF9CE0095059C /* mine-moon-icon@3x.png in Resources */,
 				188F3F61241DF9CF0095059C /* play-voice-bg@3x.png in Resources */,
 				188F3E89241DF9CE0095059C /* tabBar_me_icon@2x.png in Resources */,
@@ -2287,6 +2287,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mac.apple.ios.root.BaiSiBuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -2306,6 +2307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mac.apple.ios.root.BaiSiBuDeJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

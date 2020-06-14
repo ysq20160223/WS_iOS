@@ -58,7 +58,7 @@ static NSString *const BSSettingCellId = @"BSSettingCellId";
 //    XLog
     //    self.view.backgroundColor = XColor(0xff, 0x88, 0x00);
     //    self.view.backgroundColor = XColor(0xff, 0xff, 0xff);
-    self.navigationItem.title = @"me";
+    self.navigationItem.title = @"Me";
     
     // 设置颜色
     NSDictionary *dic = @{NSForegroundColorAttributeName: [UIColor blackColor]};

@@ -203,7 +203,7 @@ static NSString *const TopicCellId = @"TopicCellId";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark -
+#pragma mark - lazy load
 - (NSMutableArray<TopicModel *> *)topicArray {
     if (nil == _topicArray) {
         _topicArray = [NSMutableArray array];

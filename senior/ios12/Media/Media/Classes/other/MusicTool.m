@@ -29,7 +29,8 @@ static NSMutableDictionary *_players;
 
 + (void)initialize {
     if (!_musics) {
-        _musics = [AudioModel objectArrayWithFilename:@"Musics.plist" error:nil];
+//        _musics = [AudioModel objectArrayWithFilename:@"Musics.plist" error:nil];
+        _musics = [AudioModel mj_objectArrayWithFilename:@"Musics.plist"];
     }
     
     if (!_playingMusic && _musics && _musics.count > 0) {
