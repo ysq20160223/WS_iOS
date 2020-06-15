@@ -26,7 +26,7 @@
     if (self = [super initWithFrame:frame]) {
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         
-        [self setImage:[UIImage imageNamed:@"AppIcon"] forState:UIControlStateNormal];
+        [self setImage:[UIImage imageNamed:@"login_default_avatar"] forState:UIControlStateNormal];
         [self setTitle:@"YY" forState:UIControlStateNormal];
     }
     return self;

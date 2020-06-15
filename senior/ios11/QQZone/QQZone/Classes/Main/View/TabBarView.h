@@ -15,19 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @class TabBarBtn;
 
 #pragma mark -
-@protocol TabBarViewDelegate <NSObject>
-
-@optional
-- (void)tabBarBtn:(nullable TabBarBtn *)tabBarBtn didClickFrom:(DockItemType)fromType toType:(DockItemType)toType;
-
-@end
-
+typedef void(^ClickBlock)(TabBarBtn *btn, DockItemType fromType, DockItemType toType);
 
 
 #pragma mark -
 @interface TabBarView : UIView
 
-@property (nonatomic, strong) id<TabBarViewDelegate> tabBarViewDelegate;
+@property (nonatomic, copy) ClickBlock clickBlock;
 
 //
 - (void)rotate:(BOOL)isLandscape;

@@ -19,7 +19,7 @@
 // category
 #import "UIView+X.h"
 
-@interface HomeVc () <BottomMenuDelegate, TabBarViewDelegate>
+@interface HomeVc () <BottomMenuDelegate>
 
 @property (nonatomic, strong) DockView *dockView;
 @property (nonatomic, weak) UIView *selectedVcView;
@@ -90,7 +90,10 @@
     dockView.bottomMenuView.bottomMenuDelegate = self;
     
     // 4
-    dockView.tabBarView.tabBarViewDelegate = self;
+    __weak typeof(self)weakSelf = self;
+    dockView.tabBarView.clickBlock = ^(TabBarBtn * _Nonnull btn, DockItemType fromType, DockItemType toType) {
+        [weakSelf tabBarBtn:btn didClickFrom:fromType toType:toType];
+    };
     
     // 5
     [dockView.iconBtn addTarget:self action:@selector(clickIconBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -152,7 +155,7 @@
 }
 
 
-#pragma mark -  TabBarViewDelegate
+#pragma mark -
 - (void)tabBarBtn:(TabBarBtn *)tabBarBtn didClickFrom:(DockItemType)fromType toType:(DockItemType)toType {
     NSLog(@"from: %d; to: %d", fromType, toType);
     

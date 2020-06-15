@@ -52,8 +52,9 @@
 #pragma mark - Click Listener
 - (void)clickItem:(TabBarBtn *)btn {
 //    NSLog(@"%@; %@", self.selectedTabBarBtn, btn);
-    if ([self.tabBarViewDelegate respondsToSelector:@selector(tabBarBtn:didClickFrom:toType:)]) {
-        [self.tabBarViewDelegate tabBarBtn:btn didClickFrom:(int)self.selectedTabBarBtn.tag toType:(int)btn.tag];
+    if (self.clickBlock) {
+        XLog
+        self.clickBlock(btn, (int)self.selectedTabBarBtn.tag, (int)btn.tag);
     }
     
     // 1
