@@ -39,19 +39,21 @@
 		186BB06C248CD76D001A3F04 /* LoginVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186BB06B248CD76D001A3F04 /* LoginVc.xib */; };
 		186BB070248CD82C001A3F04 /* login_default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BB06E248CD82B001A3F04 /* login_default_avatar.png */; };
 		186BB071248CD82C001A3F04 /* login_default_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BB06F248CD82C001A3F04 /* login_default_avatar@2x.png */; };
-		186BB083248CF207001A3F04 /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB073248CF207001A3F04 /* UIBarButtonItem+X.m */; };
-		186BB084248CF207001A3F04 /* NSCalendar+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB075248CF207001A3F04 /* NSCalendar+X.m */; };
-		186BB085248CF207001A3F04 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB076248CF207001A3F04 /* NSString+X.m */; };
-		186BB086248CF207001A3F04 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB077248CF207001A3F04 /* UIImage+X.m */; };
-		186BB087248CF207001A3F04 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB078248CF207001A3F04 /* UITextField+X.m */; };
-		186BB088248CF207001A3F04 /* UIImageView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB079248CF207001A3F04 /* UIImageView+X.m */; };
-		186BB089248CF207001A3F04 /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB07B248CF207001A3F04 /* NSDate+X.m */; };
-		186BB08A248CF207001A3F04 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BB081248CF207001A3F04 /* UIView+X.m */; };
 		186BB094248CF46E001A3F04 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 186BB093248CF46E001A3F04 /* Podfile */; };
 		186BB096248CF47F001A3F04 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 186BB095248CF47F001A3F04 /* .gitignore */; };
 		186D7201248E6EF300BB1674 /* HomeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 186D71FF248E6EF300BB1674 /* HomeVc.m */; };
 		186D7202248E6EF300BB1674 /* HomeVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186D7200248E6EF300BB1674 /* HomeVc.xib */; };
 		186D7206248E733900BB1674 /* DockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186D7205248E733900BB1674 /* DockView.m */; };
+		18787CB4249F26D700E4CF45 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CA0249F26D600E4CF45 /* UIView+Frame.m */; };
+		18787CB5249F26D700E4CF45 /* UIImageView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CA4249F26D600E4CF45 /* UIImageView+X.m */; };
+		18787CB6249F26D700E4CF45 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CA5249F26D600E4CF45 /* NSString+X.m */; };
+		18787CB7249F26D700E4CF45 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CA6249F26D600E4CF45 /* UITextField+X.m */; };
+		18787CB8249F26D700E4CF45 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CA7249F26D600E4CF45 /* UIView+X.m */; };
+		18787CB9249F26D700E4CF45 /* CALayer+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CA9249F26D600E4CF45 /* CALayer+X.m */; };
+		18787CBA249F26D700E4CF45 /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CAA249F26D600E4CF45 /* NSDate+X.m */; };
+		18787CBB249F26D700E4CF45 /* NSCalendar+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CAC249F26D600E4CF45 /* NSCalendar+X.m */; };
+		18787CBC249F26D700E4CF45 /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CAE249F26D600E4CF45 /* UIBarButtonItem+X.m */; };
+		18787CBD249F26D700E4CF45 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CB2249F26D700E4CF45 /* UIImage+X.m */; };
 		187BC77F24912A7000DD3FAC /* TabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187BC77E24912A7000DD3FAC /* TabBarView.m */; };
 		18EB1C58248FD1B80016D64A /* BottomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EB1C57248FD1B80016D64A /* BottomMenuView.m */; };
 		413B86213BF90184AC397B45 /* libPods-QQZone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285217C3984DC3AB39CAD9C2 /* libPods-QQZone.a */; };
@@ -98,22 +100,6 @@
 		186BB06B248CD76D001A3F04 /* LoginVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVc.xib; sourceTree = "<group>"; };
 		186BB06E248CD82B001A3F04 /* login_default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_default_avatar.png; sourceTree = "<group>"; };
 		186BB06F248CD82C001A3F04 /* login_default_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_default_avatar@2x.png"; sourceTree = "<group>"; };
-		186BB073248CF207001A3F04 /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+X.m"; sourceTree = "<group>"; };
-		186BB074248CF207001A3F04 /* NSDate+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+X.h"; sourceTree = "<group>"; };
-		186BB075248CF207001A3F04 /* NSCalendar+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+X.m"; sourceTree = "<group>"; };
-		186BB076248CF207001A3F04 /* NSString+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
-		186BB077248CF207001A3F04 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
-		186BB078248CF207001A3F04 /* UITextField+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+X.m"; sourceTree = "<group>"; };
-		186BB079248CF207001A3F04 /* UIImageView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+X.m"; sourceTree = "<group>"; };
-		186BB07A248CF207001A3F04 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
-		186BB07B248CF207001A3F04 /* NSDate+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+X.m"; sourceTree = "<group>"; };
-		186BB07C248CF207001A3F04 /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+X.h"; sourceTree = "<group>"; };
-		186BB07D248CF207001A3F04 /* NSString+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
-		186BB07E248CF207001A3F04 /* NSCalendar+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+X.h"; sourceTree = "<group>"; };
-		186BB07F248CF207001A3F04 /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+X.h"; sourceTree = "<group>"; };
-		186BB080248CF207001A3F04 /* UIImageView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+X.h"; sourceTree = "<group>"; };
-		186BB081248CF207001A3F04 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
-		186BB082248CF207001A3F04 /* UITextField+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+X.h"; sourceTree = "<group>"; };
 		186BB093248CF46E001A3F04 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		186BB095248CF47F001A3F04 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		186D71FE248E6EF300BB1674 /* HomeVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVc.h; sourceTree = "<group>"; };
@@ -121,6 +107,26 @@
 		186D7200248E6EF300BB1674 /* HomeVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVc.xib; sourceTree = "<group>"; };
 		186D7204248E733900BB1674 /* DockView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DockView.h; sourceTree = "<group>"; };
 		186D7205248E733900BB1674 /* DockView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DockView.m; sourceTree = "<group>"; };
+		18787CA0249F26D600E4CF45 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "../../../../../../category/UIView+Frame.m"; sourceTree = "<group>"; };
+		18787CA1249F26D600E4CF45 /* NSString+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+X.h"; path = "../../../../../../category/NSString+X.h"; sourceTree = "<group>"; };
+		18787CA2249F26D600E4CF45 /* NSCalendar+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+X.h"; path = "../../../../../../category/NSCalendar+X.h"; sourceTree = "<group>"; };
+		18787CA3249F26D600E4CF45 /* UIImageView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+X.h"; path = "../../../../../../category/UIImageView+X.h"; sourceTree = "<group>"; };
+		18787CA4249F26D600E4CF45 /* UIImageView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+X.m"; path = "../../../../../../category/UIImageView+X.m"; sourceTree = "<group>"; };
+		18787CA5249F26D600E4CF45 /* NSString+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+X.m"; path = "../../../../../../category/NSString+X.m"; sourceTree = "<group>"; };
+		18787CA6249F26D600E4CF45 /* UITextField+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+X.m"; path = "../../../../../../category/UITextField+X.m"; sourceTree = "<group>"; };
+		18787CA7249F26D600E4CF45 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+X.m"; path = "../../../../../../category/UIView+X.m"; sourceTree = "<group>"; };
+		18787CA8249F26D600E4CF45 /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+X.h"; path = "../../../../../../category/UIBarButtonItem+X.h"; sourceTree = "<group>"; };
+		18787CA9249F26D600E4CF45 /* CALayer+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+X.m"; path = "../../../../../../category/CALayer+X.m"; sourceTree = "<group>"; };
+		18787CAA249F26D600E4CF45 /* NSDate+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+X.m"; path = "../../../../../../category/NSDate+X.m"; sourceTree = "<group>"; };
+		18787CAB249F26D600E4CF45 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "../../../../../../category/UIView+Frame.h"; sourceTree = "<group>"; };
+		18787CAC249F26D600E4CF45 /* NSCalendar+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+X.m"; path = "../../../../../../category/NSCalendar+X.m"; sourceTree = "<group>"; };
+		18787CAD249F26D600E4CF45 /* CALayer+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+X.h"; path = "../../../../../../category/CALayer+X.h"; sourceTree = "<group>"; };
+		18787CAE249F26D600E4CF45 /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+X.m"; path = "../../../../../../category/UIBarButtonItem+X.m"; sourceTree = "<group>"; };
+		18787CAF249F26D600E4CF45 /* NSDate+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+X.h"; path = "../../../../../../category/NSDate+X.h"; sourceTree = "<group>"; };
+		18787CB0249F26D600E4CF45 /* UITextField+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+X.h"; path = "../../../../../../category/UITextField+X.h"; sourceTree = "<group>"; };
+		18787CB1249F26D700E4CF45 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+X.h"; path = "../../../../../../category/UIView+X.h"; sourceTree = "<group>"; };
+		18787CB2249F26D700E4CF45 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+X.m"; path = "../../../../../../category/UIImage+X.m"; sourceTree = "<group>"; };
+		18787CB3249F26D700E4CF45 /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+X.h"; path = "../../../../../../category/UIImage+X.h"; sourceTree = "<group>"; };
 		187BC77D24912A7000DD3FAC /* TabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarView.h; sourceTree = "<group>"; };
 		187BC77E24912A7000DD3FAC /* TabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarView.m; sourceTree = "<group>"; };
 		18EB1C56248FD1B80016D64A /* BottomMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BottomMenuView.h; sourceTree = "<group>"; };
@@ -319,22 +325,26 @@
 		186BB072248CF207001A3F04 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				186BB074248CF207001A3F04 /* NSDate+X.h */,
-				186BB07B248CF207001A3F04 /* NSDate+X.m */,
-				186BB07C248CF207001A3F04 /* UIBarButtonItem+X.h */,
-				186BB073248CF207001A3F04 /* UIBarButtonItem+X.m */,
-				186BB07E248CF207001A3F04 /* NSCalendar+X.h */,
-				186BB075248CF207001A3F04 /* NSCalendar+X.m */,
-				186BB07D248CF207001A3F04 /* NSString+X.h */,
-				186BB076248CF207001A3F04 /* NSString+X.m */,
-				186BB07F248CF207001A3F04 /* UIImage+X.h */,
-				186BB077248CF207001A3F04 /* UIImage+X.m */,
-				186BB082248CF207001A3F04 /* UITextField+X.h */,
-				186BB078248CF207001A3F04 /* UITextField+X.m */,
-				186BB080248CF207001A3F04 /* UIImageView+X.h */,
-				186BB079248CF207001A3F04 /* UIImageView+X.m */,
-				186BB07A248CF207001A3F04 /* UIView+X.h */,
-				186BB081248CF207001A3F04 /* UIView+X.m */,
+				18787CAD249F26D600E4CF45 /* CALayer+X.h */,
+				18787CA9249F26D600E4CF45 /* CALayer+X.m */,
+				18787CA2249F26D600E4CF45 /* NSCalendar+X.h */,
+				18787CAC249F26D600E4CF45 /* NSCalendar+X.m */,
+				18787CAF249F26D600E4CF45 /* NSDate+X.h */,
+				18787CAA249F26D600E4CF45 /* NSDate+X.m */,
+				18787CA1249F26D600E4CF45 /* NSString+X.h */,
+				18787CA5249F26D600E4CF45 /* NSString+X.m */,
+				18787CA8249F26D600E4CF45 /* UIBarButtonItem+X.h */,
+				18787CAE249F26D600E4CF45 /* UIBarButtonItem+X.m */,
+				18787CB3249F26D700E4CF45 /* UIImage+X.h */,
+				18787CB2249F26D700E4CF45 /* UIImage+X.m */,
+				18787CA3249F26D600E4CF45 /* UIImageView+X.h */,
+				18787CA4249F26D600E4CF45 /* UIImageView+X.m */,
+				18787CB0249F26D600E4CF45 /* UITextField+X.h */,
+				18787CA6249F26D600E4CF45 /* UITextField+X.m */,
+				18787CAB249F26D600E4CF45 /* UIView+Frame.h */,
+				18787CA0249F26D600E4CF45 /* UIView+Frame.m */,
+				18787CB1249F26D700E4CF45 /* UIView+X.h */,
+				18787CA7249F26D600E4CF45 /* UIView+X.m */,
 			);
 			name = Category;
 			path = ../../../../ios07/BaiSiBuDeJie/BaiSiBuDeJie/Class/Category;
@@ -502,24 +512,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18787CB6249F26D700E4CF45 /* NSString+X.m in Sources */,
+				18787CBB249F26D700E4CF45 /* NSCalendar+X.m in Sources */,
+				18787CB8249F26D700E4CF45 /* UIView+X.m in Sources */,
+				18787CBC249F26D700E4CF45 /* UIBarButtonItem+X.m in Sources */,
+				18787CB4249F26D700E4CF45 /* UIView+Frame.m in Sources */,
+				18787CB7249F26D700E4CF45 /* UITextField+X.m in Sources */,
+				18787CBD249F26D700E4CF45 /* UIImage+X.m in Sources */,
 				18EB1C58248FD1B80016D64A /* BottomMenuView.m in Sources */,
-				186BB086248CF207001A3F04 /* UIImage+X.m in Sources */,
 				1869BDA5248BB124001AD958 /* Const.m in Sources */,
-				186BB087248CF207001A3F04 /* UITextField+X.m in Sources */,
 				186D7206248E733900BB1674 /* DockView.m in Sources */,
 				18447FC72494C18F007F6F33 /* MoodVc.m in Sources */,
-				186BB083248CF207001A3F04 /* UIBarButtonItem+X.m in Sources */,
-				186BB085248CF207001A3F04 /* NSString+X.m in Sources */,
 				187BC77F24912A7000DD3FAC /* TabBarView.m in Sources */,
 				1869BD7F248BA5C7001AD958 /* main.m in Sources */,
-				186BB088248CF207001A3F04 /* UIImageView+X.m in Sources */,
-				186BB089248CF207001A3F04 /* NSDate+X.m in Sources */,
-				186BB084248CF207001A3F04 /* NSCalendar+X.m in Sources */,
+				18787CB9249F26D700E4CF45 /* CALayer+X.m in Sources */,
 				1869BD98248BAC8C001AD958 /* LoginVc.m in Sources */,
+				18787CB5249F26D700E4CF45 /* UIImageView+X.m in Sources */,
+				18787CBA249F26D700E4CF45 /* NSDate+X.m in Sources */,
 				1869BD93248BAC4A001AD958 /* SceneDelegate.m in Sources */,
 				1869BD94248BAC4A001AD958 /* AppDelegate.m in Sources */,
 				18447FC42493D778007F6F33 /* IconBtn.m in Sources */,
-				186BB08A248CF207001A3F04 /* UIView+X.m in Sources */,
 				186D7201248E6EF300BB1674 /* HomeVc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

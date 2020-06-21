@@ -24,5 +24,7 @@ int main()
     
     printf("i = %d\n", i);
     
+    printf("%d; %d\n", !1, ~0b011);
+    
     return 0;
 }

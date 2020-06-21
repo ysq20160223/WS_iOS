@@ -15,7 +15,6 @@
 		183BB6392433977B00F6026D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183BB6382433977B00F6026D /* WebKit.framework */; };
 		183CFDCE24275FCE00DF5978 /* VerticalBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CFDCD24275FCE00DF5978 /* VerticalBtn.m */; };
 		1841C5FC2455CD38004988F8 /* SeePigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841C5FB2455CD38004988F8 /* SeePigViewController.m */; };
-		1842B376242CEE9000652A62 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B375242CEE9000652A62 /* UITextField+X.m */; };
 		1842B37A242F962D00652A62 /* MeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B379242F962D00652A62 /* MeTableViewCell.m */; };
 		1842B37D242FA19400652A62 /* BSConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B37C242FA19400652A62 /* BSConst.m */; };
 		1842B3802430466F00652A62 /* MeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1842B37F2430466F00652A62 /* MeFooterView.m */; };
@@ -39,9 +38,16 @@
 		1853AF60244F3F5900E6C335 /* TopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1853AF5E244F3F5900E6C335 /* TopicVideoView.m */; };
 		18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E432421172A00BF4D48 /* EssenceViewController.m */; };
 		18645E4D242117AD00BF4D48 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18645E4C242117AD00BF4D48 /* MeViewController.m */; };
-		187273392449FA9C00F6626C /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 187273382449FA9C00F6626C /* NSDate+X.m */; };
-		1872733C2449FB8400F6626C /* NSCalendar+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1872733B2449FB8400F6626C /* NSCalendar+X.m */; };
-		1877E8CC246448B500C46AC1 /* UIImageView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877E8CB246448B500C46AC1 /* UIImageView+X.m */; };
+		18787CD2249F275800E4CF45 /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CBE249F275700E4CF45 /* NSDate+X.m */; };
+		18787CD3249F275800E4CF45 /* NSCalendar+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CC0249F275700E4CF45 /* NSCalendar+X.m */; };
+		18787CD4249F275800E4CF45 /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CC1249F275800E4CF45 /* UIBarButtonItem+X.m */; };
+		18787CD5249F275800E4CF45 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CC5249F275800E4CF45 /* UIImage+X.m */; };
+		18787CD6249F275800E4CF45 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CC7249F275800E4CF45 /* UIView+Frame.m */; };
+		18787CD7249F275800E4CF45 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CC8249F275800E4CF45 /* NSString+X.m */; };
+		18787CD8249F275800E4CF45 /* UIImageView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CCA249F275800E4CF45 /* UIImageView+X.m */; };
+		18787CD9249F275800E4CF45 /* CALayer+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CCD249F275800E4CF45 /* CALayer+X.m */; };
+		18787CDA249F275800E4CF45 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CD0249F275800E4CF45 /* UITextField+X.m */; };
+		18787CDB249F275800E4CF45 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787CD1249F275800E4CF45 /* UIView+X.m */; };
 		187F16752440C43A00145C9D /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F16742440C43A00145C9D /* TopicModel.m */; };
 		187F16BE2442062900145C9D /* XRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F16BD2442062900145C9D /* XRefreshHeader.m */; };
 		188F3C82241BDE860095059C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 188F3C81241BDE860095059C /* Assets.xcassets */; };
@@ -49,7 +55,6 @@
 		188F3C88241BDE860095059C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3C87241BDE860095059C /* main.m */; };
 		188F3CA5241DE5DB0095059C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3CA2241DE5DB0095059C /* AppDelegate.m */; };
 		188F3CA6241DE5DB0095059C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3CA3241DE5DB0095059C /* SceneDelegate.m */; };
-		188F3CAB241DF2EB0095059C /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F3CA9241DF2EB0095059C /* UIImage+X.m */; };
 		188F3E18241DF9CE0095059C /* post-tag-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3CAE241DF9CE0095059C /* post-tag-bg.png */; };
 		188F3E19241DF9CE0095059C /* chose_tag_close_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3CAF241DF9CE0095059C /* chose_tag_close_icon@3x.png */; };
 		188F3E1A241DF9CE0095059C /* tag_add_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3CB0241DF9CE0095059C /* tag_add_icon.png */; };
@@ -383,17 +388,14 @@
 		188F3F74241DF9CF0095059C /* friendsTrend_login_click@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E15241DF9CE0095059C /* friendsTrend_login_click@2x.png */; };
 		188F3F75241DF9CF0095059C /* friendsTrend_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E16241DF9CE0095059C /* friendsTrend_login@2x.png */; };
 		188F3F76241DF9CF0095059C /* header_cry_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 188F3E17241DF9CE0095059C /* header_cry_icon@2x.png */; };
-		18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */; };
 		18946A542423B85600CD14DD /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18946A532423B85600CD14DD /* RecommendViewController.m */; };
 		18984F4F24273D3400D49217 /* XNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F4824273D3400D49217 /* XNavController.m */; };
 		18984F5024273D3400D49217 /* XTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F4B24273D3400D49217 /* XTabBarController.m */; };
 		18984F5124273D3400D49217 /* XUITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F4E24273D3400D49217 /* XUITabBar.m */; };
-		18984F5424273DA900D49217 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F5224273DA800D49217 /* UIView+X.m */; };
 		18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18984F5724273F4D00D49217 /* LoginRegisterController.m */; };
 		18984F5B24273F4D00D49217 /* LoginRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18984F5824273F4D00D49217 /* LoginRegisterController.xib */; };
 		18D50D4B2442ADEC00E40203 /* XRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D50D4A2442ADEC00E40203 /* XRefreshFooter.m */; };
 		18F4E3A62430E07300865FA4 /* MeFooterSquareBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4E3A52430E07300865FA4 /* MeFooterSquareBtn.m */; };
-		18F785592438D98300F17665 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785582438D98300F17665 /* NSString+X.m */; };
 		18F785992439FF3B00F17665 /* MeClearCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785982439FF3B00F17665 /* MeClearCacheCell.m */; };
 		18FB0C9E246FDD3500E85C88 /* CmtCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FB0C9C246FDD3500E85C88 /* CmtCell.m */; };
 		18FB0C9F246FDD3500E85C88 /* CmtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18FB0C9D246FDD3500E85C88 /* CmtCell.xib */; };
@@ -420,8 +422,6 @@
 		183CFDCD24275FCE00DF5978 /* VerticalBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalBtn.m; sourceTree = "<group>"; };
 		1841C5FA2455CD38004988F8 /* SeePigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeePigViewController.h; sourceTree = "<group>"; };
 		1841C5FB2455CD38004988F8 /* SeePigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeePigViewController.m; sourceTree = "<group>"; };
-		1842B374242CEE9000652A62 /* UITextField+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+X.h"; sourceTree = "<group>"; };
-		1842B375242CEE9000652A62 /* UITextField+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+X.m"; sourceTree = "<group>"; };
 		1842B378242F962D00652A62 /* MeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeTableViewCell.h; sourceTree = "<group>"; };
 		1842B379242F962D00652A62 /* MeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeTableViewCell.m; sourceTree = "<group>"; };
 		1842B37B242FA19400652A62 /* BSConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSConst.h; sourceTree = "<group>"; };
@@ -461,12 +461,26 @@
 		18645E432421172A00BF4D48 /* EssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EssenceViewController.m; sourceTree = "<group>"; };
 		18645E4B242117AD00BF4D48 /* MeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		18645E4C242117AD00BF4D48 /* MeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
-		187273372449FA9C00F6626C /* NSDate+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+X.h"; sourceTree = "<group>"; };
-		187273382449FA9C00F6626C /* NSDate+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+X.m"; sourceTree = "<group>"; };
-		1872733A2449FB8400F6626C /* NSCalendar+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+X.h"; sourceTree = "<group>"; };
-		1872733B2449FB8400F6626C /* NSCalendar+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+X.m"; sourceTree = "<group>"; };
-		1877E8CA246448B500C46AC1 /* UIImageView+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+X.h"; sourceTree = "<group>"; };
-		1877E8CB246448B500C46AC1 /* UIImageView+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+X.m"; sourceTree = "<group>"; };
+		18787CBE249F275700E4CF45 /* NSDate+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+X.m"; path = "../../../../../../category/NSDate+X.m"; sourceTree = "<group>"; };
+		18787CBF249F275700E4CF45 /* NSCalendar+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+X.h"; path = "../../../../../../category/NSCalendar+X.h"; sourceTree = "<group>"; };
+		18787CC0249F275700E4CF45 /* NSCalendar+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+X.m"; path = "../../../../../../category/NSCalendar+X.m"; sourceTree = "<group>"; };
+		18787CC1249F275800E4CF45 /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+X.m"; path = "../../../../../../category/UIBarButtonItem+X.m"; sourceTree = "<group>"; };
+		18787CC2249F275800E4CF45 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Frame.h"; path = "../../../../../../category/UIView+Frame.h"; sourceTree = "<group>"; };
+		18787CC3249F275800E4CF45 /* NSDate+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+X.h"; path = "../../../../../../category/NSDate+X.h"; sourceTree = "<group>"; };
+		18787CC4249F275800E4CF45 /* UITextField+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+X.h"; path = "../../../../../../category/UITextField+X.h"; sourceTree = "<group>"; };
+		18787CC5249F275800E4CF45 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+X.m"; path = "../../../../../../category/UIImage+X.m"; sourceTree = "<group>"; };
+		18787CC6249F275800E4CF45 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+X.h"; path = "../../../../../../category/UIView+X.h"; sourceTree = "<group>"; };
+		18787CC7249F275800E4CF45 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Frame.m"; path = "../../../../../../category/UIView+Frame.m"; sourceTree = "<group>"; };
+		18787CC8249F275800E4CF45 /* NSString+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+X.m"; path = "../../../../../../category/NSString+X.m"; sourceTree = "<group>"; };
+		18787CC9249F275800E4CF45 /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+X.h"; path = "../../../../../../category/UIImage+X.h"; sourceTree = "<group>"; };
+		18787CCA249F275800E4CF45 /* UIImageView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+X.m"; path = "../../../../../../category/UIImageView+X.m"; sourceTree = "<group>"; };
+		18787CCB249F275800E4CF45 /* NSString+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+X.h"; path = "../../../../../../category/NSString+X.h"; sourceTree = "<group>"; };
+		18787CCC249F275800E4CF45 /* CALayer+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+X.h"; path = "../../../../../../category/CALayer+X.h"; sourceTree = "<group>"; };
+		18787CCD249F275800E4CF45 /* CALayer+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+X.m"; path = "../../../../../../category/CALayer+X.m"; sourceTree = "<group>"; };
+		18787CCE249F275800E4CF45 /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+X.h"; path = "../../../../../../category/UIBarButtonItem+X.h"; sourceTree = "<group>"; };
+		18787CCF249F275800E4CF45 /* UIImageView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+X.h"; path = "../../../../../../category/UIImageView+X.h"; sourceTree = "<group>"; };
+		18787CD0249F275800E4CF45 /* UITextField+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+X.m"; path = "../../../../../../category/UITextField+X.m"; sourceTree = "<group>"; };
+		18787CD1249F275800E4CF45 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+X.m"; path = "../../../../../../category/UIView+X.m"; sourceTree = "<group>"; };
 		187F16732440C43A00145C9D /* TopicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		187F16742440C43A00145C9D /* TopicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		187F16BC2442062900145C9D /* XRefreshHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRefreshHeader.h; sourceTree = "<group>"; };
@@ -480,8 +494,6 @@
 		188F3CA2241DE5DB0095059C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		188F3CA3241DE5DB0095059C /* SceneDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		188F3CA4241DE5DB0095059C /* SceneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		188F3CA9241DF2EB0095059C /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
-		188F3CAA241DF2EB0095059C /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+X.h"; sourceTree = "<group>"; };
 		188F3CAE241DF9CE0095059C /* post-tag-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post-tag-bg.png"; sourceTree = "<group>"; };
 		188F3CAF241DF9CE0095059C /* chose_tag_close_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chose_tag_close_icon@3x.png"; sourceTree = "<group>"; };
 		188F3CB0241DF9CE0095059C /* tag_add_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag_add_icon.png; sourceTree = "<group>"; };
@@ -815,8 +827,6 @@
 		188F3E15241DF9CE0095059C /* friendsTrend_login_click@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsTrend_login_click@2x.png"; sourceTree = "<group>"; };
 		188F3E16241DF9CE0095059C /* friendsTrend_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friendsTrend_login@2x.png"; sourceTree = "<group>"; };
 		188F3E17241DF9CE0095059C /* header_cry_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_cry_icon@2x.png"; sourceTree = "<group>"; };
-		18946A4F2423A7A800CD14DD /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+X.h"; sourceTree = "<group>"; };
-		18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+X.m"; sourceTree = "<group>"; };
 		18946A522423B85600CD14DD /* RecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		18946A532423B85600CD14DD /* RecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		18984F4824273D3400D49217 /* XNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavController.m; sourceTree = "<group>"; };
@@ -825,8 +835,6 @@
 		18984F4B24273D3400D49217 /* XTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTabBarController.m; sourceTree = "<group>"; };
 		18984F4D24273D3400D49217 /* XUITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUITabBar.h; sourceTree = "<group>"; };
 		18984F4E24273D3400D49217 /* XUITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUITabBar.m; sourceTree = "<group>"; };
-		18984F5224273DA800D49217 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
-		18984F5324273DA900D49217 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
 		18984F5724273F4D00D49217 /* LoginRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRegisterController.m; sourceTree = "<group>"; };
 		18984F5824273F4D00D49217 /* LoginRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginRegisterController.xib; sourceTree = "<group>"; };
 		18984F5924273F4D00D49217 /* LoginRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRegisterController.h; sourceTree = "<group>"; };
@@ -834,8 +842,6 @@
 		18D50D4A2442ADEC00E40203 /* XRefreshFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRefreshFooter.m; sourceTree = "<group>"; };
 		18F4E3A42430E07300865FA4 /* MeFooterSquareBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeFooterSquareBtn.h; sourceTree = "<group>"; };
 		18F4E3A52430E07300865FA4 /* MeFooterSquareBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeFooterSquareBtn.m; sourceTree = "<group>"; };
-		18F785572438D98300F17665 /* NSString+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
-		18F785582438D98300F17665 /* NSString+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
 		18F785972439FF3B00F17665 /* MeClearCacheCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeClearCacheCell.h; sourceTree = "<group>"; };
 		18F785982439FF3B00F17665 /* MeClearCacheCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeClearCacheCell.m; sourceTree = "<group>"; };
 		18FB0C9B246FDD3500E85C88 /* CmtCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CmtCell.h; sourceTree = "<group>"; };
@@ -1094,22 +1100,26 @@
 		188F3CA8241DF2EB0095059C /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				18984F5324273DA900D49217 /* UIView+X.h */,
-				18984F5224273DA800D49217 /* UIView+X.m */,
-				188F3CAA241DF2EB0095059C /* UIImage+X.h */,
-				188F3CA9241DF2EB0095059C /* UIImage+X.m */,
-				18946A4F2423A7A800CD14DD /* UIBarButtonItem+X.h */,
-				18946A502423A7A800CD14DD /* UIBarButtonItem+X.m */,
-				1842B374242CEE9000652A62 /* UITextField+X.h */,
-				1842B375242CEE9000652A62 /* UITextField+X.m */,
-				18F785572438D98300F17665 /* NSString+X.h */,
-				18F785582438D98300F17665 /* NSString+X.m */,
-				187273372449FA9C00F6626C /* NSDate+X.h */,
-				187273382449FA9C00F6626C /* NSDate+X.m */,
-				1872733A2449FB8400F6626C /* NSCalendar+X.h */,
-				1872733B2449FB8400F6626C /* NSCalendar+X.m */,
-				1877E8CA246448B500C46AC1 /* UIImageView+X.h */,
-				1877E8CB246448B500C46AC1 /* UIImageView+X.m */,
+				18787CCC249F275800E4CF45 /* CALayer+X.h */,
+				18787CCD249F275800E4CF45 /* CALayer+X.m */,
+				18787CBF249F275700E4CF45 /* NSCalendar+X.h */,
+				18787CC0249F275700E4CF45 /* NSCalendar+X.m */,
+				18787CC3249F275800E4CF45 /* NSDate+X.h */,
+				18787CBE249F275700E4CF45 /* NSDate+X.m */,
+				18787CCB249F275800E4CF45 /* NSString+X.h */,
+				18787CC8249F275800E4CF45 /* NSString+X.m */,
+				18787CCE249F275800E4CF45 /* UIBarButtonItem+X.h */,
+				18787CC1249F275800E4CF45 /* UIBarButtonItem+X.m */,
+				18787CC9249F275800E4CF45 /* UIImage+X.h */,
+				18787CC5249F275800E4CF45 /* UIImage+X.m */,
+				18787CCF249F275800E4CF45 /* UIImageView+X.h */,
+				18787CCA249F275800E4CF45 /* UIImageView+X.m */,
+				18787CC4249F275800E4CF45 /* UITextField+X.h */,
+				18787CD0249F275800E4CF45 /* UITextField+X.m */,
+				18787CC2249F275800E4CF45 /* UIView+Frame.h */,
+				18787CC7249F275800E4CF45 /* UIView+Frame.m */,
+				18787CC6249F275800E4CF45 /* UIView+X.h */,
+				18787CD1249F275800E4CF45 /* UIView+X.m */,
 			);
 			name = Category;
 			path = BaiSiBuDeJie/Class/Category;
@@ -2095,20 +2105,24 @@
 				1841C5FC2455CD38004988F8 /* SeePigViewController.m in Sources */,
 				184D37012444BB8500628B41 /* TopicCell.m in Sources */,
 				1842B3802430466F00652A62 /* MeFooterView.m in Sources */,
+				18787CD6249F275800E4CF45 /* UIView+Frame.m in Sources */,
+				18787CD7249F275800E4CF45 /* NSString+X.m in Sources */,
+				18787CD3249F275800E4CF45 /* NSCalendar+X.m in Sources */,
 				18FD21DD243E07EA0026ECA6 /* AudioViewController.m in Sources */,
 				1842B39A24304B4000652A62 /* MeFooterSquareModel.m in Sources */,
-				187273392449FA9C00F6626C /* NSDate+X.m in Sources */,
 				183CFDCE24275FCE00DF5978 /* VerticalBtn.m in Sources */,
 				18645E442421172A00BF4D48 /* EssenceViewController.m in Sources */,
 				1845699B2467EAFA0043B4A0 /* CmtController.m in Sources */,
+				18787CDB249F275800E4CF45 /* UIView+X.m in Sources */,
 				18946A542423B85600CD14DD /* RecommendViewController.m in Sources */,
 				18984F5A24273F4D00D49217 /* LoginRegisterController.m in Sources */,
 				1853AF5A244F3F5000E6C335 /* TopicAudioView.m in Sources */,
+				18787CDA249F275800E4CF45 /* UITextField+X.m in Sources */,
 				183BB6352433926700F6026D /* MeFooterWebController.m in Sources */,
 				18FD21E3243E08110026ECA6 /* WordViewController.m in Sources */,
-				1842B376242CEE9000652A62 /* UITextField+X.m in Sources */,
+				18787CD4249F275800E4CF45 /* UIBarButtonItem+X.m in Sources */,
+				18787CD2249F275800E4CF45 /* NSDate+X.m in Sources */,
 				18F4E3A62430E07300865FA4 /* MeFooterSquareBtn.m in Sources */,
-				18946A512423A7A800CD14DD /* UIBarButtonItem+X.m in Sources */,
 				18984F4F24273D3400D49217 /* XNavController.m in Sources */,
 				188F3CA5241DE5DB0095059C /* AppDelegate.m in Sources */,
 				188F3CA6241DE5DB0095059C /* SceneDelegate.m in Sources */,
@@ -2116,17 +2130,14 @@
 				1853AF55244F3D6A00E6C335 /* TopicPicView.m in Sources */,
 				184A07E924547E9E00D83EE9 /* TopicViewController.m in Sources */,
 				1842B37A242F962D00652A62 /* MeTableViewCell.m in Sources */,
+				18787CD9249F275800E4CF45 /* CALayer+X.m in Sources */,
 				187F16BE2442062900145C9D /* XRefreshHeader.m in Sources */,
 				18446FB62429052500CEC10A /* LoginRegisterTextField.m in Sources */,
-				1872733C2449FB8400F6626C /* NSCalendar+X.m in Sources */,
 				184A612A246C477900D32991 /* CmtTableViewHeaderFooterView.m in Sources */,
-				188F3CAB241DF2EB0095059C /* UIImage+X.m in Sources */,
 				18F785992439FF3B00F17665 /* MeClearCacheCell.m in Sources */,
 				1850E8A8244C1176003D5392 /* CmtModel.m in Sources */,
 				188F3C88241BDE860095059C /* main.m in Sources */,
 				1850E8A5244C1163003D5392 /* UserModel.m in Sources */,
-				1877E8CC246448B500C46AC1 /* UIImageView+X.m in Sources */,
-				18F785592438D98300F17665 /* NSString+X.m in Sources */,
 				18FD21E0243E08000026ECA6 /* PicViewController.m in Sources */,
 				18FD21DA243E07D50026ECA6 /* VideoViewController.m in Sources */,
 				18984F5024273D3400D49217 /* XTabBarController.m in Sources */,
@@ -2134,11 +2145,12 @@
 				18FD21D7243E07BA0026ECA6 /* AllViewController.m in Sources */,
 				18645E4D242117AD00BF4D48 /* MeViewController.m in Sources */,
 				18984F5124273D3400D49217 /* XUITabBar.m in Sources */,
+				18787CD8249F275800E4CF45 /* UIImageView+X.m in Sources */,
+				18787CD5249F275800E4CF45 /* UIImage+X.m in Sources */,
 				18134E16246065180029F96F /* RecommendModel.m in Sources */,
 				1853AF60244F3F5900E6C335 /* TopicVideoView.m in Sources */,
 				1842B37D242FA19400652A62 /* BSConst.m in Sources */,
 				18FB0C9E246FDD3500E85C88 /* CmtCell.m in Sources */,
-				18984F5424273DA900D49217 /* UIView+X.m in Sources */,
 				18D50D4B2442ADEC00E40203 /* XRefreshFooter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
