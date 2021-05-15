@@ -55,7 +55,7 @@
 
     
     self.tableView.contentInset = UIEdgeInsetsMake(_headViewH + _tabViewH, 0, 0, 0); // 调用一次 scrollViewDidScroll:
-    //    NSLog(@"y: %f", self.tableView.contentOffset.y);
+    NSLog(@"y: %f", self.tableView.contentOffset.y);
 }
 
 
@@ -139,7 +139,7 @@
     label.textColor = [UIColor colorWithWhite:1 alpha:0];
     [self.navigationItem setTitleView:label];
     
-    //    NSLog(@"%@", [self.navigationItem titleView]);
+        NSLog(@"%@", [self.navigationItem titleView]);
     _label = label;
 }
 

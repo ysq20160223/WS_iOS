@@ -32,13 +32,13 @@
 //    XLog
     
     // 2-1
-    [self addChildViewController:[[XNavController alloc] initWithRootViewController:[[EssenceViewController alloc] init]] andTabBarItemTitle:@"Essence" andImageName:@"tabBar_essence_icon" andSelectedImageName:@"tabBar_essence_click_icon"];
+    [self addChildViewController:[XNavController.alloc initWithRootViewController:[EssenceViewController.alloc init]] andTabBarItemTitle:@"Essence" andImageName:@"tabBar_essence_icon" andSelectedImageName:@"tabBar_essence_click_icon"];
     
     // 2-4
-    [self addChildViewController:[[XNavController alloc] initWithRootViewController:[[MeViewController alloc] init]] andTabBarItemTitle:@"Me" andImageName:@"tabBar_me_icon" andSelectedImageName:@"tabBar_me_click_icon"];
+    [self addChildViewController:[XNavController.alloc initWithRootViewController:[MeViewController.alloc init]] andTabBarItemTitle:@"Me" andImageName:@"tabBar_me_icon" andSelectedImageName:@"tabBar_me_click_icon"];
     
     //
-    XUITabBar *tabBar = [[XUITabBar alloc] init];
+    XUITabBar *tabBar = [XUITabBar.alloc init];
     [self setValue:tabBar forKey:@"tabBar"]; // 自定义 XUITabBar 替换系统 UITabBar
     [tabBar setupTabBarItem];
 }

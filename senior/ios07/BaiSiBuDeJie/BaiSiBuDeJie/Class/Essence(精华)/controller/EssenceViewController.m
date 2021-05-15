@@ -71,6 +71,7 @@
     scrollView.delegate = self;
     [self.view addSubview:scrollView];
     self.scrollView = scrollView;
+    self.scrollView.backgroundColor = UIColor.cyanColor;
     
     //
     NSInteger childVcCount = self.childViewControllers.count;
@@ -116,7 +117,7 @@
 #pragma mark -
 - (void)setupTitleView {
     int y = kStatusBarH + self.navigationController.navigationBar.xHeight;
-    //    NSLog(@"y: %d", y);
+    NSLog(@"titleView y: %d", y);
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, y, self.view.xWidth, kTitleViewH)];
     titleView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.9];
     [self.view addSubview:titleView];

@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 //
 - (NSString *)formatMediaTime:(NSTimeInterval)time;
 + (NSString *)formatMediaTime:(NSTimeInterval)time;
++ (NSString *)chineseToPinYin:(NSString *)chinese;
 
 @end
 

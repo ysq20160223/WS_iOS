@@ -51,7 +51,7 @@
 
 - (void)setTopicModel:(TopicModel *)topicModel {
     _topicModel = topicModel;
-//    NSLog(@"%@", topicModel);
+    NSLog(@"%@", topicModel);
     
 //    [self.ivUserProfile sd_setImageWithURL:[NSURL URLWithString:topicModel.profile_image] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 //        self.ivUserProfile.image = [image xCircleImage];

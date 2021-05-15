@@ -44,4 +44,20 @@
     return [NSString stringWithFormat:@"%02ld:%02ld", minute, second];
 }
 
++ (NSString *)chineseToPinYin:(NSString *)chinese {
+    if ([chinese length]) {
+        NSMutableString *pinYin = [[NSMutableString alloc] initWithString:chinese];
+        if (CFStringTransform((__bridge CFMutableStringRef)pinYin, 0, kCFStringTransformMandarinLatin, NO)) {
+//            NSLog(@"pinyin: %@", pinYin);
+        }
+        if (CFStringTransform((__bridge CFMutableStringRef)pinYin, 0, kCFStringTransformStripDiacritics, NO)) {
+//            NSLog(@"pinyin: %@", pinYin);
+            return pinYin;
+        }
+    }
+    return @"";
+}
+
 @end
+
+

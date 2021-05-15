@@ -109,7 +109,7 @@
 
 //
 + (instancetype)xViewFromXib {
-    return [[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
+    return [NSBundle.mainBundle loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
 }
 
 //
@@ -121,6 +121,17 @@
     
     return CGRectIntersectsRect(selfRect, viewRect);
 }
+
+
++ (void)setBorder:(UIView *)view color:(UIColor *)color radius:(float)radius border:(float)border {
+    CALayer *layer = [view layer];
+    [layer setMasksToBounds:YES];
+    [layer setCornerRadius:radius];
+    [layer setBorderWidth:border];
+    [layer setBorderColor:[color CGColor]];
+}
+
+
 
 @end
 

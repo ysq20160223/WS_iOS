@@ -309,6 +309,6 @@
     }
     return _hotTopicModelArray;
 }
-\
+
 
 @end

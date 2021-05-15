@@ -7,6 +7,7 @@
 //
 
 #import "XUITabBar.h"
+#import <Masonry.h>
 
 @interface XUITabBar()
 
@@ -32,11 +33,12 @@
     normalTextAttrDict[NSFontAttributeName] = [UIFont systemFontOfSize:12];
     
     NSMutableDictionary *selectedTextAttrDict = [NSMutableDictionary dictionary];
-    selectedTextAttrDict[NSFontAttributeName] = [UIFont systemFontOfSize:16];
+    selectedTextAttrDict[NSFontAttributeName] = [UIFont systemFontOfSize:14];
     
     UITabBarItem *tabBarItem = [UITabBarItem appearance];
     [tabBarItem setTitleTextAttributes:normalTextAttrDict forState:UIControlStateNormal];
     [tabBarItem setTitleTextAttributes:selectedTextAttrDict forState:UIControlStateSelected];
+    [tabBarItem setTitleTextAttributes:selectedTextAttrDict forState:UIControlStateFocused];
 }
 
 // 布局子控件
@@ -65,7 +67,11 @@
         if (btnIndex >= 1) {
             btnX += btnW;
         }
-        subView.frame = CGRectMake(btnX, 0, btnW, btnH);
+        subView.frame = CGRectMake(btnX, 0, btnW, btnH * 0.7);
+//        subView.backgroundColor = XRandomColor();
+//        [subView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.edges.inset = 20;
+//        }];
         
         btnIndex++;
     }
@@ -74,7 +80,7 @@
     self.publishBtn.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height * 0.5);
 }
 
-#pragma mark init
+#pragma mark - init
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
 //        self.backgroundImage = [UIImage imageNamed:@"tabbar-light"];
@@ -85,7 +91,7 @@
 #pragma mark - lazy load
 - (UIButton *)publishBtn {
     if (!_publishBtn) {
-        UIButton *publishBtn = [[UIButton alloc] init];
+        UIButton *publishBtn = [UIButton.alloc init];
         //        publishBtn.backgroundColor = BSRandomColorRGB;
         [publishBtn setImage:[UIImage imageNamed:@"tabBar_publish_icon"] forState:UIControlStateNormal];
         [publishBtn setImage:[UIImage imageNamed:@"tabBar_publish_click_icon"] forState:UIControlStateSelected];

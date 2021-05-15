@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UIImage+X.h"
+#import "UIImageView+WebCache.h"
+#import "UIImage+GIF.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (X)
@@ -15,6 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)xCircle:(NSString *)url placeholder:(NSString *)placeholder;
 
 - (void)xRect:(NSString *)url placeholder:(NSString *)placeholder;
+
+- (UIImage *)drawVerticalLineOfDashByImageView;
+
+- (UIImage *)drawHorizontalLineOfDashByImageView;
 
 @end
 

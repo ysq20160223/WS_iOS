@@ -52,7 +52,7 @@
     self.window.frame = windowScene.coordinateSpace.bounds;
     
     // 2
-    XTabBarController *rootVc = [[XTabBarController alloc] init];
+    XTabBarController *rootVc = [XTabBarController.alloc init];
     rootVc.delegate = self;
     self.window.rootViewController = rootVc;
     

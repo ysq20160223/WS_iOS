@@ -20,4 +20,46 @@
     return [[self alloc] initWithCustomView:btn];
 }
 
+
+//
++ (instancetype)xItemWithImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
+    return [self xItemWithTitle:@"" andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO];
+}
+
++ (instancetype)xItemWithTitle:(NSString *)title andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
+    return [self xItemWithTitle:title andImage:@"" andHighlightImage:@"" andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO];
+}
+
++ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
+    return [self xItemWithTitle:title andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO];
+}
+
++ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andIsBold:(BOOL)isBold {
+    
+    UIButton *btn = [UIButton.alloc init];
+//    btn.backgroundColor = UIColor.cyanColor;
+    [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:highlightImage] forState:UIControlStateHighlighted];
+    [btn setTitle:title forState:UIControlStateNormal];
+    [btn setTitleColor:XColor(0x33, 0x33, 0x33) forState:UIControlStateNormal];
+    if (isBold) {
+        btn.font = [UIFont boldSystemFontOfSize:fontSize];
+    } else {
+        btn.font = [UIFont systemFontOfSize:fontSize];
+    }
+    
+    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 10, 0, 0)];
+    [btn setContentEdgeInsets:UIEdgeInsetsMake(0, -5, 0, 0)];
+    [btn sizeToFit];
+    
+    CGRect btnFrame = btn.frame;
+    btnFrame.size.width += 10;
+    btnFrame.size.height = height;
+    btn.frame = btnFrame;
+    
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    return [UIBarButtonItem.alloc initWithCustomView:btn];;
+}
+
 @end

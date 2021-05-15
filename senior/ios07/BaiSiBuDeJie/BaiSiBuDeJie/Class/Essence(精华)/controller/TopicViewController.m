@@ -56,10 +56,13 @@ static NSString *const TopicCellId = @"TopicCellId";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = UIColor.orangeColor;
     self.tableView.contentInset = UIEdgeInsetsMake(kTitleViewH + self.navigationController.navigationBar.xHeight, 0,
                                                    self.tabBarController.tabBar.xHeight + kStatusBarH, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TopicCell class]) bundle:nil] forCellReuseIdentifier:TopicCellId];
+    
+    
     
     [self setupRefresh];
     
@@ -87,7 +90,7 @@ static NSString *const TopicCellId = @"TopicCellId";
         paraDict[@"a"] = @"list";
         paraDict[@"c"] = @"data";
         paraDict[@"type"] = @(self.topicType); //
-//        NSLog(@"type: %ld", self.topicType);
+        NSLog(@"paraDict: %@", paraDict);
         
         [weakSelf.aFHTTPSessionManager.tasks makeObjectsPerformSelector:@selector(cancel)];
         
@@ -154,12 +157,17 @@ static NSString *const TopicCellId = @"TopicCellId";
 
 #pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"count: %ld", self.topicArray.count);
     return self.topicArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"row: %ld", indexPath.row)
+    NSLog(@"row: %ld", indexPath.row)
     CGFloat height = self.topicArray[indexPath.row].cellHeight;
     
     TopicCell *cell = [tableView dequeueReusableCellWithIdentifier:TopicCellId];
@@ -169,12 +177,12 @@ static NSString *const TopicCellId = @"TopicCellId";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"row: %ld", indexPath.row)
+    NSLog(@"row: %ld", indexPath.row)
     return self.topicArray[indexPath.row].cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"%@", indexPath);
+    NSLog(@"%@", indexPath);
     
     CmtController *commentVc = [[CmtController alloc] init];
     commentVc.topicModel = self.topicArray[indexPath.row];

@@ -22,6 +22,7 @@
     
     self.interactivePopGestureRecognizer.delegate = self;
     
+//    self.navigationBar.hidden = YES;
     // 设置背景颜色, 防止push的时候右上角出现黑边
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
 //    [self.navigationBar setBackgroundColor:[UIColor cyanColor]]; // 设置颜色无效
@@ -31,7 +32,7 @@
 //    NSLog(@"%@", viewController.class);
     
     if (self.childViewControllers.count > 0) {
-        UIButton *backBtn = [[UIButton alloc] init];
+        UIButton *backBtn = [UIButton.alloc init];
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
         [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
 //        [backBtn setTitle:@"Back" forState:UIControlStateNormal];
@@ -43,7 +44,7 @@
 //        backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
         [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:backBtn];
         
         viewController.hidesBottomBarWhenPushed = true; // 隐藏底部TabBar
     }

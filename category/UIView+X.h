@@ -23,9 +23,10 @@
 
 @property (nonatomic, assign) CGSize xSize;
 
-+ (instancetype)xViewFromXib;
-
 - (BOOL)intersectWithView:(UIView *)view;
+
++ (instancetype)xViewFromXib;
++ (void)setBorder:(UIView *)view color:(UIColor *)color radius:(float)radius border:(float)border;
 
 @end
 
