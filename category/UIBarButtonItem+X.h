@@ -20,9 +20,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)xItemWithTitle:(NSString *)title andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize;
 
-+ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize;
++ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andTextColor:(UIColor *)normalTextColor;
 
-+ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andIsBold:(BOOL)isBold ;
+
++ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andIsBold:(BOOL)isBold andTextColor:(UIColor *)normalTextColor;
 
 @end
 

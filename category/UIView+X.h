@@ -27,6 +27,7 @@
 
 + (instancetype)xViewFromXib;
 + (void)setBorder:(UIView *)view color:(UIColor *)color radius:(float)radius border:(float)border;
++ (void)setBorder:(UIView *)view andStrokeColor:(UIColor *)strokeColor andFillColor:(UIColor *)fillColor andCornerRadius:(float)cornerRadius andLineWidth:(float)lineWidth;
 
 @end
 

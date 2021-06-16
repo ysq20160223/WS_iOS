@@ -7,6 +7,7 @@
 //
 
 #import "UIBarButtonItem+X.h"
+#import "Config.h"
 
 
 @implementation UIBarButtonItem (X)
@@ -23,25 +24,25 @@
 
 //
 + (instancetype)xItemWithImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
-    return [self xItemWithTitle:@"" andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO];
+    return [self xItemWithTitle:@"" andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO andTextColor:color333];
 }
 
 + (instancetype)xItemWithTitle:(NSString *)title andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
-    return [self xItemWithTitle:title andImage:@"" andHighlightImage:@"" andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO];
+    return [self xItemWithTitle:title andImage:@"" andHighlightImage:@"" andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO andTextColor:color333];
 }
 
-+ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
-    return [self xItemWithTitle:title andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO];
++ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andTextColor:(UIColor *)normalTextColor {
+    return [self xItemWithTitle:title andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO andTextColor:normalTextColor];
 }
 
-+ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andIsBold:(BOOL)isBold {
++ (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andIsBold:(BOOL)isBold andTextColor:(UIColor *)normalTextColor {
     
     UIButton *btn = [UIButton.alloc init];
 //    btn.backgroundColor = UIColor.cyanColor;
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:highlightImage] forState:UIControlStateHighlighted];
     [btn setTitle:title forState:UIControlStateNormal];
-    [btn setTitleColor:XColor(0x33, 0x33, 0x33) forState:UIControlStateNormal];
+    [btn setTitleColor:normalTextColor forState:UIControlStateNormal];
     if (isBold) {
         btn.font = [UIFont boldSystemFontOfSize:fontSize];
     } else {

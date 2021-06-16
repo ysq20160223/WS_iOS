@@ -131,6 +131,20 @@
     [layer setBorderColor:[color CGColor]];
 }
 
++ (void)setBorder:(UIView *)view andStrokeColor:(UIColor *)strokeColor andFillColor:(UIColor *)fillColor andCornerRadius:(float)cornerRadius andLineWidth:(float)lineWidth {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.fillColor = fillColor.CGColor;
+    shapeLayer.strokeColor = strokeColor.CGColor;
+    shapeLayer.lineWidth = lineWidth;
+    shapeLayer.lineDashPattern = @[@1, @2];
+    
+    CGMutablePathRef pathRef = CGPathCreateMutable();
+    CGPathAddEllipseInRect(pathRef, nil, view.bounds);
+    shapeLayer.path = pathRef;
+    
+    [view.layer addSublayer:shapeLayer];
+}
+
 
 
 @end
