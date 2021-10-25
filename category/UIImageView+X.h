@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)xCircle:(NSString *)url placeholder:(NSString *)placeholder;
 
 - (void)xRect:(NSString *)url placeholder:(NSString *)placeholder;
-- (void)xRect:(NSString *)url placeholder:(NSString *)placeholder completed:(SDWebImageCompletionBlock)completedBlock;
+- (void)xRect:(NSString *)url placeholder:(NSString *)placeholder completed:(SDExternalCompletionBlock)completedBlock;
 
 - (UIImage *)drawVerticalLineOfDashByImageView;
 

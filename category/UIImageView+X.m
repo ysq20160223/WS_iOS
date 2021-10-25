@@ -12,7 +12,7 @@
 @implementation UIImageView (X)
 
 
-- (void)xRect:(NSString *)url placeholder:(NSString *)placeholder completed:(SDWebImageCompletionBlock)completedBlock {
+- (void)xRect:(NSString *)url placeholder:(NSString *)placeholder completed:(SDExternalCompletionBlock)completedBlock {
     [self sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:placeholder] completed:completedBlock];
 }
 

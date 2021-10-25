@@ -7,7 +7,7 @@
 //
 
 #import "UIBarButtonItem+X.h"
-#import "Config.h"
+//#import "Config.h"
 
 
 @implementation UIBarButtonItem (X)
@@ -24,11 +24,11 @@
 
 //
 + (instancetype)xItemWithImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
-    return [self xItemWithTitle:@"" andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO andTextColor:color333];
+    return [self xItemWithTitle:@"" andImage:image andHighlightImage:highlightImage andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO andTextColor:[UIColor colorWithRed:0x33 / 255.0 green:0x33 / 255.0 blue:0x33 / 255.0 alpha:1]];
 }
 
 + (instancetype)xItemWithTitle:(NSString *)title andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize {
-    return [self xItemWithTitle:title andImage:@"" andHighlightImage:@"" andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO andTextColor:color333];
+    return [self xItemWithTitle:title andImage:@"" andHighlightImage:@"" andTartget:target andAction:action andHeight:height andFontOfSize:fontSize andIsBold:NO andTextColor:[UIColor colorWithRed:0x33 / 255.0 green:0x33 / 255.0 blue:0x33 / 255.0 alpha:1]];
 }
 
 + (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andTextColor:(UIColor *)normalTextColor {
