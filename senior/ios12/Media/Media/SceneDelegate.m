@@ -28,15 +28,15 @@
     // 1
     if (@available(iOS 13.0, *)) {
         UIWindowScene *windowScene = (UIWindowScene *)scene;
-        self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+        self.window = [UIWindow.alloc initWithWindowScene:windowScene];
         self.window.frame = windowScene.coordinateSpace.bounds;
     } else {
         // Fallback on earlier versions
-        self.window = [[UIWindow alloc] init];
+        self.window = [UIWindow.alloc init];
     }
     
     // 2
-    AudioVc *rootVc = [[AudioVc alloc] init];
+    AudioVc *rootVc = [AudioVc.alloc init];
     self.window.rootViewController = rootVc;
     
     // 3

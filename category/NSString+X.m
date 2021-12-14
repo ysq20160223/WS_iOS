@@ -46,7 +46,7 @@
 
 + (NSString *)chineseToPinYin:(NSString *)chinese {
     if ([chinese length]) {
-        NSMutableString *pinYin = [[NSMutableString alloc] initWithString:chinese];
+        NSMutableString *pinYin = [NSMutableString.alloc initWithString:chinese];
         if (CFStringTransform((__bridge CFMutableStringRef)pinYin, 0, kCFStringTransformMandarinLatin, NO)) {
 //            NSLog(@"pinyin: %@", pinYin);
         }

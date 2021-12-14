@@ -13,7 +13,7 @@
 
 
 - (BOOL)isThisYear {
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    NSDateFormatter *fmt = [NSDateFormatter.alloc init];
     fmt.dateFormat = @"yyyy";
     
     NSString *selfYear = [fmt stringFromDate:self];
@@ -23,7 +23,7 @@
 }
 
 - (BOOL)isToday {
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    NSDateFormatter *fmt = [NSDateFormatter.alloc init];
     fmt.dateFormat = @"yyyyMMdd";
     
     NSString *selfDay = [fmt stringFromDate:self];
@@ -33,7 +33,7 @@
 }
 
 - (BOOL)isYesterday {
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    NSDateFormatter *fmt = [NSDateFormatter.alloc init];
     fmt.dateFormat = @"yyyyMMdd";
     
     NSString *selfDay = [fmt stringFromDate:self];

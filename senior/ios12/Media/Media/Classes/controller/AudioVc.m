@@ -57,6 +57,10 @@
 
 @implementation AudioVc
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -81,8 +85,8 @@
     self.svLrc.contentSize = CGSizeMake(self.view.bounds.size.width * 2, 0);
     
     // 接收通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sceneDidBecomeActive) name:@"sceneDidBecomeActive" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sceneDidEnterBackground) name:@"sceneDidEnterBackground" object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(sceneDidBecomeActive) name:@"sceneDidBecomeActive" object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(sceneDidEnterBackground) name:@"sceneDidEnterBackground" object:nil];
 }
 
 - (void)startPlayMusic {
@@ -132,7 +136,7 @@
 #pragma mark - 添加毛玻璃
 - (void)setupBlur {
     // 1
-    UIToolbar *toolBar = [[UIToolbar alloc] init];
+    UIToolbar *toolBar = [UIToolbar.alloc init];
     toolBar.barStyle = UIBarStyleBlack;
     toolBar.translucent = YES;
     [self.ivAlbum addSubview:toolBar];
@@ -327,8 +331,8 @@
     [playingDict setObject:@(self.audioPlayer.duration) forKey:MPMediaItemPropertyPlaybackDuration];
     [playingDict setObject:@(self.audioPlayer.currentTime) forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
     
-    //    [playingDict setObject:[[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:audioModel.icon]] forKey:MPMediaItemPropertyArtwork];
-    [playingDict setObject:[[MPMediaItemArtwork alloc] initWithBoundsSize:CGSizeMake(200, 200) requestHandler:^UIImage * _Nonnull(CGSize size) {
+    //    [playingDict setObject:[MPMediaItemArtwork.alloc initWithImage:[UIImage imageNamed:audioModel.icon]] forKey:MPMediaItemPropertyArtwork];
+    [playingDict setObject:[MPMediaItemArtwork.alloc initWithBoundsSize:CGSizeMake(200, 200) requestHandler:^UIImage * _Nonnull(CGSize size) {
         return [UIImage imageNamed:audioModel.icon];
     }] forKey:MPMediaItemPropertyArtwork];
     

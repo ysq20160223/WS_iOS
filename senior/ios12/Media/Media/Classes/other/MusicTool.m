@@ -85,11 +85,11 @@ static NSMutableDictionary *_players;
     // 3.判断播放器是否为空
     if (player == nil) {
         // 4.生成对应音乐资源
-        NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
+        NSURL *fileUrl = [NSBundle.mainBundle URLForResource:fileName withExtension:nil];
         if (fileUrl == nil) return nil;
         
         // 5.创建对应的播放器
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileUrl error:nil];
+        player = [AVAudioPlayer.alloc initWithContentsOfURL:fileUrl error:nil];
         
         // 6.保存到字典中
         [_players setObject:player forKey:fileName];

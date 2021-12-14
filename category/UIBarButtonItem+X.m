@@ -13,7 +13,7 @@
 @implementation UIBarButtonItem (X)
 
 + (instancetype)xItemWithImage:(NSString *)image highlightImage:(NSString *)highlightImage tartget:(id)target action:(SEL)action {
-    UIButton *btn = [[UIButton alloc] init];
+    UIButton *btn = [UIButton.alloc init];
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:highlightImage] forState:UIControlStateHighlighted];
     [btn sizeToFit];
