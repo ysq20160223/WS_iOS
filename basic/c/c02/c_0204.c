@@ -22,11 +22,13 @@ int main()
     
     i *= 3;
     
-    printf("i = %d\n", i);
+    printf("i: %d\n", i);
     
-    i += 4 + 5;
+    i += 4 * 2;
     
-    printf("i = %d\n", i);
+    printf("i: %d\n", i);
     
     return 0;
 }
+
+

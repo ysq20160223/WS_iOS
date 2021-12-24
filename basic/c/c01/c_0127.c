@@ -19,13 +19,13 @@ int fun_01()
     int b = 2;
     int temp;
     
-    printf("before a=%d, b=%i\n", a, b);
+    printf("before a: %d; b: %i\n", a, b);
     
     temp = a;
     a = b;
     b = temp;
     
-    printf("after a=%d, b=%i\n", a, b);
+    printf("after a: %d; b: %i\n", a, b);
     
     return 0;
 }
@@ -34,13 +34,13 @@ int fun_01()
 int fun_02()
 {
     int a = 10, b = 20;
-    printf("before a=%d, b=%i\n", a, b);
+    printf("before a: %d; b: %i\n", a, b);
     
     
     a = b - a;
     b = b - a;
     a = b + a;
-    printf("after a=%d, b=%i\n", a, b);
+    printf("after a: %d; b: %i\n", a, b);
 
     return 0;
 }
@@ -53,3 +53,5 @@ int main()
     
     return 0;
 }
+
+

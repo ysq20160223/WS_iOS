@@ -14,7 +14,9 @@ int main() {
     
     int b = (a++) + (++a);
     
-    printf("a = %d, b = %d\n", a, b);
+    printf("a: %d; b: %d\n", a, b);
     
     return 0;
 }
+
+

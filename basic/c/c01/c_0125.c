@@ -25,3 +25,5 @@ int main()
     }
     printf("---score = %d\n", score);
 }
+
+

@@ -13,7 +13,6 @@
     int _screenW;
     int _screenH;
     
-    
     NSArray *_descArray;
 }
 @end
@@ -31,7 +30,7 @@
     
     
     // 1, 获得所有的描述
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"descs" ofType:@"plist"]; // 2, 获得文件的全路径
+    NSString *path = [NSBundle.mainBundle pathForResource:@"descs.plist" ofType:nil]; // 2, 获得文件的全路径
 //    NSLog(@"path:%@", path);
 
     _descArray = [NSArray arrayWithContentsOfFile:path]; // 3, 加载 path 对应的文件来创建数组
@@ -49,7 +48,7 @@
 
 
 - (IBAction)contentSliderValueChange:(UISlider *)sender {
-    NSLog(@"sliderValueChange : %f", sender.value); // sender.value = [0 ~ 15]
+    NSLog(@"sliderValueChange: %f", sender.value); // sender.value = [0 ~ 15]
     
     _lbNo.text = [NSString stringWithFormat:@"%.f/16", sender.value + 1]; // 设置序号
     // .0f == .f (不保留小数) ; %02 表示保持两位数格式
@@ -74,9 +73,9 @@
 
 - (IBAction)nightMode:(UISwitch *)sender {
     if(sender.on) {
-        self.view.backgroundColor = [UIColor darkGrayColor];
+        self.view.backgroundColor = UIColor.darkGrayColor;
     } else {
-        self.view.backgroundColor = [UIColor whiteColor];
+        self.view.backgroundColor = UIColor.whiteColor;
     }
 }
 
@@ -96,7 +95,5 @@
 
 
 @end
-
-
 
 

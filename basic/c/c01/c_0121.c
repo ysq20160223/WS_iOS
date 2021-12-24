@@ -22,10 +22,12 @@ int main()
     float f = 1.7f;
     double d = 2.1;
     
-    printf("int i = %d, int j = %i\n", i, j);
+    printf("int i = %d; int j = %i\n", i, j);
     printf("char c = %c\n", c);
     printf("float f = %.2f\n", f);
     printf("double d = %.4f\n", d);
     
     return 0;
 }
+
+

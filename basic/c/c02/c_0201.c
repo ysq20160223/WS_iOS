@@ -24,16 +24,14 @@ int fun_01()
     int c = 10 % 3;
     int d = 10 % -3;
     
-    printf("a = %d, b = %i, c = %i, d = %i\n", a, b, c, d);
-    
+    printf("a: %d; b: %i; c: %i; d: %i\n", a, b, c, d);
     return 0;
 }
 
 int fun_02()
 {
     double d = 10 / 3;
-    printf("d = %f\n", d);
-    
+    printf("d: %f\n", d);
     return 0;
 }
 

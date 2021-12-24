@@ -21,7 +21,9 @@ int main()
     
     int c = a > b ? a : b;
     
-    printf("c = %d\n", c);
+    printf("c: %d\n", c);
     
     return 0;
 }
+
+
