@@ -2,7 +2,7 @@
 //  c_0413_a.c
 //  
 //
-//  Created by sq y on 2017/7/1.
+//  Created by Apple on 2017/7/1.
 //
 //
 
@@ -24,4 +24,5 @@ int main()
     
     return 0;
 }
+
 

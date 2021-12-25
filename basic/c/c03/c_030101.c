@@ -2,7 +2,7 @@
 //  c_030101.c
 //  
 //
-//  Created by sq y on 2017/7/1.
+//  Created by Apple on 2017/7/1.
 //
 //
 
@@ -38,9 +38,8 @@ int fun_01()
 int fun_02()
 {
     /* */
-    if(10 > 0)
-        int a = 1; // 作用域不明确
-    
+//    if(10 > 0)
+//        int a = 1; // 作用域不明确
     
     return 0;
 }
@@ -48,12 +47,11 @@ int fun_02()
 int main()
 {
 
-//    fun_01();
+    fun_01();
     
-     fun_02();
+//     fun_02();
     
     return 0;
 }
-
 
 

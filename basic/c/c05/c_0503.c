@@ -15,7 +15,7 @@ int main() {
     int b = 2;
     
     
-    printf("a: %d, b: %d, &a: %p, &b: %p\n", a, b, &a, &b);
+    printf("a: %d; b: %d; &a: %p; &b: %p\n", a, b, &a, &b);
     
     
     return 0;

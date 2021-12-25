@@ -2,7 +2,7 @@
 //  c_030210.c
 //  
 //
-//  Created by sq y on 2017/7/1.
+//  Created by Apple on 2017/7/1.
 //
 
 /*
@@ -20,7 +20,6 @@ int fun_01()
         int i = 1; // 在 java 中不可以定义
         int a = 2;
         printf("i: %d\n", i);
-        
     }
     return 0;
 }
@@ -40,22 +39,26 @@ int fun_03(int x)
 {
     for (int i = 1; i <= x; i++) {
         for(int j = 1; j <= i; j++) {
-            printf("%d * %d: %d\t", j, i, i * j);
+            printf("%d * %d= %d\t", j, i, i * j);
         }
         printf("\n");
     }
     return 0;
 }
 
-int main()
-{
-    fun_01();
+// 单变量实现乘法表
+int fun_04(int x) {
     
-    // fun_02();
-    
-    // fun_03(9);
+    return 0;
 }
 
-
+int main()
+{
+//    fun_01();
+    
+//     fun_02();
+    
+     fun_03(5);
+}
 
 

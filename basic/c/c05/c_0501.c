@@ -2,7 +2,7 @@
 //  c_0501.c
 //  
 //
-//  Created by sq y on 2017/7/1.
+//  Created by Apple on 2017/7/1.
 //
 //
 
@@ -37,10 +37,9 @@ int main()
     
     
     float a = .01;
-    printf("float : %f\n", a);
-    
-    
+    printf("float: %f\n", a);
     
     return 0;
 }
+
 

@@ -2,7 +2,7 @@
 //  c_030201.c
 //  
 //
-//  Created by sq y on 2017/7/1.
+//  Created by Apple on 2017/7/1.
 //
 
 /*
@@ -31,7 +31,7 @@ int fun_01(int i)
         sum += i--;
     }
     
-    printf("fun_02, sum: %d\n", sum);
+    printf("fun_01; sum: %d\n", sum);
     
     return 0;
 }
@@ -43,7 +43,7 @@ void fun_02(int b, int n)
     for (int i = 0; i < n; i++) {
         result *= b;
     }
-    printf("fun_02, result: %d\n", result);
+    printf("fun_02; result: %d\n", result);
 }
 
 // 递归计算 b 的 n 次方
@@ -63,7 +63,6 @@ int fun_04(int n)
     {
         return n;
     }
-    
     return fun_04(n - 1) + n;
 }
 

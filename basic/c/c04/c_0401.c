@@ -2,7 +2,7 @@
 //  c_0401.c
 //  
 //
-//  Created by sq y on 2017/7/1.
+//  Created by Apple on 2017/7/1.
 //
 //
 
@@ -28,7 +28,7 @@
 int main()
 {
     
-#include "head.h"
+#include "c_0401_head.h"
     
     return 0;
 }
