@@ -2,7 +2,7 @@
 //  c_060308.c
 //  
 //
-//  Created by sq y on 2017/7/4.
+//  Created by Apple on 2017/7/4.
 //
 //
 
@@ -24,9 +24,9 @@ void fun_01()
     int *ip = &i;
     long *lp = &l;
     
-    printf("sizeof(cp) = %zd\n", sizeof(cp));
-    printf("sizeof(ip) = %zd\n", sizeof(ip));
-    printf("sizeof(lp) = %zd\n", sizeof(lp));
+    printf("sizeof(cp): %zd\n", sizeof(cp));
+    printf("sizeof(ip): %zd\n", sizeof(ip));
+    printf("sizeof(lp): %zd\n", sizeof(lp));
 }
 
 //
@@ -40,8 +40,8 @@ void fun_02()
     int *ip = &c;
     char *cp = &c;
     
-    printf("*ip = %d\n", *ip);
-    printf("*cp = %d\n", *cp);
+    printf("*ip: %d\n", *ip);
+    printf("*cp: %d\n", *cp);
 }
 
 int main()
@@ -60,12 +60,10 @@ int main()
     
     char *cp = &x;
     for (int i = 0; i < 4; i++) {
-        printf("%p, %d\n", cp + i, *(cp + i));
+        printf("%p; %d\n", cp + i, *(cp + i));
     }
 
     return 0;
 }
-
-
 
 

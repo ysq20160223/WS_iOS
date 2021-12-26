@@ -2,7 +2,7 @@
 //  c_060101.c
 //  
 //
-//  Created by sq y on 2017/7/2.
+//  Created by Apple on 2017/7/2.
 //
 //
 
@@ -35,7 +35,7 @@ void fun_01()
     
     // 遍历输出
     for (int i = 0; i < count; i++) {
-        printf("ages[%d] = %d\n", i, ages[i]);
+        printf("ages[%d]: %d\n", i, ages[i]);
     }
 }
 
@@ -45,7 +45,7 @@ void fun_02()
     int count = sizeof(ages) / sizeof(int);
     
     for (int i = 0; i < count; i++) {
-        printf("ages[%d] = %d\n", i, ages[i]);
+        printf("ages[%d]: %d\n", i, ages[i]);
     }
 }
 
@@ -55,7 +55,7 @@ void fun_03()
     int count = sizeof(chars) / sizeof(char);
     
     for (int i = 0; i < count; i++) {
-        printf("&chars[%d] = %p\n", i, &chars[i]);
+        printf("&chars[%d]: %p\n", i, &chars[i]);
     }
 }
 
@@ -74,6 +74,5 @@ int main()
     
     return 0;
 }
-
 
 

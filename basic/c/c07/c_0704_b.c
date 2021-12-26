@@ -2,7 +2,7 @@
 //  c_0704_b.c
 //  
 //
-//  Created by sq y on 2017/7/6.
+//  Created by Apple on 2017/7/6.
 //
 //
 
@@ -12,3 +12,5 @@ int sum(int a, int b)
 {
     return a + b;
 }
+
+

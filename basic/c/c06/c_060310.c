@@ -2,7 +2,7 @@
 //  c_060310.c
 //  
 //
-//  Created by sq y on 2017/7/5.
+//  Created by Apple on 2017/7/5.
 //
 //
 
@@ -82,7 +82,6 @@ void fun_04()
 
 int main()
 {
-    
      fun_01();
     
 //     fun_02();
@@ -93,7 +92,5 @@ int main()
     
     return 0;
 }
-
-
 
 

@@ -2,7 +2,7 @@
 //  c_0707_b.c
 //  
 //
-//  Created by sq y on 2017/7/6.
+//  Created by Apple on 2017/7/6.
 //
 //
 
@@ -24,7 +24,5 @@ static void fun_02()
 {
     printf("call fun_02()\n");
 }
-
-
 
 

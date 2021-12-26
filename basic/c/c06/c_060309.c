@@ -2,7 +2,7 @@
 //  c_060309.c
 //  
 //
-//  Created by sq y on 2017/7/5.
+//  Created by Apple on 2017/7/5.
 //
 //
 
@@ -44,10 +44,7 @@ int main()
         printf("ages[%d] = %d\n", i, ages[i]);
     }
     
-    
     return 0;
 }
-
-
 
 
