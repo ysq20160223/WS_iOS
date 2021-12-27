@@ -2,7 +2,7 @@
 //  oc_020205.m
 //
 //
-//  Created by sq y on 2017/7/8.
+//  Created by Apple on 2017/7/8.
 //
 //
 
@@ -44,7 +44,5 @@ int main() {
     [person walk];
     return 0;
 }
-
-
 
 

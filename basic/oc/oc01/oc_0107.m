@@ -2,7 +2,7 @@
 //  oc_0107.m
 //  
 //
-//  Created by sq y on 2017/7/8.
+//  Created by Apple on 2017/7/8.
 //
 //
 
@@ -16,15 +16,15 @@
 
 #import <Foundation/Foundation.h>
 
+#define DEBUG
+#import "../../../PrefixHeader.pch"
+
 int main()
 {
-    
     BOOL b = YES;
     NSLog(@"b = %i", b);
     
     return 0;
 }
-
-
 
 

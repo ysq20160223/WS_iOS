@@ -2,7 +2,7 @@
 //  oc_0101.m
 //  
 //
-//  Created by sq y on 2017/7/7.
+//  Created by Apple on 2017/7/7.
 //
 //
 
@@ -22,7 +22,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../PreHeader.h"
+#define DEBUG
+#import "../../../PrefixHeader.pch"
 
 
 int main()
@@ -31,6 +32,5 @@ int main()
     
     return 0;
 }
-
 
 
