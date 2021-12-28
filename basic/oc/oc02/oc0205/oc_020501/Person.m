@@ -2,7 +2,7 @@
 //  Person.m
 //  oc_020501
 //
-//  Created by sq y on 2017/7/10.
+//  Created by Apple on 2017/7/10.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -22,5 +22,6 @@
     return _age;
 }
 
-
 @end
+
+

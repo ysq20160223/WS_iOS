@@ -2,7 +2,7 @@
 //  Point2D.h
 //  
 //
-//  Created by sq y on 2017/7/10.
+//  Created by Apple on 2017/7/10.
 //
 //
 

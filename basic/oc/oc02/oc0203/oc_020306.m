@@ -2,7 +2,7 @@
 //  oc_020306.m
 //  
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -19,10 +19,9 @@
 
 
 @interface Person : NSObject
-
 - (void)method;
-
 @end
+
 
 
 @implementation Person
@@ -30,6 +29,7 @@
     NSLog(@"call method");
 }
 @end
+
 
 
 int main() {
@@ -41,4 +41,5 @@ int main() {
     
     return 0;
 }
+
 

@@ -2,7 +2,7 @@
 //  main.m
 //  oc_020501
 //
-//  Created by sq y on 2017/7/10.
+//  Created by Apple on 2017/7/10.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -26,7 +26,9 @@ int main(int argc, const char * argv[]) {
     person.age = 17;
     [person setAge:21];
     
-    NSLog(@"person.age: %d, [person age]: %d", person.age, [person age]);
+    NSLog(@"person.age: %d; [person age]: %d", person.age, [person age]);
     
     return 0;
 }
+
+

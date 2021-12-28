@@ -2,7 +2,7 @@
 //  oc_020309.m
 //  
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -39,12 +39,9 @@
 
 
 
-
 int main() {
     NSLog(@"average: %d", [Calculator averageA:17 andB:21]);
     return 0;
 }
-
-
 
 

@@ -2,7 +2,7 @@
 //  oc_020208.m
 //
 //
-//  Created by sq y on 2017/7/8.
+//  Created by Apple on 2017/7/8.
 //
 //
 
@@ -66,10 +66,8 @@ int main()
 // 2, 实现 (实现可以放在后面)
 @implementation Car
 - (void)run {
-    NSLog(@"wheels: %d, speed: %d - call run", wheels, speed);
+    NSLog(@"wheels: %d; speed: %d; -> call run", wheels, speed);
 }
 @end
-
-
 
 

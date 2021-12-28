@@ -2,7 +2,7 @@
 //  oc_020401.m
 //  
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -24,9 +24,9 @@ void fun_02() {
     int age = 21;
     char *name = "root";
     NSString *ID = @"identity";
-    NSString *s = [NSString stringWithFormat:@"age: %d, name: %s, ID: %@", age, name, ID];
+    NSString *s = [NSString stringWithFormat:@"age: %d; name: %s; ID: %@", age, name, ID];
     
-    NSLog(@"fun_02 s: %@, ID length: %lu", s, [ID length]);
+    NSLog(@"fun_02 s: %@; ID length: %lu", s, [ID length]);
 }
 
 int main() {

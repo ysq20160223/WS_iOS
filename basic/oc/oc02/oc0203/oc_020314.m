@@ -2,7 +2,7 @@
 //  oc_020314.m
 //
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -54,22 +54,20 @@
 
 // *************************************
 @interface Dog : Animal
-
 @end
 
 @implementation Dog
-
 @end
+
 
 
 // *************************************
 @interface Cat : Animal
-
 @end
 
 @implementation Cat
-
 @end
+
 
 
 // *************************************

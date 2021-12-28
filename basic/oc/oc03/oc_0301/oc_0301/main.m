@@ -2,7 +2,7 @@
 //  main.m
 //  oc_0301
 //
-//  Created by sq y on 2017/7/13.
+//  Created by Apple on 2017/7/13.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -59,7 +59,5 @@ int main() {
     
     return 0;
 }
-
-
 
 

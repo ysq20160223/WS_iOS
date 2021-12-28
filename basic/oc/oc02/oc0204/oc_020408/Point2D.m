@@ -2,7 +2,7 @@
 //  Point2D.m
 //  
 //
-//  Created by sq y on 2017/7/10.
+//  Created by Apple on 2017/7/10.
 //
 //
 
@@ -11,7 +11,6 @@
 #import "Point2D.h"
 
 @implementation Point2D
-
 - (void)setX:(double)x {
     _x = x;
 }
@@ -54,6 +53,5 @@
     //    return [a distanceWithOther:b]; // 类方法 调用 对象方法
 }
 @end
-
 
 

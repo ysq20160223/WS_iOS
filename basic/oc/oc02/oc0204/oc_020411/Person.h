@@ -2,7 +2,7 @@
 //  Person.h
 //  oc_020411
 //
-//  Created by sq y on 2017/7/10.
+//  Created by Apple on 2017/7/10.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -20,3 +20,5 @@
 - (NSString *)name;
 
 @end
+
+

@@ -2,7 +2,7 @@
 //  oc_020403.m
 //
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -36,10 +36,9 @@
 - (double)distanceWithOther:(Point2D *)other;
 
 + (double)distanceBetweenPointA:(Point2D *)a andPointB:(Point2D *)b;
-
 @end
 
-// --
+
 @implementation Point2D
 
 - (void)setX:(double)x {
@@ -91,7 +90,6 @@
 @end
 
 
-
 // *******************************************
 @interface Circle : NSObject {
     double _radius;
@@ -107,12 +105,10 @@
 - (BOOL)isInteractWithOther:(Circle *)circle;
 
 + (BOOL)isInteractBetweenCircleA:(Circle *)circleA andCircleB:(Circle *)circleB;
-
 @end
 
-// --
-@implementation Circle
 
+@implementation Circle
 - (void)setRadius:(double)radius {
     _radius = radius;
 }
@@ -143,7 +139,6 @@
 + (BOOL)isInteractBetweenCircleA:(Circle *)cA andCircleB:(Circle *)cB {
     return [cA isInteractWithOther:cB];
 }
-
 @end
 
 
@@ -191,8 +186,5 @@ int main() {
     
     return 0;
 }
-
-
-
 
 

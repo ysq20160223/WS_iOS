@@ -2,7 +2,7 @@
 //  main.m
 //  oc_020510
 //
-//  Created by sq y on 2017/7/11.
+//  Created by Apple on 2017/7/11.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -62,8 +62,9 @@ void fun_03() {
 // 自定义构造方法
 void fun_04() {
     Employee *employee = [[Employee alloc] initWithNo:21 andName:@"root"];
-    NSLog(@"No: %d, name: %@", employee.no, employee.name);
+    NSLog(@"No: %d; name: %@", employee.no, employee.name);
 }
+
 
 int main() {
     
@@ -80,7 +81,5 @@ int main() {
     
     return 0;
 }
-
-
 
 

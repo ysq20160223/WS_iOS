@@ -2,7 +2,7 @@
 //  oc_020316.m
 //
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -30,8 +30,9 @@
 - (void)setAge:(int)age;
 - (int)age;
 
-- (void) run;
+- (void)run;
 @end
+
 
 @implementation Person
 - (void)setAge:(int)age {
@@ -50,18 +51,15 @@
 
 // ********************************
 @interface Student : Person
-
 @end
 
 
 @implementation Student
-
 // 重写
 - (void)run {
     [super run];
     NSLog(@"Student run");
 }
-
 @end
 
 
@@ -71,7 +69,5 @@ int main() {
     [student run];
     return 0;
 }
-
-
 
 

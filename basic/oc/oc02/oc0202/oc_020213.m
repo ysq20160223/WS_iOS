@@ -2,7 +2,7 @@
 //  oc_020213.m
 //
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -56,8 +56,5 @@ int main() {
     
     return 0;
 }
-
-
-
 
 

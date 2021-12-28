@@ -2,7 +2,7 @@
 //  oc_020311.m
 //
 //
-//  Created by sq y on 2017/7/9.
+//  Created by Apple on 2017/7/9.
 //
 //
 
@@ -30,7 +30,6 @@
 - (void)method;
 
 @end
-
 
 
 //
@@ -65,7 +64,6 @@
 int main() {
     Person *person = [Person new];
     [person method];
-    
     return 0;
 }
 

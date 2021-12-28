@@ -2,7 +2,7 @@
 //  Person.m
 //  oc_0301
 //
-//  Created by sq y on 2017/7/14.
+//  Created by Apple on 2017/7/14.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -14,12 +14,10 @@
 
 + (void)load {
     NSLog(@"");
-    
 }
 
 + (void)initialize {
     NSLog(@"");
-    
 }
 
 - (instancetype)init {
@@ -33,7 +31,6 @@
     return [NSString stringWithFormat:@"age: %d", _age];
 }
 
-
 // 当一个 Person 对象被回收时, 就会自动调用这个方法
 - (void)dealloc {
     NSLog(@"");
@@ -41,9 +38,6 @@
     
 }
 
-
 @end
-
-
 
 
