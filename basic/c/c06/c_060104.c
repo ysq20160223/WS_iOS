@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 
-void printArray(int * array) {
+void printArray(int *array) {
     int count = sizeof(array) / sizeof(int);
     for (int i = 0; i < count; i++) {
         printf("array[%d]: %d\n", i, array[i]);
@@ -18,11 +18,12 @@ void printArray(int * array) {
 int main() {
     
     // 给数组部分赋值
-    int array[5] = {[3] = 30, [sizeof(array) / sizeof(int) - 1] = 40};
+    int array[5] = {[3] = 33, [sizeof(array) / sizeof(int) - 1] = 44};
     int count = sizeof(array) / sizeof(int);
     for (int i = 0; i < count; i++) {
         printf("array[%d]: %d\n", i, array[i]);
     }
+    printf("=============================\n");
     
     
     
@@ -47,7 +48,7 @@ int main() {
     
     // 正确写法
     // error in java
-    int x = 10;
+    int x = 5;
     int names[x];
     names[1] = 10;
     for (int i = 0; i < x; i++) {

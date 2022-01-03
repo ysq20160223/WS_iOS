@@ -29,20 +29,18 @@ void print(int array[], int count) {
 
 void change(int array[], int count) {
     for (int i = 0; i < count; i++) {
-        array[i] = array[i] * 10;
+        array[i] = array[i] * 2;
     }
 }
 
-int main() {
 
-    int ages[] = {0, 1, 2, 3, 4};
-    
+int main() {
+    int ages[] = {1, 2, 3};
     int count = sizeof(ages) / sizeof(int);
-    
     print(ages, count);
+    printf("====================\n");
     
     change(ages, count);
-    
     print(ages, count);
     
     return 0;

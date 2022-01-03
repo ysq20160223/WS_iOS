@@ -24,25 +24,22 @@
 void fun_02()
 {
     int i = 1;
-    printf("i = %d\n", i);
+    printf("i: %d\n", i);
     
     int *p = &i;
     *p = 2;
-    printf("i = %d\n", i);
+    printf("i: %d\n", i);
     
     int **pp = &p;
     **pp = 3;
-    printf("i = %d\n", i);
+    printf("i: %d\n", i);
 }
 
 
 
 int main()
 {
-    
     fun_02();
-
-    
     return 0;
 }
 

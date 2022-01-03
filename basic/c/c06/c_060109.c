@@ -32,11 +32,9 @@ int getMax(int array[], int count) {
 
 int getSum(char array[]) {
     int sum = 0;
-    
     for (int i = 0; i < strlen(array); i++) {
         sum += array[i];
     }
-    
     return sum;
 }
 
@@ -70,7 +68,7 @@ int main() {
     
     printf("==================\n");
     
-    char charArray[] = {'A', 'B', 'C', 'D'}; // 65 66 67 68
+    char charArray[] = {'A', 'B', 'C'}; // 65 66 67
     printf("sum: %d\n", getSum(charArray));
     
     

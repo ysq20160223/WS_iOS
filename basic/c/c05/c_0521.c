@@ -29,12 +29,12 @@ void fun_01()
     
     int i = 65;
     
-    printf("c1 = %d\n", c1);
-    printf("c2 = %d\n", c2);
-    printf("c3 = %d\n", c3);
-    printf("c4 = %d\n", c4);
+    printf("c1: %d\n", c1);
+    printf("c2: %d\n", c2);
+    printf("c3: %d\n", c3);
+    printf("c4: %d\n", c4);
     
-    printf("i = %c\n", i);
+    printf("i: %c\n", i);
 }
 
 // 小写转大写
@@ -44,7 +44,6 @@ char fun_02(char c)
     {
         return c - ('a' - 'A');
     }
-    
     return c;
 }
 
@@ -52,7 +51,6 @@ char fun_02(char c)
 int main()
 {
     fun_01();
-    
     
     char c = 'a';
     printf("%c toUpper is %c\n", c, fun_02(c));

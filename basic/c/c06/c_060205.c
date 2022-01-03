@@ -20,8 +20,10 @@
 // 判断字符串是否包含某个字符: 常用方式
 int charContain_01(char chars[], char c)
 {
-    for (int i = 0; i < strlen(chars); i++) {
-        if (chars[i] == c) {
+    for (int i = 0; i < strlen(chars); i++)
+    {
+        if (chars[i] == c)
+        {
             return 1;
         }
     }
@@ -30,8 +32,10 @@ int charContain_01(char chars[], char c)
 
 int charContain_02(char chars[], char c)
 {
-    for (int i = 0; chars[i]; i++) {
-        if (chars[i] == c) {
+    for (int i = 0; chars[i]; i++)
+    {
+        if (chars[i] == c)
+        {
             return 1;
         }
     }

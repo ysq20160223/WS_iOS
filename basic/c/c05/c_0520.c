@@ -26,7 +26,7 @@ void printBinary(int n) {
             printf("%c", ' ');
         }
         if (0 == i % 8) {
-            printf("%s", "   ");
+            printf("%s", "  ");
         }
     }
     printf("\n");
