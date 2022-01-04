@@ -32,28 +32,35 @@ void fun_01()
 //
 void fun_02()
 {
-    int i = 2;
+    int i = 2;      // 0000 0000
+                    // 0000 0000
+                    // 0000 0000
+                    // 0000 0011
+    printf("&i: %p\n", &i);
     
-    char c = 1;
-    
+    char c = 1;     // 0000 0001
+    printf("&c: %p\n", &c);
     
     int *ip = &c;
     char *cp = &c;
     
+    // 2 ^ 0 = 1
+    // 2 ^ 1 = 2
+    // 2 ^ 2 = 4
+    // 2 ^ 3 = 8
+    // 2 ^ 4 = 16
+    // 2 ^ 5 = 32
+    // 2 ^ 6 = 64
+    // 2 ^ 7 = 128
+    // 2 ^ 8 = 256
     printf("*ip: %d\n", *ip);
     printf("*cp: %d\n", *cp);
 }
 
-int main()
+void fun_03()
 {
-//    fun_01();
-    
-//    fun_02();
-    
-    //
     int j = 0;
     printf("&j: %p\n", &j);
-    
     
     int x = 0x08060401;
     printf("&x: %p\n", &x);
@@ -62,6 +69,13 @@ int main()
     for (int i = 0; i < 4; i++) {
         printf("%p; %d\n", cp + i, *(cp + i));
     }
+}
+
+int main()
+{
+//    fun_01();
+    fun_02();
+//    fun_03();
 
     return 0;
 }
