@@ -32,12 +32,12 @@ int main()
     printf("---------------------------\n");
     
     for (int i = 0; i < count; i++) {
-        printf("ages[%d] = %d\n", i, p[i]); // 2, 指针变量名[下标]
+        printf("ages[%d]: %d\n", i, p[i]); // 2, 指针变量名[下标]
     }
     printf("---------------------------\n");
     
     for (int i = 0; i < count; i++) {
-        printf("ages[%d] = %d\n", i, ages[i]); // 1, 数组名[下标]
+        printf("ages[%d]: %d\n", i, ages[i]); // 1, 数组名[下标]
     }
     
     return 0;

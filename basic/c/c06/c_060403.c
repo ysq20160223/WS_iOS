@@ -31,10 +31,11 @@ struct Person
 
 void fun_01()
 {
-    struct Person p = {.id = 21, .name = "root"};
+    struct Person p = {.id = 21, .name = "yy"};
     int count = sizeof(p); // 补齐算法: 最大字节的倍数
-    printf("count = %d, &id: %p, &age: %p, &name: %p\n", count, &p.id, &p.age, &p.name);
+    printf("count: %d; &id: %p; &age: %p; &name: %p\n", count, &p.id, &p.age, &p.name);
 }
+
 
 /*
     060404
@@ -49,11 +50,11 @@ struct Student
     char *name;
 } student;
 
+
 /*
     定义结构体的第三种方式 - 匿名方式
         不能重用
  */
-
 struct
 {
     int age;
@@ -79,11 +80,24 @@ void fun_02()
     }
 }
 
+
+//
+typedef struct {
+    int id;
+    float height;
+} DefStruct;
+
+
 int main()
 {
-//    fun_01();
+    fun_01();
+    printf("---------------\n");
     
     fun_02();
+    printf("===============\n");
+    
+    DefStruct defStruct = {.id = 1, .height = 1.62};
+    printf("id: %d; height: %.4f\n", defStruct.id, defStruct.height);
     
     return 0;
 }

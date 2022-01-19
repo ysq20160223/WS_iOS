@@ -24,33 +24,30 @@ struct Person
 };
 
 void fun01() {
-    struct Person p1 = {.name = "yy", .height = 1.7};
-    struct Person p2 = {21, 2.1, "yyy"};
+    struct Person p1 = {.name = "j", .height = 1.0, .age = 1};
+    struct Person p2 = {21, 2.1, "y"};
     
-    printf("age: %d, height: %f, name: %s\n", p1.age, p1.height, p1.name);
-    printf("age = %d, height = %f, name = %s\n", p2.age, p2.height, p2.name);
+    printf("age: %d; height: %f; name: %s\n", p1.age, p1.height, p1.name);
+    printf("age: %d; height: %f; name: %s\n", p2.age, p2.height, p2.name);
 }
 
 // 结构体赋值等于为各个属性赋值
 void fun02() {
-    struct Person p1 = {1, 2, "3"};
-    struct Person p2 = {11, 22, "33"};
+    struct Person p1 = {1, 1.62, "jj"};
+    struct Person p2 = {21, 1.7, "yy"};
     p2 = p1;
-    p2.age = 111;
+    p2.age = 9;
     
-    
-    printf("age: %d, height: %f, name: %s\n", p1.age, p1.height, p1.name);
-    printf("age = %d, height = %f, name = %s\n", p2.age, p2.height, p2.name);
+    printf("age: %d; height: %f; name: %s\n", p1.age, p1.height, p1.name);
+    printf("age: %d; height: %f; name: %s\n", p2.age, p2.height, p2.name);
 }
 
 int main()
 {
-//    fun01();
+    fun01();
+    printf("-------------\n");
     
-//    fun02();
-    
-    fun03();
-
+    fun02();
     return 0;
 }
 
