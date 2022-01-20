@@ -56,9 +56,9 @@ void fun_03()
     printf("a = %d\n", ++a);
 }
 
+
 int main()
 {
-    
     a = 10;
     
     fun_01(); // 调用外部函数
@@ -68,7 +68,6 @@ int main()
     for (int i = 0; i < 3; i++) {
         fun_03();
     }
-    
     
     return 0;
 }

@@ -26,6 +26,7 @@ struct Data
     int day;
 };
 
+
 struct Student
 {
     int no;

@@ -6,6 +6,8 @@
 //
 //
 
+#include <stdio.h>
+
 #ifndef _C_0707_B_H_
 #define _C_0707_B_H_
 
