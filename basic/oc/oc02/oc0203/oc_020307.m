@@ -22,17 +22,13 @@
 
 
 @interface Person : NSObject
-
 + (void)classMethod;
 
 //- (void)instanceMethod;
-
 @end
 
 
-
 @implementation Person
-
 + (void)classMethod {
     NSLog(@"class method");
 }
@@ -40,7 +36,6 @@
 - (void)instanceMethod {
     NSLog(@"instance method");
 }
-
 @end
 
 
@@ -53,7 +48,6 @@ int main() {
     Person *person = [Person new];
     [person instanceMethod];
 //    [person classMethod]; // 对象不能调用类方法
-    
     return 0;
 }
 

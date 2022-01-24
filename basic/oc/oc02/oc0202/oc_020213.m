@@ -50,9 +50,9 @@
 int main() {
     Calculator *calculator = [Calculator new];
     
-    NSLog(@"pi: %f", [calculator pi]);
+    NSLog(@"pi: %.4f", [calculator pi]);
     NSLog(@"power: %d", [calculator power:9]);
-    NSLog(@"sum: %d", [calculator sumA:1 andB:2]);
+    NSLog(@"sum: %i", [calculator sumA:1 andB:2]);
     
     return 0;
 }

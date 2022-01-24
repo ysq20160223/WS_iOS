@@ -28,14 +28,14 @@
 @public
     int speed;
 }
-- (int)compareSpeedWithOther:(Car *)car;
+- (int)compareSpeed:(Car *)car;
 @end
 
 
 
 // 2, 实现
 @implementation Car
-- (int)compareSpeedWithOther:(Car *)car {
+- (int)compareSpeed:(Car *)car {
     return speed - car->speed;
 }
 @end
@@ -49,7 +49,7 @@ int main() {
     Car *otherCar = [Car new];
     otherCar->speed = 120;
     
-    NSLog(@"i: %d", [car compareSpeedWithOther:otherCar]);
+    NSLog(@"i: %d", [car compareSpeed:otherCar]);
     
     return 0;
 }

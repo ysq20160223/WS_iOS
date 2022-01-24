@@ -29,35 +29,31 @@
 void fun_01()
 {
     int ages[COUNT] = {1, 21, 9};
-    
     for (int i = 0; i < COUNT; i++) {
-        printf("ages[%d] = %d\n", i, ages[i]);
+        printf("ages[%d]: %d\n", i, ages[i]);
     }
 }
+
 
 void fun_02()
 {
     int a = 1, b = 2;
-    
     int sum = kSum(a, b) * kSum(a, b);
-    
-    printf("sum = %d\n", sum);
+    printf("sum: %d\n", sum);
 }
 
+
 void fun_03() {
-    
     int squares = kSquares(3 + 1);
     printf("squares: %d\n", squares);
 }
 
+
 int main()
 {
-    fun_01();
-    
-    fun_02();
-    
+//    fun_01();
+//    fun_02();
     fun_03();
-    
     return 0;
 }
 

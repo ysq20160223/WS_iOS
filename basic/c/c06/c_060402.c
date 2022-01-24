@@ -23,6 +23,7 @@ struct Person
     char *name;
 };
 
+
 void fun01() {
     struct Person p1 = {.name = "j", .height = 1.0, .age = 1};
     struct Person p2 = {21, 2.1, "y"};
@@ -30,6 +31,7 @@ void fun01() {
     printf("age: %d; height: %f; name: %s\n", p1.age, p1.height, p1.name);
     printf("age: %d; height: %f; name: %s\n", p2.age, p2.height, p2.name);
 }
+
 
 // 结构体赋值等于为各个属性赋值
 void fun02() {

@@ -26,11 +26,10 @@
 @end
 
 
-
 // 2, 实现
 @implementation Person
 - (void)walk {
-    NSLog(@"age: %d, weight: %.2f, call walk method", age, weight);
+    NSLog(@"age: %d; weight: %.2f", age, weight);
 }
 @end
 

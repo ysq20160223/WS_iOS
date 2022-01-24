@@ -43,7 +43,7 @@ typedef enum {
 
 @implementation Student
 - (void)study {
-    NSLog(@"age: %d is studying", _age);
+    NSLog(@"age: %d", _age);
 }
 
 //
@@ -68,10 +68,8 @@ typedef enum {
 
 
 int main() {
-    
     Student *s = [Student new];
     [s study];
-    
     
     [s setAge:21];
     NSLog(@"setAge %d", [s age]);

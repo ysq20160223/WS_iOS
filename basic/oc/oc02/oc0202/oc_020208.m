@@ -39,11 +39,11 @@
 
 void fun_01(Car *car) {
     Car *c = [Car new];
-    c->wheels = 6;
-    c->speed = 300;
+    c->wheels = 2;
+    c->speed = 40;
     
     car = c; // 局部变量指针 car 指向内部定义的对象 c
-    car->wheels = 8;
+    car->wheels = 3;
 }
 
 
@@ -52,7 +52,7 @@ int main()
 {
     Car *car = [Car new];
     car->wheels = 4;
-    car->speed = 210;
+    car->speed = 100;
     
     fun_01(car);
     
@@ -66,7 +66,7 @@ int main()
 // 2, 实现 (实现可以放在后面)
 @implementation Car
 - (void)run {
-    NSLog(@"wheels: %d; speed: %d; -> call run", wheels, speed);
+    NSLog(@"wheels: %d; speed: %d", wheels, speed);
 }
 @end
 

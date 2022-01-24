@@ -19,7 +19,6 @@ extern void fun_01()
 }
 
 
-
 static void fun_02()
 {
     printf("call fun_02()\n");

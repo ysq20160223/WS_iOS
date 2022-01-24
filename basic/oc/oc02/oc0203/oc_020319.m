@@ -30,10 +30,12 @@
 @end
 
 
+
 // ********************************
 @interface Dog : Animal
 - (void)run;
 @end
+
 
 @implementation Dog
 - (void)eat {
@@ -46,10 +48,12 @@
 @end
 
 
+
 // ---
 void eat(Animal *animal) {
     [animal eat];
 }
+
 
 
 // ********************************
@@ -59,7 +63,6 @@ int main() {
     eat(animal);
     
     [animal run]; // warning, java 中会报错
-    
     
 //    Dog *dog = (Dog *)animal; // 强制转化
 //    [dog run];

@@ -15,17 +15,12 @@
 
 
 @interface Calculator : NSObject
-
 + (int)sumA:(int)a andB:(int)b;
-
 + (int)averageA:(int)a andB:(int)b;
-
 @end
 
 
-
 @implementation Calculator
-
 + (int)sumA:(int)a andB:(int)b {
     return a + b;
 }
@@ -34,7 +29,6 @@
 //    return [Calculator sumA:a andB:b] / 2;
     return [self sumA:a andB:b] / 2;
 }
-
 @end
 
 

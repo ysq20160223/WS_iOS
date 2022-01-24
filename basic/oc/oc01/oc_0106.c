@@ -10,7 +10,7 @@
 
 void fun_01()
 {
-    printf("this is oc_0106.h\n");
+    printf("this is oc_0106.c\n");
 }
 
 

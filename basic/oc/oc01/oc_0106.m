@@ -7,7 +7,7 @@
 //
 
 /*
-    cc oc_0106.m oc_0106.c -framework Foundation
+    cc oc_0106.m oc_0106.c // -framework Foundation 没有使用 Foundation 框架可以不用编译
  */
 
 #import <Foundation/Foundation.h>

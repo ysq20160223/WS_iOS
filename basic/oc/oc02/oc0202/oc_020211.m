@@ -27,14 +27,14 @@
 
 @implementation Dog
 - (void)eat {
-    weight += 1;
-    NSLog(@"eat - Dog weight = %.2f", weight);
+    NSLog(@"weight: %.2f", ++weight);
 }
+
 - (void)run {
-    weight -= 1;
-    NSLog(@"run - Dog weight = %.2f", weight);
+    NSLog(@"weight: %.2f", --weight);
 }
 @end
+
 
 
 // *********************************************
@@ -47,6 +47,7 @@ typedef struct {
     int month;
     int day;
 } Date;
+
 
 
 // *********************************************
@@ -64,21 +65,18 @@ typedef struct {
 - (void)toString;
 @end
 
+
 @implementation Student
 - (void)eat {
-    weight += 1;
-    NSLog(@"eat - Student weight = %.2f", weight);
+    NSLog(@"weight: %.2f", ++weight);
 }
 
 - (void)run {
-    weight -= 1;
-    NSLog(@"run - Student weight = %.2f", weight);
-    
+    NSLog(@"weight: %.2f", --weight);
 }
 
 - (void)toString {
-    NSLog(@"Sex: %d, birthdayDate: %d-%d-%d ,weight: %.2f", sex, birthdayDate.year,
-          birthdayDate.month, birthdayDate.day, weight);
+    NSLog(@"Sex: %d; birthdayDate: %d-%d-%d; weight: %.2f", sex, birthdayDate.year, birthdayDate.month, birthdayDate.day, weight);
 }
 
 - (void)feedDog {
@@ -89,6 +87,7 @@ typedef struct {
     [dog run];
 }
 @end
+
 
 
 // *********************************************

@@ -30,7 +30,6 @@
 @end
 
 
-// ----------------------------------
 @implementation Animal : NSObject
 
 - (void)setAge:(int)age {
@@ -52,9 +51,11 @@
 @end
 
 
+
 // *************************************
 @interface Dog : Animal
 @end
+
 
 @implementation Dog
 @end
@@ -64,6 +65,7 @@
 // *************************************
 @interface Cat : Animal
 @end
+
 
 @implementation Cat
 @end

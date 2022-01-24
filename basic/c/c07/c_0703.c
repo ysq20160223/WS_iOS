@@ -19,26 +19,26 @@
 int main() {
     
 #ifdef I
-    printf("def\n");
+    printf("def I\n");
 #endif
 
     
 #ifndef A
-    printf("ndef\n");
+    printf("ndef A\n");
 #endif
     
     
 #if (I == 1)
     {
-        printf("I = %d\n", I);
+        printf("I : %d\n", I);
     }
 #elif (I == 2)
     {
-        printf("I = %d\n", I);
+        printf("I : %d\n", I);
     }
 #else
     {
-        printf("I = %d\n", I);
+        printf("I : %d\n", I);
     }
 #endif
     

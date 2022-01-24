@@ -23,7 +23,6 @@
 @end
 
 
-
 @implementation Person
  - (void)method {
     NSLog(@"call method");

@@ -40,7 +40,6 @@
 
 
 
-// *****************************************************
 // 2, 类的实现 : 用来实现 @interface 中声明的方法
 @implementation Car
 
@@ -61,7 +60,7 @@ int main() {
     car->wheels = 4;
     car->speed = 120;
     
-    NSLog(@"wheels: %d, speed: %d", car->wheels , car->speed);
+    NSLog(@"wheels: %d; speed: %d", car->wheels , car->speed);
     
     [car run]; // 方法的调用; 类对象发送一条 run 方法
     

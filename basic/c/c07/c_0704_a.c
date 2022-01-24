@@ -21,8 +21,7 @@
 
 int main()
 {
-    printf("sum = %d\n", sum(1, 2));
-    
+    printf("sum: %d\n", sum(1, 2));
     return 0;
 }
 

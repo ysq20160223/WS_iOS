@@ -22,8 +22,7 @@
 int main()
 {
     BOOL b = YES;
-    NSLog(@"b = %i", b);
-    
+    NSLog(@"b: %i", b);
     return 0;
 }
 

@@ -22,55 +22,53 @@
 
 
 @interface Score : NSObject {
-    int _cScore; // C 成绩
-    int _ocScore; // OC 成绩
-    int _totalScore; // 总分
-    int _averageScore; // 平均分
+    int _c; // C 成绩
+    int _oc; // OC 成绩
+    int _total; // 总分
+    int _average; // 平均分
 }
 
-- (void)setCSore:(int)cScore;
-- (int)cScore;
+- (void)setC:(int)cScore;
+- (int)c;
 
-- (void)setOcScore:(int)ocScore;
-- (int)ocScore;
+- (void)setOc:(int)ocScore;
+- (int)oc;
 
-- (int)totalScore;
-- (int)averageScore;
-
+- (int)total;
+- (int)average;
 @end
-
 
 
 @implementation Score
 
-- (void)setCSore:(int)cScore {
-    _cScore = cScore;
+- (void)setC:(int)c {
+    _c = c;
     
-    _totalScore = _cScore + _ocScore;
-    _averageScore = _totalScore / 2;
+    _total = _c + _oc;
+    _average = _total / 2;
 }
 
-- (int)cScore {
-    return _cScore;
+- (int)c {
+    return _c;
 }
 
-- (void)setOcScore:(int)ocScore {
-    _ocScore = ocScore;
+- (void)setOc:(int)oc {
+    _oc = oc;
     
-    _totalScore = _cScore + _ocScore;
-    _averageScore = _totalScore / 2;
+    _total = _c + _oc;
+    _average = _total / 2;
 }
 
-- (int)ocScore {
-    return _ocScore;
+- (int)oc {
+    return _oc;
 }
 
-- (int)totalScore {
-    return _totalScore;
+- (int)total {
+    return _total;
 }
 
-- (int)averageScore {
-    return _averageScore;
+- (int)average {
+    return _average;
 }
 
 @end
@@ -79,10 +77,10 @@
 
 int main() {
     Score *score = [Score new];
-    [score setCSore:90];
-    score.ocScore = 96; // 点语法 set
+    [score setC:90];
+    score.oc = 96; // 点语法 set
     
-    NSLog(@"totalScore: %d, averageScore: %d", [score totalScore], score.averageScore); // 点语法 get
+    NSLog(@"total: %d, average: %d", [score total], score.average); // 点语法 get
     return 0;
 }
 
