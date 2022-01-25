@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18FE0A7922B3E72900515F9F /* Student+jj.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE0A7822B3E72900515F9F /* Student+jj.m */; };
+		18FE0A7922B3E72900515F9F /* Student+j.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FE0A7822B3E72900515F9F /* Student+j.m */; };
 		70FC81F01F178E0F00F7D5D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FC81EF1F178E0F00F7D5D5 /* main.m */; };
 		70FC81F81F178E3000F7D5D5 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FC81F71F178E3000F7D5D5 /* Person.m */; };
 		70FC81FC1F1792C900F7D5D5 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FC81FB1F1792C900F7D5D5 /* Student.m */; };
-		70FC81FF1F17956C00F7D5D5 /* Student+yy.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FC81FE1F17956C00F7D5D5 /* Student+yy.m */; };
+		70FC81FF1F17956C00F7D5D5 /* Student+y.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FC81FE1F17956C00F7D5D5 /* Student+y.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,16 +27,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		18FE0A7722B3E72900515F9F /* Student+jj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+jj.h"; sourceTree = "<group>"; };
-		18FE0A7822B3E72900515F9F /* Student+jj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+jj.m"; sourceTree = "<group>"; };
+		18FE0A7722B3E72900515F9F /* Student+j.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+j.h"; sourceTree = "<group>"; };
+		18FE0A7822B3E72900515F9F /* Student+j.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+j.m"; sourceTree = "<group>"; };
 		70FC81EC1F178E0F00F7D5D5 /* oc_020523 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = oc_020523; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FC81EF1F178E0F00F7D5D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		70FC81F61F178E3000F7D5D5 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		70FC81F71F178E3000F7D5D5 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		70FC81FA1F1792C900F7D5D5 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		70FC81FB1F1792C900F7D5D5 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
-		70FC81FD1F17956C00F7D5D5 /* Student+yy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+yy.h"; sourceTree = "<group>"; };
-		70FC81FE1F17956C00F7D5D5 /* Student+yy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+yy.m"; sourceTree = "<group>"; };
+		70FC81FD1F17956C00F7D5D5 /* Student+y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Student+y.h"; sourceTree = "<group>"; };
+		70FC81FE1F17956C00F7D5D5 /* Student+y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Student+y.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +82,10 @@
 			children = (
 				70FC81FA1F1792C900F7D5D5 /* Student.h */,
 				70FC81FB1F1792C900F7D5D5 /* Student.m */,
-				70FC81FD1F17956C00F7D5D5 /* Student+yy.h */,
-				70FC81FE1F17956C00F7D5D5 /* Student+yy.m */,
-				18FE0A7722B3E72900515F9F /* Student+jj.h */,
-				18FE0A7822B3E72900515F9F /* Student+jj.m */,
+				70FC81FD1F17956C00F7D5D5 /* Student+y.h */,
+				70FC81FE1F17956C00F7D5D5 /* Student+y.m */,
+				18FE0A7722B3E72900515F9F /* Student+j.h */,
+				18FE0A7822B3E72900515F9F /* Student+j.m */,
 			);
 			name = oc_020525;
 			sourceTree = "<group>";
@@ -130,6 +130,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 70FC81E31F178E0F00F7D5D5;
@@ -150,8 +151,8 @@
 				70FC81F81F178E3000F7D5D5 /* Person.m in Sources */,
 				70FC81F01F178E0F00F7D5D5 /* main.m in Sources */,
 				70FC81FC1F1792C900F7D5D5 /* Student.m in Sources */,
-				70FC81FF1F17956C00F7D5D5 /* Student+yy.m in Sources */,
-				18FE0A7922B3E72900515F9F /* Student+jj.m in Sources */,
+				70FC81FF1F17956C00F7D5D5 /* Student+y.m in Sources */,
+				18FE0A7922B3E72900515F9F /* Student+j.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

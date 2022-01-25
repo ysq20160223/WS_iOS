@@ -19,13 +19,11 @@
 #import "NSString+Number.h"
 
 int main() {
-    
-    int count = [NSString numberCountOfString:@"a1b2c3d4e5f"];
-    NSLog(@"count: %d", count);
+    //
+    NSLog(@"count: %d", [NSString numberCountOfString:@"a1b2c3d4e5f"]);
     
     //
-    count = [@"a1b2c3d4e5f6" numberCount];
-    NSLog(@"count: %d", count);
+    NSLog(@"count: %d", [@"a1b2c3d4e5f6" numberCount]);
     
     return 0;
 }

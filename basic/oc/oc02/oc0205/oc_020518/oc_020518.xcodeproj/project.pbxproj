@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		709ACCA01F164E6200D8B517 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACC9F1F164E6200D8B517 /* main.m */; };
 		709ACCA81F164EE700D8B517 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCA71F164EE700D8B517 /* Person.m */; };
-		709ACCAB1F16502300D8B517 /* Person+yy.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCAA1F16502300D8B517 /* Person+yy.m */; };
-		709ACCAE1F16544900D8B517 /* Person+jj.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCAD1F16544900D8B517 /* Person+jj.m */; };
+		709ACCAB1F16502300D8B517 /* Person+y.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCAA1F16502300D8B517 /* Person+y.m */; };
+		709ACCAE1F16544900D8B517 /* Person+j.m in Sources */ = {isa = PBXBuildFile; fileRef = 709ACCAD1F16544900D8B517 /* Person+j.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,10 +30,10 @@
 		709ACC9F1F164E6200D8B517 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		709ACCA61F164EE700D8B517 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		709ACCA71F164EE700D8B517 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		709ACCA91F16502300D8B517 /* Person+yy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+yy.h"; sourceTree = "<group>"; };
-		709ACCAA1F16502300D8B517 /* Person+yy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+yy.m"; sourceTree = "<group>"; };
-		709ACCAC1F16544900D8B517 /* Person+jj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+jj.h"; sourceTree = "<group>"; };
-		709ACCAD1F16544900D8B517 /* Person+jj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+jj.m"; sourceTree = "<group>"; };
+		709ACCA91F16502300D8B517 /* Person+y.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+y.h"; sourceTree = "<group>"; };
+		709ACCAA1F16502300D8B517 /* Person+y.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+y.m"; sourceTree = "<group>"; };
+		709ACCAC1F16544900D8B517 /* Person+j.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Person+j.h"; sourceTree = "<group>"; };
+		709ACCAD1F16544900D8B517 /* Person+j.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Person+j.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +50,10 @@
 		709ACC931F164E6200D8B517 = {
 			isa = PBXGroup;
 			children = (
-				709ACCAC1F16544900D8B517 /* Person+jj.h */,
-				709ACCAD1F16544900D8B517 /* Person+jj.m */,
-				709ACCA91F16502300D8B517 /* Person+yy.h */,
-				709ACCAA1F16502300D8B517 /* Person+yy.m */,
+				709ACCAC1F16544900D8B517 /* Person+j.h */,
+				709ACCAD1F16544900D8B517 /* Person+j.m */,
+				709ACCA91F16502300D8B517 /* Person+y.h */,
+				709ACCAA1F16502300D8B517 /* Person+y.m */,
 				709ACCA61F164EE700D8B517 /* Person.h */,
 				709ACCA71F164EE700D8B517 /* Person.m */,
 				709ACC9E1F164E6200D8B517 /* oc_020518 */,
@@ -117,6 +117,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 709ACC931F164E6200D8B517;
@@ -134,8 +135,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				709ACCAB1F16502300D8B517 /* Person+yy.m in Sources */,
-				709ACCAE1F16544900D8B517 /* Person+jj.m in Sources */,
+				709ACCAB1F16502300D8B517 /* Person+y.m in Sources */,
+				709ACCAE1F16544900D8B517 /* Person+j.m in Sources */,
 				709ACCA81F164EE700D8B517 /* Person.m in Sources */,
 				709ACCA01F164E6200D8B517 /* main.m in Sources */,
 			);

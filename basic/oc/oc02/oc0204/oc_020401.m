@@ -26,12 +26,14 @@ void fun_02() {
     NSString *ID = @"identity";
     NSString *s = [NSString stringWithFormat:@"age: %d; name: %s; ID: %@", age, name, ID];
     
-    NSLog(@"fun_02 s: %@; ID length: %lu", s, [ID length]);
+    NSLog(@"s: %@; ID length: %lu", s, [ID length]);
 }
 
 int main() {
     
     fun_01();
+    NSLog(@"---------------------------------");
+    
     fun_02();
     
     return 0;

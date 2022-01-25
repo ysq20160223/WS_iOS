@@ -16,7 +16,7 @@
 
 // cc oc_020408.m Point2D.m Circle.m -framework Foundation
 
-// ---
+
 void fun_01() {
     Point2D *p1 = [Point2D new];
     [p1 setX:0 andY:0];
@@ -54,7 +54,8 @@ void fun_02() {
     //    NSLog(@"isInteract : %d", [Circle isInteractBetweenCircleA:c1 andCircleB:c2]);
 }
 
-// ---
+
+
 int main() {
     
     fun_01();

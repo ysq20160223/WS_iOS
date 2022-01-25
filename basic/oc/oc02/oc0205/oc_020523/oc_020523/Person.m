@@ -11,24 +11,24 @@
 @implementation Person
 
 + (void)method {
-    NSLog(@"method");
+    NSLog();
 }
 
 // 类被加载的时候调用
 + (void)load {
-    NSLog(@"load");
+    NSLog();
 }
 
 // 当第一次使用该类的时候调用
 + (void)initialize {
-    NSLog(@"initialize");
+    NSLog();
 }
 
 
 // 020526
 // 实例对象输出结果
 - (NSString *)description {
-    return [NSString stringWithFormat: @"Person[age: %d, name: %@]", _age, _name];
+    return [NSString stringWithFormat: @"Person[age: %d; name: %@]", _age, _name];
 }
 
 // 类对象输出结果

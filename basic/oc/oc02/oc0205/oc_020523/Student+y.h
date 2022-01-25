@@ -1,5 +1,5 @@
 //
-//  Student+yy.h
+//  Student+y.h
 //  oc_020523
 //
 //  Created by Apple on 2017/7/13.
@@ -8,6 +8,6 @@
 
 #import "Student.h"
 
-@interface Student (yy)
+@interface Student (y)
 
 @end

@@ -1,5 +1,5 @@
 //
-//  Person+yy.h
+//  Person+j.h
 //  oc_020518
 //
 //  Created by Apple on 2017/7/12.
@@ -8,10 +8,6 @@
 
 #import "Person.h"
 
-@interface Person (yy) {
-//    int i; // instance variables may not be placed in categories
-}
-
-- (void)study;
+@interface Person (j)
 
 @end

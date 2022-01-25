@@ -90,6 +90,7 @@
 @end
 
 
+
 // *******************************************
 @interface Circle : NSObject {
     double _radius;
@@ -129,7 +130,6 @@
     Point2D *p2 = [circle point2D];
     
     double distance = [p1 distanceWithOther:p2];
-    
     double radiusSum = [self radius] + [circle radius];
     
     return distance < radiusSum; // YES 相交 ／ NO : 不相交
@@ -182,7 +182,9 @@ void fun_02() {
 int main() {
     
     fun_01();
-//    fun_02();
+    NSLog(@"---------------------");
+    
+    fun_02();
     
     return 0;
 }

@@ -26,7 +26,7 @@
 #import "../../../../../../PrefixHeader.pch"
 
 #import "Person.h"
-#import "Person+yy.h"
+#import "Person+y.h"
 
 int main(int argc, const char * argv[]) {
     

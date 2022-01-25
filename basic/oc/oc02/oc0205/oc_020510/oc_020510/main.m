@@ -38,7 +38,7 @@
 // 复写 init 方法, 进行初始化
 void fun_01() {
     //    [Person new]; // 相当于 [[Person alloc] init]
-    Person *person = [[Person alloc] init];
+    Person *person = [Person.alloc init];
     //    person.age = 21;
     
     NSLog(@"Person age: %d", person.age);
@@ -54,14 +54,14 @@ void fun_02() {
 
 // 自定义构造方法
 void fun_03() {
-    Work *work = [[Work alloc] initWithName:@"root"];
+    Work *work = [Work.alloc initWithName:@"root"];
     NSLog(@"name: %@", work.name);
 }
 
 
 // 自定义构造方法
 void fun_04() {
-    Employee *employee = [[Employee alloc] initWithNo:21 andName:@"root"];
+    Employee *employee = [Employee.alloc initWithNo:21 andName:@"root"];
     NSLog(@"No: %d; name: %@", employee.no, employee.name);
 }
 
