@@ -28,12 +28,12 @@
 // 020526
 // 实例对象输出结果
 - (NSString *)description {
-    return [NSString stringWithFormat: @"Person[age: %d; name: %@]", _age, _name];
+    return [NSString stringWithFormat:@"%@[age: %d; name: %@]", [self className], _age, _name];
 }
 
 // 类对象输出结果
 + (NSString *)description {
-    return [NSString stringWithFormat:@"Person"];
+    return [NSString stringWithFormat:@"%@", [self className]];
 }
 
 

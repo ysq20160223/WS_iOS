@@ -27,7 +27,7 @@ void fun_01() {
     // 02, 根据 SEL 数据找到对应的方法地址
     // 03, 根据方法地址调用对应的方法
     
-     Person *p = [[Person alloc] init];
+     Person *p = [Person.alloc init];
     //    [p method]; // 直接调用
     
 //    SEL sel = @selector(method);
@@ -36,19 +36,20 @@ void fun_01() {
 }
 
 void fun_02() {
-    Person *p = [[Person alloc] init];
+    Person *p = [Person.alloc init];
     [p performSelector:NSSelectorFromString(@"method")];
 }
 
 
+
 int main() {
-    
     fun_01();
+    NSLog(@"----------------");
     
-//    fun_02();
+    fun_02();
+    NSLog(@"++++++++++++++++");
     
-//    [Person method];
-    
+    [Person method];
     return 0;
 }
 
