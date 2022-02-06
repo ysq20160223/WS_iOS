@@ -15,7 +15,7 @@
 
 
 int main() {
-    Person *person = [[Person alloc] init];
+    Person *person = [Person.alloc init];
     person.rich = YES;
     
     NSLog(@"isRich: %d", person.isRich);
@@ -24,6 +24,5 @@ int main() {
     
     return 0;
 }
-
 
 

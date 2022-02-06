@@ -13,8 +13,10 @@
 @implementation Person
 
 - (void)dealloc {
-    NSLog(@"");
-    
+    NSLog(@"%p", &self);
+//    [super dealloc];
 }
 
 @end
+
+

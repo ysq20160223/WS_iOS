@@ -41,10 +41,8 @@
 
 int main() {
     
-    Person *p = [[Person alloc] init];
-    NSLog(@"p: %@", p);
-    
-    NSLog(@"count: %ld", [p retainCount]);
+    Person *p = [Person.alloc init];
+    NSLog(@"p: %@; count: %ld", p, [p retainCount]);
     
     [p release];
     

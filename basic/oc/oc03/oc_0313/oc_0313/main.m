@@ -2,7 +2,7 @@
 //  main.m
 //  oc_0313
 //
-//  Created by sq y on 2017/7/15.
+//  Created by Apple on 2017/7/15.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -14,10 +14,9 @@
 #import "Person.h"
 
 int main() {
+    Person *person = [Person.alloc init];
     
-    Person *person = [[Person alloc] init];
-    
-    Book *book = [[Book alloc] init];
+    Book *book = [Book.alloc init];
     [person setBook:book];
     
     NSLog(@"retainCount: %ld", [book retainCount]); // 
@@ -28,3 +27,5 @@ int main() {
     
     return 0;
 }
+
+

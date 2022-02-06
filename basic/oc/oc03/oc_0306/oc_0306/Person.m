@@ -2,7 +2,7 @@
 //  Person.m
 //  oc_0306
 //
-//  Created by sq y on 2017/7/14.
+//  Created by Apple on 2017/7/14.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 

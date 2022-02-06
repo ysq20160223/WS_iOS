@@ -2,7 +2,7 @@
 //  main.m
 //  oc_0310
 //
-//  Created by sq y on 2017/7/14.
+//  Created by Apple on 2017/7/14.
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
@@ -23,14 +23,14 @@
  */
 
 void fun_01() {
-    Person *p = [[Person alloc] initWithAge:21];
+    Person *p = [Person.alloc initWithAge:21];
     
     //
-    Car *c1 = [[Car alloc] initWithSpeed:170];
+    Car *c1 = [Car.alloc initWithSpeed:170];
     p.car = c1;
     
     //
-    Car *c2 = [[Car alloc] initWithSpeed:210];
+    Car *c2 = [Car.alloc initWithSpeed:210];
     p.car = c2;
     
     //
@@ -41,14 +41,14 @@ void fun_01() {
 
 void fun_02() {
     //
-//    Student *student = [[Student alloc] initWithNo:21];
+//    Student *student = [Student.alloc initWithNo:21];
 //    [student setName:@"yy"]; // @"" 不是通过 alloc 产生, 不用 release
     
-    Student *student = [[Student alloc] initWithNo:21 andName:@"jj"];
+    Student *student = [Student.alloc initWithNo:21 andName:@"jj"];
     
     //
-    Car *car = [[Car alloc] initWithSpeed:210];
-    Dog *dog = [[Dog alloc] init];
+    Car *car = [Car.alloc initWithSpeed:210];
+    Dog *dog = [Dog.alloc init];
 
     student.car = car;
     student.dog = dog;
@@ -66,6 +66,5 @@ int main() {
     
     return 0;
 }
-
 
 

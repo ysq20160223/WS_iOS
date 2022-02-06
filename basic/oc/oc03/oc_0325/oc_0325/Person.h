@@ -18,3 +18,5 @@
 @property (nonatomic, strong) Dog *dog; // strong 为强指针
 
 @end
+
+

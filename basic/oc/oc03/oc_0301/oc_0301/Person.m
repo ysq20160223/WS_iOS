@@ -13,16 +13,16 @@
 @implementation Person
 
 + (void)load {
-    NSLog(@"");
+    NSLog();
 }
 
 + (void)initialize {
-    NSLog(@"");
+    NSLog();
 }
 
 - (instancetype)init {
     if (self = [super init]) {
-        NSLog(@"");
+        NSLog();
     }
     return self;
 }
@@ -33,9 +33,8 @@
 
 // 当一个 Person 对象被回收时, 就会自动调用这个方法
 - (void)dealloc {
-    NSLog(@"");
+    NSLog();
     [super dealloc]; // 一定要调用, 而且放在最后面
-    
 }
 
 @end

@@ -15,10 +15,9 @@
 @implementation Person
 
 - (void)dealloc {
-
     [_card release];
     
-    NSLog(@"");
+    NSLog();
     [super dealloc];
 }
 

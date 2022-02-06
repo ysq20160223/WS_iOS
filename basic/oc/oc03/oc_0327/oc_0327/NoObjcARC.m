@@ -13,8 +13,10 @@
 @implementation NoObjcARC
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog();
     [super dealloc];
 }
 
 @end
+
+

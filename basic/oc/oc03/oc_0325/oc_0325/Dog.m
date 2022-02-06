@@ -22,6 +22,9 @@
 
 - (void)dealloc {
     NSLog(@"age: %d", _age);
+//    [super dealloc];
 }
 
 @end
+
+

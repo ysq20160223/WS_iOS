@@ -14,7 +14,6 @@
 
 //
 - (void)dealloc {
-    
     NSLog(@"_userName: %@", _userName);
     
     [_userName release];

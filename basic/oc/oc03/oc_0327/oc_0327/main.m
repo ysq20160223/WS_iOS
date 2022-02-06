@@ -23,28 +23,24 @@
 
 int main() {
     
-    // --
-    User *u1 = [[User alloc] init];
+    User *u1 = [User.alloc init];
     u1.name = @"原创作者";
     
-    //
-    User *u2 = [[User alloc] init];
-    u2.name = @"非原创作者";
-    
-    //
-    Status *s1 = [[Status alloc] init];
-    s1.text = @"原创数据";
+    Status *s1 = [Status.alloc init];
+    s1.text = @"原创文本";
     s1.user = u1;
     
-    //
-    Status *s2 = [[Status alloc] init];
-    s2.retweenStatus = s1;
-    s2.text = @"非原创数据";
-    s2.user = u2;
     
+    //
+    User *u2 = [User.alloc init];
+    u2.name = @"转发者";
+    
+    Status *s2 = [Status.alloc init];
+    s2.retweenStatus = s1;
+    s2.text = @"转发者文本";
+    s2.user = u2;
     
     return 0;
 }
-
 
 

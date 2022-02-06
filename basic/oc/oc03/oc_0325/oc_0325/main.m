@@ -29,9 +29,8 @@
 
 
 void fun_01() {
-    Person *p = [[Person alloc] init];
+    Person *p = [Person.alloc init];
     p.age = 21;
-    
     NSLog(@"age: %d", p.age);
     
     
@@ -41,29 +40,26 @@ void fun_01() {
     NSLog(@"p1: %p", p1); //
     
     // 弱指针 : 没有意义
-    __weak Person *p2 = [[Person alloc] init];
+    __weak Person *p2 = [Person.alloc init];
     NSLog(@"p2: %p", p2); //
 }
 
 //
 void fun_02() {
+    Person *p = [Person.alloc init];
     
-    Person *p = [[Person alloc] init];
-    
-    Dog *d = [[Dog alloc] initWithAge:1];
+    Dog *d = [Dog.alloc initWithAge:1];
     p.dog = d;
     
-    d = [[Dog alloc] initWithAge:9];
+    d = [Dog.alloc initWithAge:9];
 }
 
 int main(int argc, const char * argv[]) {
-   
-//    fun_01();
+    fun_01();
+    NSLog(@"--------------------");
     
     fun_02();
-    
     return 0;
 }
-
 
 

@@ -21,7 +21,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog();
     [super dealloc];
 }
 

@@ -15,7 +15,9 @@
 //
 - (void)dealloc {
     NSLog(@"name: %@", _name);
+//    [super dealloc];
 }
 
 @end
+
 

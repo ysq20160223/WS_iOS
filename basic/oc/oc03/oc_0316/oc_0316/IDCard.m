@@ -15,7 +15,7 @@
 @implementation IDCard
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog();
     [super dealloc];
 }
 

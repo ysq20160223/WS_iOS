@@ -13,7 +13,9 @@
 @implementation Dog
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog();
 }
 
 @end
+
+

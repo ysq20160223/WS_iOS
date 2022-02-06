@@ -18,6 +18,8 @@ typedef struct {
     int day;
 } Date;
 
+
+
 @interface User : NSObject
 
 @property (nonatomic, strong) NSString *name;
@@ -34,5 +36,6 @@ typedef struct {
 
 @property (nonatomic, assign) Date date;
 
-
 @end
+
+

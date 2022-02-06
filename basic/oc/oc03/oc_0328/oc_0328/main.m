@@ -26,19 +26,17 @@
 
 int main() {
     @autoreleasepool {
-        Person *p = [[Person alloc] init];
+        Person *person = [Person.alloc init];
         
-        Dog *d = [[Dog alloc] init];
-        p.dog = d;
-        d.person = p;
+        Dog *dog = [Dog.alloc init];
+        dog.person = person;
         
-        [d release];
-        [p release];
+        person.dog = dog;
         
+        [dog release];
+        [person release];
     }
     return 0;
 }
-
-
 
 

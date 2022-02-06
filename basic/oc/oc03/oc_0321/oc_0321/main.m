@@ -30,7 +30,7 @@
 void fun_01() {
     @autoreleasepool {
         Person *person = [Person person];
-        person.age = 17;
+        person.age = 1;
         
         NSLog(@"age: %d", person.age);
     }
@@ -45,7 +45,7 @@ void fun_01() {
 void fun_02() {
     @autoreleasepool {
         NSString *s = @"yy"; // Next Step
-        NSLog(@"s: %@, %@", s, [NSString stringWithFormat:@"age: %d", 21]);
+        NSLog(@"s: %@; %@", s, [NSString stringWithFormat:@"age: %d", 21]);
     }
 }
 
@@ -60,15 +60,10 @@ void fun_03() {
 }
 
 int main() {
-    
     fun_01();
-    
 //    fun_02();
-    
 //    fun_03();
-    
     return 0;
 }
-
 
 

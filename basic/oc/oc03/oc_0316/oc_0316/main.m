@@ -25,17 +25,16 @@
 #import "IDCard.h"
 
 int main() {
-    Person *p = [[Person alloc] init];
-    IDCard *c = [[IDCard alloc] init];
+    Person *person = [Person.alloc init];
+    IDCard *card = [IDCard.alloc init];
     
-    p.card = c;
-    c.person = p;
+    person.card = card;
+    card.person = person;
     
-    [c release];
-    [p release];
+    [card release];
+    [person release];
     
     return 0;
 }
-
 
 

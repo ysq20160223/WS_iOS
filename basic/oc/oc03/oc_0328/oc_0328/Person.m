@@ -13,7 +13,7 @@
 @implementation Person
 
 - (void)dealloc {
-    NSLog(@"");
+    NSLog();
     
     [_dog release];
     
@@ -21,3 +21,5 @@
 }
 
 @end
+
+
