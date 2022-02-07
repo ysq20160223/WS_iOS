@@ -26,12 +26,11 @@
 // @required 要求实现, 不实现就会发出警告
 
 @required
-- (void)requiredMethod;
+- (void)requiredFun;
 
 @optional
-- (void)optionalMethod;
+- (void)optionalFun;
 
 @end
-
 
 

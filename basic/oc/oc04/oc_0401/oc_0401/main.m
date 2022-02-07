@@ -30,16 +30,17 @@
 
 // 0401
 // 没有参数没有返回值
-void (^myBlock)() = ^(){
+void (^myBlock)() = ^() {
     NSLog(@"this is block");
 };
 
 
 // 0402
 // 有参数有返回值
-int (^sum)(int, int) = ^(int a, int b){
+int (^sum)(int, int) = ^(int a, int b) {
     return a + b;
 };
+
 
 void (^printLine)(int) = ^(int n) {
     for(int i = 0; i < n; i++) {
@@ -52,6 +53,7 @@ void (^printLine)(int) = ^(int n) {
 // typedef
 typedef int (^TypedefBlock)(int, int);
 
+
 void fun_03() {
     TypedefBlock typeSum = sum;
     
@@ -63,18 +65,16 @@ void fun_03() {
 }
 
 
-//
-int additive(int a, int b) {
+int add(int a, int b) {
     return a + b;
 }
 
 
-//
 int main() {
     @autoreleasepool {
-        //
-        int(*pAdditive)(int, int) = additive; // 指向函数的指针
-        NSLog(@"%d + %d: %d", 1, 2, pAdditive(1, 2));
+        
+        int(*pAdd)(int, int) = add; // 指向函数的指针
+        NSLog(@"%d + %d: %d", 1, 2, pAdd(1, 2));
         printLine(1);
         
         
@@ -93,8 +93,5 @@ int main() {
     }
     return 0;
 }
-
-
-
 
 

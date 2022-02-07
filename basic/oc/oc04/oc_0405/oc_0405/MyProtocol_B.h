@@ -14,7 +14,7 @@
 // 0407
 @protocol MyProtocol_B <MyProtocol, MyProtocol_A>
 
-- (void)requiredMethodB;
+- (void)requiredFunB;
 
 @end
 

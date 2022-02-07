@@ -17,22 +17,24 @@
 @implementation Person
 
 - (void)requiredMethod {
-    NSLog(@"");
+    NSLog();
 }
 
 
 // ------
 - (void)requiredMethodA {
-    NSLog(@"");
+    NSLog();
 }
 
 - (void)optionalMethod {
-    NSLog(@"");
+    NSLog();
 }
 
 //-----
 - (void)requiredMethodB {
-    NSLog(@"");
+    NSLog();
 }
 
 @end
+
+

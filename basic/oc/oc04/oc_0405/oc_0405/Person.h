@@ -22,3 +22,5 @@
 @property (nonatomic, strong) id<MyProtocol> obj;
 
 @end
+
+

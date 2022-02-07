@@ -20,8 +20,11 @@
     return 5;
 }
 
+
 - (void)dealloc {
-    NSLog(@"");
+    NSLog();
 }
 
 @end
+
+

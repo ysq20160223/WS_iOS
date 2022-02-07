@@ -13,10 +13,12 @@
 // @required 要求实现, 不实现就会发出警告
 
 @required
-- (void)requiredMethodA;
+- (void)requiredFunA;
 
 @optional
-- (void)optionalMethodA;
+- (void)optionalFunA;
 
 
 @end
+
+

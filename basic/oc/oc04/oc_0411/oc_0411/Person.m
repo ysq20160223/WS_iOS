@@ -15,12 +15,14 @@
 @implementation Person
 
 - (void)buyTicket {
-    NSLog(@"price: %f, number: %d", _delegate.ticketPrice, _delegate.leftTicketNumber);
+    NSLog(@"price: %f; number: %d", _delegate.ticketPrice, _delegate.leftTicketNumber);
 }
 
-- (void)dealloc
-{
-    NSLog(@"");
+
+- (void)dealloc {
+    NSLog();
 }
 
 @end
+
+
