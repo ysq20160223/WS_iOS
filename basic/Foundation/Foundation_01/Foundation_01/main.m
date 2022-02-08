@@ -33,9 +33,8 @@ void fun_01() {
 
 // 0502
 void fun_02() {
-    NSString *str = @"oc foundation";
-    NSRange r1 = [str rangeOfString:@"fou"];
-    NSLog(@"location: %ld, length: %lu", r1.location, r1.length);
+    NSRange r = [@"oc foundation" rangeOfString:@"fou"];
+    NSLog(@"location: %ld; length: %lu", r.location, r.length);
 }
 
 
@@ -52,57 +51,52 @@ void fun_03() {
     NSLog(@"-----------------------");
     
     // 0504
-    CGRect rect = {{1, 2}, {100, 200}};
-    NSLog(@"x: %f, y: %f, width: %f, height: %f", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-    NSLog(@"CGRect = %@", NSStringFromRect(rect));
+    CGRect r = {{1, 2}, {100, 200}};
+    NSLog(@"x: %.2f; y: %.2f; width: %.2f; height: %.2f", r.origin.x, r.origin.y, r.size.width, r.size.height);
+    NSLog(@"CGRect: %@", NSStringFromRect(r));
     NSLog(@"-----------------------");
     
     //
     NSLog(@"CGRect: %@", NSStringFromRect(CGRectMake(1, 1, 100, 100)));
     
-
 //    CGPointZero == CGPointMake(0, 0); // 表示原点
 //    CGSizeZero
 //    CGRectZero
-    
 }
 
 CGRect myRect(CGFloat x, CGFloat y, CGFloat width, CGFloat height) {
     CGRect rect;
-    
     rect.origin.x = x;
     rect.origin.y = y;
-    
     rect.size.width = width;
     rect.size.height = height;
-    
     return rect;
 }
 
 //
 void fun_04() {
     // 0504
-    NSLog(@"CGPointEqualToPoint = %d", CGPointEqualToPoint(CGPointMake(0, 1), CGPointMake(2, 3)));
-    NSLog(@"CGSizeEqualToSize = %d", CGSizeEqualToSize(CGSizeMake(100, 200), CGSizeMake(300, 400)));
-    NSLog(@"CGRectEqualToRect = %d", CGRectEqualToRect(CGRectMake(0, 1, 100, 200), CGRectMake(2, 3, 300, 400)));
-    NSLog(@"CGRectContainsPoint = %d", CGRectContainsPoint(CGRectMake(10, 10, 100, 100), CGPointMake(50, 50)));
+    NSLog(@"CGPointEqualToPoint: %d", CGPointEqualToPoint(CGPointMake(0, 1), CGPointMake(2, 3)));
+    NSLog(@"CGSizeEqualToSize: %d", CGSizeEqualToSize(CGSizeMake(100, 200), CGSizeMake(300, 400)));
+    NSLog(@"CGRectEqualToRect: %d", CGRectEqualToRect(CGRectMake(0, 1, 100, 200), CGRectMake(2, 3, 300, 400)));
+    NSLog(@"CGRectContainsPoint: %d", CGRectContainsPoint(CGRectMake(10, 10, 100, 100), CGPointMake(50, 50)));
 }
 
 //
 int main() {
     @autoreleasepool {
         fun_01();
+        NSLog();
         
-//        fun_02();
+        fun_02();
+        NSLog();
         
-//        fun_03();
+        fun_03();
+        NSLog();
         
-//        fun_04();
+        fun_04();
     }
     return 0;
 }
-
-
-
 
 

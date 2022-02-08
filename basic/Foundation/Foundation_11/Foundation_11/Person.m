@@ -13,11 +13,11 @@
 @implementation Person
 
 + (void)load {
-    NSLog(@"");
+    NSLog();
 }
 
 + (void)initialize {
-    NSLog(@"");
+    NSLog();
 }
 
 + (NSString *)description {

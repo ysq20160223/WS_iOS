@@ -22,16 +22,16 @@ int main() {
         NSMutableArray *array = [NSMutableArray arrayWithObjects:@"yy", @"jj", @"hh", nil]; // 初始化 - 添加元素
         //    NSMutableArray *array = @[@"yy", @"jj"]; // error: 返回是 NSArray *
         
-        [array addObject:[[Person alloc] initWithName:@"jj"]];
+        [array addObject:[Person.alloc initWithName:@"jj"]];
         [array addObject:@"xx"];
         
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"idx: %ld, obj: %@", idx, obj);
         }];
         
-        [array removeObjectAtIndex:3]; // 移除
-        
         NSLog(@"----------------");
+        
+        [array removeObjectAtIndex:3]; // 移除
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"idx: %ld, obj: %@", idx, obj);
         }];
@@ -39,8 +39,5 @@ int main() {
     }
     return 0;
 }
-
-
-
 
 

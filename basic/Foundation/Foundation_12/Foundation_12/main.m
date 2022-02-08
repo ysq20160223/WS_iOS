@@ -17,7 +17,6 @@ void fun_01() {
     set1 = nil;
     
     NSSet *set2 = [NSSet setWithObjects:@"yy", @"jj", @"yy", @"mm", @"nn", nil];
-    
     [set2 enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
         NSLog(@"obj: %@", obj);
     }];
@@ -28,16 +27,15 @@ void fun_02() {
     
     [muSet addObject:@"yy"];
     [muSet addObject:@"jj"];
-    [muSet addObject:[[Person alloc] init]];
+    [muSet addObject:[Person.alloc init]];
     [muSet addObject:@"mm"];
     [muSet addObject:@"nn"];
-    
     
     [muSet enumerateObjectsUsingBlock:^(id  _Nonnull obj, BOOL * _Nonnull stop) {
         NSLog(@"obj: %@", obj);
     }];
-    
 }
+
 
 int main() {
     @autoreleasepool {
@@ -49,7 +47,5 @@ int main() {
     }
     return 0;
 }
-
-
 
 

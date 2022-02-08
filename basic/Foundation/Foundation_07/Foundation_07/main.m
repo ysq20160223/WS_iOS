@@ -24,18 +24,17 @@
 
 #import "Person.h"
 
-void printNSArray(NSArray *array, NSString *arrayName) {
+void printNSArray(NSArray *array) {
 //    for(int i = 0; i < array.count; i++) {
 ////        NSLog(@"%@[%d] = %@", arrayName, i, [array objectAtIndex:i]);
-//        NSLog(@"%@[%d]: %@", arrayName, i, array[i]); // 常用 - 相当于上一句
+//        NSLog(@"%@[%d]: %@", arrayName, i, array[i]);
 //    }
     
     // 0508
     for (id obj in array) {
-        NSLog(@"%@[%lu]: %@", arrayName, [array indexOfObject:obj], obj);
+        NSLog(@"[%lu]: %@", [array indexOfObject:obj], obj);
     }
 }
-
 
 
 void fun_01() {
@@ -44,76 +43,65 @@ void fun_01() {
     NSArray *array2 = [NSArray arrayWithObjects:@"a", @"b", nil];
     NSArray *array3 = @[@"aa", @"bb", @"cc"]; // 常用 - 编译器新特性
     
-    printNSArray(array1, @"array1");
-    NSLog(@"==========");
-    printNSArray(array2, @"array2");
-    NSLog(@"**********");
-    printNSArray(array3, @"array3");
+    printNSArray(array1);
+    NSLog(@"===");
+    
+    printNSArray(array2);
+    NSLog(@"***");
+    
+    printNSArray(array3);
 }
 
 
 
+// ---
+typedef void (^EnumBlock)(id, NSUInteger, BOOL *);
 
-// 个人理解 - 1
-typedef void (^EnumerateBlock)(id, NSUInteger, BOOL *);
-
-void enumArray(NSArray *array, EnumerateBlock block) {
+void enumArray(NSArray *array, EnumBlock block) {
     [array enumerateObjectsUsingBlock:block];
 }
 
-// 个人理解 - 2
-void test(NSArray *array, void (^block)(id obj, NSUInteger idx, BOOL *stop)) {
-    [array enumerateObjectsUsingBlock:block];
-}
-
-
-//
 void fun_02() {
-    NSArray *array = @[@"aaa", [[Person alloc] init], @"bbb"];
+    NSArray *array = @[@"aaa", [Person.alloc init], @"bbb"];
     
     // 每遍历到一个元素, 就会调用一次 block
     // 并且把当前元素和索引位置当作参数传给 block
     [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if(idx == 1){
+        if(idx == 1) {
             *stop = YES;
         }
-        NSLog(@"enumerateObjectsUsingBlock, idx: %ld, obj: %@", idx, obj);
+        NSLog(@"enum; idx: %ld; obj: %@", idx, obj);
     }];
+    NSLog(@"===");
 
-    
-//    // ------- 对 enumerateObjectsUsingBlock 内部实现分析 -- start
-    void (^block)(id, NSUInteger, BOOL *) = ^(id obj, NSUInteger idx, BOOL *stop){
-//        if(idx == 2){
-//            *stop = YES;
-//        }
-        NSLog(@"block, idx: %ld, obj: %@", idx, obj);
+
+    void (^block)(id, NSUInteger, BOOL *) = ^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop){
+        NSLog(@"block; idx: %ld; obj: %@", idx, obj);
     };
-//
-//    for (int i = 0; i < array.count; i++) {
-//        BOOL isStop = NO;
-//        id obj = array[i];
-//        block(obj, i, &isStop);
-//        
-//        if (isStop) {
-//            break;
-//        }
-//    }
-//    // ------- 对 enumerateObjectsUsingBlock 内部实现分析 -- end
+
+//    // 对 enumerateObjectsUsingBlock 内部实现分析 -- start
+    for (int i = 0; i < array.count; i++) {
+        BOOL isStop = NO;
+        id obj = array[i];
+        block(obj, i, &isStop);
+
+        if (isStop) {
+            break;
+        }
+    }
+//    // 对 enumerateObjectsUsingBlock 内部实现分析 -- end
     
-    
-    //
-    NSLog(@"----------------------------");
+ 
+    NSLog(@"---");
     enumArray(array, block);
     
-    //
-    NSLog(@"++++++++++++++++++++++++++++");
-    test(array, block);
 }
 
 
 int main() {
     @autoreleasepool {
 //        fun_01();
+        
         fun_02();
     }
     return 0;

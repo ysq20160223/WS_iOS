@@ -14,10 +14,11 @@
 #import "../../../../PrefixHeader.pch"
 
 
-//#define PATH @"/Users/Apple/Desktop/iOS/WS_iOS/foundation_part_src"
-#define PATH @"/Users/Apple/Desktop/iOS/WS_iOS/basic"
-//#define PATH @"/Users/Apple/Desktop/iOS/WS_iOS/basic/c"
-//#define PATH @"/Users/Apple/Desktop/iOS/WS_iOS/basic/c/c01"
+#define ROOT_PATH @"/Users/Apple/Desktop/github/WS_iOS/"
+//#define PATH ROOT_PATH@"foundation_part_src"
+//#define PATH ROOT_PATH@"basic"
+#define PATH ROOT_PATH@"basic/c"
+//#define PATH ROOT_PATH@"basic/c/c01"
 
 static int count = 0;
 
@@ -29,7 +30,7 @@ static NSString *printTab(int num) {
     return s;
 }
 
-long codeLineCount(NSString *path, int count) {
+long lineCount(NSString *path, int count) {
     // 1, 获得文件管理者 - 单例模式
     NSFileManager *nsFileManager = [NSFileManager defaultManager];
     
@@ -48,7 +49,7 @@ long codeLineCount(NSString *path, int count) {
     if (isDir) {
         // 文件夹
         NSArray *array = [nsFileManager contentsOfDirectoryAtPath:path error:nil];
-        NSLog(@"directory: %@", path);
+        NSLog(@"dir: %@", [path substringFromIndex:ROOT_PATH.length]);
         
         count++;
         int totalLineCount = 0;
@@ -57,7 +58,7 @@ long codeLineCount(NSString *path, int count) {
             
             NSString *fullPath = [NSString stringWithFormat:@"%@/%@", path, fileName];
 //            NSLog(@"fullPath: %@", fullPath);
-            totalLineCount += codeLineCount(fullPath, count);
+            totalLineCount += lineCount(fullPath, count);
         }
         return totalLineCount;
     } else {
@@ -84,19 +85,16 @@ long codeLineCount(NSString *path, int count) {
         // 过滤前面的路径名
         NSRange range = [path rangeOfString:[NSString stringWithFormat:@"%@/", PATH]];
         NSString *file = [path stringByReplacingCharactersInRange:range withString:@""];
-        NSLog(@"%@file: %@, line: %ld", printTab(count), file, array.count);
+        NSLog(@"%@file: %@; line: %ld", printTab(count), file, array.count);
         
         return array.count;
     }
-    
 }
 
 
 int main() {
     @autoreleasepool {
-        
-        NSLog(@"count: %ld", codeLineCount(PATH, count));
-        
+        NSLog(@"count: %ld", lineCount(PATH, count));
     }
     return 0;
 }

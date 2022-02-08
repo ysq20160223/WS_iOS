@@ -29,10 +29,12 @@
 
 #import "../../../../PrefixHeader.pch"
 
+//#define kRootPath /Users/Apple/Desktop/github/WS_iOS/
+
+NSString *rootPath = @"/Users/Apple/Desktop/github/WS_iOS/";
 
 
 void fun_01() {
-    
     // 1
 //    NSLog(@"%@", @"This is sting");
     
@@ -49,7 +51,7 @@ void fun_01() {
 //    printf("%s", [@"oc字符串 -> c字符串\n" UTF8String]); // oc字符串 -> c字符串
     
     // 5 - 读取本地文件
-    NSString *fullPath = @"/Users/Apple/Desktop/iOS/WS_iOS/PrefixHeader.pch";
+    NSString *fullPath = [NSString stringWithFormat:@"%@PrefixHeader.pch", rootPath];
 //    NSLog(@"\n%@", [[NSString alloc] initWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
     NSLog(@"\n%@", [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
     
@@ -63,7 +65,7 @@ void fun_01() {
 
 void fun_02() {
     // 输出到同级文件夹中, atomically : YES 成功才会创建文件
-    [[NSString stringWithFormat:@"%@", [NSDate date]] writeToFile:@"/Users/Apple/Desktop/iOS/WS_iOS/basic/Foundation/Foundation_05/Foundation_05/foundation_05.txt" atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    [[NSString stringWithFormat:@"%@", [NSDate date]] writeToFile:[NSString stringWithFormat:@"%@basic/Foundation/Foundation_05/Foundation_05/foundation_05.txt", rootPath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"writeToFile end");
 }
 
@@ -79,21 +81,16 @@ void fun_03() {
     NSString *s2 = @"This is NSString";
     NSString *s3 = [s2 stringByAppendingString:@"stringByAppendingString"]; // s3 是一个新的字符串
     
-    NSLog(@"s1: %@, s2: %@, s3: %@", s1, s2, s3);
+    NSLog(@"s1: %@; s2: %@; s3: %@", s1, s2, s3);
 }
 
 int main() {
     @autoreleasepool {
-        
-        fun_01();
-        
-//        fun_02();
-        
+//        fun_01();
+        fun_02();
 //        fun_03();
-        
     }
     return 0;
 }
-
 
 

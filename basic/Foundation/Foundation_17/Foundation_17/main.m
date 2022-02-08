@@ -25,7 +25,6 @@ int main() {
         
         //
         NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
-        
         [mDic setObject:numInt forKey:@"age"];
         [mDic setObject:numFloat forKey:@"weight"];
         NSLog(@"%@", mDic);
@@ -33,7 +32,7 @@ int main() {
         int age = [numInt intValue]; // 将对象转化为基本数据类型
         int height = [@"177" intValue]; //
         NSInteger width = [@"211" integerValue];
-        NSLog(@"age: %d, height: %d, width: %ld", age, height, width);
+        NSLog(@"age: %d; height: %d; width: %ld", age, height, width);
         
         //
         CGPoint p = CGPointMake(1, 1);
@@ -42,6 +41,5 @@ int main() {
     }
     return 0;
 }
-
 
 

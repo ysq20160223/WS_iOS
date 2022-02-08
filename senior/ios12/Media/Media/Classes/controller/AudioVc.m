@@ -119,7 +119,6 @@
     [self setupProgressTimer];
     [self removeLrcCADisplayLink];
     [self addLrcCADisplayLink];
-    
 }
 
 

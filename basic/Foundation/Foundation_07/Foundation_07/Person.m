@@ -11,10 +11,9 @@
 @implementation Person
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Person[age: %d, name: %@]", _age, _name];
+    return [NSString stringWithFormat:@"Person[age: %d; name: %@]", _age, _name];
 }
 
 @end
-
 
 
