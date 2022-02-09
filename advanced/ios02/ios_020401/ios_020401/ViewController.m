@@ -34,7 +34,7 @@
     _screenW = self.view.frame.size.width;
     _screenH = self.view.frame.size.height;
     
-    _segmented.frame = CGRectMake(0, _screenH - _segmented.frame.size.height, _screenW, _segmented.frame.size.height);
+    _segmented.frame = CGRectMake(0, _screenH - 3 * _segmented.frame.size.height, _screenW, _segmented.frame.size.height);
 //    NSLog(@"selectedSegmentIndex: %ld", _segmented.selectedSegmentIndex);
     
     [self adjustImagePositionWithColumns:_segmented.selectedSegmentIndex + 3 add:YES];
@@ -58,7 +58,7 @@
         int row = i / columns;
         
         CGFloat x = margin + col * (kImgW + margin);
-        CGFloat y = margin + row * (kImgW + margin);
+        CGFloat y = margin + row * (kImgW + margin) + UIApplication.sharedApplication.statusBarFrame.size.height;
         
         if(add) {
             NSString *imgName = [NSString stringWithFormat:@"%d.png", i % 9]; // 9张图片
@@ -84,7 +84,7 @@
 //    [self.view addSubview:iv];
     
     //
-    UIButton *btn = [[UIButton alloc] init];
+    UIButton *btn = [UIButton.alloc init];
     btn.adjustsImageWhenHighlighted = NO;
     btn.tag = index;
     [btn addTarget:self action:@selector(imgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -94,14 +94,10 @@
     [self.view addSubview:btn];
 }
 
-
-//
 - (void)imgBtnClick:(UIButton *)btn {
-    NSLog(@"index: %ld, %@", btn.tag, btn);
-    
+    NSLog(@"index: %ld; %@", btn.tag, btn);
 }
 
 @end
-
 
 

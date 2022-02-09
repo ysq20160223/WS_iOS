@@ -25,7 +25,7 @@
 //    _imgView.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, self.view.frame.size.height);
     _imgView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"tom" ofType:@"plist"]; // 1, 获得全路径
+    NSString *path = [NSBundle.mainBundle pathForResource:@"tom" ofType:@"plist"]; // 1, 获得全路径
     _imgNameAndNumberDict = [NSDictionary dictionaryWithContentsOfFile:path]; // 2, 根据文件路径加载字典
 //    NSLog(@"_imgNameAndNumberDict: %@", _imgNameAndNumberDict);
 }
@@ -41,7 +41,7 @@
 //        UIImage *img = [UIImage imageNamed:name];
         
         // 方法二: 全路径, 无缓存
-        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
+        NSString *path = [NSBundle.mainBundle pathForResource:name ofType:nil];
 //        UIImage *img = [[UIImage alloc] initWithContentsOfFile:path];
         UIImage *img = [UIImage imageWithContentsOfFile:path];
 

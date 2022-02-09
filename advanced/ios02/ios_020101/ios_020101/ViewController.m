@@ -18,7 +18,7 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-    self.navigationItem.title = @"ViewController";
+    self.navigationItem.title = @"Title";
 }
 
 - (void)onClick:(UIButton *)btn {

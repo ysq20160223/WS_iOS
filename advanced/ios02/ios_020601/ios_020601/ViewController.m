@@ -29,6 +29,7 @@
 @end
 
 
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -132,8 +133,8 @@
 // *******************************
 - (UIView *)createRowViewWithCode {
     // 创建控件
-    UIView *rowView = [[UIView alloc] init];
-    rowView.backgroundColor = [UIColor magentaColor];
+    UIView *rowView = [UIView.alloc init];
+    rowView.backgroundColor = UIColor.magentaColor;
     
     // 1, 添加头像
     UIButton *iconBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -147,7 +148,7 @@
     [rowView addSubview:iconBtn];
     
     // 2, 添加名字 (标签)
-    UILabel *nameLabel = [[UILabel alloc] init];
+    UILabel *nameLabel = [UILabel.alloc init];
     nameLabel.frame = CGRectMake(0, 0, _screenW, kRowH);
     nameLabel.textAlignment = NSTextAlignmentCenter;
     nameLabel.text = [NSString stringWithFormat:@"code: %d", randomIndex];
@@ -227,7 +228,5 @@
 }
 
 @end
-
-
 
 

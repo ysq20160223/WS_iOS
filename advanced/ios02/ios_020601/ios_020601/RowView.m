@@ -11,15 +11,15 @@
 @implementation RowView
 
 + (void)load {
-    NSLog(@"");
+    NSLog();
 }
 
 + (void)initialize {
-    NSLog(@"");
+    NSLog();
 }
 
 + (id)rowViewWithIcon:(NSString *)icon andName:(NSString *)name {
-    RowView *view = [[NSBundle mainBundle] loadNibNamed:@"RowView" owner:nil options:nil][0];
+    RowView *view = [NSBundle.mainBundle loadNibNamed:@"RowView" owner:nil options:nil][0];
     
 //    // 1, 设置图标
 //    UIButton *iconBtn = (UIButton *)[view viewWithTag:1];
@@ -38,8 +38,5 @@
 
 
 @end
-
-
-
 
 

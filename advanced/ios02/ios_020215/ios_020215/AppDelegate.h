@@ -11,9 +11,9 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) UIWindow *window;
 
-@property (readonly, strong) NSPersistentContainer *persistentContainer;
+@property (nonatomic, strong, readonly) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;
 

@@ -8,9 +8,12 @@
 
 #import "AppDelegate.h"
 
+
 @interface AppDelegate ()
 
 @end
+
+
 
 @implementation AppDelegate
 
@@ -19,14 +22,14 @@
     // Override point for customization after application launch.
     
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     // 2
     UIViewController *rootVc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
 //    self.window.rootViewController = rootVc;
     
     
-    UINavigationController *navVc = [[UINavigationController alloc] init];
+    UINavigationController *navVc = [UINavigationController.alloc init];
     self.window.rootViewController = [navVc initWithRootViewController:rootVc];
     
     // 3
@@ -111,3 +114,5 @@
 }
 
 @end
+
+
