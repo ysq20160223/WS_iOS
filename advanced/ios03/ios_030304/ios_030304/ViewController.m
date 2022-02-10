@@ -11,10 +11,10 @@
 #import "Shop.h"
 
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate> {
-    NSMutableArray *_shopArray;
-    NSMutableArray *_checkedShopArray;
-}
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray *shopArray;
+@property (strong, nonatomic) NSMutableArray *checkedShopArray;
 
 @end
 
@@ -44,7 +44,7 @@
     
     
     // 1
-    NSArray *array = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"shops.plist" ofType:nil]];
+    NSArray *array = [NSArray arrayWithContentsOfFile:[NSBundle.mainBundle pathForResource:@"shops" ofType:@"plist"]];
     
     // 2
     for (NSDictionary *dict in array) {
@@ -132,8 +132,5 @@
 
 
 @end
-
-
-
 
 

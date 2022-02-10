@@ -7,32 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180A9BA427B554BA001EA5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180A9BA327B554BA001EA5D2 /* Main.storyboard */; };
+		180A9BA627B554CF001EA5D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180A9BA527B554CF001EA5D2 /* LaunchScreen.storyboard */; };
 		18C337561F2B630200C6F010 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C337551F2B630200C6F010 /* main.m */; };
 		18C337591F2B630200C6F010 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C337581F2B630200C6F010 /* AppDelegate.m */; };
 		18C3375C1F2B630200C6F010 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C3375B1F2B630200C6F010 /* ViewController.m */; };
-		18C3375F1F2B630200C6F010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C3375D1F2B630200C6F010 /* Main.storyboard */; };
 		18C337621F2B630200C6F010 /* ios_030401.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18C337601F2B630200C6F010 /* ios_030401.xcdatamodeld */; };
 		18C337641F2B630200C6F010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C337631F2B630200C6F010 /* Assets.xcassets */; };
-		18C337671F2B630200C6F010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C337651F2B630200C6F010 /* LaunchScreen.storyboard */; };
 		18C337701F2B66B500C6F010 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C3376F1F2B66B500C6F010 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180A9BA327B554BA001EA5D2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		180A9BA527B554CF001EA5D2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18C337511F2B630200C6F010 /* ios_030401.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_030401.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C337551F2B630200C6F010 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18C337571F2B630200C6F010 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18C337581F2B630200C6F010 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18C3375A1F2B630200C6F010 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		18C3375B1F2B630200C6F010 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		18C3375E1F2B630200C6F010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18C337611F2B630200C6F010 /* ios_030401.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_030401.xcdatamodel; sourceTree = "<group>"; };
 		18C337631F2B630200C6F010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18C337661F2B630200C6F010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18C337681F2B630200C6F010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18C3376E1F2B66B500C6F010 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		18C3376F1F2B66B500C6F010 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		18FF02FB22DAEBA00060C75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		18FF02FC22DAEBA00060C75F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +67,14 @@
 				18C337581F2B630200C6F010 /* AppDelegate.m */,
 				18C3375A1F2B630200C6F010 /* ViewController.h */,
 				18C3375B1F2B630200C6F010 /* ViewController.m */,
-				18C3375D1F2B630200C6F010 /* Main.storyboard */,
 				18C337631F2B630200C6F010 /* Assets.xcassets */,
-				18C337651F2B630200C6F010 /* LaunchScreen.storyboard */,
 				18C337681F2B630200C6F010 /* Info.plist */,
 				18C337601F2B630200C6F010 /* ios_030401.xcdatamodeld */,
 				18C337541F2B630200C6F010 /* Supporting Files */,
 				18C3376E1F2B66B500C6F010 /* Person.h */,
 				18C3376F1F2B66B500C6F010 /* Person.m */,
+				180A9BA327B554BA001EA5D2 /* Main.storyboard */,
+				180A9BA527B554CF001EA5D2 /* LaunchScreen.storyboard */,
 			);
 			path = ios_030401;
 			sourceTree = "<group>";
@@ -130,9 +128,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
-				en,
 				Base,
-				"zh-Hans",
 			);
 			mainGroup = 18C337481F2B630200C6F010;
 			productRefGroup = 18C337521F2B630200C6F010 /* Products */;
@@ -149,9 +145,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C337671F2B630200C6F010 /* LaunchScreen.storyboard in Resources */,
+				180A9BA627B554CF001EA5D2 /* LaunchScreen.storyboard in Resources */,
 				18C337641F2B630200C6F010 /* Assets.xcassets in Resources */,
-				18C3375F1F2B630200C6F010 /* Main.storyboard in Resources */,
+				180A9BA427B554BA001EA5D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,27 +167,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		18C3375D1F2B630200C6F010 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18C3375E1F2B630200C6F010 /* Base */,
-				18FF02FB22DAEBA00060C75F /* zh-Hans */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		18C337651F2B630200C6F010 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18C337661F2B630200C6F010 /* Base */,
-				18FF02FC22DAEBA00060C75F /* zh-Hans */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		18C337691F2B630200C6F010 /* Debug */ = {

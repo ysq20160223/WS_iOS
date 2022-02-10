@@ -10,9 +10,8 @@
 
 #import "Shop.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
-    NSMutableArray *_shopArray;
-}
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@property (strong, nonatomic) NSMutableArray *shopArray;
 @end
 
 
@@ -62,7 +61,7 @@
     Shop *shop = _shopArray[indexPath.row];
     
     
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
+    UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     NSLog(@"cell: %@", cell); // 验证全部刷新 or 局部刷新
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", shop.name];
@@ -147,7 +146,5 @@
 //}
 
 @end
-
-
 
 

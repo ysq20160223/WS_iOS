@@ -9,9 +9,9 @@
 #import "ViewController.h"
 
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
-    NSMutableArray *_mutableArray;
-}
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray *mutableArray;
 
 @end
 
@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    UITableView *tableView = [UITableView.alloc initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
@@ -52,7 +52,7 @@
     
     // 2, 如果缓存池中没有可循环利用的 cell
     if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     NSLog(@"cell: %@", cell); // 验证全部刷新 or 局部刷新
     cell.textLabel.text = _mutableArray[indexPath.row];
@@ -137,7 +137,5 @@
 }
 
 @end
-
-
 
 

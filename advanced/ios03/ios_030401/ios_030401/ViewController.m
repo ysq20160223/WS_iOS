@@ -10,9 +10,8 @@
 
 #import "Person.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate> {
-    NSMutableArray *_personArray;
-}
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) NSMutableArray *personArray;
 @end
 
 
@@ -34,7 +33,7 @@
     _personArray = [NSMutableArray array];
     
     for(int i = 0; i < 21; i++) {
-        Person *person = [[Person alloc] init];
+        Person *person = [Person.alloc init];
         person.name = [NSString stringWithFormat:@"Person - %d", i];
         person.phone = [NSString stringWithFormat:@"%.3d", i];
         [_personArray addObject:person];
@@ -97,8 +96,5 @@
 }
 
 @end
-
-
-
 
 

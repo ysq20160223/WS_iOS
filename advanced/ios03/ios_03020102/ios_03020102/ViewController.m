@@ -8,11 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UITableViewDataSource>{
-    NSArray *_provinceArray;
-    NSArray *_footerArray;
-    NSArray *_cityArray;
-}
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) NSArray *provinceArray;
+@property (strong, nonatomic) NSArray *cityArray;
+@property (strong, nonatomic) NSArray *footerArray;
 
 @end
 
@@ -24,10 +24,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [UITableView.alloc initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     [self.view addSubview:tableView];
     
     tableView.dataSource = self;
+    tableView.delegate = self;
     
     _provinceArray = @[@"福建", @"广东"];
     _footerArray = @[@"fj", @"gd"];
@@ -48,11 +49,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     cell.textLabel.text = _cityArray[indexPath.section][indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@", indexPath);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%@", indexPath);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -64,6 +74,5 @@
 }
 
 @end
-
 
 

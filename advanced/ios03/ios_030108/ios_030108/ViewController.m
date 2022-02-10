@@ -10,9 +10,10 @@
 
 #define kCount 8
 
-@interface ViewController () <UICollectionViewDelegate> {
-    UIPageControl *_pageControl;
-}
+@interface ViewController () <UICollectionViewDelegate>
+
+@property (strong, nonatomic) UIPageControl *pageControl;
+
 @end
 
 
@@ -43,17 +44,16 @@
     
     
     // 添加 PageControl
-    UIPageControl *pageControl = [[UIPageControl alloc] init];
-    pageControl.backgroundColor = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:0.3];
-    pageControl.center = CGPointMake(screenW * 0.5, screenH - 100);
-    pageControl.bounds = CGRectMake(0, 0, 300, 100);
-    pageControl.numberOfPages = kCount;
-    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor magentaColor];
-    pageControl.enabled = NO; // 默认为 YES
-    _pageControl = pageControl;
+    _pageControl = [[UIPageControl alloc] init];
+    _pageControl.backgroundColor = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:0.3];
+    _pageControl.center = CGPointMake(screenW * 0.5, screenH - 100);
+    _pageControl.bounds = CGRectMake(0, 0, 300, 100);
+    _pageControl.numberOfPages = kCount;
+    _pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    _pageControl.currentPageIndicatorTintColor = [UIColor magentaColor];
+    _pageControl.enabled = NO; // 默认为 YES
     
-    [self.view addSubview:pageControl];
+    [self.view addSubview:_pageControl];
 }
 
 
@@ -67,7 +67,5 @@
 #pragma mark UICollectionViewDelegate end
 
 @end
-
-
 
 

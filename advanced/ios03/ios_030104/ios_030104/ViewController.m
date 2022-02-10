@@ -9,8 +9,10 @@
 #import "ViewController.h"
 
 @interface ViewController () <UICollectionViewDelegate> {
-    UIImageView *_imageView;
+//    UIImageView *_imageView;
 }
+
+@property (strong, nonatomic) UIImageView *imageView;
 
 @end
 
@@ -22,20 +24,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    UIScrollView *scrollView = [UIScrollView.alloc init];
     scrollView.frame = self.view.bounds;
-    scrollView.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:scrollView];
-    
-    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"yy_002.jpg"]];
-    [scrollView addSubview:_imageView];
-    scrollView.contentSize = _imageView.image.size;
-    
-    // 设置代理
-    scrollView.delegate = self;
+    scrollView.backgroundColor = UIColor.lightGrayColor;
+    scrollView.delegate = self; // 设置代理
     
     scrollView.maximumZoomScale = 2;
     scrollView.minimumZoomScale = 0.2;
+    
+    [self.view addSubview:scrollView];
+    
+    _imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"yy_002.jpg"]];
+    [scrollView addSubview:_imageView];
+    scrollView.contentSize = _imageView.image.size;
+    
 }
 
 
@@ -49,6 +51,5 @@
 
 
 @end
-
 
 

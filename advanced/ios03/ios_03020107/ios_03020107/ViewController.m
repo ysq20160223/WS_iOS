@@ -8,10 +8,8 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UITableViewDataSource> {
-    NSArray *_aresArrray;
-}
-
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) NSArray *aresArray;
 @end
 
 
@@ -22,12 +20,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [UITableView.alloc initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     tableView.dataSource = self;
+    tableView.delegate = self;
     [self.view addSubview:tableView];
     
     
-    _aresArrray = @[
+    _aresArray = @[
                     @{
                         @"header" : @"福建",
                         @"footer" : @"fj",
@@ -46,33 +45,37 @@
 #pragma mark -- UITableViewDataSource start
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _aresArrray.count;
+    return _aresArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_aresArrray[section][@"cities"] count];
+    return [_aresArray[section][@"cities"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
-    cell.textLabel.text = _aresArrray[indexPath.section][@"cities"][indexPath.row];
+    cell.textLabel.text = _aresArray[indexPath.section][@"cities"][indexPath.row];
     
     return cell;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return _aresArrray[section][@"header"];
+    return _aresArray[section][@"header"];
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return _aresArrray[section][@"footer"];
+    return _aresArray[section][@"footer"];
 }
 
 #pragma mark -- UITableViewDataSource end
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end
 

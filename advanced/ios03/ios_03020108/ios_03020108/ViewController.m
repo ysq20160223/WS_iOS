@@ -10,9 +10,8 @@
 
 #import "Province.h"
 
-@interface ViewController () <UITableViewDataSource> {
-    NSArray *_provinces;
-}
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) NSArray *provinces;
 @end
 
 
@@ -23,16 +22,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [UITableView.alloc initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     tableView.dataSource = self;
+    tableView.delegate = self;
     [self.view addSubview:tableView];
     
-    Province *fj = [[Province alloc] init];
+    Province *fj = [Province.alloc init];
     fj.header = @"福建";
     fj.footer = @"fj";
     fj.cities = @[@"福州", @"厦门", @"莆田", @"泉州", @"漳州", @"宁德", @"三明", @"龙岩", @"南平"];
     
-    Province *gd = [[Province alloc] init];
+    Province *gd = [Province.alloc init];
     gd.header = @"广东";
     gd.footer = @"gd";
     gd.cities = @[@"广州", @"深圳", @"东莞", @"惠州", @"佛山", @"中山", @"潮汕"];
@@ -45,7 +45,7 @@
 
 #pragma mark - UITableViewDataSource start
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
 //    Province *p = _provinces[indexPath.section];
 //    cell.textLabel.text = p.cities[indexPath.row];
@@ -88,9 +88,11 @@
 #pragma mark UITableViewDataSource end
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 @end
-
-
-
 
 

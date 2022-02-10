@@ -22,3 +22,5 @@
 + (id)shopWithName:(NSString *)name icon:(NSString *)icon desc:(NSString *)desc;
 
 @end
+
+

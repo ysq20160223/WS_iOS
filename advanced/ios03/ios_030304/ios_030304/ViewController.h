@@ -10,8 +10,6 @@
 
 @interface ViewController : UIViewController
 
-
-// ------------
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *trash;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -23,8 +21,5 @@
 
 
 @end
-
-
-
 
 
