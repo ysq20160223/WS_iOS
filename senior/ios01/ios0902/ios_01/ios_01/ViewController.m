@@ -23,23 +23,18 @@
     
     // 获取当前的版本号
     // 1 - 第一种方法
-    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"Info.plist" ofType:nil];
+    NSString *fullPath = [NSBundle.mainBundle pathForResource:@"Info.plist" ofType:nil];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:fullPath];
     
-//    NSLog(@"dict = %@", dict);
+//    NSLog(@"dict: %@", dict);
     NSLog(@"CFBundleShortVersionString: %@", dict[@"CFBundleShortVersionString"]);
     
     // 2 - 第二种方法
-    NSString *version = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+    NSString *version = NSBundle.mainBundle.infoDictionary[@"CFBundleShortVersionString"];
     NSLog(@"version: %@", version);
-    
-    
-    
 }
 
 
 @end
-
-
 
 

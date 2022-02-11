@@ -26,7 +26,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    NSLog(@"");
+    NSLog();
 }
 
 
@@ -37,15 +37,14 @@
 //    [super loadView];
     
 //    // 方法2, 调用自定义View
-    BgView *view = [[BgView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    BgView *view = [BgView.alloc initWithFrame:UIScreen.mainScreen.bounds];
     view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:.5];
     self.view = view;
     
-    NSLog(@"");
+    NSLog();
 }
 
 
-
-
-
 @end
+
+

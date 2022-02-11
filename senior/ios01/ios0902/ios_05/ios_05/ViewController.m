@@ -30,7 +30,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _app = [UIApplication sharedApplication];
-    
 }
 
 // 隐藏状态栏
@@ -41,13 +40,13 @@
 
 // 应用程序图标的提示数字
 - (IBAction)badge:(UIButton *)sender {
-    NSLog(@"");
+    NSLog();
     _app.applicationIconBadgeNumber = 1;
     
 }
 
 - (IBAction)notification:(UIButton *)sender {
-    NSLog(@"");
+    NSLog();
     UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
     [_app registerUserNotificationSettings:setting];
 }
@@ -74,7 +73,7 @@
 
 // 04, 打开网页
 - (IBAction)openUrl:(UIButton *)sender {
-    NSURL *url = [NSURL URLWithString:@"http:www.baidu.com"];
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
     //    NSURL *url = [NSURL URLWithString:@"tel://10086"];
     
     [_app openURL:url];

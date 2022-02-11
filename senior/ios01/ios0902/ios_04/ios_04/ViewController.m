@@ -27,16 +27,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    UIApplication *application = [[UIApplication alloc] init]; // 单例会报错
+//    UIApplication *application = [UIApplication.alloc init]; // 单例会报错
     NSLog(@"application: %@", [UIApplication sharedApplication]);
     
-//    Person *person = [[Person alloc] init];
+//    Person *person = [Person.alloc init];
     Person *person = [Person sharePerson];
     NSLog(@"person: %@", person);
 }
 
 @end
-
-
 
 

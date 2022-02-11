@@ -28,16 +28,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     // 2 通过 xib 创建控制器
-    UIViewController *xibRootVc = [[UIViewController alloc] initWithNibName:@"VC" bundle:nil];
+    UIViewController *xibRootVc = [UIViewController.alloc initWithNibName:@"VC" bundle:nil];
 //    xibRootVc.view.backgroundColor = [UIColor cyanColor];
     self.window.rootViewController = xibRootVc;
     
     // 3
-    [self.window makeKeyAndVisible];
+    self.window.hidden = NO;
+//    [self.window makeKeyAndVisible];
     
     return YES;
 }

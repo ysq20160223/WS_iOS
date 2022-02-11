@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate () {
-    
-}
+@interface AppDelegate ()
 
 @end
 
@@ -30,12 +28,11 @@
 
 - (void)createRect {
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, 300, 660)];
-    self.window.backgroundColor = [UIColor blueColor];
+    self.window = [UIWindow.alloc initWithFrame:CGRectMake(0, 0, 300, 660)];
     
     // 2
-    UIViewController *rootVC = [[UIViewController alloc] init];
-    rootVC.view.backgroundColor = [UIColor magentaColor];
+    UIViewController *rootVC = [UIViewController.alloc init];
+    rootVC.view.backgroundColor = UIColor.magentaColor;
     self.window.rootViewController = rootVC;
     
     // 3
@@ -45,12 +42,11 @@
 
 - (void)createScreen {
     // 01, 创建 UIWindow 对象
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor magentaColor];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     // 02, 创建 UIWindow 的 ViewController, 并赋值
-    UIViewController *rootVC = [[UIViewController alloc] init];
-    rootVC.view.backgroundColor = [UIColor cyanColor];
+    UIViewController *rootVC = [UIViewController.alloc init];
+    rootVC.view.backgroundColor = UIColor.cyanColor;
     
     // Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Application windows are expected to have a root view controller at the end of application launch
     self.window.rootViewController = rootVC; // 一旦设置窗口的根控制器, 就会将根控制器的 view 添加到窗口 (带有旋转功能)
@@ -76,9 +72,9 @@
     
     
     // 090209 : 如果要弹出键盘, 必须要把文本框添加到某个控件
-    UITextField *field = [[UITextField alloc] init];
-    field.frame = CGRectMake(20, 300, 200, 300);
-    field.backgroundColor = [UIColor yellowColor];
+    UITextField *field = [UITextField.alloc init];
+    field.frame = CGRectMake(20, 300, 100, 100);
+    field.backgroundColor = UIColor.yellowColor;
 //    [field becomeFirstResponder];
     [self.window addSubview:field];
     
