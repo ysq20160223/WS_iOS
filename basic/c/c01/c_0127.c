@@ -13,43 +13,48 @@
 #include <stdio.h>
 
 // 利用第三方变量
-int fun_01()
-{
+int fun_01() {
     int a = 1;
     int b = 2;
     int temp;
-    
     printf("before a: %d; b: %i\n", a, b);
     
     temp = a;
     a = b;
     b = temp;
-    
-    printf("after a: %d; b: %i\n", a, b);
-    
+    printf("-> after a: %d; b: %i\n", a, b);
     return 0;
 }
 
 // 不利用第三方变量
-int fun_02()
-{
+int fun_02() {
     int a = 10, b = 20;
     printf("before a: %d; b: %i\n", a, b);
-    
     
     a = b - a;
     b = b - a;
     a = b + a;
-    printf("after a: %d; b: %i\n", a, b);
-
+    printf("--> after a: %d; b: %i\n", a, b);
     return 0;
 }
 
-int main()
-{
-    // fun_01();
+int fun_03() {
+    int a = 21, b = 1;
+    printf("before a: %d; b: %i\n", a, b);
     
-    fun_02();
+    a = b ^ a;
+    b = b ^ a;
+    a = b ^ a;
+    printf("---> after a: %d; b: %i\n", a, b);
+    return 0;
+}
+
+int main() {
+//    fun_01();
+    
+//    fun_02();
+    
+    fun_03();
     
     return 0;
 }

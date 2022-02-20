@@ -22,8 +22,7 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     printf("first c\n");
     return 0;
 }

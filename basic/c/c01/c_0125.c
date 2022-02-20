@@ -13,17 +13,16 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int score = 1;
     {
         int score = 2;
         {
             score = 3;
         }
-        printf("score = %d\n", score);
+        printf("score: %d\n", score);
     }
-    printf("---score = %d\n", score);
+    printf("-score: %d\n", score);
 }
 
 

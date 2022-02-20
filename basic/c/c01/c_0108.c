@@ -17,14 +17,12 @@
 
 #include <stdio.h>
 
-int print()
-{
+int print() {
     printf("*******\n");
     return 0;
 }
 
-int main()
-{
+int main() {
     print();
     printf("** c **\n");
     print();
