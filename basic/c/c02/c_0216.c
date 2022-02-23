@@ -6,19 +6,10 @@
 //
 //
 
-/*
- 
-    01, 三目运算符
-    02,
- 
- */
-
 #include <stdio.h>
 
-int main()
-{
+int main() {
     int a = 1, b = 2;
-    
     int c = a > b ? a : b;
     
     printf("c: %d\n", c);

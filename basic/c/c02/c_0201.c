@@ -17,8 +17,7 @@
 #include <stdio.h>
 
 
-int fun_01()
-{
+int fun_01() {
     int a = -10 % 3;
     int b = -10 % -3;
     int c = 10 % 3;
@@ -28,19 +27,15 @@ int fun_01()
     return 0;
 }
 
-int fun_02()
-{
+int fun_02() {
     double d = 10 / 3;
     printf("d: %f\n", d);
     return 0;
 }
 
-int main()
-{
+int main() {
     fun_01();
-    
     fun_02();
-    
     return 0;
 }
 

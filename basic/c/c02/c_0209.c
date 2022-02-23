@@ -17,13 +17,11 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
 
     int i = 5 != 4 + 2 * 7 > 3 == 10;
     
     printf("i: %d\n", i);
-    
     printf("%d; %d\n", !1, ~0b011);
     
     return 0;
