@@ -22,12 +22,10 @@
 #include <stdio.h>
 
 // 常规累加
-int fun_01(int i)
-{
+int fun_01(int i) {
     int sum = 0;
     
-    while(i)
-    {
+    while(i) {
         sum += i--;
     }
     
@@ -37,8 +35,7 @@ int fun_01(int i)
 }
 
 // 计算 b 的 n 次方
-void fun_02(int b, int n)
-{
+void fun_02(int b, int n) {
     int result = 1;
     for (int i = 0; i < n; i++) {
         result *= b;
@@ -47,20 +44,16 @@ void fun_02(int b, int n)
 }
 
 // 递归计算 b 的 n 次方
-int fun_03(int b, int n)
-{
-    if (n == 0)
-    {
+int fun_03(int b, int n) {
+    if (n == 0) {
         return 1;
     }
     return fun_03(b, n - 1) * b;
 }
 
 // 递归累加
-int fun_04(int n)
-{
-    if(n == 1)
-    {
+int fun_04(int n) {
+    if(n == 1) {
         return n;
     }
     return fun_04(n - 1) + n;
@@ -68,27 +61,23 @@ int fun_04(int n)
 
 
 // 递归累乘
-int fun_05(int n)
-{
-    if(n == 1)
-    {
+int fun_05(int n) {
+    if(n == 1) {
         return n;
     }
-    
     return fun_05(n - 1) * n;
 }
 
-int main()
-{
+int main() {
     // fun_01(10);
     
     fun_02(2, 5);
     
-    printf("fun_03, result: %d\n", fun_03(2, 3));
+    printf("fun_03; result: %d\n", fun_03(2, 3));
     
-    printf("fun_04, result: %d\n", fun_04(10000));
+    printf("fun_04; result: %d\n", fun_04(10000));
     
-    printf("fun_05, result: %d\n", fun_05(5));
+    printf("fun_05; result: %d\n", fun_05(5));
     
     return 0;
 }

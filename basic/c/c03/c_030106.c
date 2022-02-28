@@ -9,32 +9,22 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
     printf("please input a number: ");
     
     int score;
     
     scanf("%d", &score);
     
-    if (score >= 90)
-    {
+    if (score >= 90) {
         printf("score %d level is: A\n", score);
-    }
-    else if (score >= 80)
-    {
+    } else if (score >= 80) {
         printf("score %d level is: B\n", score);
-    }
-    else if (score >= 70)
-    {
+    } else if (score >= 70) {
         printf("score %d level is: C\n", score);
-    }
-    else if (score >= 60)
-    {
+    } else if (score >= 60) {
         printf("score %d level is: D\n", score);
-    }
-    else
-    {
+    } else {
         printf("score %d level is: E\n", score);
     }
     

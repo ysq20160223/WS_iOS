@@ -14,21 +14,18 @@
 
 #include <stdio.h>
 
-int fun_01()
-{
+int fun_01() {
     char c = '+';
     int a = 1, b = 2;
     
     switch (c) {
-        case '+':
-        {
+        case '+': {
             int sum = a + b;
             printf("sum = %d\n", sum);
             break;
         }
             
-        case '-':
-        {
+        case '-': {
             int minus = a - b;
             printf("minus = %d\n", minus);
             break;
@@ -42,11 +39,9 @@ int fun_01()
     return 0;
 }
 
-int main()
-{
-    
+
+int main() {
     fun_01();
-    
     return 0;
 }
 

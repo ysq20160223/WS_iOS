@@ -18,39 +18,29 @@
 
 #include <stdio.h>
 
-int fun_01()
-{
+int fun_01() {
     int i = 1;
     
     // 把常量写在左边可以预防错误
-    if(0 == i)
-    {
+    if(0 == i) {
         printf("i == 0\n");
-    }
-    else
-    {
+    } else {
         printf("i != 0\n");
     }
     
     return 0;
 }
 
-int fun_02()
-{
-    /* */
+int fun_02() {
 //    if(10 > 0)
 //        int a = 1; // 作用域不明确
     
     return 0;
 }
 
-int main()
-{
-
+int main() {
     fun_01();
-    
 //     fun_02();
-    
     return 0;
 }
 
