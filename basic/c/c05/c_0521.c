@@ -20,8 +20,7 @@
 
 #include <stdio.h>
 
-void fun_01()
-{
+void fun_01() {
     char c1 = '0';
     char c2 = 'A';
     char c3 = 'a';
@@ -38,18 +37,15 @@ void fun_01()
 }
 
 // 小写转大写
-char fun_02(char c)
-{
-    if (c >= 'a' && c <= 'z')
-    {
+char fun_02(char c) {
+    if (c >= 'a' && c <= 'z') {
         return c - ('a' - 'A');
     }
     return c;
 }
 
 
-int main()
-{
+int main() {
     fun_01();
     
     char c = 'a';

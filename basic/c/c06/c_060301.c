@@ -18,11 +18,9 @@
 
 #include <stdio.h>
 
-
-
 // 二级指针
-void fun_02()
-{
+int main() {
+    
     int i = 1;
     printf("i: %d\n", i);
     
@@ -33,13 +31,7 @@ void fun_02()
     int **pp = &p;
     **pp = 3;
     printf("i: %d\n", i);
-}
-
-
-
-int main()
-{
-    fun_02();
+    
     return 0;
 }
 

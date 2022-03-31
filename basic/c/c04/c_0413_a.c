@@ -15,13 +15,8 @@
 #include "c_0413_b.h"
 
 
-int main()
-{
-    int i = average(6, 12);
-    
-    printf("average = %d\n", i);
-    
-    
+int main() {
+    printf("average: %d\n", average(6, 12));
     return 0;
 }
 

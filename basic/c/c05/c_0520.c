@@ -22,11 +22,10 @@ void printBinary(int n) {
         int temp = n >> i & 1;
        
         printf("%d", temp);
-        if (0 == i % 4) {
-            printf("%c", ' ');
-        }
         if (0 == i % 8) {
-            printf("%s", "  ");
+            printf("%s", "\t");
+        } else if (0 == i % 4) {
+            printf("%c", ' ');
         }
     }
     printf("\n");

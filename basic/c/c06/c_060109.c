@@ -64,15 +64,14 @@ int main() {
     
     int intArray[] = {1, 21, 3, 9, 30};
     printf("max: %d\n", getMax(intArray, sizeof(intArray) / sizeof(int)));
-    
-    
     printf("==================\n");
+    
     
     char charArray[] = {'A', 'B', 'C'}; // 65 66 67
     printf("sum: %d\n", getSum(charArray));
-    
-    
     printf("==================\n");
+    
+    
     reverse(charArray);
     printArray(charArray);
 

@@ -15,12 +15,8 @@
 
 #include <stdio.h>
 
-int main()
-{
-    int i = average(2, 8);
-    
-    printf("average = %d\n", i);
-    
+int main() {
+    printf("average: %d\n", average(2, 8));
     return 0;
 }
 

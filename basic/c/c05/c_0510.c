@@ -21,8 +21,8 @@
 
 #include <stdio.h>
 
-void fun_01()
-{
+
+int main() {
     char c = 65;
     
     short s = 123;
@@ -37,26 +37,18 @@ void fun_01()
     printf("long l: %li\n", l);
     
     
+    printf("signed char: %lu\n", sizeof(signed char));
+    printf("unsigned char: %lu\n", sizeof(unsigned char));
     
-    printf("sizeof(signed char): %lu\n", sizeof(signed char));
-    printf("sizeof(unsigned char): %lu\n", sizeof(unsigned char));
+    printf("short: %lu\n", sizeof(short));
+    printf("unsigned short: %lu\n", sizeof(unsigned short));
     
-    printf("sizeof(short): %lu\n", sizeof(short));
-    printf("sizeof(unsigned short): %lu\n", sizeof(unsigned short));
+    printf("int: %lu\n", sizeof(int));
+    printf("unsigned int: %lu\n", sizeof(unsigned int));
     
-    printf("sizeof(int): %lu\n", sizeof(int));
-    printf("sizeof(long int): %lu\n", sizeof(long int));
-    printf("sizeof(int): %lu\n", sizeof(int));
-    printf("sizeof(unsigned int): %lu\n", sizeof(unsigned int));
-    
-    printf("sizeof(long): %lu\n", sizeof(long));
-    printf("sizeof(long long): %lu\n", sizeof(long long));
-    printf("sizeof(unsigned long): %lu\n", sizeof(unsigned long));
-}
+    printf("long: %lu\n", sizeof(long));
+    printf("unsigned long: %lu\n", sizeof(unsigned long));
 
-int main()
-{
-    fun_01();
     
     return 0;
 }

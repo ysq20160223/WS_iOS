@@ -16,7 +16,6 @@ void printArray(int *array) {
 }
 
 int main() {
-    
     // 给数组部分赋值
     int array[5] = {[3] = 33, [sizeof(array) / sizeof(int) - 1] = 44};
     int count = sizeof(array) / sizeof(int);

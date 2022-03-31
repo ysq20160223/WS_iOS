@@ -23,8 +23,7 @@
 
 #include <stdio.h>
 
-void fun_01()
-{
+void fun_01() {
     int count = 3;
     int ages[count]; // right 没有进行初始化
     
@@ -40,8 +39,7 @@ void fun_01()
     printf("&ages: %p\n", &ages);
 }
 
-void fun_02()
-{
+void fun_02() {
     int ages[] = {99, 88, 77};
     int count = sizeof(ages) / sizeof(int);
     for (int i = 0; i < count; i++) {
@@ -50,8 +48,7 @@ void fun_02()
     printf("&ages: %p\n", &ages);
 }
 
-void fun_03()
-{
+void fun_03() {
     char chars[] = {'a', 'B', 'c'};
     int count = sizeof(chars) / sizeof(char);
     
@@ -61,8 +58,7 @@ void fun_03()
     printf("&chars: %p\n", &chars);
 }
 
-int main()
-{
+int main() {
     fun_01();
     printf("==========================\n");
     

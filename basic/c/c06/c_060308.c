@@ -14,8 +14,7 @@
 #include <stdio.h>
 
 // 指针变量占用的字节空间
-void fun_01()
-{
+void fun_01() {
     char c;
     int i;
     long l;
@@ -30,8 +29,7 @@ void fun_01()
 }
 
 //
-void fun_02()
-{
+void fun_02() {
     int i = 2;      // 0000 0000 // 0x7ffeea471b1f
                     // 0000 0000 // 0x7ffeea471b1e
                     // 0000 0000 // 0x7ffeea471b1d
@@ -58,8 +56,7 @@ void fun_02()
     printf("*cp: %d\n", *cp);
 }
 
-void fun_03()
-{
+void fun_03() {
     int j = 0;
     printf("&j: %p\n", &j);
     
@@ -72,8 +69,8 @@ void fun_03()
     }
 }
 
-int main()
-{
+
+int main() {
 //    fun_01();
 //    fun_02();
     fun_03();

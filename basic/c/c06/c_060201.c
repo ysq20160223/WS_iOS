@@ -20,40 +20,41 @@
 #include <stdio.h>
 #include <string.h>
 
-void fun_01()
-{
+void fun_01() {
     char c01[3] = {'i', 't'}; // 是一个字符串, 字符串以 0 结尾
     char c02[] = {'i', 't'}; // 是一个字符数组
 }
 
-// ---------
-void fun_02()
-{
+
+// 060203
+void fun_02() {
     char it[] = "it";
     char ok[] = {'o', 'k'};
     printf("fun_02: %s\n", ok);
 }
 
-void fun_03()
-{
+void fun_03() {
     char it[] = "it";
     char ok[3] = {'o', 'k'};
     printf("fun_03: %s\n", ok);
 }
-// ---------
 
-void fun_04()
-{
+
+// 060204
+void fun_04() {
     printf("strlen: %ld\n", strlen("呵呵jj\0yy"));
 }
 
-int main()
-{
+int main() {
+    
     fun_01();
+    printf("--------");
     
     fun_02();
+    printf("++++++++");
     
     fun_03();
+    printf("========");
     
     fun_04();
     
