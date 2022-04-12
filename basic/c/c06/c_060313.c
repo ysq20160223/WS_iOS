@@ -14,30 +14,26 @@
 #include <stdio.h>
 
 // 返回指针的函数
-char * fun_01()
-{
+char * fun_01() {
     return "jim";
 }
 
 // 指向函数的指针
-void fun_02()
-{
+void fun_02() {
     printf("fun_02\n");
 }
 
 // 利用指向函数的指针进行求和
-int sumAB(int a, int b)
-{
+int sumAB(int a, int b) {
     return a + b;
 }
 
 
 //
-typedef int (^SumBlock)(int, int);
+typedef int (^Block)(int, int);
 
 
-int main()
-{
+int main() {
     char *name = fun_01();
     printf("name: %s\n", name);
     printf("-----------------\n");
@@ -63,10 +59,10 @@ int main()
     printf("sum02: %d\n", sum02);
     
     
-    printf("-----------------\n");
+    printf("~~~~~~~~~~~~~~~~~\n");
     // 扩展 定义block
     // void (^block)()
-    SumBlock sumBlock = ^ (int a, int b) {
+    Block sumBlock = ^ (int a, int b) {
         return a + b;
     };
     printf("sumBlock: %d\n", sumBlock(1, 2));

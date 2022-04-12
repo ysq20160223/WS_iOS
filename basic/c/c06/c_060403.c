@@ -22,18 +22,16 @@
 /*
     定义结构体第一种方式
  */
-struct Person
-{
-    int id;
-    int age;
+struct Person {
+    long _id;
+    int height;
     char *name;
 };
 
-void fun_01()
-{
-    struct Person p = {.id = 21, .name = "yy"};
+void fun_01() {
+    struct Person p = {._id = 21, .name = "yy", .height = 170};
     int count = sizeof(p); // 补齐算法: 最大字节的倍数
-    printf("count: %d; &id: %p; &age: %p; &name: %p\n", count, &p.id, &p.age, &p.name);
+    printf("count: %d; &_id: %p; &height: %p; &name: %p\n", count, &p._id, &p.height, &p.name);
 }
 
 
@@ -43,9 +41,8 @@ void fun_01()
         01, 定义结构体类型
         02, 利用新定义好的类型来定义结构体变量
  */
-struct Student
-{
-    int age;
+struct Student {
+    long _id;
     double height;
     char *name;
 } student;
@@ -55,49 +52,45 @@ struct Student
     定义结构体的第三种方式 - 匿名方式
         不能重用
  */
-struct
-{
+struct {
     int age;
 } human;
 
 
 // 060406
-void fun_02()
-{
-    struct Person persons[] =
-    {
+void fun_02() {
+    struct Person persons[] = {
         {1, 11, "jim"},
         {2, 22, "jake"},
         {3, 33, "rose"},
     };
     
 //     persons[0] = {4, 44, "mike"}; // error: 只能在结构体定义的时候进行这种初始化
-    persons[0].id = 111; // 只能用这种方式进行修改
+    persons[0]._id = 111; // 只能用这种方式进行修改
     persons[0].name = "mm";
     
     for (int i = 0; i < 3; i++) {
-        printf("person[%d] = {id: %d, name: %s}\n", i, persons[i].id, persons[i].name);
+        printf("person[%d] = {_id: %ld, name: %s}\n", i, persons[i]._id, persons[i].name);
     }
 }
 
 
 //
 typedef struct {
-    int id;
+    int _id;
     float height;
 } DefStruct;
 
 
-int main()
-{
+int main() {
     fun_01();
     printf("---------------\n");
     
     fun_02();
     printf("===============\n");
     
-    DefStruct defStruct = {.id = 1, .height = 1.62};
-    printf("id: %d; height: %.4f\n", defStruct.id, defStruct.height);
+    DefStruct defStruct = {._id = 1, .height = 1.62};
+    printf("_id: %d; height: %.4f\n", defStruct._id, defStruct.height);
     
     return 0;
 }

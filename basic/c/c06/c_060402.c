@@ -16,36 +16,34 @@
 
 #include <stdio.h>
 
-struct Person
-{
-    int age;
+struct Person {
+    int _id;
     double height;
     char *name;
 };
 
 
 void fun01() {
-    struct Person p1 = {.name = "j", .height = 1.0, .age = 1};
-    struct Person p2 = {21, 2.1, "y"};
+    struct Person p1 = {.name = "j", .height = 162.0, ._id = 1};
+    struct Person p2 = {21, 170.0, "y"};
     
-    printf("age: %d; height: %f; name: %s\n", p1.age, p1.height, p1.name);
-    printf("age: %d; height: %f; name: %s\n", p2.age, p2.height, p2.name);
+    printf("_id: %d; height: %f; name: %s\n", p1._id, p1.height, p1.name);
+    printf("_id: %d; height: %f; name: %s\n", p2._id, p2.height, p2.name);
 }
 
 
 // 结构体赋值等于为各个属性赋值
 void fun02() {
-    struct Person p1 = {1, 1.62, "jj"};
-    struct Person p2 = {21, 1.7, "yy"};
+    struct Person p1 = {1, 162, "jj"};
+    struct Person p2 = {21, 170, "yy"};
     p2 = p1;
-    p2.age = 9;
+    p2.height = 161;
     
-    printf("age: %d; height: %f; name: %s\n", p1.age, p1.height, p1.name);
-    printf("age: %d; height: %f; name: %s\n", p2.age, p2.height, p2.name);
+    printf("_id: %d; height: %f; name: %s\n", p1._id, p1.height, p1.name);
+    printf("_id: %d; height: %f; name: %s\n", p2._id, p2.height, p2.name);
 }
 
-int main()
-{
+int main() {
     fun01();
     printf("-------------\n");
     

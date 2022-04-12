@@ -24,11 +24,11 @@ int main() {
     int i = 1;
     printf("i: %d\n", i);
     
-    int *p = &i;
+    int *p = &i; // (int *)p
     *p = 2;
     printf("i: %d\n", i);
     
-    int **pp = &p;
+    int **pp = &p; // ((int *)*)pp
     **pp = 3;
     printf("i: %d\n", i);
     

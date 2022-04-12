@@ -20,24 +20,23 @@
 
 #include <stdio.h>
 
-int main()
-{
-    int ages[] = {9, 21, 30, 1};
-    int *p = ages; // 等价于 int *p = &ages[0]
-    int count = sizeof(ages) / sizeof(int);
+int main() {
+    long ages[] = {9, 21, 30, 1};
+    long *p = ages; // 等价于 int *p = &ages[0]
+    int count = sizeof(ages) / sizeof(long);
     
     for (int i = 0; i < count; i++) {
-        printf("ages[%d]: %d\n", i, *(p + i)); // 3, *指针变量名
+        printf("ages[%d]: 0x%lx\t%p\n", i, *(p + i), p + i); // 3, *指针变量名
     }
     printf("---------------------------\n");
     
     for (int i = 0; i < count; i++) {
-        printf("ages[%d]: %d\n", i, p[i]); // 2, 指针变量名[下标]
+        printf("ages[%d]: %ld\n", i, p[i]); // 2, 指针变量名[下标]
     }
-    printf("---------------------------\n");
+    printf("===========================\n");
     
     for (int i = 0; i < count; i++) {
-        printf("ages[%d]: %d\n", i, ages[i]); // 1, 数组名[下标]
+        printf("ages[%d]: %ld\n", i, ages[i]); // 1, 数组名[下标]
     }
     
     return 0;
