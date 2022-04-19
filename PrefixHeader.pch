@@ -53,7 +53,8 @@
 
 #define NSLog(FORMAT, ...) nil
 
-#endif /* DEBUG */
+#endif /** #ifdef DEBUG */
+
 
 
 #define XLog NSLog(@"");
@@ -77,10 +78,9 @@
 #define XRandomColorAlpha(a) XColorAlpha(arc4random_uniform(255), arc4random_uniform(255), arc4random_uniform(255), (a))
 #pragma mark - UIColor END
 
-#endif
-#pragma mark ------------------------ ifdef __OBJC__  END
 
+#endif /** #ifdef __OBJC__  */
 
-#endif /* __OBJC__ */
+#endif /** #ifndef _PrefixHeader_pch_ */
 
 

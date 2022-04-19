@@ -6,115 +6,107 @@
 //
 //
 
-/*
-    01, typedef
-    02,
- */
-
 #include <stdio.h>
 
 
 // -------
-typedef int MyInt;
-typedef MyInt MyMyInt;
+typedef int Int;
+typedef Int INT;
 
 
-// -------
+// ------- 0706
 typedef char * String;
 #define MyString char *
 
 
 // -------
-struct Student
-{
+//struct Stu {
+//    int age;
+//};
+//typedef struct Stu Student;
+
+typedef struct {
     int age;
-};
-typedef struct Student MyStudent;
+} Student;
 
 
 //
-typedef struct Person
-{
-    char * name;
-} MyPerson;
+//typedef struct Per {
+//    char * name;
+//} Person;
+
+typedef struct {
+    char *name;
+} Person;
 
 
 // 只能通过 Union 来访问结构体
-typedef struct
-{
+typedef struct {
     char * name;
-} MyUnion;
+} StructUnion;
 
 
 // ------- 枚举
-typedef enum Sex {Male, Female, Unknown} MySex;
+//typedef enum Sex {Male, Female, Unknown} EnumSex;
+typedef enum {Male, Female, Unknown} EnumSex;
 
 
 // ------- 函数指针
-typedef int (*FuncPoint)(int, int);
+typedef int (*FuncP)(int, int);
 
 
-int sum(int a, int b)
-{
+int sum(int a, int b) {
     return a + b;
 }
 
-int minus(int a, int b)
-{
+int minus(int a, int b) {
     return a - b;
 }
 
 
 // ------- 结构体指针
-typedef struct Human
-{
+typedef struct Human {
     int age;
-} * MyHuman;
+} * StructHumanP;
 
 
 // -------
-void fun_01()
-{
-    MyInt i1 = 1;
-    printf("i1: %d\n", i1);
+void fun_01() {
+    Int i = 1;
+    printf("Int i: %d\n", i);
 }
 
 
-void fun_02()
-{
+void fun_02() {
     String s = "jim";
-    printf("s: %s\n", s);
+    printf("String s: %s\n", s);
 }
 
 
-void fun_03()
-{
-    MyStudent myStu = {1};
-    MyPerson myPer = {"root"};
-    printf("myStu.age: %d; myPer.name: %s\n", myStu.age, myPer.name);
+void fun_03() {
+    Student s = {1};
+    Person p = {"root"};
+    printf("s.age: %d; p.name: %s\n", s.age, p.name);
 }
 
 
-void fun_04()
-{
-    MyUnion myUnion = {"this is MyUnion name"};
-    MySex mySex = Unknown;
-    printf("myUnion.name: %s; mySex: %u\n", myUnion.name, mySex);
+void fun_04() {
+    StructUnion strucUnion = {"this is StructUnion name"};
+    EnumSex enumSex = Unknown;
+    printf("myUnion.name: %s; mySex: %u\n", strucUnion.name, enumSex);
 }
 
 
-void fun_05()
-{
-    FuncPoint p1 = sum;
-    FuncPoint p2 = minus;
+void fun_05() {
+    FuncP p1 = sum;
+    FuncP p2 = minus;
     printf("sum: %d; minus: %d\n", p1(1, 2), p2(2, 1));
 }
 
 
 // 0706
 // typedef 和 define 不一定可以互换
-void fun_06()
-{
+void fun_06() {
     String s1 = "first", s2 = "second"; // s1, s2 都是指针
     printf("sizeof(s1): %lu; sizeof(s2): %lu\n", sizeof s1, sizeof s2);
     
@@ -123,14 +115,24 @@ void fun_06()
     printf("sizeof(s3): %lu; sizeof(s4): %lu\n", sizeof s3, sizeof s4);
 }
 
-int main()
-{
-//    fun_01();
-//    fun_02();
-//    fun_03();
-//    fun_04();
-//    fun_05();
+int main() {
+    fun_01();
+    printf("--------------------------------- \n\n");
+    
+    fun_02();
+    printf("--------------------------------- \n\n");
+    
+    fun_03();
+    printf("--------------------------------- \n\n");
+    
+    fun_04();
+    printf("---------------------------------- \n\n");
+    
+    fun_05();
+    printf("--------------------------------- \n\n");
+    
     fun_06();
+    printf("--------------------------------- \n\n");
     return 0;
 }
 

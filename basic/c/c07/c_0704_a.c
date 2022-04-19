@@ -19,8 +19,7 @@
 
 #include "c_0704_b.h"
 
-int main()
-{
+int main() {
     printf("sum: %d\n", sum(1, 2));
     return 0;
 }

@@ -20,14 +20,15 @@
 
 #include <stdio.h>
 
+/// 0701
 #define COUNT 3
 
+/// 0702
 #define kSum(v1, v2) ((v1) + (v2))
 #define kSquares(a) ((a) * (a))
 
 
-void fun_01()
-{
+void fun_01() {
     int ages[COUNT] = {1, 21, 9};
     for (int i = 0; i < COUNT; i++) {
         printf("ages[%d]: %d\n", i, ages[i]);
@@ -35,25 +36,20 @@ void fun_01()
 }
 
 
-void fun_02()
-{
+void fun_02() {
     int a = 1, b = 2;
-    int sum = kSum(a, b) * kSum(a, b);
-    printf("sum: %d\n", sum);
+    printf("sum: %d\n", kSum(a, b) * kSum(a, b));
 }
 
 
-void fun_03() {
-    int squares = kSquares(3 + 1);
-    printf("squares: %d\n", squares);
-}
-
-
-int main()
-{
-//    fun_01();
-//    fun_02();
-    fun_03();
+int main() {
+    fun_01();
+    printf("--------------\n");
+    
+    fun_02();
+    printf("==============\n");
+    
+    printf("squares: %d\n", kSquares(3 + 1));
     return 0;
 }
 

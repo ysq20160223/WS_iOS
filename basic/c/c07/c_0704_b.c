@@ -8,8 +8,7 @@
 
 #include "c_0704_b.h"
 
-int sum(int a, int b)
-{
+int sum(int a, int b) {
     return a + b;
 }
 

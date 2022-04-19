@@ -30,19 +30,18 @@
 
 #include <stdio.h>
 
-enum Season
-{
+enum Season {
     spring = 5, // 一般不会改值
     summer,
     autumn,
     winter
 };
 
-int main()
-{
+
+int main() {
     enum Season s = winter;
     
-    printf("s = %u\n", s);
+    printf("s: %u\n", s);
 
     return 0;
 }

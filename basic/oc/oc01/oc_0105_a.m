@@ -15,10 +15,8 @@
 #import "oc_0105_b.h"
 
 
-int main()
-{
+int main() {
     fun_01();
-    
     return 0;
 }
 

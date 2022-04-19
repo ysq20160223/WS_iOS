@@ -45,7 +45,7 @@ struct Student {
     long _id;
     double height;
     char *name;
-} student;
+} student = {._id = 3, .height = 156, .name = "LL"};
 
 
 /*
@@ -70,7 +70,7 @@ void fun_02() {
     persons[0].name = "mm";
     
     for (int i = 0; i < 3; i++) {
-        printf("person[%d] = {_id: %ld, name: %s}\n", i, persons[i]._id, persons[i].name);
+        printf("person[%d] = {_id: %ld; name: %s}\n", i, persons[i]._id, persons[i].name);
     }
 }
 
@@ -79,7 +79,7 @@ void fun_02() {
 typedef struct {
     int _id;
     float height;
-} DefStruct;
+} TypeDefStruct;
 
 
 int main() {
@@ -89,8 +89,8 @@ int main() {
     fun_02();
     printf("===============\n");
     
-    DefStruct defStruct = {._id = 1, .height = 1.62};
-    printf("_id: %d; height: %.4f\n", defStruct._id, defStruct.height);
+    TypeDefStruct typeDefStruct = {._id = 1, .height = 162};
+    printf("_id: %d; height: %.4f\n", typeDefStruct._id, typeDefStruct.height);
     
     return 0;
 }

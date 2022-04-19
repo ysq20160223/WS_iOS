@@ -23,8 +23,7 @@
 #define DEBUG
 #import "../../../PrefixHeader.pch"
 
-int main()
-{
+int main() {
     
     return 0;
 }

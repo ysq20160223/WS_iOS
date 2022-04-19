@@ -19,45 +19,43 @@
 
 #include <stdio.h>
 
-struct Data
-{
+
+struct Data {
     int year;
     int month;
     int day;
 };
 
 
-struct Student
-{
-    int no;
+struct Student {
+    int _id;
     int age;
     
-    struct Data birthday; // 嵌套定义
+    struct Data date; // 嵌套定义
 };
 
 
-int main()
-{
+int main() {
     struct Student student = {1, 21};
-    struct Student *studentP = &student; // 指向结构体的指针
+    struct Student *sp = &student; // 指向结构体的指针
     
-    struct Data birthday = {1990, 1, 1};
-    studentP->birthday = birthday;
-    printf("no: %d, age: %d \n", student.no, student.age);
-    
-    
-    student.no = 11; // 通过结构体变量修改
-    printf("no: %d, age: %d \n", (*studentP).no, (*studentP).age);
+    struct Data date = {2018, 10, 5};
+    sp->date = date;
+    printf("_id: %d; age: %d \n", student._id, student.age);
     
     
-    (*studentP).no = 111;
-    studentP->age = 211; // 
-    studentP->birthday.year = 2019;
-    printf("no: %d, age: %d, birthday: %d-%d-%d \n", studentP->no, studentP->age,
-           studentP->birthday.year, studentP->birthday.month, studentP->birthday.day);
+    student._id = 10; // 通过结构体变量修改
+    student.age = 210;
+    printf("_id: %d; age: %d \n", (*sp)._id, (*sp).age);
     
-    struct Data *pData = &studentP->birthday;
-    printf("year: %d, month: %d, day: %d\n", pData->year, pData->month, pData->day);
+    
+    (*sp)._id = 100;
+    sp->age = 2100; //
+    sp->date.year = 2022;
+    printf("_id: %d; age: %d; date: %d-%d-%d \n", sp->_id, sp->age, sp->date.year, sp->date.month, sp->date.day);
+    
+    struct Data *dp = &sp->date;
+    printf("year: %d; month: %d; day: %d\n", dp->year, dp->month, dp->day);
     
     return 0;
 }

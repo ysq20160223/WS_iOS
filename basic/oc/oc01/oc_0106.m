@@ -14,9 +14,7 @@
 
 #import "oc_0106.h"
 
-int main()
-{
+int main() {
     fun_01();
-    
     return 0;
 }

@@ -49,15 +49,13 @@
 
 int a;
 
-void fun_03()
-{
+void fun_03() {
     static int a = 0;
     printf("a: %d\n", ++a);
 }
 
 
-int main()
-{
+int main() {
     a = 10;
     
     fun_01(); // 调用外部函数

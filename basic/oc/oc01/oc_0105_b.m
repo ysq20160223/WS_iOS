@@ -11,8 +11,7 @@
 #define DEBUG
 #import "../../../PrefixHeader.pch"
 
-void fun_01()
-{
+void fun_01() {
     NSLog(@"this is oc_0105_b.m");
 }
 

@@ -26,9 +26,9 @@
 #import "../../../PrefixHeader.pch"
 
 
-int main()
-{
+int main() {
     NSLog(@"oc program");
+    XLog
     return 0;
 }
 

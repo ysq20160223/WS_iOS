@@ -19,8 +19,7 @@
 #define DEBUG
 #import "../../../PrefixHeader.pch"
 
-int main()
-{
+int main() {
     BOOL b = YES;
     NSLog(@"b: %i", b);
     return 0;
