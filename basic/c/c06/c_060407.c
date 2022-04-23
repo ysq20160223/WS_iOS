@@ -41,7 +41,8 @@ int main() {
     
     struct Data date = {2018, 10, 5};
     sp->date = date;
-    printf("_id: %d; age: %d \n", student._id, student.age);
+    student.date.year = 2021;
+    printf("_id: %d; age: %d; year: %d\n", student._id, student.age, student.date.year);
     
     
     student._id = 10; // 通过结构体变量修改

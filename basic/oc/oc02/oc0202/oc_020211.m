@@ -15,7 +15,6 @@
 #define DEBUG
 #import "../../../../PrefixHeader.pch"
 
-// *********************************************
 @interface Dog : NSObject {
 @public
     double weight;
@@ -53,8 +52,8 @@ typedef struct {
 // *********************************************
 @interface Student : NSObject {
 @public
-    Sex sex; // 性别
-    Date birthdayDate;
+    Sex sex;
+    Date date;
     double weight;
     Dog *dog;
 }
@@ -76,7 +75,7 @@ typedef struct {
 }
 
 - (void)toString {
-    NSLog(@"Sex: %d; birthdayDate: %d-%d-%d; weight: %.2f", sex, birthdayDate.year, birthdayDate.month, birthdayDate.day, weight);
+    NSLog(@"Sex: %d; date: %d-%d-%d; weight: %.2f", sex, date.year, date.month, date.day, weight);
 }
 
 - (void)feedDog {
@@ -93,7 +92,7 @@ typedef struct {
 // *********************************************
 int main() {
     
-    Date date = {1990, 1, 1};
+    Date date = {2018, 10, 5};
     
     
     Dog *dog = [Dog new];
@@ -103,10 +102,10 @@ int main() {
     Student *student = [Student new];
     student->weight = 50; // 成员变量
     student->sex = SexMale;
-    student->birthdayDate = date; // 成员 结构体
+    student->date = date; // 成员 结构体
     student->dog = dog; // 成员 对象
     
-    Date *pDate = &(student->birthdayDate);
+    Date *pDate = &(student->date);
     pDate->year = 1991; // 指向结构体的指针用 -> 访问结构体定义的属性
     
     [student eat];

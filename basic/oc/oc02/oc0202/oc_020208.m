@@ -33,6 +33,16 @@
     int speed;
 }
 - (void)run;
+
+
+void a(); // 声明函数
+
+/// 不能在 interface 中定义函数 (调用时产生异常)
+/// warning: function definition inside an Objective-C container is deprecated [-Wfunction-def-in-objc-container]
+void b() {
+    XLog
+}
+
 @end
 
 
@@ -44,21 +54,36 @@ void fun_01(Car *car) {
     
     car = c; // 局部变量指针 car 指向内部定义的对象 c
     car->wheels = 3;
+    NSLog(@"c wheels: %d; speed: %d\n", c->wheels, c->speed);
+    NSLog(@"car wheels: %d; speed: %d\n", car->wheels, car->speed);
 }
 
 
 
-int main()
-{
+int main() {
     Car *car = [Car new];
     car->wheels = 4;
     car->speed = 100;
     
     fun_01(car);
+    NSLog(@"-------------------");
     
     [car run];
+    NSLog(@"===================");
+    
+    a();
+    NSLog(@"------------------");
+    
+//    b();
     
     return 0;
+}
+
+
+
+/// 实现函数
+void a() {
+    XLog
 }
 
 

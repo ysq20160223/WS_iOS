@@ -58,6 +58,7 @@ int main() {
     Car *car = [Car new];
     car->wheels = 4;
     car->speed = 120;
+//    car.wheels = 5; // error: property 'wheels' not found on object of type 'Car *'; did you mean to access instance variable 'wheels'
     
     NSLog(@"wheels: %d; speed: %d", car->wheels , car->speed);
     
