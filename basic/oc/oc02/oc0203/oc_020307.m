@@ -30,11 +30,11 @@
 
 @implementation Person
 + (void)classMethod {
-    NSLog(@"class method");
+    NSLog();
 }
 
 - (void)instanceMethod {
-    NSLog(@"instance method");
+    NSLog();
 }
 @end
 

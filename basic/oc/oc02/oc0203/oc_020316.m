@@ -44,7 +44,7 @@
 }
 
 - (void)run {
-    NSLog(@"Person run");
+    NSLog();
 }
 @end
 
@@ -59,7 +59,7 @@
 // 重写
 - (void)run {
     [super run];
-    NSLog(@"Student run");
+    NSLog();
 }
 @end
 
@@ -67,8 +67,9 @@
 
 // ********************************
 int main() {
-    Student *student = [Student new];
-    [student run];
+//    Student *student = [Student new];
+//    [student run];
+    [Student.new run];
     return 0;
 }
 

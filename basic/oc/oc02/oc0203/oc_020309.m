@@ -15,26 +15,26 @@
 
 
 @interface Calculator : NSObject
-+ (int)sumA:(int)a andB:(int)b;
-+ (int)averageA:(int)a andB:(int)b;
++ (int)sumWithA:(int)a andB:(int)b;
++ (int)averageWithA:(int)a andB:(int)b;
 @end
 
 
 @implementation Calculator
-+ (int)sumA:(int)a andB:(int)b {
++ (int)sumWithA:(int)a andB:(int)b {
     return a + b;
 }
 
-+ (int)averageA:(int)a andB:(int)b {
++ (int)averageWithA:(int)a andB:(int)b {
 //    return [Calculator sumA:a andB:b] / 2;
-    return [self sumA:a andB:b] / 2;
+    return [self sumWithA:a andB:b] / 2;
 }
 @end
 
 
 
 int main() {
-    NSLog(@"average: %d", [Calculator averageA:17 andB:21]);
+    NSLog(@"average: %d", [Calculator averageWithA:17 andB:21]);
     return 0;
 }
 

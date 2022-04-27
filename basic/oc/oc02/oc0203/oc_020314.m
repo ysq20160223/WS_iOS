@@ -26,17 +26,17 @@
 
 - (void)setWeight:(int)weight;
 - (int)weight;
-
 @end
 
 
 @implementation Animal : NSObject
-
 - (void)setAge:(int)age {
+    XLog
     _age = age;
 }
 
 - (int)age {
+    XLog
     return _age;
 }
 
@@ -47,7 +47,6 @@
 - (int)weight {
     return _weight;
 }
-
 @end
 
 
@@ -73,13 +72,14 @@
 
 
 // *************************************
-int main()
-{
-    Dog *dog = [Dog new];
-    [dog setAge:1];
+int main() {
+//    Dog *dog = Dog.new;
+    Dog *dog = Dog.new.init;
+//    [dog setAge:1];
+//    NSLog(@"dog age: %d", [dog age]);
     
-    NSLog(@"dog age: %d", [dog age]);
-    
+    dog.age = 1;
+    NSLog(@"dog age: %d", dog.age);
     return 0;
 }
 

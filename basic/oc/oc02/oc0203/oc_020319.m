@@ -25,7 +25,7 @@
 
 @implementation Animal
 - (void)eat {
-    NSLog(@"Animal eat");
+    NSLog();
 }
 @end
 
@@ -39,11 +39,11 @@
 
 @implementation Dog
 - (void)eat {
-    NSLog(@"Dog eat");
+    NSLog();
 }
 
 - (void)run {
-    NSLog(@"Dog run");
+    NSLog();
 }
 @end
 

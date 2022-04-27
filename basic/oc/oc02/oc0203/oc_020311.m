@@ -27,7 +27,7 @@
 - (void)setAge:(int)age;
 - (int)age;
 
-- (void)method;
+- (void)fun;
 
 @end
 
@@ -42,7 +42,7 @@
     return _age;
 }
 
-- (void)method {
+- (void)fun {
     [self test];
     [Person test];
     int _age = -1;
@@ -50,11 +50,11 @@
 }
 
 + (void)test {
-    NSLog(@"class Method");
+    NSLog();
 }
 
 - (void)test {
-    NSLog(@"obj Method");
+    NSLog();
 }
 
 @end
@@ -63,7 +63,7 @@
 //
 int main() {
     Person *person = [Person new];
-    [person method];
+    [person fun];
     return 0;
 }
 

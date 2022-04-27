@@ -80,7 +80,7 @@ int main() {
     [score setC:90];
     score.oc = 96; // 点语法 set
     
-    NSLog(@"total: %d, average: %d", [score total], score.average); // 点语法 get
+    NSLog(@"total: %d; average: %d", [score total], score.average); // 点语法 get
     return 0;
 }
 
