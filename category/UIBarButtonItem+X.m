@@ -13,7 +13,7 @@
 @implementation UIBarButtonItem (X)
 
 + (instancetype)xItemWithImage:(NSString *)image highlightImage:(NSString *)highlightImage tartget:(id)target action:(SEL)action {
-    UIButton *btn = [UIButton.alloc init];
+    UIButton *btn = UIButton.alloc.init;
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:highlightImage] forState:UIControlStateHighlighted];
     [btn sizeToFit];
@@ -37,7 +37,7 @@
 
 + (instancetype)xItemWithTitle:(NSString *)title andImage:(NSString *)image andHighlightImage:(NSString *)highlightImage andTartget:(id)target andAction:(SEL)action andHeight:(NSInteger)height andFontOfSize:(CGFloat)fontSize andIsBold:(BOOL)isBold andTextColor:(UIColor *)normalTextColor {
     
-    UIButton *btn = [UIButton.alloc init];
+    UIButton *btn = UIButton.alloc.init;
 //    btn.backgroundColor = UIColor.cyanColor;
     [btn setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:highlightImage] forState:UIControlStateHighlighted];

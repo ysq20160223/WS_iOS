@@ -27,7 +27,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         //
-        LrcLabel *lrcLabel = [LrcLabel.alloc init];
+        LrcLabel *lrcLabel = LrcLabel.alloc.init;
         [self.contentView addSubview:lrcLabel];
         self.lrcLabel = lrcLabel;
         

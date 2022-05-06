@@ -60,7 +60,7 @@
 
 #pragma mark -
 - (void)setupTableView {
-    UITableView *tableView = [UITableView.alloc init];
+    UITableView *tableView = UITableView.alloc.init;
     tableView.dataSource = self;
     tableView.delegate = self;
     

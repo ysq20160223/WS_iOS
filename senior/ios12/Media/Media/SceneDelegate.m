@@ -32,11 +32,11 @@
         self.window.frame = windowScene.coordinateSpace.bounds;
     } else {
         // Fallback on earlier versions
-        self.window = [UIWindow.alloc init];
+        self.window = UIWindow.alloc.init;
     }
     
     // 2
-    AudioVc *rootVc = [AudioVc.alloc init];
+    AudioVc *rootVc = AudioVc.alloc.init;
     self.window.rootViewController = rootVc;
     
     // 3

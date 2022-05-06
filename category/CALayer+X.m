@@ -17,7 +17,7 @@
 }
 
 - (void)resumeAnimate {
-    CFTimeInterval pausedTime = [self timeOffset];
+    CFTimeInterval pausedTime = self.timeOffset;
     self.speed = 1.0;
     self.timeOffset = 0.0;
     self.beginTime = 0.0;

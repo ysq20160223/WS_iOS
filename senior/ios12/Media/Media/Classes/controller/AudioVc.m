@@ -93,7 +93,7 @@
     //    NSLog(@"%@", [MusicTool musics]);
     
     // 1
-    AudioModel *audioModel = [MusicTool playingMusic];
+    AudioModel *audioModel = MusicTool.playingMusic;
     NSLog(@"%@", audioModel);
     
     // 2
@@ -135,7 +135,7 @@
 #pragma mark - 添加毛玻璃
 - (void)setupBlur {
     // 1
-    UIToolbar *toolBar = [UIToolbar.alloc init];
+    UIToolbar *toolBar = UIToolbar.alloc.init;
     toolBar.barStyle = UIBarStyleBlack;
     toolBar.translucent = YES;
     [self.ivAlbum addSubview:toolBar];

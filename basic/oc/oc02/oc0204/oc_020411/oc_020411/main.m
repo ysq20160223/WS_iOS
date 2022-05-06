@@ -14,11 +14,9 @@
 
 #import "Person.h"
 
-#import "../../../../../../PrefixHeader.pch"
-
 
 int main() {
-    Person *person = [Person new];
+    Person *person = Person.new;
     [person setName:@"yy"];
     [person setAge:21];
     NSLog(@"name: %@; age: %d", [person name], [person age]);

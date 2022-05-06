@@ -10,12 +10,9 @@
 
 #import "Student.h"
 
-
-#import "../../../../../../PrefixHeader.pch"
-
 int main() {
     
-    Student *student = [Student new];
+    Student *student = Student.new;
     [student setAge:21];
     
     NSLog(@"age: %d", [student age]);
