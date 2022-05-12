@@ -13,12 +13,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../../PrefixHeader.pch"
+//#import "../../../../../../PrefixHeader.pch"
 #import "Person.h"
 
 int main(int argc, const char * argv[]) {
     
-    Person *person = [Person new];
+    Person *person = Person.new;
     
 //    [person setAge:21];
 //    NSLog(@"age = %d", [person age]);
@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
     person.age = 17;
     [person setAge:21];
     
-    NSLog(@"person.age: %d; [person age]: %d", person.age, [person age]);
+    NSLog(@"person.age: %d; [person age]: %d; %@", person.age, [person age], person);
     
     return 0;
 }

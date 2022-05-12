@@ -11,7 +11,9 @@
 @implementation Person (j)
 
 - (void)method {
-    NSLog();
+    XLog
 }
 
 @end
+
+

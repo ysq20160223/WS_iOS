@@ -11,11 +11,13 @@
 @implementation Student (y)
 
 + (void)load {
-    NSLog();
+    XLog
 }
 
 + (void)initialize {
-    NSLog();
+    XLog
 }
 
 @end
+
+

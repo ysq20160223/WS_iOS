@@ -225,6 +225,7 @@
 		70DA30A71F14E9F3005A50EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = ../../../../../PrefixHeader.pch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -232,6 +233,7 @@
 		70DA30A81F14E9F3005A50EA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = ../../../../../PrefixHeader.pch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

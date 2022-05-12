@@ -8,18 +8,22 @@
 
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 @implementation Person
 
 - (void)setAge:(int)age {
-    NSLog(@"setAge");
+    XLog
     _age = age;
 }
 
 - (int)age {
-    NSLog(@"age");
+    XLog
     return _age;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@[age: %d]", [self class], self.age];
 }
 
 @end

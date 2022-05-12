@@ -23,14 +23,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../../PrefixHeader.pch"
+//#import "../../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Person+y.h"
 
 int main(int argc, const char * argv[]) {
     
-    Person *person = [[Person alloc] init];
+    Person *person = Person.alloc.init;
     
     [person method];
     

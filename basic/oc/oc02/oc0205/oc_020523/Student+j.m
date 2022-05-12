@@ -11,11 +11,13 @@
 @implementation Student (j)
 
 + (void)load {
-    NSLog();
+    XLog
 }
 
 + (void)initialize {
-    NSLog();
+    XLog
 }
 
 @end
+
+

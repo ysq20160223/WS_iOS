@@ -32,13 +32,13 @@
 #import "Work.h"
 #import "Employee.h"
 
-#import "../../../../../../PrefixHeader.pch"
+//#import "../../../../../../PrefixHeader.pch"
 
 
 // 复写 init 方法, 进行初始化
 void fun_01() {
     //    [Person new]; // 相当于 [[Person alloc] init]
-    Person *person = [Person.alloc init];
+    Person *person = Person.alloc.init;
     //    person.age = 21;
     
     NSLog(@"Person age: %d", person.age);
@@ -47,7 +47,7 @@ void fun_01() {
 
 // 先初始化父类的 init 方法
 void fun_02() {
-    Student *student = [Student new];
+    Student *student = Student.new;
     NSLog(@"Student no: %d", student.no);
 }
 

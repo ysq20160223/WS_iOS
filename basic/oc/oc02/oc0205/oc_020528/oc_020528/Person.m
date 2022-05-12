@@ -11,15 +11,17 @@
 @implementation Person
 
 - (void)method {
-    NSLog(@"OBJECT %@", NSStringFromSelector(_cmd));
+    XLog
 }
 
 - (void)methodWithArgs:(NSString *)args {
-    NSLog(@"OBJECT %@, %@", NSStringFromSelector(_cmd), args);
+    NSLog(@"%@", args);
 }
 
 + (void)method {
-    NSLog(@"CLASS %@", NSStringFromSelector(_cmd));
+    XLog
 }
 
 @end
+
+

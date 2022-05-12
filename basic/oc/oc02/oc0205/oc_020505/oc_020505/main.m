@@ -19,19 +19,20 @@
 
 #import "Person.h"
 
-#import "../../../../../../PrefixHeader.pch"
+//#import "../../../../../../PrefixHeader.pch"
 
-int main(int argc, const char * argv[]) {
+int main() {
     
-    Person *person = [Person new];
-    person.age = 21; // 为不带下划线的 age 赋值
+    Person *person = Person.new;
+    person.age = 21;
     [person setHeight:170];
-    NSLog(@"age: %d; height: %d", person.age, [person height]);
+    NSLog(@"person: %@", person);
     
     //
-    id _id = [Person new];
-    [_id setHeight:55];
-    NSLog(@"height: %d", [_id height]);
+    id _id = Person.new;
+    [_id setAge:1];
+    [_id setHeight:162];
+    NSLog(@"_id: %@", _id);
     
     return 0;
 }

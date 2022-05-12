@@ -20,7 +20,7 @@
 @implementation AudioModel
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"name: %@; filename: %@; lrcname: %@; singer: %@; singerIcon: %@; icon: %@", self.name, self.filename, self.lrcname, self.singer, self.singerIcon, self.icon];
+    return [NSString stringWithFormat:@"%@[name: %@; filename: %@; lrcname: %@; singer: %@; singerIcon: %@; icon: %@", [self class], self.name, self.filename, self.lrcname, self.singer, self.singerIcon, self.icon];
 }
 
 @end

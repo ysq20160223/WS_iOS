@@ -15,7 +15,9 @@
 }
 
 - (void)method {
-    NSLog();
+    XLog
 }
 
 @end
+
+

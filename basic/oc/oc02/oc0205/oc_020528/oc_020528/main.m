@@ -36,7 +36,7 @@ void fun_01() {
 }
 
 void fun_02() {
-    Person *p = [Person.alloc init];
+    Person *p = Person.alloc.init;
     [p performSelector:NSSelectorFromString(@"method")];
 }
 

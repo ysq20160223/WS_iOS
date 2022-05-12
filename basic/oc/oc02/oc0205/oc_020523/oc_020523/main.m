@@ -27,7 +27,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../../PrefixHeader.pch"
+//#import "../../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Student.h"
@@ -36,12 +36,12 @@ void fun_01() {
     // 利用 Class 创建 Person 类对象
     // 利用 Person 类对象 创建 Person 类型的对象
     
-    Person *p1 = [Person.alloc init];
-    Person *p2 = [Person.alloc init];
+    Person *p1 = Person.alloc.init;
+    Person *p2 = Person.alloc.init;
     
     Class c1 = [p1 class];
     Class c2 = [p2 class];
-    Class c3 = [Person class]; // 020524
+    Class c3 = Person.class; // 020524
     
     NSLog(@"c1: %p; c2: %p; c3: %p", c1, c2, c3);
 }
@@ -49,7 +49,7 @@ void fun_01() {
 
 // 020524
 void fun_02() {
-    Person *p = [Person.alloc init];
+    Person *p = Person.alloc.init;
     Class c = [p class];
     [c method];
 }
@@ -57,13 +57,13 @@ void fun_02() {
 
 //
 void fun_03() {
-    [Student.alloc init]; // 会加载分类的 initialize
+    Student.alloc.init; // 会加载分类的 initialize
 }
 
 
 // 020526 description
 void fun_04() {
-    Person *p = [Person.alloc init];
+    Person *p = Person.alloc.init;
     p.age = 21;
     p.name = @"yy";
     NSLog(@"%@", p); // 默认情况下输出对象时, 结果为 <类名: 内存地址>
@@ -72,7 +72,7 @@ void fun_04() {
 
 // + description
 void fun_05() {
-    Class c = [Person class];
+    Class c = Person.class;
     NSLog(@"c = %@", c);
 }
 
@@ -88,12 +88,22 @@ void fun_06() {
 }
 
 int main() {
-//    fun_01();
-//    fun_02();
-//    fun_03();
-//    fun_04();
+    fun_01();
+    NSLog(@"----------------- 1 end");
+    
+    fun_02();
+    NSLog(@"----------------- 2 end");
+    
+    fun_03();
+    NSLog(@"----------------- 3 end");
+    
+    fun_04();
+    NSLog(@"----------------- 4 end");
+    
     fun_05();
-//    fun_06();
+    NSLog(@"----------------- 5 end");
+    
+    fun_06();
     return 0;
 }
 

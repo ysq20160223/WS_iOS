@@ -12,7 +12,7 @@
     @private
     int _age;
     
-    @protected
+    @protected /// default
     NSString *_name;
 }
 
