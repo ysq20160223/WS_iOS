@@ -39,7 +39,7 @@ void fun_01() {
     Person *p1 = Person.alloc.init;
     Person *p2 = Person.alloc.init;
     
-    Class c1 = [p1 class];
+    Class c1 = [p1 class]; // 020523
     Class c2 = [p2 class];
     Class c3 = Person.class; // 020524
     
@@ -76,6 +76,8 @@ void fun_05() {
     NSLog(@"c = %@", c);
 }
 
+
+// 020527 
 void fun_06() {
     NSLog(@"line: %d", __LINE__); // NSLog 输出 C 语言字符串的时候, 不能有中文
     

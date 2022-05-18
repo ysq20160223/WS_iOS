@@ -34,15 +34,15 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
 
 int main() {
     
-    Person *p = [Person.alloc init];
-    NSLog(@"p: %@; count: %ld", p, [p retainCount]);
+    Person *p = Person.alloc.init;
+    NSLog(@"p: %@; count: %ld", p, p.retainCount);
     
     [p release];
     

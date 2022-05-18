@@ -27,12 +27,12 @@ void fun_01() {
     // 02, 根据 SEL 数据找到对应的方法地址
     // 03, 根据方法地址调用对应的方法
     
-     Person *p = [Person.alloc init];
+     Person *p = Person.alloc.init;
     //    [p method]; // 直接调用
     
 //    SEL sel = @selector(method);
     [p performSelector:@selector(method)]; // 间接调用
-    [p performSelector:@selector(methodWithArgs:) withObject:(@"this is args")]; // 间接调用带参数方法
+    [p performSelector:@selector(methodWithArgs:) withObject:@"this is args"]; // 间接调用带参数方法
 }
 
 void fun_02() {

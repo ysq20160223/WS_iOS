@@ -8,11 +8,14 @@
 
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 @implementation Person
 
 - (void)setBook:(Book *)book {
+    if (_book != book) {
+        [_book release];
+    }
     _book = [book retain];
 }
 
@@ -24,8 +27,10 @@
     
     [_book release]; // 
     
-    NSLog(@"Person dealloc");
+    XLog
     [super dealloc];
 }
 
 @end
+
+

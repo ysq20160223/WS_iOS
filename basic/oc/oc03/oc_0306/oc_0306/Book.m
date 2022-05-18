@@ -8,7 +8,7 @@
 
 #import "Book.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 @implementation Book
 
@@ -21,8 +21,10 @@
 }
 
 - (void)dealloc {
-    NSLog();
+    NSLog(@"price: %d", self.price);
     [super dealloc];
 }
 
 @end
+
+

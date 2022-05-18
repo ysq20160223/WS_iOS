@@ -13,23 +13,31 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Book.h"
 
 int main() {
     
-    Book *book = [Book.alloc init];
+    Book *b1 = Book.alloc.init;
+    b1.price = 1;
     
-    Person *p1 = [Person.alloc init];
-    [p1 setBook:book];
+    Book *b2 = Book.alloc.init;
+    b2.price = 21;
     
-    [p1 release];
-    p1 = nil;
+    Person *p = Person.alloc.init;
+    [p setBook:b1];
+    [p setBook:b2];
     
-    [book release];
-    book = nil;
+    [p release];
+    p = nil;
+    
+    [b1 release];
+    b1 = nil;
+    
+    [b2 release];
+    b2 = nil;
     
     return 0;
 }

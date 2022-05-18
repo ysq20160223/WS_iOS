@@ -8,21 +8,21 @@
 
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 @implementation Person
 
 + (void)load {
-    NSLog();
+    XLog
 }
 
 + (void)initialize {
-    NSLog();
+    XLog
 }
 
 - (instancetype)init {
     if (self = [super init]) {
-        NSLog();
+        XLog
     }
     return self;
 }
@@ -33,7 +33,7 @@
 
 // 当一个 Person 对象被回收时, 就会自动调用这个方法
 - (void)dealloc {
-    NSLog();
+    XLog
     [super dealloc]; // 一定要调用, 而且放在最后面
 }
 
