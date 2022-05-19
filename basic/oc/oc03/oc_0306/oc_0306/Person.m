@@ -15,8 +15,8 @@
 - (void)setBook:(Book *)book {
     if (_book != book) {
         [_book release];
+        _book = [book retain];
     }
-    _book = [book retain];
 }
 
 - (Book *)book {

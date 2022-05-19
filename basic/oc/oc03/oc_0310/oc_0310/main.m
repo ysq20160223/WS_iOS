@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Car.h"
@@ -39,6 +39,7 @@ void fun_01() {
     [p release];
 }
 
+
 void fun_02() {
     //
 //    Student *student = [Student.alloc initWithNo:21];
@@ -61,8 +62,9 @@ void fun_02() {
 int main() {
     
     fun_01();
+    NSLog(@"-----------------------");
     
-//    fun_02();
+    fun_02();
     
     return 0;
 }

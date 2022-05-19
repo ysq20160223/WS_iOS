@@ -28,7 +28,8 @@ int main() {
     
     Person *p = Person.alloc.init;
     [p setBook:b1];
-    [p setBook:b2];
+    [p setBook:b1];
+//    [p setBook:b2];
     
     [p release];
     p = nil;
