@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
 
 
 int main() {
-    Person *person = [Person.alloc init];
+    Person *person = Person.alloc.init;
     person.rich = YES;
     
     NSLog(@"isRich: %d", person.isRich);

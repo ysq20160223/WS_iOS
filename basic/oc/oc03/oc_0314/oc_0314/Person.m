@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -14,11 +14,10 @@
 
 
 - (void)dealloc {
-    NSLog(@"Person dealloc");
+    XLog
     [super dealloc];
 }
 
 @end
-
 
 

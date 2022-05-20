@@ -6,7 +6,7 @@
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -15,7 +15,7 @@
 - (void)dealloc{
     [_book release];
     
-    NSLog(@"");
+    XLog
     [super dealloc];
 }
 

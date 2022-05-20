@@ -15,7 +15,7 @@
 @property int age;
 
 // retain : 生成 set 方法里面, release 旧值, retain 新值
-@property (retain)Book *book;
+@property (retain) Book *book;
 
 @end
 

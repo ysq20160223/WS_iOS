@@ -6,14 +6,14 @@
 //  Copyright © 2017年 mac. All rights reserved.
 //
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Book.h"
 
 @implementation Book
 
 - (void)dealloc{
-    NSLog();
+    XLog
     [super dealloc];
 }
 

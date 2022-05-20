@@ -18,7 +18,7 @@
  
     03, 多线程管理
         nonatomic : 性能高
-        atomic : 默认, 性能低
+        atomic : 性能低(默认)
  
     04, set 和 get 的名称
         getter = xxx

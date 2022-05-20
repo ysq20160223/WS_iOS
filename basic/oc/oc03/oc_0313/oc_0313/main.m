@@ -8,18 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Book.h"
 #import "Person.h"
 
 int main() {
-    Person *person = [Person.alloc init];
+    Person *person = Person.alloc.init;
     
-    Book *book = [Book.alloc init];
-    [person setBook:book];
+    Book *book = Book.alloc.init;
+    person.book = book;
     
-    NSLog(@"retainCount: %ld", [book retainCount]); // 
+    NSLog(@"retainCount: %ld", book.retainCount); // 
     
     [book release];
     
