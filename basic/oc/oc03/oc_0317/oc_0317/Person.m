@@ -8,7 +8,7 @@
 
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 @implementation Person
 
@@ -21,7 +21,7 @@
 }
 
 - (void)dealloc {
-    NSLog();
+    XLog
     [super dealloc];
 }
 

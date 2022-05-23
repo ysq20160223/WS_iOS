@@ -19,7 +19,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "IDCard.h"

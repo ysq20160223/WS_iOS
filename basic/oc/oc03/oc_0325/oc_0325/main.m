@@ -22,14 +22,14 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Dog.h"
 
 
 void fun_01() {
-    Person *p = [Person.alloc init];
+    Person *p = Person.alloc.init;
     p.age = 21;
     NSLog(@"age: %d", p.age);
     
@@ -46,7 +46,7 @@ void fun_01() {
 
 //
 void fun_02() {
-    Person *p = [Person.alloc init];
+    Person *p = Person.alloc.init;
     
     Dog *d = [Dog.alloc initWithAge:1];
     p.dog = d;

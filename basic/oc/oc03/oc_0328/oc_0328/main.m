@@ -19,16 +19,16 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Dog.h"
 #import "Person.h"
 
 int main() {
     @autoreleasepool {
-        Person *person = [Person.alloc init];
+        Person *person = Person.alloc.init;
         
-        Dog *dog = [Dog.alloc init];
+        Dog *dog = Dog.alloc.init;
         dog.person = person;
         
         person.dog = dog;

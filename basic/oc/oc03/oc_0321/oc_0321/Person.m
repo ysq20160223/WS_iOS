@@ -8,13 +8,13 @@
 
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 
 @implementation Person
 
 + (id)person {
-    return [[[self alloc] init] autorelease];
+    return [[self.alloc init] autorelease];
 }
 
 + (id)personWithAge:(int)age {

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "User.h"
 
@@ -15,7 +15,7 @@
 //
 - (void)dealloc {
     NSLog(@"name: %@", _name);
-//    [super dealloc];
+//    [super dealloc]; // ARC forbids explicit message send of 'dealloc'
 }
 
 @end

@@ -27,13 +27,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
 int main() {
     @autoreleasepool {
-        Person *p = [[Person.alloc initWithAge:21] autorelease];
+        Person *p = [Person.alloc initWithAge:21].autorelease;
         NSLog(@"age: %d", p.age);
     }
     

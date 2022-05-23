@@ -21,7 +21,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 #import "Student.h"
@@ -55,14 +55,20 @@ void fun_03() {
 //        Student *student = [Student personWithAge:21];
 //        student.money = 1;
         
-        Student *student = [Student studentWithAge:21 andMoney:1];
+        [Student studentWithAge:21 andMoney:1];
     }
 }
 
 int main() {
     fun_01();
-//    fun_02();
-//    fun_03();
+    NSLog(@"--------------------------------");
+    
+    fun_02();
+    NSLog(@"--------------------------------");
+    
+    fun_03();
+    NSLog(@"--------------------------------");
+    
     return 0;
 }
 

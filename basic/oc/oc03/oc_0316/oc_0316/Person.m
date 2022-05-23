@@ -9,7 +9,7 @@
 #import "Person.h"
 #import "IDCard.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 
 @implementation Person
@@ -17,7 +17,7 @@
 - (void)dealloc {
     [_card release];
     
-    NSLog();
+    XLog
     [super dealloc];
 }
 

@@ -8,7 +8,7 @@
 
 #import "Student.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 
 @implementation Student

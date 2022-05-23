@@ -9,13 +9,13 @@
 #import "IDCard.h"
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 
 @implementation IDCard
 
 - (void)dealloc {
-    NSLog();
+    XLog
     [super dealloc];
 }
 
