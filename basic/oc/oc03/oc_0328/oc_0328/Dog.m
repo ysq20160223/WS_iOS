@@ -13,7 +13,7 @@
 @implementation Dog
 
 - (void)dealloc {
-    NSLog();
+    XLog
 }
 
 @end

@@ -7,6 +7,9 @@
 //
 
 /*
+    ARC: 编译器特性
+    GC: 运行时
+ 
     01, ARC 原理 : automatic reference counting
         只要没有强指针指向对象, 就会释放对象
  
