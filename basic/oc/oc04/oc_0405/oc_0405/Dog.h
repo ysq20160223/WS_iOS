@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MyProtocol;
+//@protocol MyProtocol;
+#import "MyProtocol.h"
 
 @interface Dog : NSObject <MyProtocol>
 

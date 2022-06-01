@@ -8,7 +8,7 @@
 
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "MyProtocol.h"
 #import "MyProtocol_A.h"
@@ -16,23 +16,23 @@
 
 @implementation Person
 
-- (void)requiredMethod {
-    NSLog();
+- (void)requiredFun {
+    XLog
 }
 
 
 // ------
-- (void)requiredMethodA {
-    NSLog();
+- (void)requiredFunA {
+    XLog
 }
 
-- (void)optionalMethod {
-    NSLog();
+- (void)optionalFunA {
+    XLog
 }
 
 //-----
-- (void)requiredMethodB {
-    NSLog();
+- (void)requiredFunB {
+    XLog
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -17,14 +17,14 @@
 
 int main() {
     @autoreleasepool {
-        Person *p = [Person.alloc init];
+        Person *p = Person.alloc.init;
         
         //
-        p.delegate = [AAgent.alloc init];
+        p.delegate = AAgent.alloc.init;
         [p buyTicket];
         
         //
-        p.delegate = [BAgent.alloc init];
+        p.delegate = BAgent.alloc.init;
         [p buyTicket];
     }
     return 0;

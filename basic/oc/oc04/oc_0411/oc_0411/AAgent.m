@@ -6,8 +6,6 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "../../../../../PrefixHeader.pch"
-
 #import "AAgent.h"
 
 
@@ -23,7 +21,7 @@
 
 
 - (void)dealloc {
-    NSLog();
+    XLog
 }
 
 @end

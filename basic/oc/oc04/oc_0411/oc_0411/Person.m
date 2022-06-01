@@ -8,8 +8,6 @@
 
 #import "Person.h"
 
-#import "../../../../../PrefixHeader.pch"
-
 #import "TicketDelegate.h"
 
 @implementation Person
@@ -20,7 +18,7 @@
 
 
 - (void)dealloc {
-    NSLog();
+    XLog
 }
 
 @end

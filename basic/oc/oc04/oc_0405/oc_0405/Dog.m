@@ -10,12 +10,12 @@
 
 #import "MyProtocol.h"
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 @implementation Dog 
 
-- (void)requiredMethod {
-    NSLog();
+- (void)requiredFun {
+    XLog
 }
 
 @end

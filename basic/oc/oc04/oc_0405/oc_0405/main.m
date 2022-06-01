@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../../PrefixHeader.pch"
+//#import "../../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -21,31 +21,32 @@
 
 int main() {
     @autoreleasepool {
-        NSObject *obj1 = [NSObject.alloc init];
+        NSObject *obj1 = NSObject.alloc.init;
         obj1 = nil;
         
         
         // --- 限制对象类型
-        NSObject<MyProtocol_B> *obj2 = [Person.alloc init];
+        NSObject<MyProtocol_B> *obj2 = Person.alloc.init;
         [obj2 requiredFun];
         [obj2 requiredFunA];
         [obj2 requiredFunB];
         
         
         // --- id = NSObject *
-        id<MyProtocol> obj3 = [Person.alloc init];
+        id<MyProtocol> obj3 = Person.alloc.init;
         obj3 = nil;
         
         
         // 0408 保存的对象遵守 MyProtocol, 并且继承 Person
-        Person<MyProtocol> *obj4 = [Person.alloc init];
+        Person<MyProtocol> *obj4 = Person.alloc.init;
         obj4 = nil;
         
         
         // ---
-        Person *p = [Person.alloc init];
-        p.obj = [Dog.alloc init];
-        p.obj = [BlackDog.alloc init]; // Dog 已实现协议
+        Person *p = Person.alloc.init;
+        p.obj = Dog.alloc.init;
+        p.obj = BlackDog.alloc.init; // Dog 已实现协议
+        
     }
     return 0;
 }

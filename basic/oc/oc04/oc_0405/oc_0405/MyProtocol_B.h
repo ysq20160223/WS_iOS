@@ -1,5 +1,5 @@
 //
-//  MyProtocol_02.h
+//  MyProtocol_B.h
 //  oc_0405
 //
 //  Created by Apple on 2017/7/15.
