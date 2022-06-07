@@ -19,7 +19,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PrefixHeader.pch"
+//#import "../../../../PrefixHeader.pch"
 
 
 // 0501
@@ -41,13 +41,13 @@ void fun_02() {
 // 0503
 void fun_03() {
     //
-    NSLog(@"CGPoint = %@", NSStringFromPoint(CGPointMake(1, 1)));
-    NSLog(@"NSPoint = %@", NSStringFromPoint(NSMakePoint(2, 2)));
+    NSLog(@"CGPoint: %@", NSStringFromPoint(CGPointMake(1, 1)));
+    NSLog(@"NSPoint: %@", NSStringFromPoint(NSMakePoint(2, 2)));
     NSLog(@"-----------------------");
     
     //
-    NSLog(@"CGSize = %@", NSStringFromSize(CGSizeMake(100, 100)));
-    NSLog(@"NSSize = %@", NSStringFromSize(NSMakeSize(200, 200)));
+    NSLog(@"CGSize: %@", NSStringFromSize(CGSizeMake(100, 100)));
+    NSLog(@"NSSize: %@", NSStringFromSize(NSMakeSize(200, 200)));
     NSLog(@"-----------------------");
     
     // 0504
@@ -73,9 +73,8 @@ CGRect myRect(CGFloat x, CGFloat y, CGFloat width, CGFloat height) {
     return rect;
 }
 
-//
+// 0504
 void fun_04() {
-    // 0504
     NSLog(@"CGPointEqualToPoint: %d", CGPointEqualToPoint(CGPointMake(0, 1), CGPointMake(2, 3)));
     NSLog(@"CGSizeEqualToSize: %d", CGSizeEqualToSize(CGSizeMake(100, 200), CGSizeMake(300, 400)));
     NSLog(@"CGRectEqualToRect: %d", CGRectEqualToRect(CGRectMake(0, 1, 100, 200), CGRectMake(2, 3, 300, 400)));
@@ -86,13 +85,13 @@ void fun_04() {
 int main() {
     @autoreleasepool {
         fun_01();
-        NSLog();
+        XLog
         
         fun_02();
-        NSLog();
+        XLog
         
         fun_03();
-        NSLog();
+        XLog
         
         fun_04();
     }
