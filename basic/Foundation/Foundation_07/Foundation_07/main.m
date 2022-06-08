@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PrefixHeader.pch"
+//#import "../../../../PrefixHeader.pch"
 
 #import "Person.h"
 
@@ -40,15 +40,14 @@ void printNSArray(NSArray *array) {
 void fun_01() {
     NSArray *array = [NSArray array]; // 永远是个空数组
     NSArray *array1 = [NSArray arrayWithObject:@"hh"];
-    NSArray *array2 = [NSArray arrayWithObjects:@"a", @"b", nil];
-    NSArray *array3 = @[@"aa", @"bb", @"cc"]; // 常用 - 编译器新特性
-    
     printNSArray(array1);
     NSLog(@"===");
     
+    NSArray *array2 = [NSArray arrayWithObjects:@"a", @"b", nil];
     printNSArray(array2);
     NSLog(@"***");
     
+    NSArray *array3 = @[@"a", @"b", @"c"]; // 常用 - 编译器新特性
     printNSArray(array3);
 }
 
@@ -72,7 +71,7 @@ void fun_02() {
         }
         NSLog(@"enum; idx: %ld; obj: %@", idx, obj);
     }];
-    NSLog(@"===");
+    NSLog(@"======");
 
 
     void (^block)(id, NSUInteger, BOOL *) = ^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop){
@@ -92,7 +91,7 @@ void fun_02() {
 //    // 对 enumerateObjectsUsingBlock 内部实现分析 -- end
     
  
-    NSLog(@"---");
+    NSLog(@"------");
     enumArray(array, block);
     
 }
@@ -100,7 +99,8 @@ void fun_02() {
 
 int main() {
     @autoreleasepool {
-//        fun_01();
+        fun_01();
+        NSLog(@"--------------------------");
         
         fun_02();
     }

@@ -27,7 +27,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PrefixHeader.pch"
+//#import "../../../../PrefixHeader.pch"
 
 //#define kRootPath /Users/Apple/Desktop/github/WS_iOS/
 
@@ -39,33 +39,35 @@ void fun_01() {
 //    NSLog(@"%@", @"This is sting");
     
     // 2
-//    NSLog(@"%@", [[NSString alloc] initWithString:@"s2"]); // 不建议使用
+    NSLog(@"%@", [NSString.alloc initWithString:@"s2"]); // 不建议使用
     
     // 3
-//    NSLog(@"%@", [[NSString alloc] initWithFormat:@"This is %@", @"s3"]);
-//    NSLog(@"%@", [NSString stringWithFormat:@"This is %@", @"s3 - class method"]); // 同上一句
+    NSLog(@"%@", [NSString.alloc initWithFormat:@"This is %@", @"s3"]);
+    NSLog(@"%@", [NSString stringWithFormat:@"%@", @"stringWithFormat"]); // 同上一句
     
     // 4
-//    NSLog(@"%@", [[NSString alloc] initWithUTF8String:"This is s4"]); // c字符串 -> oc字符串
-//    NSLog(@"%@", [NSString stringWithUTF8String:"This is s4 - class method"]); // 同上一句
+    NSLog(@"%@", [NSString.alloc initWithUTF8String:"initWithUTF8String"]); // c字符串 -> oc字符串
+    NSLog(@"%@", [NSString stringWithUTF8String:"stringWithUTF8String"]); // 同上一句
 //    printf("%s", [@"oc字符串 -> c字符串\n" UTF8String]); // oc字符串 -> c字符串
+    
     
     // 5 - 读取本地文件
     NSString *fullPath = [NSString stringWithFormat:@"%@PrefixHeader.pch", rootPath];
-//    NSLog(@"\n%@", [[NSString alloc] initWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
-    NSLog(@"\n%@", [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
+//    NSLog(@"\n%@", [NSString.alloc initWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
+//    NSLog(@"\n%@", [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil]);
+    
     
     // 6 -
 //    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"file://%@", fullPath]];
 //    NSURL *url = [NSURL fileURLWithPath:fullPath]; // 同上一句
-    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"]; // 同上一句
+//    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"]; // 同上一句
     
-//    NSLog(@"\n%@",  [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]);
+//    NSLog(@"\n%@", [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil]);
 }
 
 void fun_02() {
     // 输出到同级文件夹中, atomically : YES 成功才会创建文件
-    [[NSString stringWithFormat:@"%@", [NSDate date]] writeToFile:[NSString stringWithFormat:@"%@basic/Foundation/Foundation_05/Foundation_05/foundation_05.txt", rootPath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    [[NSString stringWithFormat:@"%@", NSDate.date] writeToFile:[NSString stringWithFormat:@"%@basic/Foundation/Foundation_05/Foundation_05/foundation_05.txt", rootPath] atomically:YES encoding:NSUTF8StringEncoding error:nil];
     NSLog(@"writeToFile end");
 }
 
@@ -86,9 +88,13 @@ void fun_03() {
 
 int main() {
     @autoreleasepool {
-//        fun_01();
+        fun_01();
+        NSLog(@"------------------------");
+        
         fun_02();
-//        fun_03();
+        NSLog(@"************************");
+        
+        fun_03();
     }
     return 0;
 }
