@@ -11,21 +11,25 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "../../../../PrefixHeader.pch"
+//#import "../../../../PrefixHeader.pch"
 
 
 #define ROOT_PATH @"/Users/Apple/Desktop/github/WS_iOS/"
 //#define PATH ROOT_PATH@"foundation_part_src"
 //#define PATH ROOT_PATH@"basic"
-#define PATH ROOT_PATH@"basic/c"
+//#define PATH ROOT_PATH@"basic/c"
 //#define PATH ROOT_PATH@"basic/c/c01"
+#define PATH ROOT_PATH@"basic/Foundation"
+//#define PATH ROOT_PATH@"advanced"
+//#define PATH ROOT_PATH@"senior"
+//#define PATH ROOT_PATH@""
 
 static int count = 0;
 
 static NSString *printTab(int num) {
     NSString *s = @"";
     for (int i = 0; i < num; i++) {
-        s = [s stringByAppendingString:@"  "];
+        s = [s stringByAppendingString:@"-"];
     }
     return s;
 }
@@ -49,7 +53,11 @@ long lineCount(NSString *path, int count) {
     if (isDir) {
         // 文件夹
         NSArray *array = [nsFileManager contentsOfDirectoryAtPath:path error:nil];
-        NSLog(@"dir: %@", [path substringFromIndex:ROOT_PATH.length]);
+        NSString *dirPath = [path substringFromIndex:ROOT_PATH.length];
+        if (![dirPath containsString:@".xcodeproj"] && ![dirPath containsString:@".xcdatamodeld"] && ![dirPath containsString:@".git"] && ![dirPath containsString:@".xcassets"]) {
+//            NSLog(@"dir: %@; count: %ld", dirPath, array.count);
+            NSLog(@"dir: %@", dirPath);
+        }
         
         count++;
         int totalLineCount = 0;
@@ -63,7 +71,7 @@ long lineCount(NSString *path, int count) {
         return totalLineCount;
     } else {
         // 文件
-        NSString *extension = [[path pathExtension] lowercaseString]; // 判断文件拓展名
+        NSString *extension = [path.pathExtension lowercaseString]; // 判断文件拓展名
         if(!([extension isEqualToString:@"h"] || [extension isEqualToString:@"m"]
              || [extension isEqualToString:@"c"])) {
             return 0;
@@ -85,7 +93,7 @@ long lineCount(NSString *path, int count) {
         // 过滤前面的路径名
         NSRange range = [path rangeOfString:[NSString stringWithFormat:@"%@/", PATH]];
         NSString *file = [path stringByReplacingCharactersInRange:range withString:@""];
-        NSLog(@"%@file: %@; line: %ld", printTab(count), file, array.count);
+        NSLog(@"%@%@; %ld", printTab(count), file, array.count);
         
         return array.count;
     }
@@ -94,7 +102,7 @@ long lineCount(NSString *path, int count) {
 
 int main() {
     @autoreleasepool {
-        NSLog(@"count: %ld", lineCount(PATH, count));
+        NSLog(@"totalLineCount: %ld", lineCount(PATH, count));
     }
     return 0;
 }
