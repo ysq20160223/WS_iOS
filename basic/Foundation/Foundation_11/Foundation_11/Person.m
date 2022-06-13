@@ -8,20 +8,19 @@
 
 #import "Person.h"
 
-#import "../../../../PrefixHeader.pch"
 
 @implementation Person
 
 + (void)load {
-    NSLog();
+    XLog
 }
 
 + (void)initialize {
-    NSLog();
+    XLog
 }
 
 + (NSString *)description {
-    return [NSString stringWithFormat:@"Person"];
+    return [NSString stringWithFormat:@"%@", self.className];
 }
 
 
@@ -33,7 +32,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Person[name: %@]", _name];
+    return [NSString stringWithFormat:@"%@[name: %@]", self.className, _name];
 }
 
 @end

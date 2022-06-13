@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PrefixHeader.pch"
-
 #import "Person.h"
 
 void fun_01() {
@@ -40,7 +38,6 @@ void fun_02() {
 int main() {
     @autoreleasepool {
         fun_01();
-        
         NSLog(@"----------------------------");
         
         fun_02();

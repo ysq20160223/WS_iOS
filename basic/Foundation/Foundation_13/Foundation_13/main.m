@@ -15,8 +15,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PrefixHeader.pch"
-
 void fun_01() {
     NSDictionary *dic = [NSDictionary dictionaryWithObject:@"yy" forKey:@"y"];
     NSLog(@"%@", [dic objectForKey:@"y"]);
@@ -51,16 +49,18 @@ void fun_02() {
     }];
     
     // 遍历打印
-    NSArray *key = [muDic allKeys];
+    NSArray *keyArray = [muDic allKeys];
     for (int i = 0; i < muDic.count; i++) {
-        NSLog(@"%@ : %@", key[i], muDic[key[i]]);
+        NSLog(@"%@ : %@", keyArray[i], muDic[keyArray[i]]);
     }
 }
 
 
 int main() {
     @autoreleasepool {
-//        fun_01();
+        fun_01();
+        NSLog(@"----------------------");
+        
         fun_02();
     }
     return 0;

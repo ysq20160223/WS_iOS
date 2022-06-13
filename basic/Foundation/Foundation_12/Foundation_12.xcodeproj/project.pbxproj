@@ -107,6 +107,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 18AE7CB81F1B896C003E2B76;
@@ -224,6 +225,7 @@
 		18AE7CC91F1B896C003E2B76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = ../../../PrefixHeader.pch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -231,6 +233,7 @@
 		18AE7CCA1F1B896C003E2B76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = ../../../PrefixHeader.pch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -254,6 +257,7 @@
 				18AE7CCA1F1B896C003E2B76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

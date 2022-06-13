@@ -13,8 +13,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PrefixHeader.pch"
-
 #import "Person.h"
 
 int main() {
@@ -26,14 +24,14 @@ int main() {
         [array addObject:@"xx"];
         
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"idx: %ld, obj: %@", idx, obj);
+            NSLog(@"idx: %ld; obj: %@", idx, obj);
         }];
         
         NSLog(@"----------------");
         
         [array removeObjectAtIndex:3]; // 移除
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSLog(@"idx: %ld, obj: %@", idx, obj);
+            NSLog(@"idx: %ld; obj: %@", idx, obj);
         }];
     
     }
