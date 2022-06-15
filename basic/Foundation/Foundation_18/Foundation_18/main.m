@@ -12,8 +12,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "../../../../PrefixHeader.pch"
-
 void fun_01() {
     NSDate *date = NSDate.date; // 格林时间
     NSLog(@"date: %@", date);
@@ -25,18 +23,18 @@ void fun_01() {
 
 // 将 时间对象 转化 为字符串
 void fun_02() {
-    NSDateFormatter *formate = [NSDateFormatter.alloc init];
-    formate.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDateFormatter *formate = NSDateFormatter.alloc.init;
+    formate.dateFormat = @"yyyy-MM-dd HH:mm:ss_SSS";
     
     NSLog(@"date: %@", [formate stringFromDate:NSDate.date]);
 }
 
 // 将 时间字符串 转化为 对象
 void fun_03() {
-    NSDateFormatter *formatter = [NSDateFormatter.alloc init];
-    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDateFormatter *formatter = NSDateFormatter.alloc.init;
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss_SSS";
     
-    NSLog(@"date: %@", [formatter dateFromString:@"2017/7/16 22:36:17"]);
+    NSLog(@"date: %@", [formatter dateFromString:@"2017/7/16 22:36:17_111"]);
 }
 
 //
