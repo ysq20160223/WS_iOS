@@ -32,7 +32,7 @@
     }];
 }
 
-#pragma mark -- 上下左右位移
+#pragma mark - 上下左右位移
 - (IBAction)direction:(UIButton *)sender {
     // oc 不允许直接修改 某个对象中结构体属性的成员
     
@@ -69,7 +69,7 @@
     }];
 }
 
-#pragma mark -- 左右旋转
+#pragma mark - 左右旋转
 - (IBAction)transformRotate:(id)sender {
     [self animateWithDuration:1 animations:^{
         switch ([sender tag]) { // id 不能使用点语法
@@ -84,7 +84,7 @@
     }];
 }
 
-#pragma mark -- 放大缩小
+#pragma mark - 放大缩小
 - (IBAction)transformScale:(id)sender {
     [self animateWithDuration:1 animations:^{
         switch ([sender tag]) {
@@ -99,7 +99,7 @@
     }];
 }
 
-#pragma mark -- 重置
+#pragma mark - 重置
 - (IBAction)iconIdentity:(id)sender {
     [self animateWithDuration:1 animations:^{
         _btnIcon.transform = CGAffineTransformIdentity; // 重置所有状态

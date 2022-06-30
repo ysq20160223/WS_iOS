@@ -17,17 +17,17 @@
 
 @implementation ViewController
 
-#pragma mark -- 控制器的 view 加载完毕的时候会调用一次
+#pragma mark - 控制器的 view 加载完毕的时候会调用一次
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     //    NSLog(@"viewDidLoad");
     
-    CGRect rect = [UIApplication sharedApplication].statusBarFrame;
+    CGRect rect = UIApplication.sharedApplication.statusBarFrame;
     
     // 1, 创建按钮
-    UIButton *btn = [UIButton.alloc init]; // 1.1
+    UIButton *btn = UIButton.alloc.init; // 1.1
     btn.frame = CGRectMake(0, rect.size.height, 150, 150); // 1.2 位置和尺寸
     [btn setBackgroundColor:XColor(0, 255, 255)];
     
@@ -58,7 +58,7 @@
     
     // --------------------------------------------- 020216
     // 3, 添加文本输入框
-    UITextField *textField = [UITextField.alloc init];
+    UITextField *textField = UITextField.alloc.init;
     textField.frame = CGRectMake(100, 300, 100, 50);
     textField.backgroundColor = UIColor.cyanColor;
     

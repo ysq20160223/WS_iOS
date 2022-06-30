@@ -34,14 +34,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // 1
-    UIImageView *iv = [UIImageView.alloc init];
+    UIImageView *iv = UIImageView.alloc.init;
     iv.image = [UIImage imageNamed:@"014.png"];
     iv.backgroundColor = UIColor.magentaColor;
     iv.frame = CGRectMake(0, UIApplication.sharedApplication.statusBarFrame.size.height, 120, 120);
     [self.view addSubview:iv];
     
     // 2
-    UIButton *btn = [UIButton.alloc init];
+    UIButton *btn = UIButton.alloc.init;
     [btn setBackgroundImage:[UIImage imageNamed:@"bg.png"] forState:UIControlStateNormal];
 //    btn.backgroundColor = UIColor.cyanColor;
     [btn setImage:[UIImage imageNamed:@"016.png"] forState:UIControlStateNormal];
@@ -51,7 +51,7 @@
     [self.view addSubview:btn];
     
     // 3 - UISlider
-    UISlider *slider = [UISlider.alloc init];
+    UISlider *slider = UISlider.alloc.init;
     slider.frame = CGRectMake(10, 400, self.view.frame.size.width - 20, 100);
     slider.minimumValue = 0;
     slider.maximumValue = 100;
@@ -67,8 +67,6 @@
     NSLog(@"changeValue:%f", slider.value);
 }
 
-
 @end
-
 
 

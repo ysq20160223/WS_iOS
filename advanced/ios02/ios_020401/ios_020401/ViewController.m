@@ -84,7 +84,7 @@
 //    [self.view addSubview:iv];
     
     //
-    UIButton *btn = [UIButton.alloc init];
+    UIButton *btn = UIButton.alloc.init;
     btn.adjustsImageWhenHighlighted = NO;
     btn.tag = index;
     [btn addTarget:self action:@selector(imgBtnClick:) forControlEvents:UIControlEventTouchUpInside];

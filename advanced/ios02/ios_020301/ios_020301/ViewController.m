@@ -72,11 +72,7 @@
 
 
 - (IBAction)nightMode:(UISwitch *)sender {
-    if(sender.on) {
-        self.view.backgroundColor = UIColor.darkGrayColor;
-    } else {
-        self.view.backgroundColor = UIColor.whiteColor;
-    }
+    self.view.backgroundColor = sender.on ? UIColor.darkGrayColor : UIColor.whiteColor;
 }
 
 

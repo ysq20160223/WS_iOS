@@ -133,7 +133,7 @@
 // *******************************
 - (UIView *)createRowViewWithCode {
     // 创建控件
-    UIView *rowView = [UIView.alloc init];
+    UIView *rowView = UIView.alloc.init;
     rowView.backgroundColor = UIColor.magentaColor;
     
     // 1, 添加头像
@@ -168,7 +168,7 @@
 
 // 每一行的 delete
 - (void)deleteClick:(UIButton *)btn {
-    NSLog(@"");
+    XLog
     [UIView animateWithDuration:1 animations:^{
         _barBtnTrash.enabled = NO;
         
