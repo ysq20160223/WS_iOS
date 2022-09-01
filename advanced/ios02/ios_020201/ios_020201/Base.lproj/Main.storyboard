@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G2136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,7 +28,7 @@
                                     <action selector="direction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zkp-XP-Okv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-pP-pLk" userLabel="top">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-pP-pLk" userLabel="top">
                                 <rect key="frame" x="68" y="485" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="top_normal.png"/>
@@ -41,7 +37,7 @@
                                     <action selector="direction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Hl-Dd-rrx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-cv-59E" userLabel="right">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-cv-59E" userLabel="right">
                                 <rect key="frame" x="112" y="526" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="right_normal.png"/>
@@ -50,7 +46,7 @@
                                     <action selector="direction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ghj-pq-kAZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3b-gI-qTd" userLabel="bottom">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T3b-gI-qTd" userLabel="bottom">
                                 <rect key="frame" x="68" y="571" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="bottom_normal.png"/>
@@ -59,7 +55,7 @@
                                     <action selector="direction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GaN-GI-snw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEQ-An-vFz" userLabel="left rotate">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEQ-An-vFz" userLabel="left rotate">
                                 <rect key="frame" x="214" y="494" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="anticlockwise_normal.png"/>
@@ -68,7 +64,7 @@
                                     <action selector="transformRotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O0b-Hx-Blw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adb-AB-C71" userLabel="right rotate">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adb-AB-C71" userLabel="right rotate">
                                 <rect key="frame" x="255" y="494" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="clockwise_normal.png"/>
@@ -77,7 +73,7 @@
                                     <action selector="transformRotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Gl-x1-WnS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15E-9Z-VGA" userLabel="-">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15E-9Z-VGA" userLabel="-">
                                 <rect key="frame" x="214" y="561" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="minus_normal.png"/>
@@ -86,7 +82,7 @@
                                     <action selector="transformScale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NdS-oC-7Qv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btD-6J-xHc" userLabel="+">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btD-6J-xHc" userLabel="+">
                                 <rect key="frame" x="255" y="561" width="33" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="add_normal.png"/>
@@ -96,15 +92,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CT-nK-TsA" userLabel="btn">
-                                <rect key="frame" x="57" y="98" width="260" height="260"/>
+                                <rect key="frame" x="57" y="78" width="260" height="260"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2CT-nK-TsA" secondAttribute="height" multiplier="1:1" id="Ejf-fx-qmY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <state key="normal" title="C" image="img_normal.png" backgroundImage="img_normal.png">
+                                <state key="normal" title="C" image="010.png" backgroundImage="img_normal.png">
                                     <color key="titleColor" red="0.59999999999999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <state key="highlighted" title="W" image="img_press.png" backgroundImage="img_press.png">
+                                <state key="highlighted" title="W" image="011.png" backgroundImage="img_press.png">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -128,32 +124,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.5" y="152.5"/>
+            <point key="canvasLocation" x="123.91304347826087" y="102.12053571428571"/>
         </scene>
     </scenes>
     <resources>
+        <image name="010.png" width="60" height="60"/>
+        <image name="011.png" width="60" height="60"/>
         <image name="add_normal.png" width="74" height="79"/>
         <image name="add_press.png" width="74" height="79"/>
         <image name="anticlockwise_normal.png" width="110" height="110"/>
         <image name="anticlockwise_press.png" width="110" height="110"/>
-        <image name="bottom_normal.png" width="110" height="110"/>
-        <image name="bottom_press.png" width="110" height="110"/>
+        <image name="bottom_normal.png" width="82.5" height="82.5"/>
+        <image name="bottom_press.png" width="82.5" height="82.5"/>
         <image name="clockwise_normal.png" width="110" height="110"/>
         <image name="clockwise_press.png" width="110" height="110"/>
         <image name="img_normal.png" width="180" height="180"/>
         <image name="img_press.png" width="180" height="180"/>
-        <image name="left_normal.png" width="110" height="110"/>
-        <image name="left_press .png" width="110" height="110"/>
+        <image name="left_normal.png" width="82.5" height="82.5"/>
+        <image name="left_press .png" width="82.5" height="82.5"/>
         <image name="minus_normal.png" width="74" height="79"/>
         <image name="minus_press.png" width="74" height="79"/>
-        <image name="right_normal.png" width="110" height="110"/>
-        <image name="right_press.png" width="110" height="110"/>
+        <image name="right_normal.png" width="82.5" height="82.5"/>
+        <image name="right_press.png" width="82.5" height="82.5"/>
         <image name="top_normal.png" width="110" height="110"/>
         <image name="top_press.png" width="110" height="110"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

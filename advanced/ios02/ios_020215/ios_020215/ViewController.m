@@ -86,6 +86,10 @@
     btn.titleLabel.font = [UIFont systemFontOfSize:39];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 @end
 
 
