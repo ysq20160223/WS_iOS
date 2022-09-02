@@ -8,6 +8,7 @@
 
 #import "SceneDelegate.h"
 
+#import "MediaTabBarController.h"
 #import "AudioVc.h"
 
 
@@ -36,7 +37,7 @@
     }
     
     // 2
-    AudioVc *rootVc = AudioVc.alloc.init;
+    MediaTabBarController *rootVc = MediaTabBarController.alloc.init;
     self.window.rootViewController = rootVc;
     
     // 3

@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		0ACFDE55BF483D1D043F0D20 /* libPods-Media.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ECA86795FCD6A69C2AAC03C /* libPods-Media.a */; };
+		1811226E28C25EAB00A4951F /* MediaNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811226B28C25EAB00A4951F /* MediaNavController.m */; };
+		1811226F28C25EAB00A4951F /* MediaTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811226D28C25EAB00A4951F /* MediaTabBarController.m */; };
+		1811227228C25FD900A4951F /* MediaTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811227128C25FD900A4951F /* MediaTabBar.m */; };
+		1811227528C260C900A4951F /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811227428C260C900A4951F /* Config.m */; };
+		1811227928C268A000A4951F /* HomeVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1811227728C268A000A4951F /* HomeVc.m */; };
+		1811227A28C268A000A4951F /* HomeVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1811227828C268A000A4951F /* HomeVc.xib */; };
+		1811227C28C26D6700A4951F /* head_icon_arrow_left@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1811227B28C26D6700A4951F /* head_icon_arrow_left@3x.png */; };
+		1811227F28C26DC300A4951F /* tab_bar_field_field@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1811227D28C26DC300A4951F /* tab_bar_field_field@3x.png */; };
+		1811228028C26DC300A4951F /* tab_bar_field_field_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1811227E28C26DC300A4951F /* tab_bar_field_field_selected@3x.png */; };
 		1828C3182478291700C621D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828C3172478291700C621D5 /* AppDelegate.m */; };
 		1828C31B2478291700C621D5 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828C31A2478291700C621D5 /* SceneDelegate.m */; };
 		1828C3232478291800C621D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1828C3222478291800C621D5 /* Assets.xcassets */; };
@@ -95,6 +104,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1811226A28C25EAA00A4951F /* MediaNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaNavController.h; sourceTree = "<group>"; };
+		1811226B28C25EAB00A4951F /* MediaNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaNavController.m; sourceTree = "<group>"; };
+		1811226C28C25EAB00A4951F /* MediaTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTabBarController.h; sourceTree = "<group>"; };
+		1811226D28C25EAB00A4951F /* MediaTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTabBarController.m; sourceTree = "<group>"; };
+		1811227028C25FD900A4951F /* MediaTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaTabBar.h; sourceTree = "<group>"; };
+		1811227128C25FD900A4951F /* MediaTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaTabBar.m; sourceTree = "<group>"; };
+		1811227328C260C800A4951F /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		1811227428C260C900A4951F /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		1811227628C268A000A4951F /* HomeVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVc.h; sourceTree = "<group>"; };
+		1811227728C268A000A4951F /* HomeVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVc.m; sourceTree = "<group>"; };
+		1811227828C268A000A4951F /* HomeVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVc.xib; sourceTree = "<group>"; };
+		1811227B28C26D6700A4951F /* head_icon_arrow_left@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_icon_arrow_left@3x.png"; sourceTree = "<group>"; };
+		1811227D28C26DC300A4951F /* tab_bar_field_field@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_field_field@3x.png"; sourceTree = "<group>"; };
+		1811227E28C26DC300A4951F /* tab_bar_field_field_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_field_field_selected@3x.png"; sourceTree = "<group>"; };
 		1828C3132478291700C621D5 /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1828C3162478291700C621D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1828C3172478291700C621D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -371,6 +394,9 @@
 				18B23DE32478B2D500170BAD /* AppIcon40x40@2x.png */,
 				18B23DE42478B2D500170BAD /* AppIcon29x29@3x.png */,
 				18B23DE52478B2D500170BAD /* AppIcon60x60@3x.png */,
+				1811227B28C26D6700A4951F /* head_icon_arrow_left@3x.png */,
+				1811227E28C26DC300A4951F /* tab_bar_field_field_selected@3x.png */,
+				1811227D28C26DC300A4951F /* tab_bar_field_field@3x.png */,
 			);
 			path = AppIcon;
 			sourceTree = "<group>";
@@ -439,6 +465,10 @@
 		18B23E342478CEE400170BAD /* other */ = {
 			isa = PBXGroup;
 			children = (
+				1811227328C260C800A4951F /* Config.h */,
+				1811227428C260C900A4951F /* Config.m */,
+				1811227028C25FD900A4951F /* MediaTabBar.h */,
+				1811227128C25FD900A4951F /* MediaTabBar.m */,
 				18B23E9024796AF500170BAD /* MusicTool.h */,
 				18B23E9124796AF500170BAD /* MusicTool.m */,
 				18397C48247A9AA500334AE7 /* LrcTool.h */,
@@ -452,9 +482,16 @@
 		18B23E352478CEE400170BAD /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				1811226A28C25EAA00A4951F /* MediaNavController.h */,
+				1811226B28C25EAB00A4951F /* MediaNavController.m */,
+				1811226C28C25EAB00A4951F /* MediaTabBarController.h */,
+				1811226D28C25EAB00A4951F /* MediaTabBarController.m */,
 				18B23E3B2478CF4E00170BAD /* AudioVc.h */,
 				18B23E3C2478CF4E00170BAD /* AudioVc.m */,
 				18B23E3D2478CF4E00170BAD /* AudioVc.xib */,
+				1811227628C268A000A4951F /* HomeVc.h */,
+				1811227728C268A000A4951F /* HomeVc.m */,
+				1811227828C268A000A4951F /* HomeVc.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -569,6 +606,7 @@
 				18B23E292478B52C00170BAD /* player_btn_next_normal@2x.png in Resources */,
 				189382A92482B06D00B0DFAE /* PianAi.lrc in Resources */,
 				18B23E2B2478B52C00170BAD /* main_tab_more@2x.png in Resources */,
+				1811228028C26DC300A4951F /* tab_bar_field_field_selected@3x.png in Resources */,
 				189382AC2482B06D00B0DFAE /* WeiLong.lrc in Resources */,
 				1828C3262478291800C621D5 /* LaunchScreen.storyboard in Resources */,
 				18B23E022478B2D500170BAD /* AppIcon60x60@3x.png in Resources */,
@@ -578,6 +616,7 @@
 				18B23E302478B52C00170BAD /* player_btn_pre_normal@2x.png in Resources */,
 				18B23DFF2478B2D500170BAD /* AppIcon57x57@2x.png in Resources */,
 				189382A62482B06D00B0DFAE /* FenShouShuoAiNi.lrc in Resources */,
+				1811227C28C26D6700A4951F /* head_icon_arrow_left@3x.png in Resources */,
 				189382AE2482B08400B0DFAE /* PianAi.jpg in Resources */,
 				189382962482657A00B0DFAE /* FenShouShuoAiNi.mp3 in Resources */,
 				189382AB2482B06D00B0DFAE /* MingNianJinRi.lrc in Resources */,
@@ -586,6 +625,7 @@
 				189382982482B05A00B0DFAE /* PianAi.mp3 in Resources */,
 				184C61A5248B7CB300B61B1A /* Podfile in Resources */,
 				18B23DFC2478B2D500170BAD /* AppIcon60x60@2x.png in Resources */,
+				1811227F28C26DC300A4951F /* tab_bar_field_field@3x.png in Resources */,
 				189382AA2482B06D00B0DFAE /* XinYueShenHua.lrc in Resources */,
 				189382A52482B06D00B0DFAE /* YiBaiWanGeKeNeng.lrc in Resources */,
 				189382A72482B06D00B0DFAE /* KouShiXinFei.lrc in Resources */,
@@ -601,6 +641,7 @@
 				189382882482556200B0DFAE /* KouShiXinFei.mp3 in Resources */,
 				189382892482556200B0DFAE /* WeiLong.mp3 in Resources */,
 				18B23E222478B52C00170BAD /* playing_translate_lyric_select_n@2x.png in Resources */,
+				1811227A28C268A000A4951F /* HomeVc.xib in Resources */,
 				18B23E2C2478B52C00170BAD /* main_tab_more_h@2x.png in Resources */,
 				189382862482556200B0DFAE /* MingNianJinRi.mp3 in Resources */,
 				18B23E2F2478B52C00170BAD /* player_btn_pre_highlight@2x.png in Resources */,
@@ -677,13 +718,17 @@
 				18B23D742478B2C100170BAD /* UIImage+BoxBlur.m in Sources */,
 				18787C99249F106C00E4CF45 /* NSCalendar+X.m in Sources */,
 				18397C4A247A9AA500334AE7 /* LrcTool.m in Sources */,
+				1811227928C268A000A4951F /* HomeVc.m in Sources */,
 				18397C3E247A94E500334AE7 /* LrcTableViewCell.m in Sources */,
 				18787C9F249F106C00E4CF45 /* NSDate+X.m in Sources */,
+				1811227528C260C900A4951F /* Config.m in Sources */,
 				18B4ECEB247C0AEF0004D905 /* LrcLabel.m in Sources */,
 				1828C3292478291800C621D5 /* main.m in Sources */,
 				18787C9D249F106C00E4CF45 /* NSString+X.m in Sources */,
 				18397C4D247A9AEA00334AE7 /* LrcLineModel.m in Sources */,
+				1811226F28C25EAB00A4951F /* MediaTabBarController.m in Sources */,
 				18787C97249F106C00E4CF45 /* UIView+Frame.m in Sources */,
+				1811226E28C25EAB00A4951F /* MediaNavController.m in Sources */,
 				18B23D752478B2C100170BAD /* DRNRealTimeBlurView.m in Sources */,
 				18787C98249F106C00E4CF45 /* CALayer+X.m in Sources */,
 				18787C9B249F106C00E4CF45 /* UITextField+X.m in Sources */,
@@ -692,6 +737,7 @@
 				18397C3B247A7CCA00334AE7 /* LrcScrollView.m in Sources */,
 				18B23E8F2478FC9100170BAD /* AudioModel.m in Sources */,
 				18787C96249F106C00E4CF45 /* UIBarButtonItem+X.m in Sources */,
+				1811227228C25FD900A4951F /* MediaTabBar.m in Sources */,
 				18787C9A249F106C00E4CF45 /* UIView+X.m in Sources */,
 				1828C31B2478291700C621D5 /* SceneDelegate.m in Sources */,
 				18787C9C249F106C00E4CF45 /* UIImageView+X.m in Sources */,

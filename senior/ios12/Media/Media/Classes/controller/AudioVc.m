@@ -61,6 +61,16 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    XLog
+    [self pauseAudio];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    XLog
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
@@ -80,6 +90,7 @@
     
     // 播放歌曲
     [self startPlayMusic];
+//    [self pauseAudio];
     
     // 设置歌词 ScrollView
     self.svLrc.contentSize = CGSizeMake(self.view.bounds.size.width * 2, 0);
@@ -166,6 +177,8 @@
 #pragma mark - click Listener START
 - (IBAction)clickBtnMinPlayer:(UIButton *)sender {
     XLog
+    [self pauseAudio];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)clickBtnMore:(UIButton *)sender {
@@ -398,6 +411,8 @@
 
 #pragma mark -
 - (void)dealloc {
+    XLog
+    [self pauseAudio];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
