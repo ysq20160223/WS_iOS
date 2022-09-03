@@ -1,5 +1,5 @@
 //
-//  HomeVc.h
+//  AudioListVc.h
 //  Media
 //
 //  Created by Apple on 2022/9/3.
@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeVc : UIViewController
+@interface AudioListVc : UIViewController
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+
 - (IBAction)onClickAudio:(UIButton *)sender;
 
 @end

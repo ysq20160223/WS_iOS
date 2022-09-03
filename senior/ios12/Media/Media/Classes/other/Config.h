@@ -11,7 +11,7 @@
 
 
 #pragma mark - color
-#define commonBgColor XColor(0xf8, 0xf8, 0xf8)
+#define commonBgColor XColor(0x35, 0x36, 0x37)
 
 
 @interface Config : NSObject

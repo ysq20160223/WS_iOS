@@ -1,5 +1,5 @@
 //
-//  MusicTool.m
+//  AudioTool.m
 //  Media
 //
 //  Created by Apple on 2020/5/23.
@@ -8,7 +8,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-#import "MusicTool.h"
+#import "AudioTool.h"
 #import "AudioModel.h"
 
 //
@@ -16,10 +16,10 @@
 #import <MJExtension.h>
 
 
-@implementation MusicTool
+@implementation AudioTool
 
-static NSArray<AudioModel *> *_musics;
-static AudioModel *_playingMusic;
+static NSArray<AudioModel *> *_audioArray;
+static AudioModel *_playingAudio;
 
 
 //
@@ -28,13 +28,13 @@ static NSMutableDictionary *_players;
 
 
 + (void)initialize {
-    if (!_musics) {
-//        _musics = [AudioModel objectArrayWithFilename:@"Musics.plist" error:nil];
-        _musics = [AudioModel mj_objectArrayWithFilename:@"Musics.plist"];
+    if (!_audioArray) {
+//        _audioList = [AudioModel objectArrayWithFilename:@"Audio.plist" error:nil];
+        _audioArray = [AudioModel mj_objectArrayWithFilename:@"Audio.plist"];
     }
     
-    if (!_playingMusic && _musics && _musics.count > 0) {
-        _playingMusic = _musics[0];
+    if (!_playingAudio && _audioArray && _audioArray.count > 0) {
+        _playingAudio = _audioArray[0];
     }
     
     _soudIDs = [NSMutableDictionary dictionary];
@@ -42,39 +42,39 @@ static NSMutableDictionary *_players;
 }
 
 
-+ (NSArray<AudioModel *> *)musics {
-    return _musics;
++ (NSArray<AudioModel *> *)audioArray {
+    return _audioArray;
 }
 
-+ (AudioModel *)playingMusic {
-    return _playingMusic;
++ (AudioModel *)playingAudio {
+    return _playingAudio;
 }
 
-+ (void)setupPlayingMusicModel:(AudioModel *)audioModel {
-    _playingMusic = audioModel;
++ (void)setupPlayingAudioModel:(AudioModel *)audioModel {
+    _playingAudio = audioModel;
 }
 
 
-+ (AudioModel *)previousMusic {
-    NSInteger index = [_musics indexOfObject:_playingMusic];
++ (AudioModel *)previousAudio {
+    NSInteger index = [_audioArray indexOfObject:_playingAudio];
     index--;
     if (0 > index) {
-        index = _musics.count - 1;
+        index = _audioArray.count - 1;
     }
-    return _musics[index];
+    return _audioArray[index];
 }
 
-+ (AudioModel *)nextMusic {
-    NSInteger index = [_musics indexOfObject:_playingMusic];
++ (AudioModel *)nextAudio {
+    NSInteger index = [_audioArray indexOfObject:_playingAudio];
     index++;
-    if (index >= _musics.count) {
+    if (index >= _audioArray.count) {
         index = 0;
     }
-    return _musics[index];
+    return _audioArray[index];
 }
 
 //
-+ (AVAudioPlayer *)playMusicWithFileName:(NSString *)fileName {
++ (AVAudioPlayer *)playAudioWithFileName:(NSString *)fileName {
     // 1.创建空的播放器
     AVAudioPlayer *player = nil;
     
@@ -104,7 +104,7 @@ static NSMutableDictionary *_players;
     return player;
 }
 
-+ (AVAudioPlayer *)pauseMusicWithFileName:(NSString *)fileName {
++ (AVAudioPlayer *)pauseAudioWithFileName:(NSString *)fileName {
     // 1.从字典中取出播放器
     AVAudioPlayer *player = _players[fileName];
     
@@ -116,7 +116,7 @@ static NSMutableDictionary *_players;
     return player;
 }
 
-+ (void)stopMusicWithFileName:(NSString *)fileName {
++ (void)stopAudioWithFileName:(NSString *)fileName {
     // 1.从字典中取出播放器
     AVAudioPlayer *player = _players[fileName];
     

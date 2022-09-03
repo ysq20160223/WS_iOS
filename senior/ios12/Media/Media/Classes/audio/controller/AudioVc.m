@@ -20,7 +20,7 @@
 #import "CALayer+X.h"
 
 //
-#import "MusicTool.h"
+#import "AudioTool.h"
 #import "AudioModel.h"
 #import "LrcScrollView.h"
 #import "LrcLabel.h"
@@ -89,7 +89,7 @@
     [self.slideAudio setThumbImage:[UIImage imageNamed:@"player_slider_playback_thumb"] forState:UIControlStateNormal];
     
     // 播放歌曲
-    [self startPlayMusic];
+    [self startPlay];
 //    [self pauseAudio];
     
     // 设置歌词 ScrollView
@@ -100,11 +100,9 @@
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(sceneDidEnterBackground) name:@"sceneDidEnterBackground" object:nil];
 }
 
-- (void)startPlayMusic {
-    //    NSLog(@"%@", [MusicTool musics]);
-    
+- (void)startPlay {
     // 1
-    AudioModel *audioModel = MusicTool.playingMusic;
+    AudioModel *audioModel = AudioTool.playingAudio;
     NSLog(@"%@", audioModel);
     
     // 2
@@ -115,11 +113,11 @@
     self.ivAlbum.image = [UIImage imageNamed:audioModel.icon];
     [self.btnCenterIcon setImage:[UIImage imageNamed:audioModel.icon] forState:UIControlStateNormal];
     [self.btnCenterIcon setImage:[UIImage imageNamed:audioModel.icon] forState:UIControlStateHighlighted];
-    self.svLrc.lrcName = [MusicTool playingMusic].lrcname;
+    self.svLrc.lrcName = [AudioTool playingAudio].lrcname;
     self.svLrc.lrcLabel = self.lblLrc;
     
     // 3
-    self.audioPlayer = [MusicTool playMusicWithFileName:audioModel.filename];
+    self.audioPlayer = [AudioTool playAudioWithFileName:audioModel.filename];
     self.audioPlayer.delegate = self;
     [self updateProgressInfo];
     [self addCenterIconRotate];
@@ -140,6 +138,7 @@
     self.btnCenterIcon.layer.masksToBounds = YES;
     self.btnCenterIcon.layer.borderColor = XColorAlpha(36, 36, 36, 0.9).CGColor;
     self.btnCenterIcon.layer.borderWidth = 8;
+    self.btnCenterIcon.hidden = NO;
 }
 
 
@@ -220,7 +219,7 @@
 - (IBAction)clickBtnPrevious:(UIButton *)sender {
     //    XLog
     [self.btnCenterIcon.layer pauseAnimate];
-    [self playMusic:[MusicTool previousMusic]];
+    [self playAudio:[AudioTool previousAudio]];
 }
 
 - (IBAction)clickBtnPlayPause:(UIButton *)sender {
@@ -235,19 +234,19 @@
 - (IBAction)clickBtnNext:(UIButton *)sender {
     //    XLog
     [self.btnCenterIcon.layer pauseAnimate];
-    [self playMusic:[MusicTool nextMusic]];
+    [self playAudio:[AudioTool nextAudio]];
 }
 
-- (void)playMusic:(AudioModel *)audioModel {
+- (void)playAudio:(AudioModel *)audioModel {
     // 1
-    AudioModel *playingAudioModel = [MusicTool playingMusic];
-    [MusicTool pauseMusicWithFileName:playingAudioModel.filename];
+    AudioModel *playingAudioModel = [AudioTool playingAudio];
+    [AudioTool pauseAudioWithFileName:playingAudioModel.filename];
     
     // 2
-    [MusicTool setupPlayingMusicModel:audioModel];
+    [AudioTool setupPlayingAudioModel:audioModel];
     
     // 3
-    [self startPlayMusic];
+    [self startPlay];
 }
 
 
@@ -331,7 +330,7 @@
 #pragma mark - 设置锁屏信息
 - (void)setupLockInfo {
     // 0, 获取当前播放音乐
-    AudioModel *audioModel = [MusicTool playingMusic];
+    AudioModel *audioModel = [AudioTool playingAudio];
     
     // 1, 获取锁屏中心
     MPNowPlayingInfoCenter *playingInfoCenter = [MPNowPlayingInfoCenter defaultCenter];
@@ -413,7 +412,7 @@
 - (void)dealloc {
     XLog
     [self pauseAudio];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 @end

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVc">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoListVc">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,27 +17,27 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3F-iV-pQH">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBA-lc-ddf">
                     <rect key="frame" x="20" y="64" width="374" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="44" id="ZeS-WZ-O5z"/>
+                        <constraint firstAttribute="height" constant="44" id="u0N-JC-Pvg"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Audio">
+                    <buttonConfiguration key="configuration" style="plain" title="Video">
                         <backgroundConfiguration key="background">
-                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="onClickAudio:" destination="-1" eventType="touchUpInside" id="hnY-BN-nx8"/>
+                        <action selector="onClickVideo:" destination="-1" eventType="touchUpInside" id="cQ7-NA-eOP"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="L3F-iV-pQH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="DZl-Nu-xor"/>
-                <constraint firstAttribute="trailing" secondItem="L3F-iV-pQH" secondAttribute="trailing" constant="20" id="TeU-KS-G8i"/>
-                <constraint firstItem="L3F-iV-pQH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="cTU-Zv-oyu"/>
+                <constraint firstItem="WBA-lc-ddf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="H9m-el-v80"/>
+                <constraint firstAttribute="trailing" secondItem="WBA-lc-ddf" secondAttribute="trailing" constant="20" id="jec-4W-fE5"/>
+                <constraint firstItem="WBA-lc-ddf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="kBt-W7-ddI"/>
             </constraints>
             <point key="canvasLocation" x="139" y="67"/>
         </view>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,16 +20,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="HfY-W5-lLg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="ic_launch_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="HfY-W5-lLg">
+                                <rect key="frame" x="154.5" y="395.5" width="105" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="dXp-bR-a5t"/>
+                                    <constraint firstAttribute="width" constant="105" id="pln-1t-08Q"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="HfY-W5-lLg" secondAttribute="trailing" id="S3m-E1-Z2J"/>
-                            <constraint firstAttribute="bottom" secondItem="HfY-W5-lLg" secondAttribute="bottom" id="heC-6N-Ohi"/>
-                            <constraint firstItem="HfY-W5-lLg" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jcd-Fs-TyE"/>
-                            <constraint firstItem="HfY-W5-lLg" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="qKk-dy-gea"/>
+                            <constraint firstItem="HfY-W5-lLg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3Cj-4Z-FjW"/>
+                            <constraint firstItem="HfY-W5-lLg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bWg-Q8-qE6"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +41,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Default.png" width="320" height="568"/>
+        <image name="ic_launch_screen.png" width="105" height="105"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

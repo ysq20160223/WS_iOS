@@ -16,6 +16,17 @@
 
 @implementation MediaNavController
 
+
+/// 设置 NavigationBar 颜色
+- (void)viewWillAppear:(BOOL)animated {
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
+        appearance.backgroundColor = XColorAlpha(0, 0, 0, 0);
+        self.navigationBar.standardAppearance = appearance;
+        self.navigationBar.scrollEdgeAppearance = appearance;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
