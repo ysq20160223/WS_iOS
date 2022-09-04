@@ -58,12 +58,6 @@
     
 }
 
-
-- (IBAction)onClickAudio:(UIButton *)sender {
-    XLog
-    [self.navigationController pushViewController:AudioVc.alloc.init animated:YES];
-}
-
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return AudioTool.audioArray.count;

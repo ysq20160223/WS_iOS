@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "VideoModel.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoListVc : UIViewController
 
-- (IBAction)onClickVideo:(UIButton *)sender;
+@property (strong, nonatomic) UICollectionView *collectionView;
 
 @end
 

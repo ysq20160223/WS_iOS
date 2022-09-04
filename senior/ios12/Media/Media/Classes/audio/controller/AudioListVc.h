@@ -14,9 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-
-- (IBAction)onClickAudio:(UIButton *)sender;
-
 @end
 
 NS_ASSUME_NONNULL_END
