@@ -23,8 +23,8 @@
                             <constraint firstAttribute="width" secondItem="Kr0-ty-ZOc" secondAttribute="height" multiplier="1:1" id="yVZ-Fx-b7X"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="filename" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDA-Xl-7IA" userLabel="filename">
-                        <rect key="frame" x="149" y="10" width="68.5" height="21.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDA-Xl-7IA" userLabel="lblName">
+                        <rect key="frame" x="149" y="10" width="44.5" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -49,8 +49,9 @@
             </constraints>
             <size key="customSize" width="444" height="137"/>
             <connections>
+                <outlet property="ivIcon" destination="Kr0-ty-ZOc" id="Hny-NZ-aAs"/>
                 <outlet property="lblAuthor" destination="UcE-Ku-eQD" id="03b-Cj-3CQ"/>
-                <outlet property="lblFileName" destination="LDA-Xl-7IA" id="Yny-S6-qLk"/>
+                <outlet property="lblName" destination="LDA-Xl-7IA" id="FMZ-zq-Nqb"/>
             </connections>
             <point key="canvasLocation" x="-75.362318840579718" y="40.513392857142854"/>
         </collectionViewCell>

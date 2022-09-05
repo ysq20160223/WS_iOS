@@ -14,7 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.lblFileName.textColor = XColor(0xee, 0xee, 0xee);
+    self.lblName.textColor = XColor(0xee, 0xee, 0xee);
     self.lblAuthor.textColor = XColor(0x88, 0x88, 0x88);
     self.backgroundColor = XColor(0x40, 0x40, 0x40);
     
@@ -24,8 +24,8 @@
 }
 
 - (void)setVideoModel:(VideoModel *)videoModel withIndexPath:(NSIndexPath *)indexPath {
-//    self.ivIcon.image = [UIImage imageNamed:videoModel.icon];
-    self.lblFileName.text = videoModel.filename;
+    self.ivIcon.image = [UIImage imageNamed:videoModel.icon];
+    self.lblName.text = videoModel.name;
     self.lblAuthor.text = videoModel.author;
 }
 

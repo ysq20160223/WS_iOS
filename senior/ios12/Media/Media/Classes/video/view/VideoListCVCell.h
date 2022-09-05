@@ -13,11 +13,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoListCVCell : UICollectionViewCell
-//@property (weak, nonatomic) IBOutlet UIImageView *ivIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *ivIcon;
 //@property (weak, nonatomic) IBOutlet UILabel *lblFileName;
 //@property (weak, nonatomic) IBOutlet UILabel *lblAuthor;
 
-@property (weak, nonatomic) IBOutlet UILabel *lblFileName;
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
 @property (weak, nonatomic) IBOutlet UILabel *lblAuthor;
 
 

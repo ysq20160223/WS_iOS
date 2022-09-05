@@ -1115,6 +1115,13 @@
 			path = Media;
 			sourceTree = "<group>";
 		};
+		1830E02128C64067007A80EF /* VideoImg */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoImg;
+			sourceTree = "<group>";
+		};
 		183895B828C3283200B9194B /* audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -2639,6 +2646,7 @@
 		18B23D802478B2CB00170BAD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1830E02128C64067007A80EF /* VideoImg */,
 				18B23D812478B2CB00170BAD /* Lrcs */,
 				18B23D8C2478B2CB00170BAD /* Images */,
 				18B23DA12478B2CB00170BAD /* MP3s */,
