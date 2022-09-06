@@ -290,6 +290,7 @@
 		18397C3E247A94E500334AE7 /* LrcTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18397C3D247A94E500334AE7 /* LrcTableViewCell.m */; };
 		18397C4A247A9AA500334AE7 /* LrcTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18397C49247A9AA500334AE7 /* LrcTool.m */; };
 		18397C4D247A9AEA00334AE7 /* LrcLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18397C4C247A9AEA00334AE7 /* LrcLineModel.m */; };
+		184A370828C7758200224514 /* navigationButtonReturn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 184A370728C7758200224514 /* navigationButtonReturn@3x.png */; };
 		184C61A5248B7CB300B61B1A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 184C61A4248B7CB300B61B1A /* Podfile */; };
 		18787C96249F106C00E4CF45 /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787C83249F106B00E4CF45 /* UIBarButtonItem+X.m */; };
 		18787C97249F106C00E4CF45 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787C84249F106B00E4CF45 /* UIView+Frame.m */; };
@@ -959,6 +960,7 @@
 		18397C49247A9AA500334AE7 /* LrcTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LrcTool.m; sourceTree = "<group>"; };
 		18397C4B247A9AEA00334AE7 /* LrcLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LrcLineModel.h; sourceTree = "<group>"; };
 		18397C4C247A9AEA00334AE7 /* LrcLineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LrcLineModel.m; sourceTree = "<group>"; };
+		184A370728C7758200224514 /* navigationButtonReturn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationButtonReturn@3x.png"; sourceTree = "<group>"; };
 		184C61A4248B7CB300B61B1A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		18787C82249F106B00E4CF45 /* UITextField+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+X.h"; path = "../../../../../../category/UITextField+X.h"; sourceTree = "<group>"; };
 		18787C83249F106B00E4CF45 /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+X.m"; path = "../../../../../../category/UIBarButtonItem+X.m"; sourceTree = "<group>"; };
@@ -2675,6 +2677,7 @@
 		18B23D8C2478B2CB00170BAD /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				184A370728C7758200224514 /* navigationButtonReturn@3x.png */,
 				189382AD2482B08300B0DFAE /* PianAi.jpg */,
 				189382912482656200B0DFAE /* QiFengLe.jpg */,
 				1893828F2482655800B0DFAE /* FenShouShuoAiNi.jpg */,
@@ -2952,6 +2955,7 @@
 				1811227C28C26D6700A4951F /* head_icon_arrow_left@3x.png in Resources */,
 				189382AE2482B08400B0DFAE /* PianAi.jpg in Resources */,
 				189382962482657A00B0DFAE /* FenShouShuoAiNi.mp3 in Resources */,
+				184A370828C7758200224514 /* navigationButtonReturn@3x.png in Resources */,
 				189382AB2482B06D00B0DFAE /* MingNianJinRi.lrc in Resources */,
 				189382922482656200B0DFAE /* QiFengLe.jpg in Resources */,
 				18B23E2D2478B52C00170BAD /* miniplayer_btn_playlist_close@2x.png in Resources */,

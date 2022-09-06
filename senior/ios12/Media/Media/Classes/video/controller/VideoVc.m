@@ -13,7 +13,6 @@
 
 @interface VideoVc ()
 @property (nonatomic, strong) Player *player;
-@property (nonatomic, strong) UIButton *btnBack;
 @end
 
 
@@ -24,19 +23,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navigationItem.title = VideoTool.playingVideo.name;
+    
+//    UIButton *btnTitle = (UIButton *) self.navigationItem.titleView;
+//    [btnTitle setTitle:VideoTool.playingVideo.name forState:UIControlStateNormal];
+    
+//    UILabel *lblTitle = [UILabel.alloc initWithFrame:CGRectMake(0, 0, 100, 44)];
+//    lblTitle.text = VideoTool.playingVideo.name;
+//    lblTitle.textColor = XColor(0xaa, 0xaa, 0xaa);
+//    self.navigationItem.titleView = lblTitle;
+    
     [self initPlayer];
     
-    self.btnBack = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:self.btnBack];
-//    self.btnBack.backgroundColor = XRandomColor();
-    [self.btnBack setImage:[UIImage imageNamed:@"miniplayer_btn_playlist_close_b"] forState:UIControlStateNormal];
-    [self.btnBack setImage:[UIImage imageNamed:@"miniplayer_btn_playlist_close"] forState:UIControlStateHighlighted];
-    [self.btnBack addTarget:self action:@selector(onClickBack:) forControlEvents:UIControlEventTouchUpInside];
-    [self.btnBack mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.view.mas_left);
-        make.top.mas_equalTo(self.view.mas_top).offset(64);
-        make.width.height.mas_equalTo(55);
-    }];
 }
 
 - (void)initPlayer {
@@ -73,9 +71,7 @@
         }
     };
 }
-- (IBAction)onClickBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 
 - (void)dealloc {
     [self.player stop];

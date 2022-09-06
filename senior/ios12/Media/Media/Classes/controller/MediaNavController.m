@@ -7,6 +7,7 @@
 //
 
 #import "MediaNavController.h"
+#import "UIImage+X.h"
 
 @interface MediaNavController () <UIGestureRecognizerDelegate>
 
@@ -17,14 +18,23 @@
 @implementation MediaNavController
 
 
-/// 设置 NavigationBar 颜色
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
+    NSMutableDictionary<NSAttributedStringKey, id> *dict = [NSMutableDictionary dictionary];
+    [dict setObject:XColor(0xaa, 0xaa, 0xaa) forKey:NSForegroundColorAttributeName];
+    self.navigationBar.titleTextAttributes = dict;
+    
     if (@available(iOS 13.0, *)) {
         UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
-        appearance.backgroundColor = XColorAlpha(0, 0, 0, 0);
+        appearance.backgroundColor = XColorAlpha(0x35, 0x36, 0x37, 1);
+        appearance.titleTextAttributes = dict;
         self.navigationBar.standardAppearance = appearance;
         self.navigationBar.scrollEdgeAppearance = appearance;
     }
+    
 }
 
 - (void)viewDidLoad {
@@ -37,6 +47,7 @@
     // 设置背景颜色, 防止push的时候右上角出现黑边
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
     
+    
 //    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"my_top_bgs"] forBarMetrics:UIBarMetricsDefault];
 //    [self.navigationBar setBackgroundColor:[UIColor cyanColor]]; // 设置颜色无效
 }
@@ -48,8 +59,8 @@
         NSInteger navigationH = self.navigationBar.frame.size.height;
         UIButton *backBtn = [UIButton.alloc initWithFrame:CGRectMake(0, 0, navigationH, navigationH)];
 //        backBtn.backgroundColor = UIColor.cyanColor;
-        [backBtn setImage:[UIImage imageNamed:@"head_icon_arrow_left"] forState:UIControlStateNormal];
-        [backBtn setImage:[UIImage imageNamed:@"head_icon_arrow_left"] forState:UIControlStateHighlighted];
+        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
         [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -21, 0, 0)];
 //        [backBtn setTitle:@"Back" forState:UIControlStateNormal];
 //        [backBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
@@ -63,6 +74,10 @@
         } else {
             [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         }
+        
+//        UIButton *btnTitle = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [btnTitle setTitleColor:XColor(0xaa, 0xaa, 0xaa) forState:UIControlStateNormal];
+//        viewController.navigationItem.titleView = btnTitle;
         
         
         UIView *leftView = [UIView.alloc initWithFrame:CGRectMake(0, 0, navigationH, navigationH)];

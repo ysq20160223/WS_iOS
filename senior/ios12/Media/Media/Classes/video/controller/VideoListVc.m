@@ -12,6 +12,7 @@
 #import "VideoListCVCell.h"
 #import "UIView+X.h"
 #import "VideoModel.h"
+#import "Config.h"
 
 #import <Masonry.h>
 
@@ -25,29 +26,20 @@
 
 @implementation VideoListVc
 
-// 设置 NavigationBar 颜色
-//- (void)viewWillAppear:(BOOL)animated {
-//    if (@available(iOS 13.0, *)) {
-//        UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
-//        appearance.backgroundColor = XColor(0x33, 0x33, 0x33);
-//        self.navigationController.navigationBar.standardAppearance = appearance;
-//        self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
-//    }
-//}
-
 - (void)viewWillAppear:(BOOL)animated {
-//    XLog
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navigationItem.title = @"Video";
+    
 //    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
     
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout.alloc init];
-    layout.minimumLineSpacing = 1;
+    layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 0;
     layout.sectionHeadersPinToVisibleBounds = YES;
     
@@ -60,8 +52,6 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.collectionView.alwaysBounceVertical = YES;
-    self.collectionView.layer.cornerRadius = 10;
-    self.collectionView.layer.masksToBounds = YES;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(VideoListCVCell.class) bundle:nil] forCellWithReuseIdentifier:kVideoListCVCell];
     
 }
@@ -78,6 +68,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [VideoTool setupPlayingVideoModel:VideoTool.videoArray[indexPath.row]];
     [self.navigationController pushViewController:VideoVc.alloc.init animated:YES];
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(10, 0, 10, 0);
 }
 
 

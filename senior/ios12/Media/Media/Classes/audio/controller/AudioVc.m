@@ -177,7 +177,9 @@
 - (IBAction)clickBtnMinPlayer:(UIButton *)sender {
     XLog
     [self pauseAudio];
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)clickBtnMore:(UIButton *)sender {

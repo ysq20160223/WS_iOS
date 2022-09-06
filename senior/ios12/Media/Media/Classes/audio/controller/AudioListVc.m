@@ -12,6 +12,7 @@
 #import "AudioListCVCell.h"
 #import "UIView+X.h"
 #import "AudioModel.h"
+#import "Config.h"
 
 #import <Masonry.h>
 
@@ -25,24 +26,17 @@
 
 @implementation AudioListVc
 
-// 设置 NavigationBar 颜色
-//- (void)viewWillAppear:(BOOL)animated {
-//    if (@available(iOS 13.0, *)) {
-//        UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
-//        appearance.backgroundColor = XColor(0x33, 0x33, 0x33);
-//        self.navigationController.navigationBar.standardAppearance = appearance;
-//        self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
-//    }
-//}
 
 - (void)viewWillAppear:(BOOL)animated {
-//    XLog
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:NO];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.title = @"Audio";
     
 //    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
     self.collectionView.backgroundColor = XColor(0x33, 0x33, 0x33);
@@ -52,10 +46,7 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.collectionView.alwaysBounceVertical = YES;
-    self.collectionView.layer.cornerRadius = 10;
-    self.collectionView.layer.masksToBounds = YES;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioListCVCell.class) bundle:nil] forCellWithReuseIdentifier:kAudioListCVCell];
-    
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -69,9 +60,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [AudioTool setupPlayingAudioModel:AudioTool.audioArray[indexPath.row]];
-    [self.navigationController pushViewController:AudioVc.alloc.init animated:YES];
+    
+    // fun 01
+//    [self.navigationController pushViewController:AudioVc.alloc.init animated:YES];
+    
+    // fun 02
+    AudioVc *audioVc = AudioVc.alloc.init;
+//    audioVc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:audioVc animated:YES completion:nil];
 }
 
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(10, 0, 10, 0);
+}
 
 #pragma mark - UICollectionViewDataSource
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

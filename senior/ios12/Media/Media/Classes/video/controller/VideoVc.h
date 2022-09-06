@@ -15,7 +15,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VideoVc : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *onClickMin;
+
 
 @end
 
