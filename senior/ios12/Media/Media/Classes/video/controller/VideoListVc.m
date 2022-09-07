@@ -30,14 +30,7 @@
     [self.navigationController setNavigationBarHidden:NO];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    self.navigationItem.title = @"Video";
-    
-//    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
-    
+- (void)initCollectionView {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout.alloc init];
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 0;
@@ -53,8 +46,19 @@
     self.collectionView.delegate = self;
     self.collectionView.alwaysBounceVertical = YES;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(VideoListCVCell.class) bundle:nil] forCellWithReuseIdentifier:kVideoListCVCell];
-    
 }
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.navigationItem.title = @"Video";
+    
+//    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
+    
+    [self initCollectionView];
+}
+
+
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

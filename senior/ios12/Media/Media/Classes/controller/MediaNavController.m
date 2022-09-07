@@ -59,8 +59,11 @@
         NSInteger navigationH = self.navigationBar.frame.size.height;
         UIButton *backBtn = [UIButton.alloc initWithFrame:CGRectMake(0, 0, navigationH, navigationH)];
 //        backBtn.backgroundColor = UIColor.cyanColor;
-        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+        
+//        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+//        [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateHighlighted];
+        [backBtn setImage:[UIImage imageNamed:@"head_arrow_right_grey"] forState:UIControlStateNormal];
+        [backBtn setImage:[UIImage imageNamed:@"head_arrow_right_grey"] forState:UIControlStateHighlighted];
         [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -21, 0, 0)];
 //        [backBtn setTitle:@"Back" forState:UIControlStateNormal];
 //        [backBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];

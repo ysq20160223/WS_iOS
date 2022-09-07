@@ -10,6 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum {
+    ModeViewList, ModeViewGrid
+} ModeView;
+
 @interface AudioListVc : UIViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;

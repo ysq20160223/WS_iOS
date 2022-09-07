@@ -42,7 +42,7 @@
                                 <constraint firstAttribute="height" constant="55" id="Cig-Y1-yM1"/>
                                 <constraint firstAttribute="width" constant="55" id="k5j-zo-WQY"/>
                             </constraints>
-                            <state key="normal" image="main_tab_more.png"/>
+                            <state key="normal" image="main_tab_more_n.png"/>
                             <state key="highlighted" image="main_tab_more_h.png"/>
                             <connections>
                                 <action selector="clickBtnMore:" destination="-1" eventType="touchUpInside" id="a5E-iQ-cja"/>
@@ -227,8 +227,8 @@
     </objects>
     <resources>
         <image name="YiBaiWanGeKeNeng.jpg" width="864" height="864"/>
-        <image name="main_tab_more.png" width="45" height="45"/>
         <image name="main_tab_more_h.png" width="45" height="45"/>
+        <image name="main_tab_more_n.png" width="45" height="45"/>
         <image name="miniplayer_btn_playlist_close.png" width="40" height="40"/>
         <image name="miniplayer_btn_playlist_close_b.png" width="40" height="40"/>
         <image name="player_btn_next_normal.png" width="64" height="64"/>
