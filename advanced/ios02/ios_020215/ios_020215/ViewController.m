@@ -17,7 +17,7 @@
 
 @implementation ViewController
 
-#pragma mark - 控制器的 view 加载完毕的时候会调用一次
+#pragma mark -
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -28,7 +28,7 @@
     
     // 1, 创建按钮
     UIButton *btn = UIButton.alloc.init; // 1.1
-    btn.frame = CGRectMake(0, rect.size.height, 150, 150); // 1.2 位置和尺寸
+    btn.frame = CGRectMake(0, rect.size.height, 200, 200); // 1.2 位置和尺寸
     [btn setBackgroundColor:XColor(0, 255, 255)];
     
     
@@ -38,13 +38,13 @@
     btn.center = centerPoint;
     
     // 1.3 设置普通状态属性
-    [btn setBackgroundImage:[UIImage imageNamed:@"img_normal.png"] forState:UIControlStateNormal]; // 1.3.1 设置背景图片
-    [btn setTitle:@"click" forState:UIControlStateNormal]; // 设置文字
+    [btn setBackgroundImage:[UIImage imageNamed:@"img_normal"] forState:UIControlStateNormal]; // 1.3.1 设置背景图片
+    [btn setTitle:@"Normal" forState:UIControlStateNormal]; // 设置文字
     [btn setTitleColor:UIColor.blueColor forState:UIControlStateNormal]; // 文字颜色
     
     // 1.4 设置高亮状态属性
-    [btn setBackgroundImage:[UIImage imageNamed:@"img_press.png"] forState:UIControlStateHighlighted];
-    [btn setTitle:@"what" forState:UIControlStateHighlighted];
+    [btn setBackgroundImage:[UIImage imageNamed:@"img_press"] forState:UIControlStateHighlighted];
+    [btn setTitle:@"Highlighted" forState:UIControlStateHighlighted];
     [btn setTitleColor:UIColor.greenColor forState:UIControlStateHighlighted];
     
     // 1.5 监听按钮点击
