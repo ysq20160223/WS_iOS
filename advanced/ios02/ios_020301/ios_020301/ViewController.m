@@ -34,44 +34,47 @@
 //    NSLog(@"path:%@", path);
 
     _descArray = [NSArray arrayWithContentsOfFile:path]; // 3, 加载 path 对应的文件来创建数组
-    _lbDesc.text = _descArray[0];
+    _lblDesc.text = _descArray[0];
     
     
-    CGRect frame = _settingView.frame;
-    frame.origin.y = self.view.frame.size.height;
-    frame.size.width = self.view.frame.size.width;
-    _settingView.frame = frame;
+    CGRect frame = _viewSetting.frame;
+    frame.origin.y = _screenH;
+    frame.size.width = _screenW;
+    _viewSetting.frame = frame;
     
-    //
 //    _contentSlide.continuous = NO; // 滑动结束调用
 }
 
 
 - (IBAction)contentSliderValueChange:(UISlider *)sender {
-    NSLog(@"sliderValueChange: %f", sender.value); // sender.value = [0 ~ 15]
+    NSLog(@"value: %f", sender.value); // sender.value = [0 ~ 15]
     
-    _lbNo.text = [NSString stringWithFormat:@"%.f/16", sender.value + 1]; // 设置序号
+    _lblNo.text = [NSString stringWithFormat:@"%.f/16", sender.value + 1]; // 设置序号
     // .0f == .f (不保留小数) ; %02 表示保持两位数格式
-    NSString *imageNamed = [NSString stringWithFormat:@"img%02.f.png", sender.value];
+    NSString *imageNamed = [NSString stringWithFormat:@"img%02.f", sender.value];
     _imageView.image = [UIImage imageNamed:imageNamed]; // 设置中间的图片
-    _lbDesc.text = _descArray[(int)round(sender.value)]; // 设置描述
+    _lblDesc.text = _descArray[(int)round(sender.value)]; // 设置描述
 }
 
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self onClickSetting];
+//}
 
-- (IBAction)setting {
+- (IBAction)onClickSetting {
     [UIView animateWithDuration:0.5 animations:^{
-        CGPoint center = _settingView.center; // 1, 取出中点
-        if(_settingView.frame.origin.y >= _screenH) {
-            center.y = _screenH - _settingView.frame.size.height / 2; // 2, 修改 y 值
+        CGPoint center = _viewSetting.center; // 1, 取出中点
+        NSLog("%@", NSStringFromCGPoint(center))
+        if(_viewSetting.frame.origin.y >= _screenH) {
+            center.y = _screenH - _viewSetting.frame.size.height / 2; // 2, 修改 y 值
         } else {
-            center.y = _screenH + _settingView.frame.size.height / 2; // 2, 修改 y 值
+            center.y = _screenH + _viewSetting.frame.size.height / 2; // 2, 修改 y 值
         }
-        _settingView.center = center; // 3, 重新赋值
+        _viewSetting.center = center; // 3, 重新赋值
     }];
 }
 
 
-- (IBAction)nightMode:(UISwitch *)sender {
+- (IBAction)onClickDayNightMode:(UISwitch *)sender {
     self.view.backgroundColor = sender.on ? UIColor.darkGrayColor : UIColor.whiteColor;
 }
 
