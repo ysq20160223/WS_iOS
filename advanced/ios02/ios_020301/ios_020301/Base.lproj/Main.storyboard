@@ -124,10 +124,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSetting" destination="3EW-Oj-fVh" id="2ay-Zr-u2e"/>
                         <outlet property="imageView" destination="Kqe-3Y-McZ" id="ifO-4D-uVS"/>
                         <outlet property="lblDesc" destination="FAQ-bd-VTY" id="k1L-4g-M4h"/>
                         <outlet property="lblNo" destination="cWs-DU-DY2" id="dne-9W-uou"/>
                         <outlet property="slideContent" destination="qoa-3R-grb" id="BQ9-kX-TTA"/>
+                        <outlet property="switchDayNight" destination="UWp-va-EgB" id="MiL-Sq-Y2q"/>
                         <outlet property="viewSetting" destination="EkL-TO-XYx" id="Gig-U8-Cdf"/>
                     </connections>
                 </viewController>

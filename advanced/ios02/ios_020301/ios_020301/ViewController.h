@@ -10,14 +10,15 @@
 
 @interface ViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *viewSetting;
+@property (weak, nonatomic) IBOutlet UIButton *btnSetting;
 @property (weak, nonatomic) IBOutlet UILabel *lblNo;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDesc;
 @property (weak, nonatomic) IBOutlet UISlider *slideContent;
 
-
+@property (weak, nonatomic) IBOutlet UIView *viewSetting;
+@property (weak, nonatomic) IBOutlet UISwitch *switchDayNight;
 
 
 //

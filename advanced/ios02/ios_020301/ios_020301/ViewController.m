@@ -29,8 +29,8 @@
     _screenH = self.view.frame.size.height;
     
     
-    // 1, 获得所有的描述
-    NSString *path = [NSBundle.mainBundle pathForResource:@"descs.plist" ofType:nil]; // 2, 获得文件的全路径
+    // 1, 获得所有的描述; 2, 获得文件的全路径
+    NSString *path = [NSBundle.mainBundle pathForResource:@"descs.plist" ofType:nil];
 //    NSLog(@"path:%@", path);
 
     _descArray = [NSArray arrayWithContentsOfFile:path]; // 3, 加载 path 对应的文件来创建数组
@@ -43,17 +43,25 @@
     _viewSetting.frame = frame;
     
 //    _contentSlide.continuous = NO; // 滑动结束调用
+    
+    self.btnSetting.layer.cornerRadius = 6;
+    self.btnSetting.layer.masksToBounds = YES;
+    self.switchDayNight.on = YES;
+    [self onClickDayNightMode:self.switchDayNight];
+    
+//    self.viewSetting.layer.cornerRadius = 8;
+//    self.viewSetting.layer.masksToBounds = YES;
 }
 
 
 - (IBAction)contentSliderValueChange:(UISlider *)sender {
-    NSLog(@"value: %f", sender.value); // sender.value = [0 ~ 15]
+    NSLog(@"value: %f; %ld", sender.value, lround(sender.value)); // sender.value = [0 ~ 15]
     
     _lblNo.text = [NSString stringWithFormat:@"%.f/16", sender.value + 1]; // 设置序号
     // .0f == .f (不保留小数) ; %02 表示保持两位数格式
     NSString *imageNamed = [NSString stringWithFormat:@"img%02.f", sender.value];
     _imageView.image = [UIImage imageNamed:imageNamed]; // 设置中间的图片
-    _lblDesc.text = _descArray[(int)round(sender.value)]; // 设置描述
+    _lblDesc.text = _descArray[lround(sender.value)]; // 设置描述
 }
 
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -73,9 +81,26 @@
     }];
 }
 
-
 - (IBAction)onClickDayNightMode:(UISwitch *)sender {
-    self.view.backgroundColor = sender.on ? UIColor.darkGrayColor : UIColor.whiteColor;
+//    NSLog(@"on: %d", sender.on);
+    self.view.backgroundColor = sender.on ? XColor(0x33, 0x33, 0x33) : UIColor.whiteColor;
+    
+    self.btnSetting.backgroundColor = sender.on ? XColor(0x55, 0x55, 0x55) : XColor(0xee, 0xee, 0xee);
+    [self.btnSetting setTitleColor:(sender.on ? UIColor.whiteColor : UIColor.blackColor) forState:UIControlStateNormal];
+    
+    self.lblNo.textColor = sender.on ? UIColor.whiteColor : UIColor.blackColor;
+    self.lblNo.backgroundColor = sender.on ? XColor(0x55, 0x55, 0x55) : XColor(0xee, 0xee, 0xee);
+    
+    self.lblDesc.textColor = sender.on ? UIColor.whiteColor : UIColor.blackColor;
+    self.lblDesc.backgroundColor = sender.on ? XColor(0x55, 0x55, 0x55) : XColor(0xee, 0xee, 0xee);
+    
+    self.slideContent.tintColor = sender.on ? UIColor.whiteColor : XColor(0x55, 0x55, 0x55);
+    self.slideContent.thumbTintColor = sender.on ? UIColor.whiteColor : XColor(0x55, 0x55, 0x55);
+    self.slideContent.minimumTrackTintColor = sender.on ? UIColor.whiteColor : XColor(0x55, 0x55, 0x55);
+    self.slideContent.maximumTrackTintColor = sender.on ? XColor(0x22, 0x22, 0x22) : XColor(0xaa, 0xaa, 0xaa);
+//    self.slideContent.minimumTrackTintColor = UIColor.cyanColor;
+//    self.slideContent.minimumTrackTintColor = UIColor.magentaColor;
+    self.slideContent.backgroundColor = sender.on ? XColor(0x55, 0x55, 0x55) : XColor(0xee, 0xee, 0xee);
 }
 
 
