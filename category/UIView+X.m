@@ -1,6 +1,5 @@
 //
-//  UIView+Extend.m
-//  BaiSiBuDeJie
+//  UIView+X.m
 //
 //  Created by Apple on 2017/11/5.
 //  Copyright © 2017年 Apple. All rights reserved.
@@ -125,10 +124,10 @@
 
 + (void)setBorder:(UIView *)view color:(UIColor *)color radius:(float)radius border:(float)border {
     CALayer *layer = [view layer];
-    [layer setMasksToBounds:YES];
-    [layer setCornerRadius:radius];
-    [layer setBorderWidth:border];
-    [layer setBorderColor:[color CGColor]];
+    layer.masksToBounds = YES;
+    layer.cornerRadius = radius;
+    layer.borderWidth = border;
+    layer.borderColor = [color CGColor];
 }
 
 + (void)setBorder:(UIView *)view andStrokeColor:(UIColor *)strokeColor andFillColor:(UIColor *)fillColor andCornerRadius:(float)cornerRadius andLineWidth:(float)lineWidth {

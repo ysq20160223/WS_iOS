@@ -1,6 +1,5 @@
 //
 //  NSString+X.m
-//  BaiSiBuDeJie
 //
 //  Created by Apple on 2020/4/4.
 //  Copyright © 2020 Apple. All rights reserved.
@@ -13,7 +12,7 @@
 - (unsigned long long)xFileSize {
     unsigned long long size = 0;
     
-    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    NSFileManager *fileMgr = NSFileManager.defaultManager;
     
     BOOL isDirectory = NO;
     [fileMgr fileExistsAtPath:self isDirectory:&isDirectory];

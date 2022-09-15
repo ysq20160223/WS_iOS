@@ -1,6 +1,5 @@
 //
 //  UIImageView+X.m
-//  BaiSiBuDeJie
 //
 //  Created by Apple on 2020/5/7.
 //  Copyright © 2020 Apple. All rights reserved.

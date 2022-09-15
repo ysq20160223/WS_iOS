@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "UIBezierPath+X.h"
 
 @interface ViewController() {
     int _screenW;
@@ -51,6 +51,9 @@
     
 //    self.viewSetting.layer.cornerRadius = 8;
 //    self.viewSetting.layer.masksToBounds = YES;
+    
+    [UIBezierPath addShapeLayer:self.viewSetting byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(8, 8)];
+    
 }
 
 

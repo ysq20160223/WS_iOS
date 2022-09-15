@@ -1,3 +1,9 @@
+//
+//  NSCalendar+X.m
+//
+//  Created by Apple on 2020/4/17.
+//  Copyright © 2020 Apple. All rights reserved.
+//
 
 #import "NSCalendar+X.h"
 
@@ -131,14 +137,14 @@
 #pragma mark -
 // 当前时间戳
 + (long)xNow {
-    return (long)[NSDate.date timeIntervalSince1970] * 1000;
+    return (long)NSDate.date.timeIntervalSince1970 * 1000;
 }
 
 
 #pragma mark -
 // 根据 NSDate 获取时间戳
 + (long)xDate:(NSDate *)date {
-    return (long)[date timeIntervalSince1970] * 1000;
+    return (long)date.timeIntervalSince1970 * 1000;
 }
 
 #pragma mark -

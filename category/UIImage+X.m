@@ -1,6 +1,5 @@
 //
-//  UIImage+Image.m
-//  ios_0921
+//  UIImage+X.m
 //
 //  Created by Apple on 2017/8/14.
 //  Copyright © 2017年 Apple. All rights reserved.
@@ -27,7 +26,7 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // 使用color演示填充上下文
-    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextSetFillColorWithColor(context, color.CGColor);
     
     // 渲染上下文
     CGContextFillRect(context, rect);
@@ -46,7 +45,7 @@
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillRect(context, rect);
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

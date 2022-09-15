@@ -1,6 +1,5 @@
 //
 //  CAGradientLayer+X.h
-//  Nxin
 //
 //  Created by Apple on 2020/10/2.
 //  Copyright © 2020 Apple. All rights reserved.

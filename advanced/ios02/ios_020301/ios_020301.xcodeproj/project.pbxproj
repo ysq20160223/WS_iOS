@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		180977C422F1D9CA00637335 /* descs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180977C322F1D9CA00637335 /* descs.plist */; };
+		1867CB8828D3669800FB0EED /* UIBezierPath+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867CB7428D3669800FB0EED /* UIBezierPath+X.m */; };
 		18BBEA5F22F0868700DADD10 /* img00.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BBEA4F22F0868700DADD10 /* img00.png */; };
 		18BBEA6022F0868700DADD10 /* img01.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BBEA5022F0868700DADD10 /* img01.png */; };
 		18BBEA6122F0868700DADD10 /* img10.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BBEA5122F0868700DADD10 /* img10.png */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		180977C322F1D9CA00637335 /* descs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = descs.plist; sourceTree = "<group>"; };
+		1867CB6328D3669800FB0EED /* UIBezierPath+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+X.h"; sourceTree = "<group>"; };
+		1867CB7428D3669800FB0EED /* UIBezierPath+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+X.m"; sourceTree = "<group>"; };
 		18BBEA4F22F0868700DADD10 /* img00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img00.png; sourceTree = "<group>"; };
 		18BBEA5022F0868700DADD10 /* img01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img01.png; sourceTree = "<group>"; };
 		18BBEA5122F0868700DADD10 /* img10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img10.png; sourceTree = "<group>"; };
@@ -75,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1867CB5F28D3669800FB0EED /* category */ = {
+			isa = PBXGroup;
+			children = (
+				1867CB6328D3669800FB0EED /* UIBezierPath+X.h */,
+				1867CB7428D3669800FB0EED /* UIBezierPath+X.m */,
+			);
+			name = category;
+			path = ../../../../category;
+			sourceTree = "<group>";
+		};
 		18BBEA4E22F0868700DADD10 /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +131,7 @@
 		18C774A71F1FA63B00CE24BC /* ios_020301 */ = {
 			isa = PBXGroup;
 			children = (
+				1867CB5F28D3669800FB0EED /* category */,
 				18C774AB1F1FA63B00CE24BC /* AppDelegate.h */,
 				18C774AC1F1FA63B00CE24BC /* AppDelegate.m */,
 				18C774AE1F1FA63B00CE24BC /* ViewController.h */,
@@ -181,6 +195,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -230,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C774B01F1FA63B00CE24BC /* ViewController.m in Sources */,
+				1867CB8828D3669800FB0EED /* UIBezierPath+X.m in Sources */,
 				18C774AD1F1FA63B00CE24BC /* AppDelegate.m in Sources */,
 				18C774AA1F1FA63B00CE24BC /* main.m in Sources */,
 				18C774B61F1FA63B00CE24BC /* ios_020301.xcdatamodeld in Sources */,
