@@ -14,11 +14,12 @@
 
 #import "ViewController.h"
 
+#import "UIView+X.h"
+
 #define kImgW 66
 
 
 @interface ViewController () {
-    int _screenW, _screenH;
 }
 
 @end
@@ -31,44 +32,46 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _screenW = self.view.frame.size.width;
-    _screenH = self.view.frame.size.height;
+    self.view.backgroundColor = XColor(0x35, 0x36, 0x37);
     
-    _segmented.frame = CGRectMake(0, _screenH - 3 * _segmented.frame.size.height, _screenW, _segmented.frame.size.height);
-//    NSLog(@"selectedSegmentIndex: %ld", _segmented.selectedSegmentIndex);
+    _segmented.frame = CGRectMake(0, kScreenH - 3 * _segmented.xHeight, kScreenW, _segmented.xHeight);
     
-    [self adjustImagePositionWithColumns:_segmented.selectedSegmentIndex + 3 add:YES];
+    [self adjustImagePositionWithColumns:[_segmented titleForSegmentAtIndex:_segmented.selectedSegmentIndex].intValue add:YES];
 }
 
 
 - (IBAction)indexChange:(UISegmentedControl *)sender {
-    NSLog(@"selectedSegmentIndex: %ld", sender.selectedSegmentIndex);
+    NSLog(@"%ld; %@", sender.selectedSegmentIndex, [sender titleForSegmentAtIndex:sender.selectedSegmentIndex]);
     
     [UIView animateWithDuration:1 animations:^{
-        [self adjustImagePositionWithColumns:(sender.selectedSegmentIndex + 3) add:NO];
+        [self adjustImagePositionWithColumns:[sender titleForSegmentAtIndex:sender.selectedSegmentIndex].intValue add:NO];
     }];
 }
 
 
 - (void)adjustImagePositionWithColumns:(long)columns add:(BOOL)add{
-    CGFloat margin = (_screenW - columns * kImgW) / (columns + 1); // 每个表情的间距
+    CGFloat margin = (kScreenW - columns * kImgW) / (columns + 1); // 每个表情的间距
 
+//    NSArray<UIView *> *subviews = self.view.subviews;
+//    for (int i = 0; i < subviews.count; i++) {
+//        NSLog(@"%d: %@", i, subviews[i]);
+//    }
+    
     for (int i = 0; i < 9; i++) {
         int col = i % columns; // i这个位置对应的列数
         int row = i / columns;
         
         CGFloat x = margin + col * (kImgW + margin);
-        CGFloat y = margin + row * (kImgW + margin) + UIApplication.sharedApplication.statusBarFrame.size.height;
+        CGFloat y = margin + row * (kImgW + margin) + kStatusBarH;
         
         if(add) {
-            NSString *imgName = [NSString stringWithFormat:@"%d.png", i % 9]; // 9张图片
-            [self addImg:imgName x:x y:y index:i];
+            [self addImg:[NSString stringWithFormat:@"%d.png", i % 9] x:x y:y index:i];
         } else {
-            UIView *child = self.view.subviews[i + 1];
+            UIView *vChild = self.view.subviews[i + 1];
             
-            CGRect rect = child.frame;
+            CGRect rect = vChild.frame;
             rect.origin = CGPointMake(x, y);
-            child.frame = rect;
+            vChild.frame = rect;
         }
     }
 //    NSLog(@"subviews: %@", self.view.subviews);

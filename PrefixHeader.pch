@@ -64,9 +64,9 @@
 
 
 #pragma mark - UIApplication START
-#define kStatusBarH ([UIApplication sharedApplication].statusBarFrame.size.height)
-#define kScreenW [UIScreen mainScreen].bounds.size.width
-#define kScreenH [UIScreen mainScreen].bounds.size.height
+#define kStatusBarH (UIApplication.sharedApplication.statusBarFrame.size.height)
+#define kScreenW (UIScreen.mainScreen.bounds.size.width)
+#define kScreenH (UIScreen.mainScreen.bounds.size.height)
 #pragma mark - UIApplication END
 
 
