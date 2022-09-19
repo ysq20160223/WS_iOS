@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1829293C28D8ACFB0012F35E /* ViewController_.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829293B28D8ACFB0012F35E /* ViewController_.m */; };
 		183630BE28D4C45C008E49DA /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 183630AE28D4C45C008E49DA /* UIView+X.m */; };
 		18BBEA7922F0870700DADD10 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BBEA7022F0870700DADD10 /* 0.png */; };
 		18BBEA7A22F0870700DADD10 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BBEA7122F0870700DADD10 /* 1.png */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1829293A28D8ACFB0012F35E /* ViewController_.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController_.h; sourceTree = "<group>"; };
+		1829293B28D8ACFB0012F35E /* ViewController_.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController_.m; sourceTree = "<group>"; };
 		183630A128D4C45C008E49DA /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
 		183630AE28D4C45C008E49DA /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
 		18BBEA7022F0870700DADD10 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				18CF380F1F20F2E600D308BF /* AppDelegate.m */,
 				18CF38111F20F2E600D308BF /* ViewController.h */,
 				18CF38121F20F2E600D308BF /* ViewController.m */,
+				1829293A28D8ACFB0012F35E /* ViewController_.h */,
+				1829293B28D8ACFB0012F35E /* ViewController_.m */,
 				18CF38141F20F2E600D308BF /* Main.storyboard */,
 				18CF381A1F20F2E600D308BF /* Assets.xcassets */,
 				18CF381C1F20F2E600D308BF /* LaunchScreen.storyboard */,
@@ -214,6 +219,7 @@
 			files = (
 				183630BE28D4C45C008E49DA /* UIView+X.m in Sources */,
 				18CF38191F20F2E600D308BF /* ios_020401.xcdatamodeld in Sources */,
+				1829293C28D8ACFB0012F35E /* ViewController_.m in Sources */,
 				18CF38131F20F2E600D308BF /* ViewController.m in Sources */,
 				18CF38101F20F2E600D308BF /* AppDelegate.m in Sources */,
 				18CF380D1F20F2E600D308BF /* main.m in Sources */,
