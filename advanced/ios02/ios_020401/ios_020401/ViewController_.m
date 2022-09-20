@@ -22,7 +22,8 @@
 @interface ViewController_ () {
 }
 
-@property (nonatomic, assign) int imageCount;
+@property (nonatomic, assign) NSInteger btnCount;
+@property (nonatomic, assign) NSInteger otherSubViewCount;
 
 @end
 
@@ -32,44 +33,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     self.view.backgroundColor = XColor(0x66, 0x66, 0x66);
-    self.imageCount = 9;
-    _segmented.frame = CGRectMake(0, kScreenH - 3 * _segmented.xHeight, kScreenW, _segmented.xHeight);
+    self.btnCount = 9;
+    _segmented.frame = CGRectMake(10, kScreenH - 3 * _segmented.xHeight, kScreenW - 20, _segmented.xHeight);
     
 //    for (int i = 0; i < self.view.subviews.count; i++) {
 //        NSLog(@"%d; %@", i, self.view.subviews[i]);
 //    }
     
-    [self adjustImagePositionWithColumns:[_segmented titleForSegmentAtIndex:_segmented.selectedSegmentIndex].intValue];
+    self.otherSubViewCount = self.view.subviews.count;
+    
+    [self adjustImagePositionWithColumns:[_segmented titleForSegmentAtIndex:_segmented.selectedSegmentIndex].integerValue];
     
 }
 
-
 - (IBAction)indexChange:(UISegmentedControl *)sender {
     [UIView animateWithDuration:1 animations:^{
-        [self adjustImagePositionWithColumns:[_segmented titleForSegmentAtIndex:_segmented.selectedSegmentIndex].intValue];
+        [self adjustImagePositionWithColumns:[_segmented titleForSegmentAtIndex:_segmented.selectedSegmentIndex].integerValue];
     }];
 }
 
-
-// 无需传递 add 参数
 - (void)adjustImagePositionWithColumns:(long)columns {
     CGFloat margin = (kScreenW - columns * kImgW) / (columns + 1); // 每个表情的间距
 
-    for (int i = 0; i < self.imageCount + 1; i++) {
-        int col = i % columns; // i这个位置对应的列数
-        int row = i / columns;
+    for (NSInteger i = 0; i < self.btnCount + 1; i++) { // + 1 : 添加最后一个 UIButtonTypeContactAdd
+        NSInteger col = i % columns; // i这个位置对应的列数
+        NSInteger row = i / columns;
         
         CGFloat x = margin + col * (kImgW + margin);
         CGFloat y = margin + row * (kImgW + margin) + kStatusBarH;
 //        NSLog("%d; %.0f; %.0f; %ld", i, x, y, self.view.subviews.count);
         
-        if(self.view.subviews.count < (self.imageCount + 3 + 1)) {
-            [self addImg:[NSString stringWithFormat:@"%d.png", i % 9] x:x y:y index:i];
+        if(self.view.subviews.count < (self.btnCount + self.otherSubViewCount + 1)) {
+            NSInteger index = self.view.subviews.count - self.otherSubViewCount;
+            [self addImg:[NSString stringWithFormat:@"%ld.png", index % 9] x:x y:y index:index];
         } else {
-            UIView *vChild = self.view.subviews[i + 3];
+            UIView *vChild = self.view.subviews[i + self.otherSubViewCount];
 //            NSLog(@"%d; %@", i, vChild);
             if ([vChild isKindOfClass:UISegmentedControl.class]
                 || [vChild isKindOfClass:UILayoutGuide.class]) {
@@ -84,33 +84,33 @@
 }
 
 
-- (void)addImg:(NSString *)imgName x:(CGFloat)x y:(CGFloat)y index:(int)index {
-    NSLog(@"%@; %d", imgName, index);
-    if (index == self.imageCount) {
-        UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeContactAdd];
-        btnAdd.adjustsImageWhenHighlighted = NO;
-        btnAdd.tag = index;
-        [btnAdd addTarget:self action:@selector(imgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        btnAdd.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
-        btnAdd.frame = CGRectMake(x, y, kImgW, kImgW);
-        [self.view addSubview:btnAdd];
-    } else {
-        UIButton *btn = UIButton.alloc.init;
-        btn.adjustsImageWhenHighlighted = NO;
-        btn.tag = index;
-        [btn addTarget:self action:@selector(imgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [btn setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:1];
-        btn.frame = CGRectMake(x, y, kImgW, kImgW);
-        [self.view addSubview:btn];
-    }
+- (void)addImg:(NSString *)imgName x:(CGFloat)x y:(CGFloat)y index:(NSInteger)index {
+    NSLog(@"%@; %ld; %ld", imgName, index, self.view.subviews.count);
     
+    UIButton *btn;
+    if (self.view.subviews.count - self.otherSubViewCount == self.btnCount) {
+        btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+        btn.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    } else {
+        btn = UIButton.alloc.init;
+        btn.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:1];
+        [btn setImage:[UIImage imageNamed:imgName] forState:UIControlStateNormal];
+    }
+    btn.adjustsImageWhenHighlighted = NO;
+    btn.tag = index;
+    [btn addTarget:self action:@selector(imgBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    btn.frame = CGRectMake(x, y, kImgW, kImgW);
+    [self.view addSubview:btn];
 }
 
 - (void)imgBtnClick:(UIButton *)btn {
-    NSLog(@"index: %ld; %@", btn.tag, btn);
-    self.imageCount++;
-    
+    NSLog(@"%@; %ld", btn, self.view.subviews.count);
+    if (btn.tag == self.view.subviews.count - self.otherSubViewCount - 1) { // 点击 UIButtonTypeContactAdd
+        [self.view.subviews.lastObject removeFromSuperview];
+        
+        self.btnCount++;
+        [self indexChange:self.segmented];
+    }
 }
 
 @end
