@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "UIView+X.h"
 
 @interface ViewController () {
     NSDictionary *_imgNameAndNumberDict;
@@ -23,7 +24,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
 //    _imgView.frame = CGRectMake(0, [UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, self.view.frame.size.height);
-    _imgView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    _imgView.frame = CGRectMake(0, 0, self.view.xWidth, self.view.xHeight);
     
     NSString *path = [NSBundle.mainBundle pathForResource:@"tom" ofType:@"plist"]; // 1, 获得全路径
     _imgNameAndNumberDict = [NSDictionary dictionaryWithContentsOfFile:path]; // 2, 根据文件路径加载字典

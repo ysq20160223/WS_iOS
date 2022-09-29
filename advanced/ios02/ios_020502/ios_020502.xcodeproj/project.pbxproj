@@ -464,6 +464,7 @@
 		18B845611F2257FC00B8E95E /* pawn.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B8439F1F2257FC00B8E95E /* pawn.png */; };
 		18B845621F2257FC00B8E95E /* pie.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B843A01F2257FC00B8E95E /* pie.png */; };
 		18B845631F2257FC00B8E95E /* tom.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B843A11F2257FC00B8E95E /* tom.plist */; };
+		18BC70D128E5EA1000838517 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC70C128E5EA0F00838517 /* UIView+X.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -928,6 +929,8 @@
 		18B8439F1F2257FC00B8E95E /* pawn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pawn.png; sourceTree = "<group>"; };
 		18B843A01F2257FC00B8E95E /* pie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pie.png; sourceTree = "<group>"; };
 		18B843A11F2257FC00B8E95E /* tom.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tom.plist; sourceTree = "<group>"; };
+		18BC70B428E5EA0F00838517 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
+		18BC70C128E5EA0F00838517 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -960,6 +963,7 @@
 		18B841B51F224B9400B8E95E /* ios_020502 */ = {
 			isa = PBXGroup;
 			children = (
+				18BC70A528E5EA0F00838517 /* category */,
 				18B841B91F224B9400B8E95E /* AppDelegate.h */,
 				18B841BA1F224B9400B8E95E /* AppDelegate.m */,
 				18B841BC1F224B9400B8E95E /* ViewController.h */,
@@ -1544,6 +1548,16 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		18BC70A528E5EA0F00838517 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				18BC70B428E5EA0F00838517 /* UIView+X.h */,
+				18BC70C128E5EA0F00838517 /* UIView+X.m */,
+			);
+			name = category;
+			path = ../../../../category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2067,6 +2081,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BC70D128E5EA1000838517 /* UIView+X.m in Sources */,
 				18B841BE1F224B9400B8E95E /* ViewController.m in Sources */,
 				18B841BB1F224B9400B8E95E /* AppDelegate.m in Sources */,
 				18B841C41F224B9400B8E95E /* ios_020502.xcdatamodeld in Sources */,

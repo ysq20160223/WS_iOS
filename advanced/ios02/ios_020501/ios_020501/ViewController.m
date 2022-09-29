@@ -36,27 +36,44 @@
     // 1
     UIImageView *iv = UIImageView.alloc.init;
     iv.image = [UIImage imageNamed:@"014.png"];
+    iv.highlightedImage = [UIImage imageNamed:@"016.png"];
     iv.backgroundColor = UIColor.magentaColor;
     iv.frame = CGRectMake(0, UIApplication.sharedApplication.statusBarFrame.size.height, 120, 120);
+    [iv addGestureRecognizer:[UITapGestureRecognizer.alloc initWithTarget:self action:@selector(onClickIv:)]];
+    iv.userInteractionEnabled = YES;
     [self.view addSubview:iv];
+    
     
     // 2
     UIButton *btn = UIButton.alloc.init;
     [btn setBackgroundImage:[UIImage imageNamed:@"bg.png"] forState:UIControlStateNormal];
 //    btn.backgroundColor = UIColor.cyanColor;
     [btn setImage:[UIImage imageNamed:@"016.png"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"014.png"] forState:UIControlStateHighlighted];
     [btn setTitle:@"btn" forState:UIControlStateNormal];
     btn.frame = CGRectMake(0, 200, 120, 120);
-    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside]; //
+//    btn.adjustsImageWhenHighlighted = NO;
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
     
     // 3 - UISlider
     UISlider *slider = UISlider.alloc.init;
     slider.frame = CGRectMake(10, 400, self.view.frame.size.width - 20, 100);
     slider.minimumValue = 0;
     slider.maximumValue = 100;
+    slider.backgroundColor = XColorAlpha(0xff, 0xff, 0, .3);
     [slider addTarget:self action:@selector(changeValue:) forControlEvents:UIControlEventValueChanged];
+    slider.tintColor = UIColor.orangeColor;
+    slider.minimumTrackTintColor = UIColor.magentaColor;
+    slider.maximumTrackTintColor = UIColor.cyanColor;
     [self.view addSubview:slider];
+}
+
+- (void)onClickIv:(UITapGestureRecognizer *)tapGes {
+    NSLog(@"%@", tapGes);
+    UIImageView *iv = (UIImageView *)tapGes.view;
+    iv.highlighted = !iv.isHighlighted;
 }
 
 - (void)btnClick:(UIButton *)btn {
