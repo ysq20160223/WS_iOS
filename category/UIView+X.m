@@ -107,13 +107,16 @@
 }
 
 //
-+ (instancetype)xViewFromXib {
-    return [NSBundle.mainBundle loadNibNamed:NSStringFromClass(self) owner:nil options:nil].lastObject;
++ (instancetype)xLoadNibNamed {
+    return [UIView xLoadNibNamed:NSStringFromClass(self)];
 }
 
++ (instancetype)xLoadNibNamed:(NSString *)className {
+    return [NSBundle.mainBundle loadNibNamed:className owner:nil options:nil].firstObject;
+}
 //
 - (BOOL)intersectWithView:(UIView *)view {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
     
     CGRect selfRect = [self convertRect:self.bounds toView:window];
     CGRect viewRect = [view convertRect:view.bounds toView:window];

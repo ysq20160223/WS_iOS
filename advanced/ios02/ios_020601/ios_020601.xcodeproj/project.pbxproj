@@ -25,6 +25,7 @@
 		18B5BBA122F53AA300BB9780 /* 016.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B5BB9822F53AA300BB9780 /* 016.png */; };
 		18B5BBA222F53AA300BB9780 /* 017.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B5BB9922F53AA300BB9780 /* 017.png */; };
 		18B5BBA322F53AA300BB9780 /* 018.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B5BB9A22F53AA300BB9780 /* 018.png */; };
+		18BC70FF28E665DF00838517 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC70EF28E665DF00838517 /* UIView+X.m */; };
 		18E122D523C4CF6C00F06689 /* RowViewXib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E122D423C4CF6C00F06689 /* RowViewXib.xib */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		18B5BB9822F53AA300BB9780 /* 016.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 016.png; sourceTree = "<group>"; };
 		18B5BB9922F53AA300BB9780 /* 017.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 017.png; sourceTree = "<group>"; };
 		18B5BB9A22F53AA300BB9780 /* 018.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 018.png; sourceTree = "<group>"; };
+		18BC70E228E665DE00838517 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
+		18BC70EF28E665DF00838517 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
 		18E122D423C4CF6C00F06689 /* RowViewXib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RowViewXib.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +88,7 @@
 		18B483031F22F9FB00B969E5 /* ios_020601 */ = {
 			isa = PBXGroup;
 			children = (
+				18BC70D328E665DE00838517 /* category */,
 				18B483071F22F9FB00B969E5 /* AppDelegate.h */,
 				18B483081F22F9FB00B969E5 /* AppDelegate.m */,
 				18B4830A1F22F9FB00B969E5 /* ViewController.h */,
@@ -128,6 +132,16 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		18BC70D328E665DE00838517 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				18BC70E228E665DE00838517 /* UIView+X.h */,
+				18BC70EF28E665DF00838517 /* UIView+X.m */,
+			);
+			name = category;
+			path = ../../../../category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,6 +182,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -215,6 +230,7 @@
 				18B483371F235ADC00B969E5 /* RowView.m in Sources */,
 				18B483121F22F9FB00B969E5 /* ios_020601.xcdatamodeld in Sources */,
 				18B483061F22F9FB00B969E5 /* main.m in Sources */,
+				18BC70FF28E665DF00838517 /* UIView+X.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

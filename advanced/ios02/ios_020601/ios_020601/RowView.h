@@ -10,11 +10,11 @@
 
 @interface RowView : UIView
 
-@property (weak, nonatomic) IBOutlet UIButton *iconBtn;
+@property (weak, nonatomic) IBOutlet UIButton *btnIcon;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
 
-@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 
 
 // ----------------

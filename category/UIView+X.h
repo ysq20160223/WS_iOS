@@ -25,7 +25,8 @@
 
 - (BOOL)intersectWithView:(UIView *)view;
 
-+ (instancetype)xViewFromXib;
++ (instancetype)xLoadNibNamed;
++ (instancetype)xLoadNibNamed:(NSString *)className;
 + (void)setBorder:(UIView *)view color:(UIColor *)color radius:(float)radius border:(float)border;
 + (void)setBorder:(UIView *)view andStrokeColor:(UIColor *)strokeColor andFillColor:(UIColor *)fillColor andCornerRadius:(float)cornerRadius andLineWidth:(float)lineWidth;
 

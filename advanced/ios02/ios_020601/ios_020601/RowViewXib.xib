@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G2136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,27 +13,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOA-Md-huU">
-                    <rect key="frame" x="0.0" y="-1" width="77" height="77"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOA-Md-huU">
+                    <rect key="frame" x="8" y="8" width="61" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="fOA-Md-huU" secondAttribute="height" id="3Xe-Qj-V1a"/>
+                    </constraints>
                     <state key="normal" image="010.png"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbG-s3-eGt">
-                    <rect key="frame" x="0.0" y="28" width="375" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbG-s3-eGt">
+                    <rect key="frame" x="77" y="0.0" width="239" height="77"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A49-po-x91">
-                    <rect key="frame" x="329" y="0.0" width="46" height="77"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A49-po-x91">
+                    <rect key="frame" x="324" y="0.0" width="43" height="77"/>
                     <state key="normal" title="delete"/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fOA-Md-huU" firstAttribute="leading" secondItem="ObO-rr-ZH1" secondAttribute="leading" constant="8" id="4Mc-JA-wPr"/>
+                <constraint firstAttribute="bottom" secondItem="A49-po-x91" secondAttribute="bottom" id="70s-UW-b2v"/>
+                <constraint firstItem="zbG-s3-eGt" firstAttribute="top" secondItem="ObO-rr-ZH1" secondAttribute="top" id="EcL-k8-hrQ"/>
+                <constraint firstItem="A49-po-x91" firstAttribute="leading" secondItem="zbG-s3-eGt" secondAttribute="trailing" constant="8" id="SFa-wi-0cG"/>
+                <constraint firstItem="fOA-Md-huU" firstAttribute="top" secondItem="ObO-rr-ZH1" secondAttribute="top" constant="8" id="TLG-Po-4ge"/>
+                <constraint firstItem="A49-po-x91" firstAttribute="top" secondItem="ObO-rr-ZH1" secondAttribute="top" id="To5-6i-slz"/>
+                <constraint firstAttribute="bottom" secondItem="fOA-Md-huU" secondAttribute="bottom" constant="8" id="XBn-G3-xRW"/>
+                <constraint firstItem="zbG-s3-eGt" firstAttribute="leading" secondItem="fOA-Md-huU" secondAttribute="trailing" constant="8" id="cWX-Jk-sbd"/>
+                <constraint firstAttribute="trailing" secondItem="A49-po-x91" secondAttribute="trailing" constant="8" id="tpj-3Q-Aw6"/>
+                <constraint firstAttribute="bottom" secondItem="zbG-s3-eGt" secondAttribute="bottom" id="ubl-gN-bvJ"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1705.5" y="-14.5"/>
+            <point key="canvasLocation" x="-1706.4000000000001" y="-14.842578710644679"/>
         </view>
     </objects>
     <resources>

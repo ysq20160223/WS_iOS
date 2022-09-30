@@ -8,18 +8,21 @@
 
 #import "RowView.h"
 
+#import "UIView+X.h"
+
 @implementation RowView
 
 + (void)load {
-    NSLog();
+    XLog
 }
 
 + (void)initialize {
-    NSLog();
+    XLog
 }
 
 + (id)rowViewWithIcon:(NSString *)icon andName:(NSString *)name {
-    RowView *view = [NSBundle.mainBundle loadNibNamed:@"RowView" owner:nil options:nil][0];
+//    RowView *view = [NSBundle.mainBundle loadNibNamed:@"RowView" owner:nil options:nil][0];
+    RowView *view = [RowView xLoadNibNamed];
     
 //    // 1, 设置图标
 //    UIButton *iconBtn = (UIButton *)[view viewWithTag:1];
@@ -30,8 +33,8 @@
 //    nameLabel.text = name;
     
     
-    [view.iconBtn setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
-    view.nameLabel.text = name;
+    [view.btnIcon setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+    view.lblName.text = name;
     
     return view;
 }

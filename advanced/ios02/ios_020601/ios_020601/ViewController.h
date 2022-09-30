@@ -14,12 +14,12 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnTrash;
 
 //
-- (IBAction)add:(UIBarButtonItem *)sender;
-- (IBAction)trash:(UIBarButtonItem *)sender;
+- (IBAction)onClickAdd:(UIBarButtonItem *)sender;
+- (IBAction)onClickTrash:(UIBarButtonItem *)sender;
 
 
 // 监听每一行的删除按钮
-- (IBAction)deleteClick:(UIButton *)btn;
+- (IBAction)onClickDelete:(UIButton *)btn;
 
 @end
 
