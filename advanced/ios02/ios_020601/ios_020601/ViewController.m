@@ -19,6 +19,8 @@
 #import "RowView.h"
 #import "UIView+X.h"
 
+#import <Masonry.h>
+
 #define kRowH 66
 #define kRowDivider 10
 
@@ -161,10 +163,14 @@
     // 020610
     // 3, 每行的删除按钮
     UIButton *btnDelete = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnDelete.frame = CGRectMake(285, 0, kRowH, kRowH);
+    [rowView addSubview:btnDelete];
+    [btnDelete mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(rowView);
+        make.right.equalTo(rowView).offset(-10);
+    }];
+//    btnDelete.frame = CGRectMake(285, 0, kRowH, kRowH);
     [btnDelete setTitle:@"delete" forState:UIControlStateNormal];
     [btnDelete addTarget:self action:@selector(onClickDelete:) forControlEvents:UIControlEventTouchUpInside];
-    [rowView addSubview:btnDelete];
     
     return rowView;
 }
