@@ -7,11 +7,11 @@
 //
 
 /*
-    storyboard : 
-    UIToolBar的基本使用
-    xib文件的基本使用 : 描述软件界面
-    代理模式
-    MVC模式
+ storyboard :
+ UIToolBar的基本使用
+ xib文件的基本使用 : 描述软件界面
+ 代理模式
+ MVC模式
  */
 
 #import "ViewController.h"
@@ -24,8 +24,7 @@
 #define kRowH 66
 #define kRowDivider 10
 
-// 类扩展(class extension, 匿名分类)
-@interface ViewController ()
+@interface ViewController () /// 类扩展(class extension, 匿名分类)
 //{
 //    int _screenW;
 //}
@@ -37,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     _toolBar.frame = CGRectMake(0, kStatusBarH, kScreenW, _toolBar.xHeight);
 }
 
@@ -45,46 +44,45 @@
     UIView *lastView = [self.view.subviews lastObject];
     for (NSInteger i = self.view.subviews.count - 1; i >= 0; i--) {
         lastView = self.view.subviews[i];
-//        NSLog("%ld; %@; %@", i, lastView, lastView.class);
+        //        NSLog("%ld; %@; %@", i, lastView, lastView.class);
         if (!lastView.isHidden) {
             break;
         }
     }
-//    NSLog(@"%@", lastView);
+    //    NSLog(@"%@", lastView);
     CGFloat rowY = lastView.xY + lastView.xHeight + kRowDivider;
-
-
+    
+    
     UIView *rowView;
     if (self.view.subviews.count % 3 == 0) {
         rowView = [self createRowViewWithCode];
-    } else if (self.view.subviews.count % 3 == 1){
+    } else if (self.view.subviews.count % 3 == 1) {
         rowView = [self createRowViewWithXib];
-    } else if (self.view.subviews.count % 3 == 2){
+    } else if (self.view.subviews.count % 3 == 2) {
         rowView = [self createRowViewWithRowView];
     }
     
     [self.view addSubview:rowView];
-    _barBtnTrash.enabled = YES;
     
-   
     rowView.frame = CGRectMake(kScreenW, rowY, kScreenW, kRowH);
     rowView.alpha = 0;
-//    NSLog(@"%@", rowView);
+    //    NSLog(@"%@", rowView);
     [UIView animateWithDuration:1 animations:^{
         rowView.frame = CGRectMake(0, rowY, kScreenW, kRowH);
         rowView.alpha = 1;
         
-//        for (NSInteger i = 0; i < self.view.subviews.count; i++) {
-//            NSLog("%ld; %@", i, self.view.subviews[i]);
-//        }
+        //        for (NSInteger i = 0; i < self.view.subviews.count; i++) {
+        //            NSLog("%ld; %@", i, self.view.subviews[i]);
+        //        }
+    } completion:^(BOOL finished) {
+        _barBtnTrash.enabled = YES;
     }];
 }
 
 
 // *******************************
-// 020616
+// 020616 自定义 View
 // *******************************
-// 自定义 View
 - (UIView *)createRowViewWithRowView {
     XLog
     int randomIndex = arc4random_uniform(9);
@@ -99,13 +97,12 @@
 
 
 // *******************************
-// 020612
+// 020612 从 xib 中加载一行 view
 // *******************************
-// 从 xib 中加载一行 view
 - (UIView *)createRowViewWithXib {
     XLog
     // 当 File's Owner 为 self 时, 并且 xib 的 class 设置为所在 ViewController 时, xib 中的控件才可以连线到 ViewController 中
-
+    
     // 1, 创建 objects 下面所有的控件, 并且按顺序装到数组中返回
     // 2, 取出一行
     UIView *rowView = [UIView xLoadNibNamed:@"RowViewXib"];
@@ -131,9 +128,8 @@
 }
 
 
-
 // *******************************
-// 020606
+// 020606 代码创建
 // *******************************
 - (UIView *)createRowViewWithCode {
     XLog
@@ -141,8 +137,7 @@
     UIView *rowView = UIView.alloc.init;
     rowView.backgroundColor = UIColor.magentaColor;
     
-    // 1, 添加头像
-    UIButton *btnIcon = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *btnIcon = [UIButton buttonWithType:UIButtonTypeCustom]; // 1, 添加头像
     btnIcon.frame = CGRectMake(0, 0, kRowH, kRowH);
     
     int randomIndex = arc4random_uniform(9); // arc4random() % 9
@@ -152,8 +147,7 @@
     btnIcon.tag = 1;
     [rowView addSubview:btnIcon];
     
-    // 2, 添加名字 (标签)
-    UILabel *lblName = UILabel.alloc.init;
+    UILabel *lblName = UILabel.alloc.init; // 2, 添加名字 (标签)
     lblName.frame = CGRectMake(0, 0, kScreenW, kRowH);
     lblName.textAlignment = NSTextAlignmentCenter;
     lblName.text = [NSString stringWithFormat:@"code: %d", randomIndex];
@@ -161,16 +155,15 @@
     [rowView addSubview:lblName];
     
     // 020610
-    // 3, 每行的删除按钮
-    UIButton *btnDelete = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *btnDelete = [UIButton buttonWithType:UIButtonTypeRoundedRect]; // 3, 每行的删除按钮
     [rowView addSubview:btnDelete];
     [btnDelete mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(rowView);
         make.right.equalTo(rowView).offset(-10);
     }];
-//    btnDelete.frame = CGRectMake(285, 0, kRowH, kRowH);
     [btnDelete setTitle:@"delete" forState:UIControlStateNormal];
     [btnDelete addTarget:self action:@selector(onClickDelete:) forControlEvents:UIControlEventTouchUpInside];
+    btnDelete.backgroundColor = UIColor.orangeColor;
     
     return rowView;
 }
@@ -188,22 +181,18 @@
     } completion:^(BOOL finished) {
         long startIndex = [self.view.subviews indexOfObject:btn.superview];
         [btn.superview removeFromSuperview];
-        _barBtnTrash.enabled = self.view.subviews.count != 1;
         
-        [UIView animateWithDuration:0.35 animations:^{
+        [UIView animateWithDuration:1 animations:^{
             for (long i = startIndex; i < self.view.subviews.count; i++) {
-                UIView *childView = self.view.subviews[i];
-                CGRect rect = childView.frame;
+                UIView *subView = self.view.subviews[i];
+                CGRect rect = subView.frame;
                 rect.origin.y -= kRowH + kRowDivider;
-                
-                childView.frame = rect;
+                subView.frame = rect;
             }
         } completion:^(BOOL finished) {
             _barBtnTrash.enabled = [self subViewsCount] != 1;
         }];
-        
     }];
-    
 }
 
 // 020608
@@ -229,7 +218,6 @@
         [lastView removeFromSuperview];
         _barBtnTrash.enabled = [self subViewsCount] != 1;
     }];
-    
 }
 
 - (NSInteger)subViewsCount {

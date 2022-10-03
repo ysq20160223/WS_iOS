@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,16 +64,16 @@
                                 <color key="backgroundColor" red="0.96863657240000001" green="0.96861571069999997" blue="0.96861976390000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Exit Keyboard"/>
                                 <connections>
-                                    <action selector="exitKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NWK-eg-MBh"/>
+                                    <action selector="exitKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ceP-b3-FYy"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.59999999999999998" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="addressField" destination="yv6-qC-dCh" id="Zh6-hl-D8e"/>
-                        <outlet property="nameField" destination="4ZS-ec-c7X" id="B6H-Da-wAp"/>
-                        <outlet property="telephoneField" destination="1sc-2A-4n1" id="rme-8h-L9Z"/>
+                        <outlet property="tfAddress" destination="yv6-qC-dCh" id="NEL-xk-OXT"/>
+                        <outlet property="tfName" destination="4ZS-ec-c7X" id="xZa-0Y-urZ"/>
+                        <outlet property="tfTelephone" destination="1sc-2A-4n1" id="XSI-3a-DS7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

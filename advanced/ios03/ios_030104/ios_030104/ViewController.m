@@ -8,9 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UICollectionViewDelegate> {
-//    UIImageView *_imageView;
-}
+@interface ViewController () <UICollectionViewDelegate>
 
 @property (strong, nonatomic) UIImageView *imageView;
 
@@ -22,9 +20,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    UIScrollView *scrollView = [UIScrollView.alloc init];
+    UIScrollView *scrollView = UIScrollView.alloc.init;
+    [self.view addSubview:scrollView];
+    
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = UIColor.lightGrayColor;
     scrollView.delegate = self; // 设置代理
@@ -32,12 +31,9 @@
     scrollView.maximumZoomScale = 2;
     scrollView.minimumZoomScale = 0.2;
     
-    [self.view addSubview:scrollView];
-    
-    _imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"yy_002.jpg"]];
-    [scrollView addSubview:_imageView];
-    scrollView.contentSize = _imageView.image.size;
-    
+    self.imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"yy_002.jpg"]];
+    [scrollView addSubview:self.imageView];
+    scrollView.contentSize = self.imageView.image.size;
 }
 
 
@@ -45,7 +41,7 @@
 // 这个方法返回的控件就能进行伸缩操作
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     NSLog(@"%@", scrollView);
-    return _imageView;
+    return self.imageView;
 }
 #pragma mark - UICollectionViewDelegate end
 

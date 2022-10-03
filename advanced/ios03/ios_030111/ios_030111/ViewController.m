@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "UIView+X.h"
+
 @interface ViewController ()
 
 @end
@@ -18,19 +20,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     // 1, 加载 xib
-   UIToolbar *keyboard = [NSBundle.mainBundle loadNibNamed:@"keyboard" owner:nil options:nil][0];
+//   UIToolbar *keyboard = [NSBundle.mainBundle loadNibNamed:@"keyboard" owner:nil options:nil][0];
+    UIToolbar *keyboard = (UIToolbar *)[UIView xLoadNibNamed:@"keyboard"];
     
     // 2
-    _nameField.inputAccessoryView = keyboard; // 设置键盘上面的工具条
+    self.tfName.inputAccessoryView = keyboard; // 设置键盘上面的工具条
     
-//    _telephoneField.inputAccessoryView = keyboard;
-//    _addressField.inputAccessoryView = keyboard;
-    
-//    [_nameField becomeFirstResponder]; // 
-    
+//    self.tfTelephone.inputAccessoryView = keyboard;
+//    self.tfAddress.inputAccessoryView = keyboard;
+//    [self.tfName becomeFirstResponder]; //
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self exitKeyboard:nil];
 }
 
 
@@ -39,7 +44,7 @@
 // 退出键盘的原理 : 某个文本框控件不想当第一响应者
 - (IBAction)exitKeyboard:(id)sender {
     [UIView animateWithDuration:1 animations:^{
-//        [_nameField resignFirstResponder];
+//        [self.tfName resignFirstResponder];
         [self.view endEditing:YES]; // view 内部
     }];
 }

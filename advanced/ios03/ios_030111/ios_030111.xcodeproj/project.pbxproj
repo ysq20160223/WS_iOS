@@ -15,6 +15,7 @@
 		180E42071F261ACC00656226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180E42061F261ACC00656226 /* Assets.xcassets */; };
 		180E420A1F261ACC00656226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180E42081F261ACC00656226 /* LaunchScreen.storyboard */; };
 		180E42121F2620BC00656226 /* keyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180E42111F2620BC00656226 /* keyboard.xib */; };
+		18A6166928EA9210007ABA00 /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6165928EA9210007ABA00 /* UIView+X.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		180E42091F261ACC00656226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180E420B1F261ACC00656226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180E42111F2620BC00656226 /* keyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = keyboard.xib; sourceTree = "<group>"; };
+		18A6164C28EA9210007ABA00 /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
+		18A6165928EA9210007ABA00 /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 		180E41F61F261ACB00656226 /* ios_030111 */ = {
 			isa = PBXGroup;
 			children = (
+				18A6163D28EA9210007ABA00 /* category */,
 				180E41FA1F261ACB00656226 /* AppDelegate.h */,
 				180E41FB1F261ACB00656226 /* AppDelegate.m */,
 				180E41FD1F261ACB00656226 /* ViewController.h */,
@@ -83,6 +87,16 @@
 				180E41F81F261ACB00656226 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18A6163D28EA9210007ABA00 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				18A6164C28EA9210007ABA00 /* UIView+X.h */,
+				18A6165928EA9210007ABA00 /* UIView+X.m */,
+			);
+			name = category;
+			path = ../../../../category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -157,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A6166928EA9210007ABA00 /* UIView+X.m in Sources */,
 				180E41FF1F261ACB00656226 /* ViewController.m in Sources */,
 				180E41FC1F261ACB00656226 /* AppDelegate.m in Sources */,
 				180E41F91F261ACB00656226 /* main.m in Sources */,

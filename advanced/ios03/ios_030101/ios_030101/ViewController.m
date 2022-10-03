@@ -8,10 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () {
-//    UIScrollView *_scrollView;
-//    UIImageView *_imageView;
-}
+@interface ViewController ()
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UIImageView *imageView;
@@ -24,40 +21,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    //
-    _scrollView = [UIScrollView.alloc init];
+    self.scrollView = UIScrollView.alloc.init;
+    [self.view addSubview:self.scrollView];
     
-    _scrollView.frame = CGRectMake(0, kStatusBarH, self.view.frame.size.width, 400); // 设置 ScrollView 的可见范围
-    _scrollView.backgroundColor = UIColor.magentaColor;
-    [self.view addSubview:_scrollView];
+    self.scrollView.frame = CGRectMake(0, kStatusBarH, self.view.frame.size.width, 400); // 设置 ScrollView 的可见范围
+    self.scrollView.backgroundColor = UIColor.magentaColor;
+    
     
     // --
     // 通过这种方法创建的 UIImageView 无需指定 frame
-    _imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"t_005.jpg"]];
+    self.imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"t_005.jpg"]];
     
     //
-//    _imageView = [UIImageView.alloc init];
-//    _imageView.image = [UIImage imageNamed:@"t_005.jpg"];
-//    _imageView.frame = CGRectMake(0, 0, _imageView.image.size.width, _imageView.image.size.height);
+//    self.imageView = [UIImageView.alloc init];
+//    self.imageView.image = [UIImage imageNamed:@"t_005.jpg"];
+//    self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
     
-    [_scrollView addSubview:_imageView];
-    
-    _scrollView.contentSize = _imageView.frame.size; // 设置 UIScrollView 的滚动范围
+    [self.scrollView addSubview:self.imageView];
+    self.scrollView.contentSize = self.imageView.frame.size; // 设置 UIScrollView 的滚动范围
     
     // 0102
-//    _scrollView.showsVerticalScrollIndicator = NO;
-//    _scrollView.showsHorizontalScrollIndicator = NO;
-//    _scrollView.bounces = NO; //
-    _scrollView.contentInset = UIEdgeInsetsMake(10, 30, 50, 70); // top, left, bottom, right
+//    self.scrollView.showsVerticalScrollIndicator = NO;
+//    self.scrollView.showsHorizontalScrollIndicator = NO;
+//    self.scrollView.bounces = NO; //
+    self.scrollView.contentInset = UIEdgeInsetsMake(10, 30, 50, 70); // top, left, bottom, right
     
 }
 
 - (IBAction)move:(UIButton *)sender {
     [UIView animateWithDuration:0.5 animations:^{
         // 0103
-        CGPoint point = _scrollView.contentOffset;
+        CGPoint point = self.scrollView.contentOffset;
         switch (sender.tag) {
             case 1: // left
                 point.x -= 150;
@@ -83,7 +78,7 @@
                 point = CGPointZero;
                 break;
         }
-        _scrollView.contentOffset = point;
+        self.scrollView.contentOffset = point;
     }];
 }
 

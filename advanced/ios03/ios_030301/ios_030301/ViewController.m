@@ -21,42 +21,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     UITableView *tableView = [UITableView.alloc initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.dataSource = self;
     tableView.delegate = self;
     [self.view addSubview:tableView];
     
-    
-    _mutableArray = [NSMutableArray array];
+    self.mutableArray = [NSMutableArray array];
     for (int i = 0; i< 100; i++) {
-        [_mutableArray addObject:[NSString stringWithFormat:@"Row: %d", i]];
+        [self.mutableArray addObject:[NSString stringWithFormat:@"Row: %d", i]];
     }
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _mutableArray.count;
+    return self.mutableArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *ID = @"cell";
     
     // 1, 从缓存池中取出可循环利用的 cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     // 没有复用
-    //    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    //    UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     
     // 2, 如果缓存池中没有可循环利用的 cell
     if (nil == cell) {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     NSLog(@"cell: %@", cell); // 验证全部刷新 or 局部刷新
-    cell.textLabel.text = _mutableArray[indexPath.row];
-    
+    cell.textLabel.text = self.mutableArray[indexPath.row];
     return cell;
 }
 
@@ -67,6 +63,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [self textField:indexPath tableView:tableView];
     
 //    [self defaultCancel];
@@ -80,15 +77,14 @@
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.keyboardType = UIKeyboardTypeNumberPad;
-        textField.text = _mutableArray[indexPath.row];
+        textField.text = self.mutableArray[indexPath.row];
     }];
     
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Default" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"Default");
         
-        [_mutableArray setObject:alertController.textFields[0].text atIndexedSubscript:indexPath.row];
+        [self.mutableArray setObject:alertController.textFields[0].text atIndexedSubscript:indexPath.row];
         
-        //
         NSArray *array = @[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
         [tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationFade];
     }];
@@ -130,7 +126,6 @@
     UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:@"title" style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"destructiveAction");
     }];
-    
     
     [alertController addAction:destructiveAction];
     [self presentViewController:alertController animated:YES completion:nil];
