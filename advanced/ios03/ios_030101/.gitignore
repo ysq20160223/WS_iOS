@@ -6,6 +6,6 @@
 *.xcbkptlist
 *.xcscheme
 */Contents.json
-*.xccurrentversion
-*/contents/*
+*/.xccurrentversion
+*/contents/
 */xcschememanagement.plist

@@ -269,21 +269,6 @@
 		18389CAC28C332D300B9194B /* SJPlaybackListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389BC028C332D300B9194B /* SJPlaybackListController.m */; };
 		18389CB028C366AE00B9194B /* AudioListCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CAE28C366AE00B9194B /* AudioListCVCell.m */; };
 		18389CB128C366AE00B9194B /* AudioListCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18389CAF28C366AE00B9194B /* AudioListCVCell.xib */; };
-		18389CD128C36A6B00B9194B /* NSObject+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CB328C36A6B00B9194B /* NSObject+X.m */; };
-		18389CD228C36A6B00B9194B /* UIBarButtonItem+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CB428C36A6B00B9194B /* UIBarButtonItem+X.m */; };
-		18389CD328C36A6B00B9194B /* NSCalendar+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CB728C36A6B00B9194B /* NSCalendar+X.m */; };
-		18389CD428C36A6B00B9194B /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CB828C36A6B00B9194B /* NSString+X.m */; };
-		18389CD528C36A6B00B9194B /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CB928C36A6B00B9194B /* UIView+Frame.m */; };
-		18389CD628C36A6B00B9194B /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CBA28C36A6B00B9194B /* UIImage+X.m */; };
-		18389CD728C36A6B00B9194B /* CALayer+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CBC28C36A6B00B9194B /* CALayer+X.m */; };
-		18389CD828C36A6B00B9194B /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CBE28C36A6B00B9194B /* UITextField+X.m */; };
-		18389CD928C36A6B00B9194B /* UIImageView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CC028C36A6B00B9194B /* UIImageView+X.m */; };
-		18389CDA28C36A6B00B9194B /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CC228C36A6B00B9194B /* NSDate+X.m */; };
-		18389CDB28C36A6B00B9194B /* UIBezierPath+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CC728C36A6B00B9194B /* UIBezierPath+X.m */; };
-		18389CDC28C36A6B00B9194B /* UIFont+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CC828C36A6B00B9194B /* UIFont+X.m */; };
-		18389CDD28C36A6B00B9194B /* CAGradientLayer+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CCA28C36A6B00B9194B /* CAGradientLayer+X.m */; };
-		18389CDE28C36A6B00B9194B /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CCE28C36A6B00B9194B /* UIView+X.m */; };
-		18389CDF28C36A6B00B9194B /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 18389CCF28C36A6B00B9194B /* NSArray+Log.m */; };
 		18389CE128C4547600B9194B /* Video.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18389CE028C4547600B9194B /* Video.plist */; };
 		18397C3B247A7CCA00334AE7 /* LrcScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18397C3A247A7CCA00334AE7 /* LrcScrollView.m */; };
 		18397C3E247A94E500334AE7 /* LrcTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18397C3D247A94E500334AE7 /* LrcTableViewCell.m */; };
@@ -384,6 +369,36 @@
 		1828C3252478291800C621D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1828C3272478291800C621D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1828C3282478291800C621D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		183580D428EDB58F00C1D64C /* NSObject+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+X.m"; sourceTree = "<group>"; };
+		183580D528EDB58F00C1D64C /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+X.m"; sourceTree = "<group>"; };
+		183580D628EDB58F00C1D64C /* NSDate+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+X.h"; sourceTree = "<group>"; };
+		183580D728EDB58F00C1D64C /* UIBezierPath+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+X.h"; sourceTree = "<group>"; };
+		183580D828EDB58F00C1D64C /* NSCalendar+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+X.m"; sourceTree = "<group>"; };
+		183580D928EDB58F00C1D64C /* NSString+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
+		183580DA28EDB58F00C1D64C /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		183580DB28EDB58F00C1D64C /* UIImage+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
+		183580DC28EDB58F00C1D64C /* CAGradientLayer+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+X.h"; sourceTree = "<group>"; };
+		183580DD28EDB58F00C1D64C /* CALayer+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+X.m"; sourceTree = "<group>"; };
+		183580DE28EDB58F00C1D64C /* UIFont+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+X.h"; sourceTree = "<group>"; };
+		183580DF28EDB58F00C1D64C /* UITextField+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+X.m"; sourceTree = "<group>"; };
+		183580E028EDB58F00C1D64C /* NSArray+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		183580E128EDB58F00C1D64C /* UIImageView+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+X.m"; sourceTree = "<group>"; };
+		183580E228EDB58F00C1D64C /* UIView+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
+		183580E328EDB58F00C1D64C /* NSDate+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+X.m"; sourceTree = "<group>"; };
+		183580E428EDB58F00C1D64C /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+X.h"; sourceTree = "<group>"; };
+		183580E528EDB58F00C1D64C /* NSObject+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+X.h"; sourceTree = "<group>"; };
+		183580E628EDB58F00C1D64C /* NSString+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
+		183580E728EDB58F00C1D64C /* NSCalendar+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+X.h"; sourceTree = "<group>"; };
+		183580E828EDB58F00C1D64C /* UIBezierPath+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+X.m"; sourceTree = "<group>"; };
+		183580E928EDB58F00C1D64C /* UIFont+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+X.m"; sourceTree = "<group>"; };
+		183580EA28EDB58F00C1D64C /* CALayer+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+X.h"; sourceTree = "<group>"; };
+		183580EB28EDB58F00C1D64C /* CAGradientLayer+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+X.m"; sourceTree = "<group>"; };
+		183580EC28EDB58F00C1D64C /* UIImage+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+X.h"; sourceTree = "<group>"; };
+		183580ED28EDB58F00C1D64C /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		183580EE28EDB58F00C1D64C /* UIImageView+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+X.h"; sourceTree = "<group>"; };
+		183580EF28EDB58F00C1D64C /* UIView+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
+		183580F028EDB58F00C1D64C /* NSArray+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		183580F128EDB58F00C1D64C /* UITextField+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+X.h"; sourceTree = "<group>"; };
 		183895AE28C2F75E00B9194B /* tab_home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_home@3x.png"; sourceTree = "<group>"; };
 		183895B028C3028B00B9194B /* tab_audio@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_audio@3x.png"; sourceTree = "<group>"; };
 		183895B228C302C800B9194B /* ic_launch_screen@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_launch_screen@3x.png"; sourceTree = "<group>"; };
@@ -922,36 +937,6 @@
 		18389CAD28C366AE00B9194B /* AudioListCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioListCVCell.h; sourceTree = "<group>"; };
 		18389CAE28C366AE00B9194B /* AudioListCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioListCVCell.m; sourceTree = "<group>"; };
 		18389CAF28C366AE00B9194B /* AudioListCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioListCVCell.xib; sourceTree = "<group>"; };
-		18389CB328C36A6B00B9194B /* NSObject+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+X.m"; sourceTree = "<group>"; };
-		18389CB428C36A6B00B9194B /* UIBarButtonItem+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+X.m"; sourceTree = "<group>"; };
-		18389CB528C36A6B00B9194B /* NSDate+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+X.h"; sourceTree = "<group>"; };
-		18389CB628C36A6B00B9194B /* UIBezierPath+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+X.h"; sourceTree = "<group>"; };
-		18389CB728C36A6B00B9194B /* NSCalendar+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+X.m"; sourceTree = "<group>"; };
-		18389CB828C36A6B00B9194B /* NSString+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+X.m"; sourceTree = "<group>"; };
-		18389CB928C36A6B00B9194B /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		18389CBA28C36A6B00B9194B /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
-		18389CBB28C36A6B00B9194B /* CAGradientLayer+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+X.h"; sourceTree = "<group>"; };
-		18389CBC28C36A6B00B9194B /* CALayer+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+X.m"; sourceTree = "<group>"; };
-		18389CBD28C36A6B00B9194B /* UIFont+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+X.h"; sourceTree = "<group>"; };
-		18389CBE28C36A6B00B9194B /* UITextField+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+X.m"; sourceTree = "<group>"; };
-		18389CBF28C36A6B00B9194B /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
-		18389CC028C36A6B00B9194B /* UIImageView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+X.m"; sourceTree = "<group>"; };
-		18389CC128C36A6B00B9194B /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
-		18389CC228C36A6B00B9194B /* NSDate+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+X.m"; sourceTree = "<group>"; };
-		18389CC328C36A6B00B9194B /* UIBarButtonItem+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+X.h"; sourceTree = "<group>"; };
-		18389CC428C36A6B00B9194B /* NSObject+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+X.h"; sourceTree = "<group>"; };
-		18389CC528C36A6B00B9194B /* NSString+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
-		18389CC628C36A6B00B9194B /* NSCalendar+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+X.h"; sourceTree = "<group>"; };
-		18389CC728C36A6B00B9194B /* UIBezierPath+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+X.m"; sourceTree = "<group>"; };
-		18389CC828C36A6B00B9194B /* UIFont+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+X.m"; sourceTree = "<group>"; };
-		18389CC928C36A6B00B9194B /* CALayer+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+X.h"; sourceTree = "<group>"; };
-		18389CCA28C36A6B00B9194B /* CAGradientLayer+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+X.m"; sourceTree = "<group>"; };
-		18389CCB28C36A6B00B9194B /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+X.h"; sourceTree = "<group>"; };
-		18389CCC28C36A6B00B9194B /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		18389CCD28C36A6B00B9194B /* UIImageView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+X.h"; sourceTree = "<group>"; };
-		18389CCE28C36A6B00B9194B /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
-		18389CCF28C36A6B00B9194B /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
-		18389CD028C36A6B00B9194B /* UITextField+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+X.h"; sourceTree = "<group>"; };
 		18389CE028C4547600B9194B /* Video.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Video.plist; sourceTree = "<group>"; };
 		18397C39247A7CCA00334AE7 /* LrcScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LrcScrollView.h; sourceTree = "<group>"; };
 		18397C3A247A7CCA00334AE7 /* LrcScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LrcScrollView.m; sourceTree = "<group>"; };
@@ -1107,6 +1092,7 @@
 		1828C3152478291700C621D5 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				183580D328EDB58F00C1D64C /* category */,
 				18B23DD62478B2D500170BAD /* Images */,
 				18B23D802478B2CB00170BAD /* Resources */,
 				18B23E312478CEE400170BAD /* Classes */,
@@ -1127,6 +1113,44 @@
 			children = (
 			);
 			path = VideoImg;
+			sourceTree = "<group>";
+		};
+		183580D328EDB58F00C1D64C /* category */ = {
+			isa = PBXGroup;
+			children = (
+				183580D428EDB58F00C1D64C /* NSObject+X.m */,
+				183580D528EDB58F00C1D64C /* UIBarButtonItem+X.m */,
+				183580D628EDB58F00C1D64C /* NSDate+X.h */,
+				183580D728EDB58F00C1D64C /* UIBezierPath+X.h */,
+				183580D828EDB58F00C1D64C /* NSCalendar+X.m */,
+				183580D928EDB58F00C1D64C /* NSString+X.m */,
+				183580DA28EDB58F00C1D64C /* UIView+Frame.m */,
+				183580DB28EDB58F00C1D64C /* UIImage+X.m */,
+				183580DC28EDB58F00C1D64C /* CAGradientLayer+X.h */,
+				183580DD28EDB58F00C1D64C /* CALayer+X.m */,
+				183580DE28EDB58F00C1D64C /* UIFont+X.h */,
+				183580DF28EDB58F00C1D64C /* UITextField+X.m */,
+				183580E028EDB58F00C1D64C /* NSArray+Log.h */,
+				183580E128EDB58F00C1D64C /* UIImageView+X.m */,
+				183580E228EDB58F00C1D64C /* UIView+X.h */,
+				183580E328EDB58F00C1D64C /* NSDate+X.m */,
+				183580E428EDB58F00C1D64C /* UIBarButtonItem+X.h */,
+				183580E528EDB58F00C1D64C /* NSObject+X.h */,
+				183580E628EDB58F00C1D64C /* NSString+X.h */,
+				183580E728EDB58F00C1D64C /* NSCalendar+X.h */,
+				183580E828EDB58F00C1D64C /* UIBezierPath+X.m */,
+				183580E928EDB58F00C1D64C /* UIFont+X.m */,
+				183580EA28EDB58F00C1D64C /* CALayer+X.h */,
+				183580EB28EDB58F00C1D64C /* CAGradientLayer+X.m */,
+				183580EC28EDB58F00C1D64C /* UIImage+X.h */,
+				183580ED28EDB58F00C1D64C /* UIView+Frame.h */,
+				183580EE28EDB58F00C1D64C /* UIImageView+X.h */,
+				183580EF28EDB58F00C1D64C /* UIView+X.m */,
+				183580F028EDB58F00C1D64C /* NSArray+Log.m */,
+				183580F128EDB58F00C1D64C /* UITextField+X.h */,
+			);
+			name = category;
+			path = ../../../../category;
 			sourceTree = "<group>";
 		};
 		183895B828C3283200B9194B /* audio */ = {
@@ -2595,44 +2619,6 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		18389CB228C36A6B00B9194B /* category */ = {
-			isa = PBXGroup;
-			children = (
-				18389CBB28C36A6B00B9194B /* CAGradientLayer+X.h */,
-				18389CCA28C36A6B00B9194B /* CAGradientLayer+X.m */,
-				18389CC428C36A6B00B9194B /* NSObject+X.h */,
-				18389CB328C36A6B00B9194B /* NSObject+X.m */,
-				18389CC328C36A6B00B9194B /* UIBarButtonItem+X.h */,
-				18389CB428C36A6B00B9194B /* UIBarButtonItem+X.m */,
-				18389CBD28C36A6B00B9194B /* UIFont+X.h */,
-				18389CC828C36A6B00B9194B /* UIFont+X.m */,
-				18389CC128C36A6B00B9194B /* UIView+X.h */,
-				18389CCE28C36A6B00B9194B /* UIView+X.m */,
-				18389CCC28C36A6B00B9194B /* UIView+Frame.h */,
-				18389CB928C36A6B00B9194B /* UIView+Frame.m */,
-				18389CB528C36A6B00B9194B /* NSDate+X.h */,
-				18389CC228C36A6B00B9194B /* NSDate+X.m */,
-				18389CC528C36A6B00B9194B /* NSString+X.h */,
-				18389CB828C36A6B00B9194B /* NSString+X.m */,
-				18389CB628C36A6B00B9194B /* UIBezierPath+X.h */,
-				18389CC728C36A6B00B9194B /* UIBezierPath+X.m */,
-				18389CC628C36A6B00B9194B /* NSCalendar+X.h */,
-				18389CB728C36A6B00B9194B /* NSCalendar+X.m */,
-				18389CBF28C36A6B00B9194B /* NSArray+Log.h */,
-				18389CCF28C36A6B00B9194B /* NSArray+Log.m */,
-				18389CCD28C36A6B00B9194B /* UIImageView+X.h */,
-				18389CC028C36A6B00B9194B /* UIImageView+X.m */,
-				18389CCB28C36A6B00B9194B /* UIImage+X.h */,
-				18389CBA28C36A6B00B9194B /* UIImage+X.m */,
-				18389CD028C36A6B00B9194B /* UITextField+X.h */,
-				18389CBE28C36A6B00B9194B /* UITextField+X.m */,
-				18389CC928C36A6B00B9194B /* CALayer+X.h */,
-				18389CBC28C36A6B00B9194B /* CALayer+X.m */,
-			);
-			name = category;
-			path = ../../../../../category;
-			sourceTree = "<group>";
-		};
 		18B23D312478B2C100170BAD /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -2761,7 +2747,6 @@
 		18B23E312478CEE400170BAD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				18389CB228C36A6B00B9194B /* category */,
 				183895BA28C3284F00B9194B /* video */,
 				183895B928C3284700B9194B /* home */,
 				183895B828C3283200B9194B /* audio */,
@@ -3075,7 +3060,6 @@
 				18389BD528C332D300B9194B /* ApplicationInfo.m in Sources */,
 				18389C4528C332D300B9194B /* LoadFailedLayer.m in Sources */,
 				18389C4228C332D300B9194B /* EdgeLayer.m in Sources */,
-				18389CD328C36A6B00B9194B /* NSCalendar+X.m in Sources */,
 				18389BD728C332D300B9194B /* UILabel+AsyncLoad.m in Sources */,
 				18389C1528C332D300B9194B /* DefAVPlayerPlayback.m in Sources */,
 				18389BE928C332D300B9194B /* SJSQLite3.m in Sources */,
@@ -3105,14 +3089,12 @@
 				18389C1828C332D300B9194B /* PlaybackObservation.m in Sources */,
 				18389C4E28C332D300B9194B /* FilmEditingVideoCountDownView.m in Sources */,
 				18389C2D28C332D300B9194B /* FitScreenManager.m in Sources */,
-				18389CDB28C36A6B00B9194B /* UIBezierPath+X.m in Sources */,
 				18389C1028C332D300B9194B /* AVAsset+Export.m in Sources */,
 				18389C0C28C332D300B9194B /* GCDAsyncUdpSocket.m in Sources */,
 				18389C6628C332D300B9194B /* EdgeItem.m in Sources */,
 				18389C4F28C332D300B9194B /* FilmEditingResultShareItemsContainerView.m in Sources */,
 				18389C2328C332D300B9194B /* Playback.m in Sources */,
 				18389BFE28C332D300B9194B /* SJRouteObject.m in Sources */,
-				18389CD828C36A6B00B9194B /* UITextField+X.m in Sources */,
 				18389C5228C332D300B9194B /* FilmEditingCommonViewLayer.m in Sources */,
 				18389C3328C332D300B9194B /* UIScrollView+BasePlayerExtended.m in Sources */,
 				18389C5928C332D300B9194B /* FullscreenCustomStatusBar.m in Sources */,
@@ -3121,19 +3103,16 @@
 				18397C4A247A9AA500334AE7 /* LrcTool.m in Sources */,
 				18389C8C28C332D300B9194B /* MCSVODNetworkDataReader.m in Sources */,
 				18389BDB28C332D300B9194B /* UITextField+AsyncLoadImage.m in Sources */,
-				18389CD228C36A6B00B9194B /* UIBarButtonItem+X.m in Sources */,
 				18389BF628C332D300B9194B /* SJBaseViewController.m in Sources */,
 				18389C1928C332D300B9194B /* WatermarkView.m in Sources */,
 				18389C7528C332D300B9194B /* DDLoggerNames.m in Sources */,
 				18389BC328C332D300B9194B /* SJPageMenuBarScrollIndicator.m in Sources */,
 				18389C4128C332D300B9194B /* FloatSmallLayer.m in Sources */,
-				18389CD928C36A6B00B9194B /* UIImageView+X.m in Sources */,
 				18389C7028C332D300B9194B /* DDContextFilterLogFormatter.m in Sources */,
 				18389BEA28C332D300B9194B /* SJSQLite3+RemoveExtended.m in Sources */,
 				1811227928C268A000A4951F /* AudioListVc.m in Sources */,
 				18389C7E28C332D300B9194B /* MCSFileManager.m in Sources */,
 				18397C3E247A94E500334AE7 /* LrcTableViewCell.m in Sources */,
-				18389CD528C36A6B00B9194B /* UIView+Frame.m in Sources */,
 				18389C1328C332D300B9194B /* URLAsset+AVMediaPlaybackAdd.m in Sources */,
 				18C94E1028C4DD6500FAE0B3 /* VideoVc.m in Sources */,
 				18389C6128C332D300B9194B /* ButtonProgressSlider.m in Sources */,
@@ -3169,7 +3148,6 @@
 				18389BC228C332D300B9194B /* SJPageMenuBar.m in Sources */,
 				18397C4D247A9AEA00334AE7 /* LrcLineModel.m in Sources */,
 				18389C2428C332D300B9194B /* VcManager.m in Sources */,
-				18389CDD28C36A6B00B9194B /* CAGradientLayer+X.m in Sources */,
 				18389BCE28C332D300B9194B /* SJUTRegexHandler.m in Sources */,
 				18389BF928C332D300B9194B /* SJBaseTableViewHeaderFooterView.m in Sources */,
 				18389C9928C332D300B9194B /* HTTPAsyncFileResponse.m in Sources */,
@@ -3185,7 +3163,6 @@
 				18389C8828C332D300B9194B /* MCSResourceManager.m in Sources */,
 				18787C97249F106C00E4CF45 /* UIView+Frame.m in Sources */,
 				18389BE128C332D300B9194B /* SJSQLite3TableClassCache.m in Sources */,
-				18389CDE28C36A6B00B9194B /* UIView+X.m in Sources */,
 				18389C3928C332D300B9194B /* BasePlayerConst.m in Sources */,
 				18389C9D28C332D300B9194B /* WebSocket.m in Sources */,
 				18389C8428C332D300B9194B /* MCSVODPrefetcher.m in Sources */,
@@ -3215,7 +3192,6 @@
 				18389CA028C332D300B9194B /* MultipartMessageHeader.m in Sources */,
 				18389C7428C332D300B9194B /* DDLog.m in Sources */,
 				18389C7628C332D300B9194B /* DDAbstractDatabaseLogger.m in Sources */,
-				18389CDC28C36A6B00B9194B /* UIFont+X.m in Sources */,
 				18B23D752478B2C100170BAD /* DRNRealTimeBlurView.m in Sources */,
 				18980D3C28C8D1EC002E609E /* AudioGridCVCell.m in Sources */,
 				18787C98249F106C00E4CF45 /* CALayer+X.m in Sources */,
@@ -3243,7 +3219,6 @@
 				18389CA728C332D300B9194B /* DELETEResponse.m in Sources */,
 				18389C2828C332D300B9194B /* PlayerAutoplayConfig.m in Sources */,
 				18389BC128C332D300B9194B /* SJCornerMask.m in Sources */,
-				18389CD128C36A6B00B9194B /* NSObject+X.m in Sources */,
 				18389C5A28C332D300B9194B /* DraggingProgressPopView.m in Sources */,
 				18389C1428C332D300B9194B /* DefAVPlayer.m in Sources */,
 				18397C3B247A7CCA00334AE7 /* LrcScrollView.m in Sources */,
@@ -3256,9 +3231,7 @@
 				18389BE228C332D300B9194B /* SJSQLiteTableInfo.m in Sources */,
 				18389BDA28C332D300B9194B /* SJAsyncLoader.m in Sources */,
 				18389C0F28C332D300B9194B /* PlayerLoader.m in Sources */,
-				18389CD428C36A6B00B9194B /* NSString+X.m in Sources */,
 				18389BCD28C332D300B9194B /* SJUTRangeHandler.m in Sources */,
-				18389CD728C36A6B00B9194B /* CALayer+X.m in Sources */,
 				18389C5028C332D300B9194B /* FilmEditingBackButton.m in Sources */,
 				18389BE028C332D300B9194B /* SJSQLite3Condition.m in Sources */,
 				18389C5428C332D300B9194B /* FilmEditingLayer.m in Sources */,
@@ -3309,7 +3282,6 @@
 				18389C5528C332D300B9194B /* PlayerSettings.m in Sources */,
 				18389C9C28C332D300B9194B /* HTTPConnection.m in Sources */,
 				18389BEF28C332D300B9194B /* RunLoopTaskQueue.m in Sources */,
-				18389CDA28C36A6B00B9194B /* NSDate+X.m in Sources */,
 				18C94E0928C4D92300FAE0B3 /* VideoModel.m in Sources */,
 				18389C3628C332D300B9194B /* NSString+BasePlayerExtended.m in Sources */,
 				18389C2C28C332D300B9194B /* PresentView.m in Sources */,
@@ -3325,8 +3297,6 @@
 				18389BF728C332D300B9194B /* SJStatusBarManager.m in Sources */,
 				18389C6228C332D300B9194B /* CommonProgressSlider.m in Sources */,
 				18389C8B28C332D300B9194B /* MCSVODResource.m in Sources */,
-				18389CD628C36A6B00B9194B /* UIImage+X.m in Sources */,
-				18389CDF28C36A6B00B9194B /* NSArray+Log.m in Sources */,
 				18787C9C249F106C00E4CF45 /* UIImageView+X.m in Sources */,
 				18389C6828C332D300B9194B /* PlayerConst.m in Sources */,
 				18389C9B28C332D300B9194B /* HTTPMessage.m in Sources */,

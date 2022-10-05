@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1835813D28EDBF9E00C1D64C /* UIView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835812D28EDBF9E00C1D64C /* UIView+X.m */; };
 		18C960121F2392DA0064C617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C960111F2392DA0064C617 /* main.m */; };
 		18C960151F2392DA0064C617 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C960141F2392DA0064C617 /* AppDelegate.m */; };
 		18C960181F2392DA0064C617 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C960171F2392DA0064C617 /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1835812028EDBF9E00C1D64C /* UIView+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+X.h"; sourceTree = "<group>"; };
+		1835812D28EDBF9E00C1D64C /* UIView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+X.m"; sourceTree = "<group>"; };
 		18C9600D1F2392DA0064C617 /* ios_030101.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_030101.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C960111F2392DA0064C617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18C960131F2392DA0064C617 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,6 +46,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1835811128EDBF9E00C1D64C /* category */ = {
+			isa = PBXGroup;
+			children = (
+				1835812028EDBF9E00C1D64C /* UIView+X.h */,
+				1835812D28EDBF9E00C1D64C /* UIView+X.m */,
+			);
+			name = category;
+			path = ../../../../category;
+			sourceTree = "<group>";
+		};
 		18C960041F2392DA0064C617 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +75,7 @@
 		18C9600F1F2392DA0064C617 /* ios_030101 */ = {
 			isa = PBXGroup;
 			children = (
+				1835811128EDBF9E00C1D64C /* category */,
 				18C960131F2392DA0064C617 /* AppDelegate.h */,
 				18C960141F2392DA0064C617 /* AppDelegate.m */,
 				18C960161F2392DA0064C617 /* ViewController.h */,
@@ -133,6 +147,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -165,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1835813D28EDBF9E00C1D64C /* UIView+X.m in Sources */,
 				18C960181F2392DA0064C617 /* ViewController.m in Sources */,
 				18C960151F2392DA0064C617 /* AppDelegate.m in Sources */,
 				18C9601E1F2392DA0064C617 /* ios_030101.xcdatamodeld in Sources */,

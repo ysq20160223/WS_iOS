@@ -26,7 +26,7 @@
     
     scrollView.frame = self.view.bounds;
     scrollView.backgroundColor = UIColor.lightGrayColor;
-    scrollView.delegate = self; // 设置代理
+    scrollView.delegate = self;
     
     scrollView.maximumZoomScale = 2;
     scrollView.minimumZoomScale = 0.2;

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "UIView+X.h"
+
 @interface ViewController ()
 
 @property (strong, nonatomic) UIScrollView *scrollView;
@@ -25,7 +27,7 @@
     self.scrollView = UIScrollView.alloc.init;
     [self.view addSubview:self.scrollView];
     
-    self.scrollView.frame = CGRectMake(0, kStatusBarH, self.view.frame.size.width, 400); // 设置 ScrollView 的可见范围
+    self.scrollView.frame = CGRectMake(0, kStatusBarH, self.view.xWidth, 400); // 设置 ScrollView 的可见范围
     self.scrollView.backgroundColor = UIColor.magentaColor;
     
     
