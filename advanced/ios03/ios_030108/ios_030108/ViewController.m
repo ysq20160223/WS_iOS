@@ -23,21 +23,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CGFloat screenW = self.view.frame.size.width;
-    CGFloat screenH = self.view.frame.size.height;
-    
     self.scrollView.frame = self.view.bounds;
     self.scrollView.backgroundColor = UIColor.lightGrayColor;
     
+    CGFloat w = self.scrollView.frame.size.width;
+    CGFloat h = self.scrollView.frame.size.height;
+    
     for (int i = 0; i < kCount; i++) {
         UIImageView *iv = UIImageView.alloc.init;
-        iv.frame = CGRectMake(i * screenW, 0, screenW, screenH); // 1, 设置 frame
-        iv.image = [UIImage imageNamed:[NSString stringWithFormat:@"%02d.jpg", i + 1]]; // 2, 设置图片
+        iv.image = [UIImage imageNamed:[NSString stringWithFormat:@"%02d.jpg", i + 1]];
+//        iv.frame = CGRectMake(i * w, 0, w, h);
+        
+        CGFloat imgW = iv.image.size.width;
+        CGFloat imgH = iv.image.size.height;
+        iv.frame = CGRectMake(i * w + (w - imgW ) / 2, (h - imgH) / 2, imgW, imgH);
+        
         [self.scrollView addSubview:iv];
     }
     
-    self.scrollView.contentSize = CGSizeMake(kCount * screenW, 0); // 总的内容
+    self.scrollView.contentSize = CGSizeMake(kCount * w, 0); // 总的内容
     self.scrollView.showsHorizontalScrollIndicator = NO;
+    self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.pagingEnabled = YES; // 分页
     self.scrollView.delegate = self; // 代理
     
@@ -45,10 +51,10 @@
     // 添加 PageControl
     self.pageControl = UIPageControl.alloc.init;
     self.pageControl.backgroundColor = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:0.3];
-    self.pageControl.center = CGPointMake(screenW * 0.5, screenH - 100);
+    self.pageControl.center = CGPointMake(w * 0.5, h - 100);
     self.pageControl.bounds = CGRectMake(0, 0, 300, 100);
     self.pageControl.numberOfPages = kCount;
-    self.pageControl.pageIndicatorTintColor = UIColor.lightGrayColor;
+    self.pageControl.pageIndicatorTintColor = UIColor.grayColor;
     self.pageControl.currentPageIndicatorTintColor = UIColor.magentaColor;
     self.pageControl.enabled = NO; // 默认为 YES
     
