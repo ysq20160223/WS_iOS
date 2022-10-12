@@ -11,7 +11,7 @@
 #import "Province.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) NSArray *provinces;
+@property (strong, nonatomic) NSArray<Province *> *provinceArray;
 @end
 
 
@@ -28,18 +28,18 @@
     [self.view addSubview:tableView];
     
     Province *fj = [Province.alloc init];
-    fj.header = @"福建";
-    fj.footer = @"fj";
-    fj.cities = @[@"福州", @"厦门", @"莆田", @"泉州", @"漳州", @"宁德", @"三明", @"龙岩", @"南平"];
+    fj.header = @"FJ";
+    fj.footer = @"FuJian";
+    fj.cities = @[@"FuZhou", @"XiaMen", @"PuTian", @"QuanZhou", @"ZhangZhou", @"NingDe", @"SanMing", @"LongYan", @"NanPing"];
     
     Province *gd = [Province.alloc init];
-    gd.header = @"广东";
-    gd.footer = @"gd";
-    gd.cities = @[@"广州", @"深圳", @"东莞", @"惠州", @"佛山", @"中山", @"潮汕"];
+    gd.header = @"GD";
+    gd.footer = @"GuangDong";
+    gd.cities = @[@"GuangZhou", @"ShenZhen", @"DongGuan", @"HuiZhou", @"FoShan", @"ZhongShan", @"ChaoShan", @"HeYuan", @"WenZhou"];
     
-    Province *zj = [Province provinceWithHeader:@"浙江" footer:@"zj" cities:@[@"杭州", @"温州", @"宁波"]];
+    Province *zj = [Province provinceWithHeader:@"ZJ" footer:@"ZheJiang" cities:@[@"HangZhou", @"WenZhou", @"NingBo", @"JinHua"]];
     
-    _provinces = @[fj, gd, zj];
+    self.provinceArray = @[fj, gd, zj];
 }
 
 
@@ -50,7 +50,7 @@
 //    Province *p = _provinces[indexPath.section];
 //    cell.textLabel.text = p.cities[indexPath.row];
 
-    cell.textLabel.text = [_provinces[indexPath.section] cities][indexPath.row]; // 与上两行结果一致
+    cell.textLabel.text = self.provinceArray[indexPath.section].cities[indexPath.row]; // 与上两行结果一致
     return cell;
 }
 
@@ -59,28 +59,28 @@
 //    Province *p = _provinces[section];
 //    return p.cities.count;
     
-    return [_provinces[section] cities].count;
+    return self.provinceArray[section].cities.count;
 }
 
 // 1
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _provinces.count;
+    return self.provinceArray.count;
 }
 
 //
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [_provinces[section] header];
+    return self.provinceArray[section].header;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return [_provinces[section] footer];
+    return self.provinceArray[section].footer;
 }
 
 
 // 03-02-01-09 右侧索引条
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     NSMutableArray *titles = [NSMutableArray array];
-    for (Province *p in _provinces) {
+    for (Province *p in self.provinceArray) {
         [titles addObject:p.header];
     }
     return titles;
@@ -91,7 +91,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 @end
 

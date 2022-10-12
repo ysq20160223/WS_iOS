@@ -22,9 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _tableView.frame = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20);
+    self.tableView.frame = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.height - 20);
     
-    _shopArray = [NSMutableArray array];
+    self.shopArray = [NSMutableArray array];
     
     
 //    Shop *s1 = [[Shop alloc] init];
@@ -37,19 +37,19 @@
 //    [_shopArray addObjectsFromArray:@[s1, s2, s3]];
     
     for (int i = 0; i < 18; i++) {
-        NSString *name = [NSString stringWithFormat:@"name-%d", i];
-        NSString *desc = [NSString stringWithFormat:@"desc-%@", name];
+        NSString *name = [NSString stringWithFormat:@"name_%d", i];
+        NSString *desc = [NSString stringWithFormat:@"desc_%@", name];
         NSString *icon = [NSString stringWithFormat:@"01%d.png", i % 8];
         
         Shop *s = [Shop shopWithName:name icon:icon desc:desc];
-        [_shopArray addObject:s];
+        [self.shopArray addObject:s];
     }
 }
 
 
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _shopArray.count;
+    return self.shopArray.count;
 }
 
 // 默认返回1
@@ -58,11 +58,10 @@
 //}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Shop *shop = _shopArray[indexPath.row];
-    
+    Shop *shop = self.shopArray[indexPath.row];
     
     UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
-    NSLog(@"cell: %@", cell); // 验证全部刷新 or 局部刷新
+    NSLog(@"row: %ld", indexPath.row); // 验证全部刷新 or 局部刷新
     
     cell.textLabel.text = [NSString stringWithFormat:@"%@", shop.name];
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", shop.icon]]; // 设置图片
@@ -82,9 +81,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"row: %ld", indexPath.row);
-    [tableView deselectRowAtIndexPath:indexPath animated:NO]; // 取消点击后选中效果
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    Shop *s = _shopArray[indexPath.row];
+    Shop *s = self.shopArray[indexPath.row];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title" message:@"Messege" preferredStyle:UIAlertControllerStyleAlert];
     
@@ -95,17 +94,14 @@
     
     
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Default" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        NSLog(@"default");
-        
         s.name = alertController.textFields[0].text;
         
-        // 全部刷新
-//        [_tableView reloadData];
+//        [self.tableView reloadData]; // 全部刷新
         
-        // 局部刷新
         NSArray *array = @[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
-        [_tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationFade]; // 局部刷新
     }];
+    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"cancel");
     }];

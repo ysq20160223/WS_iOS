@@ -26,17 +26,17 @@
     [self.view addSubview:tableView];
     
     
-    _aresArray = @[
-                    @{
-                        @"header" : @"福建",
-                        @"footer" : @"fj",
-                        @"cities" : @[@"福州", @"厦门", @"莆田"]
+    self.aresArray = @[
+                        @{
+                            @"header" : @"FuJian",
+                            @"footer" : @"FJ",
+                            @"cities" : @[@"FuZhou", @"XiaMen", @"PuTian"]
                         },
-                    
-                    @{
-                        @"header" : @"广东",
-                        @"footer" : @"gd",
-                        @"cities" : @[@"广州", @"深圳"]
+                        
+                        @{
+                            @"header" : @"GuangDong",
+                            @"footer" : @"GD",
+                            @"cities" : @[@"GuangZhou", @"ShenZhen"]
                         }
                     ];
     
@@ -45,29 +45,27 @@
 #pragma mark -- UITableViewDataSource start
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return _aresArray.count;
+    return self.aresArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_aresArray[section][@"cities"] count];
+    return [self.aresArray[section][@"cities"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    
     cell.textLabel.text = _aresArray[indexPath.section][@"cities"][indexPath.row];
-    
     return cell;
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return _aresArray[section][@"header"];
+    return self.aresArray[section][@"header"];
 }
 
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    return _aresArray[section][@"footer"];
+    return self.aresArray[section][@"footer"];
 }
 
 #pragma mark -- UITableViewDataSource end
