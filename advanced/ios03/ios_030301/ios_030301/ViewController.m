@@ -39,19 +39,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 没有复用
+    //    UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    
     static NSString *ID = @"cell";
     
     // 1, 从缓存池中取出可循环利用的 cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
-    // 没有复用
-    //    UITableViewCell *cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    
     // 2, 如果缓存池中没有可循环利用的 cell
     if (nil == cell) {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    NSLog(@"cell: %@", cell); // 验证全部刷新 or 局部刷新
+    NSLog(@"row: %ld", indexPath.row); // 验证全部刷新 or 局部刷新
     cell.textLabel.text = self.mutableArray[indexPath.row];
     return cell;
 }

@@ -26,21 +26,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    _shopArray = [NSMutableArray array];
-    _checkedShopArray = [NSMutableArray array];
+    self.shopArray = [NSMutableArray array];
+    self.checkedShopArray = [NSMutableArray array];
     
     NSInteger screenW = self.view.frame.size.width;
     NSInteger screenH = self.view.frame.size.height;
     
     // 修改 Toolbar
-    _toolbar.frame = CGRectMake(0, kStatusBarH, screenW, 44);
+    self.toolbar.frame = CGRectMake(0, kStatusBarH, screenW, 44);
     
     // 修改 Label
-    _titleLabel.frame = CGRectMake(0, _toolbar.frame.origin.y + _toolbar.frame.size.height, screenW, 44);
+    self.lblTitle.frame = CGRectMake(0, self.toolbar.frame.origin.y + self.toolbar.frame.size.height, screenW, 44);
     
     // 修改 TableView
-    _tableView.frame = CGRectMake(0, _titleLabel.frame.origin.y + _titleLabel.frame.size.height, screenW, screenH - kStatusBarH - _toolbar.frame.size.height - _titleLabel.frame.size.height);
-    _tableView.backgroundColor = [UIColor colorWithRed:1 green:.6 blue:0 alpha:.6];
+    self.tableView.frame = CGRectMake(0, self.lblTitle.frame.origin.y + self.lblTitle.frame.size.height, screenW, screenH - kStatusBarH - self.toolbar.frame.size.height - self.lblTitle.frame.size.height);
+    self.tableView.backgroundColor = [UIColor colorWithRed:1 green:.6 blue:0 alpha:.6];
     
     
     // 1
@@ -49,22 +49,21 @@
     // 2
     for (NSDictionary *dict in array) {
         Shop *s = [Shop shopWithDict:dict];
-        [_shopArray addObject:s];
+        [self.shopArray addObject:s];
     }
-    //    NSLog(@"count: %ld", _shop.count);
+    //    NSLog(@"count: %ld", self.shop.count);
     
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (0 == _checkedShopArray.count) {
-        _titleLabel.text = @"Toolbar";
-        _trash.enabled = NO;
+    if (0 == self.checkedShopArray.count) {
+        self.lblTitle.text = @"Toolbar";
     } else {
-        _titleLabel.text = [NSString stringWithFormat:@"Toolbar(%ld)", _checkedShopArray.count];
-        _trash.enabled = YES;
+        self.lblTitle.text = [NSString stringWithFormat:@"Toolbar(%ld)", self.checkedShopArray.count];
     }
-    return _shopArray.count;
+    self.barBtnItemTrash.enabled = 0 != self.checkedShopArray.count;
+    return self.shopArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,16 +71,16 @@
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    NSLog(@"cell: %ld, cell: %p, cell: %@", indexPath.row, cell, cell);
+    NSLog(@"row: %ld; cell: %p", indexPath.row, cell);
     
-    Shop *shop = _shopArray[indexPath.row];
+    Shop *shop = self.shopArray[indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"%@ - %ld", shop.name, indexPath.row];
     cell.detailTextLabel.text = shop.desc;
     cell.imageView.image = [UIImage imageNamed:shop.icon];
     
-    if ([_checkedShopArray containsObject:shop]) {
+    if ([self.checkedShopArray containsObject:shop]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark; // 选中
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone; // 取消选中
@@ -100,33 +99,33 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES]; // 取消默认选中的背景
     
-    Shop *shop = _shopArray[indexPath.row];
-    if ([_checkedShopArray containsObject:shop]) {
-        [_checkedShopArray removeObject:shop]; // 取消选中
+    Shop *shop = self.shopArray[indexPath.row];
+    if ([self.checkedShopArray containsObject:shop]) {
+        [self.checkedShopArray removeObject:shop]; // 取消选中
     } else {
-        [_checkedShopArray addObject:shop]; // 存储选中的模型对象
+        [self.checkedShopArray addObject:shop]; // 存储选中的模型对象
     }
     
     //    [tableView reloadData]; // 全部刷新
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic]; // 刷新
 }
 
-- (IBAction)trash:(UIBarButtonItem *)sender {
+- (IBAction)onClickBarBtnItemTrash:(UIBarButtonItem *)sender {
     [UIView animateWithDuration:5 animations:^{
         NSMutableArray *checkedIndexPathArray = [NSMutableArray array];
-        for (Shop *shop in _checkedShopArray) {
-            NSInteger row = [_shopArray indexOfObject:shop];
+        for (Shop *shop in self.checkedShopArray) {
+            NSInteger row = [self.shopArray indexOfObject:shop];
             NSIndexPath *path = [NSIndexPath indexPathForRow:row inSection:0];
             [checkedIndexPathArray addObject:path];
         }
         
-        [_shopArray removeObjectsInArray:_checkedShopArray]; // 1, 删除模型数据
-        [_checkedShopArray removeAllObjects]; // 1-1, 删除选中数据
+        [self.shopArray removeObjectsInArray:self.checkedShopArray]; // 1, 删除模型数据
+        [self.checkedShopArray removeAllObjects]; // 1-1, 删除选中数据
         
         [self.tableView deleteRowsAtIndexPaths:checkedIndexPathArray withRowAnimation:UITableViewRowAnimationRight];
     } completion:^(BOOL finished) {
         NSLog(@"reloadData");
-        [_tableView reloadData]; // 2, 刷新表格
+        [self.tableView reloadData]; // 2, 刷新表格
     }];
 }
 

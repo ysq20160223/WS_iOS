@@ -25,35 +25,33 @@
     NSInteger screenW = self.view.frame.size.width;
     NSInteger screenH = self.view.frame.size.height;
     
-    _toolbar.frame = CGRectMake(0, kStatusBarH, self.view.frame.size.width, _toolbar.frame.size.height);
+    self.toolbar.frame = CGRectMake(0, kStatusBarH, self.view.frame.size.width, self.toolbar.frame.size.height);
     
-    _tableView.frame =CGRectMake(0, _toolbar.frame.size.height + 2 * kStatusBarH, screenW, screenH - _toolbar.frame.size.height - kStatusBarH);
-    
+    self.tableView.frame =CGRectMake(0, self.toolbar.frame.size.height + 2 * kStatusBarH, screenW, screenH - self.toolbar.frame.size.height - kStatusBarH);
 
-    _personArray = [NSMutableArray array];
-    
+    self.personArray = [NSMutableArray array];
     for(int i = 0; i < 21; i++) {
-        Person *person = [Person.alloc init];
+        Person *person = Person.alloc.init;
         person.name = [NSString stringWithFormat:@"Person - %d", i];
         person.phone = [NSString stringWithFormat:@"%.3d", i];
-        [_personArray addObject:person];
+        [self.personArray addObject:person];
     }
 }
 
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _personArray.count;
+    return self.personArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"ID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if(nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
+        cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
     
-    Person *person = _personArray[indexPath.row];
+    Person *person = self.personArray[indexPath.row];
     cell.textLabel.text = person.name;
     cell.detailTextLabel.text = person.phone;
     return cell;
@@ -63,9 +61,9 @@
 // 实现该方法默认实现 排序功能
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
     NSLog(@"sourceIndexPath:%ld, destinationIndexPath: %ld", sourceIndexPath.row, destinationIndexPath.row);
-    Person *person = _personArray[sourceIndexPath.row]; // 1, 先取出要拖动的模型数据
-    [_personArray removeObjectAtIndex:sourceIndexPath.row]; // 2, 删除之前的位置的模型数据
-    [_personArray insertObject:person atIndex:destinationIndexPath.row]; // 3, 将 person 插入到最新的位置
+    Person *person = self.personArray[sourceIndexPath.row]; // 1, 先取出要拖动的模型数据
+    [self.personArray removeObjectAtIndex:sourceIndexPath.row]; // 2, 删除之前的位置的模型数据
+    [self.personArray insertObject:person atIndex:destinationIndexPath.row]; // 3, 将 person 插入到最新的位置
 }
 
 
@@ -78,7 +76,7 @@
         return;
     }
     
-    [_personArray removeObjectAtIndex:indexPath.row]; // 1, 删除模型数据
+    [self.personArray removeObjectAtIndex:indexPath.row]; // 1, 删除模型数据
     
     //    [tableView reloadData]; // 2
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

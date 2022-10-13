@@ -11,13 +11,13 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *trash;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnItemTrash;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 // ------------
-- (IBAction)trash:(UIBarButtonItem *)sender;
+- (IBAction)onClickBarBtnItemTrash:(UIBarButtonItem *)sender;
 
 
 @end
