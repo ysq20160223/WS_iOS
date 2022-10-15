@@ -51,11 +51,6 @@
     return self.shopArray.count;
 }
 
-// 默认返回1
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    return 1;
-//}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Shop *shop = self.shopArray[indexPath.row];
     
@@ -68,6 +63,9 @@
 
     cell.backgroundColor = [UIColor colorWithRed:1 green:.6 blue:0 alpha:.2];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator; // 设置右边图标 箭头
+//    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    cell.accessoryType = UITableViewCellAccessoryDetailButton;
+//    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
 //    cell.accessoryView = [UIButton buttonWithType:UIButtonTypeContactAdd]; // 设置右边图标 +
     return cell;
 }
@@ -82,42 +80,47 @@
     NSLog(@"row: %ld", indexPath.row);
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    Shop *s = self.shopArray[indexPath.row];
+    Shop *shop = self.shopArray[indexPath.row];
     
+    /// --
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title" message:@"Messege" preferredStyle:UIAlertControllerStyleAlert];
-    
+
+    //
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
 //        NSLog(@"%@", textField.text);
-        textField.text = s.name;
+        textField.text = shop.name;
     }];
-    
-    
+
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Default" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        s.name = alertController.textFields[0].text;
-        
+        shop.name = alertController.textFields[0].text;
+
 //        [self.tableView reloadData]; // 全部刷新
-        
         NSArray *array = @[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
         [self.tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationFade]; // 局部刷新
+    }];
+
+    UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:@"Destructive" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"destructive");
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"cancel");
     }];
-    
+
     [alertController addAction:defaultAction];
     [alertController addAction:cancelAction];
-    
+    [alertController addAction:destructiveAction];
+
     [self presentViewController:alertController animated:YES completion:nil];
     
     
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Certain", nil];
+    /// --
+//    UIAlertView *alert = [UIAlertView.alloc initWithTitle:@"Title" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Certain", nil];
 //    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-//    [alert textFieldAtIndex:0].text = s.name;
+//    [alert textFieldAtIndex:0].text = shop.name;
 //    [alert show];
 //    alert.tag = indexPath.row; // 点击了哪一行
 }
-
 
 //#pragma mark -- UIAlertViewDelegate
 //- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -125,16 +128,16 @@
 //    if(buttonIndex == 0) {
 //        return;
 //    }
-//    
+//
 //    NSString *text = [alertView textFieldAtIndex:0].text;
 ////    NSLog(@"%@", text);
-//    
+//
 //    //
-//    Shop *s = _shopArray[alertView.tag];
-//    s.name = text;
-//    
+//    Shop *shop = self.shopArray[alertView.tag];
+//    shop.name = text;
+//
 ////    [_tableView reloadData]; // 重量级, 每一行都会刷新
-//    
+//
 //    // 03020205 - 局部刷新
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:alertView.tag inSection:0];
 //    [_tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
