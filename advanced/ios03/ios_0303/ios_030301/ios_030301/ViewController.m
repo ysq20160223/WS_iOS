@@ -51,7 +51,7 @@
     if (nil == cell) {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
-    NSLog(@"row: %ld", indexPath.row); // 验证全部刷新 or 局部刷新
+    NSLog(@"row: %ld; %p", indexPath.row, cell); // 验证全部刷新 or 局部刷新
     cell.textLabel.text = self.mutableArray[indexPath.row];
     return cell;
 }

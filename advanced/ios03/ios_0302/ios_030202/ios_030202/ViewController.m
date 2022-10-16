@@ -84,8 +84,6 @@
     
     /// --
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Title" message:@"Messege" preferredStyle:UIAlertControllerStyleAlert];
-
-    //
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
 //        NSLog(@"%@", textField.text);
         textField.text = shop.name;
@@ -98,18 +96,17 @@
         NSArray *array = @[[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
         [self.tableView reloadRowsAtIndexPaths:array withRowAnimation:UITableViewRowAnimationFade]; // 局部刷新
     }];
+    [alertController addAction:defaultAction];
 
-    UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:@"Destructive" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"destructive");
-    }];
+//    UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:@"Destructive" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//        NSLog(@"destructive");
+//    }];
+//    [alertController addAction:destructiveAction];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"cancel");
     }];
-
-    [alertController addAction:defaultAction];
     [alertController addAction:cancelAction];
-    [alertController addAction:destructiveAction];
 
     [self presentViewController:alertController animated:YES completion:nil];
     
