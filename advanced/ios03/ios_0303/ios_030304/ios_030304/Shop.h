@@ -11,9 +11,7 @@
 @interface Shop : NSObject
 
 @property (nonatomic, copy) NSString *name;
-
 @property (nonatomic, copy) NSString *icon;
-
 @property (nonatomic, copy) NSString *desc;
 
 //

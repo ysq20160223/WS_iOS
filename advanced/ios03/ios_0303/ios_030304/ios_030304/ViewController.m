@@ -31,13 +31,9 @@
     NSInteger screenW = self.view.frame.size.width;
     NSInteger screenH = self.view.frame.size.height;
     
-    // 修改 Toolbar
     self.toolbar.frame = CGRectMake(0, kStatusBarH, screenW, 44);
-    
-    // 修改 Label
     self.lblTitle.frame = CGRectMake(0, self.toolbar.frame.origin.y + self.toolbar.frame.size.height, screenW, 44);
     
-    // 修改 TableView
     self.tableView.frame = CGRectMake(0, self.lblTitle.frame.origin.y + self.lblTitle.frame.size.height, screenW, screenH - kStatusBarH - self.toolbar.frame.size.height - self.lblTitle.frame.size.height);
     self.tableView.backgroundColor = [UIColor colorWithRed:1 green:.6 blue:0 alpha:.6];
     
@@ -47,29 +43,26 @@
     
     // 2
     for (NSDictionary *dict in array) {
-        Shop *s = [Shop shopWithDict:dict];
-        [self.shopArray addObject:s];
+        [self.shopArray addObject:[Shop shopWithDict:dict]];
     }
     //    NSLog(@"count: %ld", self.shop.count);
-    
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (0 == self.checkedShopArray.count) {
-        self.lblTitle.text = @"Toolbar";
-    } else {
+    if (self.checkedShopArray.count) {
         self.lblTitle.text = [NSString stringWithFormat:@"Toolbar(%ld)", self.checkedShopArray.count];
+    } else {
+        self.lblTitle.text = @"Toolbar";
     }
-    self.barBtnItemTrash.enabled = 0 != self.checkedShopArray.count;
+    self.barBtnItemTrash.enabled = self.checkedShopArray.count;
     return self.shopArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (nil == cell) {
+    if (!cell) {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     NSLog(@"row: %ld; cell: %p", indexPath.row, cell);

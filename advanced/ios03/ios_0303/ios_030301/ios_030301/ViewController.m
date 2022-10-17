@@ -48,7 +48,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     // 2, 如果缓存池中没有可循环利用的 cell
-    if (nil == cell) {
+    if (!cell) {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     NSLog(@"row: %ld; %p", indexPath.row, cell); // 验证全部刷新 or 局部刷新
