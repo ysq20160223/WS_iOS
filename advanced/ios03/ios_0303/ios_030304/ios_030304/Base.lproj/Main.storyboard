@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,6 +26,12 @@
                                     <barButtonItem enabled="NO" systemItem="trash" id="59N-cE-d2P" userLabel="barBtnItemTrash">
                                         <connections>
                                             <action selector="onClickBarBtnItemTrash:" destination="BYZ-38-t0r" id="w9J-Di-YMc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="p6x-US-pxT"/>
+                                    <barButtonItem title="ALL" id="eco-gx-QUN">
+                                        <connections>
+                                            <action selector="onClickBarBtnItemAll:" destination="BYZ-38-t0r" id="EhB-zZ-zaX"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -52,6 +58,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="barBtnItemAll" destination="eco-gx-QUN" id="wIU-sL-O63"/>
                         <outlet property="barBtnItemTrash" destination="59N-cE-d2P" id="Xpq-IX-Zyx"/>
                         <outlet property="lblTitle" destination="1s5-a7-3Ck" id="f7o-DG-iS8"/>
                         <outlet property="tableView" destination="WCa-A9-Xt7" id="esG-7u-4un"/>

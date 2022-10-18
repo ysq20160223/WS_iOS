@@ -12,12 +12,14 @@
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnItemTrash;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *barBtnItemAll;
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 // ------------
 - (IBAction)onClickBarBtnItemTrash:(UIBarButtonItem *)sender;
+- (IBAction)onClickBarBtnItemAll:(id)sender;
 
 
 @end

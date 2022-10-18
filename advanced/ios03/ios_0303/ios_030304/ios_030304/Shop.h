@@ -14,6 +14,8 @@
 @property (nonatomic, copy) NSString *icon;
 @property (nonatomic, copy) NSString *desc;
 
+@property (nonatomic, assign) bool isSelected;
+
 //
 - (id)initWithDict:(NSDictionary *)dict;
 
