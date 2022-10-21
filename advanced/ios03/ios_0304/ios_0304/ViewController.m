@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     NSInteger screenW = self.view.frame.size.width;
     NSInteger screenH = self.view.frame.size.height;
@@ -47,7 +46,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"ID";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if(nil == cell) {
+    if(!cell) {
         cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ID];
     }
     
@@ -72,14 +71,12 @@
 // 点击删除按钮 - 默认是删除
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"editingStyle: %ld", editingStyle);
-    if(editingStyle != UITableViewCellEditingStyleDelete) {
-        return;
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.personArray removeObjectAtIndex:indexPath.row]; // 1, 删除模型数据
+        
+        //    [tableView reloadData]; // 2
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
-    
-    [self.personArray removeObjectAtIndex:indexPath.row]; // 1, 删除模型数据
-    
-    //    [tableView reloadData]; // 2
-    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 
