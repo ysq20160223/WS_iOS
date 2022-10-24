@@ -14,12 +14,12 @@ static Person *_instance = nil;
 
 // 类加载进内存
 + (void)load {
-    NSLog();
+    XLog
     _instance = [[self alloc] init];
 }
 
 + (void)initialize {
-    NSLog();
+    XLog
 }
 
 + (instancetype)sharePerson {
@@ -31,7 +31,7 @@ static Person *_instance = nil;
     // 外界调用直接抛异常
     // NSInternalInconsistencyException', reason: 'There can only be one UIApplication instance.'
     if(_instance) {
-        NSException *excp = [NSException exceptionWithName:@"NSInternalInconsistencyException" reason:@"There can only be one Person instance." userInfo:nil];
+        NSException *excp = [NSException exceptionWithName:NSStringFromClass(NSInternalInconsistencyException.class) reason:@"There can only be one Person instance." userInfo:nil];
         [excp raise];
     }
     

@@ -17,7 +17,7 @@
 #import "ViewController.h"
 
 @interface ViewController () {
-    UIApplication *_app;
+//    UIApplication *_app;
 }
 @end
 
@@ -27,9 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    _app = [UIApplication sharedApplication];
+//    _app = [UIApplication sharedApplication];
 }
 
 // 隐藏状态栏
@@ -40,43 +39,58 @@
 
 // 应用程序图标的提示数字
 - (IBAction)badge:(UIButton *)sender {
-    NSLog();
-    _app.applicationIconBadgeNumber = 1;
+    XLog
     
+    if(UIApplication.sharedApplication.applicationIconBadgeNumber) {
+        UIApplication.sharedApplication.applicationIconBadgeNumber = 0;
+    } else {
+        UIApplication.sharedApplication.applicationIconBadgeNumber = 1;
+    }
 }
 
 - (IBAction)notification:(UIButton *)sender {
-    NSLog();
-    UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
-    [_app registerUserNotificationSettings:setting];
+    XLog
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+    [UIApplication.sharedApplication registerUserNotificationSettings:settings];
+    
 }
 
 - (IBAction)networkVisible:(UIButton *)sender {
-    NSLog(@"visible: %d", _app.networkActivityIndicatorVisible);
-    if (_app.networkActivityIndicatorVisible) {
-        _app.networkActivityIndicatorVisible = NO;
-    } else {
-        _app.networkActivityIndicatorVisible = YES;
-    }
+//    NSLog(@"visible: %d", _app.networkActivityIndicatorVisible);
+//    if (_app.networkActivityIndicatorVisible) {
+//        _app.networkActivityIndicatorVisible = NO;
+//    } else {
+//        _app.networkActivityIndicatorVisible = YES;
+//    }
+    
+    
+    UIApplication.sharedApplication.networkActivityIndicatorVisible = !UIApplication.sharedApplication.networkActivityIndicatorVisible;
 }
 
 
 // 03, 状态栏
 - (IBAction)setStatusBar:(UIButton *)sender {
-    if ([_app isStatusBarHidden]) {
-        [_app setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
-    } else {
-        [_app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
-    }
+//    if ([_app isStatusBarHidden]) {
+//        [_app setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+//    } else {
+//        [_app setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+//    }
+    
+    
+    [UIApplication.sharedApplication setStatusBarHidden:!UIApplication.sharedApplication.isStatusBarHidden withAnimation:UIStatusBarAnimationSlide];
 }
-
 
 // 04, 打开网页
 - (IBAction)openUrl:(UIButton *)sender {
     NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
     //    NSURL *url = [NSURL URLWithString:@"tel://10086"];
+//    [_app openURL:url];
     
-    [_app openURL:url];
+    
+    NSMutableDictionary<UIApplicationOpenExternalURLOptionsKey, id> *dict = [NSMutableDictionary dictionary];
+    [UIApplication.sharedApplication openURL:url options:dict completionHandler:^(BOOL success) {
+        NSLog(@"success: %d", success);
+    }];
 }
 
 
