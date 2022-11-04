@@ -23,7 +23,7 @@ int main(int argc, char * argv[]) {
         // 03, 开启主运行事件循环, 处理事件, 保持程序一直运行
         // 04, 加载 Info.plist, 判断下是否指定 main ,如果指定了就会去加载
         
-        NSLog(@"");
+        XLog
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

@@ -30,35 +30,35 @@
 
 // 1, 启动完成
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSLog(@"");
+    XLog
     return YES;
 }
 
 // 2, 完全获取焦点时调用 : 完全获取焦点时才能与用户交互
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    NSLog(@"");
+    XLog
 }
 
 
 
 // 即将失去焦点的时候调用
 - (void)applicationWillResignActive:(UIApplication *)application {
-    NSLog(@"");
+    XLog
 }
 
 // 即将进入后台
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    NSLog(@"");
+    XLog
 }
 
 // 即将进入前台
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    NSLog(@"");
+    XLog
 }
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    NSLog(@"");
+    XLog
     [self saveContext];
 }
 
@@ -91,7 +91,7 @@
             }];
         }
     }
-    NSLog(@"%s", __func__);
+    XLog
     return _persistentContainer;
 }
 
@@ -106,7 +106,7 @@
         NSLog(@"Unresolved error: %@, userInfo: %@", error, error.userInfo);
         abort();
     }
-    NSLog(@"%s", __func__);
+    XLog
 }
 
 @end
