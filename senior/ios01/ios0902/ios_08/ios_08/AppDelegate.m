@@ -28,12 +28,13 @@
 
 - (void)createRect {
     // 1
-    self.window = [UIWindow.alloc initWithFrame:CGRectMake(0, 0, 300, 660)];
+    self.window = [UIWindow.alloc initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width * .8, UIScreen.mainScreen.bounds.size.height * .8)];
+    self.window.backgroundColor = UIColor.magentaColor;
     
     // 2
-    UIViewController *rootVC = [UIViewController.alloc init];
-    rootVC.view.backgroundColor = UIColor.magentaColor;
-    self.window.rootViewController = rootVC;
+    UIViewController *rootVc = UIViewController.alloc.init;
+    rootVc.view.backgroundColor = UIColor.lightGrayColor;
+    self.window.rootViewController = rootVc;
     
     // 3
     self.window.hidden = NO;
@@ -45,11 +46,11 @@
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     // 02, 创建 UIWindow 的 ViewController, 并赋值
-    UIViewController *rootVC = [UIViewController.alloc init];
-    rootVC.view.backgroundColor = UIColor.cyanColor;
+    UIViewController *rootVc = UIViewController.alloc.init;
+    rootVc.view.backgroundColor = UIColor.cyanColor;
     
     // Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Application windows are expected to have a root view controller at the end of application launch
-    self.window.rootViewController = rootVC; // 一旦设置窗口的根控制器, 就会将根控制器的 view 添加到窗口 (带有旋转功能)
+    self.window.rootViewController = rootVc; // 一旦设置窗口的根控制器, 就会将根控制器的 view 添加到窗口 (带有旋转功能)
     
     // 03, 显示窗口
     [self.window makeKeyAndVisible]; // 可以显示窗口; 成为应用程序的主窗口
@@ -72,16 +73,26 @@
     
     
     // 090209 : 如果要弹出键盘, 必须要把文本框添加到某个控件
-    UITextField *field = [UITextField.alloc init];
-    field.frame = CGRectMake(20, 300, 100, 100);
-    field.backgroundColor = UIColor.yellowColor;
-//    [field becomeFirstResponder];
-    [self.window addSubview:field];
+    UITextField *tf = UITextField.alloc.init;
+    tf.frame = CGRectMake(20, 300, 100, 100);
+    tf.backgroundColor = UIColor.orangeColor;
+    [tf becomeFirstResponder];
+    [self.window addSubview:tf];
     
-    NSLog(@"windows: %@", application.windows);
     return YES;
 }
 
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    XLog
+    
+    NSInteger count = UIApplication.sharedApplication.windows.count;
+    for (NSInteger i = 0; i < count; i++) {
+        NSLog(@"%ld: %@", i, UIApplication.sharedApplication.windows[i]);
+    }
+    
+    [self.window endEditing:YES];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
