@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "_ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -25,6 +27,8 @@
     // 2
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.window.rootViewController = [storyboard instantiateInitialViewController];
+    
+//    self.window.rootViewController = _ViewController.alloc.init;
     
     // 3
     self.window.hidden = NO;

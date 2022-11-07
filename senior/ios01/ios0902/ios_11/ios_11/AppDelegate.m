@@ -26,12 +26,13 @@
     
     
     //
-//    UIViewController *rootVC = [storyboard instantiateInitialViewController]; // 默认指向箭头所指的控制器
+//    UIViewController *vc = [storyboard instantiateInitialViewController]; // 默认指向箭头所指的控制器
     
-    UIViewController *rootVC = [storyboard instantiateViewControllerWithIdentifier:@"cyan"]; // show the identity inspector
+    //
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"cyan"]; // show the identity inspector
     
     
-    self.window.rootViewController = rootVC;
+    self.window.rootViewController = vc;
     
     self.window.hidden = NO;
 //    [self.window makeKeyAndVisible]; // 3, 显示窗口

@@ -31,9 +31,9 @@
     self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     // 2 通过 xib 创建控制器
-    UIViewController *xibRootVc = [UIViewController.alloc initWithNibName:@"VC" bundle:nil];
+    UIViewController *xibVc = [UIViewController.alloc initWithNibName:@"VC" bundle:nil];
 //    xibRootVc.view.backgroundColor = [UIColor cyanColor];
-    self.window.rootViewController = xibRootVc;
+    self.window.rootViewController = xibVc;
     
     // 3
     self.window.hidden = NO;

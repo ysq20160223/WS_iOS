@@ -6,27 +6,29 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "_ViewController.h"
 
 #import "BgView.h"
 
-@interface ViewController ()
+@interface _ViewController ()
 
 @end
 
-@implementation ViewController
+
+
+@implementation _ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"view: %@, color: %@", self.view, self.view.backgroundColor);
+    NSLog(@"view: %@; color: %@", self.view, self.view.backgroundColor);
 }
 
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    NSLog();
+    XLog
 }
 
 
@@ -38,10 +40,10 @@
     
 //    // 方法2, 调用自定义View
     BgView *view = [BgView.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:.5];
+    view.backgroundColor = UIColor.magentaColor;
     self.view = view;
     
-    NSLog();
+    XLog
 }
 
 
