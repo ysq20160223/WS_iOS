@@ -1,18 +1,20 @@
 //
-//  VCViewController.m
+//  _ViewController.m
 //  ios_01
 //
 //  Created by Apple on 2017/7/29.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MyViewController.h"
+#import "_ViewController.h"
 
-@interface MyViewController ()
+@interface _ViewController ()
 
 @end
 
-@implementation MyViewController
+
+
+@implementation _ViewController
 
 // 覆盖 loadView 系统就不会加载任何 xib
 //- (void)loadView {
@@ -21,12 +23,12 @@
 //}
 
 - (instancetype)init {
-    NSLog(@"");
+    XLog
     return [super init];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    NSLog(@"");
+    XLog
     return [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
 }
 

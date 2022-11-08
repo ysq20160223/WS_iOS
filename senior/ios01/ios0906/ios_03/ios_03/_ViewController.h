@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  _ViewController.h
 //  ios_03
 //
 //  Created by Apple on 2017/7/29.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface _ViewController : UIViewController
 
 @end
+
 

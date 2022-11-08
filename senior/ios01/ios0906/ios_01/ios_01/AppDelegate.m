@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MyViewController.h"
+#import "_ViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     /*
      ViewController 加载 xib: xib 中 File's owner 指定 class 和 Outlets 指定 View
@@ -40,11 +40,11 @@
      */
     
     // 2
-//        MyViewController *viewController = [[MyViewController alloc] initWithNibName:@"View" bundle:nil]; // 加载指定的 xib
-//        MyViewController *viewController = [[MyViewController alloc] initWithNibName:nil bundle:nil]; // 同下
-    UIViewController *viewController = [[MyViewController alloc] init]; // 底层会调用 initWithNibName
-    self.window.rootViewController = viewController;
-//    viewController.view.backgroundColor = [UIColor cyanColor];
+//        _ViewController *vc = [_ViewController.alloc initWithNibName:@"_View" bundle:nil];
+//        _ViewController *vc = [_ViewController.alloc initWithNibName:nil bundle:nil];
+    UIViewController *vc = _ViewController.alloc.init; // 底层会调用 initWithNibName
+    
+    self.window.rootViewController = vc;
     
     // 3
     [self.window makeKeyAndVisible];

@@ -6,16 +6,16 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "_ViewController.h"
 
-@interface ViewController ()
+@interface _ViewController ()
 
 @end
 
 
 
 
-@implementation ViewController
+@implementation _ViewController
 
 //- (UIView *)view {
 //    if(nil == _view) {
@@ -27,10 +27,10 @@
 
 
 - (void)loadView {
-    NSLog(@"");
+    XLog
     
-    UIView *v = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    v.backgroundColor = [UIColor lightGrayColor];
+    UIView *v = [UIView.alloc initWithFrame:UIScreen.mainScreen.bounds];
+    v.backgroundColor = UIColor.magentaColor;
     self.view = v;
 }
 
@@ -38,14 +38,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"");
+    self.view.backgroundColor = UIColor.brownColor;
+    XLog
 }
 
 
-
 @end
-
-
-
 
 

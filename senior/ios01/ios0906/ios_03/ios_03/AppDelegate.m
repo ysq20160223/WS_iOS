@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MyViewController.h"
+#import "_ViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // 01
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor magentaColor]; // window 背景色
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
+//    self.window.backgroundColor = [UIColor magentaColor]; // window 背景色
     
     // 添加按钮
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
@@ -30,13 +30,14 @@
     
     
     // 02
-    UIViewController *viewController = [[UIViewController alloc] init];
-//    UIViewController *viewController = [[MyViewController alloc] init];
+//    UIViewController *vc = UIViewController.alloc.init;
+    UIViewController *vc = _ViewController.alloc.init;
+    self.window.rootViewController = vc;
     
-//    viewController.view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:0.3];
-//    viewController.view.backgroundColor = [UIColor clearColor]; // 几乎透明, 不能穿透
-    viewController.view.alpha = 0.01; // 当 alpha <= 0.01, 完全透明, 可以穿透
-    self.window.rootViewController = viewController;
+    
+    vc.view.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:0.3];
+    vc.view.backgroundColor = UIColor.clearColor; // 几乎透明, 不能穿透
+//    vc.view.alpha = 0.01; // 当 alpha <= 0.01, 完全透明, 可以穿透
     
     
     // 03

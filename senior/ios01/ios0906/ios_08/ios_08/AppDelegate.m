@@ -19,7 +19,7 @@
     // Override point for customization after application launch.
     
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     
     // 2

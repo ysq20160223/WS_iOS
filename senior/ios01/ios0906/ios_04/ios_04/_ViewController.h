@@ -1,6 +1,6 @@
 //
-//  VCViewController.h
-//  ios_01
+//  ViewController.h
+//  ios_04
 //
 //  Created by Apple on 2017/7/29.
 //  Copyright © 2017年 Apple. All rights reserved.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyViewController : UIViewController
+@interface _ViewController : UIViewController
+
 
 @end
+

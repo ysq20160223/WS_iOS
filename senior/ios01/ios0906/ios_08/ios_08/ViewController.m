@@ -21,7 +21,6 @@
 
 
 
-
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -47,7 +46,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    NSLog(@"");
+    XLog
 }
 
 

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "_ViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,11 +22,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 01
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     // 02, 创建 vc 并不一定会创建 vc view
-    ViewController *vc = [[ViewController alloc] init];
-    vc.view.backgroundColor = [UIColor cyanColor];
+    _ViewController *vc = _ViewController.alloc.init;
+    XLog
+    vc.view.backgroundColor = UIColor.orangeColor;
+    XLog
     self.window.rootViewController = vc;
     
     // 03

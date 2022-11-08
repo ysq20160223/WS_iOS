@@ -10,7 +10,7 @@
 
 @interface ViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (nonatomic, strong) NSArray *musicArray;
+@property (nonatomic, strong) NSArray<NSArray *> *musicArray;
 
 @end
 
@@ -20,7 +20,7 @@
 
 - (NSArray *)musicArray {
     if (nil == _musicArray) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"music.plist" ofType:nil];
+        NSString *path = [NSBundle.mainBundle pathForResource:@"music.plist" ofType:nil];
         _musicArray = [NSMutableArray arrayWithContentsOfFile:path];
     }
     return _musicArray;
@@ -34,7 +34,7 @@
     self.pickerView.dataSource = self;
     self.pickerView.delegate = self;
     
-    _label.text = self.musicArray[0][0];
+    self.label.text = self.musicArray[0][0];
 }
 
 
@@ -46,16 +46,14 @@
 
 // 每列对应的行数
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    NSArray *array = self.musicArray[component];
-    return array.count;
+    return self.musicArray[component].count;
 }
 
 
 #pragma mark - UIPickerViewDelegate
 // 每行的标题
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSArray *array = self.musicArray[component];
-    return array[row];
+    return self.musicArray[component][row];
 }
 
 // 每列的高度
@@ -65,12 +63,10 @@
 
 // 选中行列数
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"component: %ld, row: %ld", component, row);
-    _label.text = self.musicArray[component][row];
+    NSLog(@"component: %ld; row: %ld", component, row);
+    self.label.text = self.musicArray[component][row];
 }
 
 @end
-
-
 
 
