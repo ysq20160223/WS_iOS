@@ -15,7 +15,7 @@
 
 }
 
-@property (nonatomic, strong) NSMutableArray *flagArray; //
+@property (nonatomic, strong) NSMutableArray<Flag *> *flagArray; //
 @property (nonatomic, assign) BOOL isInit;
 
 @end
@@ -55,7 +55,7 @@
 
 // 选中行 - 给文本赋值
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    self.text = [self.flagArray[row] countryName];
+    self.text = self.flagArray[row].countryName;
 }
 
 // 行高度
@@ -70,7 +70,7 @@
     if(nil == _flagArray) {
         _flagArray = [NSMutableArray array];
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"flags.plist" ofType:nil];
+        NSString *path = [NSBundle.mainBundle pathForResource:@"flags.plist" ofType:nil];
         NSArray *dicArray = [NSArray arrayWithContentsOfFile:path];
         
         for (NSDictionary *dict in dicArray) {
@@ -86,32 +86,28 @@
 // 初始化操作
 - (void)setUp {
     // 自定义键盘
-    UIPickerView *pickerView = [[UIPickerView alloc] init];
-    pickerView.dataSource = self;
-    pickerView.delegate = self;
-    _pickerView = pickerView;
-    self.inputView = pickerView; // inputView
+    _pickerView = UIPickerView.alloc.init;
+    _pickerView.dataSource = self;
+    _pickerView.delegate = self;
+    self.inputView = _pickerView; // inputView
 }
 
 
 // 只要从 xib 或者 storyboard 加载就会调用这个方法, 只调用一次
 - (void)awakeFromNib {
-    NSLog(@"");
+    XLog
     [super awakeFromNib];
     [self setUp];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    NSLog(@"");
+    XLog
     if(self = [super initWithFrame:frame]) {
         [self setUp];
     }
     return self;
 }
 
-
 @end
-
-
 
 

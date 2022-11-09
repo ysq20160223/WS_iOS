@@ -10,13 +10,11 @@
 
 @implementation Provinces
 
-
 + (instancetype)provincesWithDict:(NSDictionary *)dict {
-    Provinces *provinces = [[Provinces alloc] init];
+    Provinces *provinces = Provinces.alloc.init;
     [provinces setValuesForKeysWithDictionary:dict];
     return provinces;
 }
-
 
 @end
 

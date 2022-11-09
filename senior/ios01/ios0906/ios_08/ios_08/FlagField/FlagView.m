@@ -22,7 +22,7 @@
 
 
 + (instancetype)flagViewWithFlag:(Flag *)flag {
-    FlagView *flagView = [[NSBundle mainBundle] loadNibNamed:@"FlagView" owner:nil options:nil][0];
+    FlagView *flagView = [NSBundle.mainBundle loadNibNamed:@"FlagView" owner:nil options:nil].firstObject;
     flagView.flag = flag;
     return flagView;
 }
@@ -37,7 +37,5 @@
 }
 
 @end
-
-
 
 

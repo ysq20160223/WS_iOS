@@ -42,7 +42,7 @@
 
 // 省份
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"component: %ld, row: %ld", component, row);
+    NSLog(@"component: %ld; row: %ld", component, row);
     if(0 == component) {
         [pickerView reloadComponent:1]; // 刷新城市列
         [pickerView selectRow:0 inComponent:1 animated:YES]; // 指定刷新列和行
@@ -89,7 +89,7 @@
 
 //
 - (void)setUp {
-    UIPickerView *pickerView = [[UIPickerView alloc] init];
+    UIPickerView *pickerView = UIPickerView.alloc.init;
     pickerView.dataSource = self;
     pickerView.delegate = self;
     self.pickerView = pickerView;
@@ -110,7 +110,5 @@
 }
 
 @end
-
-
 
 

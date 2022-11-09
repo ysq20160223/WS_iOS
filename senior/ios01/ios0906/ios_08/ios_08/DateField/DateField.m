@@ -26,7 +26,7 @@
 }
 
 - (void)setUp {
-    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    UIDatePicker *datePicker = UIDatePicker.alloc.init;
     datePicker.datePickerMode = UIDatePickerModeDate; // 日期模式
     datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh"]; // 地区
     [datePicker addTarget:self action:@selector(valueChange:) forControlEvents:UIControlEventValueChanged];
@@ -37,7 +37,7 @@
 
 - (void)valueChange:(UIDatePicker *)datePicker {
     //    NSLog(@"value Change : %@", dp.date);
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    NSDateFormatter *format = NSDateFormatter.alloc.init;
     format.dateFormat = @"yyyy-MM-dd";
     self.text = [format stringFromDate:datePicker.date];
 }
@@ -55,7 +55,6 @@
     [super awakeFromNib];
     [self setUp];
 }
-
 
 @end
 
