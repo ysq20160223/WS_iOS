@@ -16,7 +16,7 @@
 @property (nonatomic, assign) BOOL isInit;
 
 //
-@property (nonatomic, strong) NSMutableArray *provinces;
+@property (nonatomic, strong) NSMutableArray<Provinces *> *provinces;
 @property (nonatomic, weak) UIPickerView *pickerView;
 
 @end
@@ -35,8 +35,7 @@
     if (0 == component) {
         return self.provinces.count;
     } else {
-        Provinces *p = self.provinces[[pickerView selectedRowInComponent:0]];
-        return p.cities.count;
+        return self.provinces[[pickerView selectedRowInComponent:0]].cities.count;
     }
 }
 
@@ -46,22 +45,22 @@
     if(0 == component) {
         [pickerView reloadComponent:1]; // 刷新城市列
         [pickerView selectRow:0 inComponent:1 animated:YES]; // 指定刷新列和行
+        
+        Provinces *p = self.provinces[row]; // 选中的省份
+        self.text = [NSString stringWithFormat:@"%@ - %@", p.name, p.cities[0]];
+    } else if(1 == component) {
+        Provinces *p = self.provinces[[pickerView selectedRowInComponent:0]];
+        self.text = [NSString stringWithFormat:@"%@ - %@", p.name, p.cities[row]];
     }
-    
-    Provinces *p = self.provinces[row]; // 选中的省份
-    NSArray *cities = p.cities; // 获取选中的城市
-    NSInteger cityIndex = [pickerView selectedRowInComponent:1];
-    self.text = [NSString stringWithFormat:@"%@ - %@", p.name, cities[cityIndex]];
 }
 
 // 赋值
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+//    NSLog(@"component: %ld; row: %ld", component, row);
     if (0 == component) {
-        Provinces *p = self.provinces[row];
-        return p.name;
+        return self.provinces[row].name;
     } else {
-        Provinces *p = self.provinces[[pickerView selectedRowInComponent:0]];
-        return p.cities[row];
+        return self.provinces[[pickerView selectedRowInComponent:0]].cities[row];
     }
 }
 
@@ -70,7 +69,7 @@
     if (nil == _provinces) {
         _provinces = [NSMutableArray array];
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"provinces.plist" ofType:nil];
+        NSString *path = [NSBundle.mainBundle pathForResource:@"provinces.plist" ofType:nil];
         NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
         for (NSDictionary *dict in dictArray) {
             id obj = [Provinces provincesWithDict:dict];

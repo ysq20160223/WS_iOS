@@ -16,6 +16,10 @@
     return provinces;
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"name: %@; cities: %@", self.name, self.cities];
+}
+
 @end
 
 
