@@ -1,5 +1,5 @@
 //
-//  TwoViewController.h
+//  ThirdViewController.h
 //  ios_14
 //
 //  Created by Apple on 2017/7/30.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TwoViewController : UIViewController
+@interface ThirdVc : UIViewController
 
 @end

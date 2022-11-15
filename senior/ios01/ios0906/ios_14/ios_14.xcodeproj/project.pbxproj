@@ -9,16 +9,15 @@
 /* Begin PBXBuildFile section */
 		18EFA1D01F2E1B67005D0391 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1CF1F2E1B67005D0391 /* main.m */; };
 		18EFA1D31F2E1B67005D0391 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1D21F2E1B67005D0391 /* AppDelegate.m */; };
-		18EFA1D61F2E1B67005D0391 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1D51F2E1B67005D0391 /* ViewController.m */; };
-		18EFA1D91F2E1B67005D0391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1D71F2E1B67005D0391 /* Main.storyboard */; };
+		18EFA1D61F2E1B67005D0391 /* _Vc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1D51F2E1B67005D0391 /* _Vc.m */; };
 		18EFA1DC1F2E1B67005D0391 /* ios_14.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1DA1F2E1B67005D0391 /* ios_14.xcdatamodeld */; };
 		18EFA1DE1F2E1B67005D0391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1DD1F2E1B67005D0391 /* Assets.xcassets */; };
 		18EFA1E11F2E1B67005D0391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1DF1F2E1B67005D0391 /* LaunchScreen.storyboard */; };
-		18EFA1E91F2E220E005D0391 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1E81F2E220E005D0391 /* ViewController.xib */; };
-		18EFA1ED1F2E2423005D0391 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1EB1F2E2423005D0391 /* TwoViewController.m */; };
-		18EFA1EE1F2E2423005D0391 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1EC1F2E2423005D0391 /* TwoViewController.xib */; };
-		18EFA1F21F2E26BC005D0391 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1F01F2E26BC005D0391 /* ThirdViewController.m */; };
-		18EFA1F31F2E26BC005D0391 /* ThirdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1F11F2E26BC005D0391 /* ThirdViewController.xib */; };
+		18EFA1E91F2E220E005D0391 /* _Vc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1E81F2E220E005D0391 /* _Vc.xib */; };
+		18EFA1ED1F2E2423005D0391 /* SecondVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1EB1F2E2423005D0391 /* SecondVc.m */; };
+		18EFA1EE1F2E2423005D0391 /* SecondVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1EC1F2E2423005D0391 /* SecondVc.xib */; };
+		18EFA1F21F2E26BC005D0391 /* ThirdVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18EFA1F01F2E26BC005D0391 /* ThirdVc.m */; };
+		18EFA1F31F2E26BC005D0391 /* ThirdVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EFA1F11F2E26BC005D0391 /* ThirdVc.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,20 +25,19 @@
 		18EFA1CF1F2E1B67005D0391 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18EFA1D11F2E1B67005D0391 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18EFA1D21F2E1B67005D0391 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18EFA1D41F2E1B67005D0391 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18EFA1D51F2E1B67005D0391 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		18EFA1D81F2E1B67005D0391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18EFA1D41F2E1B67005D0391 /* _Vc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _Vc.h; sourceTree = "<group>"; };
+		18EFA1D51F2E1B67005D0391 /* _Vc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _Vc.m; sourceTree = "<group>"; };
 		18EFA1DB1F2E1B67005D0391 /* ios_14.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_14.xcdatamodel; sourceTree = "<group>"; };
 		18EFA1DD1F2E1B67005D0391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18EFA1E01F2E1B67005D0391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18EFA1E21F2E1B67005D0391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18EFA1E81F2E220E005D0391 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		18EFA1EA1F2E2423005D0391 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
-		18EFA1EB1F2E2423005D0391 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
-		18EFA1EC1F2E2423005D0391 /* TwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
-		18EFA1EF1F2E26BC005D0391 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		18EFA1F01F2E26BC005D0391 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		18EFA1F11F2E26BC005D0391 /* ThirdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdViewController.xib; sourceTree = "<group>"; };
+		18EFA1E81F2E220E005D0391 /* _Vc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _Vc.xib; sourceTree = "<group>"; };
+		18EFA1EA1F2E2423005D0391 /* SecondVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVc.h; sourceTree = "<group>"; };
+		18EFA1EB1F2E2423005D0391 /* SecondVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVc.m; sourceTree = "<group>"; };
+		18EFA1EC1F2E2423005D0391 /* SecondVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondVc.xib; sourceTree = "<group>"; };
+		18EFA1EF1F2E26BC005D0391 /* ThirdVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdVc.h; sourceTree = "<group>"; };
+		18EFA1F01F2E26BC005D0391 /* ThirdVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdVc.m; sourceTree = "<group>"; };
+		18EFA1F11F2E26BC005D0391 /* ThirdVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThirdVc.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,21 +72,20 @@
 			children = (
 				18EFA1D11F2E1B67005D0391 /* AppDelegate.h */,
 				18EFA1D21F2E1B67005D0391 /* AppDelegate.m */,
-				18EFA1D41F2E1B67005D0391 /* ViewController.h */,
-				18EFA1D51F2E1B67005D0391 /* ViewController.m */,
-				18EFA1E81F2E220E005D0391 /* ViewController.xib */,
-				18EFA1D71F2E1B67005D0391 /* Main.storyboard */,
+				18EFA1D41F2E1B67005D0391 /* _Vc.h */,
+				18EFA1D51F2E1B67005D0391 /* _Vc.m */,
+				18EFA1E81F2E220E005D0391 /* _Vc.xib */,
 				18EFA1DD1F2E1B67005D0391 /* Assets.xcassets */,
 				18EFA1DF1F2E1B67005D0391 /* LaunchScreen.storyboard */,
 				18EFA1E21F2E1B67005D0391 /* Info.plist */,
 				18EFA1DA1F2E1B67005D0391 /* ios_14.xcdatamodeld */,
 				18EFA1CE1F2E1B67005D0391 /* Supporting Files */,
-				18EFA1EA1F2E2423005D0391 /* TwoViewController.h */,
-				18EFA1EB1F2E2423005D0391 /* TwoViewController.m */,
-				18EFA1EC1F2E2423005D0391 /* TwoViewController.xib */,
-				18EFA1EF1F2E26BC005D0391 /* ThirdViewController.h */,
-				18EFA1F01F2E26BC005D0391 /* ThirdViewController.m */,
-				18EFA1F11F2E26BC005D0391 /* ThirdViewController.xib */,
+				18EFA1EA1F2E2423005D0391 /* SecondVc.h */,
+				18EFA1EB1F2E2423005D0391 /* SecondVc.m */,
+				18EFA1EC1F2E2423005D0391 /* SecondVc.xib */,
+				18EFA1EF1F2E26BC005D0391 /* ThirdVc.h */,
+				18EFA1F01F2E26BC005D0391 /* ThirdVc.m */,
+				18EFA1F11F2E26BC005D0391 /* ThirdVc.xib */,
 			);
 			path = ios_14;
 			sourceTree = "<group>";
@@ -141,6 +138,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -161,10 +159,9 @@
 			files = (
 				18EFA1E11F2E1B67005D0391 /* LaunchScreen.storyboard in Resources */,
 				18EFA1DE1F2E1B67005D0391 /* Assets.xcassets in Resources */,
-				18EFA1F31F2E26BC005D0391 /* ThirdViewController.xib in Resources */,
-				18EFA1E91F2E220E005D0391 /* ViewController.xib in Resources */,
-				18EFA1EE1F2E2423005D0391 /* TwoViewController.xib in Resources */,
-				18EFA1D91F2E1B67005D0391 /* Main.storyboard in Resources */,
+				18EFA1F31F2E26BC005D0391 /* ThirdVc.xib in Resources */,
+				18EFA1E91F2E220E005D0391 /* _Vc.xib in Resources */,
+				18EFA1EE1F2E2423005D0391 /* SecondVc.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,11 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EFA1D61F2E1B67005D0391 /* ViewController.m in Sources */,
+				18EFA1D61F2E1B67005D0391 /* _Vc.m in Sources */,
 				18EFA1D31F2E1B67005D0391 /* AppDelegate.m in Sources */,
-				18EFA1F21F2E26BC005D0391 /* ThirdViewController.m in Sources */,
+				18EFA1F21F2E26BC005D0391 /* ThirdVc.m in Sources */,
 				18EFA1DC1F2E1B67005D0391 /* ios_14.xcdatamodeld in Sources */,
-				18EFA1ED1F2E2423005D0391 /* TwoViewController.m in Sources */,
+				18EFA1ED1F2E2423005D0391 /* SecondVc.m in Sources */,
 				18EFA1D01F2E1B67005D0391 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,14 +184,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		18EFA1D71F2E1B67005D0391 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18EFA1D81F2E1B67005D0391 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18EFA1DF1F2E1B67005D0391 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

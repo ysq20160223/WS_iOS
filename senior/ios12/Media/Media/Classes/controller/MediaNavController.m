@@ -24,7 +24,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSMutableDictionary<NSAttributedStringKey, id> *dict = [NSMutableDictionary dictionary];
-    [dict setObject:XColor(0xaa, 0xaa, 0xaa) forKey:NSForegroundColorAttributeName];
+    [dict setObject:XColor(0xee, 0xee, 0xee) forKey:NSForegroundColorAttributeName];
     self.navigationBar.titleTextAttributes = dict;
     
     if (@available(iOS 13.0, *)) {

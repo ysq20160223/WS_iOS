@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "ThirdViewController.h"
+#import "ThirdVc.h"
 
-@interface ThirdViewController ()
+@interface ThirdVc ()
 
 - (IBAction)back:(UIButton *)sender;
 
@@ -19,12 +19,16 @@
 
 
 
-@implementation ThirdViewController
+@implementation ThirdVc
 
 // 090703
 // 返回
 - (IBAction)back:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)viewDidLoad {
+    self.navigationItem.title = @"Third";
 }
 
 - (IBAction)backRoot:(id)sender {

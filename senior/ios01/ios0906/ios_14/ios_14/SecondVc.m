@@ -6,20 +6,23 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "TwoViewController.h"
-#import "ThirdViewController.h"
+#import "SecondVc.h"
+#import "ThirdVc.h"
 
-@interface TwoViewController ()
+@interface SecondVc ()
 
 @end
 
 
 
-@implementation TwoViewController
+@implementation SecondVc
 
+- (void)viewDidLoad {
+    self.navigationItem.title = @"Second";
+}
 
 - (IBAction)jump2Third:(id)sender {
-    ThirdViewController *thirdViewController = [[ThirdViewController alloc] init];
+    ThirdVc *thirdViewController = [[ThirdVc alloc] init];
     [self.navigationController pushViewController:thirdViewController animated:YES];
     
 //    NSLog(@"%@", self.navigationController.childViewControllers);

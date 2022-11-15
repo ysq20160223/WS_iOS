@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "_Vc.h"
 
 @interface AppDelegate ()
 
@@ -25,12 +25,12 @@
     // Override point for customization after application launch.
     
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor greenColor];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
+//    self.window.backgroundColor = UIColor.greenColor;
     
     // 2
-    ViewController *viewController = [[ViewController alloc] init]; // 创建导航控制器的根控制器
-    viewController.view.backgroundColor = [UIColor cyanColor];
+    _Vc *vc = _Vc.alloc.init; // 创建导航控制器的根控制器
+    vc.view.backgroundColor = UIColor.cyanColor;
     
     // 创建导航控制器 - 导航控制器也需要根控制器
     // 导航控制器的根控制器, 其实就是导航控制器的第一个子控制器
@@ -38,16 +38,16 @@
     
     //
     // ----- mothod first
-//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    UINavigationController *nc = [UINavigationController.alloc initWithRootViewController:vc];
     
     // ----- mothod second
-    UINavigationController *navigationController = [[UINavigationController alloc] init];
-    [navigationController pushViewController:viewController animated:YES];
-    navigationController.view.backgroundColor = [UIColor magentaColor];
+    UINavigationController *nc = UINavigationController.alloc.init;
+    [nc pushViewController:vc animated:YES];
+    nc.view.backgroundColor = UIColor.magentaColor;
     //
     
-    self.window.rootViewController = navigationController;
-    NSLog(@"%@", navigationController.childViewControllers); // 090702
+    self.window.rootViewController = nc;
+    NSLog(@"%@", nc.childViewControllers); // 090702
     
     // 3
     [self.window makeKeyAndVisible];
