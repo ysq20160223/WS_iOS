@@ -7,26 +7,27 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "_Vc.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
 
+
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     // 1
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
-    ViewController *viewController = [[ViewController alloc] init]; // 2
-//    viewController.view.backgroundColor = [UIColor redColor];
+    _Vc *vc = _Vc.alloc.init; // 2
+//    vc.view.backgroundColor = [UIColor redColor];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    self.window.rootViewController = navigationController;
+    UINavigationController *nc = [UINavigationController.alloc initWithRootViewController:vc];
+    self.window.rootViewController = nc;
     
     // note: 导航条的内容是由栈顶控制器的 navigationItem 决定的
 //    viewController.navigationItem.title = @"Nav - ViewController";

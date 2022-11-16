@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		18C6B0F61F2F50FB0057EC2F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C6B0F51F2F50FB0057EC2F /* main.m */; };
 		18C6B0F91F2F50FB0057EC2F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C6B0F81F2F50FB0057EC2F /* AppDelegate.m */; };
-		18C6B0FC1F2F50FB0057EC2F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C6B0FB1F2F50FB0057EC2F /* ViewController.m */; };
-		18C6B0FF1F2F50FB0057EC2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B0FD1F2F50FB0057EC2F /* Main.storyboard */; };
+		18C6B0FC1F2F50FB0057EC2F /* _Vc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C6B0FB1F2F50FB0057EC2F /* _Vc.m */; };
 		18C6B1021F2F50FB0057EC2F /* ios_04.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18C6B1001F2F50FB0057EC2F /* ios_04.xcdatamodeld */; };
 		18C6B1041F2F50FB0057EC2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B1031F2F50FB0057EC2F /* Assets.xcassets */; };
 		18C6B1071F2F50FB0057EC2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B1051F2F50FB0057EC2F /* LaunchScreen.storyboard */; };
-		18C6B10F1F2F510E0057EC2F /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B10E1F2F510E0057EC2F /* ViewController.xib */; };
-		18C6B1131F2F548F0057EC2F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C6B1111F2F548F0057EC2F /* SecondViewController.m */; };
-		18C6B1141F2F548F0057EC2F /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B1121F2F548F0057EC2F /* SecondViewController.xib */; };
+		18C6B10F1F2F510E0057EC2F /* _Vc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B10E1F2F510E0057EC2F /* _Vc.xib */; };
+		18C6B1131F2F548F0057EC2F /* SecondVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C6B1111F2F548F0057EC2F /* SecondVc.m */; };
+		18C6B1141F2F548F0057EC2F /* SecondVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B1121F2F548F0057EC2F /* SecondVc.xib */; };
 		18C6B11A1F2F59E90057EC2F /* navigationbar_friendsearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B1191F2F59E90057EC2F /* navigationbar_friendsearch@2x.png */; };
 		18C6B11C1F2F5B540057EC2F /* navigationbar_friendsearch_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C6B11B1F2F5B540057EC2F /* navigationbar_friendsearch_highlighted@2x.png */; };
 /* End PBXBuildFile section */
@@ -26,17 +25,16 @@
 		18C6B0F51F2F50FB0057EC2F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18C6B0F71F2F50FB0057EC2F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18C6B0F81F2F50FB0057EC2F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18C6B0FA1F2F50FB0057EC2F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18C6B0FB1F2F50FB0057EC2F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		18C6B0FE1F2F50FB0057EC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18C6B0FA1F2F50FB0057EC2F /* _Vc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _Vc.h; sourceTree = "<group>"; };
+		18C6B0FB1F2F50FB0057EC2F /* _Vc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _Vc.m; sourceTree = "<group>"; };
 		18C6B1011F2F50FB0057EC2F /* ios_04.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_04.xcdatamodel; sourceTree = "<group>"; };
 		18C6B1031F2F50FB0057EC2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18C6B1061F2F50FB0057EC2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18C6B1081F2F50FB0057EC2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18C6B10E1F2F510E0057EC2F /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		18C6B1101F2F548F0057EC2F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		18C6B1111F2F548F0057EC2F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		18C6B1121F2F548F0057EC2F /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		18C6B10E1F2F510E0057EC2F /* _Vc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _Vc.xib; sourceTree = "<group>"; };
+		18C6B1101F2F548F0057EC2F /* SecondVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondVc.h; sourceTree = "<group>"; };
+		18C6B1111F2F548F0057EC2F /* SecondVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondVc.m; sourceTree = "<group>"; };
+		18C6B1121F2F548F0057EC2F /* SecondVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondVc.xib; sourceTree = "<group>"; };
 		18C6B1191F2F59E90057EC2F /* navigationbar_friendsearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_friendsearch@2x.png"; sourceTree = "<group>"; };
 		18C6B11B1F2F5B540057EC2F /* navigationbar_friendsearch_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_friendsearch_highlighted@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,10 +71,9 @@
 			children = (
 				18C6B0F71F2F50FB0057EC2F /* AppDelegate.h */,
 				18C6B0F81F2F50FB0057EC2F /* AppDelegate.m */,
-				18C6B0FA1F2F50FB0057EC2F /* ViewController.h */,
-				18C6B0FB1F2F50FB0057EC2F /* ViewController.m */,
-				18C6B10E1F2F510E0057EC2F /* ViewController.xib */,
-				18C6B0FD1F2F50FB0057EC2F /* Main.storyboard */,
+				18C6B0FA1F2F50FB0057EC2F /* _Vc.h */,
+				18C6B0FB1F2F50FB0057EC2F /* _Vc.m */,
+				18C6B10E1F2F510E0057EC2F /* _Vc.xib */,
 				18C6B1031F2F50FB0057EC2F /* Assets.xcassets */,
 				18C6B11B1F2F5B540057EC2F /* navigationbar_friendsearch_highlighted@2x.png */,
 				18C6B1191F2F59E90057EC2F /* navigationbar_friendsearch@2x.png */,
@@ -84,9 +81,9 @@
 				18C6B1081F2F50FB0057EC2F /* Info.plist */,
 				18C6B1001F2F50FB0057EC2F /* ios_04.xcdatamodeld */,
 				18C6B0F41F2F50FB0057EC2F /* Supporting Files */,
-				18C6B1101F2F548F0057EC2F /* SecondViewController.h */,
-				18C6B1111F2F548F0057EC2F /* SecondViewController.m */,
-				18C6B1121F2F548F0057EC2F /* SecondViewController.xib */,
+				18C6B1101F2F548F0057EC2F /* SecondVc.h */,
+				18C6B1111F2F548F0057EC2F /* SecondVc.m */,
+				18C6B1121F2F548F0057EC2F /* SecondVc.xib */,
 			);
 			path = ios_04;
 			sourceTree = "<group>";
@@ -139,6 +136,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -159,11 +157,10 @@
 			files = (
 				18C6B1071F2F50FB0057EC2F /* LaunchScreen.storyboard in Resources */,
 				18C6B1041F2F50FB0057EC2F /* Assets.xcassets in Resources */,
-				18C6B10F1F2F510E0057EC2F /* ViewController.xib in Resources */,
-				18C6B0FF1F2F50FB0057EC2F /* Main.storyboard in Resources */,
+				18C6B10F1F2F510E0057EC2F /* _Vc.xib in Resources */,
 				18C6B11C1F2F5B540057EC2F /* navigationbar_friendsearch_highlighted@2x.png in Resources */,
 				18C6B11A1F2F59E90057EC2F /* navigationbar_friendsearch@2x.png in Resources */,
-				18C6B1141F2F548F0057EC2F /* SecondViewController.xib in Resources */,
+				18C6B1141F2F548F0057EC2F /* SecondVc.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,8 +171,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C6B1131F2F548F0057EC2F /* SecondViewController.m in Sources */,
-				18C6B0FC1F2F50FB0057EC2F /* ViewController.m in Sources */,
+				18C6B1131F2F548F0057EC2F /* SecondVc.m in Sources */,
+				18C6B0FC1F2F50FB0057EC2F /* _Vc.m in Sources */,
 				18C6B1021F2F50FB0057EC2F /* ios_04.xcdatamodeld in Sources */,
 				18C6B0F91F2F50FB0057EC2F /* AppDelegate.m in Sources */,
 				18C6B0F61F2F50FB0057EC2F /* main.m in Sources */,
@@ -185,14 +182,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		18C6B0FD1F2F50FB0057EC2F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18C6B0FE1F2F50FB0057EC2F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18C6B1051F2F50FB0057EC2F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

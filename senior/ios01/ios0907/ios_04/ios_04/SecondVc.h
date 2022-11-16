@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SecondViewController.h
 //  ios_04
 //
 //  Created by Apple on 2017/7/31.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SecondVc : UIViewController
 
+
+- (IBAction)pop:(UIButton *)sender;
 
 @end
-

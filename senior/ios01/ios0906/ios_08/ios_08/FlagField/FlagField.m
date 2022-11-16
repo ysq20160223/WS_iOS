@@ -16,7 +16,6 @@
 }
 
 @property (nonatomic, strong) NSMutableArray<Flag *> *flagArray; //
-@property (nonatomic, assign) BOOL isInit;
 
 @end
 
@@ -26,10 +25,11 @@
 
 - (void)initText {
     NSLog(@"inputView: %@", self.inputView);
-    if(!_isInit) {
-        _isInit = YES;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         [self pickerView:_pickerView didSelectRow:0 inComponent:0];
-    }
+    });
 }
 
 

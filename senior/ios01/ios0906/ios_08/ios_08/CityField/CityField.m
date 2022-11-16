@@ -13,8 +13,6 @@
 
 @interface CityField () <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (nonatomic, assign) BOOL isInit;
-
 //
 @property (nonatomic, strong) NSMutableArray<Provinces *> *provinces;
 @property (nonatomic, weak) UIPickerView *pickerView;
@@ -80,10 +78,10 @@
 }
 
 - (void)initText {
-    if(!self.isInit) {
-        self.isInit = YES;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         [self pickerView:self.pickerView didSelectRow:0 inComponent:0];
-    }
+    });
 }
 
 //

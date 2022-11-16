@@ -29,6 +29,8 @@
 
 - (void)viewDidLoad {
     self.navigationItem.title = @"Third";
+    
+    NSLog(@"%@", self.navigationController.childViewControllers);
 }
 
 - (IBAction)backRoot:(id)sender {

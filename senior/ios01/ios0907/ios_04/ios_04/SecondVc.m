@@ -6,22 +6,21 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SecondVc.h"
 
-@interface SecondViewController ()
+@interface SecondVc ()
 
 @end
 
 
 
-
-@implementation SecondViewController
+@implementation SecondVc
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationItem.title = @"SecondViewController";
+    self.navigationItem.title = NSStringFromClass(SecondVc.class);
     
     // --------- right
     UIBarButtonItem *rightBarBtnItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleDone target:self action:@selector(rightClick)];
@@ -40,22 +39,22 @@
     [btn setBackgroundImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted@2x"] forState:UIControlStateHighlighted];
     btn.frame = CGRectMake(0, 0, 35, 35);
     [btn addTarget:self action:@selector(leftClick) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftBarBtnItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    UIBarButtonItem *leftBarBtnItem = [UIBarButtonItem.alloc initWithCustomView:btn];
     
     self.navigationItem.leftBarButtonItem = leftBarBtnItem;
 }
 
 
 - (void)leftClick {
-    NSLog(@"");
+    XLog
 }
 
 - (void)rightClick {
-    NSLog(@"");
+    XLog
 }
 
 - (IBAction)pop:(UIButton *)sender {
-    NSLog(@"");
+    XLog
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -19,12 +19,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSMutableDictionary<NSAttributedStringKey, id> *dict = [NSMutableDictionary dictionary];
-    [dict setObject:XColor(0xee, 0xee, 0xee) forKey:NSForegroundColorAttributeName];
+    [dict setObject:XColor(0xff, 0xff, 0xff) forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.titleTextAttributes = dict;
     
     if (@available(iOS 13.0, *)) {
         UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
-        appearance.backgroundColor = XColorAlpha(0x7f, 0x7f, 0x7f, 1);
+        appearance.backgroundColor = XColorAlpha(0x7f, 0x7f, 0x7f, .3);
         appearance.titleTextAttributes = dict;
         self.navigationController.navigationBar.standardAppearance = appearance;
         self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
@@ -34,6 +34,8 @@
 
 - (void)viewDidLoad {
     self.navigationItem.title = @"_Vc";
+    
+    NSLog(@"%@", self.navigationController.childViewControllers);
 }
 
 - (IBAction)jump2Two:(id)sender {
@@ -45,8 +47,7 @@
     [self.navigationController pushViewController:twoViewController animated:YES];
     
     // 会把 push 的控制器添加为导航控制器的子控制器, 而且会把新 push 的控制器的 view 添加到导航控制的view上
-    
-    NSLog(@"%@", self.navigationController.childViewControllers);
+
 }
 
 @end

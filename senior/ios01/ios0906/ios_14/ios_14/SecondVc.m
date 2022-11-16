@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     self.navigationItem.title = @"Second";
+    
+    NSLog(@"%@", self.navigationController.childViewControllers);
 }
 
 - (IBAction)jump2Third:(id)sender {
