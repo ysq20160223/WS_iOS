@@ -6,16 +6,16 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "YYViewController.h"
+#import "YVc.h"
 
-@interface YYViewController ()
+@interface YVc ()
 
 @end
 
 
 
 
-@implementation YYViewController
+@implementation YVc
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -14,9 +14,9 @@
     05, Core Data
  */
 
-#import "ViewController.h"
+#import "_Vc.h"
 
-@interface ViewController ()
+@interface _Vc ()
 
 - (IBAction)plistWtiter:(id)sender;
 - (IBAction)plistRead:(id)sender;
@@ -29,8 +29,7 @@
 
 
 
-
-@implementation ViewController
+@implementation _Vc
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,16 +70,16 @@
 // --------------------- Perferences : 进行键值对存储
 - (IBAction)prefersWrite:(id)sender {
     // path : ~/Library/Preferences/mac.ios-11.plist
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     [defaults setObject:@"112233" forKey:@"num"];
     [defaults setBool:YES forKey:@"isOn"];
 }
 
 - (IBAction)prefersRead:(id)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     NSString *num = [defaults objectForKey:@"num"];
     BOOL isOn = [defaults boolForKey:@"isOn"];
-    NSLog(@"num: %@, isOn: %id", num, isOn);
+    NSLog(@"num: %@, isOn: %i", num, isOn);
 }
 
 

@@ -11,9 +11,9 @@
  
  */
 
-#import "ViewController.h"
+#import "_Vc.h"
 
-@interface ViewController ()
+@interface _Vc ()
 
 @end
 
@@ -24,59 +24,59 @@
 // viewWillDisappear:
 // viewDidDisappear:
 
-@implementation ViewController
+@implementation _Vc
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    NSLog(@"");
+    XLog
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    NSLog(@"");
+    XLog
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    NSLog(@"");
+    XLog
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    NSLog(@"");
+    XLog
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    NSLog(@"");
+    XLog
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"");
+    XLog
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // 清空缓存 - 图片缓存
-    
+    XLog
 }
 
 
 // 非 arc 模式下
 - (void)viewWillUnload {
-    NSLog(@"");
+    XLog
 }
 
 - (void)viewDidUnload {
-    NSLog(@"");
+    XLog
 }
 
 

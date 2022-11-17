@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		18CD523A1F2F6E78003C3A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD52391F2F6E78003C3A25 /* main.m */; };
 		18CD523D1F2F6E78003C3A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD523C1F2F6E78003C3A25 /* AppDelegate.m */; };
-		18CD52401F2F6E78003C3A25 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD523F1F2F6E78003C3A25 /* ViewController.m */; };
+		18CD52401F2F6E78003C3A25 /* _Vc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD523F1F2F6E78003C3A25 /* _Vc.m */; };
 		18CD52431F2F6E78003C3A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CD52411F2F6E78003C3A25 /* Main.storyboard */; };
 		18CD52461F2F6E78003C3A25 /* ios_05.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18CD52441F2F6E78003C3A25 /* ios_05.xcdatamodeld */; };
 		18CD52481F2F6E78003C3A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CD52471F2F6E78003C3A25 /* Assets.xcassets */; };
@@ -21,8 +21,8 @@
 		18CD52391F2F6E78003C3A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18CD523B1F2F6E78003C3A25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18CD523C1F2F6E78003C3A25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18CD523E1F2F6E78003C3A25 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18CD523F1F2F6E78003C3A25 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18CD523E1F2F6E78003C3A25 /* _Vc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _Vc.h; sourceTree = "<group>"; };
+		18CD523F1F2F6E78003C3A25 /* _Vc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _Vc.m; sourceTree = "<group>"; };
 		18CD52421F2F6E78003C3A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18CD52451F2F6E78003C3A25 /* ios_05.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_05.xcdatamodel; sourceTree = "<group>"; };
 		18CD52471F2F6E78003C3A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,8 +62,8 @@
 			children = (
 				18CD523B1F2F6E78003C3A25 /* AppDelegate.h */,
 				18CD523C1F2F6E78003C3A25 /* AppDelegate.m */,
-				18CD523E1F2F6E78003C3A25 /* ViewController.h */,
-				18CD523F1F2F6E78003C3A25 /* ViewController.m */,
+				18CD523E1F2F6E78003C3A25 /* _Vc.h */,
+				18CD523F1F2F6E78003C3A25 /* _Vc.m */,
 				18CD52411F2F6E78003C3A25 /* Main.storyboard */,
 				18CD52471F2F6E78003C3A25 /* Assets.xcassets */,
 				18CD52491F2F6E78003C3A25 /* LaunchScreen.storyboard */,
@@ -122,6 +122,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -153,7 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18CD52401F2F6E78003C3A25 /* ViewController.m in Sources */,
+				18CD52401F2F6E78003C3A25 /* _Vc.m in Sources */,
 				18CD523D1F2F6E78003C3A25 /* AppDelegate.m in Sources */,
 				18CD52461F2F6E78003C3A25 /* ios_05.xcdatamodeld in Sources */,
 				18CD523A1F2F6E78003C3A25 /* main.m in Sources */,

@@ -39,9 +39,8 @@
     [btn setBackgroundImage:[UIImage imageNamed:@"navigationbar_friendsearch_highlighted@2x"] forState:UIControlStateHighlighted];
     btn.frame = CGRectMake(0, 0, 35, 35);
     [btn addTarget:self action:@selector(leftClick) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftBarBtnItem = [UIBarButtonItem.alloc initWithCustomView:btn];
     
-    self.navigationItem.leftBarButtonItem = leftBarBtnItem;
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:btn];;
 }
 
 

@@ -6,12 +6,12 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "_Vc.h"
 
 #import "UIImage+Image.h"
 
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource> {
+@interface _Vc () <UITableViewDelegate, UITableViewDataSource> {
     NSInteger _navigationBarH;
     
     NSInteger _headViewH;
@@ -31,7 +31,7 @@
 
 
 
-@implementation ViewController
+@implementation _Vc
 
 - (void)viewDidLoad {
     [super viewDidLoad];

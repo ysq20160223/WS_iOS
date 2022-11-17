@@ -12,12 +12,12 @@
 		18BB399F1F31F6A900A530F0 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BB399E1F31F6A900A530F0 /* UIImage+Image.m */; };
 		18CD52601F2F7625003C3A25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD525F1F2F7625003C3A25 /* main.m */; };
 		18CD52631F2F7625003C3A25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD52621F2F7625003C3A25 /* AppDelegate.m */; };
-		18CD52661F2F7625003C3A25 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD52651F2F7625003C3A25 /* ViewController.m */; };
+		18CD52661F2F7625003C3A25 /* _Vc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD52651F2F7625003C3A25 /* _Vc.m */; };
 		18CD52691F2F7625003C3A25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CD52671F2F7625003C3A25 /* Main.storyboard */; };
 		18CD526C1F2F7625003C3A25 /* ios_06.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18CD526A1F2F7625003C3A25 /* ios_06.xcdatamodeld */; };
 		18CD526E1F2F7625003C3A25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CD526D1F2F7625003C3A25 /* Assets.xcassets */; };
 		18CD52711F2F7625003C3A25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CD526F1F2F7625003C3A25 /* LaunchScreen.storyboard */; };
-		18CD52801F2F78F6003C3A25 /* YYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD527F1F2F78F6003C3A25 /* YYViewController.m */; };
+		18CD52801F2F78F6003C3A25 /* YVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CD527F1F2F78F6003C3A25 /* YVc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,15 +29,15 @@
 		18CD525F1F2F7625003C3A25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18CD52611F2F7625003C3A25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18CD52621F2F7625003C3A25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18CD52641F2F7625003C3A25 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18CD52651F2F7625003C3A25 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18CD52641F2F7625003C3A25 /* _Vc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _Vc.h; sourceTree = "<group>"; };
+		18CD52651F2F7625003C3A25 /* _Vc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _Vc.m; sourceTree = "<group>"; };
 		18CD52681F2F7625003C3A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18CD526B1F2F7625003C3A25 /* ios_06.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_06.xcdatamodel; sourceTree = "<group>"; };
 		18CD526D1F2F7625003C3A25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18CD52701F2F7625003C3A25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18CD52721F2F7625003C3A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18CD527E1F2F78F6003C3A25 /* YYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYViewController.h; sourceTree = "<group>"; };
-		18CD527F1F2F78F6003C3A25 /* YYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYViewController.m; sourceTree = "<group>"; };
+		18CD527E1F2F78F6003C3A25 /* YVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YVc.h; sourceTree = "<group>"; };
+		18CD527F1F2F78F6003C3A25 /* YVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YVc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +81,8 @@
 			children = (
 				18CD52611F2F7625003C3A25 /* AppDelegate.h */,
 				18CD52621F2F7625003C3A25 /* AppDelegate.m */,
-				18CD52641F2F7625003C3A25 /* ViewController.h */,
-				18CD52651F2F7625003C3A25 /* ViewController.m */,
+				18CD52641F2F7625003C3A25 /* _Vc.h */,
+				18CD52651F2F7625003C3A25 /* _Vc.m */,
 				18CD52671F2F7625003C3A25 /* Main.storyboard */,
 				18CD526D1F2F7625003C3A25 /* Assets.xcassets */,
 				18CD526F1F2F7625003C3A25 /* LaunchScreen.storyboard */,
@@ -90,8 +90,8 @@
 				18CD526A1F2F7625003C3A25 /* ios_06.xcdatamodeld */,
 				18BB399C1F31F6A900A530F0 /* Category */,
 				18CD525E1F2F7625003C3A25 /* Supporting Files */,
-				18CD527E1F2F78F6003C3A25 /* YYViewController.h */,
-				18CD527F1F2F78F6003C3A25 /* YYViewController.m */,
+				18CD527E1F2F78F6003C3A25 /* YVc.h */,
+				18CD527F1F2F78F6003C3A25 /* YVc.m */,
 			);
 			path = ios_06;
 			sourceTree = "<group>";
@@ -146,6 +146,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -179,8 +180,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18CD52801F2F78F6003C3A25 /* YYViewController.m in Sources */,
-				18CD52661F2F7625003C3A25 /* ViewController.m in Sources */,
+				18CD52801F2F78F6003C3A25 /* YVc.m in Sources */,
+				18CD52661F2F7625003C3A25 /* _Vc.m in Sources */,
 				18CD52631F2F7625003C3A25 /* AppDelegate.m in Sources */,
 				18BB399F1F31F6A900A530F0 /* UIImage+Image.m in Sources */,
 				18CD52601F2F7625003C3A25 /* main.m in Sources */,
