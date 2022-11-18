@@ -39,13 +39,13 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.frame = [UIScreen mainScreen].bounds;
+    self.tableView.frame = UIScreen.mainScreen.bounds;
     
     _navigationBarH = self.navigationController.navigationBar.frame.size.height;
     _headViewH = self.headView.frame.size.height;
     _tabViewH = self.tabView.frame.size.height;
-    _headViewMinH = _navigationBarH + [[UIApplication sharedApplication] statusBarFrame].size.height;
-    NSLog(@"_headViewH: %ld, _navigationBarH: %ld, _headViewMinH: %ld", _headViewH, _navigationBarH, _headViewMinH);
+    _headViewMinH = _navigationBarH + kStatusBarH;
+    NSLog(@"_navigationBarH: %ld; _headViewH: %ld; _tabViewH: %ld; _headViewMinH: %ld; kStatusBarH: %f", _navigationBarH, _headViewH, _tabViewH, _headViewMinH, kStatusBarH);
     
     [self setUpNavigation];
     
@@ -55,7 +55,7 @@
 
     
     self.tableView.contentInset = UIEdgeInsetsMake(_headViewH + _tabViewH, 0, 0, 0); // 调用一次 scrollViewDidScroll:
-    NSLog(@"y: %f", self.tableView.contentOffset.y);
+    NSLog(@"y: %f; %d", self.tableView.contentOffset.y, self.automaticallyAdjustsScrollViewInsets);
 }
 
 
@@ -68,15 +68,16 @@
     CGFloat curOffsetY = scrollView.contentOffset.y;
     
     // 获取当前滚动偏移量
-    CGFloat scrollY = curOffsetY - -(_headViewH + _tabViewH);
+    CGFloat scrollY = curOffsetY - -(_headViewH + _tabViewH); // 150 + 64
     
     
     // 没有视觉差
-//    if(scrollY > _headViewH - _headViewMinH) {
+//    if(scrollY > _headViewH - _headViewMinH) { // 150 - 98 = 52
 //        scrollY = _headViewH - _headViewMinH;
 //    }
 //    self.headHeightConstraint.constant = -scrollY;
-//    NSLog(@"curOffsetY: %f, delta: %f", curOffsetY, scrollY);
+//    NSLog(@"curOffsetY: %f; scrollY: %f", curOffsetY, scrollY);
+    
     
     // 实现视觉差
     // 修改 HeadView 中 ImageView current mode 为 aspect fill 可以防止图片被压缩
@@ -86,7 +87,8 @@
         deltaY = _headViewMinH;
     }
     self.headTopConstraint.constant = deltaY;
-    NSLog(@"curOffsetY: %f, scrollY: %f, deltaY: %f", curOffsetY, scrollY, deltaY);
+    NSLog(@"curOffsetY: %f; scrollY: %f; deltaY: %f", curOffsetY, scrollY, deltaY);
+    
     
     // 设置透明度
     CGFloat alpha = scrollY / (_headViewH - _headViewMinH);
@@ -96,7 +98,8 @@
     UIImage *image = [UIImage imageWithColor:[UIColor colorWithRed:0 green:1 blue:1 alpha:alpha * 0.5]];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
     
-    _label.textColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:alpha];
+    _label.textColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:alpha];
+    _label.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:alpha];
 }
 
 
@@ -109,8 +112,8 @@
     static NSString *ID = @"ID";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (nil == cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    if (!cell) {
+        cell = [UITableViewCell.alloc initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
     cell.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
@@ -119,27 +122,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
 }
 
 
 // 090707
 #pragma mark -
-- (void) setUpNavigation {
+- (void)setUpNavigation {
     
     // UIBarMetricsDefault : 只有设置这种样式, 才能设置导航条背景图片
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-//    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]]; // 清空导航条的阴影的线
-    self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    [self.navigationController.navigationBar setBackgroundImage:UIImage.alloc.init forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = UIImage.alloc.init; // 清空导航条的阴影的线
     
     // 标题透明
-    UILabel *label = [[UILabel alloc] init];
+    UILabel *label = UILabel.alloc.init;
     label.text = @"YY";
     [label sizeToFit]; // 尺寸自适应
-    label.textColor = [UIColor colorWithWhite:1 alpha:0];
+    label.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
     [self.navigationItem setTitleView:label];
     
-        NSLog(@"%@", [self.navigationItem titleView]);
+    NSLog(@"%@", [self.navigationItem titleView]);
     _label = label;
 }
 

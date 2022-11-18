@@ -39,14 +39,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTP-dn-s37" userLabel="HeadView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lol.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OEE-IF-hWa" userLabel="HeadImageView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                        <color key="backgroundColor" red="1" green="0.52941176469999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-VX-OtC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-VX-OtC" userLabel="profile">
                                         <rect key="frame" x="137.5" y="-14" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="0py-1H-Odn"/>
@@ -56,7 +58,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.3184380436" green="0.56148876299999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.66287589069999997" green="0.99598723649999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="OEE-IF-hWa" secondAttribute="trailing" id="B4Z-7N-w4b"/>
                                     <constraint firstItem="OEE-IF-hWa" firstAttribute="leading" secondItem="LTP-dn-s37" secondAttribute="leading" id="BXc-bM-kmP"/>
@@ -74,15 +76,19 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbR-Vj-BEO">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="64"/>
                                         <color key="backgroundColor" red="1" green="0.62880115680000004" blue="0.69601761809999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <state key="normal" title="WeiBo"/>
+                                        <state key="normal" title="WeiBo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80B-9I-Ix3">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="64"/>
                                         <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="MainPager"/>
+                                        <state key="normal" title="MainPager">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.22102853659999999" green="0.7641379237" blue="0.48621535300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="80B-9I-Ix3" firstAttribute="top" secondItem="XN4-Je-M2J" secondAttribute="top" id="6dj-rP-upV"/>
                                     <constraint firstAttribute="bottom" secondItem="TbR-Vj-BEO" secondAttribute="bottom" id="95R-MP-tGh"/>
@@ -96,7 +102,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LTP-dn-s37" firstAttribute="top" secondItem="gqm-gX-zNZ" secondAttribute="top" id="Kxn-jL-fOx"/>
                             <constraint firstItem="XN4-Je-M2J" firstAttribute="leading" secondItem="gqm-gX-zNZ" secondAttribute="leading" id="LNC-Nh-SLP"/>
