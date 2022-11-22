@@ -48,14 +48,15 @@
     NSLog(@"_navigationBarH: %ld; _headViewH: %ld; _tabViewH: %ld; _headViewMinH: %ld; kStatusBarH: %f", _navigationBarH, _headViewH, _tabViewH, _headViewMinH, kStatusBarH);
     
     [self setUpNavigation];
+    XLog
     
     // 090706
-    // ios7 之后, 苹果自动会给导航控制器里面的所有 UIScrollView 顶部都会添加额外的滚动区域64
+    // ios7 之后, 苹果自动会给导航控制器里面的所有 UIScrollView 顶部都会添加额外的滚动区域 (statusBarH + navigationBarH)
     self.automaticallyAdjustsScrollViewInsets = NO; //
+    XLog
 
-    
     self.tableView.contentInset = UIEdgeInsetsMake(_headViewH + _tabViewH, 0, 0, 0); // 调用一次 scrollViewDidScroll:
-    NSLog(@"y: %f; %d", self.tableView.contentOffset.y, self.automaticallyAdjustsScrollViewInsets);
+    NSLog(@"y: %f", self.tableView.contentOffset.y);
 }
 
 
@@ -68,15 +69,17 @@
     CGFloat curOffsetY = scrollView.contentOffset.y;
     
     // 获取当前滚动偏移量
-    CGFloat scrollY = curOffsetY - -(_headViewH + _tabViewH); // 150 + 64
+    CGFloat scrollY = curOffsetY - -(_headViewH + _tabViewH); // 200 + 50
     
     
     // 没有视觉差
-//    if(scrollY > _headViewH - _headViewMinH) { // 150 - 98 = 52
+//    if(scrollY > _headViewH - _headViewMinH) { // 200 - 98 = 102
 //        scrollY = _headViewH - _headViewMinH;
 //    }
 //    self.headHeightConstraint.constant = -scrollY;
-//    NSLog(@"curOffsetY: %f; scrollY: %f", curOffsetY, scrollY);
+//    NSLog(@"curOffsetY: %f; scrollY: %f; tableView.contentOffset.y: %f", curOffsetY, scrollY, self.tableView.contentOffset.y);
+    // curOffsetY: -250.000000; scrollY: 0.000000; tableView.contentOffset.y: -250.000000
+    // curOffsetY: -347.666667; scrollY: -97.666667; tableView.contentOffset.y: -347.666667
     
     
     // 实现视觉差
@@ -88,6 +91,8 @@
     }
     self.headTopConstraint.constant = deltaY;
     NSLog(@"curOffsetY: %f; scrollY: %f; deltaY: %f", curOffsetY, scrollY, deltaY);
+    // curOffsetY: -250.000000; scrollY: 0.000000; deltaY: 200.000000
+    // curOffsetY: -347.666667; scrollY: -97.666667; deltaY: 297.666667
     
     
     // 设置透明度
@@ -140,7 +145,7 @@
     label.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
     [self.navigationItem setTitleView:label];
     
-    NSLog(@"%@", [self.navigationItem titleView]);
+//    NSLog(@"%@", [self.navigationItem titleView]);
     _label = label;
 }
 

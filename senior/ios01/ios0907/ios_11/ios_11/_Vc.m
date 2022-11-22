@@ -31,35 +31,28 @@
 
 @implementation _Vc
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-}
-
-
 // --------------------- Plist
 - (IBAction)plistWtiter:(id)sender {
     // plist 存储本质, 生成一个 plist文件
-    // (数组, 字典)
-    NSArray *array = @[@"123", @456];
+    
+    NSArray *array = @[@"123", @456]; // (数组, 字典)
     
 //    NSString *homePath = NSHomeDirectory();
 //    NSLog(@"homePath : %@", homePath);
     
     
-    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+    NSLog(@"count: %ld", NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).count);
     NSLog(@"cachesPath: %@", cachesPath);
     
     NSString *filePath = [cachesPath stringByAppendingPathComponent:@"array.plist"];
     
-    // 文件存储路径, 应用沙盒的某个文件夹中
-    [array writeToFile:filePath atomically:YES];
+    [array writeToFile:filePath atomically:YES]; // 文件存储路径, 应用沙盒的某个文件夹中
     
 }
 
 - (IBAction)plistRead:(id)sender {
-    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
     NSString *filePath = [cachesPath stringByAppendingPathComponent:@"array.plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:filePath];
     NSLog(@"array: %@", array);
@@ -79,7 +72,7 @@
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     NSString *num = [defaults objectForKey:@"num"];
     BOOL isOn = [defaults boolForKey:@"isOn"];
-    NSLog(@"num: %@, isOn: %i", num, isOn);
+    NSLog(@"num: %@; isOn: %i", num, isOn);
 }
 
 
