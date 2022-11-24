@@ -10,8 +10,8 @@
 		181D0E881F34C1AD0051CC17 /* MBProgressHUD+XMG.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D0E841F34C1AD0051CC17 /* MBProgressHUD+XMG.m */; };
 		181D0E891F34C1AD0051CC17 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 181D0E851F34C1AD0051CC17 /* MBProgressHUD.bundle */; };
 		181D0E8A1F34C1AD0051CC17 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 181D0E871F34C1AD0051CC17 /* MBProgressHUD.m */; };
-		18BEEA0F1F34A0CF0037A3B5 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEE9FB1F34A0CF0037A3B5 /* ContactsViewController.m */; };
-		18BEEA101F34A0CF0037A3B5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEEA051F34A0CF0037A3B5 /* LoginViewController.m */; };
+		18BEEA0F1F34A0CF0037A3B5 /* ContactsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEE9FB1F34A0CF0037A3B5 /* ContactsVc.m */; };
+		18BEEA101F34A0CF0037A3B5 /* LoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEEA051F34A0CF0037A3B5 /* LoginVc.m */; };
 		18BEEA111F34A0CF0037A3B5 /* LoginAnimView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEEA091F34A0CF0037A3B5 /* LoginAnimView.m */; };
 		18BEEA121F34A0CF0037A3B5 /* LoginAnimView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BEEA0A1F34A0CF0037A3B5 /* LoginAnimView.xib */; };
 		18BEEA131F34A0CF0037A3B5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BEEA0D1F34A0CF0037A3B5 /* AppDelegate.m */; };
@@ -24,9 +24,9 @@
 		18C3EB891F33654E00215E2B /* oval.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C3EB881F33654E00215E2B /* oval.png */; };
 		18C3EB8B1F33655800215E2B /* arm-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C3EB8A1F33655800215E2B /* arm-left@2x.png */; };
 		18C3EB8D1F33656300215E2B /* arm-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18C3EB8C1F33656300215E2B /* arm-right@2x.png */; };
-		18C46D301F3568E60013050A /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46D2F1F3568E60013050A /* AddViewController.m */; };
+		18C46D301F3568E60013050A /* AddVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46D2F1F3568E60013050A /* AddVc.m */; };
 		18C46D331F356C8D0013050A /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46D321F356C8D0013050A /* Contact.m */; };
-		18C46D361F3586C70013050A /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46D351F3586C70013050A /* EditViewController.m */; };
+		18C46D361F3586C70013050A /* EditVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46D351F3586C70013050A /* EditVc.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +35,11 @@
 		181D0E851F34C1AD0051CC17 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
 		181D0E861F34C1AD0051CC17 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		181D0E871F34C1AD0051CC17 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		187E399B23EBF2FC0062C2CA /* AddViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewControllerDelegate.h; sourceTree = "<group>"; };
-		18BEE9FA1F34A0CF0037A3B5 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		18BEE9FB1F34A0CF0037A3B5 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		18BEEA041F34A0CF0037A3B5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		18BEEA051F34A0CF0037A3B5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		187E399B23EBF2FC0062C2CA /* AddVcDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddVcDelegate.h; sourceTree = "<group>"; };
+		18BEE9FA1F34A0CF0037A3B5 /* ContactsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsVc.h; sourceTree = "<group>"; };
+		18BEE9FB1F34A0CF0037A3B5 /* ContactsVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsVc.m; sourceTree = "<group>"; };
+		18BEEA041F34A0CF0037A3B5 /* LoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVc.h; sourceTree = "<group>"; };
+		18BEEA051F34A0CF0037A3B5 /* LoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVc.m; sourceTree = "<group>"; };
 		18BEEA081F34A0CF0037A3B5 /* LoginAnimView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAnimView.h; sourceTree = "<group>"; };
 		18BEEA091F34A0CF0037A3B5 /* LoginAnimView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAnimView.m; sourceTree = "<group>"; };
 		18BEEA0A1F34A0CF0037A3B5 /* LoginAnimView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginAnimView.xib; sourceTree = "<group>"; };
@@ -56,12 +56,12 @@
 		18C3EB881F33654E00215E2B /* oval.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = oval.png; sourceTree = "<group>"; };
 		18C3EB8A1F33655800215E2B /* arm-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arm-left@2x.png"; sourceTree = "<group>"; };
 		18C3EB8C1F33656300215E2B /* arm-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arm-right@2x.png"; sourceTree = "<group>"; };
-		18C46D2E1F3568E60013050A /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
-		18C46D2F1F3568E60013050A /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		18C46D2E1F3568E60013050A /* AddVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVc.h; sourceTree = "<group>"; };
+		18C46D2F1F3568E60013050A /* AddVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVc.m; sourceTree = "<group>"; };
 		18C46D311F356C8D0013050A /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		18C46D321F356C8D0013050A /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
-		18C46D341F3586C70013050A /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
-		18C46D351F3586C70013050A /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		18C46D341F3586C70013050A /* EditVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditVc.h; sourceTree = "<group>"; };
+		18C46D351F3586C70013050A /* EditVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditVc.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 		187E399A23EBF2B80062C2CA /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				187E399B23EBF2FC0062C2CA /* AddViewControllerDelegate.h */,
+				187E399B23EBF2FC0062C2CA /* AddVcDelegate.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -128,8 +128,8 @@
 		18BEE9F51F34A0CF0037A3B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18C46D2E1F3568E60013050A /* AddViewController.h */,
-				18C46D2F1F3568E60013050A /* AddViewController.m */,
+				18C46D2E1F3568E60013050A /* AddVc.h */,
+				18C46D2F1F3568E60013050A /* AddVc.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,8 +146,8 @@
 		18BEE9F91F34A0CF0037A3B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18BEE9FA1F34A0CF0037A3B5 /* ContactsViewController.h */,
-				18BEE9FB1F34A0CF0037A3B5 /* ContactsViewController.m */,
+				18BEE9FA1F34A0CF0037A3B5 /* ContactsVc.h */,
+				18BEE9FB1F34A0CF0037A3B5 /* ContactsVc.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 		18BEE9FF1F34A0CF0037A3B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18C46D341F3586C70013050A /* EditViewController.h */,
-				18C46D351F3586C70013050A /* EditViewController.m */,
+				18C46D341F3586C70013050A /* EditVc.h */,
+				18C46D351F3586C70013050A /* EditVc.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 		18BEEA031F34A0CF0037A3B5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18BEEA041F34A0CF0037A3B5 /* LoginViewController.h */,
-				18BEEA051F34A0CF0037A3B5 /* LoginViewController.m */,
+				18BEEA041F34A0CF0037A3B5 /* LoginVc.h */,
+				18BEEA051F34A0CF0037A3B5 /* LoginVc.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -306,6 +306,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -346,14 +347,14 @@
 				181D0E881F34C1AD0051CC17 /* MBProgressHUD+XMG.m in Sources */,
 				18BEEA111F34A0CF0037A3B5 /* LoginAnimView.m in Sources */,
 				18C46D331F356C8D0013050A /* Contact.m in Sources */,
-				18BEEA101F34A0CF0037A3B5 /* LoginViewController.m in Sources */,
+				18BEEA101F34A0CF0037A3B5 /* LoginVc.m in Sources */,
 				18BEEA131F34A0CF0037A3B5 /* AppDelegate.m in Sources */,
 				18C3EB471F3361D200215E2B /* ios_04.xcdatamodeld in Sources */,
-				18BEEA0F1F34A0CF0037A3B5 /* ContactsViewController.m in Sources */,
+				18BEEA0F1F34A0CF0037A3B5 /* ContactsVc.m in Sources */,
 				18BEEA141F34A0CF0037A3B5 /* main.m in Sources */,
-				18C46D361F3586C70013050A /* EditViewController.m in Sources */,
+				18C46D361F3586C70013050A /* EditVc.m in Sources */,
 				181D0E8A1F34C1AD0051CC17 /* MBProgressHUD.m in Sources */,
-				18C46D301F3568E60013050A /* AddViewController.m in Sources */,
+				18C46D301F3568E60013050A /* AddVc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

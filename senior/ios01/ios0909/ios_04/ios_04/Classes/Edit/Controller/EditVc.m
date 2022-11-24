@@ -1,14 +1,14 @@
 //
-//  EditViewController.m
+//  EditVc.m
 //  ios_04
 //
 //  Created by Apple on 2017/8/5.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "EditViewController.h"
+#import "EditVc.h"
 
-@interface EditViewController ()
+@interface EditVc ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
@@ -21,7 +21,7 @@
 
 
 
-@implementation EditViewController
+@implementation EditVc
 
 - (void)viewDidLoad {
     [super viewDidLoad];

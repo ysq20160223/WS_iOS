@@ -1,5 +1,5 @@
 //
-//  EditViewController.h
+//  EditVc.h
 //  ios_04
 //
 //  Created by Apple on 2017/8/5.
@@ -10,7 +10,7 @@
 
 #import "Contact.h"
 
-@interface EditViewController : UIViewController
+@interface EditVc : UIViewController
 
 @property (nonatomic, strong) Contact *contact;
 

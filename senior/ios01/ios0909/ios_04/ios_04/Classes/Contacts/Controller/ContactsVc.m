@@ -1,17 +1,17 @@
 //
-//  ContactsViewController.m
+//  ContactsVc.m
 //  ios_04
 //
 //  Created by Apple on 2017/8/4.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "ContactsViewController.h"
-#import "AddViewController.h"
-#import "EditViewController.h"
+#import "ContactsVc.h"
+#import "AddVc.h"
+#import "EditVc.h"
 #import "Contact.h"
 
-@interface ContactsViewController () <UIActionSheetDelegate, AddViewControllerDelegate>
+@interface ContactsVc () <UIActionSheetDelegate, AddVcDelegate>
 
 //
 - (IBAction)logout:(UIBarButtonItem *)sender;
@@ -20,7 +20,7 @@
 
 
 
-@implementation ContactsViewController
+@implementation ContactsVc
 
 - (NSMutableArray *)contactArray {
     if(nil == _contactArray) {
@@ -62,14 +62,14 @@
 // 跳转 AddViewController 之前赋值
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"");
-    if ([segue.destinationViewController isKindOfClass:[AddViewController class]]) {
-        AddViewController *addVc = segue.destinationViewController;
+    if ([segue.destinationViewController isKindOfClass:[AddVc class]]) {
+        AddVc *addVc = segue.destinationViewController;
         addVc.delegate = self;
-    } else if ([segue.destinationViewController isKindOfClass:[EditViewController class]]) {
+    } else if ([segue.destinationViewController isKindOfClass:[EditVc class]]) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        EditViewController *editVc = segue.destinationViewController;
+        EditVc *editVc = segue.destinationViewController;
         editVc.contact = self.contactArray[indexPath.row];
     }
     
@@ -81,7 +81,7 @@
 
 #pragma mark - AddViewControllerDelegate start
 // 添加一个新的联系人的时候回调
-- (void)addViewController:(AddViewController *)addVc didAddContact:(Contact *)contact {
+- (void)addVc:(AddVc *)addVc didAddContact:(Contact *)contact {
     NSLog(@"contact: %@", contact);
     
     [self.contactArray addObject:contact]; // 保存联系人
@@ -128,9 +128,5 @@
 //}
 
 @end
-
-
-
-
 
 

@@ -30,11 +30,10 @@
 
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"Person[name: %@, age: %d]", _name, _age];
+    return [NSString stringWithFormat:@"Person[name: %@; age: %d]", _name, _age];
 }
 
 
 @end
-
 
 

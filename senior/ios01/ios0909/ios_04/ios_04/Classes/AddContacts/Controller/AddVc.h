@@ -1,5 +1,5 @@
 //
-//  AddViewController.h
+//  AddVc.h
 //  ios_04
 //
 //  Created by Apple on 2017/8/5.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "AddViewControllerDelegate.h"
+#import "AddVcDelegate.h"
 
-@class AddViewController, Contact;
+@class AddVc, Contact;
 //
 //@protocol AddViewControllerDelegate <NSObject>
 //
@@ -22,9 +22,9 @@
 
 
 
-@interface AddViewController : UIViewController
+@interface AddVc : UIViewController
 
-@property (nonatomic, weak) id<AddViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<AddVcDelegate> delegate;
 
 //@property (nonatomic, weak) ContactsViewController *contactVc;
 

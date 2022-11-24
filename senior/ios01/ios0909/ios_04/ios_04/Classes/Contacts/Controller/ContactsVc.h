@@ -1,5 +1,5 @@
 //
-//  ContactsViewController.h
+//  ContactsVc.h
 //  ios_04
 //
 //  Created by Apple on 2017/8/4.
@@ -10,7 +10,7 @@
 
 @class Contact;
 
-@interface ContactsViewController : UITableViewController
+@interface ContactsVc : UITableViewController
 
 @property (nonatomic, strong) NSString *account; // 接收上个界面传递的账号
 

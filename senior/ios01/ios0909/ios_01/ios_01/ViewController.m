@@ -23,11 +23,11 @@
 
 - (IBAction)write:(UIButton *)sender {
     // 存储自定义对象使用归档
-    Person *person = [[Person alloc] init];
+    Person *person = Person.alloc.init;
     person.age = 01;
     person.name = @"jj";
     
-    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
     NSLog(@"cachePath: %@", cachePath);
     
     NSString *filePath = [cachePath stringByAppendingPathComponent:@"person.data"];
@@ -43,7 +43,7 @@
 
 
 - (IBAction)read:(UIButton *)sender {
-    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
     NSString *filePath = [cachePath stringByAppendingPathComponent:@"person.data"];
     Person *person =[NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
     NSLog(@"person : %@", person);

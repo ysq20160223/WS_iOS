@@ -1,5 +1,5 @@
 //
-//  LoginViewController.h
+//  LoginVc.h
 //  ios_04
 //
 //  Created by Apple on 2017/8/3.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginVc : UIViewController
 
 
 @end

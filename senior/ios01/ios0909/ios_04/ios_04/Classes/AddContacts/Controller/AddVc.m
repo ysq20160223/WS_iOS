@@ -1,18 +1,18 @@
 //
-//  AddViewController.m
+//  AddVc.m
 //  ios_04
 //
 //  Created by Apple on 2017/8/5.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "AddViewController.h"
+#import "AddVc.h"
 
 #import "Contact.h"
 
-#import "ContactsViewController.h"
+#import "ContactsVc.h"
 
-@interface AddViewController ()
+@interface AddVc ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneField;
@@ -26,7 +26,7 @@
 
 
 
-@implementation AddViewController
+@implementation AddVc
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,8 +53,8 @@
     Contact *contact = [Contact contactWithName:_nameField.text phone:_phoneField.text];
     
     // 通知联系人控制器接收数据
-    if([_delegate respondsToSelector:@selector(addViewController:didAddContact:)]) {
-        [_delegate addViewController:self didAddContact:contact];
+    if([_delegate respondsToSelector:@selector(addVcaddVc:didAddContact:)]) {
+        [_delegate addVc:self didAddContact:contact];
     }
     
 //    _contactVc.contact = c; // 给 _contactVc 赋值

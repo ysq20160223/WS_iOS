@@ -1,5 +1,5 @@
 //
-//  LoginViewController.m
+//  LoginVc.m
 //  ios_04
 //
 //  Created by Apple on 2017/8/3.
@@ -22,12 +22,12 @@
  
  */
 
-#import "LoginViewController.h"
+#import "LoginVc.h"
 #import "LoginAnimView.h"
-#import "ContactsViewController.h"
+#import "ContactsVc.h"
 #import "MBProgressHUD+XMG.h"
 
-@interface LoginViewController () <UITextFieldDelegate>
+@interface LoginVc () <UITextFieldDelegate>
 
 @property (weak, nonatomic) LoginAnimView *loginAnimView;
 @property (weak, nonatomic) IBOutlet UIView *animContentView;
@@ -50,7 +50,7 @@
 
 
 
-@implementation LoginViewController
+@implementation LoginVc
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -152,7 +152,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"segue: %@, sender: %@", segue, sender);
     
-    ContactsViewController *contactsVc = segue.destinationViewController;
+    ContactsVc *contactsVc = segue.destinationViewController;
     
     // 传值 - 方法1
     //    contactsVc.account = _accountField.text;
