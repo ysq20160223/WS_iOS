@@ -30,21 +30,14 @@
 @interface LoginVc () <UITextFieldDelegate>
 
 @property (weak, nonatomic) LoginAnimView *loginAnimView;
-@property (weak, nonatomic) IBOutlet UIView *animContentView;
+@property (weak, nonatomic) IBOutlet UIView *vAnimContent;
 
-@property (weak, nonatomic) IBOutlet UITextField *accountField; // 账号
-@property (weak, nonatomic) IBOutlet UITextField *pwdField; // 密码
+@property (weak, nonatomic) IBOutlet UITextField *tfAccount; // 账号
+@property (weak, nonatomic) IBOutlet UITextField *tfPwd; // 密码
 
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn; // 登陆按钮
-@property (weak, nonatomic) IBOutlet UISwitch *rmbPwdSwitch; // 记住密码控件
-@property (weak, nonatomic) IBOutlet UISwitch *autoLoginSwitch; // 自动登录控件
-
-
-//
-- (IBAction)rememberPassword:(UISwitch *)sender; // 点击记住密码
-- (IBAction)autoLogin:(UISwitch *)sender; // 点击自动登录
-
-- (IBAction)clickLogin:(UIButton *)sender; // 点击登陆按钮
+@property (weak, nonatomic) IBOutlet UIButton *btnLogin; // 登陆按钮
+@property (weak, nonatomic) IBOutlet UISwitch *sRemenberPwd; // 记住密码控件
+@property (weak, nonatomic) IBOutlet UISwitch *sAutoLogin; // 自动登录控件
 
 @end
 
@@ -58,15 +51,15 @@
     
     LoginAnimView *animView = [LoginAnimView loginAnimView];
     self.loginAnimView = animView;
-    [self.animContentView addSubview:animView];
+    [self.vAnimContent addSubview:animView];
     
     // 设置文本框代理, 监听开始编辑
-    _accountField.delegate = self;
-    _pwdField.delegate = self;
+    self.tfAccount.delegate = self;
+    self.tfPwd.delegate = self;
     
     // 及时监听文本框输入
-    [_accountField addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
-    [_pwdField addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+    [self.tfAccount addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+    [self.tfPwd addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
     
     [self textChange];
 }
@@ -74,30 +67,26 @@
 // 文本改变
 - (void)textChange {
     //    NSLog(@"%@", _accountField.text);
-    _loginBtn.enabled = _accountField.text.length && _pwdField.text.length;
+    self.btnLogin.enabled = self.tfAccount.text.length && self.tfPwd.text.length;
 }
 
 // 文本框开始输入
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if (textField.frame.origin.y == _accountField.frame.origin.y) {
-        [self.loginAnimView startAnim:NO];
-    } else {
-        [self.loginAnimView startAnim:YES];
-    }
+- (void)textFieldDidBeginEditing:(UITextField *)textField {    
+    [self.loginAnimView startAnim:textField.frame.origin.y != self.tfAccount.frame.origin.y];
 }
 
 // 记住密码
-- (IBAction)rememberPassword:(UISwitch *)sender {
+- (IBAction)onClickRememberPassword:(UISwitch *)sender {
     if (sender.on == NO) {
-        [_autoLoginSwitch setOn:NO animated:YES];
+        [self.sAutoLogin setOn:NO animated:YES];
     }
     [self.view endEditing:YES];
 }
 
 // 自动登录
-- (IBAction)autoLogin:(UISwitch *)sender {
+- (IBAction)onClickAutoLogin:(UISwitch *)sender {
     if (sender.on == YES) {
-        [_rmbPwdSwitch setOn:YES animated:YES];
+        [self.sRemenberPwd setOn:YES animated:YES];
     }
     [self.view endEditing:YES];
 }
@@ -109,8 +98,12 @@
     [self.view endEditing:YES]; // 退出键盘
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 // 点击登陆按钮
-- (IBAction)clickLogin:(UIButton *)sender {
+- (IBAction)onClickLogin:(UIButton *)sender {
     [self.view endEditing:YES]; // 退出键盘
     
     // 弹出蒙版, 在登陆期间, 不允许用户交互
@@ -121,13 +114,13 @@
         [MBProgressHUD hideHUD]; // 隐藏蒙版
         
         // 手动跳转
-        if ([_accountField.text isEqualToString:@"yy"] && [_pwdField.text isEqualToString:@"123"]) {
+        if ([self.tfAccount.text isEqualToString:@"yy"] && [self.tfPwd.text isEqualToString:@"123"]) {
             [self performSegueWithIdentifier:@"login2Contacts" sender:nil];
             
             // 代码跳转
 //            ContactsViewController *contactsVc = [[ContactsViewController alloc] init];
 //            [self.navigationController pushViewController:contactsVc animated:YES];
-//            contactsVc.navigationItem.title = [NSString stringWithFormat:@"%@ - Contacts", _accountField.text];
+//            contactsVc.navigationItem.title = [NSString stringWithFormat:@"%@ - Contacts", self.tfAccount.text];
         } else {
             [MBProgressHUD showError:@"Account Or Password Error!"];
         }
@@ -155,10 +148,10 @@
     ContactsVc *contactsVc = segue.destinationViewController;
     
     // 传值 - 方法1
-    //    contactsVc.account = _accountField.text;
+    //    contactsVc.account = self.tfAccount.text;
     
     // 方法2
-    contactsVc.navigationItem.title = [NSString stringWithFormat:@"%@ - Contacts", _accountField.text];
+    contactsVc.navigationItem.title = [NSString stringWithFormat:@"%@ - Contacts", self.tfAccount.text];
 }
 
 @end

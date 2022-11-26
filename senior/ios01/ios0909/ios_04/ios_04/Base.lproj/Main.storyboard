@@ -50,14 +50,14 @@
                                         <rect key="frame" x="130" y="17" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <action selector="rememberPassword:" destination="CtW-RK-fVP" eventType="valueChanged" id="JON-iK-sgq"/>
+                                            <action selector="onClickRememberPassword:" destination="CtW-RK-fVP" eventType="valueChanged" id="iv8-SN-kjf"/>
                                         </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ewv-lW-5HG">
                                         <rect key="frame" x="273" y="17" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
-                                            <action selector="autoLogin:" destination="CtW-RK-fVP" eventType="valueChanged" id="YiQ-Or-H0m"/>
+                                            <action selector="onClickAutoLogin:" destination="CtW-RK-fVP" eventType="valueChanged" id="sz8-v3-PND"/>
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Auto Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjW-Qe-joR">
@@ -113,7 +113,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="clickLogin:" destination="CtW-RK-fVP" eventType="touchUpInside" id="PgB-er-QOt"/>
+                                    <action selector="onClickLogin:" destination="CtW-RK-fVP" eventType="touchUpInside" id="oCR-0j-QKo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -121,12 +121,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="6dO-WL-w7j"/>
                     <connections>
-                        <outlet property="accountField" destination="u19-fN-Bed" id="srQ-Zk-i2S"/>
-                        <outlet property="animContentView" destination="KDP-3N-pcC" id="hrJ-UO-Dex"/>
-                        <outlet property="autoLoginSwitch" destination="Ewv-lW-5HG" id="tNu-15-pxm"/>
-                        <outlet property="loginBtn" destination="3fP-Fq-YOU" id="MWh-7Y-K2H"/>
-                        <outlet property="pwdField" destination="kUA-Q4-H0G" id="wGE-t0-PgA"/>
-                        <outlet property="rmbPwdSwitch" destination="Om9-XP-0WU" id="M4K-IF-kCU"/>
+                        <outlet property="btnLogin" destination="3fP-Fq-YOU" id="Ge9-kC-TLH"/>
+                        <outlet property="sAutoLogin" destination="Ewv-lW-5HG" id="RIY-fm-Vcr"/>
+                        <outlet property="sRemenberPwd" destination="Om9-XP-0WU" id="MBU-Zx-BsZ"/>
+                        <outlet property="tfAccount" destination="u19-fN-Bed" id="IfX-3i-unp"/>
+                        <outlet property="tfPwd" destination="kUA-Q4-H0G" id="fmm-t0-Rhr"/>
+                        <outlet property="vAnimContent" destination="KDP-3N-pcC" id="YSk-Xz-yin"/>
                         <segue destination="2E9-jK-4d2" kind="push" identifier="login2Contacts" id="PCP-Bx-8BH"/>
                     </connections>
                 </viewController>
