@@ -21,7 +21,9 @@
 #define kAudioGridCVCell @"AudioGridCVCell"
 
 @interface AudioListVc () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
 @property (nonatomic, assign) ModeView modeView;
+
 @end
 
 
@@ -51,25 +53,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
     self.navigationItem.title = @"Audio";
     
 //    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
     
+//    [self.collectionView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     
     self.modeView = ModeViewList;
     
     [self initCollectionView];
     
     [self initRightBarButtonItem];
+
 }
 
+
+#pragma mark -
 - (void)initCollectionView {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout.alloc init];
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 0;
-    layout.sectionHeadersPinToVisibleBounds = YES;
+    layout.sectionHeadersPinToVisibleBounds = NO;
     
     self.collectionView.collectionViewLayout = layout;
     
@@ -86,6 +91,9 @@
     self.collectionView.alwaysBounceVertical = YES;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioListCVCell.class) bundle:nil] forCellWithReuseIdentifier:kAudioListCVCell];
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioGridCVCell.class) bundle:nil] forCellWithReuseIdentifier:kAudioGridCVCell];
+    
+    //
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -133,6 +141,23 @@
     }
 }
 
+
+#pragma mark -
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reusableView = nil;
+    if(kind == UICollectionElementKindSectionHeader) {
+        UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
+        reusableView = view;
+    }
+    reusableView.backgroundColor = UIColor.cyanColor;
+    return reusableView;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    XLog
+    return CGSizeMake(self.view.frame.size.width, 200);
+}
 
 @end
 
