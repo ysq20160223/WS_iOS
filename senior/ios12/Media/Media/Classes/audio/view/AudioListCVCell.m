@@ -18,7 +18,7 @@
     self.lblSinger.textColor = XColor(0x88, 0x88, 0x88);
     self.ivIcon.layer.cornerRadius = 6;
     self.ivIcon.layer.masksToBounds = YES;
-    self.backgroundColor = XColor(0x40, 0x40, 0x40);
+    self.backgroundColor = XColor(0x44, 0x44, 0x44);
     
     self.layer.cornerRadius = 4;
     self.layer.masksToBounds = YES;

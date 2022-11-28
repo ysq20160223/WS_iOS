@@ -14,11 +14,10 @@
 #import "UIView+X.h"
 #import "AudioModel.h"
 #import "Config.h"
+#import "AudioListHeaderRv.h"
 
 #import <Masonry.h>
 
-#define kAudioListCVCell @"AudioListCVCell"
-#define kAudioGridCVCell @"AudioGridCVCell"
 
 @interface AudioListVc () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -78,7 +77,7 @@
     
     self.collectionView.collectionViewLayout = layout;
     
-    self.collectionView.backgroundColor = XColor(0x33, 0x33, 0x33);
+    self.collectionView.backgroundColor = XColor(0x3a, 0x3b, 0x3c);
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);
         make.left.mas_equalTo(self.view.mas_left);
@@ -89,11 +88,11 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     self.collectionView.alwaysBounceVertical = YES;
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioListCVCell.class) bundle:nil] forCellWithReuseIdentifier:kAudioListCVCell];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioGridCVCell.class) bundle:nil] forCellWithReuseIdentifier:kAudioGridCVCell];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioListCVCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(AudioListCVCell.class)];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioGridCVCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(AudioGridCVCell.class)];
     
     //
-    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+    [self.collectionView registerClass:[AudioListHeaderRv class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(AudioListHeaderRv.class)];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -128,14 +127,14 @@
 
 #pragma mark - UICollectionViewDataSource
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    AudioModel *audioModel = AudioTool.audioArray[indexPath.row];
+    
     if (self.modeView == ModeViewList) {
-        AudioListCVCell *audioListCVCell = [collectionView dequeueReusableCellWithReuseIdentifier:kAudioListCVCell forIndexPath:indexPath];
-        AudioModel *audioModel = AudioTool.audioArray[indexPath.row];
+        AudioListCVCell *audioListCVCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(AudioListCVCell.class) forIndexPath:indexPath];
         [audioListCVCell setAudioModel:audioModel withIndexPath:indexPath];
         return audioListCVCell;
     } else {
-        AudioGridCVCell *audioGridCVCell = [collectionView dequeueReusableCellWithReuseIdentifier:kAudioGridCVCell forIndexPath:indexPath];
-        AudioModel *audioModel = AudioTool.audioArray[indexPath.row];
+        AudioGridCVCell *audioGridCVCell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass(AudioGridCVCell.class) forIndexPath:indexPath];
         [audioGridCVCell setAudioModel:audioModel withIndexPath:indexPath];
         return audioGridCVCell;
     }
@@ -146,17 +145,14 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableView = nil;
     if(kind == UICollectionElementKindSectionHeader) {
-        UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-        
-        reusableView = view;
+        reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(AudioListHeaderRv.class) forIndexPath:indexPath];
     }
-    reusableView.backgroundColor = UIColor.cyanColor;
     return reusableView;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     XLog
-    return CGSizeMake(self.view.frame.size.width, 200);
+    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.width);
 }
 
 @end

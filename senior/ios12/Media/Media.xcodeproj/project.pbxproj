@@ -346,6 +346,8 @@
 		18C94E1128C4DD6500FAE0B3 /* VideoVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C94E0F28C4DD6500FAE0B3 /* VideoVc.xib */; };
 		18C94E1528C4DD9F00FAE0B3 /* VideoListCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C94E1328C4DD9F00FAE0B3 /* VideoListCVCell.m */; };
 		18C94E1628C4DD9F00FAE0B3 /* VideoListCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C94E1428C4DD9F00FAE0B3 /* VideoListCVCell.xib */; };
+		18F2DBF22934E94B00B8FC3A /* AudioListHeaderRv.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F2DBF02934E94B00B8FC3A /* AudioListHeaderRv.m */; };
+		18F2DBF32934E94B00B8FC3A /* AudioListHeaderRv.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F2DBF12934E94B00B8FC3A /* AudioListHeaderRv.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1040,6 +1042,9 @@
 		18C94E1228C4DD9F00FAE0B3 /* VideoListCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListCVCell.h; sourceTree = "<group>"; };
 		18C94E1328C4DD9F00FAE0B3 /* VideoListCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListCVCell.m; sourceTree = "<group>"; };
 		18C94E1428C4DD9F00FAE0B3 /* VideoListCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoListCVCell.xib; sourceTree = "<group>"; };
+		18F2DBEF2934E94B00B8FC3A /* AudioListHeaderRv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioListHeaderRv.h; sourceTree = "<group>"; };
+		18F2DBF02934E94B00B8FC3A /* AudioListHeaderRv.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioListHeaderRv.m; sourceTree = "<group>"; };
+		18F2DBF12934E94B00B8FC3A /* AudioListHeaderRv.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioListHeaderRv.xib; sourceTree = "<group>"; };
 		1BB73D516D1558335C0E049B /* Pods-Media.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Media.release.xcconfig"; path = "Target Support Files/Pods-Media/Pods-Media.release.xcconfig"; sourceTree = "<group>"; };
 		6ECA86795FCD6A69C2AAC03C /* libPods-Media.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Media.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E795ED8E3BC2C9B4BD450443 /* Pods-Media.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Media.debug.xcconfig"; path = "Target Support Files/Pods-Media/Pods-Media.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1211,6 +1216,9 @@
 		183895BD28C3288000B9194B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				18F2DBEF2934E94B00B8FC3A /* AudioListHeaderRv.h */,
+				18F2DBF02934E94B00B8FC3A /* AudioListHeaderRv.m */,
+				18F2DBF12934E94B00B8FC3A /* AudioListHeaderRv.xib */,
 				18389CAD28C366AE00B9194B /* AudioListCVCell.h */,
 				18389CAE28C366AE00B9194B /* AudioListCVCell.m */,
 				18389CAF28C366AE00B9194B /* AudioListCVCell.xib */,
@@ -2961,6 +2969,7 @@
 				183895AF28C2F75E00B9194B /* tab_home@3x.png in Resources */,
 				189382872482556200B0DFAE /* PingFanZhiLu.mp3 in Resources */,
 				189382942482656E00B0DFAE /* QiFengLe.mp3 in Resources */,
+				18F2DBF32934E94B00B8FC3A /* AudioListHeaderRv.xib in Resources */,
 				1893828A2482556200B0DFAE /* YiBaiWanGeKeNeng.mp3 in Resources */,
 				18B23E242478B52C00170BAD /* player_btn_play_normal@2x.png in Resources */,
 				18389C6928C332D300B9194B /* Player.bundle in Resources */,
@@ -3156,6 +3165,7 @@
 				18389CA428C332D300B9194B /* DDRange.m in Sources */,
 				18389C2A28C332D300B9194B /* SubtitleItem.m in Sources */,
 				18389C4C28C332D300B9194B /* PlayerFilmEditingGeneratedResult.m in Sources */,
+				18F2DBF22934E94B00B8FC3A /* AudioListHeaderRv.m in Sources */,
 				18389C1B28C332D300B9194B /* RotationManager.m in Sources */,
 				18389C2128C332D300B9194B /* PlaybackHistoryController.m in Sources */,
 				18389C2028C332D300B9194B /* BarrageItem.m in Sources */,

@@ -14,9 +14,10 @@
 - (void)_init {
     XLog
     self.tintColor = XColor(218, 65, 47);
-    self.unselectedItemTintColor = XColor(0x99, 0x99, 0x99);
+//    self.unselectedItemTintColor = XColor(0xee, 0xee, 0xee);
+    self.unselectedItemTintColor = UIColor.magentaColor;
     
-    self.backgroundColor = XColor(0x35, 0x36, 0x37);
+    self.backgroundColor = XColorAlpha(0x35, 0x36, 0x37, .8);
 //    self.backgroundColor = XColor(0, 0x88, 0xff);
     self.backgroundImage = [UIImage imageNamed:@"navigationbarBackgroundWhite"];
 
@@ -66,3 +67,5 @@
 }
 
 @end
+
+

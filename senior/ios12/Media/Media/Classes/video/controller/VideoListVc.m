@@ -38,7 +38,7 @@
     
     self.collectionView = [UICollectionView.alloc initWithFrame:self.view.frame collectionViewLayout:layout];
     [self.view addSubview:self.collectionView];
-    self.collectionView.backgroundColor = XColor(0x33, 0x33, 0x33);
+    self.collectionView.backgroundColor = XColor(0x3a, 0x3b, 0x3c);
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];

@@ -16,7 +16,7 @@
     
     self.lblName.textColor = XColor(0xee, 0xee, 0xee);
     self.lblAuthor.textColor = XColor(0x88, 0x88, 0x88);
-    self.backgroundColor = XColor(0x40, 0x40, 0x40);
+    self.backgroundColor = XColorAlpha(0x44, 0x44, 0x44, 1);
     
     self.layer.cornerRadius = 4;
     self.layer.masksToBounds = YES;

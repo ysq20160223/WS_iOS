@@ -29,7 +29,7 @@
     
     if (@available(iOS 13.0, *)) {
         UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
-        appearance.backgroundColor = XColorAlpha(0x35, 0x36, 0x37, 1);
+        appearance.backgroundColor = XColorAlpha(0x35, 0x36, 0x37, .8);
         appearance.titleTextAttributes = dict;
         self.navigationBar.standardAppearance = appearance;
         self.navigationBar.scrollEdgeAppearance = appearance;
