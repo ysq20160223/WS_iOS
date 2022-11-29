@@ -286,6 +286,7 @@
 		18787C9D249F106C00E4CF45 /* NSString+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787C8A249F106B00E4CF45 /* NSString+X.m */; };
 		18787C9E249F106C00E4CF45 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787C8E249F106C00E4CF45 /* UIImage+X.m */; };
 		18787C9F249F106C00E4CF45 /* NSDate+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18787C93249F106C00E4CF45 /* NSDate+X.m */; };
+		1881B4D8293644BF005C1C54 /* UIDevice+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881B4D7293644BF005C1C54 /* UIDevice+X.m */; };
 		189382742482193200B0DFAE /* WeiLong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189382732482193200B0DFAE /* WeiLong.jpg */; };
 		1893827C2482553E00B0DFAE /* PingFanZhiLu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189382772482553E00B0DFAE /* PingFanZhiLu.jpg */; };
 		1893827D2482553E00B0DFAE /* MingNianJinRi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 189382782482553E00B0DFAE /* MingNianJinRi.jpg */; };
@@ -970,6 +971,8 @@
 		18787C93249F106C00E4CF45 /* NSDate+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+X.m"; path = "../../../../../../category/NSDate+X.m"; sourceTree = "<group>"; };
 		18787C94249F106C00E4CF45 /* NSDate+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+X.h"; path = "../../../../../../category/NSDate+X.h"; sourceTree = "<group>"; };
 		18787C95249F106C00E4CF45 /* CALayer+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+X.h"; path = "../../../../../../category/CALayer+X.h"; sourceTree = "<group>"; };
+		1881B4D6293644BF005C1C54 /* UIDevice+X.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+X.h"; sourceTree = "<group>"; };
+		1881B4D7293644BF005C1C54 /* UIDevice+X.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+X.m"; sourceTree = "<group>"; };
 		189382732482193200B0DFAE /* WeiLong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WeiLong.jpg; sourceTree = "<group>"; };
 		189382772482553E00B0DFAE /* PingFanZhiLu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PingFanZhiLu.jpg; sourceTree = "<group>"; };
 		189382782482553E00B0DFAE /* MingNianJinRi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MingNianJinRi.jpg; sourceTree = "<group>"; };
@@ -1153,6 +1156,8 @@
 				183580EF28EDB58F00C1D64C /* UIView+X.m */,
 				183580F028EDB58F00C1D64C /* NSArray+Log.m */,
 				183580F128EDB58F00C1D64C /* UITextField+X.h */,
+				1881B4D6293644BF005C1C54 /* UIDevice+X.h */,
+				1881B4D7293644BF005C1C54 /* UIDevice+X.m */,
 			);
 			name = category;
 			path = ../../../../category;
@@ -3299,6 +3304,7 @@
 				18389C8D28C332D300B9194B /* MCSVODMetaDataReader.m in Sources */,
 				18389C6F28C332D300B9194B /* CLIColor.m in Sources */,
 				18389BC928C332D300B9194B /* SJPageViewController.m in Sources */,
+				1881B4D8293644BF005C1C54 /* UIDevice+X.m in Sources */,
 				18389C4028C332D300B9194B /* MoreSettingLayer.m in Sources */,
 				18389C4D28C332D300B9194B /* PlayerFilmEditingParameters.m in Sources */,
 				18389BCA28C332D300B9194B /* UIScrollView+SJRefreshAdd.m in Sources */,

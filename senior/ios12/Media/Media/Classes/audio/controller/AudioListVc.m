@@ -15,6 +15,7 @@
 #import "AudioModel.h"
 #import "Config.h"
 #import "AudioListHeaderRv.h"
+#import "UIDevice+X.h"
 
 #import <Masonry.h>
 
@@ -29,9 +30,8 @@
 
 @implementation AudioListVc
 
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController setNavigationBarHidden:NO];
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)onClickRightBarButton {
@@ -55,9 +55,11 @@
     
     self.navigationItem.title = @"Audio";
     
-//    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
+    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = NO;
+    NSLog(@"navigationBarHidden: %d", self.navigationController.navigationBarHidden);
     
-//    [self.collectionView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+//    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
     
     self.modeView = ModeViewList;
     
@@ -70,7 +72,7 @@
 
 #pragma mark -
 - (void)initCollectionView {
-    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout.alloc init];
+    UICollectionViewFlowLayout *layout = UICollectionViewFlowLayout.alloc.init;
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 0;
     layout.sectionHeadersPinToVisibleBounds = NO;
@@ -93,7 +95,16 @@
     
     //
     [self.collectionView registerClass:[AudioListHeaderRv class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(AudioListHeaderRv.class)];
+    
+    self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    
+    NSLog(@"safeDistanceBottom: %f; tabBarFullHeight: %f; isNavigationBarHidden: %d", [UIDevice safeDistanceBottom], [UIDevice tabBarFullHeight], self.navigationController.isNavigationBarHidden);
+    // UIScrollViewContentInsetAdjustmentNever == self.collectionView.contentInsetAdjustmentBehavior &&
+    if(YES == self.navigationController.isNavigationBarHidden) {
+        self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, [UIDevice tabBarFullHeight], 0);
+    }
 }
+
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -152,7 +163,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     XLog
-    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.width);
+    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.width * .8);
 }
 
 @end

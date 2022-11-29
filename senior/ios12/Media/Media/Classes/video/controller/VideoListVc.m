@@ -31,7 +31,7 @@
 }
 
 - (void)initCollectionView {
-    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout.alloc init];
+    UICollectionViewFlowLayout *layout = UICollectionViewFlowLayout.alloc.init;
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 0;
     layout.sectionHeadersPinToVisibleBounds = YES;

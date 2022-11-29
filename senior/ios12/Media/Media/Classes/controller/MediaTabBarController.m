@@ -41,11 +41,13 @@
     
     
     //
-    MediaTabBar *mediaTabBar = [MediaTabBar.alloc init];
+    MediaTabBar *mediaTabBar = MediaTabBar.alloc.init;
     mediaTabBar.backgroundColor = commonBgColor;
 
     [self setValue:mediaTabBar forKey:@"tabBar"];
     [mediaTabBar _init];
+    
+    self.tabBar.backgroundColor = UIColor.clearColor;
 }
 
 

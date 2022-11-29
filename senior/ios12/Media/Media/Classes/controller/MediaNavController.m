@@ -8,6 +8,7 @@
 
 #import "MediaNavController.h"
 #import "UIImage+X.h"
+#import "Config.h"
 
 @interface MediaNavController () <UIGestureRecognizerDelegate>
 
@@ -23,13 +24,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSMutableDictionary<NSAttributedStringKey, id> *dict = [NSMutableDictionary dictionary];
+    NSMutableDictionary<NSAttributedStringKey, id> *dict = NSMutableDictionary.dictionary;
     [dict setObject:XColor(0xee, 0xee, 0xee) forKey:NSForegroundColorAttributeName];
     self.navigationBar.titleTextAttributes = dict;
     
     if (@available(iOS 13.0, *)) {
         UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
-        appearance.backgroundColor = XColorAlpha(0x35, 0x36, 0x37, .8);
+        appearance.backgroundColor = commonBgColor;
         appearance.titleTextAttributes = dict;
         self.navigationBar.standardAppearance = appearance;
         self.navigationBar.scrollEdgeAppearance = appearance;
@@ -52,7 +53,7 @@
 //    [self.navigationBar setBackgroundColor:[UIColor cyanColor]]; // 设置颜色无效
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+- (void)pushViewController:(UIViewController *)vc animated:(BOOL)animated {
 //    NSLog(@"%@", viewController.class);
     
     if (self.childViewControllers.count > 0) {
@@ -72,8 +73,8 @@
         
 //        backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
         
-        if ([viewController respondsToSelector:@selector(back)]) {
-            [backBtn addTarget:viewController action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        if ([vc respondsToSelector:@selector(back)]) {
+            [backBtn addTarget:vc action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         } else {
             [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         }
@@ -87,11 +88,11 @@
 //        leftView.backgroundColor = UIColor.magentaColor;
         [leftView addSubview:backBtn];
         
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:leftView];
-        viewController.hidesBottomBarWhenPushed = true; // 隐藏底部TabBar
+        vc.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:leftView];
+        vc.hidesBottomBarWhenPushed = true; // 隐藏底部TabBar
     }
     
-    [super pushViewController:viewController animated:animated];
+    [super pushViewController:vc animated:animated];
 }
 
 
