@@ -16,11 +16,18 @@
 #import "Config.h"
 #import "AudioListHeaderRv.h"
 #import "UIDevice+X.h"
+#import "UIImage+X.h"
 
 #import <Masonry.h>
 
 
 @interface AudioListVc () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+{
+    NSInteger _navigationBarH;
+    
+    NSInteger _headViewH;
+    NSInteger _headViewMinH;
+}
 
 @property (nonatomic, assign) ModeView modeView;
 
@@ -29,6 +36,26 @@
 
 
 @implementation AudioListVc
+
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    NSLog(@"scrollView: %@", scrollView);
+    
+    // 偏移量: 内容与可视范围的差值; 内容起始点的偏移量为0
+    CGFloat curOffsetY = scrollView.contentOffset.y;
+    
+    
+    // 设置透明度
+    CGFloat alpha = curOffsetY / (_headViewH - _headViewMinH);
+    if (alpha >= 1) {
+        alpha = 0.99;
+    }
+    NSLog(@"curOffsetY: %.2f; alpha: %.2f", curOffsetY, alpha);
+    
+    UIImage *image = [UIImage imageWithColor:XColorAlpha(0x33, 0x33, 0x33, alpha)];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
@@ -42,33 +69,6 @@
     }
     [self.collectionView reloadData];
 }
-
-- (void)initRightBarButtonItem {
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn addTarget:self action:@selector(onClickRightBarButton) forControlEvents:UIControlEventTouchUpInside];
-    [btn setImage:[UIImage imageNamed:@"main_tab_more_n"] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:btn];
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.navigationItem.title = @"Audio";
-    
-    self.navigationController.navigationBarHidden = YES;
-//    self.navigationController.navigationBarHidden = NO;
-    NSLog(@"navigationBarHidden: %d", self.navigationController.navigationBarHidden);
-    
-//    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
-    
-    self.modeView = ModeViewList;
-    
-    [self initCollectionView];
-    
-    [self initRightBarButtonItem];
-
-}
-
 
 #pragma mark -
 - (void)initCollectionView {
@@ -94,16 +94,62 @@
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(AudioGridCVCell.class) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass(AudioGridCVCell.class)];
     
     //
-    [self.collectionView registerClass:[AudioListHeaderRv class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(AudioListHeaderRv.class)];
+    [self.collectionView registerClass:AudioListHeaderRv.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(AudioListHeaderRv.class)];
     
     self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     
-    NSLog(@"safeDistanceBottom: %f; tabBarFullHeight: %f; isNavigationBarHidden: %d", [UIDevice safeDistanceBottom], [UIDevice tabBarFullHeight], self.navigationController.isNavigationBarHidden);
-    // UIScrollViewContentInsetAdjustmentNever == self.collectionView.contentInsetAdjustmentBehavior &&
-    if(YES == self.navigationController.isNavigationBarHidden) {
-        self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, [UIDevice tabBarFullHeight], 0);
+    NSLog(@"safeDistanceBottom: %f; tabBarFullHeight: %f; isNavigationBarHidden: %d", UIDevice.safeDistanceBottom, UIDevice.tabBarFullHeight, self.navigationController.isNavigationBarHidden);
+    // UIScrollViewContentInsetAdjustmentNever == self.collectionView.contentInsetAdjustmentBehavior
+    // YES == self.navigationController.isNavigationBarHidden
+    if(UIScrollViewContentInsetAdjustmentNever == self.collectionView.contentInsetAdjustmentBehavior) {
+        self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, UIDevice.tabBarFullHeight, 0);
     }
 }
+
+- (void)initRightBarButtonItem {
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn addTarget:self action:@selector(onClickRightBarButton) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImage:[UIImage imageNamed:@"main_tab_more_n"] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:btn];
+}
+
+- (void)setUpNavigation {
+    // UIBarMetricsDefault : 只有设置这种样式, 才能设置导航条背景图片
+    self.navigationController.navigationBar.shadowImage = UIImage.alloc.init; // 清空导航条的阴影的线
+    
+    UIImage *image = [UIImage imageWithColor:XColorAlpha(0x33, 0x33, 0x33, 0)];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
+    
+//    // 标题透明
+//    UILabel *label = UILabel.alloc.init;
+//    label.text = @"YY";
+//    [label sizeToFit]; // 尺寸自适应
+//    label.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
+//    [self.navigationItem setTitleView:label];
+    
+}
+
+
+#pragma mark -
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+//    self.navigationItem.title = @"Audio";
+//    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
+    
+    _navigationBarH = self.navigationController.navigationBar.frame.size.height;
+    _headViewH = 300;
+    _headViewMinH = _navigationBarH + kStatusBarH;
+    
+    self.modeView = ModeViewList;
+    
+    [self initCollectionView];
+    
+    [self initRightBarButtonItem];
+
+    [self setUpNavigation];
+}
+
 
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -163,7 +209,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     XLog
-    return CGSizeMake(self.view.frame.size.width, self.view.frame.size.width * .8);
+    return CGSizeMake(self.view.frame.size.width, 300);
 }
 
 @end

@@ -39,7 +39,7 @@
     NSInteger tabBarButtonCount = 0;
     for (UIView *subView in self.subviews) {
 //        NSLog(@"%@", [subView class])
-        if ([subView class] != NSClassFromString(@"UITabBarButton")) {
+        if (subView.class != NSClassFromString(@"UITabBarButton")) {
             continue;
         }
         tabBarButtonCount++;
@@ -54,7 +54,7 @@
     NSInteger btnX = 0;
     
     for (UIView *subView in self.subviews) {
-        if ([subView class] != NSClassFromString(@"UITabBarButton")) {
+        if (subView.class != NSClassFromString(@"UITabBarButton")) {
             continue;
         }
         

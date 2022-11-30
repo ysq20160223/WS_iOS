@@ -24,23 +24,26 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSMutableDictionary<NSAttributedStringKey, id> *dict = NSMutableDictionary.dictionary;
-    [dict setObject:XColor(0xee, 0xee, 0xee) forKey:NSForegroundColorAttributeName];
-    self.navigationBar.titleTextAttributes = dict;
-    
-    if (@available(iOS 13.0, *)) {
-        UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
-        appearance.backgroundColor = commonBgColor;
-        appearance.titleTextAttributes = dict;
-        self.navigationBar.standardAppearance = appearance;
-        self.navigationBar.scrollEdgeAppearance = appearance;
+//    NSLog(@"%@", self.class);
+    if(self.isSetAppearance) {
+        NSMutableDictionary<NSAttributedStringKey, id> *dict = NSMutableDictionary.dictionary;
+        [dict setObject:XColor(0xee, 0xee, 0xee) forKey:NSForegroundColorAttributeName];
+        self.navigationBar.titleTextAttributes = dict;
+
+        if (@available(iOS 13.0, *)) {
+            UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
+            appearance.backgroundColor = commonBgColor;
+            appearance.titleTextAttributes = dict;
+            self.navigationBar.standardAppearance = appearance;
+            self.navigationBar.scrollEdgeAppearance = appearance;
+        }
     }
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    NSLog(@"%@", self.class);
     
     self.interactivePopGestureRecognizer.delegate = self;
     

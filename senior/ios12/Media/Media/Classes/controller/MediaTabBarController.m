@@ -37,7 +37,9 @@
 
     [self addChildVc:[MediaNavController.alloc initWithRootViewController:AudioListVc.alloc.init] imageName:@"tab_audio" selectedImageName:@"tab_audio" tabBarItemTitle:@"Audio"];
     
-    [self addChildVc:[MediaNavController.alloc initWithRootViewController:VideoListVc.alloc.init] imageName:@"tab_video" selectedImageName:@"tab_video" tabBarItemTitle:@"Video"];
+    MediaNavController *videoNc = [MediaNavController.alloc initWithRootViewController:VideoListVc.alloc.init];
+    videoNc.isSetAppearance = YES;
+    [self addChildVc:videoNc imageName:@"tab_video" selectedImageName:@"tab_video" tabBarItemTitle:@"Video"];
     
     
     //
@@ -51,7 +53,7 @@
 }
 
 
-- (void)addChildVc:(MediaNavController *)nc imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName tabBarItemTitle:(NSString *)title  {
+- (void)addChildVc:(UINavigationController *)nc imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName tabBarItemTitle:(NSString *)title  {
     nc.tabBarItem.image = [UIImage imageNamed:imageName];
     nc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImageName];
     nc.tabBarItem.title = title;

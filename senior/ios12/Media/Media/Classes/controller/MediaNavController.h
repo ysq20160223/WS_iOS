@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MediaNavController : UINavigationController
 
+@property (nonatomic, assign) bool isSetAppearance;
+
 @end
 
 NS_ASSUME_NONNULL_END
