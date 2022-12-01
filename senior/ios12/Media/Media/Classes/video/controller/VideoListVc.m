@@ -13,6 +13,7 @@
 #import "UIView+X.h"
 #import "VideoModel.h"
 #import "Config.h"
+#import "UIImage+X.h"
 
 #import <Masonry.h>
 
@@ -48,6 +49,22 @@
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass(VideoListCVCell.class) bundle:nil] forCellWithReuseIdentifier:kVideoListCVCell];
 }
 
+- (void)setUpNavigation {
+    // UIBarMetricsDefault : 只有设置这种样式, 才能设置导航条背景图片
+    self.navigationController.navigationBar.shadowImage = UIImage.alloc.init; // 清空导航条的阴影的线
+    
+    UIImage *image = [UIImage imageWithColor:XColorAlpha(0x33, 0x33, 0x33, 0)];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
+    
+//    // 标题透明
+    UILabel *label = UILabel.alloc.init;
+    label.text = @"Video";
+    [label sizeToFit]; // 尺寸自适应
+    label.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1];
+    [self.navigationItem setTitleView:label];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -56,6 +73,8 @@
 //    self.view.backgroundColor = XColor(0x33, 0x33, 0x33);
     
     [self initCollectionView];
+    
+    [self setUpNavigation];
 }
 
 

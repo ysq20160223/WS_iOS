@@ -53,6 +53,13 @@
     }
     NSLog(@"curOffsetY: %.2f; alpha: %.2f", curOffsetY, alpha);
     
+    UIView *titleView = self.navigationItem.titleView;
+    if([titleView isKindOfClass:UILabel.class]) {
+        UILabel *label = (UILabel *)titleView;
+        label.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:alpha];
+    }
+    
+    
     UIImage *image = [UIImage imageWithColor:XColorAlpha(0x33, 0x33, 0x33, alpha)];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
 }
@@ -121,11 +128,11 @@
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
     
 //    // 标题透明
-//    UILabel *label = UILabel.alloc.init;
-//    label.text = @"YY";
-//    [label sizeToFit]; // 尺寸自适应
-//    label.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
-//    [self.navigationItem setTitleView:label];
+    UILabel *label = UILabel.alloc.init;
+    label.text = @"Audio";
+    [label sizeToFit]; // 尺寸自适应
+    label.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0];
+    [self.navigationItem setTitleView:label];
     
 }
 
