@@ -13,25 +13,8 @@
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="AudioListHeaderRv">
             <rect key="frame" x="0.0" y="0.0" width="475" height="172"/>
             <autoresizingMask key="autoresizingMask"/>
-            <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QiFengLe.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="YS5-jb-LGQ">
-                    <rect key="frame" x="0.0" y="0.0" width="475" height="172"/>
-                </imageView>
-            </subviews>
-            <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
-            <constraints>
-                <constraint firstItem="YS5-jb-LGQ" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="2UA-Vn-QGW"/>
-                <constraint firstItem="YS5-jb-LGQ" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" id="5wL-51-bki"/>
-                <constraint firstAttribute="bottom" secondItem="YS5-jb-LGQ" secondAttribute="bottom" id="eJa-mJ-CwU"/>
-                <constraint firstItem="YS5-jb-LGQ" firstAttribute="trailing" secondItem="9Gg-ye-v9C" secondAttribute="trailing" id="z98-F9-zkf"/>
-            </constraints>
-            <connections>
-                <outlet property="ivBg" destination="YS5-jb-LGQ" id="dnY-DN-PWI"/>
-            </connections>
+            <viewLayoutGuide key="safeArea" id="0uk-Mh-Ceh"/>
             <point key="canvasLocation" x="257.25190839694653" y="62.676056338028175"/>
         </collectionReusableView>
     </objects>
-    <resources>
-        <image name="QiFengLe.jpg" width="2400" height="2400"/>
-    </resources>
 </document>

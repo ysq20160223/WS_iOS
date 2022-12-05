@@ -11,7 +11,7 @@
 @implementation VideoModel
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@[name: %@; filename: %@; author: %@; icon: %@", [self class], self.name, self.filename, self.author, self.icon];
+    return [NSString stringWithFormat:@"%@[name: %@; filename: %@; author: %@; icon: %@", self.class, self.name, self.filename, self.author, self.icon];
 }
 
 @end

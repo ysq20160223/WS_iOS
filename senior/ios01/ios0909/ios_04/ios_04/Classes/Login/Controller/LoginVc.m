@@ -71,13 +71,14 @@
 }
 
 // 文本框开始输入
-- (void)textFieldDidBeginEditing:(UITextField *)textField {    
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+//    NSLog(@"%@", textField);
     [self.loginAnimView startAnim:textField.frame.origin.y != self.tfAccount.frame.origin.y];
 }
 
 // 记住密码
 - (IBAction)onClickRememberPassword:(UISwitch *)sender {
-    if (sender.on == NO) {
+    if (!sender.on) {
         [self.sAutoLogin setOn:NO animated:YES];
     }
     [self.view endEditing:YES];

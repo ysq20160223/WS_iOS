@@ -147,6 +147,7 @@
     _navigationBarH = self.navigationController.navigationBar.frame.size.height;
     _headViewH = 300;
     _headViewMinH = _navigationBarH + kStatusBarH;
+    NSLog(@"%ld", _headViewH);
     
     self.modeView = ModeViewList;
     
@@ -210,13 +211,17 @@
     UICollectionReusableView *reusableView = nil;
     if(kind == UICollectionElementKindSectionHeader) {
         reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(AudioListHeaderRv.class) forIndexPath:indexPath];
+        if(!reusableView) {
+            reusableView = [AudioListHeaderRv.alloc initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _headViewH)];
+        }
     }
     return reusableView;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    XLog
-    return CGSizeMake(self.view.frame.size.width, 300);
+    CGSize size = CGSizeMake(self.view.frame.size.width, _headViewH);
+    NSLog(@"%@", NSStringFromCGSize(size));
+    return size;
 }
 
 @end

@@ -40,21 +40,21 @@
     // 初始化手臂位置
     // y 偏移量
     _armOffsetY = self.bounds.size.height - self.ivLeftArm.frame.origin.y;
-    // 左手臂 x 偏移量
+    NSLog(@"_armOffsetY: %f; boundsH: %f", _armOffsetY, self.bounds.size.height);
+    
+    // 手臂 x 偏移量
     _leftArmOffsetX = -self.ivLeftArm.frame.origin.x;
-    
-    // 右边手臂 x 偏移量
     _rightArmOffsetX = _contentView.bounds.size.width - self.ivRightHand.bounds.size.width - self.ivRightArm.frame.origin.x;
+    NSLog(@"_leftArmOffsetX: %f; _rightArmOffsetX: %f", _leftArmOffsetX, _rightArmOffsetX);
     
-    // 平移左边手臂
+    // 平移手臂
     self.ivLeftArm.transform = CGAffineTransformMakeTranslation(_leftArmOffsetX, _armOffsetY);
-    
-    // 平移右边手臂
     self.ivRightArm.transform = CGAffineTransformMakeTranslation(_rightArmOffsetX, _armOffsetY);
 }
 
 - (void)startAnim:(BOOL)isClose {
-    CGFloat duration = 3;
+    NSLog(@"isClose: %d", isClose);
+    CGFloat duration = 5;
     if(isClose) {
         // 清空形变
         [UIView animateWithDuration:duration animations:^{
@@ -63,24 +63,21 @@
             self.ivRightArm.transform = CGAffineTransformIdentity;
             
             // 手
-            self.ivLeftHand.transform = CGAffineTransformMakeTranslation(-_leftArmOffsetX - 8, -_armOffsetY + 8);
-            self.ivLeftHand.transform = CGAffineTransformScale(self.ivLeftHand.transform, 0.01, 0.01);
+            self.ivLeftHand.transform = CGAffineTransformMakeTranslation(-_leftArmOffsetX - 20, -_armOffsetY + 10);
+            self.ivLeftHand.transform = CGAffineTransformScale(self.ivLeftHand.transform, 0.1, 0.1);
             
-            self.ivRightHand.transform = CGAffineTransformMakeTranslation(-_rightArmOffsetX + 8, -_armOffsetY + 8);
-            self.ivRightHand.transform = CGAffineTransformScale(self.ivRightHand.transform, 0.01, 0.01);
-            
+            self.ivRightHand.transform = CGAffineTransformMakeTranslation(-_rightArmOffsetX + 20, -_armOffsetY + 10);
+            self.ivRightHand.transform = CGAffineTransformScale(self.ivRightHand.transform, 0.1, 0.1);
         }];
     } else {
         [UIView animateWithDuration:duration animations:^{
-            // 平移左边手臂
-            self.ivLeftArm.transform = CGAffineTransformMakeTranslation(_leftArmOffsetX, _armOffsetY);
-            
-            // 平移右边手臂
-            self.ivRightArm.transform = CGAffineTransformMakeTranslation(_rightArmOffsetX, _armOffsetY);
-            
             //
             self.ivLeftHand.transform = CGAffineTransformIdentity;
             self.ivRightHand.transform = CGAffineTransformIdentity;
+            
+            // 平移手臂
+            self.ivLeftArm.transform = CGAffineTransformMakeTranslation(_leftArmOffsetX, _armOffsetY);
+            self.ivRightArm.transform = CGAffineTransformMakeTranslation(_rightArmOffsetX, _armOffsetY);
         }];
         
     }
