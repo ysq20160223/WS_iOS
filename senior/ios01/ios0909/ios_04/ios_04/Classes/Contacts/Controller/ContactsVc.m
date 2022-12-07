@@ -24,20 +24,20 @@
 
 - (NSMutableArray *)contactArray {
     if(nil == _contactArray) {
-        _contactArray = [NSMutableArray array];
+        _contactArray = NSMutableArray.array;
     }
     return _contactArray;
 }
 
 -(void)dealloc {
-    [[NSNotificationCenter defaultCenter]  removeObserver:self];
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"");
+    XLog
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateContact) name:@"updateContact" object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(updateContact) name:@"updateContact" object:nil];
 }
 
 - (void)updateContact {
@@ -45,27 +45,40 @@
 }
 
 // 点击 LogOut
+//- (IBAction)logout:(UIBarButtonItem *)sender {
+//    UIActionSheet *sheet = [UIActionSheet.alloc initWithTitle:@"Tip" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Log out" otherButtonTitles:nil, nil];
+//    [sheet showInView:self.view];
+//}
+//
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+////    NSLog(@"%ld", buttonIndex);
+//    if (!buttonIndex) {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
+//}
+
+
 - (IBAction)logout:(UIBarButtonItem *)sender {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Tip" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Log out" otherButtonTitles:nil, nil];
-    [sheet showInView:self.view];
+    UIAlertController *ac = UIAlertController.alloc.init;
+    [ac addAction:[UIAlertAction actionWithTitle:@"Logout" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        XLog
+        [self.navigationController popViewControllerAnimated:YES];
+    }]];
+    
+    ac.title = @"TIP";
+    
+    [self presentViewController:ac animated:YES completion:nil];
 }
 
-// 监听 UIActionSheet 上按钮的点击
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    NSLog(@"%ld", buttonIndex);
-    
-    if (buttonIndex == 0) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
+
 
 // 跳转 AddViewController 之前赋值
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"");
-    if ([segue.destinationViewController isKindOfClass:[AddVc class]]) {
+    XLog
+    if ([segue.destinationViewController isKindOfClass:AddVc.class]) {
         AddVc *addVc = segue.destinationViewController;
         addVc.delegate = self;
-    } else if ([segue.destinationViewController isKindOfClass:[EditVc class]]) {
+    } else if ([segue.destinationViewController isKindOfClass:EditVc.class]) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         

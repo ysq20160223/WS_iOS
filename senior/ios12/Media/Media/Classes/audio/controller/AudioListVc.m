@@ -40,25 +40,18 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    NSLog(@"scrollView: %@", scrollView);
-    
-    // 偏移量: 内容与可视范围的差值; 内容起始点的偏移量为0
-    CGFloat curOffsetY = scrollView.contentOffset.y;
-    
-    
-    // 设置透明度
-    CGFloat alpha = curOffsetY / (_headViewH - _headViewMinH);
+    CGFloat curOffsetY = scrollView.contentOffset.y; // 偏移量: 内容与可视范围的差值; 内容起始点的偏移量为0
+    CGFloat alpha = curOffsetY / (_headViewH - _headViewMinH); // 设置透明度
     if (alpha >= 1) {
         alpha = 0.99;
     }
-    NSLog(@"curOffsetY: %.2f; alpha: %.2f", curOffsetY, alpha);
+//    NSLog(@"curOffsetY: %.2f; alpha: %.2f", curOffsetY, alpha);
     
     UIView *titleView = self.navigationItem.titleView;
     if([titleView isKindOfClass:UILabel.class]) {
         UILabel *label = (UILabel *)titleView;
         label.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:alpha];
     }
-    
     
     UIImage *image = [UIImage imageWithColor:XColorAlpha(0x33, 0x33, 0x33, alpha)];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
@@ -69,11 +62,7 @@
 }
 
 - (void)onClickRightBarButton {
-    if (self.modeView == ModeViewList) {
-        self.modeView = ModeViewGrid;
-    } else {
-        self.modeView = ModeViewList;
-    }
+    self.modeView = self.modeView == ModeViewList ? ModeViewGrid : ModeViewList;
     [self.collectionView reloadData];
 }
 

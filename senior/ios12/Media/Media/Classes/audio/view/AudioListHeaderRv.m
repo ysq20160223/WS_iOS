@@ -56,7 +56,7 @@
     self.scrollView = [UIScrollView.alloc initWithFrame:CGRectMake(0, 0, w, h)];
     [self addSubview:self.scrollView];
     self.scrollView.delegate = self;
-    self.scrollView.backgroundColor = UIColor.cyanColor;
+//    self.scrollView.backgroundColor = UIColor.cyanColor;
     self.scrollView.contentSize = CGSizeMake(array.count * w, 0); // 总的内容
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
@@ -89,18 +89,27 @@
     self.pageControl = UIPageControl.alloc.init;
     [self addSubview:self.pageControl];
     
-    self.pageControl.backgroundColor = [UIColor colorWithRed:1 green:0.6 blue:0 alpha:0.3];
-    self.pageControl.center = CGPointMake(w * 0.5, h - 50);
-    self.pageControl.bounds = CGRectMake(0, h - 50, w, 50);
+    self.pageControl.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
+//    self.pageControl.center = CGPointMake(w * 0.5, h - 50);
+//    self.pageControl.bounds = CGRectMake(0, h - 50, w, 50);
     self.pageControl.numberOfPages = array.count;
     self.pageControl.pageIndicatorTintColor = UIColor.grayColor;
     self.pageControl.currentPageIndicatorTintColor = UIColor.whiteColor;
     self.pageControl.enabled = NO; // 默认为 YES
+    self.pageControl.layer.cornerRadius = 6;
+    self.pageControl.layer.masksToBounds = YES;
+    [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.mas_bottom).mas_offset(-20);
+//        make.center.mas_equalTo(w * 0.5);
+        make.width.mas_equalTo(w * 0.6);
+        make.centerX.mas_equalTo(self.mas_centerX);
+        make.height.mas_equalTo(36);
+    }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     self.pageControl.currentPage = scrollView.contentOffset.x / scrollView.frame.size.width;
-    NSLog(@"currentPage: %ld; offsetX: %.0f; w: %.0f", self.pageControl.currentPage, scrollView.contentOffset.x, scrollView.frame.size.width);
+//    NSLog(@"currentPage: %ld; offsetX: %.0f; w: %.0f", self.pageControl.currentPage, scrollView.contentOffset.x, scrollView.frame.size.width);
 }
 
 //- (void)onClickImageViewBg {

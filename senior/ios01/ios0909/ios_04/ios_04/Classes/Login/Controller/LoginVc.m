@@ -115,11 +115,11 @@
         [MBProgressHUD hideHUD]; // 隐藏蒙版
         
         // 手动跳转
-        if ([self.tfAccount.text isEqualToString:@"yy"] && [self.tfPwd.text isEqualToString:@"123"]) {
+        if (self.tfAccount.text.length && self.tfPwd.text.length) {
             [self performSegueWithIdentifier:@"login2Contacts" sender:nil];
             
             // 代码跳转
-//            ContactsViewController *contactsVc = [[ContactsViewController alloc] init];
+//            ContactsVc *contactsVc = ContactsVc.alloc.init;
 //            [self.navigationController pushViewController:contactsVc animated:YES];
 //            contactsVc.navigationItem.title = [NSString stringWithFormat:@"%@ - Contacts", self.tfAccount.text];
         } else {

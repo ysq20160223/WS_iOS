@@ -54,30 +54,27 @@
 
 - (void)startAnim:(BOOL)isClose {
     NSLog(@"isClose: %d", isClose);
-    CGFloat duration = 5;
+    CGFloat duration = 10;
     if(isClose) {
-        // 清空形变
         [UIView animateWithDuration:duration animations:^{
-            // 移动手臂
-            self.ivLeftArm.transform = CGAffineTransformIdentity;
-            self.ivRightArm.transform = CGAffineTransformIdentity;
+            _ivLeftArm.transform = CGAffineTransformIdentity;
+            _ivRightArm.transform = CGAffineTransformIdentity;
             
-            // 手
-            self.ivLeftHand.transform = CGAffineTransformMakeTranslation(-_leftArmOffsetX - 20, -_armOffsetY + 10);
-            self.ivLeftHand.transform = CGAffineTransformScale(self.ivLeftHand.transform, 0.1, 0.1);
+
+            _ivLeftHand.transform = CGAffineTransformMakeTranslation(-_leftArmOffsetX - 20, -_armOffsetY + 20);
+            _ivLeftHand.transform = CGAffineTransformScale(_ivLeftHand.transform, 0.01, 0.01);
             
-            self.ivRightHand.transform = CGAffineTransformMakeTranslation(-_rightArmOffsetX + 20, -_armOffsetY + 10);
-            self.ivRightHand.transform = CGAffineTransformScale(self.ivRightHand.transform, 0.1, 0.1);
+            _ivRightHand.transform = CGAffineTransformMakeTranslation(-_rightArmOffsetX + 20, -_armOffsetY + 20);
+            _ivRightHand.transform = CGAffineTransformScale(_ivRightHand.transform, 0.01, 0.01);
         }];
     } else {
         [UIView animateWithDuration:duration animations:^{
-            //
-            self.ivLeftHand.transform = CGAffineTransformIdentity;
-            self.ivRightHand.transform = CGAffineTransformIdentity;
+            _ivLeftHand.transform = CGAffineTransformIdentity;
+            _ivRightHand.transform = CGAffineTransformIdentity;
             
-            // 平移手臂
-            self.ivLeftArm.transform = CGAffineTransformMakeTranslation(_leftArmOffsetX, _armOffsetY);
-            self.ivRightArm.transform = CGAffineTransformMakeTranslation(_rightArmOffsetX, _armOffsetY);
+
+            _ivLeftArm.transform = CGAffineTransformMakeTranslation(_leftArmOffsetX, _armOffsetY);
+            _ivRightArm.transform = CGAffineTransformMakeTranslation(_rightArmOffsetX, _armOffsetY);
         }];
         
     }
