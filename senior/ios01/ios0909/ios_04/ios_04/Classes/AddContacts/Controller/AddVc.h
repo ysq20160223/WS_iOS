@@ -10,12 +10,12 @@
 
 #import "AddVcDelegate.h"
 
-@class AddVc, Contact;
+//@class AddVc, Contact;
 //
-//@protocol AddViewControllerDelegate <NSObject>
+//@protocol AddVcDelegate <NSObject>
 //
 //@optional
-//- (void)addViewController:(AddViewController *)addVc didAddContact:(Contact *)contact;
+//- (void)addVc:(AddViewController *)addVc didAddContact:(Contact *)contact;
 //
 //@end
 
@@ -26,6 +26,8 @@
 
 @property (nonatomic, weak) id<AddVcDelegate> delegate;
 
-//@property (nonatomic, weak) ContactsViewController *contactVc;
+//@property (nonatomic, weak) ContactsVc *contactVc;
 
 @end
+
+

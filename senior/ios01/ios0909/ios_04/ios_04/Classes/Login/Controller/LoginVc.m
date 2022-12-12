@@ -111,11 +111,12 @@
     [MBProgressHUD showMessage:@"Login..."];
     
     // 延迟
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressHUD hideHUD]; // 隐藏蒙版
         
         // 手动跳转
         if (self.tfAccount.text.length && self.tfPwd.text.length) {
+            
             [self performSegueWithIdentifier:@"login2Contacts" sender:nil];
             
             // 代码跳转
@@ -144,7 +145,7 @@
 
 // 跳转到 ContactsViewController 之前的准备操作, 传值 segue: [ˈsegweɪ]
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"segue: %@, sender: %@", segue, sender);
+    NSLog(@"segue: %@; sender: %@", segue, sender);
     
     ContactsVc *contactsVc = segue.destinationViewController;
     

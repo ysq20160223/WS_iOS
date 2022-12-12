@@ -10,7 +10,7 @@
 
 #import "Contact.h"
 
-#import "ContactsVc.h"
+//#import "ContactsVc.h"
 
 @interface AddVc ()
 
@@ -53,7 +53,7 @@
     Contact *contact = [Contact contactWithName:_nameField.text phone:_phoneField.text];
     
     // 通知联系人控制器接收数据
-    if([_delegate respondsToSelector:@selector(addVcaddVc:didAddContact:)]) {
+    if([_delegate respondsToSelector:@selector(addVc:didAddContact:)]) {
         [_delegate addVc:self didAddContact:contact];
     }
     
@@ -64,9 +64,5 @@
 }
 
 @end
-
-
-
-
 
 

@@ -72,27 +72,24 @@
 
 
 
-// 跳转 AddViewController 之前赋值
+// 跳转之前赋值
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     XLog
     if ([segue.destinationViewController isKindOfClass:AddVc.class]) {
         AddVc *addVc = segue.destinationViewController;
         addVc.delegate = self;
     } else if ([segue.destinationViewController isKindOfClass:EditVc.class]) {
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
         EditVc *editVc = segue.destinationViewController;
-        editVc.contact = self.contactArray[indexPath.row];
+        editVc.contact = self.contactArray[self.tableView.indexPathForSelectedRow.row];
     }
     
     // 耦合性高, 不建议使用
-//    AddViewController *addVc = segue.destinationViewController;
+//    AddVc *addVc = segue.destinationViewController;
 //    addVc.contactVc = self;
 }
 
 
-#pragma mark - AddViewControllerDelegate start
+#pragma mark - AddVcDelegate start
 // 添加一个新的联系人的时候回调
 - (void)addVc:(AddVc *)addVc didAddContact:(Contact *)contact {
     NSLog(@"contact: %@", contact);
@@ -100,7 +97,7 @@
     [self.contactArray addObject:contact]; // 保存联系人
     [self.tableView reloadData]; // 加载数据
 }
-#pragma mark - AddViewControllerDelegate end
+#pragma mark - AddVcDelegate end
 
 
 #pragma mark - UITableViewDataSource start
