@@ -239,7 +239,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.52941176469999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Inf-Gx-TMj">
                                 <rect key="frame" x="37" y="318" width="300" height="30"/>
@@ -311,7 +311,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4m-JZ-vkV">
                                 <rect key="frame" x="37" y="318" width="300" height="30"/>
@@ -324,7 +324,7 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="save:" destination="1J7-lB-fb7" eventType="touchUpInside" id="OTW-6t-rJJ"/>
+                                    <action selector="onClickSave:" destination="1J7-lB-fb7" eventType="touchUpInside" id="EwM-b9-Oc0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -333,14 +333,14 @@
                     <navigationItem key="navigationItem" title="Edit Contacts" id="BNc-qJ-y78">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="k8x-ga-36t">
                             <connections>
-                                <action selector="edit:" destination="1J7-lB-fb7" id="CdJ-9K-YAb"/>
+                                <action selector="onClickEdit:" destination="1J7-lB-fb7" id="mLj-O8-grP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameField" destination="xgX-8R-Ury" id="ens-ef-eXh"/>
-                        <outlet property="phoneField" destination="ao9-2G-O71" id="BsY-yG-amC"/>
-                        <outlet property="saveBtn" destination="l4m-JZ-vkV" id="hkS-2M-AJq"/>
+                        <outlet property="btnSave" destination="l4m-JZ-vkV" id="tgb-cZ-zmD"/>
+                        <outlet property="tfName" destination="xgX-8R-Ury" id="70e-Yv-Q6a"/>
+                        <outlet property="tfPhone" destination="ao9-2G-O71" id="f96-SA-CFs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWy-CG-ONq" userLabel="First Responder" sceneMemberID="firstResponder"/>

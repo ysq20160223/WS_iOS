@@ -10,10 +10,10 @@
 
 @interface EditVc ()
 
-@property (weak, nonatomic) IBOutlet UITextField *nameField;
-@property (weak, nonatomic) IBOutlet UITextField *phoneField;
+@property (weak, nonatomic) IBOutlet UITextField *tfName;
+@property (weak, nonatomic) IBOutlet UITextField *tfPhone;
 
-@property (weak, nonatomic) IBOutlet UIButton *saveBtn;
+@property (weak, nonatomic) IBOutlet UIButton *btnSave;
 
 @end
 
@@ -28,74 +28,72 @@
     // Do any additional setup after loading the view.
     
     // 及时监听文本框输入
-    [_nameField addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
-    [_phoneField addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+    [_tfName addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
+    [_tfPhone addTarget:self action:@selector(textChange) forControlEvents:UIControlEventEditingChanged];
     
     
     // 控制器之间传值, 一般在 viewDidLoad 中给控件赋值
-    _nameField.text = self.contact.name;
-    _phoneField.text = self.contact.phone;
+    _tfName.text = self.contact.name;
+    _tfPhone.text = self.contact.phone;
     
     [self textChange];
 }
 
 // 文本改变
 - (void)textChange {
-    _saveBtn.enabled = _nameField.text.length && _phoneField.text.length;
-    NSLog(@"enabled: %d", _saveBtn.enabled);
-    if (_saveBtn.enabled) {
-        _saveBtn.backgroundColor = [UIColor colorWithRed:102.0/255 green:1 blue:102.0/255 alpha:1];
+    _btnSave.enabled = _tfName.text.length && _tfPhone.text.length;
+    NSLog(@"enabled: %d", _btnSave.enabled);
+    if (_btnSave.enabled) {
+        _btnSave.backgroundColor = [UIColor colorWithRed:102.0/255 green:1 blue:102.0/255 alpha:1];
     } else {
-        _saveBtn.backgroundColor = [UIColor colorWithRed:204.0/255 green:1 blue:153.0/255 alpha:1];
+        _btnSave.backgroundColor = [UIColor colorWithRed:204.0/255 green:1 blue:153.0/255 alpha:1];
     }
 }
 
 
 //
-- (IBAction)edit:(UIBarButtonItem *)sender {
+- (IBAction)onClickEdit:(UIBarButtonItem *)sender {
     NSLog(@"%@", sender.title);
     if ([sender.title isEqualToString:@"Edit"]) {
         sender.title = @"Cancel";
         
-        _nameField.enabled = YES;
-        _nameField.textColor = [UIColor blackColor];
-        _phoneField.enabled = YES;
-        _phoneField.textColor = [UIColor blackColor];
+        _tfName.enabled = YES;
+        _tfName.textColor = UIColor.blackColor;
+        _tfPhone.enabled = YES;
+        _tfPhone.textColor = UIColor.blackColor;
         
-        _saveBtn.hidden = NO;
+        _btnSave.hidden = NO;
     } else if ([sender.title isEqualToString:@"Cancel"]) {
         sender.title = @"Edit";
         
-        _nameField.text = self.contact.name;
-        _phoneField.text = self.contact.phone;
+        _tfName.text = self.contact.name;
+        _tfPhone.text = self.contact.phone;
         
         [self textChange];
         
-        _nameField.enabled = NO;
-        _nameField.textColor = [UIColor lightGrayColor];
-        _phoneField.enabled = NO;
-        _phoneField.textColor = [UIColor lightGrayColor];
+        _tfName.enabled = NO;
+        _tfName.textColor = UIColor.lightGrayColor;
+        _tfPhone.enabled = NO;
+        _tfPhone.textColor = UIColor.lightGrayColor;
         
-        _saveBtn.hidden = YES;
+        _btnSave.hidden = YES;
     }
     
 }
 
-- (IBAction)save:(UIButton *)sender {
-    NSLog(@"name: %@, phone: %@", _nameField.text, _phoneField.text);
+- (IBAction)onClickSave:(UIButton *)sender {
+    NSLog(@"name: %@, phone: %@", _tfName.text, _tfPhone.text);
     // 更新数据模型
-    self.contact.name = _nameField.text;
-    self.contact.phone = _phoneField.text;
+    self.contact.name = _tfName.text;
+    self.contact.phone = _tfPhone.text;
     
     // 通知 刷新 ContactViewController UITableView
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"updateContact" object:nil];
+    [NSNotificationCenter.defaultCenter postNotificationName:@"updateContact" object:nil];
     
     // 回到 ContactViewController
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
-
-
 
 
