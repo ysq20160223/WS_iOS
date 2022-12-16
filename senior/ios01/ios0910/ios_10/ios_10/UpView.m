@@ -16,12 +16,10 @@
 
 
 
-
-
 @implementation UpView
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesBegan - %@", [self class]);
+    NSLog(@"touchesBegan - %@", self.class);
     
 }
 

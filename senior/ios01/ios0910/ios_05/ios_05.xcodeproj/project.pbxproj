@@ -7,37 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1840C61F23EEE5F200555224 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1840C61D23EEE5F200555224 /* TwoViewController.m */; };
-		1840C62023EEE5F200555224 /* TwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840C61E23EEE5F200555224 /* TwoViewController.xib */; };
+		1840C61F23EEE5F200555224 /* TwoVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 1840C61D23EEE5F200555224 /* TwoVc.m */; };
+		1840C62023EEE5F200555224 /* TwoVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1840C61E23EEE5F200555224 /* TwoVc.xib */; };
 		18C46DC11F35ABFF0013050A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DC01F35ABFF0013050A /* main.m */; };
 		18C46DC41F35ABFF0013050A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DC31F35ABFF0013050A /* AppDelegate.m */; };
-		18C46DC71F35ABFF0013050A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DC61F35ABFF0013050A /* ViewController.m */; };
+		18C46DC71F35ABFF0013050A /* _Vc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DC61F35ABFF0013050A /* _Vc.m */; };
 		18C46DCA1F35ABFF0013050A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C46DC81F35ABFF0013050A /* Main.storyboard */; };
 		18C46DCD1F35ABFF0013050A /* ios_05.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DCB1F35ABFF0013050A /* ios_05.xcdatamodeld */; };
 		18C46DCF1F35ABFF0013050A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C46DCE1F35ABFF0013050A /* Assets.xcassets */; };
 		18C46DD21F35ABFF0013050A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C46DD01F35ABFF0013050A /* LaunchScreen.storyboard */; };
-		18C46DDC1F35AD7E0013050A /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DDA1F35AD7E0013050A /* OneViewController.m */; };
-		18C46DDD1F35AD7E0013050A /* OneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C46DDB1F35AD7E0013050A /* OneViewController.xib */; };
+		18C46DDC1F35AD7E0013050A /* OneVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DDA1F35AD7E0013050A /* OneVc.m */; };
+		18C46DDD1F35AD7E0013050A /* OneVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C46DDB1F35AD7E0013050A /* OneVc.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1840C61C23EEE5F200555224 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
-		1840C61D23EEE5F200555224 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
-		1840C61E23EEE5F200555224 /* TwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoViewController.xib; sourceTree = "<group>"; };
+		1840C61C23EEE5F200555224 /* TwoVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoVc.h; sourceTree = "<group>"; };
+		1840C61D23EEE5F200555224 /* TwoVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoVc.m; sourceTree = "<group>"; };
+		1840C61E23EEE5F200555224 /* TwoVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwoVc.xib; sourceTree = "<group>"; };
 		18C46DBC1F35ABFF0013050A /* ios_05.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_05.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C46DC01F35ABFF0013050A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18C46DC21F35ABFF0013050A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18C46DC31F35ABFF0013050A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		18C46DC51F35ABFF0013050A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18C46DC61F35ABFF0013050A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18C46DC51F35ABFF0013050A /* _Vc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _Vc.h; sourceTree = "<group>"; };
+		18C46DC61F35ABFF0013050A /* _Vc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _Vc.m; sourceTree = "<group>"; };
 		18C46DC91F35ABFF0013050A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18C46DCC1F35ABFF0013050A /* ios_05.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_05.xcdatamodel; sourceTree = "<group>"; };
 		18C46DCE1F35ABFF0013050A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18C46DD11F35ABFF0013050A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18C46DD31F35ABFF0013050A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18C46DD91F35AD7E0013050A /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
-		18C46DDA1F35AD7E0013050A /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
-		18C46DDB1F35AD7E0013050A /* OneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneViewController.xib; sourceTree = "<group>"; };
+		18C46DD91F35AD7E0013050A /* OneVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneVc.h; sourceTree = "<group>"; };
+		18C46DDA1F35AD7E0013050A /* OneVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneVc.m; sourceTree = "<group>"; };
+		18C46DDB1F35AD7E0013050A /* OneVc.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OneVc.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,20 +72,20 @@
 			children = (
 				18C46DC21F35ABFF0013050A /* AppDelegate.h */,
 				18C46DC31F35ABFF0013050A /* AppDelegate.m */,
-				18C46DC51F35ABFF0013050A /* ViewController.h */,
-				18C46DC61F35ABFF0013050A /* ViewController.m */,
+				18C46DC51F35ABFF0013050A /* _Vc.h */,
+				18C46DC61F35ABFF0013050A /* _Vc.m */,
 				18C46DC81F35ABFF0013050A /* Main.storyboard */,
 				18C46DCE1F35ABFF0013050A /* Assets.xcassets */,
 				18C46DD01F35ABFF0013050A /* LaunchScreen.storyboard */,
 				18C46DD31F35ABFF0013050A /* Info.plist */,
 				18C46DCB1F35ABFF0013050A /* ios_05.xcdatamodeld */,
 				18C46DBF1F35ABFF0013050A /* Supporting Files */,
-				18C46DD91F35AD7E0013050A /* OneViewController.h */,
-				18C46DDA1F35AD7E0013050A /* OneViewController.m */,
-				18C46DDB1F35AD7E0013050A /* OneViewController.xib */,
-				1840C61C23EEE5F200555224 /* TwoViewController.h */,
-				1840C61D23EEE5F200555224 /* TwoViewController.m */,
-				1840C61E23EEE5F200555224 /* TwoViewController.xib */,
+				18C46DD91F35AD7E0013050A /* OneVc.h */,
+				18C46DDA1F35AD7E0013050A /* OneVc.m */,
+				18C46DDB1F35AD7E0013050A /* OneVc.xib */,
+				1840C61C23EEE5F200555224 /* TwoVc.h */,
+				1840C61D23EEE5F200555224 /* TwoVc.m */,
+				1840C61E23EEE5F200555224 /* TwoVc.xib */,
 			);
 			path = ios_05;
 			sourceTree = "<group>";
@@ -138,6 +138,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -159,8 +160,8 @@
 				18C46DD21F35ABFF0013050A /* LaunchScreen.storyboard in Resources */,
 				18C46DCF1F35ABFF0013050A /* Assets.xcassets in Resources */,
 				18C46DCA1F35ABFF0013050A /* Main.storyboard in Resources */,
-				1840C62023EEE5F200555224 /* TwoViewController.xib in Resources */,
-				18C46DDD1F35AD7E0013050A /* OneViewController.xib in Resources */,
+				1840C62023EEE5F200555224 /* TwoVc.xib in Resources */,
+				18C46DDD1F35AD7E0013050A /* OneVc.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,10 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C46DC71F35ABFF0013050A /* ViewController.m in Sources */,
-				18C46DDC1F35AD7E0013050A /* OneViewController.m in Sources */,
+				18C46DC71F35ABFF0013050A /* _Vc.m in Sources */,
+				18C46DDC1F35AD7E0013050A /* OneVc.m in Sources */,
 				18C46DC41F35ABFF0013050A /* AppDelegate.m in Sources */,
-				1840C61F23EEE5F200555224 /* TwoViewController.m in Sources */,
+				1840C61F23EEE5F200555224 /* TwoVc.m in Sources */,
 				18C46DCD1F35ABFF0013050A /* ios_05.xcdatamodeld in Sources */,
 				18C46DC11F35ABFF0013050A /* main.m in Sources */,
 			);

@@ -14,16 +14,18 @@
 
 @end
 
+
+
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[KeyWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]; // 1
+    self.window = [KeyWindow.alloc initWithFrame:UIScreen.mainScreen.bounds]; // 1
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil]; // 2
-    self.window.rootViewController = [storyboard instantiateInitialViewController];
+    self.window.rootViewController = storyboard.instantiateInitialViewController;
     
     [self.window makeKeyAndVisible]; // 3
     

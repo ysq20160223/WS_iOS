@@ -14,7 +14,7 @@
 		18C46DF81F35B4F80013050A /* ios_06.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18C46DF61F35B4F80013050A /* ios_06.xcdatamodeld */; };
 		18C46DFA1F35B4F80013050A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C46DF91F35B4F80013050A /* Assets.xcassets */; };
 		18C46DFD1F35B4F80013050A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C46DFB1F35B4F80013050A /* LaunchScreen.storyboard */; };
-		18C46E061F35B5D80013050A /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46E051F35B5D80013050A /* MyView.m */; };
+		18C46E061F35B5D80013050A /* _View.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C46E051F35B5D80013050A /* _View.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		18C46DF91F35B4F80013050A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18C46DFC1F35B4F80013050A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18C46DFE1F35B4F80013050A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18C46E041F35B5D80013050A /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
-		18C46E051F35B5D80013050A /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		18C46E041F35B5D80013050A /* _View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _View.h; sourceTree = "<group>"; };
+		18C46E051F35B5D80013050A /* _View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _View.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 				18C46DFE1F35B4F80013050A /* Info.plist */,
 				18C46DF61F35B4F80013050A /* ios_06.xcdatamodeld */,
 				18C46DEA1F35B4F80013050A /* Supporting Files */,
-				18C46E041F35B5D80013050A /* MyView.h */,
-				18C46E051F35B5D80013050A /* MyView.m */,
+				18C46E041F35B5D80013050A /* _View.h */,
+				18C46E051F35B5D80013050A /* _View.m */,
 			);
 			path = ios_06;
 			sourceTree = "<group>";
@@ -127,6 +127,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -162,7 +163,7 @@
 				18C46DEF1F35B4F80013050A /* AppDelegate.m in Sources */,
 				18C46DEC1F35B4F80013050A /* main.m in Sources */,
 				18C46DF81F35B4F80013050A /* ios_06.xcdatamodeld in Sources */,
-				18C46E061F35B5D80013050A /* MyView.m in Sources */,
+				18C46E061F35B5D80013050A /* _View.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@
 // 只要一个事件传递给一个控件, 就会调用这个控件的 hitTest
 // point : 表示方法调用者坐标系上的点
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    NSLog(@"%s", __func__);
+    XLog
 //    UIView *fitView = [super hitTest:point withEvent:event];
 //    NSLog(@"%@", fitView);
     
@@ -59,7 +59,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@ - touchesBegan ", [self class]);
+    NSLog(@"%@ - touchesBegan ", self.class);
     
     
 }

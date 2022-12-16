@@ -6,11 +6,11 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "OneViewController.h"
-#import "TwoViewController.h"
+#import "_Vc.h"
+#import "OneVc.h"
+#import "TwoVc.h"
 
-@interface ViewController ()
+@interface _Vc ()
 
 - (IBAction)modal:(UIButton *)sender;
 
@@ -18,8 +18,7 @@
 
 
 
-
-@implementation ViewController
+@implementation _Vc
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,9 +27,9 @@
 
 
 - (IBAction)modal:(UIButton *)sender {
-    NSLog(@"");
-    UIViewController *vc = [[OneViewController alloc] init];
-    vc.view.backgroundColor = [UIColor cyanColor];
+    XLog
+    UIViewController *vc = OneVc.alloc.init;
+    vc.view.backgroundColor = UIColor.cyanColor;
     
     // 把控制器的 view 添加到窗口上, 而且动画从下到上
 //    // 1, 获取窗口
@@ -54,16 +53,14 @@
 }
 
 - (IBAction)push:(UIButton *)sender {
-    NSLog(@"");
-    UIViewController *vc = [[TwoViewController alloc] init];
-    vc.view.backgroundColor = [UIColor magentaColor];
+    XLog
+    UIViewController *vc = TwoVc.alloc.init;
+    vc.view.backgroundColor = UIColor.magentaColor;
     
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
-
 @end
-
 
 

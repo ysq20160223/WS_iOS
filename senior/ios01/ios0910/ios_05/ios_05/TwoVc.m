@@ -6,18 +6,19 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import "TwoViewController.h"
+#import "TwoVc.h"
 
-@interface TwoViewController ()
+@interface TwoVc ()
 
 @end
 
-@implementation TwoViewController
+
+
+@implementation TwoVc
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
     
 }
 
@@ -25,7 +26,6 @@
 - (IBAction)pop:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
-
 
 
 @end

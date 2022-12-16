@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "OneViewController.h"
+#import "OneVc.h"
 
-@interface OneViewController ()
+@interface OneVc ()
 
 - (IBAction)dismiss:(UIButton *)sender;
 
@@ -16,8 +16,7 @@
 
 
 
-
-@implementation OneViewController
+@implementation OneVc
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +25,7 @@
 }
 
 - (IBAction)dismiss:(UIButton *)sender {
-    NSLog(@"");
+    XLog
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

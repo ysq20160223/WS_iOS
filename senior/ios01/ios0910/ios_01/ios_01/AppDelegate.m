@@ -20,17 +20,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds]; // 1
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds]; // 1
     
-    UITabBarController *tabBarVc = [[UITabBarController alloc] init];
+    
+    UITabBarController *tabBarVc = UITabBarController.alloc.init;
     self.window.rootViewController = tabBarVc; // 2
 //    tabBarVc.tabBar.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0 alpha:1];
 //    tabBarVc.tabBar.tintColor = [UIColor magentaColor];
     tabBarVc.tabBar.barTintColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:1];
     
     // 添加子控制器
-    UIViewController *messageVc = [[UIViewController alloc] init];
-    [messageVc.view setBackgroundColor:[UIColor grayColor]];
+    UIViewController *messageVc = UIViewController.alloc.init;
+    [messageVc.view setBackgroundColor:UIColor.grayColor];
     messageVc.tabBarItem.title = @"Message";
     messageVc.tabBarItem.image = [UIImage imageNamed:@"tab_recent_nor@2x"]; // 自动渲染成蓝色
     messageVc.tabBarItem.badgeValue = @"9";
@@ -39,25 +40,26 @@
     // 默认 tabBar 控制器会把自己的第一个子控制器的 view 添加到自己身上
     
     //
-    UIViewController *contactsVc = [[UIViewController alloc] init];
-    [contactsVc.view setBackgroundColor:[UIColor magentaColor]];
+    UIViewController *contactsVc = UIViewController.alloc.init;
+    [contactsVc.view setBackgroundColor:UIColor.magentaColor];
     contactsVc.tabBarItem.title = @"Contacts";
     contactsVc.tabBarItem.image = [UIImage imageNamed:@"tab_buddy_nor"];
     [tabBarVc addChildViewController:contactsVc];
     
     //
-    UIViewController *featuredVc = [[UIViewController alloc] init];
-    [featuredVc.view setBackgroundColor:[UIColor blueColor]];
+    UIViewController *featuredVc = UIViewController.alloc.init;
+    [featuredVc.view setBackgroundColor:UIColor.blueColor];
     featuredVc.tabBarItem.title = @"Featured";
     featuredVc.tabBarItem.image = [UIImage imageNamed:@"tab_qworld_nor"];
     [tabBarVc addChildViewController:featuredVc];
     
     //
-    UIViewController *settingVc = [[UIViewController alloc] init];
-    [settingVc.view setBackgroundColor:[UIColor orangeColor]];
+    UIViewController *settingVc = UIViewController.alloc.init;
+    [settingVc.view setBackgroundColor:UIColor.orangeColor];
     settingVc.tabBarItem.title = @"Setting";
     settingVc.tabBarItem.image = [UIImage imageNamed:@"tab_me_nor"];
     [tabBarVc addChildViewController:settingVc];
+    
     
     [self.window makeKeyAndVisible]; // 3
     

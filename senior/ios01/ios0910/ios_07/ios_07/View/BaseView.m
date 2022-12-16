@@ -26,7 +26,7 @@
 @implementation BaseView
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%@", [self class]);
+    NSLog(@"%@", self.class);
     
 }
 

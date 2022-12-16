@@ -6,21 +6,21 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MyView.h"
+#import "_View.h"
 
-@implementation MyView
+@implementation _View
 
 // 开始触摸
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    NSLog(@"%@", touches);
-    NSLog(@"");
+    XLog
     
     
 }
 
 // 移动
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"");
+    XLog
     
     // 让当前控件随着手指的移动而移动
     

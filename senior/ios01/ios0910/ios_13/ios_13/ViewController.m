@@ -14,6 +14,8 @@
 
 @end
 
+
+
 @implementation ViewController
 
 
@@ -31,18 +33,18 @@
 
 // -------------
 - (void)setUpSwipe {
-    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    UISwipeGestureRecognizer *swipe = [UISwipeGestureRecognizer.alloc initWithTarget:self action:@selector(swipe:)];
     [_imageView addGestureRecognizer:swipe];
     
-    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    UISwipeGestureRecognizer *swipeLeft = [UISwipeGestureRecognizer.alloc initWithTarget:self action:@selector(swipe:)];
     swipeLeft.direction = UISwipeGestureRecognizerDirectionLeft;
     [_imageView addGestureRecognizer:swipeLeft];
     
-    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    UISwipeGestureRecognizer *swipeUp = [UISwipeGestureRecognizer.alloc initWithTarget:self action:@selector(swipe:)];
     swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
     [_imageView addGestureRecognizer:swipeUp];
     
-    UISwipeGestureRecognizer *swipeDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    UISwipeGestureRecognizer *swipeDown = [UISwipeGestureRecognizer.alloc initWithTarget:self action:@selector(swipe:)];
     swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
     [_imageView addGestureRecognizer:swipeDown];
 }

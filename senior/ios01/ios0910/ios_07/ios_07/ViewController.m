@@ -12,11 +12,12 @@
 
 @end
 
+
+
 @implementation ViewController
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%s", __func__);
-    
+    XLog
     
 }
 
@@ -25,9 +26,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    
 }
 
-
-
 @end
+
+

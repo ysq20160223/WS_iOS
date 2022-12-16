@@ -18,11 +18,9 @@
 
 
 
-
 @implementation ViewController
 
 - (IBAction)btnClick:(PopButton *)sender {
-    
     
     // 弹出对话框
     UIButton *btnDialogView = sender.btnDialogView;
@@ -53,10 +51,6 @@
 }
 
 
-
-
 @end
-
-
 
 
