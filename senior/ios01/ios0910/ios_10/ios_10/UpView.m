@@ -29,7 +29,7 @@
     
     // 转换坐标系
     CGPoint btnP = [self convertPoint:point toView:self.btn];
-    NSLog(@"x: %f, y: %f", btnP.x, btnP.y);
+    NSLog(@"x: %f; y: %f", btnP.x, btnP.y);
     
     // 获取按钮
     if ([self.btn pointInside:btnP withEvent:event]) {
