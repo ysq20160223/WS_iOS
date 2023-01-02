@@ -23,7 +23,7 @@
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     // 获取 UITouch
-    UITouch *touch = [touches anyObject];
+    UITouch *touch = touches.anyObject;
     
     // 获取当前点
     CGPoint curP = [touch locationInView:self];

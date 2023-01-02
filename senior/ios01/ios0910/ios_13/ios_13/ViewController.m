@@ -52,19 +52,19 @@
 - (void)swipe:(UISwipeGestureRecognizer *)recognizer {
     switch (recognizer.direction) {
         case UISwipeGestureRecognizerDirectionRight:
-            NSLog(@"Swipe Direction Right");
+            NSLog(@"Right");
             break;
             
         case UISwipeGestureRecognizerDirectionLeft:
-            NSLog(@"Swipe Direction Left");
+            NSLog(@"Left");
             break;
             
         case UISwipeGestureRecognizerDirectionUp:
-            NSLog(@"Swipe Direction Up");
+            NSLog(@"Up");
             break;
             
         case UISwipeGestureRecognizerDirectionDown:
-            NSLog(@"Swipe Direction Down");
+            NSLog(@"Down");
             break;
     
         default:
@@ -75,35 +75,34 @@
 
 // -------------
 - (void)setUpLongPress {
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-    
+    UILongPressGestureRecognizer *longPress = [UILongPressGestureRecognizer.alloc initWithTarget:self action:@selector(longPress:)];
     [_imageView addGestureRecognizer:longPress];
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)recognizer {
     switch (recognizer.state) {
         case UIGestureRecognizerStatePossible:
-            NSLog(@"State Possible");
+            NSLog(@"Possible");
             break;
             
         case UIGestureRecognizerStateBegan:
-            NSLog(@"State Began");
+            NSLog(@"Began");
             break;
             
         case UIGestureRecognizerStateChanged:
-            NSLog(@"State Changed");
+            NSLog(@"Changed");
             break;
             
         case UIGestureRecognizerStateEnded:
-            NSLog(@"State Ended");
+            NSLog(@"Ended");
             break;
             
         case UIGestureRecognizerStateCancelled:
-            NSLog(@"State Cancelled");
+            NSLog(@"Cancelled");
             break;
             
         case UIGestureRecognizerStateFailed:
-            NSLog(@"State Failed");
+            NSLog(@"Failed");
             break;
             
         default:
@@ -116,14 +115,18 @@
 // -------------
 - (void)setUpTap {
     // 点按
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
-    
+    UITapGestureRecognizer *tap = [UITapGestureRecognizer.alloc initWithTarget:self action:@selector(tap)];
     tap.delegate = self;
-    
     [_imageView addGestureRecognizer:tap];
 }
 
+- (void)tap {
+    XLog
+    
+}
 
+
+//
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     CGPoint curP = [touch locationInView:_imageView];
     NSLog(@"x: %f, w: %f", curP.x, _imageView.bounds.size.width);
@@ -133,11 +136,6 @@
         return NO;
     }
 //    return NO;
-}
-
-- (void)tap {
-    NSLog(@"%s", __func__);
-    
 }
 
 @end

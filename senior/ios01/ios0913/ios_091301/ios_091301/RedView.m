@@ -19,18 +19,16 @@
 
 @implementation RedView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        NSLog(@"");
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        XLog
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    NSLog(@"");
+    XLog
 }
 
 
@@ -60,29 +58,31 @@
     [self drawArc];
 }
 
+
 - (void)drawArc {
     CGPoint center = CGPointMake(viewW * 3 / 4, viewH * 3 / 4);
     CGFloat radius = viewW / 4 - 10;
-    CGFloat startA = 0;
-    CGFloat endA = M_PI_2;
+    CGFloat startAngle = 0;
+    CGFloat endAngle = M_PI_2;
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     
     [path addLineToPoint:center]; //
     [path closePath]; // 关闭路径
     
-    [[UIColor cyanColor] set];
+    [UIColor.yellowColor set];
     
 //    [path fill]; // 会自动关闭路径
     [path stroke];
 }
 
+
 - (void)drawRoundRect {
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(viewW / 8, viewH * 5 / 8, viewW / 4, viewH / 4) cornerRadius:20];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(viewW / 8, viewH * 5 / 8, viewW / 4, viewH / 4) cornerRadius:viewW / 18];
 //    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(viewW / 8, viewH * 5 / 8, viewW / 4, viewH / 4)];
 
-    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 0, 0.5, 1, 1);
-    CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 1, 0, 1, 1);
+    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), 1, 0, 0, 1);
+    CGContextSetRGBFillColor(UIGraphicsGetCurrentContext(), 0, 1, 0, 1);
 //    [[UIColor cyanColor] set];
     
 //    [path stroke];
@@ -92,6 +92,7 @@
     CGContextAddPath(ctx, path.CGPath);
     CGContextDrawPath(ctx, kCGPathFillStroke);
 }
+
 
 - (void)drawRect {
     // 1, 获取上下文
@@ -104,7 +105,7 @@
     CGContextAddPath(ctx, path.CGPath);
     
     // 设置颜色
-    [[UIColor cyanColor] set];
+    [UIColor.blueColor set];
     
     // 4, 把上下文的内容显示出来
     //    CGContextStrokePath(ctx);
@@ -118,11 +119,12 @@
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     // 2, 描述路径
-    UIBezierPath *path = [UIBezierPath bezierPath];
+    UIBezierPath *path = UIBezierPath.bezierPath;
     
     // 2.1, 设置起点
     [path moveToPoint:CGPointMake(0, viewH / 2)];
     [path addQuadCurveToPoint:CGPointMake(viewW / 2, viewH / 2) controlPoint:CGPointMake(viewW / 4, 0)];
+    [UIColor.redColor setStroke]; // 设置线的颜色
     
     // 3, 把路径添加到上下文
     CGContextAddPath(ctx, path.CGPath);
@@ -140,7 +142,7 @@
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
     // 2, 描述路径
-    UIBezierPath *path = [UIBezierPath bezierPath];
+    UIBezierPath *path = UIBezierPath.bezierPath;
     
     // 2.1 设置起点
     [path moveToPoint:CGPointMake(0, viewH / 2)];
@@ -152,11 +154,10 @@
     [path moveToPoint:CGPointMake(viewW / 2, 0)];
     [path addLineToPoint:CGPointMake(viewW / 2, viewH)];
     
-    
     CGContextSetLineWidth(ctx, 1); // 设置线的宽度
     CGContextSetLineJoin(ctx, kCGLineJoinBevel); // 设置线的连接样式
     CGContextSetLineCap(ctx, kCGLineCapRound); // 设置顶角的样式
-    [[UIColor cyanColor] setStroke]; // 设置线的颜色
+    [UIColor.cyanColor setStroke]; // 设置线的颜色
     
     // 3 把路径添加到上下文
     CGContextAddPath(ctx, path.CGPath);
