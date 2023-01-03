@@ -26,16 +26,36 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
-    CGPoint center = CGPointMake(rect.size.width * .5, rect.size.height * .5);
+    [self ring:rect];
+    
+//    [self arc:rect];
+}
+
+- (void)ring:(CGRect)rect {
+    [UIColor.cyanColor set];
+    
+    CGPoint centerPoint = CGPointMake(rect.size.width * .5, rect.size.height * .5);
     CGFloat radius = rect.size.width * .5 - 10;
-    CGFloat startA = 0;
-//    CGFloat startA = -M_PI_2;
-    CGFloat endA = startA + self.progress * M_PI * 2;
+    CGFloat startAngle = 0;
+    CGFloat endAngle = startAngle + self.progress * M_PI * 2;
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:centerPoint radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
+    [path addLineToPoint:centerPoint]; //
+    [path closePath];
+    [path fill];
+}
+
+- (void)arc:(CGRect)rect {
+    [UIColor.magentaColor set];
     
+    CGPoint centerPoint = CGPointMake(rect.size.width * .5, rect.size.height * .5);
+    CGFloat radius = rect.size.width * .5 - 10;
+    CGFloat startAngle = 0;
+    CGFloat endAngle = startAngle + self.progress * M_PI * 2;
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:centerPoint radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
+    [path setLineWidth:9];
     [path stroke];
-//    [path fill];
 }
 
 

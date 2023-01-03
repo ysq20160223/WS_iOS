@@ -20,36 +20,29 @@
     
     NSArray *precentArray = @[@25, @35, @40];
     
-    CGPoint center = CGPointMake(rect.size.width *.5, rect.size.height * .5);
+    CGPoint centerPoint = CGPointMake(rect.size.width *.5, rect.size.height * .5);
     CGFloat radius = rect.size.width * .5 - 10;
     
     CGFloat angle = 0;
-    CGFloat startA = 0;
-    CGFloat endA = 0;
+    CGFloat startAngle = 0;
+    CGFloat endAngle = 0;
+    
     
     for (NSNumber *num in precentArray) {
+        [XRandomColor() set];
+        
         angle = num.integerValue / 100.0 * M_PI * 2;
+        startAngle = endAngle;
+        endAngle = startAngle + angle;
         
-        startA = endA;
-        endA = startA + angle;
-        
-        UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
-        [path addLineToPoint:center];
-        [[self randColor] set];
+        UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:centerPoint radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
+        [path addLineToPoint:centerPoint];
         [path fill];
     }
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self setNeedsDisplay];
-}
-
--(UIColor *)randColor {
-    CGFloat r = arc4random_uniform(255) / 255.0;
-    CGFloat g = arc4random_uniform(255) / 255.0;
-    CGFloat b = arc4random_uniform(255) / 255.0;
-    
-    return [UIColor colorWithRed:r green:g blue:b alpha:1];
 }
 
 @end

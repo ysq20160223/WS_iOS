@@ -25,13 +25,6 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
-}
-
 - (IBAction)valueChanged:(UISlider *)sender {
 //    NSLog(@"%f", sender.value);
     _textLabel.text = [NSString stringWithFormat:@"%.2f%%", sender.value * 100];
@@ -41,3 +34,5 @@
 
 
 @end
+
+

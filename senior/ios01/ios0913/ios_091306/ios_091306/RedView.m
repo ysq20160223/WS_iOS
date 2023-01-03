@@ -17,7 +17,7 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
-    [self drawText];
+//    [self drawText];
     
     UIImage *image = [UIImage imageNamed:@"a_60"];
     
@@ -34,22 +34,24 @@
 //    [[UIColor magentaColor] set];
 //    UIRectFill(CGRectMake(0, 0, 100, 100));
     
+    [self drawText];
+    
 }
 
 
 - (void)drawText {
     NSString *str = @"abcdefg";
     
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    NSMutableDictionary *dict = NSMutableDictionary.dictionary;
     dict[NSFontAttributeName] = [UIFont systemFontOfSize:150];
-    dict[NSForegroundColorAttributeName] = [UIColor cyanColor];
+    dict[NSForegroundColorAttributeName] = UIColor.cyanColor;
     dict[NSStrokeWidthAttributeName] = @3;
-    dict[NSStrokeColorAttributeName] = [UIColor blueColor];
+    dict[NSStrokeColorAttributeName] = UIColor.blueColor;
     
-    NSShadow  *shadow = [[NSShadow alloc] init];
-    shadow.shadowOffset = CGSizeMake(30, 30);
-    shadow.shadowColor = [UIColor greenColor];
-    shadow.shadowBlurRadius = 3;
+    NSShadow  *shadow = NSShadow.alloc.init;
+    shadow.shadowOffset = CGSizeMake(21, 21);
+    shadow.shadowColor = UIColor.yellowColor;
+    shadow.shadowBlurRadius = 1;
     dict[NSShadowAttributeName] = shadow;
     
     //    [str drawAtPoint:CGPointZero withAttributes:dict]; ／／ 不会自动换行
