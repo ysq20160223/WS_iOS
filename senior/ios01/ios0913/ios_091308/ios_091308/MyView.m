@@ -15,7 +15,7 @@
 // An empty implementation adversely affects performance during animation.
 
 - (void)setImage:(UIImage *)image {
-    NSLog(@"");
+    XLog
     _image = image;
     
     [self setNeedsDisplay];
@@ -23,13 +23,13 @@
 
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    NSLog(@"");
+    XLog
     [self.image drawInRect:rect];
 }
 
 - (instancetype)initWithImage:(UIImage *)image {
     if(self = [super init]) {
-        NSLog(@"width: %f, height: %f", image.size.width, image.size.height);
+        NSLog(@"width: %f; height: %f", image.size.width, image.size.height);
         self.frame = CGRectMake(0, 0, image.size.width, image.size.height);
         _image = image;
     }

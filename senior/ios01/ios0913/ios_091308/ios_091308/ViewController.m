@@ -12,8 +12,8 @@
 
 @interface ViewController ()
 
-@property (nonatomic, weak) MyView *myView;
-@property (nonatomic, weak) UIImageView *imageView;
+@property (nonatomic, strong) MyView *myView;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 
@@ -22,20 +22,19 @@
 @implementation ViewController
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"");
+    XLog
     self.myView.image = [UIImage imageNamed:@"abx.png"];
     self.imageView.image = [UIImage imageNamed:@"abx.png"];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"");
+    XLog
     self.myView.image = [UIImage imageNamed:@"ab9.png"];
     self.imageView.image = [UIImage imageNamed:@"ab9.png"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     [self userUIImageView]; // 使用系统
     
@@ -43,31 +42,27 @@
 }
 
 - (void)userMyView {
-//    MyView *myView = [[MyView alloc] initWithFrame:CGRectMake(0, 300, 100, 100)];
+//    MyView *myView = [MyView.alloc initWithFrame:CGRectMake(0, 300, 100, 100)];
 //    myView.image = [UIImage imageNamed:@"yellow.jpg"];
     
-    MyView *myView = [[MyView alloc] initWithImage:[UIImage imageNamed:@"ab9.png"]];
-    myView.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:1];
-    CGRect rect = myView.frame;
+    self.myView = [MyView.alloc initWithImage:[UIImage imageNamed:@"ab9.png"]];
+    self.myView.backgroundColor = UIColor.cyanColor;
+    CGRect rect = self.myView.frame;
     rect.origin.y = kStatusBarH;
-    myView.frame = rect;
-    [self.view addSubview:myView];
-    
-    _myView = myView;
+    self.myView.frame = rect;
+    [self.view addSubview:self.myView];
 }
 
 - (void)userUIImageView {
-//    UIImageView *imageView = [UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100);
+//    UIImageView *imageView = [UIImageView.alloc initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    imageView.image = [UIImage imageNamed:@"aLi.png"];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ab9.png"]];
-    imageView.backgroundColor = [UIColor colorWithRed:0 green:.5 blue:1 alpha:1];
-    CGRect rect = imageView.frame;
+    self.imageView = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"ab9.png"]];
+    self.imageView.backgroundColor = UIColor.magentaColor;
+    CGRect rect = self.imageView.frame;
     rect.origin.y = 200;
-    imageView.frame = rect;
-    [self.view addSubview:imageView];
-    
-    _imageView = imageView;
+    self.imageView.frame = rect;
+    [self.view addSubview:self.imageView];
 }
 
 @end
