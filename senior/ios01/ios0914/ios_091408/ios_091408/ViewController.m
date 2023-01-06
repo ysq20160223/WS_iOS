@@ -44,7 +44,7 @@
 // 选中图片
 - (IBAction)photos:(UIBarButtonItem *)sender {
     NSLog(@"");
-    UIImagePickerController *pickVC = [[UIImagePickerController alloc] init];
+    UIImagePickerController *pickVC = [UIImagePickerController.alloc init];
     
     pickVC.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; // 设置照片的来源
     pickVC.delegate = self;

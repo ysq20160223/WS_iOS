@@ -18,15 +18,9 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     // 1, 创建动画对象
-    CABasicAnimation *anim = [CABasicAnimation animation];
+    CABasicAnimation *anim = CABasicAnimation.animation;
     
     // 2, 设置属性
     anim.keyPath = @"transform.scale";

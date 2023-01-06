@@ -18,7 +18,7 @@
     
     CGContextRef ctx = UIGraphicsGetCurrentContext(); // 1
     
-    UIBezierPath *path = [UIBezierPath bezierPath]; // 2
+    UIBezierPath *path = UIBezierPath.bezierPath; // 2
     [path moveToPoint:CGPointMake(rect.size.width * 0.5, 0)];
     [path addLineToPoint:CGPointMake(rect.size.width * 0.5, rect.size.height)];
     
@@ -30,7 +30,7 @@
     //
     path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 200, 100)]; // 2
     
-    [[UIColor redColor] set];
+    [UIColor.redColor set];
     
     // 上下文矩阵操作, 必须得要在添加路径之前做操作
     CGContextTranslateCTM(ctx, rect.size.width * 0.5, rect.size.height * 0.5); // 平移
@@ -38,7 +38,6 @@
     CGContextRotateCTM(ctx, M_PI_2); // 旋转
     
     CGContextAddPath(ctx, path.CGPath);
-    
     CGContextFillPath(ctx);
 }
 

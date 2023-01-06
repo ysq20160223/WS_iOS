@@ -26,16 +26,16 @@
 
 - (void)caAnimationGroup {
     // 缩放
-    CABasicAnimation *scaleAnim = [CABasicAnimation animation];
+    CABasicAnimation *scaleAnim = CABasicAnimation.animation;
     scaleAnim.keyPath = @"transform.scale";
     scaleAnim.toValue = @.5;
     
     // 平移
-    CABasicAnimation *translationAnim = [CABasicAnimation animation];
+    CABasicAnimation *translationAnim = CABasicAnimation.animation;
     translationAnim.keyPath = @"position.y";
     translationAnim.toValue = @(400);
     
-    CAAnimationGroup *group = [CAAnimationGroup animation];
+    CAAnimationGroup *group = CAAnimationGroup.animation;
     group.animations = @[scaleAnim, translationAnim];
     group.fillMode = kCAFillModeForwards;
     group.removedOnCompletion = NO;
@@ -45,7 +45,7 @@
 
 - (void)caBasicAnim {
     // 缩放
-    CABasicAnimation *scaleAnim = [CABasicAnimation animation];
+    CABasicAnimation *scaleAnim = CABasicAnimation.animation;
     scaleAnim.keyPath = @"transform.scale";
     scaleAnim.toValue = @.5;
     scaleAnim.removedOnCompletion = NO;
@@ -53,7 +53,7 @@
     [self.myView.layer addAnimation:scaleAnim forKey:nil];
     
     // 平移
-    CABasicAnimation *translationAnim = [CABasicAnimation animation];
+    CABasicAnimation *translationAnim = CABasicAnimation.animation;
     translationAnim.keyPath = @"position.y";
     translationAnim.toValue = @(400);
     translationAnim.removedOnCompletion = NO;

@@ -41,7 +41,7 @@ static int _i = 0;
     self.imageView.image = [UIImage imageNamed:imageName];
     
     // 转场动画
-    CATransition *anim = [CATransition animation]; // 创建动画
+    CATransition *anim = CATransition.animation; // 创建动画
     
     
     // fade push moveIn reveal cube oglFlip suckEffect rippleEffect pageCurl pageUnCurl

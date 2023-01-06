@@ -72,7 +72,7 @@
 //    NSLog(@"oriImage: %@, oriSelImage: %@", oriImage, oriSelImage);
     
     // 获取当前屏幕与像素坐标的比例
-    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat scale = UIScreen.mainScreen.scale;
     scale = 2; // note: 无 @3x 图片情况下暂时使用
     
     CGFloat clipW = oriImage.size.width / 12 * scale;
@@ -144,7 +144,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
 //    NSLog(@"%s", __func__);
     if(self = [super initWithFrame:frame]) {
-        self = [[NSBundle mainBundle] loadNibNamed:@"WheelView" owner:nil options:nil][0];
+        self = [NSBundle.mainBundle loadNibNamed:@"WheelView" owner:nil options:nil].firstObject;
         [self setUp];
     }
     return self;
@@ -153,7 +153,7 @@
 //
 + (instancetype)wheelView {
 //    NSLog(@"%s", __func__);
-    return [[NSBundle mainBundle] loadNibNamed:@"WheelView" owner:nil options:nil][0];
+    return [NSBundle.mainBundle loadNibNamed:@"WheelView" owner:nil options:nil][0];
 }
 
 

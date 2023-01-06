@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     // 1, 加载图片
     UIImage *image = [UIImage imageNamed:@"doubi.jpg"];
@@ -44,7 +43,6 @@
     UIGraphicsEndImageContext();
     
     self.imageView.image = newImage;
-    
 }
 
 @end

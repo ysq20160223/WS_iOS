@@ -20,12 +20,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     self.imageView.userInteractionEnabled = YES;
     
     // 添加手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    UIPanGestureRecognizer *pan = [UIPanGestureRecognizer.alloc initWithTarget:self action:@selector(pan:)];
     [self.imageView addGestureRecognizer:pan];
     
 }

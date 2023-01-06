@@ -18,13 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     //
-    CALayer *layer = [CALayer layer];
+    CALayer *layer = CALayer.layer;
     
     layer.frame = CGRectMake(50, 50, 100, 100);
-    layer.backgroundColor = [UIColor cyanColor].CGColor;
+    layer.backgroundColor = UIColor.cyanColor.CGColor;
     
     [self.view.layer addSublayer:layer];
     

@@ -17,21 +17,16 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     
-//    [self drawText];
-    
     UIImage *image = [UIImage imageNamed:@"a_60"];
-    
     [image drawAtPoint:CGPointZero]; // 绘制的图片保持原来的图片
 //    [image drawInRect:rect]; // 把图片填充到这个 rect 中
-    
 //    UIRectClip(CGRectMake(0, 0, 100, 100)); // 裁剪区域
-    
     [image drawAsPatternInRect:rect]; // 平铺
     
     
     
     // 快速绘制图形
-//    [[UIColor magentaColor] set];
+//    [UIColor.magentaColor set];
 //    UIRectFill(CGRectMake(0, 0, 100, 100));
     
     [self drawText];
@@ -45,7 +40,7 @@
     NSMutableDictionary *dict = NSMutableDictionary.dictionary;
     dict[NSFontAttributeName] = [UIFont systemFontOfSize:150];
     dict[NSForegroundColorAttributeName] = UIColor.cyanColor;
-    dict[NSStrokeWidthAttributeName] = @3;
+    dict[NSStrokeWidthAttributeName] = @5;
     dict[NSStrokeColorAttributeName] = UIColor.blueColor;
     
     NSShadow  *shadow = NSShadow.alloc.init;
@@ -54,8 +49,7 @@
     shadow.shadowBlurRadius = 1;
     dict[NSShadowAttributeName] = shadow;
     
-    //    [str drawAtPoint:CGPointZero withAttributes:dict]; ／／ 不会自动换行
-    
+    //    [str drawAtPoint:CGPointZero withAttributes:dict]; // 不会自动换行
     [str drawInRect:self.bounds withAttributes:dict]; // 会自动换行
 }
 

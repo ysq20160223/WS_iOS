@@ -21,8 +21,8 @@
 @implementation LockView
 
 - (NSMutableArray *)selectBtnArray {
-    if(_selectBtnArray == nil) {
-        _selectBtnArray = [NSMutableArray array];
+    if(!_selectBtnArray) {
+        _selectBtnArray = NSMutableArray.array;
     }
     return _selectBtnArray;
 }
@@ -53,7 +53,7 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     // 取消选中按钮选中状态
-    NSMutableString *string = [NSMutableString string];
+    NSMutableString *string = NSMutableString.string;
     for (UIButton *btn in self.selectBtnArray) {
         [string appendFormat:@"%d", (int)btn.tag];
         btn.selected = NO;
@@ -68,7 +68,7 @@
 
 // 获取当前手指所在的点
 - (CGPoint)locationInView:(NSSet *)touches {
-    UITouch *touch = [touches anyObject];
+    UITouch *touch = touches.anyObject;
     return [touch locationInView:self];
 }
 
@@ -165,7 +165,7 @@
     [path addLineToPoint:self.curP];
     [path setLineJoinStyle:kCGLineJoinRound]; // 圆角
     
-    [[UIColor cyanColor] set];
+    [UIColor.cyanColor set];
     [path setLineWidth:9];
     [path stroke];
 }

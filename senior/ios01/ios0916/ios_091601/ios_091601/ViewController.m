@@ -37,7 +37,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     [self uiViewlayer];
     
@@ -49,10 +48,10 @@
     self.imageView.layer.shadowOffset = CGSizeMake(10, 10);
     
     self.imageView.layer.shadowRadius = 10;
-    self.imageView.layer.shadowColor = [UIColor cyanColor].CGColor;
+    self.imageView.layer.shadowColor = UIColor.cyanColor.CGColor;
     
     // borderColor 和 borderWidth 一起使用
-    self.imageView.layer.borderColor = [UIColor blueColor].CGColor;
+    self.imageView.layer.borderColor = UIColor.blueColor.CGColor;
     self.imageView.layer.borderWidth = 3;
     
     self.imageView.layer.cornerRadius = 20;
@@ -64,10 +63,10 @@
     self.redView.layer.shadowOpacity = 1; // 自带阴影效果
     self.redView.layer.shadowOffset = CGSizeMake(10, 10); // 设置阴影的偏移量
     self.redView.layer.shadowRadius = 10; // 阴影的模糊程度
-    self.redView.layer.shadowColor = [UIColor cyanColor].CGColor; // 阴影颜色
+    self.redView.layer.shadowColor = UIColor.cyanColor.CGColor; // 阴影颜色
     
     // borderColor 和 borderWidth 一起使用
-    self.redView.layer.borderColor = [UIColor blueColor].CGColor; // 边框颜色
+    self.redView.layer.borderColor = UIColor.blueColor.CGColor; // 边框颜色
     self.redView.layer.borderWidth = 3; // 边框宽度
     
     self.redView.layer.cornerRadius = 20; // 圆角半径

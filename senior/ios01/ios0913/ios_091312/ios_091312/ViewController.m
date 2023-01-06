@@ -20,7 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     UIImage *image = [UIImage imageNamed:@"abx.png"];
     
@@ -30,11 +29,15 @@
     
     // 绘制文字
     NSString *str = @"yy";
-    [str drawAtPoint:CGPointZero withAttributes:@{NSFontAttributeName :[UIFont systemFontOfSize:30]}];
+    [str drawAtPoint:CGPointZero withAttributes:
+     @{
+        NSFontAttributeName : [UIFont systemFontOfSize:21],
+        NSForegroundColorAttributeName : UIColor.cyanColor
+    }
+    ];
     
     
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-
     UIGraphicsEndImageContext();
     
     //

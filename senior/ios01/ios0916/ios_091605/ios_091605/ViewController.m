@@ -56,8 +56,8 @@
 
 // 秒针变化
 - (void)secondChange {
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:NSCalendarUnitSecond | NSCalendarUnitMinute | NSCalendarUnitHour fromDate:[NSDate date]];
+    NSCalendar *calendar = NSCalendar.currentCalendar;
+    NSDateComponents *components = [calendar components:NSCalendarUnitSecond | NSCalendarUnitMinute | NSCalendarUnitHour fromDate:NSDate.date];
     NSInteger curSecond = components.second; // 当前秒数
     
     CGFloat secondA = curSecond * perSecondA; // 当前时间秒针应该旋转的度数
@@ -80,8 +80,8 @@
 
 // 添加秒针
 - (void)addSecond {
-    CALayer *layer = [CALayer layer];
-    layer.backgroundColor = [UIColor redColor].CGColor;
+    CALayer *layer = CALayer.layer;
+    layer.backgroundColor = UIColor.redColor.CGColor;
     layer.bounds = CGRectMake(0, 0, 1, 71);
     layer.position = CGPointMake(self.clockView.bounds.size.width * .5, self.clockView.bounds.size.height * .5);
     layer.anchorPoint = CGPointMake(.5, 1);
@@ -92,8 +92,8 @@
 
 // 添加分针
 - (void)addMinute {
-    CALayer *layer = [CALayer layer];
-    layer.backgroundColor = [UIColor blackColor].CGColor;
+    CALayer *layer = CALayer.layer;
+    layer.backgroundColor = UIColor.blackColor.CGColor;
     layer.bounds = CGRectMake(0, 0, 2, 51);
     layer.position = CGPointMake(self.clockView.bounds.size.width * .5, self.clockView.bounds.size.height * .5);
     layer.anchorPoint = CGPointMake(.5, 1);
@@ -104,8 +104,8 @@
 
 // 添加时针
 - (void)addHour {
-    CALayer *layer = [CALayer layer];
-    layer.backgroundColor = [UIColor blackColor].CGColor;
+    CALayer *layer = CALayer.layer;
+    layer.backgroundColor = UIColor.blackColor.CGColor;
     layer.bounds = CGRectMake(0, 0, 3, 31);
     layer.position = CGPointMake(self.clockView.bounds.size.width * .5, self.clockView.bounds.size.height * .5);
     layer.anchorPoint = CGPointMake(.5, 1);

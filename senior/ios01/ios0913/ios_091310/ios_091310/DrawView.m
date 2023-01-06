@@ -23,12 +23,12 @@
     [super awakeFromNib];
     viewW = self.frame.size.width;
     viewH = self.frame.size.height;
-    NSLog(@"viewW: %ld, viewH: %ld", viewW, viewH);
+    NSLog(@"viewW: %ld; viewH: %ld", viewW, viewH);
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        NSLog(@"");
+        XLog
     }
     return self;
 }
@@ -42,18 +42,18 @@
     // Drawing code
     
     CGContextRef ctx = UIGraphicsGetCurrentContext(); // 1
-    UIBezierPath *path = [UIBezierPath bezierPath]; // 2
+    UIBezierPath *path = UIBezierPath.bezierPath; // 2
     
     [path moveToPoint:CGPointMake(viewW * .1, viewH * .5)];
     [path addLineToPoint:CGPointMake(viewW * .9, viewH * .5)];
     
     //
-    [[UIColor blueColor] set];
+    [UIColor.blueColor set];
     CGContextSetLineWidth(ctx, 2);
     CGContextSaveGState(ctx); // 把当前的状态保存到图片上下文状态栈中
     
     //
-    [[UIColor redColor] set];
+    [UIColor.redColor set];
     CGContextSetLineWidth(ctx, 5);
     
     CGContextAddPath(ctx, path.CGPath); // 3
@@ -61,13 +61,12 @@
     
     
     //
-    path = [UIBezierPath bezierPath]; // 2
+    path = UIBezierPath.bezierPath; // 2
     
     [path moveToPoint:CGPointMake(viewW * .5, viewH * .1)];
     [path addLineToPoint:CGPointMake(viewW * .5,  viewH * .9)];
     
     CGContextRestoreGState(ctx); // 恢复上下文状态栈
-    
     CGContextAddPath(ctx, path.CGPath); // 3
     CGContextStrokePath(ctx); // 4
 }

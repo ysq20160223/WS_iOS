@@ -17,7 +17,7 @@
 @implementation ViewController
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"");
+    XLog
     
     // 1, 开启图片上下文
     UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, NO, 0);
@@ -41,13 +41,6 @@
     
     // 关闭上下文
     UIGraphicsEndImageContext();
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    
 }
 
 @end

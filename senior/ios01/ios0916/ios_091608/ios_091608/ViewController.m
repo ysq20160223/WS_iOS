@@ -21,7 +21,7 @@
 @implementation ViewController
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"statusH: %f", [UIApplication sharedApplication].statusBarFrame.size.height);
+    NSLog(@"statusH: %f", UIApplication.sharedApplication.statusBarFrame.size.height);
     
     [self iconShake];
     
@@ -30,7 +30,7 @@
 
 - (void)iconPath {
     // 创建帧动画
-    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    CAKeyframeAnimation *anim = CAKeyframeAnimation.animation;
     
     // 设置属性
     anim.keyPath = @"position";
@@ -38,7 +38,7 @@
     //    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 50, 200, 200)]; // 圆
     
     // 路径
-    UIBezierPath *path = [UIBezierPath bezierPath];
+    UIBezierPath *path = UIBezierPath.bezierPath;
     
     [path moveToPoint:CGPointMake(self.icon.layer.position.x, self.icon.layer.position.y)];
     [path addLineToPoint:CGPointMake(self.icon.frame.size.width * 0.5, [UIApplication sharedApplication].statusBarFrame.size.height + self.icon.frame.size.height * 0.5)];
@@ -60,7 +60,7 @@
 
 - (void)iconShake {
     // 创建帧动画
-    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    CAKeyframeAnimation *anim = CAKeyframeAnimation.animation;
     
     // 设置属性
     anim.keyPath = @"transform.rotation";

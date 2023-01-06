@@ -22,9 +22,9 @@
 
 // 懒加载遮盖,保存遮盖只创建一次.
 -(UIView *)coverView{
-    if (_coverView == nil) {
-        UIView *view = [[UIView alloc] init];
-        view.backgroundColor = [UIColor blackColor];
+    if (!_coverView) {
+        UIView *view = [UIView.alloc init];
+        view.backgroundColor = UIColor.blackColor;
         view.alpha = 0.7;
         [self.view addSubview:view];
         _coverView = view;
@@ -33,15 +33,10 @@
     
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
 
 - (IBAction)pan:(UIPanGestureRecognizer *)pan {
     
-    // 获取当前手指所在的点.
+    // 获取当前手指所在的点
     CGPoint curP = [pan locationInView:self.view];
     if (pan.state == UIGestureRecognizerStateBegan) {
         

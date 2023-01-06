@@ -36,14 +36,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     // UIView 当中的 center 就是 layer 当中的 position
     // 非根 Layout
-    CALayer *layer = [CALayer layer];
+    CALayer *layer = CALayer.layer;
     layer.bounds = CGRectMake(0, 0, 50, 50);
 //    layer.position = CGPointMake(self.view.bounds.size.width * 0.5, self.view.bounds.size.height * 0.5);
-    layer.backgroundColor = [UIColor blueColor].CGColor;
+    layer.backgroundColor = UIColor.blueColor.CGColor;
     
     self.layer = layer;
     
@@ -59,7 +58,7 @@
     
     self.layer.bounds = CGRectMake(0, 0, arc4random_uniform(50) + 50, arc4random_uniform(50) + 50); // 缩放比例
     self.layer.position = CGPointMake(arc4random_uniform(50) + self.view.bounds.size.width * 0.5, arc4random_uniform(50) + self.view.bounds.size.height * 0.5);
-    self.layer.backgroundColor = [self randomColor].CGColor;
+    self.layer.backgroundColor = XRandomColor().CGColor;
     
     self.layer.cornerRadius = arc4random_uniform(25);
     
@@ -67,14 +66,6 @@
     
     // UIView 根
 //    self.myView.layer.position = CGPointMake(300, 300);
-}
-
-- (UIColor *)randomColor {
-    CGFloat r = arc4random_uniform(256) / 255.0;
-    CGFloat g = arc4random_uniform(256) / 255.0;
-    CGFloat b = arc4random_uniform(256) / 255.0;
-    
-    return [UIColor colorWithRed:r green:g blue:b alpha:1];
 }
 
 
