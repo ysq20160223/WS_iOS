@@ -12,8 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *selectBtnArray; // 选中的按钮
 
-@property (nonatomic, assign) CGPoint curP; // 手指当前的点
-
 @end
 
 
@@ -30,22 +28,17 @@
 
 #pragma mark - touches
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    CGPoint curP = [self locationInView:touches];
-  
-    UIButton *btn = [self rectContainsPoint:curP];
+    UIButton *btn = [self rectContainsPoint:[self locationInView:touches]];
     if (btn) {
-        [btn setSelected:YES];
+        btn.selected = YES;
         [self.selectBtnArray addObject:btn]; // 添加按钮到集合
     }
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    CGPoint curP = [self locationInView:touches];
-    self.curP = curP;
-    
-    UIButton *btn = [self rectContainsPoint:curP];
-    if (btn && btn.selected == NO) {
-        [btn setSelected:YES];
+    UIButton *btn = [self rectContainsPoint:[self locationInView:touches]];
+    if (btn && !btn.selected) {
+        btn.selected = YES;
         [self.selectBtnArray addObject:btn]; // 添加按钮到集合
     }
     [self setNeedsDisplay];
@@ -67,9 +60,8 @@
 
 
 // 获取当前手指所在的点
-- (CGPoint)locationInView:(NSSet *)touches {
-    UITouch *touch = touches.anyObject;
-    return [touch locationInView:self];
+- (CGPoint)locationInView:(NSSet<UITouch *> *)touches {
+    return [touches.anyObject locationInView:self];
 }
 
 // 判断一个点是否在某个区域内
@@ -162,7 +154,8 @@
         }
     }
     
-    [path addLineToPoint:self.curP];
+    UIButton *btn = self.selectBtnArray.lastObject;
+    [path addLineToPoint:btn.center];
     [path setLineJoinStyle:kCGLineJoinRound]; // 圆角
     
     [UIColor.cyanColor set];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1896622D29699B610076A071 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1896622B29699B610076A071 /* UIImage+X.m */; };
 		18A5A1BB1F3753FF00D52A10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5A1BA1F3753FF00D52A10 /* main.m */; };
 		18A5A1BE1F3753FF00D52A10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5A1BD1F3753FF00D52A10 /* AppDelegate.m */; };
 		18A5A1C11F3753FF00D52A10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5A1C01F3753FF00D52A10 /* ViewController.m */; };
@@ -14,11 +15,12 @@
 		18A5A1C71F3753FF00D52A10 /* ios_091401.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18A5A1C51F3753FF00D52A10 /* ios_091401.xcdatamodeld */; };
 		18A5A1C91F3753FF00D52A10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A5A1C81F3753FF00D52A10 /* Assets.xcassets */; };
 		18A5A1CC1F3753FF00D52A10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A5A1CA1F3753FF00D52A10 /* LaunchScreen.storyboard */; };
-		18A5A1D71F375D2F00D52A10 /* UIImage+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A5A1D61F375D2F00D52A10 /* UIImage+Border.m */; };
 		18EC895723FBF14D004599B0 /* doubi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18EC895623FBF14C004599B0 /* doubi.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1896622B29699B610076A071 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+X.m"; path = "../../../../../category/UIImage+X.m"; sourceTree = "<group>"; };
+		1896622C29699B610076A071 /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+X.h"; path = "../../../../../category/UIImage+X.h"; sourceTree = "<group>"; };
 		18A5A1B61F3753FF00D52A10 /* ios_091401.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_091401.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A5A1BA1F3753FF00D52A10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18A5A1BC1F3753FF00D52A10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -30,8 +32,6 @@
 		18A5A1C81F3753FF00D52A10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18A5A1CB1F3753FF00D52A10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18A5A1CD1F3753FF00D52A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18A5A1D51F375D2F00D52A10 /* UIImage+Border.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Border.h"; sourceTree = "<group>"; };
-		18A5A1D61F375D2F00D52A10 /* UIImage+Border.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Border.m"; sourceTree = "<group>"; };
 		18EC895623FBF14C004599B0 /* doubi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doubi.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,8 +76,8 @@
 				18A5A1CD1F3753FF00D52A10 /* Info.plist */,
 				18A5A1C51F3753FF00D52A10 /* ios_091401.xcdatamodeld */,
 				18A5A1B91F3753FF00D52A10 /* Supporting Files */,
-				18A5A1D51F375D2F00D52A10 /* UIImage+Border.h */,
-				18A5A1D61F375D2F00D52A10 /* UIImage+Border.m */,
+				1896622C29699B610076A071 /* UIImage+X.h */,
+				1896622B29699B610076A071 /* UIImage+X.m */,
 			);
 			path = ios_091401;
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1896622D29699B610076A071 /* UIImage+X.m in Sources */,
 				18A5A1C71F3753FF00D52A10 /* ios_091401.xcdatamodeld in Sources */,
 				18A5A1C11F3753FF00D52A10 /* ViewController.m in Sources */,
-				18A5A1D71F375D2F00D52A10 /* UIImage+Border.m in Sources */,
 				18A5A1BE1F3753FF00D52A10 /* AppDelegate.m in Sources */,
 				18A5A1BB1F3753FF00D52A10 /* main.m in Sources */,
 			);

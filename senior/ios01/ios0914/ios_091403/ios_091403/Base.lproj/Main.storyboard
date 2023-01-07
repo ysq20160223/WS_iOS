@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,9 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yy_ssm.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Jct-JU-641">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yy_ssm.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Jct-JU-641">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="S5L-yN-EvX" appends="YES" id="FhQ-JK-ALU"/>
@@ -29,6 +28,12 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jct-JU-641" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="4Iu-zG-srQ"/>
+                            <constraint firstItem="Jct-JU-641" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Ze-TM-gVO"/>
+                            <constraint firstAttribute="trailing" secondItem="Jct-JU-641" secondAttribute="trailing" id="QWs-Wu-JDE"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Jct-JU-641" secondAttribute="bottom" id="x5c-Uj-L2D"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageV" destination="Jct-JU-641" id="Vgs-xU-yNM"/>

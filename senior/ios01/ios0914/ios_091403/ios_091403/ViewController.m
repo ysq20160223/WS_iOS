@@ -23,7 +23,7 @@
 // 懒加载遮盖,保存遮盖只创建一次.
 -(UIView *)coverView{
     if (!_coverView) {
-        UIView *view = [UIView.alloc init];
+        UIView *view = UIView.alloc.init;
         view.backgroundColor = UIColor.blackColor;
         view.alpha = 0.7;
         [self.view addSubview:view];
