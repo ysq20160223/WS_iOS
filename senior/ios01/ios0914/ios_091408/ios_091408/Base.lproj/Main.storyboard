@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,21 +70,21 @@
                                             <action selector="setColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8OD-78-Hdg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-LK-l2e" userLabel="center">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNa-LK-l2e" userLabel="center">
                                         <rect key="frame" x="138.5" y="46" width="98" height="34"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="setColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hw3-xV-73I"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2D-Ev-Pk1" userLabel="right">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2D-Ev-Pk1" userLabel="right">
                                         <rect key="frame" x="256.5" y="46" width="98.5" height="34"/>
                                         <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="setColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMG-qZ-MAV"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="IsO-dk-LWE">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="21" translatesAutoresizingMaskIntoConstraints="NO" id="IsO-dk-LWE">
                                         <rect key="frame" x="18" y="4" width="339" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="YxA-3y-9Uo"/>
@@ -135,10 +135,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="centerColorBtn" destination="rNa-LK-l2e" id="L8E-j3-U1e"/>
+                        <outlet property="btnCenterColor" destination="rNa-LK-l2e" id="vdz-HL-kQz"/>
+                        <outlet property="btnLeftColor" destination="X9z-tE-71G" id="xXN-pY-43V"/>
+                        <outlet property="btnRightColor" destination="r2D-Ev-Pk1" id="ewQ-Ad-CYk"/>
                         <outlet property="drawView" destination="shb-gu-JKb" id="kAN-na-LZR"/>
-                        <outlet property="leftColorBtn" destination="X9z-tE-71G" id="p5a-Ao-8QT"/>
-                        <outlet property="rightColorBtn" destination="r2D-Ev-Pk1" id="RNh-3m-ZPu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

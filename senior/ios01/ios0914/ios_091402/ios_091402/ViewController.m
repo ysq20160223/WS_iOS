@@ -37,7 +37,7 @@
 //    [data writeToFile:@"/Users/Apple/Desktop/newImage.jpg" atomically:YES];
     
     NSData *data = UIImagePNGRepresentation(newImage);
-    [data writeToFile:@"/Users/Apple/Desktop/newImage.png" atomically:YES];
+    [data writeToFile:@"/Users/Apple/Desktop/iOS091402.png" atomically:YES];
     
     // 关闭上下文
     UIGraphicsEndImageContext();

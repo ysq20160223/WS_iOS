@@ -16,9 +16,9 @@
 
 @property (weak, nonatomic) IBOutlet DrawView *drawView;
 
-@property (weak, nonatomic) IBOutlet UIButton *leftColorBtn;
-@property (weak, nonatomic) IBOutlet UIButton *centerColorBtn;
-@property (weak, nonatomic) IBOutlet UIButton *rightColorBtn;
+@property (weak, nonatomic) IBOutlet UIButton *btnLeftColor;
+@property (weak, nonatomic) IBOutlet UIButton *btnCenterColor;
+@property (weak, nonatomic) IBOutlet UIButton *btnRightColor;
 
 @end
 
@@ -44,7 +44,7 @@
 // 选中图片
 - (IBAction)photos:(UIBarButtonItem *)sender {
     NSLog(@"");
-    UIImagePickerController *pickVC = [UIImagePickerController.alloc init];
+    UIImagePickerController *pickVC = UIImagePickerController.alloc.init;
     
     pickVC.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum; // 设置照片的来源
     pickVC.delegate = self;
@@ -55,10 +55,12 @@
 #pragma mark - UIImagePickerControllerDelegate start
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     NSLog(@"info: %@", info);
-    UIImage *image = info[UIImagePickerControllerOriginalImage];
     
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
     NSData *data = UIImagePNGRepresentation(image);
-    [data writeToFile:@"/Users/Apple/Desktop/091408.png" atomically:YES];
+    [data writeToFile:@"/Users/Apple/Desktop/iOS091408.png" atomically:YES];
+    
+    NSLog(@"writeToFile success");
     
     [self dismissViewControllerAnimated:YES completion:nil]; //
 }
@@ -89,8 +91,9 @@
 // Adds a photo to the saved photos album.  The optional completionSelector should have the form:
 //  - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    NSLog(@"save success");
+    NSLog(@"UIImageWriteToSavedPhotosAlbum success");
 }
+
 
 // -----
 - (IBAction)valueChanged:(UISlider *)sender {
@@ -102,18 +105,18 @@
     //    NSLog(@"sender: %@", sender);
     [self.drawView setLineColor:sender.backgroundColor];
     
-    if (sender == self.leftColorBtn) {
-        self.leftColorBtn.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
-        self.centerColorBtn.layer.borderColor = self.centerColorBtn.backgroundColor.CGColor;
-        self.rightColorBtn.layer.borderColor = self.rightColorBtn.backgroundColor.CGColor;
-    } else if (sender == self.centerColorBtn) {
-        self.leftColorBtn.layer.borderColor = self.leftColorBtn.backgroundColor.CGColor;
-        self.centerColorBtn.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
-        self.rightColorBtn.layer.borderColor = self.rightColorBtn.backgroundColor.CGColor;
-    } else if (sender == self.rightColorBtn) {
-        self.leftColorBtn.layer.borderColor = self.leftColorBtn.backgroundColor.CGColor;
-        self.centerColorBtn.layer.borderColor = self.centerColorBtn.backgroundColor.CGColor;
-        self.rightColorBtn.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
+    if (sender == self.btnLeftColor) {
+        self.btnLeftColor.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
+        self.btnCenterColor.layer.borderColor = self.btnCenterColor.backgroundColor.CGColor;
+        self.btnRightColor.layer.borderColor = self.btnRightColor.backgroundColor.CGColor;
+    } else if (sender == self.btnCenterColor) {
+        self.btnLeftColor.layer.borderColor = self.btnLeftColor.backgroundColor.CGColor;
+        self.btnCenterColor.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
+        self.btnRightColor.layer.borderColor = self.btnRightColor.backgroundColor.CGColor;
+    } else if (sender == self.btnRightColor) {
+        self.btnLeftColor.layer.borderColor = self.btnLeftColor.backgroundColor.CGColor;
+        self.btnCenterColor.layer.borderColor = self.btnCenterColor.backgroundColor.CGColor;
+        self.btnRightColor.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
     }
 }
 
@@ -129,11 +132,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self initColorBtn:self.leftColorBtn];
-    [self initColorBtn:self.centerColorBtn];
-    [self initColorBtn:self.rightColorBtn];
+    [self initColorBtn:self.btnLeftColor];
+    [self initColorBtn:self.btnCenterColor];
+    [self initColorBtn:self.btnRightColor];
     
-    [self setColor:self.leftColorBtn];
+    [self setColor:self.btnLeftColor];
 }
 
 @end

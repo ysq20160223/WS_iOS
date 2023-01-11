@@ -35,8 +35,8 @@
 }
 
 - (void)erase {
-    NSLog(@"%@", self.backgroundColor);
-    [self setLineColor:self.backgroundColor];
+    [self setLineColor:UIColor.whiteColor];
+    [self setNeedsDisplay];
 }
 
 - (void)setLineWidth:(CGFloat)width {
@@ -51,8 +51,8 @@
 
 //
 - (NSMutableArray *)pathArray {
-    if (_pathArray == nil) {
-        _pathArray = [NSMutableArray array];
+    if (!_pathArray) {
+        _pathArray = NSMutableArray.array;
     }
     return _pathArray;
 }
@@ -61,20 +61,18 @@
     [super awakeFromNib];
     
     // 添加手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    UIPanGestureRecognizer *pan = [UIPanGestureRecognizer.alloc initWithTarget:self action:@selector(pan:)];
     self.width = 1; // 默认宽度
-    self.color = [UIColor blackColor]; // 默认颜色
+    self.color = UIColor.blackColor; // 默认颜色
     [self addGestureRecognizer:pan];
 }
 
 - (void)pan:(UIPanGestureRecognizer *)pan {
-//    NSLog(@"%s", __func__);
-    
     CGPoint curP = [pan locationInView:self];
     
-    if(pan.state == UIGestureRecognizerStateBegan) {
-        MyUIBezierPath *path = [[MyUIBezierPath alloc] init];
-        self.path = [[MyUIBezierPath alloc] init];
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        MyUIBezierPath *path = MyUIBezierPath.alloc.init;
+        self.path = path;
         
         [path setLineWidth:self.width]; // 设置线的宽度
         path.color = self.color; // 设置线的颜色
@@ -84,7 +82,6 @@
         [path setLineJoinStyle:kCGLineJoinRound];
     } else if (pan.state == UIGestureRecognizerStateChanged) {
         [self.path addLineToPoint:curP];
-        
         [self setNeedsDisplay];
     }
 }
@@ -97,9 +94,7 @@
     // Drawing code
     
     for (MyUIBezierPath *path in self.pathArray) {
-        
         [path.color set];
-        
         [path stroke];
     }
 //    [self.path stroke];
