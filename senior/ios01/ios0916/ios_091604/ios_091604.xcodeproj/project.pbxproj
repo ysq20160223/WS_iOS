@@ -113,6 +113,7 @@
 				TargetAttributes = {
 					18B5041A1F3AC035003FC0CF = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = FK5S33WU57;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -277,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FK5S33WU57;
 				GCC_PREFIX_HEADER = ../../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_091604/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -289,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FK5S33WU57;
 				GCC_PREFIX_HEADER = ../../../../PrefixHeader.pch;
 				INFOPLIST_FILE = ios_091604/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

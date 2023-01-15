@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnCenterColor;
 @property (weak, nonatomic) IBOutlet UIButton *btnRightColor;
 
+@property (nonatomic, strong) UIBarButtonItem *barBtnItem;
+
 @end
 
 
@@ -29,16 +31,20 @@
 // 清空
 - (IBAction)clear:(UIBarButtonItem *)sender {
     [self.drawView clear];
+    [self setBarButtonItem:sender];
 }
 
 // 撤销
 - (IBAction)undo:(UIBarButtonItem *)sender {
     [self.drawView undo];
+    [self setBarButtonItem:sender];
 }
 
 // 擦除
 - (IBAction)erase:(UIBarButtonItem *)sender {
     [self.drawView erase];
+    [self setBarButtonItem:sender];
+    [self resetBorderColor];
 }
 
 // 选中图片
@@ -51,6 +57,13 @@
     
     [self presentViewController:pickVC animated:YES completion:nil];
 }
+
+- (void)setBarButtonItem:(UIBarButtonItem *)sender {
+    self.barBtnItem.tintColor = UIColor.systemBlueColor;
+    sender.tintColor = UIColor.magentaColor;
+    self.barBtnItem = sender;
+}
+
 
 #pragma mark - UIImagePickerControllerDelegate start
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -66,14 +79,13 @@
 }
 #pragma mark - UIImagePickerControllerDelegate end
 
+
 // 保存
 - (IBAction)save:(UIBarButtonItem *)sender {
     // 1, 把画板东西生成一张图片保存
     UIGraphicsBeginImageContextWithOptions(self.drawView.bounds.size, NO, 0);
     
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
-    
-    [self.drawView.layer renderInContext:ctx];
+    [self.drawView.layer renderInContext:UIGraphicsGetCurrentContext()];
     
     // 生成一张图片
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -104,22 +116,16 @@
 - (IBAction)setColor:(UIButton *)sender {
     //    NSLog(@"sender: %@", sender);
     [self.drawView setLineColor:sender.backgroundColor];
-    
-    if (sender == self.btnLeftColor) {
-        self.btnLeftColor.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
-        self.btnCenterColor.layer.borderColor = self.btnCenterColor.backgroundColor.CGColor;
-        self.btnRightColor.layer.borderColor = self.btnRightColor.backgroundColor.CGColor;
-    } else if (sender == self.btnCenterColor) {
-        self.btnLeftColor.layer.borderColor = self.btnLeftColor.backgroundColor.CGColor;
-        self.btnCenterColor.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
-        self.btnRightColor.layer.borderColor = self.btnRightColor.backgroundColor.CGColor;
-    } else if (sender == self.btnRightColor) {
-        self.btnLeftColor.layer.borderColor = self.btnLeftColor.backgroundColor.CGColor;
-        self.btnCenterColor.layer.borderColor = self.btnCenterColor.backgroundColor.CGColor;
-        self.btnRightColor.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
-    }
+    [self setBarButtonItem:nil];
+    [self resetBorderColor];
+    sender.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1].CGColor;
 }
 
+- (void)resetBorderColor {
+    self.btnLeftColor.layer.borderColor = self.btnLeftColor.backgroundColor.CGColor;
+    self.btnCenterColor.layer.borderColor = self.btnCenterColor.backgroundColor.CGColor;
+    self.btnRightColor.layer.borderColor = self.btnRightColor.backgroundColor.CGColor;
+}
 
 - (void)initColorBtn:(UIButton *)btn {
     [btn.layer setCornerRadius:btn.frame.size.height * 0.5];

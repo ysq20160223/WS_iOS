@@ -10,7 +10,7 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *myView;
+@property (weak, nonatomic) IBOutlet UIView *v;
 
 @end
 
@@ -26,14 +26,12 @@
     anim.keyPath = @"transform.scale";
     anim.toValue = @.5;
     anim.duration = 3;
-    
-    // 动画完成时不要删除动画
-    anim.removedOnCompletion = NO;
+    anim.removedOnCompletion = NO; // 动画完成时不要删除动画
 //    anim.fillMode = @"forwards";
     anim.fillMode = kCAFillModeForwards;
     
     // 3, 添加动画
-    [self.myView.layer addAnimation:anim forKey:nil];
+    [self.v.layer addAnimation:anim forKey:nil];
 }
 
 @end

@@ -10,7 +10,9 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIView *myView;
+@property (weak, nonatomic) IBOutlet UIView *v;
+
+@property (nonatomic, assign) NSInteger i;
 
 @end
 
@@ -19,46 +21,58 @@
 @implementation ViewController
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self caBasicAnim];
-    
-//    [self caAnimationGroup];
+    if (_i++ % 2 == 0) {
+        XLog
+        [self caBasicAnim];
+    } else {
+        XLog
+        [self caAnimationGroup];
+    }
 }
 
 - (void)caAnimationGroup {
+    int duration = 2;
+    
     // 缩放
     CABasicAnimation *scaleAnim = CABasicAnimation.animation;
     scaleAnim.keyPath = @"transform.scale";
-    scaleAnim.toValue = @.5;
+    scaleAnim.toValue = @2;
+    scaleAnim.duration = duration;
     
     // 平移
-    CABasicAnimation *translationAnim = CABasicAnimation.animation;
-    translationAnim.keyPath = @"position.y";
-    translationAnim.toValue = @(400);
+    CABasicAnimation *positionAnim = CABasicAnimation.animation;
+    positionAnim.keyPath = @"position.y";
+    positionAnim.toValue = @(0);
+    positionAnim.duration = duration;
     
     CAAnimationGroup *group = CAAnimationGroup.animation;
-    group.animations = @[scaleAnim, translationAnim];
+    group.animations = @[scaleAnim, positionAnim];
     group.fillMode = kCAFillModeForwards;
     group.removedOnCompletion = NO;
     
-    [self.myView.layer addAnimation:group forKey:nil]; // 添加动画
+    [self.v.layer addAnimation:group forKey:nil]; // 添加动画
 }
 
 - (void)caBasicAnim {
+    int duration = 1;
+    
     // 缩放
     CABasicAnimation *scaleAnim = CABasicAnimation.animation;
     scaleAnim.keyPath = @"transform.scale";
     scaleAnim.toValue = @.5;
+    scaleAnim.duration = duration;
     scaleAnim.removedOnCompletion = NO;
     scaleAnim.fillMode = kCAFillModeForwards;
-    [self.myView.layer addAnimation:scaleAnim forKey:nil];
+    [self.v.layer addAnimation:scaleAnim forKey:nil];
     
     // 平移
-    CABasicAnimation *translationAnim = CABasicAnimation.animation;
-    translationAnim.keyPath = @"position.y";
-    translationAnim.toValue = @(400);
-    translationAnim.removedOnCompletion = NO;
-    translationAnim.fillMode = kCAFillModeForwards;
-    [self.myView.layer addAnimation:translationAnim forKey:nil];
+    CABasicAnimation *positionAnim = CABasicAnimation.animation;
+    positionAnim.keyPath = @"position.y";
+    positionAnim.toValue = @(400);
+    positionAnim.duration = duration;
+    positionAnim.removedOnCompletion = NO;
+    positionAnim.fillMode = kCAFillModeForwards;
+    [self.v.layer addAnimation:positionAnim forKey:nil];
 }
 
 @end

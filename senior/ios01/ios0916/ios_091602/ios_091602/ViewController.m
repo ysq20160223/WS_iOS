@@ -21,13 +21,14 @@
     
     //
     CALayer *layer = CALayer.layer;
-    
-    layer.frame = CGRectMake(50, 50, 100, 100);
-    layer.backgroundColor = UIColor.cyanColor.CGColor;
-    
     [self.view.layer addSublayer:layer];
     
+    layer.frame = CGRectMake(100, 100, 100, 100);
+    layer.backgroundColor = UIColor.cyanColor.CGColor;
     layer.contents = (id)[UIImage imageNamed:@"a_li"].CGImage;
+    
+    layer.cornerRadius = 10;
+    layer.masksToBounds = YES;
 }
 
 @end

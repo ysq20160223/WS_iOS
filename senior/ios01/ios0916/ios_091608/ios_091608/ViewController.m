@@ -12,7 +12,7 @@
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *icon;
+@property (weak, nonatomic) IBOutlet UIImageView *iv;
 
 @end
 
@@ -23,9 +23,9 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"statusH: %f", UIApplication.sharedApplication.statusBarFrame.size.height);
     
-    [self iconShake];
+//    [self iconShake];
     
-//    [self iconPath];
+    [self iconPath];
 }
 
 - (void)iconPath {
@@ -39,22 +39,17 @@
     
     // 路径
     UIBezierPath *path = UIBezierPath.bezierPath;
-    
-    [path moveToPoint:CGPointMake(self.icon.layer.position.x, self.icon.layer.position.y)];
-    [path addLineToPoint:CGPointMake(self.icon.frame.size.width * 0.5, [UIApplication sharedApplication].statusBarFrame.size.height + self.icon.frame.size.height * 0.5)];
+    [path moveToPoint:CGPointMake(self.iv.layer.position.x, self.iv.layer.position.y)];
+    [path addLineToPoint:CGPointMake(self.iv.frame.size.width * 0.5, UIApplication.sharedApplication.statusBarFrame.size.height + self.iv.frame.size.height * 0.5)];
     
     anim.path = path.CGPath;
-    
     anim.duration = 3;
-    
-    //
-    //    anim.repeatCount = MAXFLOAT;
-    //    anim.autoreverses = YES;
-    
+    anim.repeatCount = MAXFLOAT;
+    anim.autoreverses = YES;
     anim.removedOnCompletion = NO;
     anim.fillMode = kCAFillModeForwards;
     
-    [self.icon.layer addAnimation:anim forKey:nil];
+    [self.iv.layer addAnimation:anim forKey:nil];
     
 }
 
@@ -64,19 +59,18 @@
     
     // 设置属性
     anim.keyPath = @"transform.rotation";
-    
     anim.repeatCount = MAXFLOAT;
     
     // 1
-    anim.duration = .5;
-    anim.values = @[@(angle2Radian(-30)), @(angle2Radian(30))];
+    anim.duration = .15;
+    anim.values = @[@(angle2Radian(-6)), @(angle2Radian(6))];
     anim.autoreverses = YES;
     
     // 2
     //    anim.duration = 1;
     //    anim.values = @[@(angle2Rad(-30)), @(angle2Rad(30)), @(angle2Rad(-30))];
     
-    [self.icon.layer addAnimation:anim forKey:nil];
+    [self.iv.layer addAnimation:anim forKey:nil];
 }
 
 

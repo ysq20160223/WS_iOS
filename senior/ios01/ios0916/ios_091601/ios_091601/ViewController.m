@@ -46,16 +46,13 @@
 - (void)uiImageViewlayer {
     self.imageView.layer.shadowOpacity = 1;
     self.imageView.layer.shadowOffset = CGSizeMake(10, 10);
-    
     self.imageView.layer.shadowRadius = 10;
     self.imageView.layer.shadowColor = UIColor.cyanColor.CGColor;
     
     // borderColor 和 borderWidth 一起使用
     self.imageView.layer.borderColor = UIColor.blueColor.CGColor;
     self.imageView.layer.borderWidth = 3;
-    
     self.imageView.layer.cornerRadius = 20;
-    
 //    self.imageView.layer.masksToBounds = YES; // 超过根层以外的全部被裁剪
 }
 
@@ -68,7 +65,6 @@
     // borderColor 和 borderWidth 一起使用
     self.redView.layer.borderColor = UIColor.blueColor.CGColor; // 边框颜色
     self.redView.layer.borderWidth = 3; // 边框宽度
-    
     self.redView.layer.cornerRadius = 20; // 圆角半径
 }
 

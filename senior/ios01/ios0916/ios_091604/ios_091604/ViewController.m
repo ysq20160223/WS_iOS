@@ -50,16 +50,14 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    
     [CATransaction begin];
-    [CATransaction setAnimationDuration:3]; // 设置事务动画的执行时长
+    [CATransaction setAnimationDuration:1]; // 设置事务动画的执行时长
     [CATransaction setDisableActions:NO]; // 设置事务有没有动画
     
     
     self.layer.bounds = CGRectMake(0, 0, arc4random_uniform(50) + 50, arc4random_uniform(50) + 50); // 缩放比例
     self.layer.position = CGPointMake(arc4random_uniform(50) + self.view.bounds.size.width * 0.5, arc4random_uniform(50) + self.view.bounds.size.height * 0.5);
     self.layer.backgroundColor = XRandomColor().CGColor;
-    
     self.layer.cornerRadius = arc4random_uniform(25);
     
     [CATransaction commit];
