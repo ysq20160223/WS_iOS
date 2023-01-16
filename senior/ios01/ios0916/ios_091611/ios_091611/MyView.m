@@ -19,7 +19,7 @@
 */
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"%s, %s", __func__, __PRETTY_FUNCTION__);
+    XLog
     
 }
 
