@@ -73,7 +73,7 @@
         UIImageView *iv = [UIImageView.alloc initWithFrame:CGRectMake(i * w, 0, w, h)];
         [self.scrollView addSubview:iv];
         
-        iv.image = [UIImage imageNamed:array[i].icon];
+        iv.image = [UIImage imageNamed:[array[i].nameNoSuffix stringByAppendingString:@".jpg"]];
         [iv mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.bottom.mas_equalTo(self);
             make.left.mas_equalTo(i * w);

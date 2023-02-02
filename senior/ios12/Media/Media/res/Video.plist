@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>少年游 大话西游情义 CG 风雪同袍</string>
+		<key>filename</key>
+		<string>https://dh2.v.netease.com/2017/cg/fxtpty.mp4</string>
+		<key>author</key>
+		<string>姚斯婷</string>
+		<key>icon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>少年的我们</string>
+		<key>filename</key>
+		<string>https://crazynote.v.netease.com/2019/0811/6bc0a084ee8655bfb2fa31757a0570f4qt.mp4</string>
+		<key>author</key>
+		<string>老玩家第二季 青春有你</string>
+		<key>icon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>奋战可以 孤军不行</string>
+		<key>filename</key>
+		<string>https://dhxy.v.netease.com/2019/0813/d792f23a8da810e73625a155f44a5d96qt.mp4</string>
+		<key>author</key>
+		<string>老玩家第二季 青春有你～</string>
+		<key>icon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>再见根据地</string>
+		<key>filename</key>
+		<string>https://dhxy.v.netease.com/2019/0814/5757db881a2aff4543b7d9c846f3f415qt.mp4</string>
+		<key>author</key>
+		<string>老玩家第二季 青春有你！</string>
+		<key>icon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>一生有你 大话西游</string>
+		<key>filename</key>
+		<string>https://xy2.v.netease.com/r/video/20190814/7db8102c-1b18-4a59-ac70-ec03137f1c2e.mp4</string>
+		<key>author</key>
+		<string>黑撒团队</string>
+		<key>icon</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>刺绣 传统艺术</string>
+		<key>filename</key>
+		<string>https://xy2.v.netease.com/r/video/20190110/bea8e70d-ffc0-4433-b250-0393cff10b75.mp4</string>
+		<key>author</key>
+		<string>表现美的形式</string>
+		<key>icon</key>
+		<string></string>
+	</dict>
+</array>
+</plist>

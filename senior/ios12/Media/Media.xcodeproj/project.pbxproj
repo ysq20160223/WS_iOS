@@ -70,6 +70,7 @@
 		1864345F298AB2F000726B28 /* thief_user_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 18643455298AB2F000726B28 /* thief_user_profile.png */; };
 		18643460298AB2F000726B28 /* wakuang_user_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 18643456298AB2F000726B28 /* wakuang_user_profile.png */; };
 		18643461298AB2F000726B28 /* thief.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 18643457298AB2F000726B28 /* thief.mp4 */; };
+		18643467298BFDB100726B28 /* Video.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18643466298BFDB100726B28 /* Video.plist */; };
 		18980D3828C8CDCD002E609E /* head_arrow_right_grey@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18980D3728C8CDCD002E609E /* head_arrow_right_grey@3x.png */; };
 		18980D3C28C8D1EC002E609E /* AudioGridCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18980D3A28C8D1EC002E609E /* AudioGridCVCell.m */; };
 		18980D3D28C8D1EC002E609E /* AudioGridCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18980D3B28C8D1EC002E609E /* AudioGridCVCell.xib */; };
@@ -362,8 +363,6 @@
 		18FA17FC298AAA88008FCB24 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA170F298AAA87008FCB24 /* DDASLLogCapture.m */; };
 		18FA17FD298AAA88008FCB24 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA1715298AAA88008FCB24 /* GCDAsyncUdpSocket.m */; };
 		18FA17FE298AAA88008FCB24 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FA1716298AAA88008FCB24 /* GCDAsyncSocket.m */; };
-		18FA1804298AAEB7008FCB24 /* Video.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FA1802298AAEB7008FCB24 /* Video.plist */; };
-		18FA1805298AAEB7008FCB24 /* Audio.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18FA1803298AAEB7008FCB24 /* Audio.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -460,6 +459,7 @@
 		18643455298AB2F000726B28 /* thief_user_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thief_user_profile.png; sourceTree = "<group>"; };
 		18643456298AB2F000726B28 /* wakuang_user_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wakuang_user_profile.png; sourceTree = "<group>"; };
 		18643457298AB2F000726B28 /* thief.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = thief.mp4; sourceTree = "<group>"; };
+		18643466298BFDB100726B28 /* Video.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Video.plist; sourceTree = "<group>"; };
 		18980D3728C8CDCD002E609E /* head_arrow_right_grey@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "head_arrow_right_grey@3x.png"; sourceTree = "<group>"; };
 		18980D3928C8D1EC002E609E /* AudioGridCVCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioGridCVCell.h; sourceTree = "<group>"; };
 		18980D3A28C8D1EC002E609E /* AudioGridCVCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioGridCVCell.m; sourceTree = "<group>"; };
@@ -1051,8 +1051,6 @@
 		18FA1716298AAA88008FCB24 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		18FA1717298AAA88008FCB24 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		18FA1718298AAA88008FCB24 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
-		18FA1802298AAEB7008FCB24 /* Video.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Video.plist; path = Media/Video.plist; sourceTree = SOURCE_ROOT; };
-		18FA1803298AAEB7008FCB24 /* Audio.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Audio.plist; path = Media/Audio.plist; sourceTree = SOURCE_ROOT; };
 		1BB73D516D1558335C0E049B /* Pods-Media.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Media.release.xcconfig"; path = "Target Support Files/Pods-Media/Pods-Media.release.xcconfig"; sourceTree = "<group>"; };
 		6ECA86795FCD6A69C2AAC03C /* libPods-Media.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Media.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E795ED8E3BC2C9B4BD450443 /* Pods-Media.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Media.debug.xcconfig"; path = "Target Support Files/Pods-Media/Pods-Media.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1393,8 +1391,7 @@
 		18FA12B4298AA65D008FCB24 /* res */ = {
 			isa = PBXGroup;
 			children = (
-				18FA1803298AAEB7008FCB24 /* Audio.plist */,
-				18FA1802298AAEB7008FCB24 /* Video.plist */,
+				18643466298BFDB100726B28 /* Video.plist */,
 				1864344D298AB2F000726B28 /* video */,
 				18FA1303298AA752008FCB24 /* audio */,
 			);
@@ -1406,32 +1403,32 @@
 			children = (
 				18FA1304298AA752008FCB24 /* PingFanZhiLu.mp3 */,
 				18FA1305298AA752008FCB24 /* PingFanZhiLu.lrc */,
+				18FA131F298AA752008FCB24 /* PingFanZhiLu.jpg */,
+				18FA1317298AA752008FCB24 /* KouShiXinFei.mp3 */,
+				18FA131D298AA752008FCB24 /* KouShiXinFei.lrc */,
 				18FA1306298AA752008FCB24 /* KouShiXinFei.jpg */,
 				18FA1307298AA752008FCB24 /* QiFengLe.mp3 */,
+				18FA130F298AA752008FCB24 /* QiFengLe.lrc */,
+				18FA1315298AA752008FCB24 /* QiFengLe.jpg */,
 				18FA1308298AA752008FCB24 /* PianAi.mp3 */,
+				18FA1310298AA752008FCB24 /* PianAi.lrc */,
+				18FA1316298AA752008FCB24 /* PianAi.jpg */,
+				18FA1314298AA752008FCB24 /* WeiLong.mp3 */,
+				18FA131E298AA752008FCB24 /* WeiLong.lrc */,
 				18FA1309298AA752008FCB24 /* WeiLong.jpg */,
 				18FA130A298AA752008FCB24 /* MingNianJinRi.mp3 */,
+				18FA130E298AA752008FCB24 /* MingNianJinRi.lrc */,
+				18FA1313298AA752008FCB24 /* MingNianJinRi.jpg */,
 				18FA130B298AA752008FCB24 /* FenShouShuoAiNi.mp3 */,
 				18FA130C298AA752008FCB24 /* FenShouShuoAiNi.lrc */,
+				18FA1319298AA752008FCB24 /* FenShouShuoAiNi.jpg */,
+				18FA131B298AA752008FCB24 /* YiBaiWanGeKeNeng.mp3 */,
+				18FA131A298AA752008FCB24 /* YiBaiWanGeKeNeng.lrc */,
 				18FA130D298AA752008FCB24 /* YiBaiWanGeKeNeng.jpg */,
-				18FA130E298AA752008FCB24 /* MingNianJinRi.lrc */,
-				18FA130F298AA752008FCB24 /* QiFengLe.lrc */,
-				18FA1310298AA752008FCB24 /* PianAi.lrc */,
+				18FA131C298AA752008FCB24 /* XinYueShenHua.mp3 */,
+				18FA1318298AA752008FCB24 /* XinYueShenHua.lrc */,
 				18FA1311298AA752008FCB24 /* XinYueShenHua.jpg */,
 				18FA1312298AA752008FCB24 /* audio_list.json */,
-				18FA1313298AA752008FCB24 /* MingNianJinRi.jpg */,
-				18FA1314298AA752008FCB24 /* WeiLong.mp3 */,
-				18FA1315298AA752008FCB24 /* QiFengLe.jpg */,
-				18FA1316298AA752008FCB24 /* PianAi.jpg */,
-				18FA1317298AA752008FCB24 /* KouShiXinFei.mp3 */,
-				18FA1318298AA752008FCB24 /* XinYueShenHua.lrc */,
-				18FA1319298AA752008FCB24 /* FenShouShuoAiNi.jpg */,
-				18FA131A298AA752008FCB24 /* YiBaiWanGeKeNeng.lrc */,
-				18FA131B298AA752008FCB24 /* YiBaiWanGeKeNeng.mp3 */,
-				18FA131C298AA752008FCB24 /* XinYueShenHua.mp3 */,
-				18FA131D298AA752008FCB24 /* KouShiXinFei.lrc */,
-				18FA131E298AA752008FCB24 /* WeiLong.lrc */,
-				18FA131F298AA752008FCB24 /* PingFanZhiLu.jpg */,
 			);
 			name = audio;
 			path = ../../../../../../Web/WebRoot/media/audio;
@@ -2871,6 +2868,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				183895B328C302C800B9194B /* ic_launch_screen@3x.png in Resources */,
+				18643467298BFDB100726B28 /* Video.plist in Resources */,
 				18FA1796298AAA88008FCB24 /* Player.bundle in Resources */,
 				18B23E282478B52C00170BAD /* player_btn_pause_highlight@2x.png in Resources */,
 				18C94E1128C4DD6500FAE0B3 /* VideoVc.xib in Resources */,
@@ -2890,11 +2888,9 @@
 				18B23E302478B52C00170BAD /* player_btn_pre_normal@2x.png in Resources */,
 				18980D3D28C8D1EC002E609E /* AudioGridCVCell.xib in Resources */,
 				18FA1340298AA752008FCB24 /* FenShouShuoAiNi.jpg in Resources */,
-				18FA1804298AAEB7008FCB24 /* Video.plist in Resources */,
 				18FA133B298AA752008FCB24 /* WeiLong.mp3 in Resources */,
 				18FA1331298AA752008FCB24 /* MingNianJinRi.mp3 in Resources */,
 				18FA1336298AA752008FCB24 /* QiFengLe.lrc in Resources */,
-				18FA1805298AAEB7008FCB24 /* Audio.plist in Resources */,
 				1864345B298AB2F000726B28 /* wakuang.mp4 in Resources */,
 				18FA1334298AA752008FCB24 /* YiBaiWanGeKeNeng.jpg in Resources */,
 				18389CB128C366AE00B9194B /* AudioListCVCell.xib in Resources */,

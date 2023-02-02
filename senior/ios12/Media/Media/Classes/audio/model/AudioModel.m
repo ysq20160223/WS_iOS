@@ -10,17 +10,32 @@
 
 /*
  @property (nonatomic, strong) NSString *name;
- @property (nonatomic, strong) NSString *filename;
- @property (nonatomic, strong) NSString *lrcname;
+ @property (nonatomic, strong) NSString *url;
+ @property (nonatomic, strong) NSString *author;
 
- @property (nonatomic, strong) NSString *singer;
- @property (nonatomic, strong) NSString *singerIcon;
- @property (nonatomic, strong) NSString *icon;
+ @property (nonatomic, strong) NSString *ID;
+ @property (nonatomic, strong) NSString *albumPic;
  */
 @implementation AudioModel
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@[name: %@; filename: %@; lrcname: %@; singer: %@; singerIcon: %@; icon: %@", self.class, self.name, self.filename, self.lrcname, self.singer, self.singerIcon, self.icon];
+    return [NSString stringWithFormat:@"%@[name: %@; url: %@; author: %@; nameNoSuffix: %@; albumPic: %@", self.class, self.name, self.url, self.author, self.nameNoSuffix, self.albumPic];
 }
 
 @end
+
+
+
+@implementation AudioListModel
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@[CODE: %ld; data: %@]", self.class, self.CODE, self.data];
+}
+
+@end
+
+
+
+
+
+

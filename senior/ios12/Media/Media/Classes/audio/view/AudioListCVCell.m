@@ -26,9 +26,9 @@
 }
 
 - (void)setAudioModel:(AudioModel *)audioModel withIndexPath:(NSIndexPath *)indexPath {
-    self.ivIcon.image = [UIImage imageNamed:audioModel.icon];
-    self.lblFileName.text = audioModel.filename;
-    self.lblSinger.text = audioModel.singer;
+    self.ivIcon.image = [UIImage imageNamed:[audioModel.nameNoSuffix stringByAppendingString:@".jpg"]];
+    self.lblFileName.text = audioModel.nameNoSuffix;
+    self.lblSinger.text = audioModel.author;
 }
 
 @end

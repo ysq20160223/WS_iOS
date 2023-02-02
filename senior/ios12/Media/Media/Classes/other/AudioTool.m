@@ -15,6 +15,7 @@
 
 #import <MJExtension.h>
 
+#
 
 @implementation AudioTool
 
@@ -27,10 +28,30 @@ static NSMutableDictionary *_soudIDs;
 static NSMutableDictionary *_players;
 
 
++ (void)load {
+    [AudioListModel mj_setupObjectClassInArray:^NSDictionary *{
+            return @{
+                @"data" : [AudioModel class],
+            };
+        }];
+}
+
 + (void)initialize {
     if (!_audioArray) {
 //        _audioList = [AudioModel objectArrayWithFilename:@"Audio.plist" error:nil];
-        _audioArray = [AudioModel mj_objectArrayWithFilename:@"Audio.plist"];
+//        _audioArray = [AudioModel mj_objectArrayWithFilename:@"Audio.plist"];
+        
+        NSString *audioListPath = [NSBundle.mainBundle pathForResource:@"audio_list.json" ofType:nil];
+//        NSLog(@"%@", audioList);
+        
+        AudioListModel *audioListModel = [AudioListModel mj_objectWithKeyValues:[NSData dataWithContentsOfFile:audioListPath]];
+//        NSLog(@"%@", audioListModel);
+        
+        _audioArray = audioListModel.data;
+        for (AudioModel *audioModel in _audioArray) {
+            audioModel.nameNoSuffix = [[audioModel.url stringByReplacingOccurrencesOfString:@"media/audio/" withString:@""] stringByReplacingOccurrencesOfString:@".mp3" withString:@""];
+        }
+//        NSLog(@"%@", _audioArray);
     }
     
     if (!_playingAudio && _audioArray && _audioArray.count > 0) {

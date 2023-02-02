@@ -107,17 +107,17 @@
     
     // 2
     self.lblSongName.text = audioModel.name;
-    self.lblSinger.text = audioModel.singer;
+    self.lblSinger.text = audioModel.author;
     
     
-    self.ivAlbum.image = [UIImage imageNamed:audioModel.icon];
-    [self.btnCenterIcon setImage:[UIImage imageNamed:audioModel.icon] forState:UIControlStateNormal];
-    [self.btnCenterIcon setImage:[UIImage imageNamed:audioModel.icon] forState:UIControlStateHighlighted];
-    self.svLrc.lrcName = [AudioTool playingAudio].lrcname;
+    self.ivAlbum.image = [UIImage imageNamed:[audioModel.nameNoSuffix stringByAppendingString:@".jpg"]];
+    [self.btnCenterIcon setImage:[UIImage imageNamed:[audioModel.nameNoSuffix stringByAppendingString:@".jpg"]] forState:UIControlStateNormal];
+    [self.btnCenterIcon setImage:[UIImage imageNamed:[audioModel.nameNoSuffix stringByAppendingString:@".jpg"]] forState:UIControlStateHighlighted];
+    self.svLrc.lrcName = [audioModel.nameNoSuffix stringByAppendingString:@".lrc"];
     self.svLrc.lrcLabel = self.lblLrc;
     
     // 3
-    self.audioPlayer = [AudioTool playAudioWithFileName:audioModel.filename];
+    self.audioPlayer = [AudioTool playAudioWithFileName:[audioModel.nameNoSuffix stringByAppendingString:@".mp3"]];
     self.audioPlayer.delegate = self;
     [self updateProgressInfo];
     [self addCenterIconRotate];
@@ -241,8 +241,7 @@
 
 - (void)playAudio:(AudioModel *)audioModel {
     // 1
-    AudioModel *playingAudioModel = [AudioTool playingAudio];
-    [AudioTool pauseAudioWithFileName:playingAudioModel.filename];
+    [AudioTool pauseAudioWithFileName:[AudioTool.playingAudio.nameNoSuffix stringByAppendingString:@".mp3"]];
     
     // 2
     [AudioTool setupPlayingAudioModel:audioModel];
@@ -298,7 +297,7 @@
 - (void)setupProgressTimer {
     [self updateProgressInfo];
     self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateProgressInfo) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:self.progressTimer forMode:NSRunLoopCommonModes];
+    [NSRunLoop.mainRunLoop addTimer:self.progressTimer forMode:NSRunLoopCommonModes];
 }
 
 
@@ -318,7 +317,7 @@
 #pragma mark - 歌词定时器
 - (void)addLrcCADisplayLink {
     self.lrcCADisplayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateLrcInfo)];
-    [self.lrcCADisplayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    [self.lrcCADisplayLink addToRunLoop:NSRunLoop.mainRunLoop forMode:NSRunLoopCommonModes];
 }
 
 
@@ -340,13 +339,13 @@
     // 2, 设置锁屏参数
     NSMutableDictionary *playingDict = [NSMutableDictionary dictionary];
     [playingDict setObject:audioModel.name forKey:MPMediaItemPropertyAlbumTitle];
-    [playingDict setObject:audioModel.singer forKey:MPMediaItemPropertyArtist];
+    [playingDict setObject:audioModel.author forKey:MPMediaItemPropertyArtist];
     [playingDict setObject:@(self.audioPlayer.duration) forKey:MPMediaItemPropertyPlaybackDuration];
     [playingDict setObject:@(self.audioPlayer.currentTime) forKey:MPNowPlayingInfoPropertyElapsedPlaybackTime];
     
     //    [playingDict setObject:[MPMediaItemArtwork.alloc initWithImage:[UIImage imageNamed:audioModel.icon]] forKey:MPMediaItemPropertyArtwork];
     [playingDict setObject:[MPMediaItemArtwork.alloc initWithBoundsSize:CGSizeMake(200, 200) requestHandler:^UIImage * _Nonnull(CGSize size) {
-        return [UIImage imageNamed:audioModel.icon];
+        return [UIImage imageNamed:[audioModel.nameNoSuffix stringByAppendingString:@".jpg"]];
     }] forKey:MPMediaItemPropertyArtwork];
     
     playingInfoCenter.nowPlayingInfo = playingDict;
