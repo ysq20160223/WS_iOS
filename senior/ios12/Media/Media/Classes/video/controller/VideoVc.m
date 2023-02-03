@@ -11,13 +11,53 @@
 #import "VideoTool.h"
 #import "UIView+X.h"
 
+#import <SJVideoPlayer.h>
+
 @interface VideoVc ()
-@property (nonatomic, strong) Player *player;
+
+@property (weak, nonatomic) IBOutlet UIView *vPlayerContainer;
+@property (nonatomic, strong) SJVideoPlayer *player;
 @end
 
 
 
 @implementation VideoVc
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.player vc_viewDidAppear];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.player vc_viewWillDisappear];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.player vc_viewDidDisappear];
+}
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (BOOL)prefersHomeIndicatorAutoHidden {
+    return YES;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,37 +79,38 @@
 
 - (void)initPlayer {
     self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     NSLog(@"Player init start");
-    self.player = [Player.alloc init];
+    self.player = SJVideoPlayer.player;
     NSLog(@"Player init end");
-    self.player.edgeLayer.showResidentBackButton = NO;
-    self.player.edgeLayer.hiddenBackBtnWhenOrientationIsPortrait = YES;
+    self.player.defaultEdgeControlLayer.fixesBackItem = NO;
+    self.player.defaultEdgeControlLayer.hiddenBackButtonWhenOrientationIsPortrait = YES;
     self.player.pausedToKeepAppearState = YES;
-    self.player.layerAppearManagerProtocol.interval = 5; // 设置控制层隐藏间隔
+    self.player.controlLayerAppearManager.interval = 5; // 设置控制层隐藏间隔
     self.player.resumePlaybackWhenAppDidEnterForeground = YES;
     self.player.autoplayWhenSetNewAsset = YES;
     
-    URLAsset *asset = [URLAsset.alloc initWithURL:[NSURL URLWithString:VideoTool.playingVideo.filename]];
+    SJVideoPlayerURLAsset *asset = [SJVideoPlayerURLAsset.alloc initWithURL:[NSURL URLWithString:VideoTool.playingVideo.filename]];
     asset.startPosition = 1;
     NSLog(@"set player URLAsset");
-    self.player.urlAsset = asset;
+    self.player.URLAsset = asset;
 
-    [self.view addSubview:self.player.playerView];
+//    [self.view addSubview:self.player.view];
+    [self.vPlayerContainer addSubview:self.player.view];
     
     
-    self.player.playerView.frame = self.view.bounds;
-    [self.player.playerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.inset = 0; /// 显示 ContainerView 红色背景颜色
+    self.player.view.frame = self.view.bounds;
+    [self.player.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.offset(0); /// 显示 ContainerView 红色背景颜色
     }];
-
     
-    __weak typeof(self) _weakSelf = self;
-    self.player.rotationObserver.rotationDidStartExeBlock = ^(id<RotationManagerProtocol>  _Nonnull mgr) {
-        __strong typeof(_weakSelf) self = _weakSelf;
-        if ( self ) {
-            NSLog(@"%@; currentOrientation: %ld", mgr, mgr.currentOrientation);
-        }
+    __weak typeof(self) _self = self;
+    _player.rotationObserver.onRotatingChanged = ^(id<SJRotationManager>  _Nonnull mgr, BOOL isRotating) {
+        __strong typeof(_self) self = _self;
+        if ( !self ) return ;
+        XLog
     };
+    
 }
 
 

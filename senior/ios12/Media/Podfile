@@ -1,4 +1,8 @@
-platform :ios, '7.0'
+platform :ios, '11.0'
+
+#install! 'cocoapods', :disable_input_output_paths => true
+install! 'cocoapods', disable_input_output_paths: true, generate_multiple_pod_projects: true
+
 target 'Media' do
     
 ##
@@ -18,6 +22,10 @@ pod 'MJRefresh'
 
 ##
 pod 'MBProgressHUD'
+
+##
+pod 'SJVideoPlayer'
+#pod 'SJBaseVideoPlayer'
 
 end
 

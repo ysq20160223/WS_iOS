@@ -9,18 +9,29 @@
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 
+#import "SJVideoPlayer.h"
+#import "SJRotationManager.h"
+
 @interface AppDelegate ()
 
 @end
 
+
+
 @implementation AppDelegate
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    UIInterfaceOrientationMask mask = [SJRotationManager supportedInterfaceOrientationsForWindow:window];
+    NSLog(@"orientations: %ld", mask);
+    return mask;
+}
 
+#pragma mark -
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     // 1, 获取音频会话
-    AVAudioSession *session = [AVAudioSession sharedInstance];
+    AVAudioSession *session = AVAudioSession.sharedInstance;
 
     // 2, 设置为后台类型
     [session setCategory:AVAudioSessionCategoryPlayback error:nil];
