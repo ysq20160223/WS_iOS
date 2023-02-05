@@ -5,13 +5,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoVc">
             <connections>
-                <outlet property="vPlayerContainer" destination="aus-Ff-1Dk" id="wqp-hs-ALI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,26 +17,9 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aus-Ff-1Dk">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" red="0.13333499430000001" green="0.13333114979999999" blue="0.1333318949" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <constraints>
-                <constraint firstItem="aus-Ff-1Dk" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="6X2-Ry-zlz"/>
-                <constraint firstItem="aus-Ff-1Dk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XGT-2B-ibu"/>
-                <constraint firstAttribute="bottom" secondItem="aus-Ff-1Dk" secondAttribute="bottom" id="aDW-W0-W9u"/>
-                <constraint firstItem="aus-Ff-1Dk" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="zlp-q1-GTS"/>
-            </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="65.625"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

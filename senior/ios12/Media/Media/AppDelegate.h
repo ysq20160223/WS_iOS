@@ -10,7 +10,7 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property(nonatomic,assign) BOOL allowRotation; // 是否允许转向(即横屏)
+//@property(nonatomic,assign) BOOL allowRotation; // 是否允许转向(即横屏)
 
 @property (strong, nonatomic) UIWindow *window;
 
