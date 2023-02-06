@@ -27,9 +27,10 @@
     CALayer *layer = CALayer.layer;
     layer.bounds = CGRectMake(0, 0, 100, 100);
     layer.backgroundColor = UIColor.cyanColor.CGColor;
+    
     layer.position = CGPointMake(self.view.bounds.size.width * .5, self.view.bounds.size.height * .5);
     
-//    layer.anchorPoint = CGPointMake(.5, .5);
+    layer.anchorPoint = CGPointMake(.0, .0);
     
     [self.view.layer addSublayer:layer];
     
