@@ -26,7 +26,7 @@
 
 @property (nonatomic, weak) CALayer *layer;
 
-@property (weak, nonatomic) IBOutlet UIView *myView;
+@property (weak, nonatomic) IBOutlet UIView *v;
 
 @end
 
@@ -63,7 +63,7 @@
     [CATransaction commit];
     
     // UIView 根
-//    self.myView.layer.position = CGPointMake(300, 300);
+    self.v.layer.position = CGPointMake(300, 300);
 }
 
 

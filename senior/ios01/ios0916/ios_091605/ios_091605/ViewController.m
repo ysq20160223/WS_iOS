@@ -20,7 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblCalendar;
 
-@property (weak, nonatomic) IBOutlet UIImageView *vClock;
+@property (weak, nonatomic) IBOutlet UIImageView *ivClock;
 
 @property (weak, nonatomic) CALayer *layerSecond;
 @property (weak, nonatomic) CALayer *layerMinute;
@@ -73,35 +73,38 @@
     CALayer *layer = CALayer.layer;
     layer.backgroundColor = UIColor.redColor.CGColor;
     layer.bounds = CGRectMake(0, 0, 1, 81);
-    layer.position = CGPointMake(self.vClock.bounds.size.width * .5, self.vClock.bounds.size.height * .5);
+    layer.position = CGPointMake(self.ivClock.bounds.size.width * .5, self.ivClock.bounds.size.height * .5);
     layer.anchorPoint = CGPointMake(.5, 1);
+    layer.cornerRadius = 0.5;
     
     self.layerSecond = layer;
-    [self.vClock.layer addSublayer:layer];
+    [self.ivClock.layer addSublayer:layer];
 }
 
 // 添加分针
 - (void)addMinute {
     CALayer *layer = CALayer.layer;
     layer.backgroundColor = UIColor.blackColor.CGColor;
-    layer.bounds = CGRectMake(0, 0, 2, 51);
-    layer.position = CGPointMake(self.vClock.bounds.size.width * .5, self.vClock.bounds.size.height * .5);
+    layer.bounds = CGRectMake(0, 0, 2.5, 51);
+    layer.position = CGPointMake(self.ivClock.bounds.size.width * .5, self.ivClock.bounds.size.height * .5);
     layer.anchorPoint = CGPointMake(.5, 1);
+    layer.cornerRadius = 1;
     
     self.layerMinute = layer;
-    [self.vClock.layer addSublayer:layer];
+    [self.ivClock.layer addSublayer:layer];
 }
 
 // 添加时针
 - (void)addHour {
     CALayer *layer = CALayer.layer;
     layer.backgroundColor = UIColor.blackColor.CGColor;
-    layer.bounds = CGRectMake(0, 0, 3, 31);
-    layer.position = CGPointMake(self.vClock.bounds.size.width * .5, self.vClock.bounds.size.height * .5);
+    layer.bounds = CGRectMake(0, 0, 4, 31);
+    layer.position = CGPointMake(self.ivClock.bounds.size.width * .5, self.ivClock.bounds.size.height * .5);
     layer.anchorPoint = CGPointMake(.5, 1);
+    layer.cornerRadius = 2;
     
     self.layerHour = layer;
-    [self.vClock.layer addSublayer:layer];
+    [self.ivClock.layer addSublayer:layer];
 }
 
 @end

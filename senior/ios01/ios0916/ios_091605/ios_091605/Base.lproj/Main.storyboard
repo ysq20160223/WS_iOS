@@ -27,10 +27,12 @@
                                     <constraint firstAttribute="width" constant="200" id="yJw-8K-RHb"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hI-1q-rqE">
-                                <rect key="frame" x="0.0" y="151" width="375" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hI-1q-rqE">
+                                <rect key="frame" x="0.0" y="150" width="375" height="44"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pUU-TQ-njj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -38,13 +40,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6hI-1q-rqE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="3hI-PI-D59"/>
+                            <constraint firstAttribute="trailing" secondItem="6hI-1q-rqE" secondAttribute="trailing" id="DXE-Y3-gvx"/>
+                            <constraint firstItem="6hI-1q-rqE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iNx-EK-6Rt"/>
                             <constraint firstItem="gm6-v1-AG8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sKr-yB-7Mo"/>
                             <constraint firstItem="gm6-v1-AG8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sgJ-Q5-ap2"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ivClock" destination="gm6-v1-AG8" id="g6m-uO-3eU"/>
                         <outlet property="lblCalendar" destination="6hI-1q-rqE" id="oeQ-2H-wgj"/>
-                        <outlet property="vClock" destination="gm6-v1-AG8" id="0Xr-fj-1Bj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
