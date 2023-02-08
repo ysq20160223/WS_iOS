@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    WheelView *wheelView = [WheelView wheelView]; // 1 - 开发常用
+    WheelView *wheelView = WheelView.wheelView; // 1 - 开发常用
 //    WheelView *wheelView = [[WheelView alloc] init]; // 2
     
     wheelView.center = self.view.center;

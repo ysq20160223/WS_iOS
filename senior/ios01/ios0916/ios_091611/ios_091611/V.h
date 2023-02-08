@@ -1,5 +1,5 @@
 //
-//  MyView.h
+//  V.h
 //  ios_091611
 //
 //  Created by Apple on 2017/8/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyView : UIView
+@interface V : UIView
 
 @end

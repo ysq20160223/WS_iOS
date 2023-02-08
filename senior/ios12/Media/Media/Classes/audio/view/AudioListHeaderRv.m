@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 
@@ -105,6 +107,31 @@
         make.centerX.mas_equalTo(self.mas_centerX);
         make.height.mas_equalTo(36);
     }];
+    
+    dispatch_after(dispatch_time(DISPATCH_WALLTIME_NOW, (int64_t) 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        XLog
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(switchImage) userInfo:nil repeats:YES];
+    });
+    
+}
+
+- (void)switchImage {
+    NSInteger index = self.scrollView.contentOffset.x / self.scrollView.frame.size.width;
+    if (index >= AudioTool.audioArray.count - 1) {
+        index = -1;
+    }
+    self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * (index + 1), 0);
+    NSLog(@"currentPage: %ld", self.pageControl.currentPage);
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    XLog
+    [self.timer invalidate];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    XLog
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(switchImage) userInfo:nil repeats:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

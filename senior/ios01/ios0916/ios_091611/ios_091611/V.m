@@ -1,14 +1,14 @@
 //
-//  MyView.m
+//  V.m
 //  ios_091611
 //
 //  Created by Apple on 2017/8/11.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "MyView.h"
+#import "V.h"
 
-@implementation MyView
+@implementation V
 
 /*
 // Only override drawRect: if you perform custom drawing.

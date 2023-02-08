@@ -26,6 +26,7 @@
     anim.keyPath = @"transform.scale";
     anim.toValue = @0.5;
     
+//    anim.fillMode = kCAFillModeForwards;
     anim.repeatCount = MAXFLOAT;
     anim.duration = .5;
     anim.autoreverses = YES;

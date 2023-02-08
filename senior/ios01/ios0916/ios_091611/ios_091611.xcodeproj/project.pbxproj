@@ -14,7 +14,7 @@
 		18AC93A01F3CCCCA003DC17F /* ios_091611.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18AC939E1F3CCCCA003DC17F /* ios_091611.xcdatamodeld */; };
 		18AC93A21F3CCCCA003DC17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AC93A11F3CCCCA003DC17F /* Assets.xcassets */; };
 		18AC93A51F3CCCCA003DC17F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AC93A31F3CCCCA003DC17F /* LaunchScreen.storyboard */; };
-		18AC93AE1F3CCF2E003DC17F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC93AD1F3CCF2E003DC17F /* MyView.m */; };
+		18AC93AE1F3CCF2E003DC17F /* V.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AC93AD1F3CCF2E003DC17F /* V.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		18AC93A11F3CCCCA003DC17F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18AC93A41F3CCCCA003DC17F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18AC93A61F3CCCCA003DC17F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18AC93AC1F3CCF2E003DC17F /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
-		18AC93AD1F3CCF2E003DC17F /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		18AC93AC1F3CCF2E003DC17F /* V.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V.h; sourceTree = "<group>"; };
+		18AC93AD1F3CCF2E003DC17F /* V.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 				18AC93A61F3CCCCA003DC17F /* Info.plist */,
 				18AC939E1F3CCCCA003DC17F /* ios_091611.xcdatamodeld */,
 				18AC93921F3CCCCA003DC17F /* Supporting Files */,
-				18AC93AC1F3CCF2E003DC17F /* MyView.h */,
-				18AC93AD1F3CCF2E003DC17F /* MyView.m */,
+				18AC93AC1F3CCF2E003DC17F /* V.h */,
+				18AC93AD1F3CCF2E003DC17F /* V.m */,
 			);
 			path = ios_091611;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 				18AC93971F3CCCCA003DC17F /* AppDelegate.m in Sources */,
 				18AC93941F3CCCCA003DC17F /* main.m in Sources */,
 				18AC93A01F3CCCCA003DC17F /* ios_091611.xcdatamodeld in Sources */,
-				18AC93AE1F3CCF2E003DC17F /* MyView.m in Sources */,
+				18AC93AE1F3CCF2E003DC17F /* V.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

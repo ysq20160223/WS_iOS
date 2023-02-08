@@ -21,12 +21,12 @@
 
 #import "ViewController.h"
 
-#import "MyView.h"
+#import "V.h"
 
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet MyView *myView;
+@property (weak, nonatomic) IBOutlet V *v;
 
 @end
 
@@ -37,15 +37,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
+    NSLog(@"%@", NSStringFromCGRect(self.v.frame));
 }
 
 //
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [UIView animateWithDuration:5 animations:^{
-        self.myView.transform = CGAffineTransformMakeTranslation(0, 200);
-        self.myView.transform = CGAffineTransformMakeScale(0.5, 0.5);
-        NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
+        self.v.transform = CGAffineTransformMakeTranslation(0, 200);
+        self.v.transform = CGAffineTransformMakeScale(0.5, 0.5);
+        NSLog(@"%@", NSStringFromCGRect(self.v.frame));
     }];
     
     
@@ -76,7 +76,7 @@
 //    animScale.fillMode = kCAFillModeForwards;
 //    [self.myView.layer addAnimation:animScale forKey:nil];
 
-    NSLog(@"%@", NSStringFromCGRect(self.myView.frame));
+    NSLog(@"%@", NSStringFromCGRect(self.v.frame));
 }
 
 @end

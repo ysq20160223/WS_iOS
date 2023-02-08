@@ -21,7 +21,6 @@
 @implementation ViewController
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"statusH: %f", UIApplication.sharedApplication.statusBarFrame.size.height);
     
 //    [self iconShake];
     
@@ -43,7 +42,7 @@
     [path addLineToPoint:CGPointMake(self.iv.frame.size.width * 0.5, UIApplication.sharedApplication.statusBarFrame.size.height + self.iv.frame.size.height * 0.5)];
     
     anim.path = path.CGPath;
-    anim.duration = 3;
+    anim.duration = 5;
     anim.repeatCount = MAXFLOAT;
     anim.autoreverses = YES;
     anim.removedOnCompletion = NO;

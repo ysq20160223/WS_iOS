@@ -26,7 +26,7 @@
 
 // 开始选号
 - (IBAction)startChoose:(id)sender {
-    CABasicAnimation *anim = [CABasicAnimation animation];
+    CABasicAnimation *anim = CABasicAnimation.animation;
     anim.keyPath = @"transform.rotation";
     anim.toValue = @(M_PI * 2);
     anim.duration = 3;
@@ -38,7 +38,7 @@
 - (CADisplayLink *)link {
     if (_link == nil) {
         CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
-        [link addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        [link addToRunLoop:NSRunLoop.mainRunLoop forMode:NSDefaultRunLoopMode];
         _link = link;
     }
     return _link;
@@ -79,7 +79,7 @@
     CGFloat clipH = oriImage.size.height * scale;
     CGFloat clipX = 0;
     CGFloat clipY = 0;
-    NSLog(@"scale: %f, clipW: %f, clipH: %f", scale, clipW, clipH);
+    NSLog(@"scale: %f; clipW: %f; clipH: %f", scale, clipW, clipH);
     
     // 添加按钮
     self.contentView.userInteractionEnabled = YES;
@@ -142,7 +142,6 @@
 
 // heelView *wheelView = [[WheelView alloc] init]; 调用
 - (instancetype)initWithFrame:(CGRect)frame {
-//    NSLog(@"%s", __func__);
     if(self = [super initWithFrame:frame]) {
         self = [NSBundle.mainBundle loadNibNamed:@"WheelView" owner:nil options:nil].firstObject;
         [self setUp];
@@ -152,18 +151,8 @@
 
 //
 + (instancetype)wheelView {
-//    NSLog(@"%s", __func__);
     return [NSBundle.mainBundle loadNibNamed:@"WheelView" owner:nil options:nil][0];
 }
-
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    
-}
-
 
 @end
 
