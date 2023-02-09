@@ -12,6 +12,8 @@
 
 #import <Masonry.h>
 
+#define kTimerDuration 3
+
 
 
 @interface AudioListHeaderRv () <UIScrollViewDelegate>
@@ -43,7 +45,7 @@
 }
 
 - (void)setup {
-    NSLog(@"%@", self);
+//    NSLog(@"%@", self);
     
 //    self.backgroundColor = UIColor.magentaColor;
     
@@ -64,11 +66,11 @@
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.pagingEnabled = YES; // 分页
     self.scrollView.delegate = self; // 代理
-    NSLog(@"%@", NSStringFromCGSize(self.scrollView.contentSize));
+//    NSLog(@"%@", NSStringFromCGSize(self.scrollView.contentSize));
 //    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.mas_equalTo(self);
 //    }];
-    NSLog(@"%@", NSStringFromCGRect(self.scrollView.frame));
+//    NSLog(@"%@", NSStringFromCGRect(self.scrollView.frame));
     
     
     for (int i = 0; i < array.count; i++) {
@@ -82,7 +84,7 @@
             make.width.mas_equalTo(w);
         }];
         iv.clipsToBounds = YES;
-        NSLog(@"%d; %@", i, NSStringFromCGRect(iv.frame));
+//        NSLog(@"%d; %@", i, NSStringFromCGRect(iv.frame));
         iv.contentMode = UIViewContentModeScaleAspectFill;
     }
     
@@ -108,9 +110,9 @@
         make.height.mas_equalTo(36);
     }];
     
-    dispatch_after(dispatch_time(DISPATCH_WALLTIME_NOW, (int64_t) 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_WALLTIME_NOW, (int64_t) 0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         XLog
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(switchImage) userInfo:nil repeats:YES];
+        [self scrollViewDidEndDragging:self.scrollView willDecelerate:NO];
     });
     
 }
@@ -119,19 +121,26 @@
     NSInteger index = self.scrollView.contentOffset.x / self.scrollView.frame.size.width;
     if (index >= AudioTool.audioArray.count - 1) {
         index = -1;
+        self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * (index + 1), 0);
+        NSLog(@"currentPage: %ld", self.pageControl.currentPage);
+    } else {
+        [UIView animateWithDuration:1 animations:^{
+            self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * (index + 1), 0);
+            NSLog(@"currentPage: %ld", self.pageControl.currentPage);
+        }];
     }
-    self.scrollView.contentOffset = CGPointMake(self.scrollView.frame.size.width * (index + 1), 0);
-    NSLog(@"currentPage: %ld", self.pageControl.currentPage);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    XLog
     [self.timer invalidate];
+    NSLog(@"isValid: %d", self.timer.isValid);
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    XLog
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(switchImage) userInfo:nil repeats:YES];
+    if (!self.timer.isValid) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:kTimerDuration target:self selector:@selector(switchImage) userInfo:nil repeats:YES];
+    }
+    NSLog(@"isValid: %d", self.timer.isValid);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

@@ -22,7 +22,7 @@
 
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
     UIInterfaceOrientationMask mask = [SJRotationManager supportedInterfaceOrientationsForWindow:window];
-    NSLog(@"orientations: %ld", mask);
+//    NSLog(@"orientations: %ld", mask);
     return mask;
 }
 

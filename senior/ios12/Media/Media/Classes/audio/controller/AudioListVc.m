@@ -30,6 +30,7 @@
 }
 
 @property (nonatomic, assign) ModeView modeView;
+@property (nonatomic, strong) AudioListHeaderRv *audioListHeaderRv;
 
 @end
 
@@ -147,6 +148,15 @@
     [self setUpNavigation];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    XLog
+    [self scrollViewDidEndDragging:self.collectionView willDecelerate:NO];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    XLog
+    [self scrollViewWillBeginDragging:self.collectionView];
+}
 
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -179,6 +189,18 @@
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    XLog
+    [self.audioListHeaderRv scrollViewWillBeginDragging:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    XLog
+    [self.audioListHeaderRv scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+}
+
+
+
 #pragma mark - UICollectionViewDataSource
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     AudioModel *audioModel = AudioTool.audioArray[indexPath.row];
@@ -197,19 +219,20 @@
 
 #pragma mark -
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionReusableView *reusableView = nil;
+    AudioListHeaderRv *reusableView = nil;
     if(kind == UICollectionElementKindSectionHeader) {
         reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(AudioListHeaderRv.class) forIndexPath:indexPath];
         if(!reusableView) {
             reusableView = [AudioListHeaderRv.alloc initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, _headViewH)];
         }
     }
+    self.audioListHeaderRv = reusableView;
     return reusableView;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     CGSize size = CGSizeMake(self.view.frame.size.width, _headViewH);
-    NSLog(@"%@", NSStringFromCGSize(size));
+//    NSLog(@"%@", NSStringFromCGSize(size));
     return size;
 }
 
