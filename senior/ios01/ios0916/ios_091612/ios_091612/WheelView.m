@@ -36,7 +36,7 @@
 }
 
 - (CADisplayLink *)link {
-    if (_link == nil) {
+    if (!_link) {
         CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(update)];
         [link addToRunLoop:NSRunLoop.mainRunLoop forMode:NSDefaultRunLoopMode];
         _link = link;

@@ -115,6 +115,22 @@
         [self scrollViewDidEndDragging:self.scrollView willDecelerate:NO];
     });
     
+    //
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(applicationWillResignActive:)
+    name:UIApplicationWillResignActiveNotification object:nil];
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(applicationDidBecomeActive:)
+    name:UIApplicationDidBecomeActiveNotification object:nil]; 
+    
+}
+
+- (void)applicationWillResignActive:(NSNotification *)notification {
+    XLog
+    [self scrollViewWillBeginDragging:self.scrollView];
+}
+ 
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
+    XLog
+    [self scrollViewDidEndDragging:self.scrollView willDecelerate:NO];
 }
 
 - (void)switchImage {
@@ -161,6 +177,8 @@
 //
 //    self.ivBg.image = [UIImage imageNamed:audioModel.icon];
 //}
+
+
 
 @end
 
