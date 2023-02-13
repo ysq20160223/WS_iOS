@@ -20,7 +20,7 @@
 
 - (void)repLayer {
     // 复制层
-    CAReplicatorLayer *repLayer = [CAReplicatorLayer layer];
+    CAReplicatorLayer *repLayer = CAReplicatorLayer.layer;
     
     repLayer.frame = self.contentView.bounds;
     repLayer.instanceCount = 3;
@@ -30,7 +30,7 @@
     [self.contentView.layer addSublayer:repLayer];
     
     // 创建一个音乐震动条
-    CALayer *layer = [CALayer layer];
+    CALayer *layer = CALayer.layer;
     [repLayer addSublayer:layer];
     
     CGFloat w = 30;
@@ -41,7 +41,7 @@
     layer.position = CGPointMake(0, self.contentView.bounds.size.height);
     
     // 添加动画
-    CABasicAnimation *anim = [CABasicAnimation animation];
+    CABasicAnimation *anim = CABasicAnimation.animation;
     anim.keyPath = @"transform.scale.y";
     anim.toValue = @0;
     anim.duration = 0.5;
@@ -61,18 +61,18 @@
 }
 
 - (void)singleLayer {
-    CALayer *layer = [CALayer layer];
+    CALayer *layer = CALayer.layer;
     [self.contentView.layer addSublayer:layer];
     
     CGFloat w = 30;
     CGFloat h = 100;
     layer.bounds = CGRectMake(0, 0, w, h);
-    layer.backgroundColor = [UIColor magentaColor].CGColor;
+    layer.backgroundColor = UIColor.magentaColor.CGColor;
     layer.position = CGPointMake(self.contentView.bounds.size.width - w, self.contentView.bounds.size.height);
     layer.anchorPoint = CGPointMake(0, 1);
 //    NSLog(@"anchorPoint: %@", NSStringFromCGPoint(layer.anchorPoint));
     
-    CABasicAnimation *anim = [CABasicAnimation animation];
+    CABasicAnimation *anim = CABasicAnimation.animation;
     anim.keyPath = @"transform.scale.y";
     anim.toValue = @0;
     anim.duration = 0.5;

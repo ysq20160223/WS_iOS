@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NSLog(@"%@", [self.view.layer class]);
+    NSLog(@"%@", self.view.layer.class);
     
     CAReplicatorLayer *repLayer = (CAReplicatorLayer *)self.view.layer;
     repLayer.instanceCount = 2;
