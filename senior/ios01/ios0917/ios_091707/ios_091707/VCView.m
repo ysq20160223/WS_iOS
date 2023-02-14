@@ -25,12 +25,12 @@
 @implementation VCView
 
 + (Class)layerClass {
-    return [CAReplicatorLayer class];
+    return CAReplicatorLayer.class;
 }
 
 - (void)play {
     // 添加动画
-    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    CAKeyframeAnimation *anim = CAKeyframeAnimation.animation;
     anim.keyPath = @"position";
     anim.path = self.path.CGPath;
     anim.repeatCount = MAXFLOAT;
@@ -62,17 +62,17 @@
     [super awakeFromNib];
     
     // 添加手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pan:)];
+    UIPanGestureRecognizer *pan = [UIPanGestureRecognizer.alloc initWithTarget:self action:@selector(pan:)];
     [self addGestureRecognizer:pan];
     
     // 创建路径
-    UIBezierPath *path = [UIBezierPath bezierPath];
+    UIBezierPath *path = UIBezierPath.bezierPath;
     self.path = path;
     
     // 创建粒子
-    CALayer *dotLayer = [CALayer layer];
+    CALayer *dotLayer = CALayer.layer;
     dotLayer.frame = CGRectMake(0, 0, 20, 20);
-    dotLayer.backgroundColor = [UIColor cyanColor].CGColor;
+    dotLayer.backgroundColor = UIColor.cyanColor.CGColor;
     
     self.dotLayer = dotLayer;
     [self.layer addSublayer:dotLayer];

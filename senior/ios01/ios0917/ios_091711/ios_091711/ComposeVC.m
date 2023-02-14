@@ -25,8 +25,8 @@
 @implementation ComposeVC
 
 - (NSMutableArray *)menuBtnArray {
-    if (_menuBtnArray == nil) {
-        _menuBtnArray = [NSMutableArray array];
+    if (!_menuBtnArray) {
+        _menuBtnArray = NSMutableArray.array;
     }
     return _menuBtnArray;
 }
@@ -67,7 +67,7 @@
     CGFloat btnWhH = 100;
     int column = 3;
     
-    CGFloat margin = ([UIScreen mainScreen].bounds.size.width - column * btnWhH) / (column + 1);
+    CGFloat margin = (UIScreen.mainScreen.bounds.size.width - column * btnWhH) / (column + 1);
     CGFloat x = 0;
     CGFloat y = 0;
     int curColumn = 0;
@@ -84,7 +84,7 @@
         y = (btnWhH + margin) * curRow + oriY;
         
         btn.frame = CGRectMake(x, y, btnWhH, btnWhH);
-        [btn setBackgroundColor:[UIColor cyanColor]];
+        [btn setBackgroundColor:UIColor.cyanColor];
         
         MenuBean *item = self.menuBeanArray[i];
         [btn setImage:item.image forState:UIControlStateNormal];

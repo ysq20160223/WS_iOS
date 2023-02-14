@@ -13,7 +13,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
     [self setUp];
 }
 
@@ -27,7 +26,7 @@
 - (void)setUp {
     self.imageView.contentMode = UIViewContentModeCenter; // 
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
 }
 
 - (void)layoutSubviews {
@@ -39,7 +38,7 @@
     CGFloat imageY = 0;
     
     self.imageView.frame = CGRectMake(imageX, imageY, imageW, imageH);
-//    self.imageView.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0 alpha:1];
+    self.imageView.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0 alpha:.5];
     
     //
     CGFloat labelX = imageX;
@@ -48,7 +47,7 @@
     CGFloat labelH = self.bounds.size.height - imageH;
     
     self.titleLabel.frame = CGRectMake(labelX, labelY, labelW, labelH);
-//    self.titleLabel.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];
+    self.titleLabel.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:.5];
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -73,6 +72,5 @@
 
 
 @end
-
 
 

@@ -43,10 +43,25 @@
     // 3
     [self.window makeKeyAndVisible];
     
+    [self addLaunchAnimation];
     [NSThread sleepForTimeInterval:0.5];
     
 }
 
+- (void)addLaunchAnimation {
+    UIViewController *vc = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
+    UIWindow *mainWindow = UIApplication.sharedApplication.keyWindow;
+    [mainWindow addSubview:vc.view];
+    
+    [self.window bringSubviewToFront:vc.view];
+    
+    [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionBeginFromCurrentState animations:^{
+        vc.view.alpha = 0.0f;
+        vc.view.layer.transform = CATransform3DScale(CATransform3DIdentity, 2.0f, 2.0f, 1.0f);
+    } completion:^(BOOL finished) {
+        [vc.view removeFromSuperview];
+    }];
+}
 
 - (void)sceneDidDisconnect:(UIScene *)scene  API_AVAILABLE(ios(13.0)){
     // Called as the scene is being released by the system.

@@ -11,6 +11,8 @@
 
 @interface Distance : NSObject
 
-+ (CGFloat)distanceWithCircleA:(UIView *)a andCircleB:(UIView *)b;
++ (CGFloat)distanceWithCircleA:(UIView *)aView andCircleB:(UIView *)bView;
 
 @end
+
+

@@ -13,7 +13,7 @@
 
 @interface BageValueButton ()
 
-@property (weak, nonatomic) UIView *smallCircle;
+@property (weak, nonatomic) UIView *vSmallCircle;
 
 @property (weak, nonatomic) CAShapeLayer *shape;
 
@@ -24,19 +24,17 @@
 @implementation BageValueButton
 
 - (CAShapeLayer *)shape {
-    if (_shape == nil) {
+    if (!_shape) {
         // 创建形状图层
-        CAShapeLayer *shape = [CAShapeLayer layer];
-        _shape = shape;
-        shape.fillColor = [UIColor redColor].CGColor;
-        [self.superview.layer insertSublayer:shape atIndex:0];
+        _shape = CAShapeLayer.layer;
+        _shape.fillColor = UIColor.redColor.CGColor;
+        [self.superview.layer insertSublayer:_shape atIndex:0];
     }
     return _shape;
 }
 
 -(void)awakeFromNib {
     [super awakeFromNib];
-    
     [self setUp];
 }
 
@@ -53,19 +51,19 @@
     
     self.layer.cornerRadius = 44; // 设置圆角
     self.titleLabel.font = [UIFont systemFontOfSize:21];
-    [self setBackgroundColor:[UIColor redColor]]; //
+    [self setBackgroundColor:UIColor.redColor]; //
     
     // 添加手势
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+    UIPanGestureRecognizer *pan = [UIPanGestureRecognizer.alloc initWithTarget:self action:@selector(pan:)];
     [self addGestureRecognizer:pan];
     
     // 添加小圆
-    UIView *smallCircle = [[UIView alloc] init];
+    UIView *smallCircle = UIView.alloc.init;
     smallCircle.frame = self.frame;
     smallCircle.layer.cornerRadius = self.layer.cornerRadius;
     smallCircle.backgroundColor = self.backgroundColor;
     
-    self.smallCircle = smallCircle;
+    self.vSmallCircle = smallCircle;
     
     [self.superview insertSubview:smallCircle belowSubview:self];
 }
@@ -82,7 +80,7 @@
     
     [pan setTranslation:CGPointZero inView:self]; // 复位
     
-    CGFloat distance = [Distance distanceWithCircleA:self.smallCircle andCircleB:self];
+    CGFloat distance = [Distance distanceWithCircleA:self.vSmallCircle andCircleB:self];
 //    NSLog(@"distance = %f", distance);
     
     CGFloat radius = self.bounds.size.width * .5; // 取出大圆的半径
@@ -92,31 +90,31 @@
     }
 //    NSLog(@"radius = %f", radius);
     
-    self.smallCircle.bounds = CGRectMake(0, 0, radius * 2, radius * 2); // 重新设置小圆的宽高
-    self.smallCircle.layer.cornerRadius = radius;
+    self.vSmallCircle.bounds = CGRectMake(0, 0, radius * 2, radius * 2); // 重新设置小圆的宽高
+    self.vSmallCircle.layer.cornerRadius = radius;
     
     
-    if (self.smallCircle.hidden == NO) {
+    if (!self.vSmallCircle.hidden) {
         // 返回一个不规则的路径
-        UIBezierPath *path = [self pathWithCircleA:self.smallCircle andCircleB:self];
+        UIBezierPath *path = [self pathWithCircleA:self.vSmallCircle andCircleB:self];
         self.shape.path = path.CGPath;
     }
     
     // 拖动的长度
     if(distance > maxDragDistance) {
-        self.smallCircle.hidden = YES;
+        self.vSmallCircle.hidden = YES;
 //        self.shape.hidden = YES; // 直接隐藏
         [self.shape removeFromSuperlayer]; // 具有粘附效果
     }
     
     if(pan.state == UIGestureRecognizerStateEnded) {
         if (distance < maxDragDistance) {
-            self.center = self.smallCircle.center;
+            self.center = self.vSmallCircle.center;
             [self.shape removeFromSuperlayer];
-            self.smallCircle.hidden = NO;
+            self.vSmallCircle.hidden = NO;
         } else {
             // 播放一个动画
-            UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+            UIImageView *imageView = [UIImageView.alloc initWithFrame:self.bounds];
             
             NSMutableArray *imageArray = [NSMutableArray array];
             
@@ -188,12 +186,6 @@
     
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    
-}
 
 @end
 

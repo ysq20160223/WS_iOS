@@ -10,10 +10,12 @@
 
 @implementation Distance
 
-+ (CGFloat)distanceWithCircleA:(UIView *)a andCircleB:(UIView *)b {
-    CGFloat offsetX = a.center.x - b.center.x;
-    CGFloat offsetY = a.center.y - b.center.y;
++ (CGFloat)distanceWithCircleA:(UIView *)aView andCircleB:(UIView *)bView {
+    CGFloat offsetX = aView.center.x - bView.center.x;
+    CGFloat offsetY = aView.center.y - bView.center.y;
     return sqrtf(offsetX * offsetX + offsetY * offsetY);
 }
 
 @end
+
+
