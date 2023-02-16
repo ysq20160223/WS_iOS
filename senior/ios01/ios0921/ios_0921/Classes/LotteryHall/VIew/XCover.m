@@ -1,5 +1,5 @@
 //
-//  MyCover.m
+//  XCover.m
 //  ios_0921
 //
 //  Created by Apple on 2017/8/14.
@@ -30,11 +30,11 @@
 }
 
 + (void)show {
-    XCover *cover = [[XCover alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    cover.backgroundColor = [UIColor blackColor];
+    XCover *cover = [XCover.alloc initWithFrame:UIScreen.mainScreen.bounds];
+    cover.backgroundColor = UIColor.blackColor;
     cover.alpha = .6; // 设置父控件透明度会影响子控件
     
-    [[UIApplication sharedApplication].keyWindow addSubview:cover];
+    [UIApplication.sharedApplication.keyWindow addSubview:cover];
 }
 
 @end

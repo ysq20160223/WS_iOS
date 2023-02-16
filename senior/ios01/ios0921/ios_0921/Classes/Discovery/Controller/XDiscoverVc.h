@@ -1,5 +1,5 @@
 //
-//  XTitleButton.h
+//  XDiscoverVc.h
 //  ios_0921
 //
 //  Created by Apple on 2017/8/16.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XTitleButton : UIButton
+@interface XDiscoverVc : UITableViewController
+
++ (instancetype)instance;
 
 @end

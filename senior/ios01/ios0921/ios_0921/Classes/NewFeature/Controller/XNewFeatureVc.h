@@ -1,5 +1,5 @@
 //
-//  XTitleButton.h
+//  XNewFeatureVc.h
 //  ios_0921
 //
 //  Created by Apple on 2017/8/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XTitleButton : UIButton
+@interface XNewFeatureVc : UICollectionViewController
 
 @end

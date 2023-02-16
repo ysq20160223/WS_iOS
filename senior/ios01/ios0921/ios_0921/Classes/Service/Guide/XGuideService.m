@@ -1,5 +1,5 @@
 //
-//  MyGuideService.m
+//  XGuideService.m
 //  ios_0921
 //
 //  Created by Apple on 2017/8/17.
@@ -10,17 +10,17 @@
 
 #import "XSaveService.h"
 
-#import "XNewFeatureViewController.h"
+#import "XNewFeatureVc.h"
 
-#import "XTabBarController.h"
+#import "XTbc.h"
 
 #define kVersionKey @"version"
 
 
 @implementation XGuideService
 
-static XTabBarController *extracted() {
-    return [XTabBarController alloc];
+static XTbc *extracted() {
+    return [XTbc alloc];
 }
 
 + (UIViewController *)chooseRootViewController {
@@ -36,14 +36,14 @@ static XTabBarController *extracted() {
 //    NSLog(@"curVersion: %@, oldVersion = %@", curVersion, oldVersion);
     
     
-//    rootVc = [[XNewFeatureViewController alloc] init]; //
+//    rootVc = XNewFeatureViewController.alloc.init; //
     
     if ([curVersion isEqualToString:oldVersion] == NO) {
         [XSaveService setObject:curVersion forKey:kVersionKey];
         //        [[NSUserDefaults standardUserDefaults] setObject:curVersion forKey:MyVersionKey];
 
         // 进入新特性界面
-        rootVc = [[XNewFeatureViewController alloc] init];
+        rootVc = XNewFeatureVc.alloc.init;
     } else {
         rootVc = [extracted() init];
     }

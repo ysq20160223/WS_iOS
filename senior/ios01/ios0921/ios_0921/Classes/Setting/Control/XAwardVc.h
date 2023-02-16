@@ -1,13 +1,13 @@
 //
-//  XSettingSwitchItem.m
+//  XAwardVc.h
 //  ios_0921
 //
 //  Created by Apple on 2017/8/18.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "XSettingSwitchItem.h"
+#import "XBaseSettingVc.h"
 
-@implementation XSettingSwitchItem
+@interface XAwardVc : XBaseSettingVc
 
 @end

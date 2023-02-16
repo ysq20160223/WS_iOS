@@ -1,5 +1,5 @@
 //
-//  XCover.h
+//  XNc.h
 //  ios_0921
 //
 //  Created by Apple on 2017/8/14.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XCover : UIView
-
-+ (void)show;
-
-+ (void)hide;
+@interface XNc : UINavigationController
 
 @end

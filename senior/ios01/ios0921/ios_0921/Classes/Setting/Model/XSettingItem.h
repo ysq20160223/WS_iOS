@@ -1,5 +1,5 @@
 //
-//  MySettingItem.h
+//  XSettingItem.h
 //  ios_0921
 //
 //  Created by Apple on 2017/8/17.
@@ -11,9 +11,9 @@
 #import <UIKit/UIKit.h>
 
 //typedef enum : NSInteger {
-//    MySettingItemTypeArrow,
-//    MySettingItemTypeSwitch
-//} MySettingItemType;
+//    XSettingItemTypeArrow,
+//    XSettingItemTypeSwitch
+//} XSettingItemType;
 
 @interface XSettingItem : NSObject
 

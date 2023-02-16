@@ -50,14 +50,23 @@
 
 - (void)addLaunchAnimation {
     UIViewController *vc = [[UIStoryboard storyboardWithName:@"LaunchScreen" bundle:nil] instantiateViewControllerWithIdentifier:@"LaunchScreen"];
+    
+//    for (NSInteger i = 0; i < vc.view.subviews.count; i++) {
+//        NSLog(@"%ld: %@", i, vc.view.subviews[i]);
+//    }
+    
     UIWindow *mainWindow = UIApplication.sharedApplication.keyWindow;
     [mainWindow addSubview:vc.view];
     
     [self.window bringSubviewToFront:vc.view];
     
-    [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionBeginFromCurrentState animations:^{
+    long timestamp = NSDate.date.timeIntervalSince1970;
+    double scale = timestamp % 2 ? 2.0f: 0.2f;
+    NSLog(@"timestamp: %ld; scale: %f", timestamp, scale);
+    
+    [UIView animateKeyframesWithDuration:3 delay:0 options:UIViewKeyframeAnimationOptionBeginFromCurrentState animations:^{
         vc.view.alpha = 0.0f;
-        vc.view.layer.transform = CATransform3DScale(CATransform3DIdentity, 2.0f, 2.0f, 1.0f);
+        vc.view.subviews[0].layer.transform = CATransform3DScale(CATransform3DIdentity, scale, scale, scale);
     } completion:^(BOOL finished) {
         [vc.view removeFromSuperview];
     }];

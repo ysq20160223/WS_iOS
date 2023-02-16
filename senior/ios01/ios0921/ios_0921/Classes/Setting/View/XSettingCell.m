@@ -1,5 +1,5 @@
 //
-//  MySettingCell.m
+//  XSettingCell.m
 //  ios_0921
 //
 //  Created by Apple on 2017/8/18.
@@ -23,8 +23,8 @@
 @implementation XSettingCell
 
 - (UISwitch *)switchView {
-    if(_switchView == nil) {
-        _switchView = [[UISwitch alloc] init];
+    if(!_switchView) {
+        _switchView = UISwitch.alloc.init;
     }
     return _switchView;
 }
@@ -37,9 +37,9 @@
     self.textLabel.text = item.title;
     self.detailTextLabel.text = item.subTitle;
     
-    if ([item isKindOfClass:[XSettingArrowItem class]]) {
+    if ([item isKindOfClass:XSettingArrowItem.class]) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    } else if ([item isKindOfClass:[XSettingSwitchItem class]]) {
+    } else if ([item isKindOfClass:XSettingSwitchItem.class]) {
         self.accessoryView = self.switchView;
     } else {
         self.accessoryView = nil;
@@ -52,7 +52,7 @@
     
     XSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (nil == cell) {
-        cell = [[self alloc] initWithStyle:tableViewCellStyle reuseIdentifier:ID];
+        cell = [self.alloc initWithStyle:tableViewCellStyle reuseIdentifier:ID];
     }
     return cell;
 }

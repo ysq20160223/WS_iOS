@@ -1,5 +1,5 @@
 //
-//  MyNewFeatureViewCell.m
+//  XNewFeatureViewCell.m
 //  ios_0921
 //
 //  Created by Apple on 2017/8/16.
@@ -10,7 +10,7 @@
 
 #import "UIView+Frame.h"
 
-#import "XTabBarController.h"
+#import "XTbc.h"
 
 
 @interface XNewFeatureViewCell ()
@@ -43,13 +43,13 @@
 - (void)start {
     // 跳转到主界面
     // 修改窗口的根控制器
-    [UIApplication sharedApplication].keyWindow.rootViewController = [[XTabBarController alloc] init];
+    UIApplication.sharedApplication.keyWindow.rootViewController = XTbc.alloc.init;
     
 }
 
 - (UIImageView *)imageView {
-    if(_imageView == nil) {
-        UIImageView *imageView = [[UIImageView alloc] init];
+    if(!_imageView) {
+        UIImageView *imageView = UIImageView.alloc.init;
         _imageView = imageView;
         [self.contentView addSubview:imageView];
     }

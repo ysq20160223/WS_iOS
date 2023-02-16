@@ -1,5 +1,5 @@
 //
-//  MyPopMenu.m
+//  XPopMenu.m
 //  ios_0921
 //
 //  Created by Apple on 2017/8/14.
@@ -34,11 +34,11 @@
 //
 + (instancetype)showInPoint:(CGPoint)point {
     // 创建菜单
-    XPopMenu *popMenu = [[NSBundle mainBundle] loadNibNamed:[NSString stringWithFormat:@"%@", [self class]] owner:nil options:nil][0];
-    popMenu.backgroundColor = [UIColor cyanColor];
+    XPopMenu *popMenu = [NSBundle.mainBundle loadNibNamed:[NSString stringWithFormat:@"%@", self.class] owner:nil options:nil][0];
+    popMenu.backgroundColor = UIColor.cyanColor;
     popMenu.center = point;
     
-    [[UIApplication sharedApplication].keyWindow addSubview:popMenu];
+    [UIApplication.sharedApplication.keyWindow addSubview:popMenu];
     
     return popMenu;
 }
