@@ -20,13 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSLog(@"mainScreen: %@", NSStringFromCGRect([UIScreen mainScreen].bounds));
+    NSLog(@"mainScreen: %@", NSStringFromCGRect(UIScreen.mainScreen.bounds));
     
     // 1, 创建窗口
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [UIWindow.alloc initWithFrame:UIScreen.mainScreen.bounds];
     
     // 2, 设置窗口的根控制器
-    self.window.rootViewController = [XGuideService chooseRootViewController];
+    self.window.rootViewController = XGuideService.chooseRootViewController;
     
     // 3, 显示窗口
     [self.window makeKeyAndVisible];

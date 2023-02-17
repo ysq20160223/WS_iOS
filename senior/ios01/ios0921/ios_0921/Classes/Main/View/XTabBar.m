@@ -36,8 +36,9 @@
         XTabBarButton *btn = [XTabBarButton buttonWithType:UIButtonTypeCustom];
         
         btn.tag = i;
-        [btn setBackgroundImage:tabBarItem.image forState:UIControlStateNormal];
-        [btn setBackgroundImage:tabBarItem.selectedImage forState:UIControlStateSelected];
+        [btn setImage:tabBarItem.image forState:UIControlStateNormal];
+        [btn setImage:tabBarItem.selectedImage forState:UIControlStateSelected];
+
         
         // 监听点击
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
@@ -79,15 +80,8 @@
         UIButton *btn = self.subviews[i];
         x = w * i;
         btn.frame = CGRectMake(x, y, w, h);
+        btn.backgroundColor = XRandomColor();
     }
-}
-
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-    
-    
 }
 
 @end

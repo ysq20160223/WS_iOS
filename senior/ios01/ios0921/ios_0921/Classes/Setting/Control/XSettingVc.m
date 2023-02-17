@@ -13,16 +13,42 @@
 #import "XSettingItem.h"
 #import "XSettingArrowItem.h"
 #import "XSettingSwitchItem.h"
+#import "XTitleButton.h"
+#import "UIImage+X.h"
 
 #import "XPushVc.h"
 
 @interface XSettingVc ()
+
+@property (nonatomic, weak) XTitleButton *titleBtn;
 
 @end
 
 
 
 @implementation XSettingVc
+
+
+
+- (void)setUpNavBar {
+    XTitleButton *titleBtn = [XTitleButton buttonWithType:UIButtonTypeCustom];
+    _titleBtn = titleBtn;
+    
+    [titleBtn setTitle:@"Settings" forState:UIControlStateNormal]; // 文字
+    [titleBtn setImage:[UIImage imageNamed:@"YellowDownArrow"] forState:UIControlStateNormal];
+    self.navigationItem.titleView = titleBtn;
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Right" style:0 target:self action:@selector(click)];
+}
+
+- (void)click {
+    [_titleBtn setTitle:@"SETTINGS" forState:UIControlStateNormal];
+    
+//    [_titleBtn sizeToFit];
+}
+
+
+
 
 // 设置界面 : MVC
 // 1, 设计模型, 用来保存控件最想要的数据
@@ -33,7 +59,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self setUpNavBar];
     
     // 创建模型数据
     [self setUpGroups];

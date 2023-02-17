@@ -64,7 +64,7 @@
     double scale = timestamp % 2 ? 2.0f: 0.2f;
     NSLog(@"timestamp: %ld; scale: %f", timestamp, scale);
     
-    [UIView animateKeyframesWithDuration:3 delay:0 options:UIViewKeyframeAnimationOptionBeginFromCurrentState animations:^{
+    [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionBeginFromCurrentState animations:^{
         vc.view.alpha = 0.0f;
         vc.view.subviews[0].layer.transform = CATransform3DScale(CATransform3DIdentity, scale, scale, scale);
     } completion:^(BOOL finished) {

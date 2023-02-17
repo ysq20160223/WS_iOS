@@ -12,10 +12,6 @@
 #import "XNc.h"
 
 #import "XLotteryHallVc.h" //
-#import "XArenaNc.h"
-#import "XArenaVc.h"
-#import "XDiscoverVc.h"
-#import "XHistoryVc.h"
 #import "XMyLotteryVc.h"
 
 
@@ -46,7 +42,7 @@
     
     // 移除系统 UITabBar 上自带的按钮
     for(UIView *subview in self.tabBar.subviews) {
-        if ([subview isKindOfClass:XTabBar.class] == NO) {
+        if (![subview isKindOfClass:XTabBar.class]) {
             [subview removeFromSuperview];
         }
     }
@@ -94,28 +90,16 @@
     [self setUpChildViewController:hall normalImg:@"TabBar_LotteryHall_new" selectedImg:@"TabBar_LotteryHall_selected_new" title:@"LotteyHall"];
     
     
-    // 2, Arena ( [əˈri:nə] 竞技场)
-    [self setUpChildViewController:XArenaVc.alloc.init normalImg:@"TabBar_Arena_new" selectedImg:@"TabBar_Arena_selected_new" title:@"Arena"];
-
-    
-    // 3, Discover (发现)
-    [self setUpChildViewController:XDiscoverVc.instance normalImg:@"TabBar_Discovery_new" selectedImg:@"TabBar_Discovery_selected_new" title:@"Discover"];
-    
-    
-    // 4, History (开奖信息)
-    [self setUpChildViewController:XHistoryVc.alloc.init normalImg:@"TabBar_History_new" selectedImg:@"TabBar_History_selected_new" title:@"History"];
-    
-    
-    // 5, MyLottery (我的)
+    // 2, MyLottery (我的)
     [self setUpChildViewController:XMyLotteryVc.alloc.init normalImg:@"TabBar_MyLottery_new" selectedImg:@"TabBar_MyLottery_selected_new" title:@"MyLottery"];
 }
 
 - (void)setUpChildViewController:(UIViewController *)vc normalImg:(NSString *)normalImg selectedImg:(NSString *)selectedImg title:(NSString *)title {
     UINavigationController *navVc = [XNc.alloc initWithRootViewController:vc];
     
-    if ([vc isKindOfClass:XArenaVc.class]) {
-        navVc = [XArenaNc.alloc initWithRootViewController:vc];
-    }
+//    if ([vc isKindOfClass:XArenaVc.class]) {
+//        navVc = [XArenaNc.alloc initWithRootViewController:vc];
+//    }
     
     // 图片尺寸是有规格, 不能太大, 如果太大就显示不出来
     navVc.tabBarItem.image = [UIImage imageNamed:normalImg];
@@ -130,8 +114,8 @@
 }
 
 - (NSMutableArray *)tabBarItemArray {
-    if (_tabBarItemArray == nil) {
-        _tabBarItemArray = [NSMutableArray array];
+    if (!_tabBarItemArray) {
+        _tabBarItemArray = NSMutableArray.array;
     }
     return _tabBarItemArray;
 }

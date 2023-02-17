@@ -30,13 +30,13 @@ static XTbc *extracted() {
     // 2, 判断是否有新的版本号
     // 3, 最新的版本号保存到 info.plist 文件
     // 获取当前版本号
-    NSString *curVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
+    NSString *curVersion = NSBundle.mainBundle.infoDictionary[@"CFBundleShortVersionString"];
 //    NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:kVersionKey];
     NSString *oldVersion = [XSaveService objectForKey:kVersionKey];
 //    NSLog(@"curVersion: %@, oldVersion = %@", curVersion, oldVersion);
     
     
-//    rootVc = XNewFeatureViewController.alloc.init; //
+//    rootVc = XNewFeatureVc.alloc.init; //
     
     if ([curVersion isEqualToString:oldVersion] == NO) {
         [XSaveService setObject:curVersion forKey:kVersionKey];

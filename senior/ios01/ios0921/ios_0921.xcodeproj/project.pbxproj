@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		181773B123F6961900AD5A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181773B023F6961900AD5A57 /* Assets.xcassets */; };
-		1817741E23F6987600AD5A57 /* XArenaNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773B823F6987600AD5A57 /* XArenaNc.m */; };
-		1817741F23F6987600AD5A57 /* XArenaVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773BA23F6987600AD5A57 /* XArenaVc.m */; };
-		1817742023F6987600AD5A57 /* XDiscoverVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773C023F6987600AD5A57 /* XDiscoverVc.m */; };
-		1817742123F6987600AD5A57 /* XDiscoverVc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181773C123F6987600AD5A57 /* XDiscoverVc.storyboard */; };
-		1817742223F6987600AD5A57 /* XGroupBuyVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773C323F6987600AD5A57 /* XGroupBuyVc.m */; };
-		1817742423F6987600AD5A57 /* XHistoryVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773CB23F6987600AD5A57 /* XHistoryVc.m */; };
 		1817742623F6987600AD5A57 /* XLotteryHallVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773D323F6987600AD5A57 /* XLotteryHallVc.m */; };
 		1817742A23F6987600AD5A57 /* XNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773DE23F6987600AD5A57 /* XNc.m */; };
 		1817742B23F6987600AD5A57 /* XTbc.m in Sources */ = {isa = PBXBuildFile; fileRef = 181773E023F6987600AD5A57 /* XTbc.m */; };
@@ -53,17 +47,6 @@
 /* Begin PBXFileReference section */
 		181773B023F6961900AD5A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ios_0921/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		181773B223F6962300AD5A57 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ios_0921/Info.plist; sourceTree = SOURCE_ROOT; };
-		181773B723F6987600AD5A57 /* XArenaNc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XArenaNc.h; sourceTree = "<group>"; };
-		181773B823F6987600AD5A57 /* XArenaNc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XArenaNc.m; sourceTree = "<group>"; };
-		181773B923F6987600AD5A57 /* XArenaVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XArenaVc.h; sourceTree = "<group>"; };
-		181773BA23F6987600AD5A57 /* XArenaVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XArenaVc.m; sourceTree = "<group>"; };
-		181773BF23F6987600AD5A57 /* XDiscoverVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDiscoverVc.h; sourceTree = "<group>"; };
-		181773C023F6987600AD5A57 /* XDiscoverVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDiscoverVc.m; sourceTree = "<group>"; };
-		181773C123F6987600AD5A57 /* XDiscoverVc.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = XDiscoverVc.storyboard; sourceTree = "<group>"; };
-		181773C223F6987600AD5A57 /* XGroupBuyVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGroupBuyVc.h; sourceTree = "<group>"; };
-		181773C323F6987600AD5A57 /* XGroupBuyVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGroupBuyVc.m; sourceTree = "<group>"; };
-		181773CA23F6987600AD5A57 /* XHistoryVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHistoryVc.h; sourceTree = "<group>"; };
-		181773CB23F6987600AD5A57 /* XHistoryVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHistoryVc.m; sourceTree = "<group>"; };
 		181773D223F6987600AD5A57 /* XLotteryHallVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLotteryHallVc.h; sourceTree = "<group>"; };
 		181773D323F6987600AD5A57 /* XLotteryHallVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLotteryHallVc.m; sourceTree = "<group>"; };
 		181773DD23F6987600AD5A57 /* XNc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNc.h; sourceTree = "<group>"; };
@@ -143,9 +126,6 @@
 			children = (
 				181773DB23F6987600AD5A57 /* Main */,
 				181773CE23F6987600AD5A57 /* LotteryHall */,
-				181773B523F6987600AD5A57 /* Arena */,
-				181773BD23F6987600AD5A57 /* Discovery */,
-				181773C823F6987600AD5A57 /* History */,
 				181773E723F6987600AD5A57 /* MyLottery */,
 				181773EE23F6987600AD5A57 /* NewFeature */,
 				181773F623F6987600AD5A57 /* Other */,
@@ -155,63 +135,6 @@
 			name = Classes;
 			path = ios_0921/Classes;
 			sourceTree = SOURCE_ROOT;
-		};
-		181773B523F6987600AD5A57 /* Arena */ = {
-			isa = PBXGroup;
-			children = (
-				181773B623F6987600AD5A57 /* Controller */,
-			);
-			path = Arena;
-			sourceTree = "<group>";
-		};
-		181773B623F6987600AD5A57 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				181773B723F6987600AD5A57 /* XArenaNc.h */,
-				181773B823F6987600AD5A57 /* XArenaNc.m */,
-				181773B923F6987600AD5A57 /* XArenaVc.h */,
-				181773BA23F6987600AD5A57 /* XArenaVc.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		181773BD23F6987600AD5A57 /* Discovery */ = {
-			isa = PBXGroup;
-			children = (
-				181773BE23F6987600AD5A57 /* Controller */,
-				18755E3F23FFC64E00A56C03 /* View */,
-			);
-			path = Discovery;
-			sourceTree = "<group>";
-		};
-		181773BE23F6987600AD5A57 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				181773BF23F6987600AD5A57 /* XDiscoverVc.h */,
-				181773C023F6987600AD5A57 /* XDiscoverVc.m */,
-				181773C123F6987600AD5A57 /* XDiscoverVc.storyboard */,
-				181773C223F6987600AD5A57 /* XGroupBuyVc.h */,
-				181773C323F6987600AD5A57 /* XGroupBuyVc.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		181773C823F6987600AD5A57 /* History */ = {
-			isa = PBXGroup;
-			children = (
-				181773C923F6987600AD5A57 /* Controller */,
-			);
-			path = History;
-			sourceTree = "<group>";
-		};
-		181773C923F6987600AD5A57 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				181773CA23F6987600AD5A57 /* XHistoryVc.h */,
-				181773CB23F6987600AD5A57 /* XHistoryVc.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
 		};
 		181773CE23F6987600AD5A57 /* LotteryHall */ = {
 			isa = PBXGroup;
@@ -299,6 +222,8 @@
 		181773F623F6987600AD5A57 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				18755E4023FFC64E00A56C03 /* XTitleButton.m */,
+				18755E4123FFC64E00A56C03 /* XTitleButton.h */,
 				181773F723F6987600AD5A57 /* AppDelegate.h */,
 				181773F823F6987600AD5A57 /* AppDelegate.m */,
 				181773F923F6987600AD5A57 /* Category */,
@@ -404,16 +329,6 @@
 			);
 			name = Base.lproj;
 			path = ios_0921/Base.lproj;
-			sourceTree = SOURCE_ROOT;
-		};
-		18755E3F23FFC64E00A56C03 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				18755E4123FFC64E00A56C03 /* XTitleButton.h */,
-				18755E4023FFC64E00A56C03 /* XTitleButton.m */,
-			);
-			name = View;
-			path = ios_0921/Classes/Discovery/View;
 			sourceTree = SOURCE_ROOT;
 		};
 		18755E4323FFC68000A56C03 /* View */ = {
@@ -548,7 +463,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18AF3412240417E900A20A23 /* Default@2x.png in Resources */,
-				1817742123F6987600AD5A57 /* XDiscoverVc.storyboard in Resources */,
 				1817744523F6994300AD5A57 /* LaunchScreen.storyboard in Resources */,
 				1817742F23F6987600AD5A57 /* XMyLotteryVc.xib in Resources */,
 				18247D5024041964007733AB /* Default@3x.png in Resources */,
@@ -576,17 +490,13 @@
 				1817743623F6987600AD5A57 /* XGuideService.m in Sources */,
 				1817743923F6987600AD5A57 /* XBaseSettingVc.m in Sources */,
 				18755E4A23FFC68000A56C03 /* XCover.m in Sources */,
-				1817742023F6987600AD5A57 /* XDiscoverVc.m in Sources */,
 				1817742623F6987600AD5A57 /* XLotteryHallVc.m in Sources */,
 				1817743423F6987600AD5A57 /* UIView+Frame.m in Sources */,
-				1817741F23F6987600AD5A57 /* XArenaVc.m in Sources */,
 				1817742B23F6987600AD5A57 /* XTbc.m in Sources */,
-				1817742423F6987600AD5A57 /* XHistoryVc.m in Sources */,
 				1817743C23F6987600AD5A57 /* XSettingVc.m in Sources */,
 				1817743D23F6987600AD5A57 /* XGroupItem.m in Sources */,
 				18755E662400DB3D00A56C03 /* XTabBarButton.m in Sources */,
 				1817743823F6987600AD5A57 /* XAwardVc.m in Sources */,
-				1817741E23F6987600AD5A57 /* XArenaNc.m in Sources */,
 				1817743E23F6987600AD5A57 /* XSettingArrowItem.m in Sources */,
 				1817744023F6987600AD5A57 /* XSettingSwitchItem.m in Sources */,
 				18755E5223FFC6BB00A56C03 /* XTabBar.m in Sources */,
@@ -597,7 +507,6 @@
 				18755E4223FFC64E00A56C03 /* XTitleButton.m in Sources */,
 				1817743523F6987600AD5A57 /* main.m in Sources */,
 				1817743B23F6987600AD5A57 /* XScoreVc.m in Sources */,
-				1817742223F6987600AD5A57 /* XGroupBuyVc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

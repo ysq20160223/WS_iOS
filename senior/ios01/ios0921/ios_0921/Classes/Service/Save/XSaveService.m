@@ -11,11 +11,11 @@
 @implementation XSaveService
 
 + (void)setObject:(id)value forKey:(NSString *)defaultName {
-    [[NSUserDefaults standardUserDefaults] setObject:value forKey:defaultName];
+    [NSUserDefaults.standardUserDefaults setObject:value forKey:defaultName];
 }
 
 + (id)objectForKey:(NSString *)defaultName {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:defaultName];
+    return [NSUserDefaults.standardUserDefaults objectForKey:defaultName];
 }
 
 @end
