@@ -53,20 +53,22 @@
     // Do any additional setup after loading the view.
     NSLog(@"%@", NSStringFromCGRect(self.tabBar.frame));
     
-    [self setUpAllChildViewController]; // 添加所有的子控制器
+    [self setUpAllChildVc]; // 添加所有的子控制器
     [self setUpTabBar];
 }
 
 
-#pragma mark - MyTabBarDelegate start
+#pragma mark - XTabBarDelegate start
 - (void)tabBar:(XTabBar *)tabBar didClickBtn:(NSInteger)btnIndex {
 //    NSLog(@"index: %ld", btnIndex);
     self.selectedIndex = btnIndex; // 点击底部的按钮, 切换控制器
 }
-#pragma mark - MyTabBarDelegate end
+#pragma mark - XTabBarDelegate end
 
 
 - (void)setUpTabBar {
+    XLog
+    
     // 1, 移除系统的 TabBar
 //    [self.tabBar removeFromSuperview];
     
@@ -83,7 +85,9 @@
 }
 
 // 添加所有的子控制器
-- (void)setUpAllChildViewController {
+- (void)setUpAllChildVc {
+    XLog
+    
     // 1, LotteryHall ( [ˈlɒtəri] 购彩大厅)
     UIViewController *hall = XLotteryHallVc.alloc.init;
 //    hall.view.backgroundColor = UIColor.cyanColor;
@@ -95,6 +99,8 @@
 }
 
 - (void)setUpChildViewController:(UIViewController *)vc normalImg:(NSString *)normalImg selectedImg:(NSString *)selectedImg title:(NSString *)title {
+    NSLog(@"title: %@", title);
+    
     UINavigationController *navVc = [XNc.alloc initWithRootViewController:vc];
     
 //    if ([vc isKindOfClass:XArenaVc.class]) {

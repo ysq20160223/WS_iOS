@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "XTabBarButton.h"
+
 @class XTabBar;
 
 @protocol XTabBarDelegate <NSObject>
@@ -22,8 +24,10 @@
 @interface XTabBar : UIButton
 //@interface XTabBar : UITabBar
 
-@property (nonatomic, strong) NSArray *tabBarItems;
+@property (nonatomic, strong) NSArray<XTabBarButton *> *tabBarItems;
 
 @property (nonatomic, strong) id<XTabBarDelegate> xTabBarDelegate;
 
 @end
+
+

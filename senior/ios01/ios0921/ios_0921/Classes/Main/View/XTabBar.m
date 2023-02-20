@@ -7,13 +7,10 @@
 //
 
 #import "XTabBar.h"
-#import "XTabBarButton.h"
 
 #import "UIView+Frame.h"
 
 @interface XTabBar ()
-
-@property (nonatomic, weak) UIButton *selectedBtn;
 
 @end
 
@@ -23,42 +20,42 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        
     }
     return self;
 }
 
-- (void)setTabBarItems:(NSArray *)tabBarItems {
+- (void)setTabBarItems:(NSArray<XTabBarButton *> *)tabBarItems {
+    XLog
     _tabBarItems = tabBarItems;
     
     int i = 0;
     for (UITabBarItem *tabBarItem in tabBarItems) {
         XTabBarButton *btn = [XTabBarButton buttonWithType:UIButtonTypeCustom];
         
-        btn.tag = i;
         [btn setImage:tabBarItem.image forState:UIControlStateNormal];
         [btn setImage:tabBarItem.selectedImage forState:UIControlStateSelected];
-
         
         // 监听点击
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
         
-        i++;
-        // 默认选中第一个按钮
-        if (btn.tag == 0) {
-            [self btnClick:btn];
-        }
-        
         [self addSubview:btn];
+        btn.tag = i++;
     }
+    
+    [self btnClick:self.subviews[0]];
     
 }
 
 - (void)btnClick:(UIButton *)btn {
-    self.selectedBtn.selected = NO;
-    btn.selected = YES;
-    self.selectedBtn = btn;
+    NSLog(@"%@", btn);
     
+    for (NSInteger i = 0; i < self.subviews.count; i++) {
+        NSLog(@"%ld: %@", i, self.subviews[i]);
+        if ([self.subviews[i] isKindOfClass:XTabBarButton.class]) {
+            XTabBarButton *tabBarBtn = self.subviews[i];
+            tabBarBtn.selected = tabBarBtn == btn;
+        }
+    }
     
     // 切换界面 - 通知 tabBarVc 切换界面
     if ([_xTabBarDelegate respondsToSelector:@selector(tabBar:didClickBtn:)]) {
@@ -68,6 +65,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    XLog
     
     int count = (int)_tabBarItems.count;
     CGFloat x = 0;
