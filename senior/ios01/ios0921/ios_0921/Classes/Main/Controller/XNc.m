@@ -21,7 +21,7 @@
 
 + (void)setUpNav {
     // 获取当前整个应用程序下的所有导航条的外观
-    //    UINavigationBar *navBar = [UINavigationBar appearance];
+//        UINavigationBar *navBar = [UINavigationBar appearance];
     
     // 只影响当前类下的导航条
     UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedIn:self, nil];
@@ -32,7 +32,7 @@
     [navBar setBackgroundImage:[UIImage imageNamed:@"NavBar64"] forBarMetrics:UIBarMetricsDefault];
     
     // 设置导航条标题颜色
-    NSMutableDictionary *textAttrDict = [NSMutableDictionary dictionary];
+    NSMutableDictionary *textAttrDict = NSMutableDictionary.dictionary;
     textAttrDict[NSForegroundColorAttributeName] = UIColor.whiteColor;
     textAttrDict[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
     

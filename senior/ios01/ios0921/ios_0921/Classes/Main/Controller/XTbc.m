@@ -39,9 +39,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    XLog
     
     // 移除系统 UITabBar 上自带的按钮
     for(UIView *subview in self.tabBar.subviews) {
+        NSLog(@"%@", subview);
         if (![subview isKindOfClass:XTabBar.class]) {
             [subview removeFromSuperview];
         }
@@ -60,7 +62,7 @@
 
 #pragma mark - XTabBarDelegate start
 - (void)tabBar:(XTabBar *)tabBar didClickBtn:(NSInteger)btnIndex {
-//    NSLog(@"index: %ld", btnIndex);
+    NSLog(@"selectedIndex: %ld", btnIndex);
     self.selectedIndex = btnIndex; // 点击底部的按钮, 切换控制器
 }
 #pragma mark - XTabBarDelegate end
@@ -91,11 +93,11 @@
     // 1, LotteryHall ( [ˈlɒtəri] 购彩大厅)
     UIViewController *hall = XLotteryHallVc.alloc.init;
 //    hall.view.backgroundColor = UIColor.cyanColor;
-    [self setUpChildViewController:hall normalImg:@"TabBar_LotteryHall_new" selectedImg:@"TabBar_LotteryHall_selected_new" title:@"LotteyHall"];
+    [self setUpChildViewController:hall normalImg:@"TabBar_LotteryHall" selectedImg:@"TabBar_LotteryHall_selected" title:@"LotteyHall"];
     
     
     // 2, MyLottery (我的)
-    [self setUpChildViewController:XMyLotteryVc.alloc.init normalImg:@"TabBar_MyLottery_new" selectedImg:@"TabBar_MyLottery_selected_new" title:@"MyLottery"];
+    [self setUpChildViewController:XMyLotteryVc.alloc.init normalImg:@"TabBar_MyLottery" selectedImg:@"TabBar_MyLottery_selected" title:@"MyLottery"];
 }
 
 - (void)setUpChildViewController:(UIViewController *)vc normalImg:(NSString *)normalImg selectedImg:(NSString *)selectedImg title:(NSString *)title {
