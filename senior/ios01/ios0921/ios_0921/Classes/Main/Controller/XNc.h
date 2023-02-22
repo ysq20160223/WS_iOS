@@ -10,4 +10,8 @@
 
 @interface XNc : UINavigationController
 
+@property (nonatomic, assign) bool isSetAppearance;
+
 @end
+
+

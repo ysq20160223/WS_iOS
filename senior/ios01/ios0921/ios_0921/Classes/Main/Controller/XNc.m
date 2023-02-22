@@ -9,6 +9,8 @@
 #import "XNc.h"
 #import "UIImage+X.h"
 
+#define commonBgColor XColorAlpha(0x35, 0x36, 0x37, 0.99)
+
 @interface XNc () <UINavigationControllerDelegate>
 
 @property (nonatomic, strong) id popDelegate;
@@ -25,19 +27,30 @@
     
     // 只影响当前类下的导航条
     UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedIn:self, nil];
-    
+
     // UIBarMetricsCompact : 导航条透明
     // UIBarMetricsDefault : 必须传, 才能设置图片成功, 其他的模式都设置不了
     // 导航控制器的子控制器的 view 高度会减少 64
-    [navBar setBackgroundImage:[UIImage imageNamed:@"NavBar64"] forBarMetrics:UIBarMetricsDefault];
-    
+//    [navBar setBackgroundImage:[UIImage imageNamed:@"NavBar64"] forBarMetrics:UIBarMetricsDefault];
+//    navBar.shadowImage = UIImage.alloc.init; // 清空导航条的阴影的线
+
     // 设置导航条标题颜色
     NSMutableDictionary *textAttrDict = NSMutableDictionary.dictionary;
     textAttrDict[NSForegroundColorAttributeName] = UIColor.whiteColor;
     textAttrDict[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
-    
+
     // 设置导航条标题
     navBar.titleTextAttributes = textAttrDict;
+    
+    
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *appearance = UINavigationBarAppearance.alloc.init;
+//        appearance.backgroundColor = commonBgColor;
+        appearance.backgroundImage = [UIImage imageNamed:@"NavBar64"];
+        appearance.titleTextAttributes = textAttrDict;
+        navBar.standardAppearance = appearance;
+        navBar.scrollEdgeAppearance = appearance;
+    }
 }
 
 
