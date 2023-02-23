@@ -70,7 +70,7 @@
     
 //    self.view.backgroundColor = [UIColor colorWithDisplayP3Red:1 green:0 blue:1 alpha:1];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage imageWithOriginalImageNamed:@"CS50_activity_image"] style:0 target:self action:@selector(activity)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage xImageWithOriginalImageNamed:@"CS50_activity_image"] style:0 target:self action:@selector(activity)];
     
     // 测试左右 BarButtonItem
 //    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:1 green:0 blue:1 alpha:1];

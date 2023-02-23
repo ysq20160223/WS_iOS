@@ -13,9 +13,9 @@
 + (instancetype)xImageWithOriginalImageNamed:(NSString *)imageName;
 
 // 根据颜色生成一张尺寸为1*1的相同颜色图片
-+ (UIImage *)imageWithColor:(UIColor *)color;
++ (UIImage *)xImageWithColor:(UIColor *)color;
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (UIImage *)xImageWithColor:(UIColor *)color size:(CGSize)size;
 
 //
 - (instancetype)xCircleImage;

@@ -35,12 +35,12 @@
     [btn setTitle:@"MM" forState:UIControlStateNormal];
     [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     [btn setTitleColor:UIColor.grayColor forState:UIControlStateHighlighted];
-    [btn setImage:[UIImage imageWithOriginalImageNamed:@"FBMM_Barbutton"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage xImageWithOriginalImageNamed:@"FBMM_Barbutton"] forState:UIControlStateNormal];
     [btn sizeToFit];
     [btn addTarget:self action:@selector(leftClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithCustomView:btn];
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage imageWithOriginalImageNamed:@"Mylottery_config"] style:0 target:self action:@selector(setting)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage xImageWithOriginalImageNamed:@"Mylottery_config"] style:0 target:self action:@selector(setting)];
 }
 
 

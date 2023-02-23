@@ -15,7 +15,7 @@
 }
 
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
++ (UIImage *)xImageWithColor:(UIColor *)color {
     // 描述矩形
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     
@@ -40,7 +40,7 @@
     return image;
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
++ (UIImage *)xImageWithColor:(UIColor *)color size:(CGSize)size {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();

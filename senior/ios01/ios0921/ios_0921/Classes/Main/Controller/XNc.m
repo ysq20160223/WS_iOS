@@ -26,7 +26,8 @@
 //        UINavigationBar *navBar = [UINavigationBar appearance];
     
     // 只影响当前类下的导航条
-    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedIn:self, nil];
+//    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedIn:self, nil];
+    UINavigationBar *navBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
 
     // UIBarMetricsCompact : 导航条透明
     // UIBarMetricsDefault : 必须传, 才能设置图片成功, 其他的模式都设置不了
@@ -56,6 +57,7 @@
 
 // 第一次使用这个类或者子类的时候调用 (不一定只调用一次)
 + (void)initialize {
+    NSLog(@"%@", self);
     if (self == XNc.class) {
         [self setUpNav];
     }
@@ -97,7 +99,7 @@
     // 不是导航控制器的根控制器才需要设置返回按钮
     if (self.childViewControllers.count > 1) {
         // 设置左边的按钮
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage imageWithOriginalImageNamed:@"NavBack"] style:0 target:self action:@selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage xImageWithOriginalImageNamed:@"NavBack"] style:0 target:self action:@selector(back)];
     }
 }
 
