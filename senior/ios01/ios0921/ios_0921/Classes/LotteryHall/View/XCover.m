@@ -11,7 +11,7 @@
 @implementation XCover
 
 + (void)hide {
-    for (UIView *childView in [UIApplication sharedApplication].keyWindow.subviews) {
+    for (UIView *childView in UIApplication.sharedApplication.keyWindow.subviews) {
 //        NSLog(@"%@", childView);
         
 //        if ([childView isKindOfClass:self]) {
@@ -23,18 +23,24 @@
 //        }
         
         if ([childView isKindOfClass:self]) {
-            childView.alpha = 0;
-            [childView removeFromSuperview];
+            [UIView animateWithDuration:1 animations:^{
+                childView.alpha = 0;
+            } completion:^(BOOL finished) {
+                [childView removeFromSuperview];
+            }];
         }
     }
 }
 
 + (void)show {
     XCover *cover = [XCover.alloc initWithFrame:UIScreen.mainScreen.bounds];
-    cover.backgroundColor = UIColor.blackColor;
-    cover.alpha = .6; // 设置父控件透明度会影响子控件
-    
+    cover.backgroundColor = UIColor.clearColor;
+    cover.alpha = .1; // 设置父控件透明度会影响子控件
     [UIApplication.sharedApplication.keyWindow addSubview:cover];
+    [UIView animateWithDuration:1 animations:^{
+        cover.backgroundColor = UIColor.blackColor;
+        cover.alpha = .6;
+    }];
 }
 
 @end

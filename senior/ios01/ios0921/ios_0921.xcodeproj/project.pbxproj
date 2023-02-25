@@ -31,10 +31,10 @@
 		1817744123F6987600AD5A57 /* XSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1817741D23F6987600AD5A57 /* XSettingCell.m */; };
 		1817744523F6994300AD5A57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1817744323F6994300AD5A57 /* LaunchScreen.storyboard */; };
 		18247D5024041964007733AB /* Default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18247D4F24041964007733AB /* Default@3x.png */; };
+		1865D44B29AA6EBA009226E3 /* XPopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1865D44629AA6EB9009226E3 /* XPopMenu.xib */; };
+		1865D44C29AA6EBA009226E3 /* XCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 1865D44729AA6EB9009226E3 /* XCover.m */; };
+		1865D44D29AA6EBA009226E3 /* XPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1865D44829AA6EB9009226E3 /* XPopMenu.m */; };
 		18755E4223FFC64E00A56C03 /* XTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E4023FFC64E00A56C03 /* XTitleButton.m */; };
-		18755E4923FFC68000A56C03 /* XPopMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18755E4423FFC68000A56C03 /* XPopMenu.xib */; };
-		18755E4A23FFC68000A56C03 /* XCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E4723FFC68000A56C03 /* XCover.m */; };
-		18755E4B23FFC68000A56C03 /* XPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E4823FFC68000A56C03 /* XPopMenu.m */; };
 		18755E5223FFC6BB00A56C03 /* XTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E5023FFC6BB00A56C03 /* XTabBar.m */; };
 		18755E662400DB3D00A56C03 /* XTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18755E652400DB3D00A56C03 /* XTabBarButton.m */; };
 		187AEC8729A7B4BA0091AAAA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 187AEC8529A7B4BA0091AAAA /* UIView+Frame.m */; };
@@ -89,13 +89,13 @@
 		1817741D23F6987600AD5A57 /* XSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSettingCell.m; sourceTree = "<group>"; };
 		1817744423F6994300AD5A57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18247D4F24041964007733AB /* Default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@3x.png"; sourceTree = "<group>"; };
+		1865D44629AA6EB9009226E3 /* XPopMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XPopMenu.xib; sourceTree = "<group>"; };
+		1865D44729AA6EB9009226E3 /* XCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCover.m; sourceTree = "<group>"; };
+		1865D44829AA6EB9009226E3 /* XPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPopMenu.m; sourceTree = "<group>"; };
+		1865D44929AA6EB9009226E3 /* XPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPopMenu.h; sourceTree = "<group>"; };
+		1865D44A29AA6EB9009226E3 /* XCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCover.h; sourceTree = "<group>"; };
 		18755E4023FFC64E00A56C03 /* XTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTitleButton.m; sourceTree = "<group>"; };
 		18755E4123FFC64E00A56C03 /* XTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTitleButton.h; sourceTree = "<group>"; };
-		18755E4423FFC68000A56C03 /* XPopMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XPopMenu.xib; sourceTree = "<group>"; };
-		18755E4523FFC68000A56C03 /* XCover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCover.h; sourceTree = "<group>"; };
-		18755E4623FFC68000A56C03 /* XPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPopMenu.h; sourceTree = "<group>"; };
-		18755E4723FFC68000A56C03 /* XCover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCover.m; sourceTree = "<group>"; };
-		18755E4823FFC68000A56C03 /* XPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPopMenu.m; sourceTree = "<group>"; };
 		18755E4E23FFC6BB00A56C03 /* XTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTabBar.h; sourceTree = "<group>"; };
 		18755E5023FFC6BB00A56C03 /* XTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTabBar.m; sourceTree = "<group>"; };
 		18755E642400DB3D00A56C03 /* XTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTabBarButton.h; sourceTree = "<group>"; };
@@ -139,8 +139,8 @@
 		181773CE23F6987600AD5A57 /* LotteryHall */ = {
 			isa = PBXGroup;
 			children = (
+				1865D44529AA6E99009226E3 /* View */,
 				181773CF23F6987600AD5A57 /* Controller */,
-				18755E4323FFC68000A56C03 /* View */,
 			);
 			path = LotteryHall;
 			sourceTree = "<group>";
@@ -331,14 +331,14 @@
 			path = ios_0921/Base.lproj;
 			sourceTree = SOURCE_ROOT;
 		};
-		18755E4323FFC68000A56C03 /* View */ = {
+		1865D44529AA6E99009226E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				18755E4523FFC68000A56C03 /* XCover.h */,
-				18755E4723FFC68000A56C03 /* XCover.m */,
-				18755E4623FFC68000A56C03 /* XPopMenu.h */,
-				18755E4823FFC68000A56C03 /* XPopMenu.m */,
-				18755E4423FFC68000A56C03 /* XPopMenu.xib */,
+				1865D44A29AA6EB9009226E3 /* XCover.h */,
+				1865D44729AA6EB9009226E3 /* XCover.m */,
+				1865D44929AA6EB9009226E3 /* XPopMenu.h */,
+				1865D44829AA6EB9009226E3 /* XPopMenu.m */,
+				1865D44629AA6EB9009226E3 /* XPopMenu.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -463,10 +463,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18AF3412240417E900A20A23 /* Default@2x.png in Resources */,
+				1865D44B29AA6EBA009226E3 /* XPopMenu.xib in Resources */,
 				1817744523F6994300AD5A57 /* LaunchScreen.storyboard in Resources */,
 				1817742F23F6987600AD5A57 /* XMyLotteryVc.xib in Resources */,
 				18247D5024041964007733AB /* Default@3x.png in Resources */,
-				18755E4923FFC68000A56C03 /* XPopMenu.xib in Resources */,
 				18AF3413240417E900A20A23 /* Default-568h@2x.png in Resources */,
 				18AF3414240417EA00A20A23 /* Default-812h@3x.png in Resources */,
 				181773B123F6961900AD5A57 /* Assets.xcassets in Resources */,
@@ -484,16 +484,15 @@
 				1817743723F6987600AD5A57 /* XSaveService.m in Sources */,
 				1817742E23F6987600AD5A57 /* XMyLotteryVc.m in Sources */,
 				1817743F23F6987600AD5A57 /* XSettingItem.m in Sources */,
-				18755E4B23FFC68000A56C03 /* XPopMenu.m in Sources */,
 				1817743223F6987600AD5A57 /* AppDelegate.m in Sources */,
 				1817743023F6987600AD5A57 /* XNewFeatureVc.m in Sources */,
 				1817743623F6987600AD5A57 /* XGuideService.m in Sources */,
 				1817743923F6987600AD5A57 /* XBaseSettingVc.m in Sources */,
-				18755E4A23FFC68000A56C03 /* XCover.m in Sources */,
 				1817742623F6987600AD5A57 /* XLotteryHallVc.m in Sources */,
 				1817742B23F6987600AD5A57 /* XTbc.m in Sources */,
 				1817743C23F6987600AD5A57 /* XSettingVc.m in Sources */,
 				1817743D23F6987600AD5A57 /* XGroupItem.m in Sources */,
+				1865D44C29AA6EBA009226E3 /* XCover.m in Sources */,
 				18755E662400DB3D00A56C03 /* XTabBarButton.m in Sources */,
 				1817743823F6987600AD5A57 /* XAwardVc.m in Sources */,
 				1817743E23F6987600AD5A57 /* XSettingArrowItem.m in Sources */,
@@ -505,6 +504,7 @@
 				1817742A23F6987600AD5A57 /* XNc.m in Sources */,
 				1817743123F6987600AD5A57 /* XNewFeatureViewCell.m in Sources */,
 				18755E4223FFC64E00A56C03 /* XTitleButton.m in Sources */,
+				1865D44D29AA6EBA009226E3 /* XPopMenu.m in Sources */,
 				1817743523F6987600AD5A57 /* main.m in Sources */,
 				1817743B23F6987600AD5A57 /* XScoreVc.m in Sources */,
 			);

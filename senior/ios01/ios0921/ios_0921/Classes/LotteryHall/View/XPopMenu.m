@@ -22,21 +22,30 @@
 
 //
 - (void)hideInPoint:(CGPoint)point completion:(void (^ __nullable)())completion {
+    completion(); // 隐藏蒙版
     [UIView animateWithDuration:1 animations:^{
         self.center = point;
         self.transform = CGAffineTransformMakeScale(.01, .01);
     } completion:^(BOOL finished) {
         [self removeFromSuperview]; // 移除
-        completion(); // 隐藏蒙版
+//        completion(); // 隐藏蒙版
     }];
 }
 
 //
 + (instancetype)showInPoint:(CGPoint)point {
     // 创建菜单
-    XPopMenu *popMenu = [NSBundle.mainBundle loadNibNamed:[NSString stringWithFormat:@"%@", self.class] owner:nil options:nil][0];
-    popMenu.backgroundColor = UIColor.cyanColor;
-    popMenu.center = point;
+    XPopMenu *popMenu = [NSBundle.mainBundle loadNibNamed:[NSString stringWithFormat:@"%@", self.class] owner:nil options:nil].firstObject;
+//    popMenu.center = point;
+    popMenu.center = CGPointMake(44, kStatusBarH + 22);
+    popMenu.transform = CGAffineTransformMakeScale(.01, .01);
+    [UIView animateWithDuration:1 animations:^{
+        popMenu.backgroundColor = UIColor.cyanColor;
+        popMenu.transform = CGAffineTransformMakeScale(1, 1);
+        popMenu.center = point;
+    } completion:^(BOOL finished) {
+        
+    }];
     
     [UIApplication.sharedApplication.keyWindow addSubview:popMenu];
     

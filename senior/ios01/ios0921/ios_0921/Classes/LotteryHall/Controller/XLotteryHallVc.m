@@ -88,6 +88,7 @@
     popMenu.delegate = self;
 }
 
+#pragma mark - XPopMenuDelegate start
 - (void)popMenuDidClickClose:(XPopMenu *)popMenu {
 //    [popMenu hideInPoint:CGPointMake(24, 44)];
 //    [XCover hide];
@@ -105,6 +106,8 @@
 //
 //    }];
 }
+#pragma mark - XPopMenuDelegate end
+
 
 #pragma mark - Table view data source start
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
