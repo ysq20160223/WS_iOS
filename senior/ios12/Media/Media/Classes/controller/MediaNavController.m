@@ -24,7 +24,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//    NSLog(@"%@", self.class);
+    NSLog(@"%@; %d", self.class, self.isSetAppearance);
     if(self.isSetAppearance) {
         NSMutableDictionary<NSAttributedStringKey, id> *dict = NSMutableDictionary.dictionary;
         [dict setObject:XColor(0xee, 0xee, 0xee) forKey:NSForegroundColorAttributeName];

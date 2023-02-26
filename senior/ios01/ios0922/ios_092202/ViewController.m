@@ -31,13 +31,13 @@ typedef void (^MyBlock)();
     // ARC中, 默认一个局部变量都是强指针
     // 如果 block 中没有使用外部变量, 默认就是全局
     // 如果 block 中使用了外部变量, 就是堆
-    void(^myBlock)() = ^() {
-        NSLog(@"call myBlock: %d", i);
+    void(^block)() = ^() {
+        NSLog(@"call block: %d", i);
     };
     
-    NSLog(@"%@", myBlock);
+    NSLog(@"%@", block);
     
-    _block = myBlock;
+    _block = block;
     
 }
 

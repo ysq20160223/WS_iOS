@@ -54,7 +54,7 @@
         label.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:alpha];
     }
     
-    UIImage *image = [UIImage imageWithColor:XColorAlpha(0x33, 0x33, 0x33, alpha)];
+    UIImage *image = [UIImage xImageWithColor:XColorAlpha(0x33, 0x33, 0x33, alpha)];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
 }
 
@@ -114,7 +114,7 @@
     // UIBarMetricsDefault : 只有设置这种样式, 才能设置导航条背景图片
     self.navigationController.navigationBar.shadowImage = UIImage.alloc.init; // 清空导航条的阴影的线
     
-    UIImage *image = [UIImage imageWithColor:XColorAlpha(0x33, 0x33, 0x33, 0)];
+    UIImage *image = [UIImage xImageWithColor:XColorAlpha(0x33, 0x33, 0x33, 0)];
     [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault]; // 设置导航条背景图片
     
 //    // 标题透明
