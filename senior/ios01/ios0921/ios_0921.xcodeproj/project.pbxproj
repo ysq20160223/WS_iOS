@@ -222,8 +222,8 @@
 		181773F623F6987600AD5A57 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				18755E4023FFC64E00A56C03 /* XTitleButton.m */,
 				18755E4123FFC64E00A56C03 /* XTitleButton.h */,
+				18755E4023FFC64E00A56C03 /* XTitleButton.m */,
 				181773F723F6987600AD5A57 /* AppDelegate.h */,
 				181773F823F6987600AD5A57 /* AppDelegate.m */,
 				181773F923F6987600AD5A57 /* Category */,

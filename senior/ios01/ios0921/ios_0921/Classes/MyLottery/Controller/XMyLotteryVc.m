@@ -32,7 +32,7 @@
 // 设置导航条的内容
 - (void)setUpNavBar {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitle:@"MM" forState:UIControlStateNormal];
+    [btn setTitle:@" MM" forState:UIControlStateNormal];
     [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     [btn setTitleColor:UIColor.grayColor forState:UIControlStateHighlighted];
     [btn setImage:[UIImage xImageWithOriginalImageNamed:@"FBMM_Barbutton"] forState:UIControlStateNormal];

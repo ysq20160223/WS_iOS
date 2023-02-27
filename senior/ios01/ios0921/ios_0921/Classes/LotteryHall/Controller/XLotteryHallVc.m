@@ -29,8 +29,7 @@
 //- (void)loadView {
 //    // 自己创建控制器的 view
 //    UIImageView *imageView = [UIImageView.alloc initWithFrame:UIScreen.mainScreen.bounds];
-//    imageView.image = [UIImage imageNamed:@"NLArenaBackground"];
-////    imageView.image = [UIImage imageWithColor:UIColor.cyanColor];
+//    imageView.image = [UIImage xImageWithColor:UIColor.cyanColor];
 //    imageView.userInteractionEnabled = YES;
 //    
 //    self.view = imageView;
@@ -84,8 +83,7 @@
     [XCover show];
     
     // 2,
-    XPopMenu *popMenu = [XPopMenu showInPoint:CGPointMake(_screenW * .5, _screenH * .5)];
-    popMenu.delegate = self;
+    [XPopMenu showInPoint:CGPointMake(_screenW * .5, _screenH * .5)].delegate = self;
 }
 
 #pragma mark - XPopMenuDelegate start
@@ -97,11 +95,11 @@
 //    <#returnType#>(^<#blockName#>)(<#parameterTypes#>) = ^(<#parameters#>) {
 //        <#statements#>
 //    };
-    void (^popMenuHide)() = ^{
+    void(^popMenuHideBlock)() = ^{
         [XCover hide];
     };
     
-    [popMenu hideInPoint:CGPointMake(44, kStatusBarH + self.navigationController.navigationBar.frame.size.height / 2) completion:popMenuHide];
+    [popMenu hideInPoint:CGPointMake(44, kStatusBarH + self.navigationController.navigationBar.frame.size.height / 2) completion:popMenuHideBlock];
 //    [popMenu hideInPoint:CGPointMake(44, kStatusBarH + self.navigationController.navigationBar.frame.size.height / 2) completion:^{
 //
 //    }];

@@ -21,7 +21,7 @@
 }
 
 //
-- (void)hideInPoint:(CGPoint)point completion:(void (^ __nullable)())completion {
+- (void)hideInPoint:(CGPoint)point completion:(void (^ __nullable)(void))completion {
     completion(); // 隐藏蒙版
     [UIView animateWithDuration:1 animations:^{
         self.center = point;

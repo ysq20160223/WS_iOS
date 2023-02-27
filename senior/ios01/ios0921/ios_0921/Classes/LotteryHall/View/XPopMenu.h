@@ -27,6 +27,6 @@
 
 + (instancetype)showInPoint:(CGPoint)point;
 
-- (void)hideInPoint:(CGPoint)point completion:(void (^ __nullable)())completion;
+- (void)hideInPoint:(CGPoint)point completion:(void (^ __nullable)(void))completion;
 
 @end

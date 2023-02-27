@@ -38,10 +38,11 @@
     [titleBtn setImage:[UIImage imageNamed:@"YellowDownArrow"] forState:UIControlStateNormal];
     self.navigationItem.titleView = titleBtn;
     
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Right" style:0 target:self action:@selector(click)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem.alloc initWithTitle:@"Right" style:0 target:self action:@selector(onClickRightBarButtonItem:)];
 }
 
-- (void)click {
+- (void)onClickRightBarButtonItem:(UIBarButtonItem *)item {
+    NSLog(@"%@", item);
     [_titleBtn setTitle:@"SETTINGS" forState:UIControlStateNormal];
     
 //    [_titleBtn sizeToFit];
