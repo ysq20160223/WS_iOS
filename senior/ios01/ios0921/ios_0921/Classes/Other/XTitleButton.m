@@ -8,7 +8,7 @@
 
 #import "XTitleButton.h"
 
-#import "UIView+Frame.h"
+#import "UIView+X.h"
 
 // 修改系统自带控件内部的子控件
 // 1, 自定义这个控件
@@ -19,12 +19,12 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if (self.titleLabel.x > self.imageView.x) {
-        self.titleLabel.x = self.imageView.x;
-        self.imageView.x = CGRectGetMaxX(self.titleLabel.frame);
+    if (self.titleLabel.xX > self.imageView.xX) {
+        self.titleLabel.xX = self.imageView.xX;
+        self.imageView.xX = CGRectGetMaxX(self.titleLabel.frame);
     }
     
-//    NSLog(@"titleLabel:%f imageView:%f", self.titleLabel.x, self.imageView.x);
+//    NSLog(@"titleLabel.x: %f; imageView.x: %f", self.titleLabel.x, self.imageView.x);
 }
 
 //
@@ -47,3 +47,5 @@
 */
 
 @end
+
+

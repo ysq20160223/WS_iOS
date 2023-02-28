@@ -8,7 +8,7 @@
 
 #import "XNewFeatureViewCell.h"
 
-#import "UIView+Frame.h"
+#import "UIView+X.h"
 
 #import "XTbc.h"
 
@@ -25,11 +25,11 @@
 @implementation XNewFeatureViewCell
 
 - (UIButton *)startButton {
-    if (_startButton == nil) {
+    if (!_startButton) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setBackgroundImage:[UIImage imageNamed:@"guideStart"] forState:UIControlStateNormal];
         [btn sizeToFit];
-        btn.center = CGPointMake(self.width * .5, self.height * .95);
+        btn.center = CGPointMake(self.xWidth * .5, self.xHeight * .95);
         [self addSubview:btn];
         _startButton = btn;
         
@@ -64,11 +64,12 @@
 }
 
 - (void)setIndexPath:(NSIndexPath *)indexPath count:(int)count {
-    if (indexPath.item == count - 1 ) {
-        self.startButton.hidden = NO;
-    } else {
-        self.startButton.hidden = YES;
-    }
+//    if (indexPath.item == count - 1) {
+//        self.startButton.hidden = NO;
+//    } else {
+//        self.startButton.hidden = YES;
+//    }
+    self.startButton.hidden = indexPath.item != count - 1;
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "XTabBar.h"
 
-#import "UIView+Frame.h"
+#import "UIView+X.h"
 
 @interface XTabBar ()
 
@@ -71,8 +71,8 @@
     CGFloat x = 0;
     CGFloat y = 0;
     
-    CGFloat w = self.width / count;
-    CGFloat h = self.height;
+    CGFloat w = self.xWidth / count;
+    CGFloat h = self.xHeight;
     
     for (int i = 0; i < count; i++) {
         UIButton *btn = self.subviews[i];

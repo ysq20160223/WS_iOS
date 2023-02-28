@@ -1,13 +1,13 @@
 //
-//  NSArray+Log.m
+//  NSArray+X.m
 //
 //  Created by Apple on 2020/10/11.
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
-#import "NSArray+Log.h"
+#import "NSArray+X.h"
 
-@implementation NSArray (Log)
+@implementation NSArray (X)
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {
     NSMutableString *s = [NSMutableString stringWithString:@"["];
     [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -20,7 +20,7 @@
 
 
 
-@implementation NSDictionary (Log)
+@implementation NSDictionary (X)
 - (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {
     NSMutableString *s = [NSMutableString stringWithString:@"{\n"];
 

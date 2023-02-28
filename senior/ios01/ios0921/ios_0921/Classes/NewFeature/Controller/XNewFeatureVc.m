@@ -10,7 +10,7 @@
 
 #import "XNewFeatureViewCell.h"
 
-#import "UIView+Frame.h"
+#import "UIView+X.h"
 
 @interface XNewFeatureVc ()
 
@@ -59,8 +59,8 @@ static NSString *ID = @"CollectionViewCell";
     
     // 线
     UIImageView *line = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideLine"]];
-    line.x -= 139;
-    line.y += 10;
+    line.xX -= 139;
+    line.xY += 10;
     [self.collectionView addSubview:line];
     //    line.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:0.3];
     _lineIv = line;
@@ -95,14 +95,14 @@ static NSString *ID = @"CollectionViewCell";
     
     _lastOffsetX = offsetX; // 记录上一次
     
-    _footballIv.x += 2 * delta;
-    _largeTextIv.x += 2 * delta;
-    _smallTextIv.x += 2 * delta;
+    _footballIv.xX += 2 * delta;
+    _largeTextIv.xX += 2 * delta;
+    _smallTextIv.xX += 2 * delta;
     
     [UIView animateWithDuration:.2 animations:^{
-        _footballIv.x -= delta;
-        _largeTextIv.x -= delta;
-        _smallTextIv.x -= delta;
+        _footballIv.xX -= delta;
+        _largeTextIv.xX -= delta;
+        _smallTextIv.xX -= delta;
     }];
 }
 
