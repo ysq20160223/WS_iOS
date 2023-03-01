@@ -99,13 +99,13 @@
     // 不是导航控制器的根控制器才需要设置返回按钮
     if (self.childViewControllers.count > 1) {
         // 设置左边的按钮
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage xImageWithOriginalImageNamed:@"NavBack"] style:0 target:self action:@selector(back)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem.alloc initWithImage:[UIImage xImageWithOriginalImageNamed:@"NavBack"] style:0 target:self action:@selector(didClickBack:)];
     }
 }
 
 // 若覆盖了系统的返回按钮, 滑动返回功能就失效了
 // 点击返回按钮返回上一个控制器
-- (void)back {
+- (void)didClickBack:(id)_id {
     [self popViewControllerAnimated:YES];
 }
 

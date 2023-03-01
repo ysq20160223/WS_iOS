@@ -36,17 +36,16 @@
         [btn setImage:tabBarItem.selectedImage forState:UIControlStateSelected];
         
         // 监听点击
-        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchDown];
+        [btn addTarget:self action:@selector(didClickBtn:) forControlEvents:UIControlEventTouchDown];
         
         [self addSubview:btn];
         btn.tag = i++;
     }
     
-    [self btnClick:self.subviews[0]];
-    
+    [self didClickBtn:self.subviews[0]];
 }
 
-- (void)btnClick:(UIButton *)btn {
+- (void)didClickBtn:(UIButton *)btn {
     NSLog(@"%@", btn);
     
     for (NSInteger i = 0; i < self.subviews.count; i++) {

@@ -52,8 +52,6 @@
 		18643442298AB0E200726B28 /* UIBezierPath+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18643426298AB0E000726B28 /* UIBezierPath+X.m */; };
 		18643443298AB0E200726B28 /* NSObject+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18643429298AB0E000726B28 /* NSObject+X.m */; };
 		18643444298AB0E200726B28 /* UIImage+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864342A298AB0E000726B28 /* UIImage+X.m */; };
-		18643445298AB0E200726B28 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864342D298AB0E100726B28 /* NSArray+Log.m */; };
-		18643446298AB0E200726B28 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864342F298AB0E100726B28 /* UIView+Frame.m */; };
 		18643447298AB0E200726B28 /* CALayer+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18643431298AB0E100726B28 /* CALayer+X.m */; };
 		18643448298AB0E200726B28 /* UIImageView+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18643432298AB0E100726B28 /* UIImageView+X.m */; };
 		18643449298AB0E200726B28 /* UITextField+X.m in Sources */ = {isa = PBXBuildFile; fileRef = 18643434298AB0E100726B28 /* UITextField+X.m */; };
@@ -203,9 +201,7 @@
 		1864342A298AB0E000726B28 /* UIImage+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+X.m"; sourceTree = "<group>"; };
 		1864342B298AB0E000726B28 /* NSObject+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+X.h"; sourceTree = "<group>"; };
 		1864342C298AB0E100726B28 /* NSString+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+X.h"; sourceTree = "<group>"; };
-		1864342D298AB0E100726B28 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
 		1864342E298AB0E100726B28 /* CALayer+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+X.h"; sourceTree = "<group>"; };
-		1864342F298AB0E100726B28 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		18643430298AB0E100726B28 /* UIFont+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+X.h"; sourceTree = "<group>"; };
 		18643431298AB0E100726B28 /* CALayer+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+X.m"; sourceTree = "<group>"; };
 		18643432298AB0E100726B28 /* UIImageView+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+X.m"; sourceTree = "<group>"; };
@@ -214,8 +210,6 @@
 		18643435298AB0E100726B28 /* CAGradientLayer+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+X.m"; sourceTree = "<group>"; };
 		18643436298AB0E100726B28 /* NSDate+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+X.h"; sourceTree = "<group>"; };
 		18643437298AB0E100726B28 /* UIFont+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+X.m"; sourceTree = "<group>"; };
-		18643438298AB0E100726B28 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		18643439298AB0E100726B28 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		1864343A298AB0E100726B28 /* NSCalendar+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+X.h"; sourceTree = "<group>"; };
 		1864343B298AB0E100726B28 /* UIImage+X.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+X.h"; sourceTree = "<group>"; };
 		1864343C298AB0E100726B28 /* UIDevice+X.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+X.m"; sourceTree = "<group>"; };
@@ -380,8 +374,6 @@
 				18643435298AB0E100726B28 /* CAGradientLayer+X.m */,
 				1864342E298AB0E100726B28 /* CALayer+X.h */,
 				18643431298AB0E100726B28 /* CALayer+X.m */,
-				18643439298AB0E100726B28 /* NSArray+Log.h */,
-				1864342D298AB0E100726B28 /* NSArray+Log.m */,
 				1864343A298AB0E100726B28 /* NSCalendar+X.h */,
 				18643423298AB0E000726B28 /* NSCalendar+X.m */,
 				18643436298AB0E100726B28 /* NSDate+X.h */,
@@ -404,8 +396,6 @@
 				18643432298AB0E100726B28 /* UIImageView+X.m */,
 				18643428298AB0E000726B28 /* UITextField+X.h */,
 				18643434298AB0E100726B28 /* UITextField+X.m */,
-				18643438298AB0E100726B28 /* UIView+Frame.h */,
-				1864342F298AB0E100726B28 /* UIView+Frame.m */,
 				1864341D298AB0E000726B28 /* UIView+X.h */,
 				18643421298AB0E000726B28 /* UIView+X.m */,
 			);
@@ -917,7 +907,6 @@
 				18F2DBF22934E94B00B8FC3A /* AudioListHeaderRv.m in Sources */,
 				1864343E298AB0E200726B28 /* UIView+X.m in Sources */,
 				1811226E28C25EAB00A4951F /* MediaNavController.m in Sources */,
-				18643446298AB0E200726B28 /* UIView+Frame.m in Sources */,
 				18B23D752478B2C100170BAD /* DRNRealTimeBlurView.m in Sources */,
 				18980D3C28C8D1EC002E609E /* AudioGridCVCell.m in Sources */,
 				1864344C298AB0E200726B28 /* UIDevice+X.m in Sources */,
@@ -926,7 +915,6 @@
 				18B23E9224796AF500170BAD /* AudioTool.m in Sources */,
 				18397C3B247A7CCA00334AE7 /* LrcScrollView.m in Sources */,
 				18643447298AB0E200726B28 /* CALayer+X.m in Sources */,
-				18643445298AB0E200726B28 /* NSArray+Log.m in Sources */,
 				18643449298AB0E200726B28 /* UITextField+X.m in Sources */,
 				1864343F298AB0E200726B28 /* NSString+X.m in Sources */,
 				18B23E8F2478FC9100170BAD /* AudioModel.m in Sources */,
