@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) bool isSetAppearance;
 
+- (void)didClickBack:(id)_id;
+
 @end
 
 NS_ASSUME_NONNULL_END

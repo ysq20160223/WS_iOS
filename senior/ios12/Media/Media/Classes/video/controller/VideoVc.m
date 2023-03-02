@@ -10,6 +10,7 @@
 
 #import "VideoTool.h"
 #import "UIView+X.h"
+#import "MediaNavController.h"
 
 #import <SJVideoPlayer.h>
 
@@ -115,6 +116,15 @@
 
 - (void)dealloc {
     [self.videoPlayer stop];
+}
+
+
+#pragma mark -
+- (void)didClickBack:(id)_id {
+    NSLog(@"%@; %@", _id, self.navigationController);
+    if ([self.navigationController isKindOfClass:MediaNavController.class] && [self.navigationController respondsToSelector:@selector(didClickBack:)]) {
+        [(MediaNavController *)self.navigationController didClickBack:_id];
+    }
 }
 
 

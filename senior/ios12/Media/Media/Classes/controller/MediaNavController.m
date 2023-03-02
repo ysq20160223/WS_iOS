@@ -57,7 +57,7 @@
 }
 
 - (void)pushViewController:(UIViewController *)vc animated:(BOOL)animated {
-//    NSLog(@"%@", viewController.class);
+    NSLog(@"%@", vc.class);
     
     if (self.childViewControllers.count > 0) {
         NSInteger navigationH = self.navigationBar.frame.size.height;
@@ -76,10 +76,10 @@
         
 //        backBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
         
-        if ([vc respondsToSelector:@selector(back)]) {
-            [backBtn addTarget:vc action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        if ([vc respondsToSelector:@selector(didClickBack:)]) {
+            [backBtn addTarget:vc action:@selector(didClickBack:) forControlEvents:UIControlEventTouchUpInside];
         } else {
-            [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+            [backBtn addTarget:self action:@selector(didClickBack:) forControlEvents:UIControlEventTouchUpInside];
         }
         
 //        UIButton *btnTitle = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -99,9 +99,12 @@
 }
 
 
-- (void)back {
+#pragma mark -
+- (void)didClickBack:(id)_id {
+    NSLog(@"%@", _id);
     [self popViewControllerAnimated:YES];
 }
+
 
 #pragma mark -
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {

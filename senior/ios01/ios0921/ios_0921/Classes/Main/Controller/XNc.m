@@ -82,7 +82,7 @@
 #pragma mark - UINavigationControllerDelegate start
 // 导航控制器显示一个控制器完成的时候就会调用
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-//    NSLog(@"viewController: %@, childViewController: %@", viewController, self.childViewControllers[0]);
+    NSLog(@"%@; %@", viewController, self.childViewControllers[0]);
     
     // 是否回到根控制器
     if (viewController == self.childViewControllers[0]) {
@@ -96,6 +96,8 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     [super pushViewController:viewController animated:animated];
+    XLog
+    
     // 不是导航控制器的根控制器才需要设置返回按钮
     if (self.childViewControllers.count > 1) {
         // 设置左边的按钮
@@ -106,6 +108,7 @@
 // 若覆盖了系统的返回按钮, 滑动返回功能就失效了
 // 点击返回按钮返回上一个控制器
 - (void)didClickBack:(id)_id {
+    NSLog(@"%@", _id);
     [self popViewControllerAnimated:YES];
 }
 
