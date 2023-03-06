@@ -40,12 +40,13 @@ static XTbc *extracted() {
     
     if ([curVersion isEqualToString:oldVersion] == NO) {
         [XSaveService setObject:curVersion forKey:kVersionKey];
-        //        [[NSUserDefaults standardUserDefaults] setObject:curVersion forKey:MyVersionKey];
+//        [NSUserDefaults.standardUserDefaults setObject:curVersion forKey:kVersionKey];
 
         // 进入新特性界面
         rootVc = XNewFeatureVc.alloc.init;
     } else {
-        rootVc = [extracted() init];
+        rootVc = XNewFeatureVc.alloc.init;
+//        rootVc = [extracted() init];
     }
     return rootVc;
 }

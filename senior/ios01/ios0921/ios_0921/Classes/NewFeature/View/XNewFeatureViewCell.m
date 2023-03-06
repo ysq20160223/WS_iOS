@@ -34,13 +34,13 @@
         _startButton = btn;
         
         //
-        [btn addTarget:self action:@selector(start) forControlEvents:UIControlEventTouchDown];
+        [btn addTarget:self action:@selector(didClickStartButton:) forControlEvents:UIControlEventTouchDown];
     }
     return _startButton;
 }
 
 // 点击立即体验按钮
-- (void)start {
+- (void)didClickStartButton:(id)_id {
     // 跳转到主界面
     // 修改窗口的根控制器
     UIApplication.sharedApplication.keyWindow.rootViewController = XTbc.alloc.init;
@@ -49,9 +49,8 @@
 
 - (UIImageView *)imageView {
     if(!_imageView) {
-        UIImageView *imageView = UIImageView.alloc.init;
-        _imageView = imageView;
-        [self.contentView addSubview:imageView];
+        _imageView = UIImageView.alloc.init;
+        [self.contentView addSubview:_imageView];
     }
     return _imageView;
 }

@@ -70,9 +70,8 @@
     
     
 //    NSLog(@"%@", NSStringFromCGRect(self.view.frame));
-    // 清空滑动手势代理
     _popDelegate = self.interactivePopGestureRecognizer.delegate;
-//    self.interactivePopGestureRecognizer.delegate = nil;
+//    self.interactivePopGestureRecognizer.delegate = nil; // 清空滑动手势代理
     
     // 回到导航控制器的根控制器, 恢复滑动手势代理
     self.delegate = self; // 监听导航控制器回到根控制器
