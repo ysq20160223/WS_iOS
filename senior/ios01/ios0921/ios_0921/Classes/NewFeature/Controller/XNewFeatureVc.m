@@ -27,8 +27,6 @@
 
 @implementation XNewFeatureVc
 
-static NSString * const reuseIdentifier = @"Cell";
-
 static NSString *ID = @"CollectionViewCell";
 
 - (instancetype)init {
@@ -129,9 +127,10 @@ static NSString *ID = @"CollectionViewCell";
     
     //    NSLog(@"row: %ld, cell: %@", indexPath.row, cell);
     
-    //    cell.backgroundColor = UIColor.cyanColor;
+//    cell.backgroundColor = XRandomColor();
     
     NSString *imageName = [NSString stringWithFormat:@"guide%ldBackground", indexPath.row + 1];
+    NSLog(@"%@; %@", imageName, indexPath);
     cell.image = [UIImage imageNamed:imageName];
     
     

@@ -38,15 +38,15 @@ static XTbc *extracted() {
     
 //    rootVc = XNewFeatureVc.alloc.init; //
     
-    if ([curVersion isEqualToString:oldVersion] == NO) {
+    if ([curVersion isEqualToString:oldVersion]) {
+        rootVc = XNewFeatureVc.alloc.init;
+//        rootVc = [extracted() init];
+    } else {
         [XSaveService setObject:curVersion forKey:kVersionKey];
 //        [NSUserDefaults.standardUserDefaults setObject:curVersion forKey:kVersionKey];
 
         // 进入新特性界面
         rootVc = XNewFeatureVc.alloc.init;
-    } else {
-        rootVc = XNewFeatureVc.alloc.init;
-//        rootVc = [extracted() init];
     }
     return rootVc;
 }

@@ -15,7 +15,7 @@
 
 @interface XNewFeatureViewCell ()
 
-@property (nonatomic, weak) UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, weak) UIButton *startButton;
 
 @end
@@ -60,6 +60,8 @@
     
     self.imageView.image = image;
     self.imageView.frame = self.bounds;
+//    self.imageView.backgroundColor = XRandomColor();
+//    NSLog(@"%@; %@", self.imageView, NSStringFromCGRect(self.imageView.frame));
 }
 
 - (void)setIndexPath:(NSIndexPath *)indexPath count:(int)count {
