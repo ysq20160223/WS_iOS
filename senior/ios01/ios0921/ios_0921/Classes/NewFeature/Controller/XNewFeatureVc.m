@@ -16,10 +16,10 @@
 
 @property (nonatomic, assign) CGFloat lastOffsetX;
 
-@property (nonatomic, weak) UIImageView *footballIv;
-@property (nonatomic, weak) UIImageView *lineIv;
-@property (nonatomic, weak) UIImageView *largeTextIv;
-@property (nonatomic, weak) UIImageView *smallTextIv;
+@property (nonatomic, strong) UIImageView *ivFootball;
+@property (nonatomic, strong) UIImageView *ivLine;
+@property (nonatomic, strong) UIImageView *ivLargeText;
+@property (nonatomic, strong) UIImageView *ivSmallText;
 
 @end
 
@@ -43,37 +43,34 @@ static NSString *ID = @"CollectionViewCell";
     [super viewDidLoad];
     
     [self setUpCollectionView];
-    
     [self setUpAllChildView];
 }
 
 - (void)setUpAllChildView {
     // 足球
-    UIImageView *football = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guide1"]];
-    football.center = CGPointMake(kScreenW * .5, kScreenH * .4);
-    [self.collectionView addSubview:football];
-    //    football.backgroundColor = [UIColor colorWithRed:1 green:0.5 blue:0 alpha:0.3];
-    _footballIv = football;
+    _ivFootball = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guide1"]];
+    _ivFootball.center = CGPointMake(kScreenW * .5, kScreenH * .4);
+    _ivFootball.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:.5];
+    [self.collectionView addSubview:_ivFootball];
     
     // 线
-    UIImageView *line = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideLine"]];
-    line.xX -= 139;
-    line.xY += 10;
-    [self.collectionView addSubview:line];
-    //    line.backgroundColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:0.3];
-    _lineIv = line;
+    _ivLine = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideLine"]];
+    _ivLine.xX -= 139;
+    _ivLine.xY += 10;
+    _ivLine.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:.5];
+    [self.collectionView addSubview:_ivLine];
     
     // 大文字
-    UIImageView *largeText = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideLargeText1"]];
-    largeText.center = CGPointMake(kScreenW * .5, kScreenH * .75);
-    [self.collectionView addSubview:largeText];
-    _largeTextIv = largeText;
+    _ivLargeText = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideLargeText1"]];
+    _ivLargeText.center = CGPointMake(kScreenW * .5, kScreenH * .75);
+    _ivLargeText.backgroundColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:.5];
+    [self.collectionView addSubview:_ivLargeText];
     
     // 小文字
-    UIImageView *smallText = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideSmallText1"]];
-    smallText.center = CGPointMake(kScreenW * .5, kScreenH * .85);
-    [self.collectionView addSubview:smallText];
-    _smallTextIv = smallText;
+    _ivSmallText = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideSmallText1"]];
+    _ivSmallText.center = CGPointMake(kScreenW * .5, kScreenH * .85);
+    _ivSmallText.backgroundColor = [UIColor colorWithRed:0 green:1 blue:1 alpha:.5];
+    [self.collectionView addSubview:_ivSmallText];
 }
 
 // 滚动完成
@@ -83,24 +80,24 @@ static NSString *ID = @"CollectionViewCell";
     
     NSInteger index = offsetX / kScreenW + 1;
     //    NSLog(@"offsetX: %f, index: %ld", offsetX, index);
-    _footballIv.image = [UIImage imageNamed:[NSString stringWithFormat:@"guide%ld", index]];
-//    _footballIv.center = CGPointMake(kScreenW * (index - 1 + .5), kScreenH * .4);
+    _ivFootball.image = [UIImage imageNamed:[NSString stringWithFormat:@"guide%ld", index]];
+//    _ivFootball.center = CGPointMake(kScreenW * (index - 1 + .5), kScreenH * .4);
     
-    _largeTextIv.image = [UIImage imageNamed:[NSString stringWithFormat:@"guideLargeText%ld", index]];
-    _smallTextIv.image = [UIImage imageNamed:[NSString stringWithFormat:@"guideSmallText%ld", index]];
+    _ivLargeText.image = [UIImage imageNamed:[NSString stringWithFormat:@"guideLargeText%ld", index]];
+    _ivSmallText.image = [UIImage imageNamed:[NSString stringWithFormat:@"guideSmallText%ld", index]];
     
     CGFloat delta = offsetX - _lastOffsetX;
     
     _lastOffsetX = offsetX; // 记录上一次
     
-    _footballIv.xX += 2 * delta;
-    _largeTextIv.xX += 2 * delta;
-    _smallTextIv.xX += 2 * delta;
+    _ivFootball.xX += 2 * delta;
+    _ivLargeText.xX += 2 * delta;
+    _ivSmallText.xX += 2 * delta;
     
     [UIView animateWithDuration:.2 animations:^{
-        _footballIv.xX -= delta;
-        _largeTextIv.xX -= delta;
-        _smallTextIv.xX -= delta;
+        _ivFootball.xX -= delta;
+        _ivLargeText.xX -= delta;
+        _ivSmallText.xX -= delta;
     }];
 }
 
@@ -124,8 +121,6 @@ static NSString *ID = @"CollectionViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     XNewFeatureViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
-    
-    //    NSLog(@"row: %ld, cell: %@", indexPath.row, cell);
     
 //    cell.backgroundColor = XRandomColor();
     

@@ -28,6 +28,9 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                     <state key="normal" title="Login" backgroundImage="RedButton"/>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
                 </button>
                 <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedButton" highlightedImage="RedButtonPressed" translatesAutoresizingMaskIntoConstraints="NO" id="I3G-6u-rXp">
                     <rect key="frame" x="16" y="356" width="343" height="44"/>

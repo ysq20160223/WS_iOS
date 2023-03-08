@@ -15,8 +15,8 @@
 
 @interface XNewFeatureViewCell ()
 
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, weak) UIButton *startButton;
+@property (nonatomic, strong) UIImageView *iv;
+@property (nonatomic, weak) UIButton *btnStart;
 
 @end
 
@@ -24,19 +24,19 @@
 
 @implementation XNewFeatureViewCell
 
-- (UIButton *)startButton {
-    if (!_startButton) {
+- (UIButton *)btnStart {
+    if (!_btnStart) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setBackgroundImage:[UIImage imageNamed:@"guideStart"] forState:UIControlStateNormal];
         [btn sizeToFit];
         btn.center = CGPointMake(self.xWidth * .5, self.xHeight * .95);
         [self addSubview:btn];
-        _startButton = btn;
+        _btnStart = btn;
         
         //
         [btn addTarget:self action:@selector(didClickStartButton:) forControlEvents:UIControlEventTouchDown];
     }
-    return _startButton;
+    return _btnStart;
 }
 
 // 点击立即体验按钮
@@ -47,19 +47,19 @@
     
 }
 
-- (UIImageView *)imageView {
-    if(!_imageView) {
-        _imageView = UIImageView.alloc.init;
-        [self.contentView addSubview:_imageView];
+- (UIImageView *)iv {
+    if(!_iv) {
+        _iv = UIImageView.alloc.init;
+        [self.contentView addSubview:_iv];
     }
-    return _imageView;
+    return _iv;
 }
 
 - (void)setImage:(UIImage *)image {
     _image = image;
     
-    self.imageView.image = image;
-    self.imageView.frame = self.bounds;
+    self.iv.image = image;
+    self.iv.frame = self.bounds;
 //    self.imageView.backgroundColor = XRandomColor();
 //    NSLog(@"%@; %@", self.imageView, NSStringFromCGRect(self.imageView.frame));
 }
@@ -70,7 +70,7 @@
 //    } else {
 //        self.startButton.hidden = YES;
 //    }
-    self.startButton.hidden = indexPath.item != count - 1;
+    self.btnStart.hidden = indexPath.item != count - 1;
 }
 
 @end
