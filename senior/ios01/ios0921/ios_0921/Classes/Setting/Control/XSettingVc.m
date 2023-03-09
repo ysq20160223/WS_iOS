@@ -28,8 +28,6 @@
 
 @implementation XSettingVc
 
-
-
 - (void)setUpNavBar {
     XTitleButton *titleBtn = [XTitleButton buttonWithType:UIButtonTypeCustom];
     _titleBtn = titleBtn;

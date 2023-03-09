@@ -60,11 +60,14 @@
     
     self.iv.image = image;
     self.iv.frame = self.bounds;
-//    self.imageView.backgroundColor = XRandomColor();
-//    NSLog(@"%@; %@", self.imageView, NSStringFromCGRect(self.imageView.frame));
+//    self.iv.contentMode = UIViewContentModeScaleAspectFit;
+//    self.iv.backgroundColor = XRandomColor();
+//    self.iv.backgroundColor = UIColor.darkGrayColor;
+    NSLog(@"%@; %@", self.iv, NSStringFromCGRect(self.iv.frame));
 }
 
 - (void)setIndexPath:(NSIndexPath *)indexPath count:(int)count {
+    NSLog(@"%ld; %@", indexPath.item, indexPath);
 //    if (indexPath.item == count - 1) {
 //        self.startButton.hidden = NO;
 //    } else {

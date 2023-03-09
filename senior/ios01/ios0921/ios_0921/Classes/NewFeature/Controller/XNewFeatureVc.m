@@ -55,7 +55,7 @@ static NSString *ID = @"CollectionViewCell";
     
     // 线
     _ivLine = [UIImageView.alloc initWithImage:[UIImage imageNamed:@"guideLine"]];
-    _ivLine.xX -= 139;
+    _ivLine.xX -= 123;
     _ivLine.xY += 10;
     _ivLine.backgroundColor = [UIColor colorWithRed:0 green:1 blue:0 alpha:.5];
     [self.collectionView addSubview:_ivLine];
