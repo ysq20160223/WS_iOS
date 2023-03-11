@@ -9,11 +9,8 @@
 #import "XBaseSettingVc.h"
 
 #import "XSettingCell.h"
-
 #import "XGroupItem.h"
-
 #import "XSettingArrowItem.h"
-
 #import "XPushVc.h"
 
 @interface XBaseSettingVc ()
@@ -30,9 +27,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    XGroupItem *group = self.groups[indexPath.section];
-    
-    XSettingItem *item = group.items[indexPath.row];
+    XSettingItem *item = self.groupArray[indexPath.section].itemArray[indexPath.row];
     
     if (item.operationBlock) {
         item.operationBlock(indexPath);
@@ -60,20 +55,17 @@
 
 #pragma mark - UITableViewDataSource start
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.groups.count;
+    return self.groupArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    XGroupItem *group = self.groups[section];
-    NSArray *items = group.items;
-    return items.count;
+    return self.groupArray[section].itemArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XSettingCell *cell = [XSettingCell cellWithTableView:tableView tableViewCellStyle:UITableViewCellStyleDefault];
     
-    XGroupItem *group = self.groups[indexPath.section];
-    NSArray *items = group.items;
+    NSArray *items = self.groupArray[indexPath.section].itemArray;
     
     XSettingItem *item = items[indexPath.row];
     cell.item = item;
@@ -81,13 +73,11 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    XGroupItem *group = self.groups[section];
-    return group.headerTitle;
+    return self.groupArray[section].headerTitle;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-    XGroupItem *group = self.groups[section];
-    return group.footerTitle;
+    return self.groupArray[section].footerTitle;
 }
 #pragma mark - UITableViewDataSource end
 
@@ -97,11 +87,11 @@
 }
 
 
-- (NSMutableArray *)groups {
-    if (nil == _groups) {
-        _groups = [NSMutableArray array];
+- (NSMutableArray *)groupArray {
+    if (!_groupArray) {
+        _groupArray = NSMutableArray.array;
     }
-    return _groups;
+    return _groupArray;
 }
 
 

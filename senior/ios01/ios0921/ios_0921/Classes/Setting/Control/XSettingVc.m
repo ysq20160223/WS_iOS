@@ -68,8 +68,8 @@
     // 第一组数据
     XGroupItem *groupFirst = XGroupItem.alloc.init;
     XSettingArrowItem *redeemCode = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"RedeemCode"] title:@"使用兑换码"];
-    groupFirst.items = @[redeemCode];
-    [self.groups addObject:groupFirst];
+    groupFirst.itemArray = @[redeemCode];
+    [self.groupArray addObject:groupFirst];
     
     
     // 第二组数据
@@ -86,9 +86,9 @@
 //    soundEffect.type= XSettingItemTypeSwitch;
 //    moreLotteryRecommend.type= XSettingItemTypeSwitch;
 
-    groupSecond.items = @[morePush, handShake, soundEffect, moreLotteryRecommend];
+    groupSecond.itemArray = @[morePush, handShake, soundEffect, moreLotteryRecommend];
     
-    [self.groups addObject:groupSecond];
+    [self.groupArray addObject:groupSecond];
     
     
     // 第三组数据
@@ -100,12 +100,12 @@
     XSettingArrowItem *moreAbout = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreAbout"] title:@"关于"];
     
     moreUpdate.operationBlock = ^(NSIndexPath *indexPath){
-        NSLog(@"check new version, indexPath: %@", indexPath);
+        NSLog(@"check new version; indexPath: %@", indexPath);
     };
   
-    groupThird.items = @[moreUpdate, moreShare, moreNetease, moreAbout];
+    groupThird.itemArray = @[moreUpdate, moreShare, moreNetease, moreAbout];
     
-    [self.groups addObject:groupThird];
+    [self.groupArray addObject:groupThird];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "XGroupItem.h"
+
 @interface XBaseSettingVc : UITableViewController
 
-@property (nonatomic, strong) NSMutableArray *groups; // 保存当前有多少组
+@property (nonatomic, strong) NSMutableArray<XGroupItem *> *groupArray; // 保存当前有多少组
 
 @end

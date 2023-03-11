@@ -50,10 +50,10 @@
 //        NSLog(@"0 : 0");
 //    };
     
-    group.items = @[item0, item1, item2, item3];
+    group.itemArray = @[item0, item1, item2, item3];
     
     // 3, 
-    [self.groups addObject:group];
+    [self.groupArray addObject:group];
 }
 
 @end

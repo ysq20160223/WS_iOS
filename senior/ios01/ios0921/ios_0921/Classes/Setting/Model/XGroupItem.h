@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "XSettingItem.h"
+
 @interface XGroupItem : NSObject
 
 @property (nonatomic, strong) NSString *headerTitle;
 @property (nonatomic, strong) NSString *footerTitle;
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray<XSettingItem *> *itemArray;
 
 @end

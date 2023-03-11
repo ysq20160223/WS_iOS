@@ -44,9 +44,9 @@
     group.footerTitle = @"开启后, 当投注或关注的比赛开始, 进球和结束时, 会自动发送推送消息提醒";
     
     XSettingSwitchItem *item = [XSettingSwitchItem itemWithImage:nil title:@"Push Follow Match"];
-    group.items = @[item];
+    group.itemArray = @[item];
     
-    [self.groups addObject:group];
+    [self.groupArray addObject:group];
 }
 
 // 第1组数据
@@ -55,9 +55,9 @@
     group.headerTitle = @"只在以下时间段接收比分直播推送";
     
     XSettingItem *item = [XSettingItem itemWithImage:nil title:@"Start Time" subTitle:@"00:00:00"];
-    group.items = @[item];
+    group.itemArray = @[item];
     
-    [self.groups addObject:group];
+    [self.groupArray addObject:group];
 }
 
 // 第2组数据
@@ -65,9 +65,9 @@
     XGroupItem *group = XGroupItem.alloc.init;
     
     XSettingItem *item = [XSettingItem itemWithImage:nil title:@"End Time" subTitle:@"23:59:59"];
-    group.items = @[item];
+    group.itemArray = @[item];
     
-    [self.groups addObject:group];
+    [self.groupArray addObject:group];
 }
 
 
@@ -76,7 +76,7 @@
     XGroupItem *group = XGroupItem.alloc.init;
     
     XSettingItem *item = [XSettingItem itemWithImage:nil title:@"Test Data" subTitle:@"23:59:59"];
-    group.items = @[item];
+    group.itemArray = @[item];
     
     // 注意
     // block机制 : block 会把里面代码块的所有强指针都强引用
@@ -101,7 +101,7 @@
         [cell addSubview:textField];
     };
     
-    [self.groups addObject:group];
+    [self.groupArray addObject:group];
 }
 
 // 对象即将销毁会调用

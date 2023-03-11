@@ -44,16 +44,16 @@
     XSettingSwitchItem *item6 = [XSettingSwitchItem itemWithImage:nil title:@"排列5" subTitle:@"每天开奖"];
     
     // 3, 描述组模型中行模型数组
-    group.items = @[item0, item1, item2, item3, item4, item5, item6, item6];
-    [self.groups addObject:group];
+    group.itemArray = @[item0, item1, item2, item3, item4, item5, item6, item6];
+    [self.groupArray addObject:group];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XSettingCell *cell = [XSettingCell cellWithTableView:tableView tableViewCellStyle:UITableViewCellStyleSubtitle];
     
-    XGroupItem *group = self.groups[indexPath.section];
-    NSArray *items = group.items;
+    XGroupItem *group = self.groupArray[indexPath.section];
+    NSArray *items = group.itemArray;
     
     XSettingItem *item = items[indexPath.row];
     cell.item = item;
