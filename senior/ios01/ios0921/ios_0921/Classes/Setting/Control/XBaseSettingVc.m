@@ -65,9 +65,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XSettingCell *cell = [XSettingCell cellWithTableView:tableView tableViewCellStyle:UITableViewCellStyleDefault];
     
-    NSArray *items = self.groupArray[indexPath.section].itemArray;
-    
-    XSettingItem *item = items[indexPath.row];
+    XSettingItem *item = self.groupArray[indexPath.section].itemArray[indexPath.row];
     cell.item = item;
     return cell;
 }

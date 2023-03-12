@@ -60,9 +60,9 @@
     
     [self setUpNavBar];
     
-    // 创建模型数据
-    [self setUpGroups];
+    [self setUpGroups]; // 创建模型数据
 }
+
 
 - (void)setUpGroups {
     // 第一组数据
@@ -79,6 +79,7 @@
     morePush.clazz = XPushVc.class; // 点击 item 跳转的 ViewController
     
     XSettingSwitchItem *handShake = [XSettingSwitchItem itemWithImage:[UIImage imageNamed:@"handShake"] title:@"摇一摇"];
+    
     XSettingSwitchItem *soundEffect = [XSettingSwitchItem itemWithImage:[UIImage imageNamed:@"sound_Effect"] title:@"声音效果"];
     XSettingSwitchItem *moreLotteryRecommend = [XSettingSwitchItem itemWithImage:[UIImage imageNamed:@"More_LotteryRecommend"] title:@"购彩小助手"];
     
@@ -87,7 +88,6 @@
 //    moreLotteryRecommend.type= XSettingItemTypeSwitch;
 
     groupSecond.itemArray = @[morePush, handShake, soundEffect, moreLotteryRecommend];
-    
     [self.groupArray addObject:groupSecond];
     
     
@@ -95,23 +95,23 @@
     XGroupItem *groupThird = XGroupItem.alloc.init;
     
     XSettingArrowItem *moreUpdate = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreUpdate"] title:@"检查新版本"];
-    XSettingArrowItem *moreShare = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreShare"] title:@"分享"];
-    XSettingArrowItem *moreNetease = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreNetease"] title:@"产品推荐"];
-    XSettingArrowItem *moreAbout = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreAbout"] title:@"关于"];
-    
     moreUpdate.operationBlock = ^(NSIndexPath *indexPath){
         NSLog(@"check new version; indexPath: %@", indexPath);
     };
-  
-    groupThird.itemArray = @[moreUpdate, moreShare, moreNetease, moreAbout];
     
+    XSettingArrowItem *moreShare = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreShare"] title:@"分享"];
+    
+    XSettingArrowItem *moreNetease = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreNetease"] title:@"产品推荐"];
+    
+    XSettingArrowItem *moreAbout = [XSettingArrowItem itemWithImage:[UIImage imageNamed:@"MoreAbout"] title:@"关于"];
+    
+    groupThird.itemArray = @[moreUpdate, moreShare, moreNetease, moreAbout];
     [self.groupArray addObject:groupThird];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSLog(@"destinationViewController: %@", segue.destinationViewController)
 }
-
 
 @end
 

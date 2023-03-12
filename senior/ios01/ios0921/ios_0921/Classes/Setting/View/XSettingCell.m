@@ -51,10 +51,12 @@
     static NSString *ID = @"cellId";
     
     XSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (nil == cell) {
+    if (!cell) {
         cell = [self.alloc initWithStyle:tableViewCellStyle reuseIdentifier:ID];
     }
     return cell;
 }
 
 @end
+
+

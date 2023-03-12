@@ -11,3 +11,5 @@
 @implementation XSettingSwitchItem
 
 @end
+
+
