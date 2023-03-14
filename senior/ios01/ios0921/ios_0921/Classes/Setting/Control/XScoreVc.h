@@ -11,3 +11,5 @@
 @interface XScoreVc : XBaseSettingVc
 
 @end
+
+

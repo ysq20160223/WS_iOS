@@ -95,10 +95,14 @@
         
         // 解决循环引用问题
         // 获取点击 cell
+        
         UITableViewCell *cell = [weakSelf.tableView cellForRowAtIndexPath:indexPath];
-        UITextField *textField = UITextField.alloc.init;
+        UITextField *textField = [UITextField.alloc initWithFrame:CGRectMake(0, 0, 21, 21)];
+        textField.backgroundColor = UIColor.cyanColor;
+        textField.tag = 100;
         [textField becomeFirstResponder];
         [cell addSubview:textField];
+        NSLog(@"count: %ld", cell.subviews.count);
     };
     
     [self.groupArray addObject:group];
@@ -106,7 +110,21 @@
 
 // 对象即将销毁会调用
 - (void)dealloc {
-    NSLog(@"");
+    XLog
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    [self.view endEditing:YES];
+//    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+//}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.view endEditing:YES];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    XLog
+    [self.view endEditing:YES];
 }
 
 @end

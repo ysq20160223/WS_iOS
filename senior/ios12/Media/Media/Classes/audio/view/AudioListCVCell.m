@@ -15,7 +15,9 @@
     // Initialization code
     
     self.lblFileName.textColor = XColor(0xee, 0xee, 0xee);
+//    self.lblFileName.highlightedTextColor = XColor(0xaa, 0xaa, 0xaa);
     self.lblSinger.textColor = XColor(0x88, 0x88, 0x88);
+//    self.lblSinger.highlightedTextColor = XColor(0x44, 0x44, 0x44);
     self.ivIcon.layer.cornerRadius = 6;
     self.ivIcon.layer.masksToBounds = YES;
     self.backgroundColor = XColor(0x44, 0x44, 0x44);
